@@ -1,0 +1,137 @@
+/* ===========================================
+   Y Market - Contact & About Pages
+   =========================================== */
+
+/* Contact Page */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  padding: var(--space-2xl) 0;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.contact-info__item {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.contact-info__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-round);
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  font-size: var(--fs-lg);
+  flex-shrink: 0;
+}
+
+.contact-info__text h4 {
+  font-size: var(--fs-base);
+  margin-bottom: var(--space-xs);
+}
+
+.contact-info__text p {
+  font-size: var(--fs-sm);
+  margin: 0;
+}
+
+.contact-info__text a {
+  color: var(--color-accent);
+}
+
+.contact-info__text a:hover {
+  text-decoration: underline;
+}
+
+.contact-form {
+  background: var(--color-white);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+}
+
+.contact-form h3 {
+  margin-bottom: var(--space-lg);
+}
+
+/* About Page */
+.about-hero {
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+  color: var(--color-white);
+  padding: var(--space-3xl) 0;
+  text-align: center;
+}
+
+.about-hero h1 {
+  color: var(--color-white);
+}
+
+.about-content {
+  padding: var(--space-3xl) 0;
+}
+
+.about-content__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+.about-content__text {
+  font-size: var(--fs-md);
+  color: var(--color-text-secondary);
+  line-height: var(--lh-relaxed);
+}
+
+.about-values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  padding: var(--space-2xl) 0;
+}
+
+/* FAQ Page */
+.faq-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-2xl) 0;
+}
+
+/* Tracking Page */
+.tracking-page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--space-3xl) 0;
+  text-align: center;
+}
+
+.tracking-form {
+  background: var(--color-white);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl);
+  margin-top: var(--space-xl);
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-content__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-values {
+    grid-template-columns: 1fr;
+  }
+}

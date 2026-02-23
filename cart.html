@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>עגלת קניות | וואי מרקט</title>
+  <meta name="description" content="עגלת הקניות שלכם בוואי מרקט - סקרו את המוצרים שבחרתם והשלימו את ההזמנה.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    .cart-page { max-width: 900px; margin: 0 auto; padding: var(--space-xl) 0 var(--space-3xl); }
+    .cart-item { display: grid; grid-template-columns: 80px 1fr auto auto auto; gap: var(--space-md); align-items: center; padding: var(--space-md); border-bottom: 1px solid var(--color-border-light); }
+    .cart-item__image img { width: 80px; height: 80px; object-fit: cover; border-radius: var(--radius-sm); }
+    .cart-item__name { font-size: var(--fs-base); font-weight: var(--fw-semibold); }
+    .cart-item__name a { color: inherit; text-decoration: none; }
+    .cart-item__name a:hover { color: var(--color-accent); }
+    .cart-item__unit { font-size: var(--fs-sm); color: var(--color-text-light); }
+    .cart-item__price { font-size: var(--fs-sm); color: var(--color-text-secondary); }
+    .cart-item__quantity { display: flex; align-items: center; gap: var(--space-xs); }
+    .cart-item__qty-btn { width: 32px; height: 32px; border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: var(--color-white); cursor: pointer; font-size: var(--fs-lg); display: flex; align-items: center; justify-content: center; transition: var(--transition-fast); }
+    .cart-item__qty-btn:hover { background: var(--color-bg); border-color: var(--color-primary); }
+    .cart-item__qty-value { min-width: 32px; text-align: center; font-weight: var(--fw-semibold); }
+    .cart-item__total { font-weight: var(--fw-bold); color: var(--color-primary); white-space: nowrap; }
+    .cart-item__remove { background: none; border: none; color: var(--color-text-light); cursor: pointer; padding: var(--space-xs); font-size: var(--fs-base); transition: var(--transition-fast); }
+    .cart-item__remove:hover { color: var(--color-danger); }
+    .cart-summary { background: var(--color-bg); border-radius: var(--radius-lg); padding: var(--space-xl); margin-top: var(--space-xl); }
+    .cart-summary__row { display: flex; justify-content: space-between; margin-bottom: var(--space-sm); }
+    .cart-summary__total { font-size: var(--fs-xl); font-weight: var(--fw-bold); border-top: 2px solid var(--color-border); padding-top: var(--space-md); margin-top: var(--space-md); }
+    .cart-actions { display: flex; gap: var(--space-md); margin-top: var(--space-lg); flex-wrap: wrap; }
+    .cart-empty { text-align: center; padding: var(--space-3xl) 0; }
+    .cart-empty__icon { font-size: 64px; color: var(--color-border); margin-bottom: var(--space-lg); }
+    @media (max-width: 768px) {
+      .cart-item { grid-template-columns: 60px 1fr; gap: var(--space-sm); }
+      .cart-item__image img { width: 60px; height: 60px; }
+      .cart-item__quantity, .cart-item__total, .cart-item__remove { grid-column: 2; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar__info">
+        <div class="top-bar__item"><i class="fas fa-phone-alt"></i> <a href="tel:0549922492">054-992-2492</a></div>
+        <div class="top-bar__item"><i class="fas fa-envelope"></i> <a href="mailto:naglertradesystem@gmail.com">naglertradesystem@gmail.com</a></div>
+        <div class="top-bar__item"><i class="fas fa-clock"></i> <span>א'-ה' 08:00-17:00</span></div>
+      </div>
+      <div class="top-bar__social">
+        <a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="header__logo">
+        <img src="images/logo/logo-hebrew-dark.png" alt="וואי מרקט" width="180" height="48">
+      </a>
+      <nav class="main-nav" aria-label="ניווט ראשי">
+        <div class="main-nav__item"><a href="index.html" class="main-nav__link">דף הבית</a></div>
+        <div class="main-nav__item"><a href="catalog.html" class="main-nav__link">מוצרים</a></div>
+        <div class="main-nav__item"><a href="about.html" class="main-nav__link">אודות</a></div>
+        <div class="main-nav__item"><a href="blog.html" class="main-nav__link">בלוג</a></div>
+        <div class="main-nav__item"><a href="contact.html" class="main-nav__link">צרו קשר</a></div>
+      </nav>
+      <div class="header__actions">
+        <button class="header__search-toggle" aria-label="חיפוש"><i class="fas fa-search"></i></button>
+        <button class="header__cart-btn" aria-label="עגלת קניות"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></button>
+        <a href="login.html" class="header__login-btn"><i class="fas fa-user"></i> <span>כניסה</span></a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="תפריט" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+  <div class="mobile-overlay"></div>
+
+  <!-- Breadcrumb -->
+  <div class="container">
+    <nav class="breadcrumb" aria-label="ניווט פירורי לחם">
+      <a href="index.html">דף הבית</a>
+      <span class="breadcrumb__separator"><i class="fas fa-chevron-left"></i></span>
+      <span class="breadcrumb__current">עגלת קניות</span>
+    </nav>
+  </div>
+
+  <!-- Cart -->
+  <div class="container">
+    <div class="cart-page">
+      <h1 style="font-size: var(--fs-2xl); margin-bottom: var(--space-lg);"><i class="fas fa-shopping-cart" style="margin-left: var(--space-sm);"></i> עגלת קניות</h1>
+
+      <!-- Empty State -->
+      <div class="cart-empty" id="cartEmpty" style="display: none;">
+        <div class="cart-empty__icon"><i class="fas fa-shopping-cart"></i></div>
+        <h2>העגלה ריקה</h2>
+        <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">הוסיפו מוצרים מהקטלוג שלנו</p>
+        <a href="catalog.html" class="btn btn--primary"><i class="fas fa-store"></i> לקטלוג המוצרים</a>
+      </div>
+
+      <!-- Cart Items -->
+      <div id="cartItems"></div>
+
+      <!-- Summary -->
+      <div class="cart-summary" id="cartSummary" style="display: none;">
+        <div class="cart-summary__row">
+          <span>מוצרים בעגלה:</span>
+          <span id="cartItemCount">0</span>
+        </div>
+        <div class="cart-summary__row cart-summary__total">
+          <span>סה"כ:</span>
+          <span id="cartSubtotal">0</span>
+        </div>
+        <p style="font-size: var(--fs-sm); color: var(--color-text-light); margin-top: var(--space-sm);">* המחירים כוללים מע"מ. משלוח חינם בהזמנות מעל 2,000 ₪</p>
+
+        <div class="cart-actions">
+          <button class="btn btn--whatsapp btn--lg" id="whatsappOrderBtn"><i class="fab fa-whatsapp"></i> שלחו הזמנה בוואטסאפ</button>
+          <a href="catalog.html" class="btn btn--secondary"><i class="fas fa-plus"></i> הוסיפו מוצרים</a>
+          <button class="btn btn--sm" id="clearCartBtn" style="margin-right: auto; color: var(--color-text-light);"><i class="fas fa-trash-alt"></i> נקו עגלה</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="images/logo/logo-hebrew-white.png" alt="וואי מרקט" width="160" height="40">
+          <p>נגלר סחר והפצה — מוצרי צריכה שוטפת לעסקים ומוסדות.</p>
+          <div class="footer__social">
+            <a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer__col"><h4>קטגוריות</h4><div class="footer__links"><a href="catalog.html?cat=paper">מוצרי נייר</a><a href="catalog.html?cat=cleaning">חומרי ניקוי</a><a href="catalog.html?cat=disposable">חד פעמי</a><a href="catalog.html?cat=takeaway">אריזות</a></div></div>
+        <div class="footer__col"><h4>קישורים</h4><div class="footer__links"><a href="about.html">אודות</a><a href="faq.html">שאלות ותשובות</a><a href="contact.html">צרו קשר</a><a href="tracking.html">מעקב משלוחים</a></div></div>
+        <div class="footer__col"><h4>צרו קשר</h4><div class="footer__contact-item"><i class="fas fa-phone-alt"></i><a href="tel:0549922492">054-992-2492</a></div><div class="footer__contact-item"><i class="fas fa-envelope"></i><a href="mailto:naglertradesystem@gmail.com">naglertradesystem@gmail.com</a></div></div>
+      </div>
+      <div class="footer__bottom">
+        <span class="footer__copyright">&copy; 2026 וואי מרקט. כל הזכויות שמורות.</span>
+        <div class="footer__legal"><a href="legal/terms.html">תקנון</a><a href="legal/privacy.html">פרטיות</a><a href="legal/accessibility.html">נגישות</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/972549922492" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+  <script src="js/main.js"></script>
+  <script src="js/analytics.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

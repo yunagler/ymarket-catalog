@@ -1,196 +1,313 @@
-// ===========================================
-// Y Market - Main JavaScript
-// ===========================================
+/* ===========================================
+   Y Market - Main JavaScript
+   Navigation, Scroll, WhatsApp, Cookies
+   =========================================== */
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Menu Toggle
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const mainNav = document.querySelector('.main-nav');
-
-    if (mobileMenuToggle && mainNav) {
-        mobileMenuToggle.addEventListener('click', function() {
-            mainNav.classList.toggle('active');
-            const icon = this.querySelector('i');
-            if (mainNav.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
-    }
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(e) {
-        if (mainNav && mainNav.classList.contains('active')) {
-            if (!mainNav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-                mainNav.classList.remove('active');
-                const icon = mobileMenuToggle.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        }
-    });
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    // Animate elements on scroll
-    const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.category-card, .product-card, .feature-item, .why-us-item, .stat-item');
-
-        elements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-
-            if (elementTop < windowHeight - 100) {
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
-            }
-        });
-    };
-
-    // Set initial state for animated elements
-    document.querySelectorAll('.category-card, .product-card, .feature-item, .why-us-item, .stat-item').forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(20px)';
-        element.style.transition = 'all 0.5s ease';
-    });
-
-    // Run animation on load and scroll
-    animateOnScroll();
-    window.addEventListener('scroll', animateOnScroll);
-
-    // Counter animation for statistics
-    const animateCounters = function() {
-        const counters = document.querySelectorAll('.stat-number');
-
-        counters.forEach(counter => {
-            const target = parseInt(counter.textContent.replace(/[^0-9]/g, ''));
-            const suffix = counter.textContent.replace(/[0-9]/g, '');
-            const duration = 2000;
-            const step = target / (duration / 16);
-            let current = 0;
-
-            const updateCounter = function() {
-                current += step;
-                if (current < target) {
-                    counter.textContent = Math.floor(current) + suffix;
-                    requestAnimationFrame(updateCounter);
-                } else {
-                    counter.textContent = target + suffix;
-                }
-            };
-
-            // Only animate when in view
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        updateCounter();
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
-
-            observer.observe(counter);
-        });
-    };
-
-    animateCounters();
-
-    // WhatsApp message tracking (optional)
-    document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
-        link.addEventListener('click', function() {
-            // Track WhatsApp clicks (can integrate with Google Analytics)
-            console.log('WhatsApp click tracked');
-        });
-    });
-
-    // Form validation for contact page
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const name = this.querySelector('[name="name"]');
-            const phone = this.querySelector('[name="phone"]');
-            const message = this.querySelector('[name="message"]');
-
-            let isValid = true;
-
-            // Simple validation
-            if (!name || name.value.trim() === '') {
-                showError(name, 'נא להזין שם');
-                isValid = false;
-            }
-
-            if (!phone || !/^[0-9]{9,10}$/.test(phone.value.replace(/[-\s]/g, ''))) {
-                showError(phone, 'נא להזין מספר טלפון תקין');
-                isValid = false;
-            }
-
-            if (isValid) {
-                // Redirect to WhatsApp with form data
-                const text = `שלום, שמי ${name.value}.\nטלפון: ${phone.value}\n\n${message ? message.value : ''}`;
-                const encodedText = encodeURIComponent(text);
-                window.open(`https://wa.me/972547867657?text=${encodedText}`, '_blank');
-            }
-        });
-    }
-
-    function showError(input, message) {
-        const formGroup = input.closest('.form-group');
-        let errorEl = formGroup.querySelector('.error-message');
-
-        if (!errorEl) {
-            errorEl = document.createElement('span');
-            errorEl.className = 'error-message';
-            errorEl.style.color = '#ff4444';
-            errorEl.style.fontSize = '12px';
-            errorEl.style.marginTop = '5px';
-            errorEl.style.display = 'block';
-            formGroup.appendChild(errorEl);
-        }
-
-        errorEl.textContent = message;
-        input.style.borderColor = '#ff4444';
-
-        input.addEventListener('input', function() {
-            errorEl.remove();
-            input.style.borderColor = '';
-        }, { once: true });
-    }
-
-    // Sticky header shadow on scroll
-    const header = document.querySelector('.main-header');
-    if (header) {
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
-                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.15)';
-            } else {
-                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            }
-        });
-    }
-
-    // Product image placeholder handling
-    document.querySelectorAll('.product-image img').forEach(img => {
-        img.addEventListener('error', function() {
-            this.src = 'https://via.placeholder.com/300x300?text=' + encodeURIComponent('תמונה');
-        });
-    });
-
-    console.log('Y Market website loaded successfully');
+document.addEventListener('DOMContentLoaded', () => {
+  initMobileNav();
+  initStickyHeader();
+  initScrollAnimations();
+  initCookieConsent();
+  initAccordions();
+  initSearchOverlay();
+  initContactForm();
+  initImageFallback();
+  initCartButton();
+  updateCartBadge();
 });
+
+/* ---- Mobile Navigation ---- */
+function initMobileNav() {
+  const btn = document.querySelector('.mobile-menu-btn');
+  const nav = document.querySelector('.main-nav');
+  const overlay = document.querySelector('.mobile-overlay');
+  if (!btn || !nav) return;
+
+  btn.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    if (overlay) overlay.classList.toggle('active', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    btn.setAttribute('aria-expanded', String(isOpen));
+    const icon = btn.querySelector('i');
+    if (icon) {
+      icon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+    }
+  });
+
+  if (overlay) {
+    overlay.addEventListener('click', closeMobileNav);
+  }
+
+  // Mobile mega-menu toggle
+  document.querySelectorAll('.main-nav__item').forEach(item => {
+    const link = item.querySelector('.main-nav__link');
+    const mega = item.querySelector('.mega-menu');
+    if (!mega || !link) return;
+
+    link.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        item.classList.toggle('open');
+      }
+    });
+  });
+
+  function closeMobileNav() {
+    nav.classList.remove('open');
+    if (overlay) overlay.classList.remove('active');
+    document.body.style.overflow = '';
+    btn.setAttribute('aria-expanded', 'false');
+    const icon = btn.querySelector('i');
+    if (icon) icon.className = 'fas fa-bars';
+  }
+}
+
+/* ---- Sticky Header Shadow ---- */
+function initStickyHeader() {
+  const header = document.querySelector('.header');
+  if (!header) return;
+
+  const onScroll = () => {
+    header.classList.toggle('scrolled', window.scrollY > 10);
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+}
+
+/* ---- Scroll Animations ---- */
+function initScrollAnimations() {
+  const els = document.querySelectorAll('.animate-on-scroll');
+  if (!els.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  els.forEach(el => observer.observe(el));
+
+  // Counter animation for stats
+  const statsSection = document.querySelector('.stats-section');
+  if (statsSection) {
+    const statsObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        animateCounters();
+        statsObserver.disconnect();
+      }
+    }, { threshold: 0.3 });
+    statsObserver.observe(statsSection);
+  }
+}
+
+/* ---- Counter Animation ---- */
+function animateCounters() {
+  document.querySelectorAll('[data-count]').forEach(el => {
+    const target = parseInt(el.dataset.count, 10);
+    const suffix = el.dataset.suffix || '';
+    const prefix = el.dataset.prefix || '';
+    const duration = 2000;
+    const start = performance.now();
+
+    function update(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(target * eased);
+      el.textContent = prefix + current.toLocaleString('he-IL') + suffix;
+      if (progress < 1) requestAnimationFrame(update);
+    }
+
+    requestAnimationFrame(update);
+  });
+}
+
+/* ---- Cookie Consent ---- */
+function initCookieConsent() {
+  const banner = document.querySelector('.cookie-banner');
+  if (!banner || localStorage.getItem('ym_cookies_accepted')) return;
+
+  banner.classList.add('show');
+
+  banner.querySelector('[data-cookie-accept]')?.addEventListener('click', () => {
+    localStorage.setItem('ym_cookies_accepted', 'true');
+    banner.classList.remove('show');
+  });
+
+  banner.querySelector('[data-cookie-decline]')?.addEventListener('click', () => {
+    localStorage.setItem('ym_cookies_accepted', 'essential');
+    banner.classList.remove('show');
+  });
+}
+
+/* ---- FAQ Accordions ---- */
+function initAccordions() {
+  document.querySelectorAll('.accordion__header').forEach(header => {
+    header.addEventListener('click', () => {
+      const item = header.closest('.accordion__item');
+      const body = item.querySelector('.accordion__body');
+      const content = item.querySelector('.accordion__content');
+      const isOpen = item.classList.contains('active');
+
+      // Close all others in same accordion
+      item.closest('.accordion')?.querySelectorAll('.accordion__item').forEach(other => {
+        if (other !== item) {
+          other.classList.remove('active');
+          other.querySelector('.accordion__body').style.maxHeight = '0';
+        }
+      });
+
+      item.classList.toggle('active');
+      body.style.maxHeight = isOpen ? '0' : content.scrollHeight + 'px';
+    });
+  });
+}
+
+/* ---- Search Overlay ---- */
+function initSearchOverlay() {
+  const toggleBtn = document.querySelector('.header__search-toggle');
+  const overlay = document.querySelector('.search-overlay');
+  if (!toggleBtn || !overlay) return;
+
+  toggleBtn.addEventListener('click', () => {
+    overlay.classList.add('active');
+    const input = overlay.querySelector('input');
+    if (input) setTimeout(() => input.focus(), 100);
+  });
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) overlay.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') overlay.classList.remove('active');
+  });
+
+  // Search form submission
+  const searchForm = overlay.querySelector('form');
+  if (searchForm) {
+    searchForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const q = searchForm.querySelector('input').value.trim();
+      if (q) window.location.href = `catalog.html?search=${encodeURIComponent(q)}`;
+    });
+  }
+}
+
+/* ---- Contact Form ---- */
+function initContactForm() {
+  const form = document.querySelector('.contact-form form');
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = form.querySelector('[name="name"]')?.value.trim();
+    const phone = form.querySelector('[name="phone"]')?.value.trim();
+    const email = form.querySelector('[name="email"]')?.value.trim();
+    const message = form.querySelector('[name="message"]')?.value.trim();
+
+    // Validation
+    let valid = true;
+    form.querySelectorAll('.form-error').forEach(el => el.remove());
+    form.querySelectorAll('.form-input, .form-textarea').forEach(el => el.style.borderColor = '');
+
+    if (!name) { showFieldError(form.querySelector('[name="name"]'), 'נא להזין שם'); valid = false; }
+    if (!phone || !/^0[0-9]{8,9}$/.test(phone.replace(/[-\s]/g, ''))) {
+      showFieldError(form.querySelector('[name="phone"]'), 'נא להזין מספר טלפון תקין');
+      valid = false;
+    }
+
+    if (!valid) return;
+
+    // Send via WhatsApp
+    const lines = [`שלום, שמי ${name}.`, `טלפון: ${phone}`];
+    if (email) lines.push(`מייל: ${email}`);
+    if (message) lines.push(`\n${message}`);
+
+    const text = encodeURIComponent(lines.join('\n'));
+    window.open(`https://wa.me/972549922492?text=${text}`, '_blank');
+  });
+
+  function showFieldError(input, msg) {
+    if (!input) return;
+    input.style.borderColor = 'var(--color-danger)';
+    const error = document.createElement('div');
+    error.className = 'form-error';
+    error.textContent = msg;
+    input.parentElement.appendChild(error);
+    input.addEventListener('input', () => {
+      input.style.borderColor = '';
+      error.remove();
+    }, { once: true });
+  }
+}
+
+/* ---- Image Fallback ---- */
+function initImageFallback() {
+  document.querySelectorAll('img[data-fallback]').forEach(img => {
+    img.addEventListener('error', function() {
+      this.src = this.dataset.fallback || 'images/placeholder.svg';
+    });
+  });
+}
+
+/* ---- Cart Button ---- */
+function initCartButton() {
+  const cartBtn = document.querySelector('.header__cart-btn');
+  if (!cartBtn) return;
+
+  cartBtn.addEventListener('click', () => {
+    // Detect if we're in a subdirectory
+    const isSubDir = window.location.pathname.includes('/legal/') ||
+                     window.location.pathname.includes('/products/') ||
+                     window.location.pathname.includes('/blog/');
+    window.location.href = isSubDir ? '../cart.html' : 'cart.html';
+  });
+}
+
+/* ---- Cart Badge ---- */
+function updateCartBadge() {
+  const badge = document.querySelector('.cart-count');
+  if (!badge) return;
+
+  const cart = JSON.parse(localStorage.getItem('ym_cart') || '[]');
+  const count = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+
+  badge.textContent = count;
+  badge.classList.toggle('has-items', count > 0);
+}
+
+/* ---- Toast Notification ---- */
+function showToast(message, duration = 3000) {
+  let toast = document.querySelector('.toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.className = 'toast';
+    document.body.appendChild(toast);
+  }
+
+  toast.textContent = message;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), duration);
+}
+
+/* ---- Format Currency ---- */
+function formatPrice(price) {
+  return new Intl.NumberFormat('he-IL', {
+    style: 'currency',
+    currency: 'ILS',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 2
+  }).format(price);
+}
+
+/* ---- Expose globals ---- */
+window.YMarket = {
+  updateCartBadge,
+  showToast,
+  formatPrice
+};

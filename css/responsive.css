@@ -1,0 +1,247 @@
+/* ===========================================
+   Y Market - Responsive Breakpoints
+   Mobile-first approach
+   =========================================== */
+
+/* ---- Tablet: 768px ---- */
+@media (max-width: 768px) {
+  :root {
+    --fs-4xl: 2.25rem;
+    --fs-3xl: 1.875rem;
+    --fs-2xl: 1.5rem;
+  }
+
+  .section {
+    padding-block: var(--space-2xl);
+  }
+
+  /* Top Bar */
+  .top-bar__info {
+    gap: var(--space-md);
+  }
+
+  .top-bar__item:not(:first-child) {
+    display: none;
+  }
+
+  /* Header */
+  .header .container {
+    height: 60px;
+  }
+
+  .header__logo img {
+    height: 36px;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 85%;
+    max-width: 360px;
+    height: 100vh;
+    background: var(--color-white);
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: var(--space-xl);
+    gap: 0;
+    z-index: var(--z-modal);
+    box-shadow: var(--shadow-xl);
+    overflow-y: auto;
+    transition: right var(--transition-slow);
+  }
+
+  .main-nav.open {
+    right: 0;
+  }
+
+  .main-nav__link {
+    padding: var(--space-md);
+    font-size: var(--fs-base);
+    border-bottom: 1px solid var(--color-border-light);
+    border-radius: 0;
+  }
+
+  .mega-menu {
+    position: static;
+    min-width: auto;
+    box-shadow: none;
+    border: none;
+    padding: 0 var(--space-md);
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    display: none;
+  }
+
+  .main-nav__item.open .mega-menu {
+    display: block;
+  }
+
+  .mega-menu__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xs);
+  }
+
+  /* Mobile Nav Overlay */
+  .mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: calc(var(--z-modal) - 1);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+  }
+
+  .mobile-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Footer */
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer__legal {
+    justify-content: center;
+  }
+
+  /* Product Grid */
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  /* Categories Grid */
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Trust Strip */
+  .trust-strip__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  /* Stats */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Why Choose Us */
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Search Overlay */
+  .search-overlay__inner {
+    margin: 20px;
+  }
+
+  /* Cookie Banner */
+  .cookie-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ---- Small Mobile: 480px ---- */
+@media (max-width: 480px) {
+  :root {
+    --fs-4xl: 1.875rem;
+    --fs-3xl: 1.5rem;
+    --container-padding: 1rem;
+  }
+
+  /* Product Grid */
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Categories */
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+  }
+
+  /* Trust Strip */
+  .trust-strip__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Stats */
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+  }
+
+  /* Features */
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hero */
+  .hero__title {
+    font-size: var(--fs-2xl);
+  }
+
+  .hero__subtitle {
+    font-size: var(--fs-base);
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  /* Buttons */
+  .btn--lg {
+    padding: 0.875rem 2rem;
+    font-size: var(--fs-base);
+  }
+
+  /* WhatsApp */
+  .whatsapp-float {
+    width: 52px;
+    height: 52px;
+    font-size: 24px;
+    bottom: 16px;
+    left: 16px;
+  }
+
+  .whatsapp-float__tooltip {
+    display: none;
+  }
+
+  /* Header Actions */
+  .header__login-btn span {
+    display: none;
+  }
+}
+
+/* ---- Large Desktop: 1200px+ ---- */
+@media (min-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

@@ -1,0 +1,336 @@
+/* ===========================================
+   Y Market - Catalog Page
+   Product filtering, search, cart
+   =========================================== */
+
+(function() {
+  'use strict';
+
+  let allProducts = [];
+  let categories = [];
+  let currentCategory = 'all';
+  let currentSearch = '';
+  let priceMin = 0;
+  let priceMax = Infinity;
+  let currentSort = 'name-asc';
+
+  // ---- Init ----
+  document.addEventListener('DOMContentLoaded', async () => {
+    await loadProducts();
+    setupEventListeners();
+    applyURLParams();
+    render();
+  });
+
+  // ---- Load Products ----
+  async function loadProducts() {
+    try {
+      const res = await fetch('data/products.json');
+      const data = await res.json();
+      allProducts = data.items || [];
+      categories = data.categories || [];
+      buildCategoryList();
+    } catch (e) {
+      console.warn('Could not load products.json, using sample data');
+      loadSampleData();
+      buildCategoryList();
+    }
+  }
+
+  // ---- Sample data for development ----
+  function loadSampleData() {
+    categories = [
+      { id: 1, name: 'בטיחות ומיגון אישי', slug: 'safety', icon: 'fa-hard-hat', itemCount: 12 },
+      { id: 2, name: 'כלי עבודה וציוד משקי', slug: 'tools', icon: 'fa-tools', itemCount: 15 },
+      { id: 3, name: 'שקיות ופתרונות אשפה', slug: 'trash', icon: 'fa-trash-alt', itemCount: 8 },
+      { id: 4, name: 'חומרי ניקוי וכימיקלים', slug: 'cleaning', icon: 'fa-spray-can', itemCount: 20 },
+      { id: 5, name: 'אריזות מזון ו-Take Away', slug: 'takeaway', icon: 'fa-box-open', itemCount: 18 },
+      { id: 6, name: 'טקסטיל, מטליות וסחבות', slug: 'textile', icon: 'fa-tshirt', itemCount: 10 },
+      { id: 7, name: 'חד פעמי ואירוח', slug: 'disposable', icon: 'fa-utensils', itemCount: 22 },
+      { id: 9, name: 'מוצרי נייר וניגוב', slug: 'paper', icon: 'fa-toilet-paper', itemCount: 25 },
+      { id: 10, name: 'קפה, שתייה וכיבוד', slug: 'coffee', icon: 'fa-coffee', itemCount: 14 },
+      { id: 11, name: 'ציוד משרדי וכללי', slug: 'office', icon: 'fa-pen', itemCount: 8 },
+      { id: 13, name: 'עזרה ראשונה - רפואי', slug: 'medical', icon: 'fa-first-aid', itemCount: 6 },
+      { id: 17, name: 'טואלטיקה וטיפוח', slug: 'toiletries', icon: 'fa-pump-soap', itemCount: 7 }
+    ];
+
+    // Sample products
+    const samples = [
+      { name: 'נייר טואלט הרקולס 48 גלילים', slug: 'toilet-paper-hercules-48', saleNis: 89.90, categorySlug: 'paper', unit: 'שק', unitsPerPack: 48 },
+      { name: 'מגבות נייר אוורסט 6 גלילים', slug: 'paper-towels-everest-6', saleNis: 45.00, categorySlug: 'paper', unit: 'חבילה', unitsPerPack: 6 },
+      { name: 'סבון ידיים נוזלי 5 ליטר', slug: 'hand-soap-5l', saleNis: 32.00, categorySlug: 'cleaning', unit: 'מיכל', unitsPerPack: 1 },
+      { name: 'נוזל כלים מרוכז 4 ליטר', slug: 'dish-soap-4l', saleNis: 28.00, categorySlug: 'cleaning', unit: 'מיכל', unitsPerPack: 1 },
+      { name: 'צלחות חד פעמיות 100 יח', slug: 'disposable-plates-100', saleNis: 19.90, categorySlug: 'disposable', unit: 'חבילה', unitsPerPack: 100 },
+      { name: 'כוסות פלסטיק 200 מ"ל 100 יח', slug: 'plastic-cups-200ml', saleNis: 15.00, categorySlug: 'disposable', unit: 'שרוול', unitsPerPack: 100 },
+      { name: 'מטליות מיקרופייבר 10 יח', slug: 'microfiber-cloths-10', saleNis: 35.00, categorySlug: 'textile', unit: 'חבילה', unitsPerPack: 10 },
+      { name: 'שקיות אשפה 75x90 שחור', slug: 'trash-bags-75x90', saleNis: 22.00, categorySlug: 'trash', unit: 'גליל', unitsPerPack: 25 },
+      { name: 'כפפות ניטריל M 100 יח', slug: 'nitrile-gloves-m-100', saleNis: 29.90, categorySlug: 'safety', unit: 'קופסה', unitsPerPack: 100 },
+      { name: 'קפה שחור טורקי 200 גר', slug: 'turkish-coffee-200g', saleNis: 18.00, categorySlug: 'coffee', unit: 'חבילה', unitsPerPack: 1 },
+      { name: 'קופסאות מזון Take Away 50 יח', slug: 'takeaway-boxes-50', saleNis: 42.00, categorySlug: 'takeaway', unit: 'חבילה', unitsPerPack: 50 },
+      { name: 'נייר תעשייתי 6 גלילים', slug: 'industrial-paper-6', saleNis: 65.00, categorySlug: 'paper', unit: 'שק', unitsPerPack: 6 },
+    ];
+
+    allProducts = samples.map((p, i) => ({
+      id: i + 1,
+      ...p,
+      categoryName: categories.find(c => c.slug === p.categorySlug)?.name || '',
+      imageUrl: `images/products/${i + 1}.jpg`,
+      isFeatured: i < 4,
+      productStatus: i === 0 ? 'recommended' : 'active'
+    }));
+  }
+
+  // ---- Build Category Sidebar ----
+  function buildCategoryList() {
+    const list = document.getElementById('categoryList');
+    if (!list) return;
+
+    const totalBtn = list.querySelector('[data-category="all"]');
+    if (totalBtn) {
+      const count = totalBtn.querySelector('.category-list__count');
+      if (count) count.textContent = allProducts.length;
+    }
+
+    categories.forEach(cat => {
+      const count = allProducts.filter(p => p.categorySlug === cat.slug).length;
+      const btn = document.createElement('button');
+      btn.className = 'category-list__item';
+      btn.dataset.category = cat.slug;
+      btn.innerHTML = `<span>${cat.name}</span><span class="category-list__count">${count}</span>`;
+      list.appendChild(btn);
+    });
+
+    document.getElementById('totalCount').textContent = allProducts.length;
+  }
+
+  // ---- Event Listeners ----
+  function setupEventListeners() {
+    // Category click
+    document.getElementById('categoryList')?.addEventListener('click', (e) => {
+      const btn = e.target.closest('.category-list__item');
+      if (!btn) return;
+      document.querySelectorAll('.category-list__item').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentCategory = btn.dataset.category;
+      updateTitle();
+      render();
+    });
+
+    // Search input
+    const searchInput = document.getElementById('searchInput');
+    let searchTimeout;
+    searchInput?.addEventListener('input', (e) => {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => {
+        currentSearch = e.target.value.trim();
+        render();
+      }, 300);
+    });
+
+    // Sort
+    document.getElementById('sortSelect')?.addEventListener('change', (e) => {
+      currentSort = e.target.value;
+      render();
+    });
+
+    // Price filter
+    document.getElementById('priceFilterBtn')?.addEventListener('click', () => {
+      priceMin = parseFloat(document.getElementById('priceMin').value) || 0;
+      priceMax = parseFloat(document.getElementById('priceMax').value) || Infinity;
+      render();
+    });
+
+    // Mobile filter toggle
+    document.getElementById('mobileFilterBtn')?.addEventListener('click', () => {
+      document.getElementById('catalogSidebar')?.classList.toggle('open');
+    });
+  }
+
+  // ---- URL Params ----
+  function applyURLParams() {
+    const params = new URLSearchParams(window.location.search);
+    const cat = params.get('cat');
+    const search = params.get('search');
+
+    if (cat) {
+      currentCategory = cat;
+      document.querySelectorAll('.category-list__item').forEach(b => {
+        b.classList.toggle('active', b.dataset.category === cat);
+      });
+      updateTitle();
+    }
+
+    if (search) {
+      currentSearch = search;
+      const searchInput = document.getElementById('searchInput');
+      if (searchInput) searchInput.value = search;
+    }
+  }
+
+  // ---- Update Title ----
+  function updateTitle() {
+    const titleEl = document.getElementById('catalogTitle');
+    if (!titleEl) return;
+    if (currentCategory === 'all') {
+      titleEl.textContent = 'כל המוצרים';
+    } else {
+      const cat = categories.find(c => c.slug === currentCategory);
+      titleEl.textContent = cat ? cat.name : 'מוצרים';
+    }
+  }
+
+  // ---- Filter & Sort ----
+  function getFilteredProducts() {
+    let filtered = allProducts;
+
+    // Category filter
+    if (currentCategory !== 'all') {
+      filtered = filtered.filter(p => p.categorySlug === currentCategory);
+    }
+
+    // Search
+    if (currentSearch) {
+      const q = currentSearch.toLowerCase();
+      filtered = filtered.filter(p =>
+        p.name.toLowerCase().includes(q) ||
+        (p.description || '').toLowerCase().includes(q) ||
+        (p.searchTags || '').toLowerCase().includes(q) ||
+        (p.partNumber || '').toLowerCase().includes(q)
+      );
+    }
+
+    // Price range
+    filtered = filtered.filter(p => {
+      const price = p.saleNis || 0;
+      return price >= priceMin && price <= priceMax;
+    });
+
+    // Sort
+    filtered.sort((a, b) => {
+      switch (currentSort) {
+        case 'name-asc': return (a.name || '').localeCompare(b.name || '', 'he');
+        case 'name-desc': return (b.name || '').localeCompare(a.name || '', 'he');
+        case 'price-asc': return (a.saleNis || 0) - (b.saleNis || 0);
+        case 'price-desc': return (b.saleNis || 0) - (a.saleNis || 0);
+        default: return 0;
+      }
+    });
+
+    return filtered;
+  }
+
+  // ---- Render Products ----
+  function render() {
+    const grid = document.getElementById('productsGrid');
+    const noResults = document.getElementById('noResults');
+    const countEl = document.getElementById('resultCount');
+    if (!grid) return;
+
+    const products = getFilteredProducts();
+    countEl.textContent = products.length;
+
+    if (products.length === 0) {
+      grid.innerHTML = '';
+      noResults.style.display = 'block';
+      return;
+    }
+
+    noResults.style.display = 'none';
+    grid.innerHTML = products.map(p => renderProductCard(p)).join('');
+
+    // Attach add-to-cart events
+    grid.querySelectorAll('.product-card__add-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const id = parseInt(btn.dataset.id);
+        addToCart(id);
+        btn.classList.add('added');
+        btn.innerHTML = '<i class="fas fa-check"></i> נוסף';
+        setTimeout(() => {
+          btn.classList.remove('added');
+          btn.innerHTML = '<i class="fas fa-cart-plus"></i> הוסף לעגלה';
+        }, 1500);
+      });
+    });
+  }
+
+  // ---- Product Card HTML ----
+  function renderProductCard(p) {
+    const price = p.saleNis ? formatPrice(p.saleNis) : '';
+    const perUnit = p.saleNis && p.unitsPerPack > 1
+      ? `${formatPrice(p.saleNis / p.unitsPerPack)} ליחידה`
+      : '';
+
+    let badgeHtml = '';
+    if (p.productStatus === 'recommended') {
+      badgeHtml = '<span class="product-card__badge product-card__badge--recommended">מומלץ</span>';
+    } else if (p.productStatus === 'new') {
+      badgeHtml = '<span class="product-card__badge product-card__badge--new">חדש</span>';
+    } else if (p.productStatus === 'sale') {
+      badgeHtml = '<span class="product-card__badge product-card__badge--sale">מבצע</span>';
+    }
+
+    const productUrl = p.slug ? `products/${p.slug}.html` : '#';
+    const imgSrc = p.imageUrl || 'images/products/placeholder.jpg';
+
+    return `
+      <div class="product-card">
+        <div class="product-card__image">
+          <a href="${productUrl}">
+            <img src="${imgSrc}" alt="${p.name}" loading="lazy"
+                 onerror="this.src='https://placehold.co/300x300/f0f2f5/5a6577?text=${encodeURIComponent(p.name?.substring(0,15) || 'מוצר')}'">
+          </a>
+          ${badgeHtml}
+        </div>
+        <div class="product-card__body">
+          <div class="product-card__category">${p.categoryName || ''}</div>
+          <h3 class="product-card__name"><a href="${productUrl}">${p.name}</a></h3>
+          ${p.unit ? `<div class="product-card__pack">${p.unitsPerPack || ''} ${p.unit || ''}</div>` : ''}
+          <div class="product-card__pricing">
+            ${price ? `<div class="product-card__price">${price}</div>` : '<div class="product-card__price" style="color:var(--color-text-light)">צרו קשר למחיר</div>'}
+            ${perUnit ? `<div class="product-card__price-unit">${perUnit}</div>` : ''}
+          </div>
+          <div class="product-card__actions">
+            ${price ? `<button class="product-card__add-btn" data-id="${p.id}"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>` : `<a href="https://wa.me/972549922492?text=היי, מתעניין ב${encodeURIComponent(p.name)}" class="product-card__add-btn" target="_blank"><i class="fab fa-whatsapp"></i> בקשו הצעת מחיר</a>`}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  // ---- Cart ----
+  function addToCart(productId) {
+    const product = allProducts.find(p => p.id === productId);
+    if (!product) return;
+
+    const cart = JSON.parse(localStorage.getItem('ym_cart') || '[]');
+    const existing = cart.find(item => item.id === productId);
+
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      cart.push({
+        id: product.id,
+        name: product.name,
+        price: product.saleNis,
+        unit: product.unit,
+        imageUrl: product.imageUrl,
+        slug: product.slug,
+        quantity: 1
+      });
+    }
+
+    localStorage.setItem('ym_cart', JSON.stringify(cart));
+    window.YMarket?.updateCartBadge();
+    window.YMarket?.showToast('המוצר נוסף לעגלה');
+  }
+
+  // ---- Format Price ----
+  function formatPrice(price) {
+    return new Intl.NumberFormat('he-IL', {
+      style: 'currency', currency: 'ILS',
+      minimumFractionDigits: 0, maximumFractionDigits: 2
+    }).format(price);
+  }
+
+})();

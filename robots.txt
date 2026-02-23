@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ymarket.co.il/sitemap.xml
+
+# Block admin/build files
+Disallow: /build/
