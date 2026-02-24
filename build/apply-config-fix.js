@@ -132,7 +132,7 @@ log.push('✓ index.html');
 // ==================
 // 2. ALL OTHER PAGES
 // ==================
-const allFiles = ['about.html', 'contact.html', 'catalog.html', 'faq.html', 'blog.html', 'login.html', 'register.html', 'cart.html', 'tracking.html'];
+const allFiles = ['about.html', 'contact.html', 'catalog.html', 'faq.html', 'blog.html', 'login.html', 'register.html', 'cart.html', 'tracking.html', 'checkout.html', 'order-success.html'];
 for (const file of allFiles) {
   const fp = path.join(WEBSITE_DIR, file);
   if (!fs.existsSync(fp)) continue;
