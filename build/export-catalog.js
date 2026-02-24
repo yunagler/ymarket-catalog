@@ -93,6 +93,18 @@ async function main() {
 
   const data = await exportFromCRM();
 
+  // Safety: never overwrite real data with fallback sample data
+  if (data.items.length <= 20) {
+    const existingSize = fs.existsSync(OUTPUT_FILE) ? fs.statSync(OUTPUT_FILE).size : 0;
+    if (existingSize > 50000) {
+      console.error(`ABORT: CRM returned only ${data.items.length} items (fallback data).`);
+      console.error(`Existing products.json has ${existingSize} bytes of real data.`);
+      console.error('Will NOT overwrite real catalog with sample data.');
+      console.error('Make sure the CRM server is running at ' + CRM_API_URL);
+      process.exit(1);
+    }
+  }
+
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(data, null, 2), 'utf-8');
   console.log(`Catalog exported to ${OUTPUT_FILE}`);
   console.log(`Categories: ${data.categories.length}`);
