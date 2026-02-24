@@ -1,14 +1,12 @@
 #!/usr/bin/env node
 /**
- * Export product catalog from CRM database to static JSON
- * Generates data/products.json for the frontend
+ * Export product catalog from CRM API to static JSON
+ * Generates data/products.json for the frontend website
  *
  * Usage: node build/export-catalog.js
  *
- * This script connects to the CRM database (Prisma) and exports
- * products with their categories for the static website.
- *
- * If CRM is not available, generates sample data for development.
+ * Connects to the CRM public API endpoint. If CRM is unavailable,
+ * falls back to sample data for development.
  */
 
 const fs = require('fs');
@@ -16,72 +14,28 @@ const path = require('path');
 
 const OUTPUT_DIR = path.join(__dirname, '..', 'data');
 const OUTPUT_FILE = path.join(OUTPUT_DIR, 'products.json');
-
-// Category mapping (from CRM groups to website slugs)
-const CATEGORY_MAP = {
-  'בטיחות ומיגון אישי': { slug: 'safety', icon: 'fa-hard-hat' },
-  'כלי עבודה וציוד משקי': { slug: 'tools', icon: 'fa-tools' },
-  'שקיות ופתרונות אשפה': { slug: 'trash', icon: 'fa-trash-alt' },
-  'חומרי ניקוי וכימיקלים': { slug: 'cleaning', icon: 'fa-spray-can' },
-  'אריזות מזון ו-Take Away': { slug: 'takeaway', icon: 'fa-box-open' },
-  'טקסטיל, מטליות וסחבות': { slug: 'textile', icon: 'fa-tshirt' },
-  'חד פעמי ואירוח': { slug: 'disposable', icon: 'fa-utensils' },
-  'מוצרי נייר וניגוב': { slug: 'paper', icon: 'fa-toilet-paper' },
-  'קפה, שתייה וכיבוד': { slug: 'coffee', icon: 'fa-coffee' },
-  'ציוד משרדי וכללי': { slug: 'office', icon: 'fa-pen' },
-  'עזרה ראשונה - רפואי': { slug: 'medical', icon: 'fa-first-aid' },
-  'טואלטיקה וטיפוח': { slug: 'toiletries', icon: 'fa-pump-soap' }
-};
+const CRM_API_URL = process.env.CRM_API_URL || 'http://localhost:3000';
+const PUBLIC_CATALOG_ENDPOINT = `${CRM_API_URL}/api/public/catalog`;
 
 async function exportFromCRM() {
-  // Try to connect to CRM database
   try {
-    const { PrismaClient } = require('@prisma/client');
-    const prisma = new PrismaClient();
+    console.log(`Fetching catalog from ${PUBLIC_CATALOG_ENDPOINT}...`);
+    const response = await fetch(PUBLIC_CATALOG_ENDPOINT, { signal: AbortSignal.timeout(15000) });
 
-    console.log('Connected to CRM database...');
+    if (!response.ok) {
+      throw new Error(`API returned ${response.status}: ${response.statusText}`);
+    }
 
-    // Fetch products
-    const items = await prisma.item.findMany({
-      where: { isActive: true },
-      include: { group: true }
-    });
+    const data = await response.json();
+    console.log(`Received ${data.items?.length || 0} items, ${data.categories?.length || 0} categories`);
 
-    // Fetch categories
-    const groups = await prisma.itemGroup.findMany({
-      where: { isActive: true }
-    });
-
-    const categories = groups.map((g, i) => ({
-      id: g.id,
-      name: g.name,
-      slug: CATEGORY_MAP[g.name]?.slug || g.name.toLowerCase().replace(/\s+/g, '-'),
-      icon: CATEGORY_MAP[g.name]?.icon || 'fa-box',
-      itemCount: items.filter(item => item.groupId === g.id).length
-    }));
-
-    const products = items.map(item => ({
-      id: item.id,
-      name: item.name,
-      slug: item.slug || item.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, ''),
-      description: item.description || '',
-      saleNis: item.salePrice || item.price || 0,
-      categorySlug: CATEGORY_MAP[item.group?.name]?.slug || 'other',
-      categoryName: item.group?.name || '',
-      unit: item.unit || '',
-      unitsPerPack: item.unitsPerPack || 1,
-      partNumber: item.partNumber || item.catalogNumber || '',
-      imageUrl: `images/products/${item.id}.jpg`,
-      searchTags: item.searchTags || '',
-      isFeatured: item.isFeatured || false,
-      productStatus: item.status || 'active'
-    }));
-
-    await prisma.$disconnect();
-    return { categories, items: products };
-
-  } catch (e) {
-    console.log('CRM not available, generating sample data...');
+    return {
+      categories: data.categories,
+      items: data.items,
+    };
+  } catch (error) {
+    console.error(`CRM API error: ${error.message}`);
+    console.log('Falling back to sample data...');
     return generateSampleData();
   }
 }
@@ -133,7 +87,6 @@ function generateSampleData() {
 }
 
 async function main() {
-  // Ensure output directory exists
   if (!fs.existsSync(OUTPUT_DIR)) {
     fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   }
