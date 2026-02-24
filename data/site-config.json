@@ -1,0 +1,91 @@
+{
+  "business": {
+    "name": "וואי מרקט",
+    "nameEn": "Y Market",
+    "tagline": "אספקה חכמה ומדויקת למוסדות",
+    "description": "סחר, שיווק והפצה של מוצרי צריכה שוטפת לעסקים ומוסדות",
+    "phone": "03-7740400",
+    "email": "Pm@ymarket.co.il",
+    "whatsapp": "972549922492",
+    "hours": "א'-ה' 08:00-17:00",
+    "address": "",
+    "city": "גת רימון",
+    "foundingYear": "2020"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/profile.php?id=100083110428101",
+    "instagram": "https://www.instagram.com/ymarket.ai",
+    "whatsappLink": "https://wa.me/972549922492"
+  },
+  "seo": {
+    "homeTitle": "וואי מרקט | אספקה חכמה ומדויקת למוסדות ועסקים",
+    "homeDescription": "וואי מרקט - סחר, שיווק והפצה של מוצרי צריכה שוטפת לעסקים ומוסדות. מוצרי ניקיון, נייר, חד פעמי, ציוד משרדי ועוד. משלוח ארצי, מחירי סיטונאות.",
+    "homeKeywords": "מוצרי ניקיון למוסדות, חד פעמי לעסקים, נייר תעשייתי, אספקה לעסקים, מוצרי צריכה שוטפת, ספק מוסדי",
+    "ogImage": ""
+  },
+  "stats": {
+    "activeCustomers": "214",
+    "productsInCatalog": "180",
+    "yearsExperience": "5",
+    "deliveriesPerYear": "1000",
+    "satisfactionRate": "98",
+    "deliveryHours": "72"
+  },
+  "hero": {
+    "title": "אספקה חכמה ומדויקת למוסדות ועסקים",
+    "subtitle": "מוצרי ניקיון, נייר, חד פעמי, מזון וציוד משרדי — הכל ממקום אחד, במחירי סיטונאות, עם משלוח עד הדלת.",
+    "ctaPrimary": "צפו בקטלוג",
+    "ctaPrimaryLink": "catalog.html",
+    "ctaSecondary": "דברו איתנו",
+    "ctaSecondaryLink": "https://wa.me/972549922492?text=שלום, אשמח לקבל הצעת מחיר"
+  },
+  "cta": {
+    "title": "מוכנים להזמין?",
+    "subtitle": "צרו קשר עכשיו וקבלו הצעת מחיר מותאמת לעסק שלכם.",
+    "minOrder": "500 ש\"ח פלוס מע\"מ"
+  },
+  "features": [
+    {
+      "icon": "fa-check-double",
+      "title": "מותאם למוסדות",
+      "text": "כל המוצרים נבחרו במיוחד לצרכים של עסקים ומוסדות — בכמויות גדולות, באיכות מקצועית"
+    },
+    {
+      "icon": "fa-hand-holding-dollar",
+      "title": "מחירים הוגנים",
+      "text": "עובדים ישירות עם היצרנים והיבואנים הגדולים ומעבירים את החיסכון אליכם"
+    },
+    {
+      "icon": "fa-bolt",
+      "title": "אספקה מהירה",
+      "text": "משלוח תוך 24-48 שעות לכל הארץ. נגמר משהו? מחר זה אצלכם"
+    },
+    {
+      "icon": "fa-user-tie",
+      "title": "שירות אישי",
+      "text": "יובל נגלר, בעל העסק, זמין תמיד לייעוץ ומענה מהיר. לא מוקד — אדם שמבין עסקים"
+    }
+  ],
+  "trustStrip": [
+    {
+      "icon": "fa-truck-fast",
+      "title": "משלוח ארצי",
+      "subtitle": "אספקה תוך 24-72 שעות"
+    },
+    {
+      "icon": "fa-tags",
+      "title": "מחירי סיטונאות",
+      "subtitle": "ישירות מהיצרנים"
+    },
+    {
+      "icon": "fa-headset",
+      "title": "שירות אישי",
+      "subtitle": "מענה מהיר, אדם אמיתי"
+    },
+    {
+      "icon": "fa-rotate",
+      "title": "הזמנה חוזרת",
+      "subtitle": "אספקה שוטפת בקליק"
+    }
+  ]
+}
