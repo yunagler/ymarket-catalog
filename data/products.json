@@ -54,7 +54,7 @@
       "name": "עטיפה, אריזה ולוגיסטיקה",
       "slug": "עטיפה-אריזה-ולוגיסטיקה",
       "icon": "fa-box",
-      "itemCount": 37
+      "itemCount": 38
     },
     {
       "id": 9,
@@ -139,6 +139,48 @@
       "partNumber": "",
       "searchTags": "",
       "alternatives": []
+    },
+    {
+      "id": 152,
+      "name": " סרט אריזה אוניברסלי (שקוף) - אקרילי 60 מטר ",
+      "slug": "7290101826019",
+      "saleNis": 5.2,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
+      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "unit": "",
+      "unitsPerPack": 6,
+      "imageUrl": "/items/168.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "7290101826019",
+      "searchTags": "",
+      "alternatives": [
+        {
+          "id": 178,
+          "name": "סרט אריזה דגם 132 - הדבקה חזקה במיוחד - שקוף",
+          "saleNis": 6,
+          "imageUrl": "/items/194.jpg",
+          "slug": "7290101826064"
+        },
+        {
+          "id": 424,
+          "name": "מסקנטייפ 2.6 סמ רוחב 25 מטר",
+          "saleNis": 3,
+          "imageUrl": "/items/440.jpg",
+          "slug": "item-424"
+        },
+        {
+          "id": 604,
+          "name": "מסקנטייפ 4.8 סמ רוחב 25 מטר",
+          "saleNis": 5,
+          "imageUrl": "/items/620.jpg",
+          "slug": "item-604"
+        }
+      ]
     },
     {
       "id": 166,
