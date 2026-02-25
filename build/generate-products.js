@@ -264,8 +264,14 @@ function main() {
     return;
   }
 
-  // Create products directory
-  if (!fs.existsSync(PRODUCTS_DIR)) {
+  // Clean products directory — remove old HTML files that may belong to hidden/removed items
+  if (fs.existsSync(PRODUCTS_DIR)) {
+    const oldFiles = fs.readdirSync(PRODUCTS_DIR).filter(f => f.endsWith('.html'));
+    for (const f of oldFiles) {
+      fs.unlinkSync(path.join(PRODUCTS_DIR, f));
+    }
+    console.log(`Cleaned ${oldFiles.length} old product pages`);
+  } else {
     fs.mkdirSync(PRODUCTS_DIR, { recursive: true });
   }
 
