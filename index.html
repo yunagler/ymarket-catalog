@@ -262,6 +262,25 @@
     </div>
   </section>
 
+  <!-- Featured Products Carousel -->
+  <section class="section featured-products" id="featuredProducts" style="display:none;">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title">מוצרים מומלצים</h2>
+        <p class="section-subtitle">המוצרים הנבחרים שלנו — באיכות ובמחיר הטובים ביותר</p>
+      </div>
+      <div class="swiper featured-swiper">
+        <div class="swiper-wrapper" id="featuredWrapper">
+          <!-- Populated by JS from products.json -->
+        </div>
+        <div class="swiper-pagination featured-pagination"></div>
+      </div>
+      <div class="text-center" style="margin-top: var(--space-lg);">
+        <a href="catalog.html" class="btn btn--secondary">לכל המוצרים <i class="fas fa-arrow-left"></i></a>
+      </div>
+    </div>
+  </section>
+
   <!-- Categories Section -->
   <section class="section">
     <div class="container">
@@ -483,6 +502,7 @@
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/featured-carousel.js"></script>
   <script src="js/analytics.js"></script>
 </body>
 </html>
