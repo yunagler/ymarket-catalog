@@ -28,6 +28,8 @@ function generateProductPage(product, categories, allProducts) {
   const perUnit = product.saleNis && product.unitsPerPack > 1
     ? `${formatPrice(product.saleNis / product.unitsPerPack)} ליחידה`
     : '';
+  const hasPromo = product.productStatus === 'on_sale' && product.originalPrice;
+  const promoLabel = product.promotionLabel || 'מבצע';
   const categoryName = product.categoryName || '';
   const imgSrc = product.imageUrl || `../images/products/${product.id}.jpg`;
   const productUrl = `${SITE_URL}/products/${product.slug}.html`;
@@ -145,7 +147,9 @@ function generateProductPage(product, categories, allProducts) {
 
           <div class="product-pricing">
             ${price
-              ? `<div class="product-pricing__price">${price}</div>${perUnit ? `<div class="product-pricing__unit">${perUnit}</div>` : ''}`
+              ? hasPromo
+                ? `<div class="product-pricing__badge">${promoLabel}</div><div class="product-pricing__price" style="color:#dc2626">${price}</div><div class="product-pricing__original" style="text-decoration:line-through;color:#9ca3af;font-size:var(--fs-base)">${formatPrice(product.originalPrice)}</div>${product.discountPercent ? `<div class="product-pricing__discount" style="background:#fef2f2;color:#dc2626;display:inline-block;padding:2px 8px;border-radius:6px;font-size:var(--fs-sm);font-weight:600">${Math.round(product.discountPercent)}%- הנחה</div>` : ''}${perUnit ? `<div class="product-pricing__unit">${perUnit}</div>` : ''}`
+                : `<div class="product-pricing__price">${price}</div>${perUnit ? `<div class="product-pricing__unit">${perUnit}</div>` : ''}`
               : '<div class="product-pricing__price" style="font-size: var(--fs-lg);">צרו קשר למחיר</div>'
             }
           </div>

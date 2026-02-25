@@ -238,18 +238,34 @@
     noResults.style.display = 'none';
     grid.innerHTML = products.map(p => renderProductCard(p)).join('');
 
+    // Attach quantity +/- events
+    grid.querySelectorAll('.product-card__qty-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.dataset.id;
+        const input = document.getElementById('qty-' + id);
+        if (!input) return;
+        let val = parseInt(input.value) || 1;
+        if (btn.dataset.action === 'increase') val++;
+        else if (val > 1) val--;
+        input.value = val;
+      });
+    });
+
     // Attach add-to-cart events
     grid.querySelectorAll('.product-card__add-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
         const id = parseInt(btn.dataset.id);
-        addToCart(id);
+        const input = document.getElementById('qty-' + id);
+        const qty = input ? Math.max(1, parseInt(input.value) || 1) : 1;
+        addToCart(id, qty);
         btn.classList.add('added');
         btn.innerHTML = '<i class="fas fa-check"></i> נוסף';
         setTimeout(() => {
           btn.classList.remove('added');
-          btn.innerHTML = '<i class="fas fa-cart-plus"></i> הוסף לעגלה';
+          btn.innerHTML = '<i class="fas fa-cart-plus"></i> הוסף';
         }, 1500);
+        if (input) input.value = '1';
       });
     });
   }
@@ -261,13 +277,37 @@
       ? `${formatPrice(p.saleNis / p.unitsPerPack)} ליחידה`
       : '';
 
+    // Promotion support
+    const hasPromo = p.productStatus === 'on_sale' && p.originalPrice;
+    const promoLabel = p.promotionLabel || 'מבצע';
+    const discountText = p.discountPercent ? `${Math.round(p.discountPercent)}%-` : '';
+
     let badgeHtml = '';
-    if (p.productStatus === 'recommended') {
+    if (hasPromo) {
+      badgeHtml = `<span class="product-card__badge product-card__badge--sale">${discountText || promoLabel}</span>`;
+    } else if (p.productStatus === 'on_sale') {
+      badgeHtml = '<span class="product-card__badge product-card__badge--sale">מבצע</span>';
+    } else if (p.productStatus === 'recommended') {
       badgeHtml = '<span class="product-card__badge product-card__badge--recommended">מומלץ</span>';
     } else if (p.productStatus === 'new') {
       badgeHtml = '<span class="product-card__badge product-card__badge--new">חדש</span>';
-    } else if (p.productStatus === 'sale') {
-      badgeHtml = '<span class="product-card__badge product-card__badge--sale">מבצע</span>';
+    } else if (p.productStatus === 'clearance') {
+      badgeHtml = '<span class="product-card__badge product-card__badge--sale">חיסול</span>';
+    }
+
+    // Price display with strikethrough for promotions
+    let priceHtml = '';
+    if (price) {
+      if (hasPromo) {
+        priceHtml = `
+          <div class="product-card__price product-card__price--sale">${price}</div>
+          <div class="product-card__price-original">${formatPrice(p.originalPrice)}</div>
+        `;
+      } else {
+        priceHtml = `<div class="product-card__price">${price}</div>`;
+      }
+    } else {
+      priceHtml = '<div class="product-card__price" style="color:var(--color-text-light)">צרו קשר למחיר</div>';
     }
 
     const productUrl = p.slug ? `products/${p.slug}.html` : '#';
@@ -287,11 +327,20 @@
           <h3 class="product-card__name"><a href="${productUrl}">${p.name}</a></h3>
           ${p.unit ? `<div class="product-card__pack">${p.unitsPerPack || ''} ${p.unit || ''}</div>` : ''}
           <div class="product-card__pricing">
-            ${price ? `<div class="product-card__price">${price}</div>` : '<div class="product-card__price" style="color:var(--color-text-light)">צרו קשר למחיר</div>'}
+            ${priceHtml}
             ${perUnit ? `<div class="product-card__price-unit">${perUnit}</div>` : ''}
           </div>
           <div class="product-card__actions">
-            ${price ? `<button class="product-card__add-btn" data-id="${p.id}"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>` : `<a href="https://wa.me/972549922492?text=היי, מתעניין ב${encodeURIComponent(p.name)}" class="product-card__add-btn" target="_blank"><i class="fab fa-whatsapp"></i> בקשו הצעת מחיר</a>`}
+            ${price ? `
+              <div class="product-card__qty-row">
+                <div class="product-card__qty-selector">
+                  <button class="product-card__qty-btn" data-action="decrease" data-id="${p.id}">-</button>
+                  <input type="number" class="product-card__qty-input" id="qty-${p.id}" value="1" min="1" max="999">
+                  <button class="product-card__qty-btn" data-action="increase" data-id="${p.id}">+</button>
+                </div>
+                <button class="product-card__add-btn" data-id="${p.id}"><i class="fas fa-cart-plus"></i> הוסף</button>
+              </div>
+            ` : `<a href="https://wa.me/972549922492?text=היי, מתעניין ב${encodeURIComponent(p.name)}" class="product-card__add-btn" target="_blank"><i class="fab fa-whatsapp"></i> בקשו הצעת מחיר</a>`}
           </div>
         </div>
       </div>
@@ -299,7 +348,8 @@
   }
 
   // ---- Cart ----
-  function addToCart(productId) {
+  function addToCart(productId, qty) {
+    var quantity = qty || 1;
     const product = allProducts.find(p => p.id === productId);
     if (!product) return;
 
@@ -307,7 +357,7 @@
     const existing = cart.find(item => item.id === productId);
 
     if (existing) {
-      existing.quantity += 1;
+      existing.quantity += quantity;
     } else {
       cart.push({
         id: product.id,
@@ -316,7 +366,7 @@
         unit: product.unit,
         imageUrl: product.imageUrl,
         slug: product.slug,
-        quantity: 1
+        quantity: quantity
       });
     }
 
