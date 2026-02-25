@@ -44,8 +44,13 @@
     if (window.YMarket) window.YMarket.showToast('המוצר נוסף לעגלה');
   }
 
+  function escHtml(str) {
+    return (str || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
   function buildSlide(product) {
     var imgSrc = product.imageUrl || 'images/products/' + product.id + '.jpg';
+    var safeName = escHtml(product.name || '');
     var fallback = 'https://placehold.co/300x300/f0f2f5/5a6577?text=' + encodeURIComponent((product.name || '').substring(0, 15));
     var hasPromo = product.productStatus === 'on_sale' && product.originalPrice;
     var promoLabel = product.promotionLabel || 'מבצע';
@@ -74,11 +79,11 @@
     slide.innerHTML =
       '<div class="featured-slide">' +
         '<a href="products/' + product.slug + '.html" class="featured-slide__image">' +
-          '<img src="' + imgSrc + '" alt="' + (product.name || '') + '" loading="lazy" onerror="this.src=\'' + fallback + '\'">' +
+          '<img src="' + imgSrc + '" alt="' + safeName + '" loading="lazy" onerror="this.src=\'' + fallback + '\'">' +
         '</a>' +
         '<div class="featured-slide__body">' +
-          '<div class="featured-slide__category">' + (product.categoryName || '') + '</div>' +
-          '<h3 class="featured-slide__name"><a href="products/' + product.slug + '.html">' + (product.name || '') + '</a></h3>' +
+          '<div class="featured-slide__category">' + escHtml(product.categoryName || '') + '</div>' +
+          '<h3 class="featured-slide__name"><a href="products/' + product.slug + '.html">' + safeName + '</a></h3>' +
           priceHtml +
           (product.saleNis
             ? '<button class="featured-slide__btn" data-id="' + product.id + '"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>'
