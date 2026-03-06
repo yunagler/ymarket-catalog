@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initStickyHeader();
   initScrollAnimations();
+  animateCounters();
   initCookieConsent();
   initAccordions();
   initSearchOverlay();
@@ -90,9 +91,6 @@ function initScrollAnimations() {
   }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
   els.forEach(el => observer.observe(el));
-
-  // Counter animation - run immediately on page load
-  animateCounters();
 }
 
 /* ---- Counter Animation ---- */
