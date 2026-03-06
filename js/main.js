@@ -91,17 +91,8 @@ function initScrollAnimations() {
 
   els.forEach(el => observer.observe(el));
 
-  // Counter animation for stats
-  const statsSection = document.querySelector('.stats-section');
-  if (statsSection) {
-    const statsObserver = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        animateCounters();
-        statsObserver.disconnect();
-      }
-    }, { threshold: 0.3 });
-    statsObserver.observe(statsSection);
-  }
+  // Counter animation - run immediately on page load
+  animateCounters();
 }
 
 /* ---- Counter Animation ---- */
