@@ -106,7 +106,7 @@
   <script src="js/analytics.js"></script>
   <script>
   (function() {
-    const PORTAL_URL = 'https://lindy-oxidic-aidan.ngrok-free.dev';
+    const PORTAL_URL = 'https://app.ymarket.co.il';
     const form = document.getElementById('loginForm');
     const errorEl = document.getElementById('loginError');
     const submitBtn = document.getElementById('loginBtn');
@@ -132,7 +132,6 @@
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'ngrok-skip-browser-warning': 'true',
           },
           body: JSON.stringify({ username, password }),
         });
