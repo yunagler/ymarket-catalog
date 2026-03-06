@@ -150,7 +150,7 @@
     const form = document.getElementById('registerForm');
     const errorEl = document.getElementById('registerError');
     const submitBtn = document.getElementById('registerBtn');
-    const API_URL = 'https://consecutive-suse-multiple-francis.trycloudflare.com/api/portal/auth/register';
+    const API_URL = 'https://lindy-oxidic-aidan.ngrok-free.dev/api/portal/auth/register';
 
     // Password toggle
     const toggleBtn = document.getElementById('togglePassword');
@@ -195,7 +195,10 @@
       try {
         const res = await fetch(API_URL, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Content-Type': 'application/json',
+            'ngrok-skip-browser-warning': 'true',
+          },
           body: JSON.stringify({
             businessName,
             vatNumber,
