@@ -147,8 +147,19 @@
           return;
         }
 
-        // Redirect to portal with token - sets cookie server-side
-        window.location.href = PORTAL_URL + '/api/portal/auth/token?t=' + encodeURIComponent(data.token);
+        // Show success + portal entry button
+        const portalLink = PORTAL_URL + '/api/portal/auth/token?t=' + encodeURIComponent(data.token);
+        const card = document.querySelector('.auth-card');
+        card.innerHTML = `
+          <div style="text-align: center; padding: var(--space-xl) 0;">
+            <div style="font-size: 48px; color: var(--color-success); margin-bottom: var(--space-md);"><i class="fas fa-check-circle"></i></div>
+            <h2 style="margin-bottom: var(--space-sm);">התחברת בהצלחה!</h2>
+            <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">שלום, ${data.customer?.name || 'לקוח יקר'}</p>
+            <a href="${portalLink}" class="btn btn--primary btn--lg" style="display: inline-flex; align-items: center; gap: 8px;">
+              <i class="fas fa-store"></i> כניסה לפורטל ההזמנות
+            </a>
+          </div>
+        `;
       } catch (err) {
         errorEl.textContent = 'שגיאת תקשורת. ודאו שהפורטל פעיל ונסו שוב.';
         errorEl.style.display = 'block';
