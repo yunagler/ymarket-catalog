@@ -3,17 +3,239 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>הרשמה לפורטל | וואי מרקט</title>
-  <meta name="description" content="הרשמת עסק חדש לפורטל ההזמנות של וואי מרקט.">
-  <script>
-    window.location.href = 'https://lindy-oxidic-aidan.ngrok-free.dev/portal/register';
-  </script>
+  <title>הרשמה | וואי מרקט</title>
+  <meta name="description" content="הרשמת עסק חדש לפורטל ההזמנות של וואי מרקט - אספקת מוצרי צריכה שוטפת לעסקים.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages/legal.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-  <p style="text-align:center; margin-top:40px; font-family:sans-serif;">
-    מעביר לדף ההרשמה...
-    <br><br>
-    <a href="https://lindy-oxidic-aidan.ngrok-free.dev/portal/register">לחצו כאן אם הדף לא עובר אוטומטית</a>
-  </p>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar__info">
+        <div class="top-bar__item"><i class="fas fa-phone-alt"></i> <a href="tel:037740400">03-7740400</a></div>
+        <div class="top-bar__item"><i class="fas fa-envelope"></i> <a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a></div>
+        <div class="top-bar__item"><i class="fas fa-clock"></i> <span>א'-ה' 08:00-17:00</span></div>
+      </div>
+      <div class="top-bar__social">
+        <a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="header__logo">
+        <img src="images/logo/logo-hebrew-dark.png" alt="וואי מרקט" width="180" height="48">
+      </a>
+      <nav class="main-nav" aria-label="ניווט ראשי">
+        <div class="main-nav__item"><a href="index.html" class="main-nav__link">דף הבית</a></div>
+        <div class="main-nav__item"><a href="catalog.html" class="main-nav__link">מוצרים</a></div>
+        <div class="main-nav__item"><a href="about.html" class="main-nav__link">אודות</a></div>
+        <div class="main-nav__item"><a href="blog.html" class="main-nav__link">בלוג</a></div>
+        <div class="main-nav__item"><a href="contact.html" class="main-nav__link">צרו קשר</a></div>
+      </nav>
+      <div class="header__actions">
+        <button class="header__search-toggle" aria-label="חיפוש"><i class="fas fa-search"></i></button>
+        <button class="header__cart-btn" aria-label="עגלת קניות"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></button>
+      </div>
+      <button class="mobile-menu-btn" aria-label="תפריט" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+  <div class="mobile-overlay"></div>
+
+  <!-- Register Form -->
+  <div class="container">
+    <div class="auth-page">
+      <div class="auth-card">
+        <div class="auth-card__logo">
+          <img src="images/logo/logo-hebrew-dark.png" alt="וואי מרקט" height="48">
+        </div>
+        <h1>הרשמת עסק חדש</h1>
+
+        <form id="registerForm">
+          <div class="form-group">
+            <label class="form-label" for="reg-business">שם העסק *</label>
+            <input type="text" class="form-input" id="reg-business" name="businessName" placeholder="שם החברה / העסק" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reg-id">מספר ע.מ / ח.פ *</label>
+            <input type="text" class="form-input" id="reg-id" name="vatNumber" placeholder="מספר עוסק מורשה או חברה פרטית" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reg-contact">שם איש קשר *</label>
+            <input type="text" class="form-input" id="reg-contact" name="contactName" placeholder="שם מלא" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reg-phone">טלפון *</label>
+            <input type="tel" class="form-input" id="reg-phone" name="phone" placeholder="050-1234567" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reg-email">מייל</label>
+            <input type="email" class="form-input" id="reg-email" name="email" placeholder="email@example.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reg-city">עיר</label>
+            <input type="text" class="form-input" id="reg-city" name="city" placeholder="עיר / ישוב">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reg-type">סוג העסק</label>
+            <select class="form-select" id="reg-type" name="businessType">
+              <option value="">בחרו סוג</option>
+              <option value="cleaning">חברת ניקיון</option>
+              <option value="restaurant">מסעדה / בית קפה</option>
+              <option value="supermarket">סופרמרקט / מכולת</option>
+              <option value="distributor">מפיץ / סיטונאי</option>
+              <option value="office">משרד / חברת הייטק</option>
+              <option value="medical">מוסד רפואי</option>
+              <option value="education">מוסד חינוכי</option>
+              <option value="sports">מרכז ספורט</option>
+              <option value="industrial">מפעל / תעשייה</option>
+              <option value="government">גוף ממשלתי / רשות</option>
+              <option value="other">אחר</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reg-password">סיסמה לפורטל *</label>
+            <div style="position: relative;">
+              <input type="password" class="form-input" id="reg-password" name="password" placeholder="לפחות 4 תווים" minlength="4" required>
+              <button type="button" id="togglePassword" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: var(--color-text-light); font-size: var(--fs-sm);" aria-label="הצג סיסמה">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div id="registerError" style="display: none; color: var(--color-danger); font-size: var(--fs-sm); margin-bottom: var(--space-md);"></div>
+          <button type="submit" class="btn btn--primary btn--block btn--lg" id="registerBtn">שלחו בקשת הרשמה</button>
+        </form>
+
+        <div class="auth-card__footer">
+          <p>כבר רשומים? <a href="login.html">כניסה</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="images/logo/logo-hebrew-white.png" alt="וואי מרקט" width="160" height="40">
+          <p>נגלר סחר והפצה — מוצרי צריכה שוטפת לעסקים ומוסדות.</p>
+        </div>
+        <div class="footer__col"><h4>קישורים</h4><div class="footer__links"><a href="about.html">אודות</a><a href="faq.html">שאלות ותשובות</a><a href="contact.html">צרו קשר</a></div></div>
+        <div class="footer__col"><h4>צרו קשר</h4><div class="footer__contact-item"><i class="fas fa-phone-alt"></i><a href="tel:037740400">03-7740400</a></div><div class="footer__contact-item"><i class="fas fa-envelope"></i><a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a></div></div>
+      </div>
+      <div class="footer__bottom">
+        <span class="footer__copyright">&copy; 2026 וואי מרקט. כל הזכויות שמורות.</span>
+        <div class="footer__legal"><a href="legal/terms.html">תקנון</a><a href="legal/privacy.html">פרטיות</a><a href="legal/accessibility.html">נגישות</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/analytics.js"></script>
+  <script>
+  (function() {
+    const PORTAL_URL = 'https://lindy-oxidic-aidan.ngrok-free.dev';
+    const form = document.getElementById('registerForm');
+    const errorEl = document.getElementById('registerError');
+    const submitBtn = document.getElementById('registerBtn');
+
+    // Password toggle
+    const toggleBtn = document.getElementById('togglePassword');
+    const passInput = document.getElementById('reg-password');
+    if (toggleBtn && passInput) {
+      toggleBtn.addEventListener('click', () => {
+        const isPassword = passInput.type === 'password';
+        passInput.type = isPassword ? 'text' : 'password';
+        toggleBtn.querySelector('i').className = isPassword ? 'fas fa-eye-slash' : 'fas fa-eye';
+      });
+    }
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorEl.style.display = 'none';
+
+      const data = new FormData(form);
+      const businessName = data.get('businessName').trim();
+      const vatNumber = data.get('vatNumber').trim();
+      const contactName = data.get('contactName').trim();
+      const phone = data.get('phone').trim();
+      const password = data.get('password');
+      const email = data.get('email').trim();
+      const city = data.get('city').trim();
+
+      if (!businessName || !vatNumber || !contactName || !phone || !password) {
+        errorEl.textContent = 'נא למלא את כל שדות החובה';
+        errorEl.style.display = 'block';
+        return;
+      }
+
+      if (password.length < 4) {
+        errorEl.textContent = 'סיסמה חייבת להכיל לפחות 4 תווים';
+        errorEl.style.display = 'block';
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'שולח...';
+
+      try {
+        const res = await fetch(PORTAL_URL + '/api/portal/auth/register', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'ngrok-skip-browser-warning': 'true',
+          },
+          body: JSON.stringify({
+            businessName,
+            vatNumber,
+            contactName,
+            phone,
+            email: email || undefined,
+            city: city || undefined,
+            password,
+          }),
+        });
+
+        const result = await res.json();
+
+        if (!res.ok) {
+          errorEl.textContent = result.error || 'שגיאה בשליחת הטופס';
+          errorEl.style.display = 'block';
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'שלחו בקשת הרשמה';
+          return;
+        }
+
+        form.innerHTML = `
+          <div style="text-align: center; padding: var(--space-xl) 0;">
+            <div style="font-size: 48px; color: var(--color-success); margin-bottom: var(--space-md);"><i class="fas fa-check-circle"></i></div>
+            <h2 style="margin-bottom: var(--space-sm);">הבקשה נשלחה בהצלחה!</h2>
+            <p style="color: var(--color-text-secondary); margin-bottom: var(--space-sm);">ההרשמה שלכם התקבלה וממתינה לאישור.</p>
+            <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">לאחר האישור תוכלו להתחבר עם מספר ע.מ/ח.פ והסיסמה שבחרתם.</p>
+            <a href="index.html" class="btn btn--primary">חזרה לדף הבית</a>
+          </div>
+        `;
+      } catch (err) {
+        errorEl.textContent = 'שגיאת תקשורת. ודאו שהפורטל פעיל ונסו שוב.';
+        errorEl.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'שלחו בקשת הרשמה';
+      }
+    });
+  })();
+  </script>
 </body>
 </html>
