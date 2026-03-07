@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>מדריך מערכת הפרסום | וואי מרקט</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root {
+  --navy: #1B3A5C;
+  --navy-deep: #0E2240;
+  --navy-light: #2A5080;
+  --ice: #E8F0F8;
+  --ice-warm: #F4F7FB;
+  --accent: #3B9EFF;
+  --accent-glow: #5BB5FF;
+  --mint: #2ECC71;
+  --amber: #F39C12;
+  --coral: #E74C3C;
+  --white: #FFFFFF;
+  --text: #1A2A3A;
+  --text-soft: #5A6B7E;
+  --mono: 'IBM Plex Mono', monospace;
+  --sans: 'Heebo', sans-serif;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --shadow: 0 4px 24px rgba(14,34,64,0.08);
+  --shadow-lg: 0 12px 48px rgba(14,34,64,0.12);
+}
+
+html { scroll-behavior: smooth }
+
+body {
+  font-family: var(--sans);
+  background: var(--ice-warm);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Hero ── */
+.hero {
+  background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 40%, var(--navy-light) 100%);
+  color: var(--white);
+  padding: 64px 0 48px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 600px 400px at 20% 80%, rgba(59,158,255,0.15), transparent),
+    radial-gradient(ellipse 400px 300px at 80% 20%, rgba(46,204,113,0.1), transparent);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--accent), var(--mint), var(--accent));
+}
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+  position: relative;
+  z-index: 1;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 100px;
+  padding: 6px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  letter-spacing: 0.02em;
+}
+.hero-badge .dot {
+  width: 8px; height: 8px;
+  background: var(--mint);
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+}
+@keyframes pulse-dot {
+  0%,100% { opacity: 1; transform: scale(1) }
+  50% { opacity: 0.5; transform: scale(1.3) }
+}
+.hero h1 {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.hero p {
+  font-size: 17px;
+  opacity: 0.8;
+  max-width: 600px;
+  font-weight: 300;
+}
+
+/* ── Nav Tabs ── */
+.nav-strip {
+  background: var(--white);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.nav-inner::-webkit-scrollbar { display: none }
+.nav-tab {
+  padding: 14px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-soft);
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s;
+}
+.nav-tab:hover { color: var(--navy) }
+.nav-tab.active {
+  color: var(--navy);
+  border-bottom-color: var(--accent);
+  font-weight: 700;
+}
+
+/* ── Content ── */
+.content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 32px 80px;
+}
+
+/* ── Section ── */
+.section {
+  margin-bottom: 56px;
+  scroll-margin-top: 70px;
+}
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 8px;
+  font-family: var(--mono);
+}
+.section-label .icon {
+  width: 20px; height: 20px;
+  background: var(--accent);
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 900;
+}
+.section h2 {
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--navy-deep);
+  margin-bottom: 8px;
+}
+.section > p {
+  color: var(--text-soft);
+  font-size: 15px;
+  margin-bottom: 28px;
+  max-width: 700px;
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 32px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+/* ── Architecture Diagram ── */
+.arch-flow {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  overflow-x: auto;
+  padding: 12px 0;
+}
+.arch-node {
+  flex: 1;
+  min-width: 155px;
+  text-align: center;
+  position: relative;
+}
+.arch-node-box {
+  background: var(--white);
+  border: 2px solid var(--ice);
+  border-radius: var(--radius-sm);
+  padding: 20px 14px;
+  transition: all 0.3s;
+  position: relative;
+  z-index: 1;
+}
+.arch-node-box:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 20px rgba(59,158,255,0.15);
+  transform: translateY(-2px);
+}
+.arch-icon {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+  font-size: 22px;
+}
+.arch-icon.db { background: linear-gradient(135deg, #667eea, #764ba2); color: white }
+.arch-icon.crm { background: linear-gradient(135deg, var(--navy), var(--navy-light)); color: white }
+.arch-icon.api { background: linear-gradient(135deg, var(--accent), #00c6ff); color: white }
+.arch-icon.files { background: linear-gradient(135deg, var(--amber), #e67e22); color: white }
+.arch-icon.gh { background: linear-gradient(135deg, #24292e, #586069); color: white }
+.arch-node-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--navy-deep);
+  margin-bottom: 4px;
+}
+.arch-node-sub {
+  font-size: 11px;
+  color: var(--text-soft);
+  font-family: var(--mono);
+  direction: ltr;
+}
+.arch-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  color: var(--accent);
+  font-size: 20px;
+  position: relative;
+}
+.arch-arrow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  transform: translateY(-50%);
+}
+.arch-arrow span {
+  position: relative;
+  z-index: 1;
+  background: var(--ice-warm);
+  padding: 0 4px;
+}
+
+/* ── Steps ── */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.step-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0,0,0,0.04);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.step-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+.step-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 4px;
+}
+.step-card:nth-child(1)::before { background: linear-gradient(90deg, #667eea, #764ba2) }
+.step-card:nth-child(2)::before { background: linear-gradient(90deg, var(--accent), #00c6ff) }
+.step-card:nth-child(3)::before { background: linear-gradient(90deg, var(--mint), #27ae60) }
+.step-num {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 16px;
+  color: white;
+  margin-bottom: 16px;
+}
+.step-card:nth-child(1) .step-num { background: linear-gradient(135deg, #667eea, #764ba2) }
+.step-card:nth-child(2) .step-num { background: linear-gradient(135deg, var(--accent), #00c6ff) }
+.step-card:nth-child(3) .step-num { background: linear-gradient(135deg, var(--mint), #27ae60) }
+.step-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy-deep);
+  margin-bottom: 10px;
+}
+.step-card p {
+  font-size: 14px;
+  color: var(--text-soft);
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+.step-detail {
+  background: var(--ice-warm);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--navy);
+  direction: ltr;
+  text-align: left;
+  line-height: 2;
+  border: 1px solid var(--ice);
+}
+.step-detail .comment {
+  color: var(--text-soft);
+  font-style: italic;
+}
+
+/* ── Image Flow ── */
+.img-flow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: 0;
+  align-items: center;
+}
+.img-source {
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--ice);
+  padding: 20px;
+  text-align: center;
+}
+.img-source-icon {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+.img-source h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy-deep);
+  margin-bottom: 4px;
+}
+.img-source .count {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--ice);
+  border-radius: 100px;
+  padding: 3px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-top: 6px;
+}
+.img-source .path {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-soft);
+  margin-top: 6px;
+  direction: ltr;
+}
+.flow-arrow-v {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: var(--accent);
+  padding: 0 8px;
+}
+
+/* ── Paths Table ── */
+.paths-grid {
+  display: grid;
+  gap: 8px;
+}
+.path-row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 16px;
+  align-items: center;
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  border: 1px solid var(--ice);
+  transition: border-color 0.2s;
+}
+.path-row:hover { border-color: var(--accent) }
+.path-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+}
+.path-value {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-soft);
+  direction: ltr;
+  text-align: left;
+  background: var(--ice-warm);
+  padding: 6px 12px;
+  border-radius: 6px;
+  word-break: break-all;
+}
+
+/* ── Stats ── */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+.stat-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0,0,0,0.04);
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+.stat-card:nth-child(1)::after { background: var(--navy) }
+.stat-card:nth-child(2)::after { background: var(--mint) }
+.stat-card:nth-child(3)::after { background: var(--accent) }
+.stat-card:nth-child(4)::after { background: var(--coral) }
+.stat-card:nth-child(5)::after { background: var(--amber) }
+.stat-number {
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--navy-deep);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-label {
+  font-size: 13px;
+  color: var(--text-soft);
+  font-weight: 500;
+}
+
+/* ── Methods comparison ── */
+.methods {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.method-card {
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+.method-card.admin {
+  background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
+  color: var(--white);
+}
+.method-card.manual {
+  background: var(--white);
+}
+.method-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.method-card.admin h3 { color: var(--white) }
+.method-card.manual h3 { color: var(--navy-deep) }
+.method-card .subtitle {
+  font-size: 13px;
+  opacity: 0.7;
+  margin-bottom: 18px;
+}
+.method-steps {
+  list-style: none;
+  counter-reset: mstep;
+}
+.method-steps li {
+  counter-increment: mstep;
+  padding: 10px 0;
+  font-size: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  line-height: 1.6;
+}
+.method-steps li + li {
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.method-card.manual .method-steps li + li {
+  border-top-color: var(--ice);
+}
+.method-steps li::before {
+  content: counter(mstep);
+  flex-shrink: 0;
+  width: 26px; height: 26px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 12px;
+  margin-top: 1px;
+}
+.method-card.admin .method-steps li::before {
+  background: rgba(255,255,255,0.15);
+  color: var(--white);
+}
+.method-card.manual .method-steps li::before {
+  background: var(--ice);
+  color: var(--navy);
+}
+.method-code {
+  background: rgba(0,0,0,0.2);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  font-family: var(--mono);
+  font-size: 12px;
+  direction: ltr;
+  text-align: left;
+  margin-top: 16px;
+  line-height: 2;
+  overflow-x: auto;
+  color: rgba(255,255,255,0.9);
+}
+.method-card.manual .method-code {
+  background: var(--ice-warm);
+  color: var(--navy);
+  border: 1px solid var(--ice);
+}
+
+/* ── Warning ── */
+.warning-box {
+  background: #FFF8E1;
+  border: 1px solid #FFE082;
+  border-radius: var(--radius-sm);
+  padding: 18px 22px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-top: 28px;
+}
+.warning-box .warn-icon {
+  font-size: 22px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.warning-box p {
+  font-size: 14px;
+  color: #5D4037;
+  line-height: 1.7;
+}
+.warning-box strong { color: #E65100 }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .arch-flow { flex-direction: column; align-items: stretch }
+  .arch-arrow { transform: rotate(90deg); min-height: 36px; min-width: auto }
+  .img-flow { grid-template-columns: 1fr; gap: 8px }
+  .flow-arrow-v { transform: rotate(90deg); padding: 8px 0 }
+  .methods { grid-template-columns: 1fr }
+  .path-row { grid-template-columns: 1fr; gap: 6px }
+  .hero { padding: 40px 0 32px }
+  .content { padding: 24px 16px 60px }
+  .stats-grid { grid-template-columns: repeat(2, 1fr) }
+}
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      מדריך טכני פנימי
+    </div>
+    <h1>מערכת פרסום הקטלוג</h1>
+    <p>איך עובד הזרימה מהדטהבייס עד לאתר החי — תמונות, נתונים, ופרסום.</p>
+  </div>
+</div>
+
+<!-- Nav -->
+<div class="nav-strip">
+  <div class="nav-inner">
+    <a href="#architecture" class="nav-tab active">ארכיטקטורה</a>
+    <a href="#steps" class="nav-tab">3 שלבי פרסום</a>
+    <a href="#images" class="nav-tab">זרימת תמונות</a>
+    <a href="#paths" class="nav-tab">נתיבים וקבצים</a>
+    <a href="#status" class="nav-tab">סטטוס נוכחי</a>
+    <a href="#howto" class="nav-tab">איך לעדכן</a>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- ═══ 1. Architecture ═══ -->
+  <div class="section" id="architecture">
+    <div class="section-label"><span class="icon">1</span> ARCHITECTURE</div>
+    <h2>ארכיטקטורת המערכת</h2>
+    <p>הנתונים זורמים מהדטהבייס דרך ה-CRM ועד לאתר החי ב-GitHub Pages. כל שלב מזין את הבא.</p>
+
+    <div class="card">
+      <div class="arch-flow">
+        <div class="arch-node">
+          <div class="arch-node-box">
+            <div class="arch-icon db">🗄️</div>
+            <div class="arch-node-title">PostgreSQL</div>
+            <div class="arch-node-sub">Prisma ORM</div>
+            <div class="arch-node-sub" style="margin-top:4px;font-size:10px;color:#999">items, categories</div>
+          </div>
+        </div>
+        <div class="arch-arrow"><span>←</span></div>
+        <div class="arch-node">
+          <div class="arch-node-box">
+            <div class="arch-icon crm">⚙️</div>
+            <div class="arch-node-title">CRM Admin</div>
+            <div class="arch-node-sub">app.ymarket.co.il</div>
+            <div class="arch-node-sub" style="margin-top:4px;font-size:10px;color:#999">Next.js + Cloudflare</div>
+          </div>
+        </div>
+        <div class="arch-arrow"><span>←</span></div>
+        <div class="arch-node">
+          <div class="arch-node-box">
+            <div class="arch-icon api">🔌</div>
+            <div class="arch-node-title">Publish API</div>
+            <div class="arch-node-sub">/api/admin/website/</div>
+            <div class="arch-node-sub" style="margin-top:4px;font-size:10px;color:#999">publish → deploy</div>
+          </div>
+        </div>
+        <div class="arch-arrow"><span>←</span></div>
+        <div class="arch-node">
+          <div class="arch-node-box">
+            <div class="arch-icon files">📁</div>
+            <div class="arch-node-title">קבצי האתר</div>
+            <div class="arch-node-sub">ymarket/website/</div>
+            <div class="arch-node-sub" style="margin-top:4px;font-size:10px;color:#999">HTML, JSON, images</div>
+          </div>
+        </div>
+        <div class="arch-arrow"><span>←</span></div>
+        <div class="arch-node">
+          <div class="arch-node-box">
+            <div class="arch-icon gh">🌐</div>
+            <div class="arch-node-title">GitHub Pages</div>
+            <div class="arch-node-sub">ymarket.co.il</div>
+            <div class="arch-node-sub" style="margin-top:4px;font-size:10px;color:#999">yunagler/ymarket-catalog</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ 2. Three Steps ═══ -->
+  <div class="section" id="steps">
+    <div class="section-label"><span class="icon">2</span> PUBLISHING FLOW</div>
+    <h2>3 שלבי הפרסום</h2>
+    <p>כל עדכון באתר עובר 3 שלבים. אם דילגת על שלב — השינוי לא יופיע באתר החי.</p>
+
+    <div class="steps">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>עדכון נתונים</h3>
+        <p>עדכון מוצרים, תמונות, מחירים וקטגוריות בדטהבייס דרך ממשק ה-CRM Admin או ישירות.</p>
+        <div class="step-detail">
+          <span class="comment">// תמונות נשמרות בתיקייה:</span><br>
+          crm-app/public/items/{id}.jpg<br>
+          <span class="comment">// הדטהבייס מצביע:</span><br>
+          imageUrl = "/items/{id}.jpg"
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>פרסום (Publish)</h3>
+        <p>מייצא מהדטהבייס → יוצר products.json → מייצר דפי HTML לכל מוצר → מייצר sitemap.</p>
+        <div class="step-detail">
+          <span class="comment">// API endpoint:</span><br>
+          POST /api/admin/website/publish<br>
+          <span class="comment">// מייצר:</span><br>
+          website/data/products.json<br>
+          website/products/*.html<br>
+          website/sitemap.xml
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>העלאה (Deploy)</h3>
+        <p>מבצע git add + commit + push לריפו ב-GitHub. האתר מתעדכן תוך ~1 דקה.</p>
+        <div class="step-detail">
+          <span class="comment">// API endpoint:</span><br>
+          POST /api/admin/website/deploy<br>
+          <span class="comment">// מריץ:</span><br>
+          git add -A<br>
+          git commit -m "Update catalog"<br>
+          git push → GitHub Pages
+        </div>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <span class="warn-icon">⚠️</span>
+      <p>
+        <strong>חשוב!</strong> שלב 2 (Publish) מייצא רק מוצרים שסומנו <strong>b2cVisible = true</strong> בדטהבייס. מוצר שלא מסומן לא יופיע באתר גם אם יש לו תמונה. בנוסף — <strong>תמונות צריכות להיות גם בתיקיית website/items/</strong> ולא רק ב-crm-app/public/items/! הן 2 תיקיות נפרדות.
+      </p>
+    </div>
+  </div>
+
+  <!-- ═══ 3. Image Flow ═══ -->
+  <div class="section" id="images">
+    <div class="section-label"><span class="icon">3</span> IMAGE FLOW</div>
+    <h2>זרימת התמונות</h2>
+    <p>התמונות מגיעות מ-2 מקורות, נשמרות ב-2 מיקומים, ומגיעות לאתר דרך git push.</p>
+
+    <div class="card">
+      <div class="img-flow">
+        <!-- Sources -->
+        <div class="img-source">
+          <div class="img-source-icon">📸</div>
+          <h4>תמונות מקוריות</h4>
+          <p style="font-size:13px;color:var(--text-soft);margin:4px 0">הורדו מ-ymarket.shop</p>
+          <div class="count">519 תמונות</div>
+          <div class="path">shop-originals/{id}.jpg</div>
+        </div>
+
+        <div class="flow-arrow-v">＋</div>
+
+        <div class="img-source">
+          <div class="img-source-icon">🤖</div>
+          <h4>תמונות AI</h4>
+          <p style="font-size:13px;color:var(--text-soft);margin:4px 0">Gemini Nano Banana</p>
+          <div class="count">295 תמונות</div>
+          <div class="path">{category}/{id}_name.jpg</div>
+        </div>
+
+        <div class="flow-arrow-v">→</div>
+
+        <!-- Destinations -->
+        <div class="img-source" style="border-color: var(--accent); border-width: 2px">
+          <div class="img-source-icon">💾</div>
+          <h4>2 מיקומי שמירה</h4>
+          <div style="text-align:right;margin-top:10px">
+            <div style="font-size:13px;margin-bottom:8px">
+              <strong style="color:var(--navy)">CRM (פורטל):</strong>
+              <div class="path" style="margin-top:2px">crm-app/public/items/{id}.jpg</div>
+            </div>
+            <div style="font-size:13px">
+              <strong style="color:var(--navy)">אתר (GitHub Pages):</strong>
+              <div class="path" style="margin-top:2px">website/items/{id}.jpg</div>
+            </div>
+          </div>
+          <div class="count" style="background:#e8f5e9;color:#2e7d32;margin-top:10px">1,114 סה"כ</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <span class="warn-icon">💡</span>
+      <p>
+        ה-CRM (app.ymarket.co.il) וה-Website (ymarket.co.il) הם <strong>2 מערכות נפרדות!</strong><br>
+        • <strong>CRM</strong> = Next.js על localhost:3000 + Cloudflare Tunnel → מגיש תמונות מ-<code style="font-family:var(--mono);font-size:12px;background:rgba(0,0,0,0.06);padding:2px 6px;border-radius:4px">crm-app/public/items/</code><br>
+        • <strong>Website</strong> = GitHub Pages סטטי → מגיש תמונות מ-<code style="font-family:var(--mono);font-size:12px;background:rgba(0,0,0,0.06);padding:2px 6px;border-radius:4px">website/items/</code><br>
+        תמונה חדשה צריכה להגיע ל<strong>שתי</strong> התיקיות!
+      </p>
+    </div>
+  </div>
+
+  <!-- ═══ 4. Paths ═══ -->
+  <div class="section" id="paths">
+    <div class="section-label"><span class="icon">4</span> FILE PATHS</div>
+    <h2>נתיבים וקבצים חשובים</h2>
+
+    <div class="paths-grid">
+      <div class="path-row">
+        <div class="path-label">📂 תיקיית CRM</div>
+        <div class="path-value">C:\Users\DELL\ymarket\crm-app</div>
+      </div>
+      <div class="path-row">
+        <div class="path-label">📂 תיקיית האתר</div>
+        <div class="path-value">C:\Users\DELL\ymarket\website</div>
+      </div>
+      <div class="path-row">
+        <div class="path-label">🖼️ תמונות CRM</div>
+        <div class="path-value">crm-app/public/items/{id}.jpg</div>
+      </div>
+      <div class="path-row">
+        <div class="path-label">🖼️ תמונות אתר</div>
+        <div class="path-value">website/items/{id}.jpg</div>
+      </div>
+      <div class="path-row">
+        <div class="path-label">📊 נתוני קטלוג</div>
+        <div class="path-value">website/data/products.json</div>
+      </div>
+      <div class="path-row">
+        <div class="path-label">📄 דפי מוצר</div>
+        <div class="path-value">website/products/{slug}.html</div>
+      </div>
+      <div class="path-row">
+        <div class="path-label">🔌 API פרסום</div>
+        <div class="path-value">/api/admin/website/publish (POST)</div>
+      </div>
+      <div class="path-row">
+        <div class="path-label">🚀 API העלאה</div>
+        <div class="path-value">/api/admin/website/deploy (POST)</div>
+      </div>
+      <div class="path-row">
+        <div class="path-label">🐙 GitHub Repo</div>
+        <div class="path-value">github.com/yunagler/ymarket-catalog (branch: master)</div>
+      </div>
+      <div class="path-row">
+        <div class="path-label">🏗️ בילד דפים</div>
+        <div class="path-value">website/build/generate-products.js</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ 5. Status ═══ -->
+  <div class="section" id="status">
+    <div class="section-label"><span class="icon">5</span> CURRENT STATUS</div>
+    <h2>סטטוס נוכחי</h2>
+    <p>מצב התמונות והמוצרים נכון ל-7 מרץ 2026.</p>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">1,114</div>
+        <div class="stat-label">סה"כ מוצרים בדטהבייס</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">813</div>
+        <div class="stat-label">מוצגים באתר (b2cVisible)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">519</div>
+        <div class="stat-label">תמונות מקוריות (צילום)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">295</div>
+        <div class="stat-label">תמונות AI (Gemini)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">294</div>
+        <div class="stat-label">חסרות — צריך לצלם ❗</div>
+      </div>
+    </div>
+
+    <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
+      <div style="flex:1;min-width:260px;background:var(--white);border-radius:var(--radius-sm);padding:18px;box-shadow:var(--shadow);border:1px solid rgba(0,0,0,0.04)">
+        <div style="font-weight:700;color:var(--navy-deep);margin-bottom:10px">14 קטגוריות פעילות</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px">
+          <span style="background:var(--ice);padding:4px 10px;border-radius:6px;font-size:12px">בטיחות ומיגון</span>
+          <span style="background:var(--ice);padding:4px 10px;border-radius:6px;font-size:12px">כלי עבודה</span>
+          <span style="background:var(--ice);padding:4px 10px;border-radius:6px;font-size:12px">שקיות אשפה</span>
+          <span style="background:var(--ice);padding:4px 10px;border-radius:6px;font-size:12px">חומרי ניקוי</span>
+          <span style="background:var(--ice);padding:4px 10px;border-radius:6px;font-size:12px">אריזות מזון</span>
+          <span style="background:var(--ice);padding:4px 10px;border-radius:6px;font-size:12px">טקסטיל</span>
+          <span style="background:var(--ice);padding:4px 10px;border-radius:6px;font-size:12px">חד פעמי</span>
+          <span style="background:var(--ice);padding:4px 10px;border-radius:6px;font-size:12px">אריזה ולוגיסטיקה</span>
+          <span style="background:var(--ice);padding:4px 10px;border-radius:6px;font-size:12px">מוצרי נייר</span>
+          <span style="background:var(--ice);padding:4px 10px;border-radius:6px;font-size:12px">קפה ושתייה</span>
+          <span style="background:var(--ice);padding:4px 10px;border-radius:6px;font-size:12px">ציוד משרדי</span>
+          <span style="background:var(--ice);padding:4px 10px;border-radius:6px;font-size:12px">אחזקה טכנית</span>
+          <span style="background:var(--ice);padding:4px 10px;border-radius:6px;font-size:12px">עזרה ראשונה</span>
+          <span style="background:var(--ice);padding:4px 10px;border-radius:6px;font-size:12px">טואלטיקה</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ 6. How To ═══ -->
+  <div class="section" id="howto">
+    <div class="section-label"><span class="icon">6</span> HOW TO UPDATE</div>
+    <h2>איך לעדכן את האתר</h2>
+    <p>שתי דרכים — דרך ממשק הניהול או ידנית מהטרמינל.</p>
+
+    <div class="methods">
+      <div class="method-card admin">
+        <h3>🖥️ דרך ממשק הניהול</h3>
+        <div class="subtitle">הדרך הקלה — הכל מהדפדפן</div>
+        <ol class="method-steps">
+          <li>כנס ל-<strong>app.ymarket.co.il/admin</strong></li>
+          <li>עדכן מוצרים בקטלוג (תמונות, מחירים, תיאורים, קטגוריות)</li>
+          <li>לחץ <strong>"פרסם באתר"</strong> בעמוד הפרסום — מייצא products.json ומייצר דפי HTML</li>
+          <li>לחץ <strong>"העלה לאתר"</strong> — מבצע git push ל-GitHub Pages</li>
+          <li>המתן ~1 דקה — האתר מתעדכן אוטומטית</li>
+        </ol>
+      </div>
+
+      <div class="method-card manual">
+        <h3>⌨️ ידנית מהטרמינל</h3>
+        <div class="subtitle">לשליטה מלאה ותיקון תקלות</div>
+        <ol class="method-steps">
+          <li>העתק תמונות ל-<strong>2 התיקיות</strong> (CRM + Website)</li>
+          <li>הרץ סקריפט publish שמייצא מהדטהבייס</li>
+          <li>עשה git push לתיקיית website</li>
+        </ol>
+
+        <div class="method-code">
+<span style="color:#888"># 1. העתק תמונות</span>
+cp items/*.jpg crm-app/public/items/
+cp items/*.jpg website/items/
+
+<span style="color:#888"># 2. פרסום (ייצוא + בילד)</span>
+node publish_website.js
+
+<span style="color:#888"># 3. העלאה ידנית</span>
+cd C:/Users/DELL/ymarket/website
+git add -A
+git commit -m "Update catalog"
+git push
+        </div>
+      </div>
+    </div>
+
+    <div class="warning-box" style="margin-top:28px">
+      <span class="warn-icon">🔑</span>
+      <p>
+        <strong>נקודות קריטיות לזכור:</strong><br>
+        1. תמונות חייבות להיות <strong>בשתי התיקיות</strong> — crm-app/public/items/ וגם website/items/<br>
+        2. אחרי publish חייבים לעשות <strong>deploy</strong> (git push) — אחרת השינויים רק מקומיים<br>
+        3. מוצר צריך להיות <strong>b2cVisible = true</strong> כדי להופיע באתר<br>
+        4. catalog.html טוען את <strong>data/products.json</strong> — אם הקובץ ישן, הקטלוג ישן<br>
+        5. GitHub Pages מתעדכן תוך <strong>~60 שניות</strong> אחרי push מוצלח
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<!-- Sticky nav highlight -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const tabs = document.querySelectorAll('.nav-tab');
+  const sections = document.querySelectorAll('.section');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        tabs.forEach(t => t.classList.toggle('active', t.getAttribute('href') === '#' + id));
+      }
+    });
+  }, { rootMargin: '-80px 0px -60% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+});
+</script>
+
+</body>
+</html>
