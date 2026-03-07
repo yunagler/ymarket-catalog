@@ -31,7 +31,9 @@ function generateProductPage(product, categories, allProducts) {
   const hasPromo = product.productStatus === 'on_sale' && product.originalPrice;
   const promoLabel = product.promotionLabel || 'מבצע';
   const categoryName = product.categoryName || '';
-  const imgSrc = product.imageUrl || `../images/products/${product.id}.jpg`;
+  const imgSrc = product.imageUrl
+    ? (product.imageUrl.startsWith('/') ? '..' + product.imageUrl : product.imageUrl)
+    : `../items/${product.id}.jpg`;
   const productUrl = `${SITE_URL}/products/${product.slug}.html`;
 
   // Related products from same category
@@ -43,7 +45,7 @@ function generateProductPage(product, categories, allProducts) {
     <div class="product-card" style="min-width: 220px;">
       <div class="product-card__image">
         <a href="${p.slug}.html">
-          <img src="../images/products/${p.id}.jpg" alt="${p.name}" loading="lazy"
+          <img src="${p.imageUrl ? (p.imageUrl.startsWith('/') ? '..' + p.imageUrl : p.imageUrl) : '../items/' + p.id + '.jpg'}" alt="${p.name}" loading="lazy"
                onerror="this.src='https://placehold.co/300x300/f0f2f5/5a6577?text=${encodeURIComponent((p.name || '').substring(0,15))}'">
         </a>
       </div>
@@ -59,7 +61,7 @@ function generateProductPage(product, categories, allProducts) {
     "@type": "Product",
     "name": product.name,
     "description": product.description || `${product.name} - ${categoryName}`,
-    "image": `${SITE_URL}/images/products/${product.id}.jpg`,
+    "image": `${SITE_URL}${product.imageUrl || '/items/' + product.id + '.jpg'}`,
     "url": productUrl,
     "brand": { "@type": "Brand", "name": "וואי מרקט" },
     "category": categoryName,
@@ -85,7 +87,7 @@ function generateProductPage(product, categories, allProducts) {
   <meta property="og:title" content="${product.name} | וואי מרקט">
   <meta property="og:description" content="${product.name} - ${categoryName}. מחירי סיטונאות.">
   <meta property="og:type" content="product">
-  <meta property="og:image" content="${SITE_URL}/images/products/${product.id}.jpg">
+  <meta property="og:image" content="${SITE_URL}${product.imageUrl || '/items/' + product.id + '.jpg'}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
