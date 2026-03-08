@@ -141,9 +141,21 @@
     });
 
     // Mobile filter toggle
-    document.getElementById('mobileFilterBtn')?.addEventListener('click', () => {
-      document.getElementById('catalogSidebar')?.classList.toggle('open');
-    });
+    const sidebar = document.getElementById('catalogSidebar');
+    const overlay = document.getElementById('catalogOverlay');
+    const openSidebar = () => {
+      sidebar?.classList.add('open');
+      overlay?.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+    const closeSidebar = () => {
+      sidebar?.classList.remove('open');
+      overlay?.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+    document.getElementById('mobileFilterBtn')?.addEventListener('click', openSidebar);
+    document.getElementById('closeSidebar')?.addEventListener('click', closeSidebar);
+    overlay?.addEventListener('click', closeSidebar);
   }
 
   // ---- URL Params ----

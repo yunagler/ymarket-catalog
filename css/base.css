@@ -27,7 +27,11 @@ body {
   text-align: right;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip; /* clip fixed elements overflow too, unlike hidden */
+}
+
+html {
+  overflow-x: clip; /* needed on html too for full coverage */
 }
 
 img, picture, video, canvas, svg {
@@ -39,6 +43,14 @@ img, picture, video, canvas, svg {
 input, button, textarea, select {
   font: inherit;
   color: inherit;
+  font-size: 16px; /* prevents iOS auto-zoom on focus */
+}
+
+/* Touch optimizations */
+button, a, input[type="submit"], input[type="button"],
+[role="button"], .btn, .clickable {
+  touch-action: manipulation; /* removes 300ms tap delay */
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {

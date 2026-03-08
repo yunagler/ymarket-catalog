@@ -67,6 +67,7 @@
   top: 0;
   z-index: var(--z-sticky);
   transition: box-shadow var(--transition-normal);
+  overflow: visible; /* allow mega-menu on desktop */
 }
 
 .header.scrolled {
@@ -259,6 +260,7 @@
   background: var(--color-primary);
   color: var(--color-white);
   border-radius: var(--radius-pill);
+  min-height: 44px;
 }
 
 .header__login-btn:hover {
@@ -275,6 +277,10 @@
   color: var(--color-primary);
   cursor: pointer;
   padding: var(--space-sm);
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ---- Search Overlay ---- */
@@ -393,6 +399,9 @@
   color: rgba(255, 255, 255, 0.7);
   font-size: var(--fs-sm);
   transition: color var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }
 
 .footer__links a:hover {
@@ -452,6 +461,9 @@
   font-size: var(--fs-xs);
   color: rgba(255, 255, 255, 0.5);
   transition: color var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }
 
 .footer__legal a:hover {

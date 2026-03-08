@@ -134,4 +134,39 @@
   .about-values {
     grid-template-columns: 1fr;
   }
+
+  .contact-form {
+    padding: var(--space-lg);
+  }
+
+  .contact-info__icon {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form {
+    padding: var(--space-md);
+  }
+
+  .contact-grid {
+    padding: var(--space-lg) 0;
+  }
+
+  .about-hero {
+    padding: var(--space-2xl) 0;
+  }
+
+  .about-hero h1 {
+    font-size: var(--fs-xl);
+  }
+
+  .tracking-form {
+    padding: var(--space-lg);
+  }
+
+  .faq-page {
+    padding: var(--space-lg) 0;
+  }
 }

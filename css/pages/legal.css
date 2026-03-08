@@ -59,6 +59,9 @@
 .legal-page__content a {
   color: var(--color-accent);
   text-decoration: underline;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }
 
 .legal-page__content table {
@@ -125,4 +128,7 @@
 .auth-card__footer a {
   color: var(--color-accent);
   font-weight: var(--fw-semibold);
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }

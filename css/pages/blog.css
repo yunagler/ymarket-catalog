@@ -167,4 +167,35 @@
   .blog-grid {
     grid-template-columns: 1fr;
   }
+
+  .blog-article {
+    padding: var(--space-lg) 0;
+  }
+
+  .blog-article__content {
+    font-size: var(--fs-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-card__body {
+    padding: var(--space-md);
+  }
+
+  .blog-card__title {
+    font-size: var(--fs-base);
+  }
+
+  .blog-article__title {
+    font-size: var(--fs-xl);
+  }
+
+  .blog-article__content h2 {
+    font-size: var(--fs-lg);
+  }
+
+  .blog-article__content h3 {
+    font-size: var(--fs-base);
+    font-weight: var(--fw-bold);
+  }
 }

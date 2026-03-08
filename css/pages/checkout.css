@@ -152,4 +152,34 @@
   .checkout-form__row {
     grid-template-columns: 1fr;
   }
+  .checkout-form {
+    padding: var(--space-lg);
+  }
+  .checkout-summary {
+    padding: var(--space-lg);
+  }
+  /* Ensure submit button is prominent */
+  .checkout-form .btn--primary,
+  .checkout-form .btn--lg {
+    width: 100%;
+    min-height: 52px;
+    font-size: var(--fs-base);
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+  }
+}
+
+@media (max-width: 480px) {
+  .checkout-form {
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+  }
+  .checkout-summary {
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+  }
+  .checkout-summary__total {
+    font-size: var(--fs-lg);
+  }
 }
