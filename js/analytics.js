@@ -1,14 +1,14 @@
 /* ===========================================
    Y Market - Analytics
-   GA4 + Facebook Pixel + Google Ads
+   GA4 + Clarity + Facebook Pixel + Google Ads
    =========================================== */
 
 (function() {
   'use strict';
 
   // ---- Configuration ----
-  // Replace these with your actual IDs
-  const GA4_ID = ''; // e.g. 'G-XXXXXXXXXX'
+  const GA4_ID = 'G-ZSWL6L8MC7';
+  const CLARITY_ID = 'vsqkjq40jp';
   const FB_PIXEL_ID = ''; // e.g. '1234567890'
   const GADS_ID = ''; // e.g. 'AW-XXXXXXXXX'
 
@@ -74,6 +74,15 @@
 
     fbq('init', FB_PIXEL_ID);
     fbq('track', 'PageView');
+  }
+
+  // ---- Microsoft Clarity ----
+  if (CLARITY_ID) {
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", CLARITY_ID);
   }
 
   // ---- Google Ads ----
