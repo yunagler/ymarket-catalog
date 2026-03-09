@@ -1,7 +1,36 @@
+# Y Market - Robots.txt
+# Updated: 2026-03-09
+
 User-agent: *
+Allow: /
+Disallow: /build/
+Disallow: /data/
+Disallow: /js/analytics.js
+Disallow: /cart.html
+Disallow: /checkout.html
+Disallow: /login.html
+Disallow: /register.html
+Disallow: /order-success.html
+
+# Welcome AI Crawlers (GEO Strategy)
+User-agent: GPTBot
+Allow: /
+Allow: /blog/
+Allow: /category/
+Allow: /products/
+Allow: /faq.html
+Allow: /about.html
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: PerplexityBot
 Allow: /
 
 Sitemap: https://ymarket.co.il/sitemap.xml
-
-# Block admin/build files
-Disallow: /build/
