@@ -54,7 +54,7 @@ function generateCategoryPage(category, products, allCategories) {
 
   const sidebarHtml = allCategories
     .filter(c => c.slug !== category.slug)
-    .map(c => `<a href="/category/${c.slug}/" class="category-sidebar__link"><i class="fas ${c.icon || 'fa-box'}"></i> ${c.name} <span>(${c.itemCount})</span></a>`)
+    .map(c => `<a href="/category/${c.slug}/" class="category-list__item"><span>${c.name}</span><span class="category-list__count">${c.itemCount}</span></a>`)
     .join('\n');
 
   const jsonLd = JSON.stringify({
@@ -153,11 +153,15 @@ function generateCategoryPage(category, products, allCategories) {
   <section class="section">
     <div class="container">
       <div class="catalog-layout">
-        <aside class="category-sidebar">
-          <h3>קטגוריות</h3>
-          <div class="category-sidebar__active"><i class="fas ${category.icon || 'fa-box'}"></i> ${category.name} (${categoryProducts.length})</div>
-          ${sidebarHtml}
-          <a href="/catalog.html" class="category-sidebar__link category-sidebar__all"><i class="fas fa-th"></i> כל המוצרים</a>
+        <aside class="catalog-sidebar">
+          <div class="sidebar-section">
+            <h3>קטגוריות</h3>
+            <div class="category-list">
+              <a href="/category/${category.slug}/" class="category-list__item active"><span>${category.name}</span><span class="category-list__count">${categoryProducts.length}</span></a>
+              ${sidebarHtml}
+              <a href="/catalog.html" class="category-list__item"><span>כל המוצרים</span></a>
+            </div>
+          </div>
         </aside>
         <div class="catalog-main">
           <div class="catalog-header">
