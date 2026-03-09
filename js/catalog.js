@@ -93,11 +93,21 @@
 
     categories.forEach(cat => {
       const count = allProducts.filter(p => p.categorySlug === cat.slug).length;
-      const btn = document.createElement('button');
-      btn.className = 'category-list__item';
-      btn.dataset.category = cat.slug;
-      btn.innerHTML = `<span>${cat.name}</span><span class="category-list__count">${count}</span>`;
-      list.appendChild(btn);
+      const link = document.createElement('a');
+      link.className = 'category-list__item';
+      link.href = `category/${cat.slug}.html`;
+      link.dataset.category = cat.slug;
+      link.innerHTML = `<span>${cat.name}</span><span class="category-list__count">${count}</span>`;
+      // Allow JS filtering on click without navigating (hold for inline filter)
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.category-list__item').forEach(b => b.classList.remove('active'));
+        link.classList.add('active');
+        currentCategory = cat.slug;
+        updateTitle();
+        render();
+      });
+      list.appendChild(link);
     });
 
     document.getElementById('totalCount').textContent = allProducts.length;

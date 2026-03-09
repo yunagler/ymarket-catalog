@@ -126,7 +126,7 @@ function generateProductPage(product, categories, allProducts) {
       <span class="breadcrumb__separator"><i class="fas fa-chevron-left"></i></span>
       <a href="../catalog.html">מוצרים</a>
       <span class="breadcrumb__separator"><i class="fas fa-chevron-left"></i></span>
-      <a href="../catalog.html?cat=${product.categorySlug}">${categoryName}</a>
+      <a href="../category/${product.categorySlug}.html">${categoryName}</a>
       <span class="breadcrumb__separator"><i class="fas fa-chevron-left"></i></span>
       <span class="breadcrumb__current">${product.name}</span>
     </nav>

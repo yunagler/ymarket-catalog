@@ -32,6 +32,7 @@ function getAllHtmlFiles(dir, base = '') {
 function getPriority(filePath) {
   if (filePath === 'index.html') return '1.0';
   if (filePath === 'catalog.html') return '0.9';
+  if (filePath.startsWith('category/')) return '0.85';
   if (filePath.startsWith('products/')) return '0.7';
   if (['about.html', 'contact.html', 'faq.html'].includes(filePath)) return '0.8';
   if (filePath.startsWith('blog/')) return '0.6';
@@ -42,6 +43,7 @@ function getPriority(filePath) {
 function getChangeFreq(filePath) {
   if (filePath === 'index.html') return 'weekly';
   if (filePath === 'catalog.html') return 'weekly';
+  if (filePath.startsWith('category/')) return 'weekly';
   if (filePath.startsWith('products/')) return 'monthly';
   if (filePath.startsWith('blog/')) return 'monthly';
   if (filePath.startsWith('legal/')) return 'yearly';
