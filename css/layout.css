@@ -342,13 +342,14 @@
 
 .footer__brand {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
+  align-items: center;
+  gap: var(--space-lg);
 }
 
 .footer__brand img {
-  height: 60px;
+  height: 48px;
   width: auto;
+  flex-shrink: 0;
 }
 
 .footer__brand p {
