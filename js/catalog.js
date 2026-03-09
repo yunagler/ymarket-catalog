@@ -95,7 +95,7 @@
       const count = allProducts.filter(p => p.categorySlug === cat.slug).length;
       const link = document.createElement('a');
       link.className = 'category-list__item';
-      link.href = `category/${cat.slug}.html`;
+      link.href = `/category/${cat.slug}/`;
       link.dataset.category = cat.slug;
       link.innerHTML = `<span>${cat.name}</span><span class="category-list__count">${count}</span>`;
       // Allow JS filtering on click without navigating (hold for inline filter)
@@ -332,7 +332,7 @@
       priceHtml = '<div class="product-card__price" style="color:var(--color-text-light)">צרו קשר למחיר</div>';
     }
 
-    const productUrl = p.slug ? `products/${p.slug}.html` : '#';
+    const productUrl = p.slug ? `/products/${p.slug}/` : '#';
     const imgSrc = p.imageUrl || 'images/products/placeholder.jpg';
 
     return `

@@ -1,9 +1,7 @@
 #!/usr/bin/env node
 /**
  * Generate sitemap.xml for ymarket.co.il
- * Scans all HTML files and product pages
- *
- * Usage: node build/generate-sitemap.js
+ * Supports clean URLs: /products/{slug}/ and /category/{slug}/
  */
 
 const fs = require('fs');
@@ -19,8 +17,7 @@ function getAllHtmlFiles(dir, base = '') {
     const relPath = base ? `${base}/${entry.name}` : entry.name;
 
     if (entry.isDirectory()) {
-      // Skip build, node_modules, images, css, js, data directories
-      if (['build', 'node_modules', 'images', 'css', 'js', 'data', '.git'].includes(entry.name)) continue;
+      if (['build', 'node_modules', 'images', 'css', 'js', 'data', '.git', 'items'].includes(entry.name)) continue;
       files.push(...getAllHtmlFiles(fullPath, relPath));
     } else if (entry.name.endsWith('.html')) {
       files.push(relPath);
@@ -29,11 +26,22 @@ function getAllHtmlFiles(dir, base = '') {
   return files;
 }
 
+function fileToUrl(filePath) {
+  // /products/{slug}/index.html → /products/{slug}/
+  // /category/{slug}/index.html → /category/{slug}/
+  // index.html → /
+  if (filePath === 'index.html') return '/';
+  if (filePath.endsWith('/index.html')) {
+    return '/' + filePath.replace('/index.html', '/');
+  }
+  return '/' + filePath;
+}
+
 function getPriority(filePath) {
   if (filePath === 'index.html') return '1.0';
   if (filePath === 'catalog.html') return '0.9';
-  if (filePath.startsWith('category/')) return '0.85';
-  if (filePath.startsWith('products/')) return '0.7';
+  if (filePath.includes('category/') && filePath.endsWith('index.html')) return '0.85';
+  if (filePath.includes('products/') && filePath.endsWith('index.html')) return '0.7';
   if (['about.html', 'contact.html', 'faq.html'].includes(filePath)) return '0.8';
   if (filePath.startsWith('blog/')) return '0.6';
   if (filePath.startsWith('legal/')) return '0.3';
@@ -43,8 +51,8 @@ function getPriority(filePath) {
 function getChangeFreq(filePath) {
   if (filePath === 'index.html') return 'weekly';
   if (filePath === 'catalog.html') return 'weekly';
-  if (filePath.startsWith('category/')) return 'weekly';
-  if (filePath.startsWith('products/')) return 'monthly';
+  if (filePath.includes('category/')) return 'weekly';
+  if (filePath.includes('products/')) return 'monthly';
   if (filePath.startsWith('blog/')) return 'monthly';
   if (filePath.startsWith('legal/')) return 'yearly';
   return 'monthly';
@@ -58,7 +66,10 @@ function generateSitemap() {
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
   for (const file of htmlFiles) {
-    const url = file === 'index.html' ? SITE_URL + '/' : `${SITE_URL}/${file}`;
+    const urlPath = fileToUrl(file);
+    // Encode Hebrew chars in URL for sitemap
+    const encodedPath = urlPath.split('/').map(part => encodeURIComponent(decodeURIComponent(part))).join('/');
+    const url = SITE_URL + encodedPath;
     xml += `  <url>\n`;
     xml += `    <loc>${url}</loc>\n`;
     xml += `    <lastmod>${today}</lastmod>\n`;

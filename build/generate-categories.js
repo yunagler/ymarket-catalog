@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 /**
  * Generate individual category HTML pages from products.json
- * Creates SEO-optimized category pages in /category/ directory
- *
- * Usage: node build/generate-categories.js
+ * Uses directory-based clean URLs: /category/{slug}/index.html
+ * So URL is /category/{slug}/ (no .html extension)
  */
 
 const fs = require('fs');
@@ -23,29 +22,25 @@ function formatPrice(price) {
 
 function generateCategoryPage(category, products, allCategories) {
   const categoryProducts = products.filter(p => p.categorySlug === category.slug);
-  const categoryUrl = `${SITE_URL}/category/${category.slug}.html`;
+  const categoryUrl = `${SITE_URL}/category/${category.slug}/`;
 
-  // SEO description
   const seoDesc = `${category.name} - ${categoryProducts.length} מוצרים במחירי סיטונאות. וואי מרקט - אספקה חכמה לעסקים ומוסדות. משלוח ארצי.`;
 
-  // Product cards HTML
   const productsHtml = categoryProducts.map(p => {
-    const imgSrc = p.imageUrl
-      ? (p.imageUrl.startsWith('/') ? '..' + p.imageUrl : p.imageUrl)
-      : `../items/${p.id}.jpg`;
+    const imgSrc = p.imageUrl || `/items/${p.id}.jpg`;
     const hasPromo = p.productStatus === 'on_sale' && p.originalPrice;
 
     return `
     <div class="product-card">
       ${hasPromo ? `<div class="product-card__badge">${p.promotionLabel || 'מבצע'}</div>` : ''}
       <div class="product-card__image">
-        <a href="../products/${p.slug}.html">
+        <a href="/products/${p.slug}/">
           <img src="${imgSrc}" alt="${p.name}" loading="lazy"
                onerror="this.src='https://placehold.co/300x300/f0f2f5/5a6577?text=${encodeURIComponent((p.name || '').substring(0,15))}'">
         </a>
       </div>
       <div class="product-card__body">
-        <h3 class="product-card__name"><a href="../products/${p.slug}.html">${p.name}</a></h3>
+        <h3 class="product-card__name"><a href="/products/${p.slug}/">${p.name}</a></h3>
         ${p.unit ? `<div class="product-card__unit">${p.unitsPerPack > 1 ? p.unitsPerPack + ' ' : ''}${p.unit}</div>` : ''}
         ${p.saleNis
           ? hasPromo
@@ -57,13 +52,11 @@ function generateCategoryPage(category, products, allCategories) {
     </div>`;
   }).join('\n');
 
-  // Sidebar: other categories
   const sidebarHtml = allCategories
     .filter(c => c.slug !== category.slug)
-    .map(c => `<a href="${c.slug}.html" class="category-sidebar__link"><i class="fas ${c.icon || 'fa-box'}"></i> ${c.name} <span>(${c.itemCount})</span></a>`)
+    .map(c => `<a href="/category/${c.slug}/" class="category-sidebar__link"><i class="fas ${c.icon || 'fa-box'}"></i> ${c.name} <span>(${c.itemCount})</span></a>`)
     .join('\n');
 
-  // JSON-LD structured data
   const jsonLd = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -83,7 +76,7 @@ function generateCategoryPage(category, products, allCategories) {
       "itemListElement": categoryProducts.slice(0, 20).map((p, i) => ({
         "@type": "ListItem",
         "position": i + 1,
-        "url": `${SITE_URL}/products/${p.slug}.html`,
+        "url": `${SITE_URL}/products/${p.slug}/`,
         "name": p.name,
       }))
     }
@@ -105,29 +98,29 @@ function generateCategoryPage(category, products, allCategories) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="../css/variables.css">
-  <link rel="stylesheet" href="../css/base.css">
-  <link rel="stylesheet" href="../css/components.css">
-  <link rel="stylesheet" href="../css/layout.css">
-  <link rel="stylesheet" href="../css/pages/catalog.css">
-  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/pages/catalog.css">
+  <link rel="stylesheet" href="/css/responsive.css">
   <script type="application/ld+json">${jsonLd}</script>
 </head>
 <body>
   <div class="top-bar"><div class="container"><div class="top-bar__info"><div class="top-bar__item"><i class="fas fa-phone-alt"></i> <a href="tel:0549922492">054-992-2492</a></div><div class="top-bar__item"><i class="fas fa-envelope"></i> <a href="mailto:naglertradesystem@gmail.com">naglertradesystem@gmail.com</a></div></div><div class="top-bar__social"><a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div></div></div>
 
   <header class="header"><div class="container">
-    <a href="../index.html" class="header__logo"><img src="../images/logo/logo-hebrew-dark.png" alt="וואי מרקט" width="180" height="48"></a>
+    <a href="/" class="header__logo"><img src="/images/logo/logo-hebrew-dark.png" alt="וואי מרקט" width="180" height="48"></a>
     <nav class="main-nav" aria-label="ניווט ראשי">
-      <div class="main-nav__item"><a href="../index.html" class="main-nav__link">דף הבית</a></div>
-      <div class="main-nav__item"><a href="../catalog.html" class="main-nav__link">מוצרים</a></div>
-      <div class="main-nav__item"><a href="../about.html" class="main-nav__link">אודות</a></div>
-      <div class="main-nav__item"><a href="../blog.html" class="main-nav__link">בלוג</a></div>
-      <div class="main-nav__item"><a href="../contact.html" class="main-nav__link">צרו קשר</a></div>
+      <div class="main-nav__item"><a href="/" class="main-nav__link">דף הבית</a></div>
+      <div class="main-nav__item"><a href="/catalog.html" class="main-nav__link">מוצרים</a></div>
+      <div class="main-nav__item"><a href="/about.html" class="main-nav__link">אודות</a></div>
+      <div class="main-nav__item"><a href="/blog.html" class="main-nav__link">בלוג</a></div>
+      <div class="main-nav__item"><a href="/contact.html" class="main-nav__link">צרו קשר</a></div>
     </nav>
     <div class="header__actions">
       <button class="header__cart-btn" aria-label="עגלת קניות"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></button>
-      <a href="../login.html" class="header__login-btn"><i class="fas fa-user"></i> <span>כניסה</span></a>
+      <a href="/login.html" class="header__login-btn"><i class="fas fa-user"></i> <span>כניסה</span></a>
     </div>
     <button class="mobile-menu-btn" aria-label="תפריט" aria-expanded="false"><i class="fas fa-bars"></i></button>
   </div></header>
@@ -135,9 +128,9 @@ function generateCategoryPage(category, products, allCategories) {
 
   <div class="container">
     <nav class="breadcrumb" aria-label="ניווט פירורי לחם">
-      <a href="../index.html">דף הבית</a>
+      <a href="/">דף הבית</a>
       <span class="breadcrumb__separator"><i class="fas fa-chevron-left"></i></span>
-      <a href="../catalog.html">מוצרים</a>
+      <a href="/catalog.html">מוצרים</a>
       <span class="breadcrumb__separator"><i class="fas fa-chevron-left"></i></span>
       <span class="breadcrumb__current">${category.name}</span>
     </nav>
@@ -150,7 +143,7 @@ function generateCategoryPage(category, products, allCategories) {
           <h3>קטגוריות</h3>
           <div class="category-sidebar__active"><i class="fas ${category.icon || 'fa-box'}"></i> ${category.name} (${categoryProducts.length})</div>
           ${sidebarHtml}
-          <a href="../catalog.html" class="category-sidebar__link category-sidebar__all"><i class="fas fa-th"></i> כל המוצרים</a>
+          <a href="/catalog.html" class="category-sidebar__link category-sidebar__all"><i class="fas fa-th"></i> כל המוצרים</a>
         </aside>
         <div class="catalog-main">
           <div class="catalog-header">
@@ -167,17 +160,30 @@ function generateCategoryPage(category, products, allCategories) {
 
   <footer class="footer"><div class="container">
     <div class="footer__grid">
-      <div class="footer__brand"><img src="../images/logo/logo-hebrew-white.png" alt="וואי מרקט" width="160" height="40"><p>נגלר סחר והפצה — מוצרי צריכה שוטפת לעסקים ומוסדות.</p></div>
-      <div class="footer__col"><h4>קישורים</h4><div class="footer__links"><a href="../about.html">אודות</a><a href="../faq.html">שאלות ותשובות</a><a href="../contact.html">צרו קשר</a></div></div>
+      <div class="footer__brand"><img src="/images/logo/logo-hebrew-white.png" alt="וואי מרקט" width="160" height="40"><p>נגלר סחר והפצה — מוצרי צריכה שוטפת לעסקים ומוסדות.</p></div>
+      <div class="footer__col"><h4>קישורים</h4><div class="footer__links"><a href="/about.html">אודות</a><a href="/faq.html">שאלות ותשובות</a><a href="/contact.html">צרו קשר</a></div></div>
       <div class="footer__col"><h4>צרו קשר</h4><div class="footer__contact-item"><i class="fas fa-phone-alt"></i><a href="tel:0549922492">054-992-2492</a></div><div class="footer__contact-item"><i class="fas fa-envelope"></i><a href="mailto:naglertradesystem@gmail.com">naglertradesystem@gmail.com</a></div></div>
     </div>
-    <div class="footer__bottom"><span class="footer__copyright">&copy; 2026 וואי מרקט. כל הזכויות שמורות.</span><div class="footer__legal"><a href="../legal/terms.html">תקנון</a><a href="../legal/privacy.html">פרטיות</a><a href="../legal/accessibility.html">נגישות</a></div></div>
+    <div class="footer__bottom"><span class="footer__copyright">&copy; 2026 וואי מרקט. כל הזכויות שמורות.</span><div class="footer__legal"><a href="/legal/terms.html">תקנון</a><a href="/legal/privacy.html">פרטיות</a><a href="/legal/accessibility.html">נגישות</a></div></div>
   </div></footer>
 
   <a href="https://wa.me/972549922492" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-  <script src="../js/main.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>`;
+}
+
+function cleanDir(dir) {
+  if (!fs.existsSync(dir)) return;
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      cleanDir(full);
+      fs.rmdirSync(full);
+    } else {
+      fs.unlinkSync(full);
+    }
+  }
 }
 
 function main() {
@@ -195,21 +201,19 @@ function main() {
     return;
   }
 
-  // Clean category directory
+  // Clean category directory completely
   if (fs.existsSync(CATEGORY_DIR)) {
-    const oldFiles = fs.readdirSync(CATEGORY_DIR).filter(f => f.endsWith('.html'));
-    for (const f of oldFiles) {
-      fs.unlinkSync(path.join(CATEGORY_DIR, f));
-    }
-  } else {
-    fs.mkdirSync(CATEGORY_DIR, { recursive: true });
+    cleanDir(CATEGORY_DIR);
   }
 
+  // Generate each category page as /category/{slug}/index.html
   let count = 0;
   for (const category of categories) {
     if (!category.slug) continue;
     const html = generateCategoryPage(category, products, categories);
-    fs.writeFileSync(path.join(CATEGORY_DIR, `${category.slug}.html`), html, 'utf-8');
+    const slugDir = path.join(CATEGORY_DIR, category.slug);
+    fs.mkdirSync(slugDir, { recursive: true });
+    fs.writeFileSync(path.join(slugDir, 'index.html'), html, 'utf-8');
     count++;
   }
 
