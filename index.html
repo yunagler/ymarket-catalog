@@ -7,6 +7,10 @@
   <meta name="description" content="וואי מרקט - סחר, שיווק והפצה של מוצרי צריכה שוטפת לעסקים ומוסדות. מוצרי ניקיון, נייר, חד פעמי, ציוד משרדי ועוד. משלוח ארצי, מחירי סיטונאות.">
   <meta name="keywords" content="מוצרי ניקיון למוסדות, חד פעמי לעסקים, נייר תעשייתי, אספקה לעסקים, מוצרי צריכה שוטפת, ספק מוסדי">
   <link rel="canonical" href="https://ymarket.co.il/">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1B3A5C">
 
   <!-- Open Graph -->
   <meta property="og:title" content="וואי מרקט | אספקה חכמה ומדויקת למוסדות ועסקים">
@@ -15,6 +19,15 @@
   <meta property="og:url" content="https://ymarket.co.il/">
   <meta property="og:locale" content="he_IL">
   <meta property="og:site_name" content="וואי מרקט">
+  <meta property="og:image" content="https://ymarket.co.il/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="וואי מרקט | אספקה חכמה ומדויקת למוסדות ועסקים">
+  <meta name="twitter:description" content="מוצרי צריכה שוטפת לעסקים ומוסדות - מחירי סיטונאות, משלוח ארצי.">
+  <meta name="twitter:image" content="https://ymarket.co.il/images/og-image.jpg">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,12 +41,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/pages/home.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="css/pages/home.min.css">
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -53,6 +62,22 @@
     },
     "foundingDate": "2020",
     "sameAs": ["https://www.facebook.com/profile.php?id=100083110428101", "https://www.instagram.com/ymarket.ai"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "וואי מרקט",
+    "url": "https://ymarket.co.il",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://ymarket.co.il/catalog.html?search={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
   }
   </script>
 </head>
@@ -501,8 +526,8 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/featured-carousel.js"></script>
-  <script src="js/analytics.js"></script>
+  <script src="js/main.min.js"></script>
+  <script src="js/featured-carousel.min.js"></script>
+  <script src="js/analytics.min.js"></script>
 </body>
 </html>

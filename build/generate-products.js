@@ -79,21 +79,36 @@ function generateProductPage(product, categories, allProducts) {
   <title>${product.name} | וואי מרקט</title>
   <meta name="description" content="${product.name} - ${categoryName}. מחירי סיטונאות, משלוח ארצי. וואי מרקט - אספקה לעסקים ומוסדות.">
   <link rel="canonical" href="${productUrl}">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#1B3A5C">
   <meta property="og:title" content="${product.name} | וואי מרקט">
-  <meta property="og:description" content="${product.name} - ${categoryName}. מחירי סיטונאות.">
+  <meta property="og:description" content="${product.name} - ${categoryName}. מחירי סיטונאות, משלוח ארצי.">
   <meta property="og:type" content="product">
   <meta property="og:image" content="${SITE_URL}${product.imageUrl || '/items/' + product.id + '.jpg'}">
+  <meta property="og:url" content="${productUrl}">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:site_name" content="וואי מרקט">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${product.name} | וואי מרקט">
+  <meta name="twitter:image" content="${SITE_URL}${product.imageUrl || '/items/' + product.id + '.jpg'}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="/css/variables.css">
-  <link rel="stylesheet" href="/css/base.css">
-  <link rel="stylesheet" href="/css/components.css">
-  <link rel="stylesheet" href="/css/layout.css">
-  <link rel="stylesheet" href="/css/pages/product-detail.css">
-  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/style.min.css">
+  <link rel="stylesheet" href="/css/pages/product-detail.min.css">
   <script type="application/ld+json">${jsonLd}</script>
+  <script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "דף הבית", "item": SITE_URL + "/" },
+      { "@type": "ListItem", "position": 2, "name": "מוצרים", "item": SITE_URL + "/catalog.html" },
+      ...(categoryName ? [{ "@type": "ListItem", "position": 3, "name": categoryName, "item": SITE_URL + "/category/" + product.categorySlug + "/" }] : []),
+      { "@type": "ListItem", "position": categoryName ? 4 : 3, "name": product.name }
+    ]
+  })}</script>
 </head>
 <body>
   <div class="top-bar"><div class="container"><div class="top-bar__info"><div class="top-bar__item"><i class="fas fa-phone-alt"></i> <a href="tel:0549922492">054-992-2492</a></div><div class="top-bar__item"><i class="fas fa-envelope"></i> <a href="mailto:naglertradesystem@gmail.com">naglertradesystem@gmail.com</a></div></div><div class="top-bar__social"><a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div></div></div>
@@ -187,7 +202,7 @@ function generateProductPage(product, categories, allProducts) {
   </div></footer>
 
   <a href="https://wa.me/972549922492" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-  <script src="/js/main.js"></script>
+  <script src="/js/main.min.js"></script>
   <script>
   (function() {
     var PRODUCT = ${JSON.stringify({

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>הדף לא נמצא | וואי מרקט</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Heebo', sans-serif; background: #f8f9fa; color: #1a1a2e; min-height: 100vh; display: flex; flex-direction: column; }
+    .header { background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,.08); padding: 1rem 0; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    .header .container { display: flex; align-items: center; justify-content: space-between; }
+    .header img { height: 40px; width: auto; }
+    .error-page { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 3rem 1.5rem; }
+    .error-page__code { font-size: 8rem; font-weight: 700; color: #1B3A5C; line-height: 1; opacity: .15; }
+    .error-page__title { font-size: 1.75rem; font-weight: 700; margin: 1rem 0 .5rem; }
+    .error-page__text { color: #6b7280; font-size: 1.1rem; margin-bottom: 2rem; max-width: 400px; }
+    .error-page__actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: .2s; }
+    .btn--primary { background: #1B3A5C; color: #fff; }
+    .btn--primary:hover { background: #112A45; }
+    .btn--outline { border: 2px solid #1B3A5C; color: #1B3A5C; }
+    .btn--outline:hover { background: #1B3A5C; color: #fff; }
+    .footer { background: #1a1a2e; color: #ccc; text-align: center; padding: 1.5rem; margin-top: auto; font-size: .9rem; }
+    .footer a { color: #93c5fd; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a href="/"><img src="/images/logo/logo-hebrew-dark.png" alt="וואי מרקט"></a>
+      <nav>
+        <a href="/catalog.html" style="color:#1B3A5C;text-decoration:none;font-weight:600;">מוצרים</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="error-page">
+    <div>
+      <div class="error-page__code">404</div>
+      <h1 class="error-page__title">הדף שחיפשתם לא נמצא</h1>
+      <p class="error-page__text">ייתכן שהדף הוסר, שינה כתובת, או שהכתובת שגויה.</p>
+      <div class="error-page__actions">
+        <a href="/" class="btn btn--primary"><i class="fas fa-home"></i> דף הבית</a>
+        <a href="/catalog.html" class="btn btn--outline"><i class="fas fa-box"></i> קטלוג מוצרים</a>
+        <a href="https://wa.me/972549922492" class="btn btn--outline" target="_blank"><i class="fab fa-whatsapp"></i> דברו איתנו</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">&copy; 2026 וואי מרקט | <a href="tel:0549922492">054-992-2492</a></div>
+  </footer>
+</body>
+</html>
