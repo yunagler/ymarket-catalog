@@ -352,3 +352,14 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Catalog layout constrains the products area, so cap columns */
+.catalog-layout .products-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (min-width: 1536px) {
+  .catalog-layout .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
