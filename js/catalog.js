@@ -98,15 +98,7 @@
       link.href = `/category/${cat.slug}/`;
       link.dataset.category = cat.slug;
       link.innerHTML = `<span>${cat.name}</span><span class="category-list__count">${count}</span>`;
-      // Allow JS filtering on click without navigating (hold for inline filter)
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        document.querySelectorAll('.category-list__item').forEach(b => b.classList.remove('active'));
-        link.classList.add('active');
-        currentCategory = cat.slug;
-        updateTitle();
-        render();
-      });
+      // Navigate to dedicated category page
       list.appendChild(link);
     });
 
