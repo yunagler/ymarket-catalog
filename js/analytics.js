@@ -9,7 +9,7 @@
   // ---- Configuration ----
   const GA4_ID = 'G-ZSWL6L8MC7';
   const CLARITY_ID = 'vsqkjq40jp';
-  const FB_PIXEL_ID = ''; // e.g. '1234567890'
+  const FB_PIXEL_ID = '1465208441826085';
   const GADS_ID = ''; // e.g. 'AW-XXXXXXXXX'
 
   // ---- Google Analytics 4 ----
