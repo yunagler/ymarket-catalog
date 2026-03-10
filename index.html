@@ -49,6 +49,119 @@
   <link rel="stylesheet" href="css/style.min.css?v=20260310">
   <link rel="stylesheet" href="css/pages/home.min.css?v=20260310">
 
+  <!-- SEO Sections Styles -->
+  <style>
+    .segments-section {
+      padding: var(--space-3xl) 0;
+      background: var(--color-bg);
+    }
+    .segments-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-lg);
+      margin-top: var(--space-xl);
+    }
+    .segment-card {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-normal);
+    }
+    .segment-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+    .segment-card i {
+      font-size: 2.5rem;
+      color: var(--color-primary);
+      margin-bottom: var(--space-md);
+    }
+    .segment-card h3 {
+      font-size: var(--fs-lg);
+      font-weight: var(--fw-bold);
+      margin-bottom: var(--space-sm);
+      color: var(--color-text);
+    }
+    .segment-card p {
+      font-size: var(--fs-sm);
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+    .areas-section {
+      padding: var(--space-3xl) 0;
+    }
+    .areas-content {
+      margin-top: var(--space-xl);
+    }
+    .areas-main p {
+      font-size: var(--fs-base);
+      line-height: 1.9;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-md);
+    }
+    .areas-main strong {
+      color: var(--color-text);
+    }
+    .blog-preview-section {
+      padding: var(--space-3xl) 0;
+      background: var(--color-bg);
+    }
+    .blog-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-lg);
+      margin-top: var(--space-xl);
+    }
+    .blog-preview-card {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      text-decoration: none;
+      color: inherit;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-normal);
+      display: flex;
+      flex-direction: column;
+    }
+    .blog-preview-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+    .blog-preview-card h3 {
+      font-size: var(--fs-base);
+      font-weight: var(--fw-bold);
+      margin-bottom: var(--space-sm);
+      color: var(--color-primary);
+    }
+    .blog-preview-card p {
+      font-size: var(--fs-sm);
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      flex: 1;
+    }
+    .blog-preview-link {
+      font-size: var(--fs-sm);
+      color: var(--color-accent);
+      font-weight: var(--fw-semibold);
+      margin-top: var(--space-md);
+    }
+    @media (max-width: 768px) {
+      .segments-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .blog-preview-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 480px) {
+      .segments-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
@@ -468,6 +581,86 @@
           <div class="stat-item__number" data-count="98" data-suffix="%">0</div>
           <div class="stat-item__label">שביעות רצון</div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Segments Section -->
+  <section class="segments-section" id="segments">
+    <div class="container">
+      <h2 class="section-title">למי אנחנו מספקים?</h2>
+      <p class="section-subtitle">וואי מרקט מספקת מוצרי צריכה שוטפת למגוון רחב של עסקים ומוסדות בכל הגדלים</p>
+      <div class="segments-grid">
+        <div class="segment-card">
+          <i class="fas fa-broom"></i>
+          <h3>חברות ניקיון ואחזקה</h3>
+          <p>חומרי ניקוי, מטליות, שקיות אשפה וציוד מקצועי לחברות ניקיון ואחזקת מבנים. אספקה שוטפת לעשרות אתרים ברחבי הארץ.</p>
+        </div>
+        <div class="segment-card">
+          <i class="fas fa-utensils"></i>
+          <h3>מסעדות ושירותי הסעדה</h3>
+          <p>כלים חד פעמיים, אריזות Take Away, מוצרי נייר וציוד למטבחים מוסדיים. פתרונות אריזה ואירוח מקצועיים.</p>
+        </div>
+        <div class="segment-card">
+          <i class="fas fa-store"></i>
+          <h3>סופרמרקטים ומינימרקטים</h3>
+          <p>מוצרי צריכה שוטפת במחירי סיטונאות, שקיות, אריזות ומוצרי ניקיון. אספקה ישירה לחנויות קמעונאיות.</p>
+        </div>
+        <div class="segment-card">
+          <i class="fas fa-building"></i>
+          <h3>משרדים וחללי עבודה</h3>
+          <p>ציוד משרדי, נייר, מוצרי ניקיון וטואלטיקה למשרדים וחללי עבודה משותפים. חבילות אספקה חודשיות מותאמות.</p>
+        </div>
+        <div class="segment-card">
+          <i class="fas fa-dumbbell"></i>
+          <h3>מרכזי ספורט ופנאי</h3>
+          <p>מוצרי ניקיון, טואלטיקה, מגבות נייר וציוד תחזוקה לחדרי כושר, בריכות שחייה ומרכזי פנאי.</p>
+        </div>
+        <div class="segment-card">
+          <i class="fas fa-hand-holding-medical"></i>
+          <h3>רפואה ובריאות</h3>
+          <p>כפפות, מסכות, חומרי חיטוי וציוד מיגון למרפאות, מעבדות ומוסדות בריאות. עמידה בתקנים מחמירים.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas Section -->
+  <section class="areas-section" id="serviceAreas">
+    <div class="container">
+      <h2 class="section-title">אזורי אספקה ושירות</h2>
+      <p class="section-subtitle">משלוחים ארציים עם דגש על אזור המרכז והשרון</p>
+      <div class="areas-content">
+        <div class="areas-main">
+          <p>וואי מרקט מספקת <strong>חומרי ניקיון, מוצרי נייר, כלים חד פעמיים ומוצרי צריכה שוטפת</strong> לעסקים ומוסדות בכל רחבי ישראל. עיקר פעילותנו מתרכזת באזור גוש דן והמרכז עם משלוחים יומיים ל<strong>תל אביב, פתח תקווה, ראשון לציון, הרצליה, רמת גן, חולון, בת ים, גבעתיים, רעננה וכפר סבא</strong>.</p>
+          <p>אנו מספקים גם לאזורי <strong>חיפה והצפון, ירושלים, באר שבע, אשדוד, אשקלון ועד אילת</strong>. כל הזמנה מעל 200₪ נשלחת עם שירות משלוחים מקצועי, ישירות לפתח העסק שלכם.</p>
+          <p>עם מעל <strong>800 מוצרים מקצועיים</strong> במלאי, <strong>שירות אישי וצמוד</strong> ו<strong>מחירי סיטונאות</strong> תחרותיים - וואי מרקט היא השותפה האמינה שלכם לאספקה חכמה ומדויקת.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Blog Section -->
+  <section class="blog-preview-section">
+    <div class="container">
+      <h2 class="section-title">מדריכים וטיפים מקצועיים</h2>
+      <p class="section-subtitle">ידע מקצועי שיעזור לכם לחסוך ולבחור נכון</p>
+      <div class="blog-preview-grid">
+        <a href="blog/wholesale-cleaning-products" class="blog-preview-card">
+          <h3>חומרי ניקיון בסיטונאות - המדריך המלא</h3>
+          <p>איך לבחור חומרי ניקיון מקצועיים, מה ההבדל בין המותגים ואיך לחסוך עד 40% בקנייה סיטונאית.</p>
+          <span class="blog-preview-link">קראו עוד ←</span>
+        </a>
+        <a href="blog/institutional-garbage-bags" class="blog-preview-card">
+          <h3>שקיות אשפה למוסדות - מדריך בחירה</h3>
+          <p>סוגי שקיות, עוביים, גדלים והתאמה לסוג העסק. כל מה שצריך לדעת לפני הזמנה.</p>
+          <span class="blog-preview-link">קראו עוד ←</span>
+        </a>
+        <a href="blog/restaurant-disposable-equipment" class="blog-preview-card">
+          <h3>ציוד חד פעמי למסעדות - המדריך השלם</h3>
+          <p>אילו כלים חד פעמיים כל מסעדה צריכה, כמויות מומלצות ואיך לבחור איכות במחיר נכון.</p>
+          <span class="blog-preview-link">קראו עוד ←</span>
+        </a>
       </div>
     </div>
   </section>

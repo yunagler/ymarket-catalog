@@ -69,3 +69,4 @@ Crawl-delay: 10
 
 Sitemap: https://ymarket.co.il/sitemap.xml
 Sitemap: https://ymarket.co.il/sitemap-blog.xml
+Sitemap: https://ymarket.co.il/sitemap-products.xml

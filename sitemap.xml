@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Main sitemap | See also: sitemap-products.xml, sitemap-blog.xml -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- דפים ראשיים (priority 1.0) -->
@@ -17,86 +18,85 @@
 
   <!-- קטגוריות (priority 0.9) -->
   <url>
-    <loc>https://ymarket.co.il/catalog?cat=%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%A0%D7%99%D7%99%D7%A8-%D7%95%D7%A0%D7%99%D7%92%D7%95%D7%91</loc>
+    <loc>https://ymarket.co.il/category/מוצרי-נייר-וניגוב/</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ymarket.co.il/catalog?cat=%D7%97%D7%95%D7%9E%D7%A8%D7%99-%D7%A0%D7%99%D7%A7%D7%95%D7%99-%D7%95%D7%9B%D7%99%D7%9E%D7%99%D7%A7%D7%9C%D7%99%D7%9D</loc>
+    <loc>https://ymarket.co.il/category/חומרי-ניקוי-וכימיקלים/</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ymarket.co.il/catalog?cat=%D7%97%D7%93-%D7%A4%D7%A2%D7%9E%D7%99-%D7%95%D7%90%D7%99%D7%A8%D7%95%D7%97</loc>
+    <loc>https://ymarket.co.il/category/חד-פעמי-ואירוח/</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ymarket.co.il/catalog?cat=%D7%90%D7%A8%D7%99%D7%96%D7%95%D7%AA-%D7%9E%D7%96%D7%95%D7%9F-%D7%95-Take-Away</loc>
+    <loc>https://ymarket.co.il/category/אריזות-מזון-ו-Take-Away/</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ymarket.co.il/catalog?cat=%D7%91%D7%98%D7%99%D7%97%D7%95%D7%AA-%D7%95%D7%9E%D7%99%D7%92%D7%95%D7%9F-%D7%90%D7%99%D7%A9%D7%99-PPE</loc>
+    <loc>https://ymarket.co.il/category/בטיחות-ומיגון-אישי-PPE/</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ymarket.co.il/catalog?cat=%D7%98%D7%A7%D7%A1%D7%98%D7%99%D7%9C-%D7%9E%D7%98%D7%9C%D7%99%D7%95%D7%AA-%D7%95%D7%A1%D7%97%D7%91%D7%95%D7%AA</loc>
+    <loc>https://ymarket.co.il/category/טקסטיל-מטליות-וסחבות/</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ymarket.co.il/catalog?cat=%D7%A7%D7%A4%D7%94-%D7%A9%D7%AA%D7%99%D7%99%D7%94-%D7%95%D7%9B%D7%99%D7%91%D7%95%D7%93</loc>
+    <loc>https://ymarket.co.il/category/קפה-שתייה-וכיבוד/</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ymarket.co.il/catalog?cat=%D7%A6%D7%99%D7%95%D7%93-%D7%9E%D7%A9%D7%A8%D7%93%D7%99-%D7%95%D7%9B%D7%9C%D7%9C%D7%99</loc>
+    <loc>https://ymarket.co.il/category/ציוד-משרדי-וכללי/</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ymarket.co.il/catalog?cat=%D7%A2%D7%96%D7%A8%D7%94-%D7%A8%D7%90%D7%A9%D7%95%D7%A0%D7%94-%D7%A8%D7%A4%D7%95%D7%90%D7%99</loc>
+    <loc>https://ymarket.co.il/category/עזרה-ראשונה-רפואי/</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ymarket.co.il/catalog?cat=%D7%98%D7%95%D7%90%D7%9C%D7%98%D7%99%D7%A7%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97-%D7%90%D7%99%D7%A9%D7%99</loc>
+    <loc>https://ymarket.co.il/category/טואלטיקה-וטיפוח-אישי/</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ymarket.co.il/catalog?cat=%D7%9B%D7%9C%D7%99-%D7%A2%D7%91%D7%95%D7%93%D7%94-%D7%95%D7%A6%D7%99%D7%95%D7%93-%D7%9E%D7%A9%D7%A7%D7%99</loc>
+    <loc>https://ymarket.co.il/category/כלי-עבודה-וציוד-משקי/</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ymarket.co.il/catalog?cat=%D7%A9%D7%A7%D7%99%D7%95%D7%AA-%D7%95%D7%A4%D7%AA%D7%A8%D7%95%D7%A0%D7%95%D7%AA-%D7%90%D7%A9%D7%A4%D7%94</loc>
-    <lastmod>2026-03-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://ymarket.co.il/catalog?cat=%D7%A2%D7%98%D7%99%D7%A4%D7%94-%D7%90%D7%A8%D7%99%D7%96%D7%94-%D7%95%D7%9C%D7%95%D7%92%D7%99%D7%A1%D7%98%D7%99%D7%A7%D7%94</loc>
+    <loc>https://ymarket.co.il/category/שקיות-ופתרונות-אשפה/</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ymarket.co.il/catalog?cat=%D7%A6%D7%99%D7%95%D7%93-%D7%98%D7%9B%D7%A0%D7%99-%D7%95%D7%90%D7%97%D7%96%D7%A7%D7%94</loc>
+    <loc>https://ymarket.co.il/category/עטיפה-אריזה-ולוגיסטיקה/</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ymarket.co.il/category/ציוד-טכני-ואחזקה/</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -183,7 +183,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://ymarket.co.il/blog/guide-cleaning-products</loc>
     <lastmod>2026-03-10</lastmod>
