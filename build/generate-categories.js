@@ -13,6 +13,116 @@ const CATEGORY_DIR = path.join(ROOT_DIR, 'category');
 const DATA_PATH = path.join(ROOT_DIR, 'data', 'products.json');
 const SITE_URL = 'https://ymarket.co.il';
 
+// SEO data per category - optimized titles, descriptions, H1s, SEO text, FAQs
+const CATEGORY_SEO = {
+  'חומרי-ניקוי-וכימיקלים': {
+    title: 'חומרי ניקוי בסיטונאות למוסדות ועסקים | וואי מרקט',
+    h1: 'חומרי ניקוי בסיטונאות למוסדות ועסקים',
+    metaDesc: 'מחפשים ספק חומרי ניקוי אמין? ב-YMARKET תמצאו כימיקלים, סבונים וחומרי חיטוי תעשייתיים במחירי סיטונאות ישירות מהיצרן. אספקה מהירה עד 72 שעות.',
+    seoText: `<div class="category-seo">
+      <h2>חומרי ניקוי מוסדיים בסיטונאות – אספקה מהירה לכל הארץ</h2>
+      <p>אנחנו ב-YMARKET מבינים שניהול מלאי חומרי הניקוי במוסד הוא קריטי. לכן אנו מספקים מגוון רחב של כימיקלים, סבונים וחומרי חיטוי בריכוז גבוה המותאמים לשימוש תעשייתי ומוסדי. הקטלוג שלנו כולל אקונומיקה תעשייתית, חומצת מלח, מסירי שומן, נוזלי רצפה ומוצרי ניקוי מקצועיים מבית BLINX ומותגים מובילים נוספים.</p>
+      <p>בין אם אתם חברת ניקיון, בית מלון, מסעדה, בית ספר או משרד – אנו מציעים פתרונות ניקוי מותאמים עם מחירי סיטונאות ואספקה תוך 24-72 שעות לכל רחבי ישראל. מינימום הזמנה 1,600 ₪ + מע"מ.</p>
+      <p><strong>צריכים הצעת מחיר מותאמת?</strong> <a href="/contact">צרו קשר</a> או שלחו הודעה ב<a href="https://wa.me/972549922492?text=היי, מעוניין בהצעת מחיר לחומרי ניקוי למוסד" target="_blank" rel="noopener">וואטסאפ</a> ונחזור אליכם תוך שעות.</p>
+    </div>`,
+    faqs: [
+      { q: 'יש מינימום הזמנה לחומרי ניקוי?', a: 'כן, מינימום הזמנה 1,600 ₪ + מע"מ. ניתן לשלב מוצרים מכל הקטגוריות בהזמנה אחת.' },
+      { q: 'האם אתם מספקים אישורי בטיחות (MSDS) לחומרים?', a: 'בהחלט. אנו מספקים גיליונות בטיחות (MSDS) לכל חומרי הניקוי והכימיקלים שלנו, כנדרש לפי תקנות הבטיחות במוסדות.' },
+      { q: 'תוך כמה זמן מגיעה ההזמנה?', a: 'אספקה תוך 24-72 שעות לכל רחבי ישראל, בהתאם לאזור. אזור גוש דן — בדרך כלל למחרת.' },
+      { q: 'האם יש הנחות כמות לחומרי ניקוי?', a: 'כן, ללקוחות קבועים ולהזמנות גדולות אנו מציעים מחירונים מותאמים אישית עם הנחות משמעותיות. צרו קשר לקבלת הצעת מחיר.' }
+    ]
+  },
+  'מוצרי-נייר-וניגוב': {
+    title: 'מוצרי נייר וניגוב לעסקים - אספקה בסיטונאות | וואי מרקט',
+    h1: 'מוצרי נייר וניגוב לעסקים – אספקה בסיטונאות',
+    metaDesc: 'כל פתרונות הנייר למשרד ולמוסד במקום אחד: נייר טואלט, מגבות ידיים, מפיות וגלילי תעשייה. איכות ללא פשרות ומחירים הוגנים לעסקים. כנסו לקטלוג.',
+    seoText: `<div class="category-seo">
+      <h2>מוצרי נייר תעשייתיים לעסקים ומוסדות</h2>
+      <p>מוצרי נייר הם מוצר יסוד בכל עסק ומוסד. ב-YMARKET תמצאו מגוון מלא של נייר טואלט מוסדי, מגבות נייר תעשייתיות, מפיות, גלילי ניגוב ומוצרי נייר נוספים – הכל במחירי סיטונאות עם אספקה מהירה.</p>
+      <p>אנו עובדים עם מותגים מובילים כמו טורקיש ומציעים פתרונות המותאמים לשירותי ציבור, מטבחים מוסדיים, משרדים ומפעלים. חסכו בעלויות עם רכישה מרוכזת ישירות מהמפיץ.</p>
+      <p><strong>צריכים כמות גדולה?</strong> <a href="/contact">לחצו כאן להצעת מחיר מותאמת אישית</a>.</p>
+    </div>`,
+    faqs: [
+      { q: 'מהו ההבדל בין נייר טואלט ביתי למוסדי?', a: 'נייר מוסדי מגיע בגלילים גדולים יותר (ג\'מבו) המתאימים למתקני שירותים ציבוריים, חוסך החלפות תכופות ומפחית עלויות.' },
+      { q: 'האם אתם מספקים מתקני תליה לנייר?', a: 'כן, אנו מציעים מתקני נייר טואלט ומגבות ידיים תעשייתיים בנפרד. צרו קשר לפרטים.' }
+    ]
+  },
+  'חד-פעמי-ואירוח': {
+    title: 'כלים חד פעמיים בסיטונאות לאירוח ומוסדות | וואי מרקט',
+    h1: 'כלים חד פעמיים בסיטונאות לאירוח ומוסדות',
+    metaDesc: 'ציוד חד פעמי איכותי לאירועים, משרדים ומוסדות. כוסות, צלחות, סכו"ם ופתרונות אירוח מלאים. חסכו בעלויות התפעול עם רכישה מרוכזת ב-YMARKET.',
+    seoText: `<div class="category-seo">
+      <h2>כלים חד פעמיים לעסקים – פתרונות אירוח מקצועיים</h2>
+      <p>ב-YMARKET תמצאו מבחר רחב של כלים חד פעמיים לאירוח: כוסות חמות וקרות, צלחות, סכו"ם, קשיות, מפיות ואביזרי הגשה. הכל במחירי סיטונאות ובאיכות גבוהה.</p>
+      <p>אנו מספקים לקייטרינגים, מסעדות, משרדים, מוסדות חינוך ואירועים פרטיים. הזמינו בכמויות גדולות וחסכו משמעותית בעלויות האירוח השוטפות.</p>
+    </div>`,
+    faqs: [
+      { q: 'האם יש מוצרים חד פעמיים ידידותיים לסביבה?', a: 'כן, אנו מציעים גם כלים מתכלים ומוצרי נייר ממוחזר. צרו קשר לפרטים על הקו הירוק שלנו.' },
+      { q: 'מה כולל חבילת אירוח למשרד?', a: 'אנחנו יכולים להרכיב לכם חבילת אירוח שכוללת כוסות, בוחשנים, סוכר, מפיות ועוד – מותאמת למספר העובדים. צרו קשר לקבלת הצעה.' }
+    ]
+  },
+  'אריזות-מזון-ו-Take-Away': {
+    title: 'אריזות מזון ופתרונות Take Away למסעדות | וואי מרקט',
+    h1: 'אריזות מזון ופתרונות Take Away למסעדות',
+    metaDesc: 'שדרגו את מערך המשלוחים שלכם. קופסאות מזון, שקיות ופתרונות אריזה מתקדמים השומרים על טריות. מותאם אישית לצרכי ענף המזון והאירוח.',
+    seoText: `<div class="category-seo">
+      <h2>אריזות מזון מקצועיות לעסקי מזון ומשלוחים</h2>
+      <p>בעידן המשלוחים, אריזות איכותיות הן חלק בלתי נפרד מחוויית הלקוח. ב-YMARKET תמצאו מגוון רחב של קופסאות מזון, מיכלים חד פעמיים, שקיות נשיאה, נייר עטיפה ופתרונות אריזה לכל סוגי המזון.</p>
+      <p>אנו מספקים למסעדות, קייטרינגים, פיצריות, מאפיות ועסקי מזון בכל הגדלים. מחירי סיטונאות, איכות מעולה ואספקה מהירה לכל הארץ.</p>
+    </div>`,
+    faqs: [
+      { q: 'האם האריזות מתאימות למיקרוגל?', a: 'חלק מהאריזות שלנו מתאימות לחימום במיקרוגל. בדפי המוצרים הספציפיים מצוין האם האריזה מיקרוגל-safe.' },
+      { q: 'האם ניתן לקבל הדפסה/מיתוג על האריזות?', a: 'כרגע אנחנו מספקים אריזות גנריות. לפתרונות מיתוג מותאם צרו קשר ונבדוק אפשרויות.' }
+    ]
+  },
+  'בטיחות-ומיגון-אישי-PPE': {
+    title: 'ציוד בטיחות ומיגון אישי לעובדים ומוסדות | וואי מרקט',
+    h1: 'ציוד בטיחות ומיגון אישי לעובדים ומוסדות',
+    metaDesc: 'שמירה על בטיחות העובדים היא בעדיפות עליונה. כפפות, מסכות, ביגוד מגן וציוד עזרה ראשונה בתקנים המחמירים ביותר. הזמינו עכשיו בסיטונאות.',
+    seoText: `<div class="category-seo">
+      <h2>ציוד בטיחות ומיגון – עמידה בתקנים לעסקים ומוסדות</h2>
+      <p>ב-YMARKET תמצאו ציוד בטיחות ומיגון אישי (PPE) המתאים לכל סוגי העסקים: כפפות חד פעמיות, מסכות הגנה, משקפי מגן, ביגוד מגן וציוד עזרה ראשונה. כל המוצרים עומדים בתקנים הישראליים והבינלאומיים.</p>
+      <p>אנו מספקים למפעלים, חברות ניקיון, מוסדות רפואיים, מטבחים מוסדיים ולכל עסק שמחויב בציוד מיגון לעובדים.</p>
+    </div>`,
+    faqs: [
+      { q: 'האם ציוד הבטיחות עומד בתקנים?', a: 'כן, כל ציוד הבטיחות שלנו עומד בתקנים הישראליים ובתקני CE/ISO הרלוונטיים.' },
+      { q: 'האם ניתן לקבל ייעוץ לגבי ציוד נדרש?', a: 'בהחלט. צרו קשר ונעזור לכם להרכיב את סל ציוד הבטיחות המתאים לסוג העסק שלכם.' }
+    ]
+  },
+  'קפה-שתייה-וכיבוד': {
+    title: 'קפה, שתייה וכיבוד למשרדים ועסקים בסיטונאות | וואי מרקט',
+    h1: 'קפה, שתייה וכיבוד למשרדים ועסקים',
+    metaDesc: 'קפה, תה, שתייה וכיבוד למשרד ולמוסד במחירי סיטונאות. מותגים מובילים, אספקה שוטפת ומהירה. הזמינו עכשיו ב-YMARKET.',
+    seoText: `<div class="category-seo">
+      <h2>פתרונות כיבוד למשרדים ומוסדות</h2>
+      <p>כיבוד איכותי במשרד משפר את חוויית העובדים והלקוחות. ב-YMARKET תמצאו מגוון קפה, תה, סוכר, חלב, עוגיות ומוצרי כיבוד נוספים – הכל בגדלים מוסדיים ובמחירי סיטונאות.</p>
+      <p>אנו מספקים לכל סוגי המשרדים והמוסדות, עם אספקה שוטפת שמבטיחה שפינת הקפה שלכם תמיד מלאה.</p>
+    </div>`,
+    faqs: []
+  },
+  'שקיות-ופתרונות-אשפה': {
+    title: 'שקיות אשפה ופתרונות פסולת לעסקים בסיטונאות | וואי מרקט',
+    h1: 'שקיות אשפה ופתרונות פסולת לעסקים',
+    metaDesc: 'שקיות אשפה בכל הגדלים והעוביים לעסקים ומוסדות. שקיות גופיה, שקיות HD, שקיות כבדות. מחירי סיטונאות ואספקה מהירה.',
+    seoText: `<div class="category-seo">
+      <h2>שקיות אשפה מוסדיות – לכל סוג עסק ומוסד</h2>
+      <p>מוצר בסיסי שכל עסק צורך בכמויות. ב-YMARKET תמצאו שקיות אשפה בכל הגדלים: 75×90, 80×120 ועוד, בעוביים שונים המותאמים לשימוש מוסדי כבד. שקיות עם שרוך, עם ידית, ובצבעים לפי סוג פסולת.</p>
+      <p>מחירי סיטונאות, משלוח ארצי ואספקה מהירה.</p>
+    </div>`,
+    faqs: []
+  },
+  'טקסטיל-מטליות-וסחבות': {
+    title: 'מטליות, סחבות וטקסטיל ניקוי לעסקים | וואי מרקט',
+    h1: 'מטליות, סחבות וטקסטיל ניקוי לעסקים',
+    metaDesc: 'מטליות ניקוי, סחבות רצפה, מגבים וטקסטיל מקצועי לעסקים ומוסדות. איכות תעשייתית במחירי סיטונאות. משלוח ארצי.',
+    seoText: `<div class="category-seo">
+      <h2>מטליות וטקסטיל ניקוי מקצועי</h2>
+      <p>מטליות ניקוי איכותיות הן כלי עבודה חיוני לכל עסק. ב-YMARKET תמצאו מטליות מיקרופייבר, סחבות ספונג׳, מגבים ומוצרי טקסטיל מקצועיים לשימוש תעשייתי ומוסדי.</p>
+    </div>`,
+    faqs: []
+  }
+};
+
 function formatPrice(price) {
   return new Intl.NumberFormat('he-IL', {
     style: 'currency', currency: 'ILS',
@@ -24,7 +134,10 @@ function generateCategoryPage(category, products, allCategories) {
   const categoryProducts = products.filter(p => p.categorySlug === category.slug);
   const categoryUrl = `${SITE_URL}/category/${category.slug}/`;
 
-  const seoDesc = `${category.name} - ${categoryProducts.length} מוצרים במחירי סיטונאות. וואי מרקט - אספקה חכמה לעסקים ומוסדות. משלוח ארצי.`;
+  const catSeo = CATEGORY_SEO[category.slug] || {};
+  const seoDesc = catSeo.metaDesc || `${category.name} - ${categoryProducts.length} מוצרים במחירי סיטונאות. וואי מרקט - אספקה חכמה לעסקים ומוסדות. משלוח ארצי.`;
+  const h1Text = catSeo.h1 || category.name;
+  const pageTitle = catSeo.title || `${category.name} | וואי מרקט - אספקה למוסדות ועסקים`;
 
   const productsHtml = categoryProducts.map(p => {
     const imgSrc = p.imageUrl || `/items/${p.id}.jpg`;
@@ -87,7 +200,7 @@ function generateCategoryPage(category, products, allCategories) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${category.name} | וואי מרקט - אספקה למוסדות ועסקים</title>
+  <title>${pageTitle}</title>
   <meta name="description" content="${seoDesc}">
   <link rel="canonical" href="${categoryUrl}">
   <link rel="icon" href="/favicon.ico">
@@ -109,7 +222,17 @@ function generateCategoryPage(category, products, allCategories) {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="/css/style.min.css">
   <link rel="stylesheet" href="/css/pages/catalog.min.css">
+  <style>.category-seo{margin-top:2.5rem;padding:2rem;background:#fff;border-top:2px solid #e5e7eb;line-height:1.8}.category-seo h2{font-size:1.25rem;margin-bottom:1rem;color:var(--color-text,#1f2937)}.category-seo p{margin-bottom:1rem;color:var(--color-text-secondary,#4b5563)}.category-seo a{color:var(--color-primary,#1B3A5C);text-decoration:underline}</style>
   <script type="application/ld+json">${jsonLd}</script>
+  ${(catSeo.faqs && catSeo.faqs.length > 0) ? `<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": catSeo.faqs.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": { "@type": "Answer", "text": f.a }
+    }))
+  }, null, 2)}</script>` : ''}
   <script type="application/ld+json">${JSON.stringify({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -165,11 +288,19 @@ function generateCategoryPage(category, products, allCategories) {
         </aside>
         <div class="catalog-main">
           <div class="catalog-header">
-            <h1>${category.name}</h1>
+            <h1>${h1Text}</h1>
             <p>${categoryProducts.length} מוצרים</p>
           </div>
           <div class="products-grid">
             ${productsHtml}
+          </div>
+          ${catSeo.seoText || ''}
+          <div class="category-cta" style="background:var(--color-bg-light,#f8f9fa);border-radius:12px;padding:2rem;margin-top:2rem;text-align:center;">
+            <h3 style="margin-bottom:0.5rem;">צריכים כמות גדולה? קבלו הצעת מחיר מותאמת אישית</h3>
+            <p style="color:var(--color-text-light,#6b7280);margin-bottom:1rem;">לקוחות עסקיים נהנים ממחירים מיוחדים, אספקה שוטפת ושירות אישי</p>
+            <a href="https://wa.me/972549922492?text=היי, אשמח לקבל הצעת מחיר ל${encodeURIComponent(category.name)}" target="_blank" rel="noopener" class="btn btn--whatsapp" style="display:inline-flex;align-items:center;gap:8px;padding:12px 28px;font-size:1.05rem;"><i class="fab fa-whatsapp"></i> שלחו הודעה בוואטסאפ</a>
+            <span style="display:inline-block;margin:0 12px;color:var(--color-text-light);">או</span>
+            <a href="tel:037740400" class="btn btn--outline" style="display:inline-flex;align-items:center;gap:8px;padding:12px 28px;font-size:1.05rem;"><i class="fas fa-phone-alt"></i> 03-7740400</a>
           </div>
         </div>
       </div>
@@ -186,7 +317,7 @@ function generateCategoryPage(category, products, allCategories) {
   </div></footer>
 
   <a href="https://wa.me/972549922492" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-  <script src="/js/main.min.js"></script>
+  <script src="/js/main.min.js?v=20260310b"></script>
 </body>
 </html>`;
 }
@@ -231,7 +362,7 @@ function main() {
     const html = generateCategoryPage(category, products, categories);
     const slugDir = path.join(CATEGORY_DIR, category.slug);
     fs.mkdirSync(slugDir, { recursive: true });
-    fs.writeFileSync(path.join(slugDir, 'index'), html, 'utf-8');
+    fs.writeFileSync(path.join(slugDir, 'index.html'), html, 'utf-8');
     count++;
   }
 
