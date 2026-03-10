@@ -11,8 +11,19 @@
     setupCartEvents();
   });
 
+  function escapeHtml(str) {
+    var div = document.createElement('div');
+    div.textContent = str || '';
+    return div.innerHTML;
+  }
+
   function getCart() {
-    return JSON.parse(localStorage.getItem('ym_cart') || '[]');
+    try {
+      return JSON.parse(localStorage.getItem('ym_cart') || '[]');
+    } catch (e) {
+      localStorage.removeItem('ym_cart');
+      return [];
+    }
   }
 
   function saveCart(cart) {
@@ -39,26 +50,44 @@
     container.style.display = 'block';
     if (summaryEl) summaryEl.style.display = 'block';
 
-    container.innerHTML = cart.map(item => `
-      <div class="cart-item" data-id="${item.id}">
-        <div class="cart-item__image">
-          <img src="${item.imageUrl || 'images/products/placeholder.jpg'}" alt="${item.name}" loading="lazy"
-               onerror="this.src='https://placehold.co/80x80/f0f2f5/5a6577?text=${encodeURIComponent((item.name || '').substring(0,8))}'">
-        </div>
-        <div class="cart-item__details">
-          <h3 class="cart-item__name">${item.slug ? `<a href="products/${item.slug}">${item.name}</a>` : item.name}</h3>
-          <div class="cart-item__unit">${item.unit || ''}</div>
-          <div class="cart-item__price">${item.price ? formatPrice(item.price) : 'צרו קשר'}</div>
-        </div>
-        <div class="cart-item__quantity">
-          <button class="cart-item__qty-btn" data-action="decrease" data-id="${item.id}">-</button>
-          <span class="cart-item__qty-value">${item.quantity}</span>
-          <button class="cart-item__qty-btn" data-action="increase" data-id="${item.id}">+</button>
-        </div>
-        <div class="cart-item__total">${item.price ? formatPrice(item.price * item.quantity) : ''}</div>
-        <button class="cart-item__remove" data-id="${item.id}" aria-label="הסר מהעגלה"><i class="fas fa-trash-alt"></i></button>
-      </div>
-    `).join('');
+    // Build cart items using DOM API to prevent XSS
+    container.innerHTML = '';
+    cart.forEach(item => {
+      const row = document.createElement('div');
+      row.className = 'cart-item';
+      row.dataset.id = item.id;
+
+      var safeName = escapeHtml(item.name);
+      var safeUnit = escapeHtml(item.unit || '');
+      var fallbackUrl = 'https://placehold.co/80x80/f0f2f5/5a6577?text=' + encodeURIComponent((item.name || '').substring(0, 8));
+
+      row.innerHTML =
+        '<div class="cart-item__image">' +
+          '<img src="' + escapeHtml(item.imageUrl || 'images/products/placeholder.jpg') + '" alt="' + safeName + '" loading="lazy">' +
+        '</div>' +
+        '<div class="cart-item__details">' +
+          '<h3 class="cart-item__name">' + (item.slug ? '<a href="products/' + encodeURIComponent(item.slug) + '">' + safeName + '</a>' : safeName) + '</h3>' +
+          '<div class="cart-item__unit">' + safeUnit + '</div>' +
+          '<div class="cart-item__price">' + (item.price ? formatPrice(item.price) : 'צרו קשר') + '</div>' +
+        '</div>' +
+        '<div class="cart-item__quantity">' +
+          '<button class="cart-item__qty-btn" data-action="decrease" data-id="' + item.id + '">-</button>' +
+          '<span class="cart-item__qty-value">' + item.quantity + '</span>' +
+          '<button class="cart-item__qty-btn" data-action="increase" data-id="' + item.id + '">+</button>' +
+        '</div>' +
+        '<div class="cart-item__total">' + (item.price ? formatPrice(item.price * item.quantity) : '') + '</div>' +
+        '<button class="cart-item__remove" data-id="' + item.id + '" aria-label="הסר מהעגלה"><i class="fas fa-trash-alt"></i></button>';
+
+      // Set image fallback via JS instead of inline onerror
+      var img = row.querySelector('img');
+      if (img) {
+        img.addEventListener('error', function() {
+          this.src = fallbackUrl;
+        }, { once: true });
+      }
+
+      container.appendChild(row);
+    });
 
     updateSummary(cart);
   }

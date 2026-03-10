@@ -74,16 +74,18 @@
       priceHtml = '<div class="featured-slide__prices"><span class="featured-slide__price">צרו קשר למחיר</span></div>';
     }
 
+    var safeSlug = encodeURIComponent(product.slug || '');
     var slide = document.createElement('div');
     slide.className = 'swiper-slide';
+    slide.dataset.fallback = fallback;
     slide.innerHTML =
       '<div class="featured-slide">' +
-        '<a href="products/' + product.slug + '" class="featured-slide__image">' +
-          '<img src="' + imgSrc + '" alt="' + safeName + '" loading="lazy" onerror="this.src=\'' + fallback + '\'">' +
+        '<a href="products/' + safeSlug + '" class="featured-slide__image">' +
+          '<img src="' + imgSrc + '" alt="' + safeName + '" loading="lazy" onerror="this.onerror=null;this.src=this.closest(\'[data-fallback]\').dataset.fallback;">' +
         '</a>' +
         '<div class="featured-slide__body">' +
           '<div class="featured-slide__category">' + escHtml(product.categoryName || '') + '</div>' +
-          '<h3 class="featured-slide__name"><a href="products/' + product.slug + '">' + safeName + '</a></h3>' +
+          '<h3 class="featured-slide__name"><a href="products/' + safeSlug + '">' + safeName + '</a></h3>' +
           priceHtml +
           (product.saleNis
             ? '<button class="featured-slide__btn" data-id="' + product.id + '"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>'

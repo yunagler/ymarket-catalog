@@ -401,7 +401,7 @@
     height: 52px;
     font-size: 24px;
     bottom: 16px;
-    left: 16px;
+    right: 16px;
   }
 
   .whatsapp-float__tooltip {
@@ -633,7 +633,7 @@
 @supports (padding: env(safe-area-inset-bottom)) {
   .whatsapp-float {
     bottom: max(24px, calc(env(safe-area-inset-bottom) + 8px));
-    left: max(24px, env(safe-area-inset-left));
+    right: max(24px, env(safe-area-inset-right));
   }
 
   .cookie-banner {
@@ -650,6 +650,16 @@
   }
 }
 
+/* ---- Reduced Motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* ---- Print Styles ---- */
 @media print {
   .top-bar,
@@ -658,7 +668,9 @@
   .whatsapp-float,
   .cookie-banner,
   .mobile-menu-btn,
-  .mobile-filter-btn {
+  .mobile-filter-btn,
+  .search-overlay,
+  .mobile-overlay {
     display: none !important;
   }
 
@@ -677,5 +689,17 @@
     content: " (" attr(href) ")";
     font-size: 0.8em;
     color: #666;
+  }
+
+  h1, h2, h3, h4 {
+    page-break-after: avoid;
+  }
+
+  img, .product-card {
+    page-break-inside: avoid;
+  }
+
+  @page {
+    margin: 2cm;
   }
 }

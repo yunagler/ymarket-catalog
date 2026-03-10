@@ -39,16 +39,49 @@ function initMobileNav() {
     overlay.addEventListener('click', closeMobileNav);
   }
 
-  // Mobile mega-menu toggle
+  // Mobile mega-menu toggle + keyboard support
   document.querySelectorAll('.main-nav__item').forEach(item => {
     const link = item.querySelector('.main-nav__link');
     const mega = item.querySelector('.mega-menu');
     if (!mega || !link) return;
 
+    // Add ARIA attributes
+    link.setAttribute('aria-haspopup', 'true');
+    link.setAttribute('aria-expanded', 'false');
+    mega.setAttribute('role', 'menu');
+
     link.addEventListener('click', (e) => {
       if (window.innerWidth <= 768) {
         e.preventDefault();
-        item.classList.toggle('open');
+        const isOpen = item.classList.toggle('open');
+        link.setAttribute('aria-expanded', String(isOpen));
+      }
+    });
+
+    // Keyboard: Enter/Space opens menu, Escape closes
+    link.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const isOpen = item.classList.toggle('open');
+        link.setAttribute('aria-expanded', String(isOpen));
+        if (isOpen) {
+          const firstLink = mega.querySelector('a');
+          if (firstLink) firstLink.focus();
+        }
+      }
+      if (e.key === 'Escape') {
+        item.classList.remove('open');
+        link.setAttribute('aria-expanded', 'false');
+        link.focus();
+      }
+    });
+
+    // Escape from within mega-menu
+    mega.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        item.classList.remove('open');
+        link.setAttribute('aria-expanded', 'false');
+        link.focus();
       }
     });
   });
@@ -135,6 +168,9 @@ function initCookieConsent() {
 /* ---- FAQ Accordions ---- */
 function initAccordions() {
   document.querySelectorAll('.accordion__header').forEach(header => {
+    // Set initial ARIA state
+    header.setAttribute('aria-expanded', header.closest('.accordion__item')?.classList.contains('active') ? 'true' : 'false');
+
     header.addEventListener('click', () => {
       const item = header.closest('.accordion__item');
       const body = item.querySelector('.accordion__body');
@@ -145,11 +181,13 @@ function initAccordions() {
       item.closest('.accordion')?.querySelectorAll('.accordion__item').forEach(other => {
         if (other !== item) {
           other.classList.remove('active');
+          other.querySelector('.accordion__header')?.setAttribute('aria-expanded', 'false');
           other.querySelector('.accordion__body').style.maxHeight = '0';
         }
       });
 
       item.classList.toggle('active');
+      header.setAttribute('aria-expanded', String(!isOpen));
       body.style.maxHeight = isOpen ? '0' : content.scrollHeight + 'px';
     });
   });

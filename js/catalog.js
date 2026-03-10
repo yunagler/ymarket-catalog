@@ -144,8 +144,8 @@
 
     // Price filter
     document.getElementById('priceFilterBtn')?.addEventListener('click', () => {
-      priceMin = parseFloat(document.getElementById('priceMin').value) || 0;
-      priceMax = parseFloat(document.getElementById('priceMax').value) || Infinity;
+      priceMin = Math.max(0, parseFloat(document.getElementById('priceMin').value) || 0);
+      priceMax = Math.max(0, parseFloat(document.getElementById('priceMax').value) || Infinity);
       render();
     });
 
@@ -182,9 +182,10 @@
     }
 
     if (search) {
-      currentSearch = search;
+      // Sanitize search input from URL
+      currentSearch = search.replace(/[<>"']/g, '');
       const searchInput = document.getElementById('searchInput');
-      if (searchInput) searchInput.value = search;
+      if (searchInput) searchInput.value = currentSearch;
     }
   }
 
@@ -331,21 +332,24 @@
       priceHtml = '<div class="product-card__price" style="color:var(--color-text-light)">צרו קשר למחיר</div>';
     }
 
-    const productUrl = p.slug ? `/products/${p.slug}/` : '#';
+    const productUrl = p.slug ? '/products/' + encodeURIComponent(p.slug) + '/' : '#';
     const imgSrc = p.imageUrl || 'images/products/placeholder.jpg';
+    const safeName = escapeHtml(p.name);
+    const safeCategoryName = escapeHtml(p.categoryName || '');
+    const fallbackImg = 'https://placehold.co/300x300/f0f2f5/5a6577?text=' + encodeURIComponent((p.name || 'מוצר').substring(0, 15));
 
     return `
-      <div class="product-card">
+      <div class="product-card" data-fallback="${fallbackImg}">
         <div class="product-card__image">
           <a href="${productUrl}">
-            <img src="${imgSrc}" alt="${p.name}" loading="lazy"
-                 onerror="this.src='https://placehold.co/300x300/f0f2f5/5a6577?text=${encodeURIComponent(p.name?.substring(0,15) || 'מוצר')}'">
+            <img src="${imgSrc}" alt="${safeName}" loading="lazy"
+                 onerror="this.onerror=null;this.src=this.closest('.product-card').dataset.fallback;">
           </a>
           ${badgeHtml}
         </div>
         <div class="product-card__body">
-          <div class="product-card__category">${p.categoryName || ''}</div>
-          <h3 class="product-card__name"><a href="${productUrl}">${p.name}</a></h3>
+          <div class="product-card__category">${safeCategoryName}</div>
+          <h3 class="product-card__name"><a href="${productUrl}">${safeName}</a></h3>
           ${p.unit ? `<div class="product-card__pack">${p.unitsPerPack || ''} ${p.unit || ''}</div>` : ''}
           <div class="product-card__pricing">
             ${priceHtml}
@@ -394,6 +398,13 @@
     localStorage.setItem('ym_cart', JSON.stringify(cart));
     window.YMarket?.updateCartBadge();
     window.YMarket?.showToast('המוצר נוסף לעגלה');
+  }
+
+  // ---- Escape HTML ----
+  function escapeHtml(str) {
+    var div = document.createElement('div');
+    div.textContent = str || '';
+    return div.innerHTML;
   }
 
   // ---- Format Price ----

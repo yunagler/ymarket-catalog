@@ -6,8 +6,7 @@
 (function() {
   'use strict';
 
-  // For local dev, change to http://localhost:3000
-  var API_BASE = 'http://localhost:3000';
+  var API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
   var MIN_ORDER = 200;
 
   document.addEventListener('DOMContentLoaded', function() {
@@ -136,8 +135,8 @@
           return;
         }
 
-        // Success
-        localStorage.setItem('ym_last_order', JSON.stringify({
+        // Success - use sessionStorage for sensitive data
+        sessionStorage.setItem('ym_last_order', JSON.stringify({
           orderId: result.data.orderId,
           totalAmount: result.data.totalAmount,
           customerName: name,
@@ -166,6 +165,12 @@
     var cleanPhone = phone.replace(/[-\s]/g, '');
     if (!cleanPhone || !/^0[0-9]{8,9}$/.test(cleanPhone)) {
       showFieldError('co-phone', 'נא להזין מספר טלפון תקין (למשל 050-1234567)');
+      valid = false;
+    }
+
+    var emailVal = getValue('co-email');
+    if (emailVal && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+      showFieldError('co-email', 'נא להזין כתובת אימייל תקינה');
       valid = false;
     }
 

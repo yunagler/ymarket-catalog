@@ -181,7 +181,7 @@
   height: 100%;
   object-fit: contain;
   padding: var(--space-md);
-  transition: transform 0.3s;
+  transition: transform 0.3s ease-out;
 }
 
 .featured-slide:hover .featured-slide__image img {
