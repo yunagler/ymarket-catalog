@@ -319,6 +319,45 @@
   gap: var(--space-lg);
 }
 
+/* ---- Registration Benefits ---- */
+.registration-benefits {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  padding: var(--space-3xl) 0;
+  color: var(--color-white);
+  text-align: center;
+}
+
+.registration-benefits h2 {
+  color: var(--color-white);
+  font-size: var(--fs-3xl);
+  margin-bottom: var(--space-2xl);
+}
+
+.registration-benefits__grid {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2xl);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-2xl);
+}
+
+.registration-benefits__item {
+  flex: 0 1 220px;
+  text-align: center;
+}
+
+.registration-benefits__icon {
+  font-size: var(--fs-3xl);
+  color: var(--color-accent-gold);
+  margin-bottom: var(--space-md);
+}
+
+.registration-benefits__text {
+  font-size: var(--fs-base);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: var(--lh-normal);
+}
+
 /* ---- CTA Section ---- */
 .cta-section {
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
