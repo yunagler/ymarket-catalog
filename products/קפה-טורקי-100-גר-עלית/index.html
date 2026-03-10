@@ -24,7 +24,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="/css/style.min.css">
-  <link rel="stylesheet" href="/css/pages/product-detail.min.css">
+  <link rel="stylesheet" href="/css/pages/product-detail.min.css?v=20260310">
   <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "Product",
@@ -63,6 +63,7 @@
       <div class="main-nav__item"><a href="/contact" class="main-nav__link">צרו קשר</a></div>
     </nav>
     <div class="header__actions">
+      <button class="header__search-toggle" aria-label="חיפוש"><i class="fas fa-search"></i></button>
       <button class="header__cart-btn" aria-label="עגלת קניות"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></button>
       <a href="/login" class="header__login-btn"><i class="fas fa-user"></i> <span>כניסת לקוחות</span></a>
       <a href="/register" class="header__register-btn"><i class="fas fa-user-plus"></i> <span>הרשמה</span></a>
@@ -70,6 +71,7 @@
     <button class="mobile-menu-btn" aria-label="תפריט" aria-expanded="false"><i class="fas fa-bars"></i></button>
   </div></header>
   <div class="mobile-overlay"></div>
+  <div class="search-overlay"><div class="search-overlay__inner"><form action="/catalog" method="get"><input type="search" name="search" class="search-overlay__input" placeholder="חפשו מוצר..." aria-label="חיפוש מוצר" autocomplete="off"></form></div></div>
 
   <div class="container">
     <nav class="breadcrumb" aria-label="ניווט פירורי לחם">
@@ -112,6 +114,19 @@
             <a href="https://wa.me/972549922492?text=היי, מתעניין ב%D7%A7%D7%A4%D7%94%20%D7%98%D7%95%D7%A8%D7%A7%D7%99%20100%20%D7%92%D7%A8'%20-%20%D7%A2%D7%9C%D7%99%D7%AA" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> שאלו אותנו</a>
           </div>
 
+          <div class="product-trust-badges">
+            <div class="product-trust-badges__item"><i class="fas fa-truck"></i><span>משלוח ארצי</span></div>
+            <div class="product-trust-badges__item"><i class="fas fa-tags"></i><span>מחירי סיטונאות</span></div>
+            <div class="product-trust-badges__item"><i class="fas fa-headset"></i><span>שירות אישי</span></div>
+            <div class="product-trust-badges__item"><i class="fas fa-file-invoice"></i><span>חשבונית מס</span></div>
+          </div>
+
+          <div class="product-highlights">
+            <div class="product-highlights__item"><i class="fas fa-check-circle"></i> <span>במלאי - מוכן למשלוח</span></div>
+            <div class="product-highlights__item"><i class="fas fa-shipping-fast"></i> <span>1-2 ימי עסקים</span></div>
+            <div class="product-highlights__item"><i class="fas fa-shield-alt"></i> <span>הזמנה מינימלית: 200₪</span></div>
+          </div>
+
           
         </div>
       </div>
@@ -122,7 +137,7 @@
         <div class="related-products__grid">
     <div class="product-card" style="min-width: 220px;">
       <div class="product-card__image">
-        <a href="/products/מאג-טרמוס-נירוסטה-450-מ-ל/">
+        <a href="/products/מאג-טרמוס-נירוסטה-450-מ-ל/" aria-label="מאג טרמוס נירוסטה 450 מ"ל">
           <img src="/items/681.jpg" alt="מאג טרמוס נירוסטה 450 מ"ל" loading="lazy"
                onerror="this.src='https://placehold.co/300x300/f0f2f5/5a6577?text=%D7%9E%D7%90%D7%92%20%D7%98%D7%A8%D7%9E%D7%95%D7%A1%20%D7%A0%D7%99%D7%A8%D7%95%D7%A1'">
         </a>
@@ -135,7 +150,7 @@
   
     <div class="product-card" style="min-width: 220px;">
       <div class="product-card__image">
-        <a href="/products/מארז-שלשות-קפה-טורקי-עלית-145-גר/">
+        <a href="/products/מארז-שלשות-קפה-טורקי-עלית-145-גר/" aria-label="מארז שלשות קפה טורקי עלית 145 גר">
           <img src="/items/985.jpg" alt="מארז שלשות קפה טורקי עלית 145 גר" loading="lazy"
                onerror="this.src='https://placehold.co/300x300/f0f2f5/5a6577?text=%D7%9E%D7%90%D7%A8%D7%96%20%D7%A9%D7%9C%D7%A9%D7%95%D7%AA%20%D7%A7%D7%A4%D7%94%20'">
         </a>
@@ -148,7 +163,7 @@
   
     <div class="product-card" style="min-width: 220px;">
       <div class="product-card__image">
-        <a href="/products/מים-2-ליטר-עין-גדי-א-שישיה/">
+        <a href="/products/מים-2-ליטר-עין-גדי-א-שישיה/" aria-label="מים 2 ליטר עין גדי - א' שישיה">
           <img src="/items/809.jpg" alt="מים 2 ליטר עין גדי - א' שישיה" loading="lazy"
                onerror="this.src='https://placehold.co/300x300/f0f2f5/5a6577?text=%D7%9E%D7%99%D7%9D%202%20%D7%9C%D7%99%D7%98%D7%A8%20%D7%A2%D7%99%D7%9F%20'">
         </a>
@@ -161,7 +176,7 @@
   
     <div class="product-card" style="min-width: 220px;">
       <div class="product-card__image">
-        <a href="/products/מלח-הארץ-ים-יבש-500-גרם-מלחיה/">
+        <a href="/products/מלח-הארץ-ים-יבש-500-גרם-מלחיה/" aria-label="מלח הארץ ים יבש 500 גרם - מלחיה">
           <img src="/items/502.jpg" alt="מלח הארץ ים יבש 500 גרם - מלחיה" loading="lazy"
                onerror="this.src='https://placehold.co/300x300/f0f2f5/5a6577?text=%D7%9E%D7%9C%D7%97%20%D7%94%D7%90%D7%A8%D7%A5%20%D7%99%D7%9D%20%D7%99%D7%91%D7%A9'">
         </a>
@@ -179,11 +194,12 @@
 
   <footer class="footer"><div class="container">
     <div class="footer__grid">
-      <div class="footer__brand"><img src="/images/logo/logo-white.png" alt="וואי מרקט" width="112" height="60"><p>נגלר סחר והפצה — מוצרי צריכה שוטפת לעסקים ומוסדות.</p><div class="footer__social"><a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a><a href="https://www.facebook.com/profile.php?id=100083110428101" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/ymarket.ai" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div></div>
-      <div class="footer__col"><h4>קישורים</h4><div class="footer__links"><a href="/about">אודות</a><a href="/faq">שאלות ותשובות</a><a href="/contact">צרו קשר</a></div></div>
-      <div class="footer__col"><h4>צרו קשר</h4><div class="footer__contact-item"><i class="fas fa-phone-alt"></i><a href="tel:037740400">03-7740400</a></div><div class="footer__contact-item"><i class="fas fa-envelope"></i><a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a></div></div>
+      <div class="footer__brand"><img src="/images/logo/logo-white.png" alt="וואי מרקט" width="112" height="60"><p>נגלר סחר והפצה — סחר, שיווק והפצה של מוצרי צריכה שוטפת לעסקים ומוסדות בכל רחבי הארץ.</p><div class="footer__social"><a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a><a href="https://www.facebook.com/profile.php?id=100083110428101" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/ymarket.ai" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div></div>
+      <div class="footer__col"><h4>קטגוריות</h4><div class="footer__links"><a href="/catalog?cat=מוצרי-נייר-וניגוב">מוצרי נייר וניגוב</a><a href="/catalog?cat=חומרי-ניקוי-וכימיקלים">חומרי ניקוי</a><a href="/catalog?cat=חד-פעמי-ואירוח">חד פעמי ואירוח</a><a href="/catalog?cat=אריזות-מזון-ו-Take-Away">אריזות Take Away</a><a href="/catalog?cat=קפה-שתייה-וכיבוד">קפה, שתייה וכיבוד</a><a href="/catalog?cat=בטיחות-ומיגון-אישי-PPE">בטיחות ומיגון</a></div></div>
+      <div class="footer__col"><h4>קישורים מהירים</h4><div class="footer__links"><a href="/catalog">קטלוג מוצרים</a><a href="/about">אודות</a><a href="/blog">בלוג</a><a href="/faq">שאלות ותשובות</a><a href="/contact">צרו קשר</a><a href="/tracking">מעקב משלוחים</a></div></div>
+      <div class="footer__col"><h4>צרו קשר</h4><div class="footer__contact-item"><i class="fas fa-phone-alt"></i><a href="tel:037740400">03-7740400</a></div><div class="footer__contact-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/972549922492" target="_blank" rel="noopener">WhatsApp</a></div><div class="footer__contact-item"><i class="fas fa-envelope"></i><a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a></div><div class="footer__contact-item"><i class="fas fa-clock"></i><span>א'-ה' 08:00-17:00</span></div></div>
     </div>
-    <div class="footer__bottom"><span class="footer__copyright">&copy; 2026 וואי מרקט. כל הזכויות שמורות.</span><div class="footer__legal"><a href="/legal/terms">תקנון</a><a href="/legal/privacy">פרטיות</a><a href="/legal/accessibility">נגישות</a></div></div>
+    <div class="footer__bottom"><span class="footer__copyright">&copy; 2026 וואי מרקט — נגלר סחר והפצה. כל הזכויות שמורות.</span><div class="footer__legal"><a href="/legal/terms">תקנון האתר</a><a href="/legal/privacy">מדיניות פרטיות</a><a href="/legal/shipping">מדיניות משלוחים</a><a href="/legal/returns">החזרות וביטולים</a><a href="/legal/accessibility">נגישות</a><a href="/legal/cookies">עוגיות</a></div></div>
   </div></footer>
 
   <a href="https://wa.me/972549922492?text=שלום, אשמח לקבל הצעת מחיר" class="whatsapp-float" target="_blank" rel="noopener" aria-label="שלחו הודעה בוואטסאפ"><i class="fab fa-whatsapp"></i><span class="whatsapp-float__tooltip">צריכים עזרה? דברו איתנו</span></a>
