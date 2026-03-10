@@ -7,7 +7,8 @@
   'use strict';
 
   var API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
-  var MIN_ORDER = 200;
+  var MIN_ORDER = 1600;
+  var WHATSAPP_NUMBER = '972549922492';
 
   document.addEventListener('DOMContentLoaded', function() {
     var cart = getCart();
@@ -122,6 +123,7 @@
       var csrfMeta = document.querySelector('meta[name="csrf-token"]');
       if (csrfMeta) headers['X-CSRF-Token'] = csrfMeta.content;
 
+      // Try API first, fallback to WhatsApp if unavailable
       fetch(API_BASE + '/api/b2c/orders', {
         method: 'POST',
         headers: headers,
@@ -134,12 +136,12 @@
       })
       .then(function(result) {
         if (!result.ok) {
-          showError(result.data.error || 'שגיאה בשליחת ההזמנה. נסו שוב.');
-          resetButton(btn);
+          // API returned error - fallback to WhatsApp
+          sendOrderViaWhatsApp(name, phone, email, businessName, address, city, deliveryDate, notes, cart);
           return;
         }
 
-        // Success - use sessionStorage for sensitive data
+        // Success via API
         sessionStorage.setItem('ym_last_order', JSON.stringify({
           orderId: result.data.orderId,
           totalAmount: result.data.totalAmount,
@@ -152,8 +154,8 @@
         window.location.href = 'order-success';
       })
       .catch(function() {
-        showError('שגיאת רשת. בדקו את החיבור ונסו שוב.');
-        resetButton(btn);
+        // Network error (no backend) - send via WhatsApp
+        sendOrderViaWhatsApp(name, phone, email, businessName, address, city, deliveryDate, notes, cart);
       });
     });
   }
@@ -235,6 +237,46 @@
     if (!btn) return;
     btn.disabled = false;
     btn.innerHTML = '<i class="fas fa-check-circle"></i> שלחו הזמנה';
+  }
+
+  function sendOrderViaWhatsApp(name, phone, email, businessName, address, city, deliveryDate, notes, cart) {
+    var lines = ['הזמנה חדשה מהאתר:', ''];
+    lines.push('שם: ' + name);
+    lines.push('טלפון: ' + phone);
+    if (email) lines.push('מייל: ' + email);
+    if (businessName) lines.push('עסק: ' + businessName);
+    lines.push('כתובת: ' + address + ', ' + city);
+    if (deliveryDate) lines.push('תאריך משלוח: ' + deliveryDate);
+    if (notes) lines.push('הערות: ' + notes);
+    lines.push('');
+    lines.push('פריטים:');
+
+    var total = 0;
+    for (var i = 0; i < cart.length; i++) {
+      var item = cart[i];
+      var lineTotal = (item.price || 0) * item.quantity;
+      total += lineTotal;
+      lines.push('- ' + item.name + ' x' + item.quantity + (item.price ? ' (' + formatPrice(lineTotal) + ')' : ''));
+    }
+
+    if (total > 0) {
+      lines.push('');
+      lines.push('סה"כ: ' + formatPrice(total));
+    }
+
+    var text = encodeURIComponent(lines.join('\n'));
+    window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + text, '_blank');
+
+    // Save order locally and redirect to success
+    sessionStorage.setItem('ym_last_order', JSON.stringify({
+      orderId: 'WA-' + Date.now(),
+      totalAmount: total,
+      customerName: name,
+      itemCount: cart.length
+    }));
+    localStorage.removeItem('ym_cart');
+    if (window.YMarket) window.YMarket.updateCartBadge();
+    window.location.href = 'order-success';
   }
 
   function escapeHtml(str) {

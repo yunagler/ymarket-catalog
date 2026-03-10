@@ -38,8 +38,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Icons (async load to avoid render-blocking) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 
   <!-- Swiper -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
@@ -120,6 +121,8 @@
   </script>
 </head>
 <body>
+
+  <a href="#main-content" class="skip-link">דלג לתוכן הראשי</a>
 
   <!-- Top Bar -->
   <div class="top-bar">
@@ -266,6 +269,8 @@
     </div>
   </div>
 
+  <main id="main-content">
+
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
@@ -289,7 +294,7 @@
             <div class="hero__stat-label">לקוחות פעילים</div>
           </div>
           <div class="hero__stat">
-            <div class="hero__stat-number" data-count="180" data-suffix="+">0</div>
+            <div class="hero__stat-number" data-count="800" data-suffix="+">0</div>
             <div class="hero__stat-label">מוצרים בקטלוג</div>
           </div>
           <div class="hero__stat">
@@ -338,7 +343,7 @@
   </section>
 
   <!-- Featured Products Carousel -->
-  <section class="section featured-products" id="featuredProducts" style="display:none;">
+  <section class="section featured-products" id="featuredProducts" style="display:none">
     <div class="container">
       <div class="text-center">
         <h2 class="section-title">מוצרים מומלצים</h2>
@@ -452,7 +457,7 @@
           <div class="stat-item__label">לקוחות פעילים</div>
         </div>
         <div class="stat-item animate-on-scroll">
-          <div class="stat-item__number" data-count="5" data-suffix="+">0</div>
+          <div class="stat-item__number" data-count="6" data-suffix="+">0</div>
           <div class="stat-item__label">שנות ניסיון</div>
         </div>
         <div class="stat-item animate-on-scroll">
@@ -498,7 +503,7 @@
     <div class="container">
       <h2>מוכנים להזמין? פתחו חשבון עסקי בחינם</h2>
       <p>הרשמו לפורטל ההזמנות וקבלו: מחירים מותאמים לעסק שלכם, הזמנה אונליין 24/7, היסטוריית הזמנות ומעקב משלוחים.</p>
-      <p>צרו קשר עכשיו וקבלו הצעת מחיר מותאמת לעסק שלכם. מינימום הזמנה 500 ש"ח פלוס מע"מ.</p>
+      <p>צרו קשר עכשיו וקבלו הצעת מחיר מותאמת לעסק שלכם. מינימום הזמנה 1,600 ש"ח + מע"מ (ללא משלוח).</p>
       <div class="cta-section__actions">
         <a href="register" class="btn btn--register btn--lg">
           <i class="fas fa-user-plus"></i> הרשמה בחינם
@@ -585,6 +590,8 @@
       </div>
     </div>
   </footer>
+
+  </main>
 
   <!-- WhatsApp Floating Button -->
   <a href="https://wa.me/972549922492?text=שלום, אשמח לשמוע על המוצרים שלכם" class="whatsapp-float" target="_blank" rel="noopener" aria-label="שלחו הודעה בוואטסאפ">
