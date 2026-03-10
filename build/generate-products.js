@@ -31,6 +31,25 @@ function generateProductPage(product, categories, allProducts) {
   const imgSrc = product.imageUrl || `/items/${product.id}.jpg`;
   const productUrl = `${SITE_URL}/products/${product.slug}/`;
 
+  // SEO overrides from products.json
+  const seo = product.seo || {};
+  const pageTitle = seo.title || `${product.name} | וואי מרקט`;
+  const h1Text = seo.h1 || product.name;
+  const metaDesc = seo.metaDesc || `${product.name} - ${categoryName}. מחירי סיטונאות, משלוח ארצי. וואי מרקט - אספקה לעסקים ומוסדות.`;
+  const ogDesc = seo.metaDesc || `${product.name} - ${categoryName}. מחירי סיטונאות, משלוח ארצי.`;
+  const specsHtml = (seo.specs && seo.specs.length > 0)
+    ? `<div class="product-specs" style="margin: 1.5rem 0;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.95rem;">
+          ${seo.specs.map(s => `<tr style="border-bottom:1px solid #e5e7eb;"><td style="padding:8px 0;font-weight:600;color:var(--color-text,#1f2937);width:40%;">${s.label}</td><td style="padding:8px 0;">${s.value}</td></tr>`).join('')}
+        </table>
+      </div>` : '';
+  const bulkCtaHtml = seo.bulkCta
+    ? `<div class="product-bulk-cta" style="background:#f0f7ff;border:1px solid #bfdbfe;border-radius:10px;padding:16px 20px;margin-top:1rem;">
+        <p style="margin:0 0 8px;font-weight:600;color:var(--color-text,#1f2937);"><i class="fas fa-boxes" style="color:var(--color-primary,#1B3A5C);margin-left:6px;"></i> ${seo.bulkCta.title || 'צריכים כמות גדולה?'}</p>
+        <p style="margin:0 0 12px;font-size:0.9rem;color:var(--color-text-secondary,#4b5563);">${seo.bulkCta.text || 'קבלו הצעת מחיר מותאמת עם הנחת כמות'}</p>
+        <a href="https://wa.me/972549922492?text=${encodeURIComponent(seo.bulkCta.waText || 'היי, אני מעוניין בהצעת מחיר ל' + product.name + ' בכמות גדולה')}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#25D366;color:#fff;padding:8px 20px;border-radius:8px;font-weight:600;text-decoration:none;font-size:0.95rem;"><i class="fab fa-whatsapp"></i> בקשו הצעת מחיר</a>
+      </div>` : '';
+
   // Related products from same category
   const related = allProducts
     .filter(p => p.categorySlug === product.categorySlug && p.id !== product.id)
@@ -76,14 +95,14 @@ function generateProductPage(product, categories, allProducts) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${product.name} | וואי מרקט</title>
-  <meta name="description" content="${product.name} - ${categoryName}. מחירי סיטונאות, משלוח ארצי. וואי מרקט - אספקה לעסקים ומוסדות.">
+  <title>${pageTitle}</title>
+  <meta name="description" content="${metaDesc}">
   <link rel="canonical" href="${productUrl}">
   <link rel="icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta name="theme-color" content="#1B3A5C">
-  <meta property="og:title" content="${product.name} | וואי מרקט">
-  <meta property="og:description" content="${product.name} - ${categoryName}. מחירי סיטונאות, משלוח ארצי.">
+  <meta property="og:title" content="${pageTitle}">
+  <meta property="og:description" content="${ogDesc}">
   <meta property="og:type" content="product">
   <meta property="og:image" content="${SITE_URL}${product.imageUrl || '/items/' + product.id + '.jpg'}">
   <meta property="og:url" content="${productUrl}">
@@ -92,8 +111,8 @@ function generateProductPage(product, categories, allProducts) {
   <meta property="og:image:width" content="600">
   <meta property="og:image:height" content="600">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="${product.name} | וואי מרקט">
-  <meta name="twitter:description" content="${product.name} - ${categoryName}. מחירי סיטונאות, משלוח ארצי.">
+  <meta name="twitter:title" content="${pageTitle}">
+  <meta name="twitter:description" content="${ogDesc}">
   <meta name="twitter:image" content="${SITE_URL}${product.imageUrl || '/items/' + product.id + '.jpg'}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -159,7 +178,7 @@ function generateProductPage(product, categories, allProducts) {
         </div>
         <div class="product-info">
           <div class="product-info__category">${categoryName}</div>
-          <h1 class="product-info__name">${product.name}</h1>
+          <h1 class="product-info__name">${h1Text}</h1>
           ${product.partNumber ? `<div class="product-info__sku">מק"ט: ${product.partNumber}</div>` : ''}
           ${product.unit ? `<div class="product-info__pack">${product.unitsPerPack || ''} ${product.unit || ''}</div>` : ''}
 
@@ -195,10 +214,12 @@ function generateProductPage(product, categories, allProducts) {
           <div class="product-highlights">
             <div class="product-highlights__item"><i class="fas fa-check-circle"></i> <span>במלאי - מוכן למשלוח</span></div>
             <div class="product-highlights__item"><i class="fas fa-shipping-fast"></i> <span>1-2 ימי עסקים</span></div>
-            <div class="product-highlights__item"><i class="fas fa-shield-alt"></i> <span>הזמנה מינימלית: 200₪</span></div>
+            <div class="product-highlights__item"><i class="fas fa-shield-alt"></i> <span>הזמנה מינימלית: 1,600₪</span></div>
           </div>
 
           ${product.description ? `<div class="product-description"><h3>תיאור</h3><p>${product.description}</p></div>` : ''}
+          ${specsHtml}
+          ${bulkCtaHtml}
         </div>
       </div>
 
