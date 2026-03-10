@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -1 *.html)",
+      "Bash(wc -l css/**/*.css js/**/*.js)",
+      "Bash(ls -1d category/*)",
+      "Bash(ls -1d products/*)",
+      "Bash(git checkout -b fix/website-audit-fixes)",
+      "Bash(git push -u origin fix/website-audit-fixes)",
+      "Bash(gh pr:*)"
+    ]
+  }
+}

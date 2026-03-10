@@ -61,7 +61,7 @@ const log = [];
 // ==================
 // 1. INDEX.HTML
 // ==================
-const indexPath = path.join(WEBSITE_DIR, 'index.html');
+const indexPath = path.join(WEBSITE_DIR, 'index');
 let indexHtml = fs.readFileSync(indexPath, 'utf-8');
 
 indexHtml = applyContactInfo(indexHtml);
@@ -127,12 +127,12 @@ if (orgSchemaRegex.test(indexHtml)) {
 }
 
 fs.writeFileSync(indexPath, indexHtml, 'utf-8');
-log.push('✓ index.html');
+log.push('✓ index');
 
 // ==================
 // 2. ALL OTHER PAGES
 // ==================
-const allFiles = ['about.html', 'contact.html', 'catalog.html', 'faq.html', 'blog.html', 'login.html', 'register.html', 'cart.html', 'tracking.html', 'checkout.html', 'order-success.html'];
+const allFiles = ['about', 'contact', 'catalog', 'faq', 'blog', 'login', 'register', 'cart', 'tracking', 'checkout', 'order-success'];
 for (const file of allFiles) {
   const fp = path.join(WEBSITE_DIR, file);
   if (!fs.existsSync(fp)) continue;
@@ -141,7 +141,7 @@ for (const file of allFiles) {
   html = applySocialLinks(html);
 
   // about.html specific
-  if (file === 'about.html') {
+  if (file === 'about') {
     html = html.replace(/"foundingDate":\s*"\d{4}"/g, `"foundingDate": "${config.business.foundingYear}"`);
     html = replaceDataCount(html, 'לקוחות פעילים', config.stats.activeCustomers);
     html = replaceDataCount(html, 'מוצרים בקטלוג', config.stats.productsInCatalog);
@@ -166,7 +166,7 @@ for (const file of allFiles) {
   }
 
   // contact.html specific
-  if (file === 'contact.html') {
+  if (file === 'contact') {
     const localBizRegex = /<script\s+type="application\/ld\+json">\s*\{[\s\S]*?"@type":\s*"LocalBusiness"[\s\S]*?\}\s*<\/script>/;
     if (localBizRegex.test(html)) {
       const p = config.business.phone;
@@ -186,7 +186,7 @@ for (const file of allFiles) {
   }
 
   // faq.html - min order
-  if (file === 'faq.html') {
+  if (file === 'faq') {
     html = html.replace(/1,600\s*₪\s*\+\s*מע"מ/g, config.cta.minOrder);
     // Also in JSON-LD
     html = html.replace(/1,600\s*₪\s*\+\s*מע\\"מ/g, config.cta.minOrder);
@@ -205,14 +205,14 @@ for (const file of allFiles) {
 // ==================
 const legalDir = path.join(WEBSITE_DIR, 'legal');
 if (fs.existsSync(legalDir)) {
-  const legalFiles = fs.readdirSync(legalDir).filter(f => f.endsWith('.html'));
+  const legalFiles = fs.readdirSync(legalDir).filter(f => f.endsWith(''));
   let legalUpdated = 0;
   for (const file of legalFiles) {
     const fp = path.join(legalDir, file);
     const orig = fs.readFileSync(fp, 'utf-8');
     let html = applyContactInfo(orig);
     html = applySocialLinks(html);
-    if (file === 'terms.html') {
+    if (file === 'terms') {
       html = html.replace(/1,600\s*₪\s*\+\s*מע"מ/g, config.cta.minOrder);
     }
     if (html !== orig) {
@@ -228,7 +228,7 @@ if (fs.existsSync(legalDir)) {
 // ==================
 const blogDir = path.join(WEBSITE_DIR, 'blog');
 if (fs.existsSync(blogDir)) {
-  const blogFiles = fs.readdirSync(blogDir).filter(f => f.endsWith('.html'));
+  const blogFiles = fs.readdirSync(blogDir).filter(f => f.endsWith(''));
   let blogUpdated = 0;
   for (const file of blogFiles) {
     const fp = path.join(blogDir, file);
@@ -248,7 +248,7 @@ if (fs.existsSync(blogDir)) {
 // ==================
 const productsDir = path.join(WEBSITE_DIR, 'products');
 if (fs.existsSync(productsDir)) {
-  const productFiles = fs.readdirSync(productsDir).filter(f => f.endsWith('.html'));
+  const productFiles = fs.readdirSync(productsDir).filter(f => f.endsWith(''));
   let prodUpdated = 0;
   for (const file of productFiles) {
     const fp = path.join(productsDir, file);

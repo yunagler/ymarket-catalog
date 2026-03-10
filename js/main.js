@@ -181,7 +181,7 @@ function initSearchOverlay() {
     searchForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const q = searchForm.querySelector('input').value.trim();
-      if (q) window.location.href = `catalog.html?search=${encodeURIComponent(q)}`;
+      if (q) window.location.href = `catalog?search=${encodeURIComponent(q)}`;
     });
   }
 }
@@ -254,7 +254,7 @@ function initCartButton() {
     const isSubDir = window.location.pathname.includes('/legal/') ||
                      window.location.pathname.includes('/products/') ||
                      window.location.pathname.includes('/blog/');
-    window.location.href = isSubDir ? '../cart.html' : 'cart.html';
+    window.location.href = isSubDir ? '../cart' : 'cart';
   });
 }
 

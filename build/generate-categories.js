@@ -115,7 +115,7 @@ function generateCategoryPage(category, products, allCategories) {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "דף הבית", "item": SITE_URL + "/" },
-      { "@type": "ListItem", "position": 2, "name": "מוצרים", "item": SITE_URL + "/catalog.html" },
+      { "@type": "ListItem", "position": 2, "name": "מוצרים", "item": SITE_URL + "/catalog" },
       { "@type": "ListItem", "position": 3, "name": category.name }
     ]
   })}</script>
@@ -127,14 +127,14 @@ function generateCategoryPage(category, products, allCategories) {
     <a href="/" class="header__logo"><img src="/images/logo/logo-dark.png" alt="וואי מרקט" width="98" height="52"></a>
     <nav class="main-nav" aria-label="ניווט ראשי">
       <div class="main-nav__item"><a href="/" class="main-nav__link">דף הבית</a></div>
-      <div class="main-nav__item"><a href="/catalog.html" class="main-nav__link">מוצרים</a></div>
-      <div class="main-nav__item"><a href="/about.html" class="main-nav__link">אודות</a></div>
-      <div class="main-nav__item"><a href="/blog.html" class="main-nav__link">בלוג</a></div>
-      <div class="main-nav__item"><a href="/contact.html" class="main-nav__link">צרו קשר</a></div>
+      <div class="main-nav__item"><a href="/catalog" class="main-nav__link">מוצרים</a></div>
+      <div class="main-nav__item"><a href="/about" class="main-nav__link">אודות</a></div>
+      <div class="main-nav__item"><a href="/blog" class="main-nav__link">בלוג</a></div>
+      <div class="main-nav__item"><a href="/contact" class="main-nav__link">צרו קשר</a></div>
     </nav>
     <div class="header__actions">
       <button class="header__cart-btn" aria-label="עגלת קניות"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></button>
-      <a href="/login.html" class="header__login-btn"><i class="fas fa-user"></i> <span>כניסה</span></a>
+      <a href="/login" class="header__login-btn"><i class="fas fa-user"></i> <span>כניסה</span></a>
     </div>
     <button class="mobile-menu-btn" aria-label="תפריט" aria-expanded="false"><i class="fas fa-bars"></i></button>
   </div></header>
@@ -144,7 +144,7 @@ function generateCategoryPage(category, products, allCategories) {
     <nav class="breadcrumb" aria-label="ניווט פירורי לחם">
       <a href="/">דף הבית</a>
       <span class="breadcrumb__separator"><i class="fas fa-chevron-left"></i></span>
-      <a href="/catalog.html">מוצרים</a>
+      <a href="/catalog">מוצרים</a>
       <span class="breadcrumb__separator"><i class="fas fa-chevron-left"></i></span>
       <span class="breadcrumb__current">${category.name}</span>
     </nav>
@@ -159,7 +159,7 @@ function generateCategoryPage(category, products, allCategories) {
             <div class="category-list">
               <a href="/category/${category.slug}/" class="category-list__item active"><span>${category.name}</span><span class="category-list__count">${categoryProducts.length}</span></a>
               ${sidebarHtml}
-              <a href="/catalog.html" class="category-list__item"><span>כל המוצרים</span></a>
+              <a href="/catalog" class="category-list__item"><span>כל המוצרים</span></a>
             </div>
           </div>
         </aside>
@@ -179,10 +179,10 @@ function generateCategoryPage(category, products, allCategories) {
   <footer class="footer"><div class="container">
     <div class="footer__grid">
       <div class="footer__brand"><img src="/images/logo/logo-white.png" alt="וואי מרקט" width="112" height="60"><p>נגלר סחר והפצה — מוצרי צריכה שוטפת לעסקים ומוסדות.</p></div>
-      <div class="footer__col"><h4>קישורים</h4><div class="footer__links"><a href="/about.html">אודות</a><a href="/faq.html">שאלות ותשובות</a><a href="/contact.html">צרו קשר</a></div></div>
+      <div class="footer__col"><h4>קישורים</h4><div class="footer__links"><a href="/about">אודות</a><a href="/faq">שאלות ותשובות</a><a href="/contact">צרו קשר</a></div></div>
       <div class="footer__col"><h4>צרו קשר</h4><div class="footer__contact-item"><i class="fas fa-phone-alt"></i><a href="tel:037740400">03-7740400</a></div><div class="footer__contact-item"><i class="fas fa-envelope"></i><a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a></div></div>
     </div>
-    <div class="footer__bottom"><span class="footer__copyright">&copy; 2026 וואי מרקט. כל הזכויות שמורות.</span><div class="footer__legal"><a href="/legal/terms.html">תקנון</a><a href="/legal/privacy.html">פרטיות</a><a href="/legal/accessibility.html">נגישות</a></div></div>
+    <div class="footer__bottom"><span class="footer__copyright">&copy; 2026 וואי מרקט. כל הזכויות שמורות.</span><div class="footer__legal"><a href="/legal/terms">תקנון</a><a href="/legal/privacy">פרטיות</a><a href="/legal/accessibility">נגישות</a></div></div>
   </div></footer>
 
   <a href="https://wa.me/972549922492" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
@@ -231,7 +231,7 @@ function main() {
     const html = generateCategoryPage(category, products, categories);
     const slugDir = path.join(CATEGORY_DIR, category.slug);
     fs.mkdirSync(slugDir, { recursive: true });
-    fs.writeFileSync(path.join(slugDir, 'index.html'), html, 'utf-8');
+    fs.writeFileSync(path.join(slugDir, 'index'), html, 'utf-8');
     count++;
   }
 

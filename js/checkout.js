@@ -13,7 +13,7 @@
   document.addEventListener('DOMContentLoaded', function() {
     var cart = getCart();
     if (cart.length === 0) {
-      window.location.href = 'cart.html';
+      window.location.href = 'cart';
       return;
     }
     renderSummary(cart);
@@ -146,7 +146,7 @@
         localStorage.removeItem('ym_cart');
         if (window.YMarket) window.YMarket.updateCartBadge();
 
-        window.location.href = 'order-success.html';
+        window.location.href = 'order-success';
       })
       .catch(function() {
         showError('שגיאת רשת. בדקו את החיבור ונסו שוב.');

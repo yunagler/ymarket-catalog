@@ -19,7 +19,7 @@ function getAllHtmlFiles(dir, base = '') {
     if (entry.isDirectory()) {
       if (['build', 'node_modules', 'images', 'css', 'js', 'data', '.git', 'items'].includes(entry.name)) continue;
       files.push(...getAllHtmlFiles(fullPath, relPath));
-    } else if (entry.name.endsWith('.html')) {
+    } else if (entry.name.endsWith('')) {
       files.push(relPath);
     }
   }
@@ -30,27 +30,27 @@ function fileToUrl(filePath) {
   // /products/{slug}/index.html → /products/{slug}/
   // /category/{slug}/index.html → /category/{slug}/
   // index.html → /
-  if (filePath === 'index.html') return '/';
-  if (filePath.endsWith('/index.html')) {
-    return '/' + filePath.replace('/index.html', '/');
+  if (filePath === 'index') return '/';
+  if (filePath.endsWith('/index')) {
+    return '/' + filePath.replace('/index', '/');
   }
   return '/' + filePath;
 }
 
 function getPriority(filePath) {
-  if (filePath === 'index.html') return '1.0';
-  if (filePath === 'catalog.html') return '0.9';
-  if (filePath.includes('category/') && filePath.endsWith('index.html')) return '0.85';
-  if (filePath.includes('products/') && filePath.endsWith('index.html')) return '0.7';
-  if (['about.html', 'contact.html', 'faq.html'].includes(filePath)) return '0.8';
+  if (filePath === 'index') return '1.0';
+  if (filePath === 'catalog') return '0.9';
+  if (filePath.includes('category/') && filePath.endsWith('index')) return '0.85';
+  if (filePath.includes('products/') && filePath.endsWith('index')) return '0.7';
+  if (['about', 'contact', 'faq'].includes(filePath)) return '0.8';
   if (filePath.startsWith('blog/')) return '0.6';
   if (filePath.startsWith('legal/')) return '0.3';
   return '0.5';
 }
 
 function getChangeFreq(filePath) {
-  if (filePath === 'index.html') return 'weekly';
-  if (filePath === 'catalog.html') return 'weekly';
+  if (filePath === 'index') return 'weekly';
+  if (filePath === 'catalog') return 'weekly';
   if (filePath.includes('category/')) return 'weekly';
   if (filePath.includes('products/')) return 'monthly';
   if (filePath.startsWith('blog/')) return 'monthly';

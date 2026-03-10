@@ -78,12 +78,12 @@
     slide.className = 'swiper-slide';
     slide.innerHTML =
       '<div class="featured-slide">' +
-        '<a href="products/' + product.slug + '.html" class="featured-slide__image">' +
+        '<a href="products/' + product.slug + '" class="featured-slide__image">' +
           '<img src="' + imgSrc + '" alt="' + safeName + '" loading="lazy" onerror="this.src=\'' + fallback + '\'">' +
         '</a>' +
         '<div class="featured-slide__body">' +
           '<div class="featured-slide__category">' + escHtml(product.categoryName || '') + '</div>' +
-          '<h3 class="featured-slide__name"><a href="products/' + product.slug + '.html">' + safeName + '</a></h3>' +
+          '<h3 class="featured-slide__name"><a href="products/' + product.slug + '">' + safeName + '</a></h3>' +
           priceHtml +
           (product.saleNis
             ? '<button class="featured-slide__btn" data-id="' + product.id + '"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>'

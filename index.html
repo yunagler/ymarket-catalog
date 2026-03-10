@@ -78,7 +78,7 @@
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://ymarket.co.il/catalog.html?search={search_term_string}"
+        "urlTemplate": "https://ymarket.co.il/catalog?search={search_term_string}"
       },
       "query-input": "required name=search_term_string"
     }
@@ -149,65 +149,65 @@
   <!-- Header -->
   <header class="header">
     <div class="container">
-      <a href="index.html" class="header__logo">
+      <a href="index" class="header__logo">
         <img src="images/logo/logo-dark.png" alt="וואי מרקט" width="98" height="52">
       </a>
 
       <nav class="main-nav" aria-label="ניווט ראשי">
         <div class="main-nav__item">
-          <a href="index.html" class="main-nav__link active">דף הבית</a>
+          <a href="index" class="main-nav__link active">דף הבית</a>
         </div>
         <div class="main-nav__item">
-          <a href="catalog.html" class="main-nav__link">
+          <a href="catalog" class="main-nav__link">
             מוצרים <i class="fas fa-chevron-down"></i>
           </a>
           <div class="mega-menu">
             <div class="mega-menu__grid">
-              <a href="catalog.html?cat=בטיחות-ומיגון-אישי-PPE" class="mega-menu__category">
+              <a href="catalog?cat=בטיחות-ומיגון-אישי-PPE" class="mega-menu__category">
                 <i class="fas fa-hard-hat"></i>
                 <span class="mega-menu__cat-name">בטיחות ומיגון אישי</span>
               </a>
-              <a href="catalog.html?cat=כלי-עבודה-וציוד-משקי" class="mega-menu__category">
+              <a href="catalog?cat=כלי-עבודה-וציוד-משקי" class="mega-menu__category">
                 <i class="fas fa-tools"></i>
                 <span class="mega-menu__cat-name">כלי עבודה וציוד משקי</span>
               </a>
-              <a href="catalog.html?cat=שקיות-ופתרונות-אשפה" class="mega-menu__category">
+              <a href="catalog?cat=שקיות-ופתרונות-אשפה" class="mega-menu__category">
                 <i class="fas fa-trash-alt"></i>
                 <span class="mega-menu__cat-name">שקיות ופתרונות אשפה</span>
               </a>
-              <a href="catalog.html?cat=חומרי-ניקוי-וכימיקלים" class="mega-menu__category">
+              <a href="catalog?cat=חומרי-ניקוי-וכימיקלים" class="mega-menu__category">
                 <i class="fas fa-spray-can"></i>
                 <span class="mega-menu__cat-name">חומרי ניקוי וכימיקלים</span>
               </a>
-              <a href="catalog.html?cat=אריזות-מזון-ו-Take-Away" class="mega-menu__category">
+              <a href="catalog?cat=אריזות-מזון-ו-Take-Away" class="mega-menu__category">
                 <i class="fas fa-box-open"></i>
                 <span class="mega-menu__cat-name">אריזות מזון ו-Take Away</span>
               </a>
-              <a href="catalog.html?cat=טקסטיל-מטליות-וסחבות" class="mega-menu__category">
+              <a href="catalog?cat=טקסטיל-מטליות-וסחבות" class="mega-menu__category">
                 <i class="fas fa-tshirt"></i>
                 <span class="mega-menu__cat-name">טקסטיל, מטליות וסחבות</span>
               </a>
-              <a href="catalog.html?cat=חד-פעמי-ואירוח" class="mega-menu__category">
+              <a href="catalog?cat=חד-פעמי-ואירוח" class="mega-menu__category">
                 <i class="fas fa-utensils"></i>
                 <span class="mega-menu__cat-name">חד פעמי ואירוח</span>
               </a>
-              <a href="catalog.html?cat=מוצרי-נייר-וניגוב" class="mega-menu__category">
+              <a href="catalog?cat=מוצרי-נייר-וניגוב" class="mega-menu__category">
                 <i class="fas fa-toilet-paper"></i>
                 <span class="mega-menu__cat-name">מוצרי נייר וניגוב</span>
               </a>
-              <a href="catalog.html?cat=קפה-שתייה-וכיבוד" class="mega-menu__category">
+              <a href="catalog?cat=קפה-שתייה-וכיבוד" class="mega-menu__category">
                 <i class="fas fa-coffee"></i>
                 <span class="mega-menu__cat-name">קפה, שתייה וכיבוד</span>
               </a>
-              <a href="catalog.html?cat=ציוד-משרדי-וכללי" class="mega-menu__category">
+              <a href="catalog?cat=ציוד-משרדי-וכללי" class="mega-menu__category">
                 <i class="fas fa-pen"></i>
                 <span class="mega-menu__cat-name">ציוד משרדי וכללי</span>
               </a>
-              <a href="catalog.html?cat=עזרה-ראשונה-רפואי" class="mega-menu__category">
+              <a href="catalog?cat=עזרה-ראשונה-רפואי" class="mega-menu__category">
                 <i class="fas fa-first-aid"></i>
                 <span class="mega-menu__cat-name">עזרה ראשונה - רפואי</span>
               </a>
-              <a href="catalog.html?cat=טואלטיקה-וטיפוח-אישי" class="mega-menu__category">
+              <a href="catalog?cat=טואלטיקה-וטיפוח-אישי" class="mega-menu__category">
                 <i class="fas fa-pump-soap"></i>
                 <span class="mega-menu__cat-name">טואלטיקה וטיפוח</span>
               </a>
@@ -215,13 +215,13 @@
           </div>
         </div>
         <div class="main-nav__item">
-          <a href="about.html" class="main-nav__link">אודות</a>
+          <a href="about" class="main-nav__link">אודות</a>
         </div>
         <div class="main-nav__item">
-          <a href="blog.html" class="main-nav__link">בלוג</a>
+          <a href="blog" class="main-nav__link">בלוג</a>
         </div>
         <div class="main-nav__item">
-          <a href="contact.html" class="main-nav__link">צרו קשר</a>
+          <a href="contact" class="main-nav__link">צרו קשר</a>
         </div>
       </nav>
 
@@ -233,11 +233,11 @@
           <i class="fas fa-shopping-cart"></i>
           <span class="cart-count">0</span>
         </button>
-        <a href="login.html" class="header__login-btn">
+        <a href="login" class="header__login-btn">
           <i class="fas fa-user"></i>
           <span>כניסת לקוחות</span>
         </a>
-        <a href="register.html" class="header__register-btn"><i class="fas fa-user-plus"></i> <span>הרשמה</span></a>
+        <a href="register" class="header__register-btn"><i class="fas fa-user-plus"></i> <span>הרשמה</span></a>
       </div>
 
       <button class="mobile-menu-btn" aria-label="תפריט" aria-expanded="false">
@@ -252,7 +252,7 @@
   <!-- Search Overlay -->
   <div class="search-overlay">
     <div class="search-overlay__inner">
-      <form action="catalog.html" method="get">
+      <form action="catalog" method="get">
         <input type="search" name="search" class="search-overlay__input" placeholder="חפשו מוצר..." autocomplete="off">
       </form>
     </div>
@@ -265,10 +265,10 @@
         <h1 class="hero__title">אספקה חכמה ומדויקת למוסדות ועסקים</h1>
         <p class="hero__subtitle">מוצרי ניקיון, נייר, חד פעמי, מזון וציוד משרדי — הכל ממקום אחד, במחירי סיטונאות, עם משלוח עד הדלת.</p>
         <div class="hero__actions">
-          <a href="catalog.html" class="btn btn--white btn--lg">
+          <a href="catalog" class="btn btn--white btn--lg">
             <i class="fas fa-th-large"></i> צפו בקטלוג
           </a>
-          <a href="register.html" class="btn btn--register btn--lg">
+          <a href="register" class="btn btn--register btn--lg">
             <i class="fas fa-user-plus"></i> פתחו חשבון עסקי
           </a>
           <a href="https://wa.me/972549922492?text=שלום, אשמח לקבל הצעת מחיר" target="_blank" rel="noopener" class="btn btn--whatsapp btn--lg">
@@ -343,7 +343,7 @@
         <div class="swiper-pagination featured-pagination"></div>
       </div>
       <div class="text-center" style="margin-top: var(--space-lg);">
-        <a href="catalog.html" class="btn btn--secondary">לכל המוצרים <i class="fas fa-arrow-left"></i></a>
+        <a href="catalog" class="btn btn--secondary">לכל המוצרים <i class="fas fa-arrow-left"></i></a>
       </div>
     </div>
   </section>
@@ -356,49 +356,49 @@
         <p class="section-subtitle">כל מה שהעסק שלכם צריך — במקום אחד</p>
       </div>
       <div class="categories-grid">
-        <a href="catalog.html?cat=מוצרי-נייר-וניגוב" class="category-card animate-on-scroll">
+        <a href="catalog?cat=מוצרי-נייר-וניגוב" class="category-card animate-on-scroll">
           <div class="category-card__icon"><i class="fas fa-toilet-paper"></i></div>
           <span class="category-card__name">מוצרי נייר וניגוב</span>
           <span class="category-card__count">נייר טואלט, מגבות, מפיות</span>
         </a>
-        <a href="catalog.html?cat=חומרי-ניקוי-וכימיקלים" class="category-card animate-on-scroll">
+        <a href="catalog?cat=חומרי-ניקוי-וכימיקלים" class="category-card animate-on-scroll">
           <div class="category-card__icon"><i class="fas fa-spray-can"></i></div>
           <span class="category-card__name">חומרי ניקוי וכימיקלים</span>
           <span class="category-card__count">מנקים, מחטאים, סבונים</span>
         </a>
-        <a href="catalog.html?cat=חד-פעמי-ואירוח" class="category-card animate-on-scroll">
+        <a href="catalog?cat=חד-פעמי-ואירוח" class="category-card animate-on-scroll">
           <div class="category-card__icon"><i class="fas fa-utensils"></i></div>
           <span class="category-card__name">חד פעמי ואירוח</span>
           <span class="category-card__count">צלחות, כוסות, סכום</span>
         </a>
-        <a href="catalog.html?cat=אריזות-מזון-ו-Take-Away" class="category-card animate-on-scroll">
+        <a href="catalog?cat=אריזות-מזון-ו-Take-Away" class="category-card animate-on-scroll">
           <div class="category-card__icon"><i class="fas fa-box-open"></i></div>
           <span class="category-card__name">אריזות מזון ו-Take Away</span>
           <span class="category-card__count">קופסאות, שקיות, נייר</span>
         </a>
-        <a href="catalog.html?cat=טקסטיל-מטליות-וסחבות" class="category-card animate-on-scroll">
+        <a href="catalog?cat=טקסטיל-מטליות-וסחבות" class="category-card animate-on-scroll">
           <div class="category-card__icon"><i class="fas fa-tshirt"></i></div>
           <span class="category-card__name">טקסטיל, מטליות וסחבות</span>
           <span class="category-card__count">מטליות, סחבות, מגבים</span>
         </a>
-        <a href="catalog.html?cat=קפה-שתייה-וכיבוד" class="category-card animate-on-scroll">
+        <a href="catalog?cat=קפה-שתייה-וכיבוד" class="category-card animate-on-scroll">
           <div class="category-card__icon"><i class="fas fa-coffee"></i></div>
           <span class="category-card__name">קפה, שתייה וכיבוד</span>
           <span class="category-card__count">קפה, סוכר, חטיפים</span>
         </a>
-        <a href="catalog.html?cat=בטיחות-ומיגון-אישי-PPE" class="category-card animate-on-scroll">
+        <a href="catalog?cat=בטיחות-ומיגון-אישי-PPE" class="category-card animate-on-scroll">
           <div class="category-card__icon"><i class="fas fa-hard-hat"></i></div>
           <span class="category-card__name">בטיחות ומיגון אישי</span>
           <span class="category-card__count">כפפות, מסכות, ביגוד</span>
         </a>
-        <a href="catalog.html?cat=ציוד-משרדי-וכללי" class="category-card animate-on-scroll">
+        <a href="catalog?cat=ציוד-משרדי-וכללי" class="category-card animate-on-scroll">
           <div class="category-card__icon"><i class="fas fa-pen"></i></div>
           <span class="category-card__name">ציוד משרדי וכללי</span>
           <span class="category-card__count">עטים, נייר, מוצרי משרד</span>
         </a>
       </div>
       <div class="text-center" style="margin-top: var(--space-xl);">
-        <a href="catalog.html" class="btn btn--secondary">לכל הקטגוריות <i class="fas fa-arrow-left"></i></a>
+        <a href="catalog" class="btn btn--secondary">לכל הקטגוריות <i class="fas fa-arrow-left"></i></a>
       </div>
     </div>
   </section>
@@ -481,7 +481,7 @@
           <div class="registration-benefits__text">מעקב משלוחים ואספקה שוטפת</div>
         </div>
       </div>
-      <a href="register.html" class="btn btn--register btn--lg"><i class="fas fa-user-plus"></i> פתחו חשבון עסקי בחינם</a>
+      <a href="register" class="btn btn--register btn--lg"><i class="fas fa-user-plus"></i> פתחו חשבון עסקי בחינם</a>
     </div>
   </section>
 
@@ -492,7 +492,7 @@
       <p>הרשמו לפורטל ההזמנות וקבלו: מחירים מותאמים לעסק שלכם, הזמנה אונליין 24/7, היסטוריית הזמנות ומעקב משלוחים.</p>
       <p>צרו קשר עכשיו וקבלו הצעת מחיר מותאמת לעסק שלכם. מינימום הזמנה 500 ש"ח פלוס מע"מ.</p>
       <div class="cta-section__actions">
-        <a href="register.html" class="btn btn--register btn--lg">
+        <a href="register" class="btn btn--register btn--lg">
           <i class="fas fa-user-plus"></i> הרשמה בחינם
         </a>
         <a href="https://wa.me/972549922492?text=שלום, אשמח לקבל הצעת מחיר" target="_blank" rel="noopener" class="btn btn--whatsapp btn--lg">
@@ -522,24 +522,24 @@
         <div class="footer__col">
           <h4>קטגוריות</h4>
           <div class="footer__links">
-            <a href="catalog.html?cat=paper">מוצרי נייר וניגוב</a>
-            <a href="catalog.html?cat=cleaning">חומרי ניקוי</a>
-            <a href="catalog.html?cat=disposable">חד פעמי ואירוח</a>
-            <a href="catalog.html?cat=takeaway">אריזות Take Away</a>
-            <a href="catalog.html?cat=coffee">קפה, שתייה וכיבוד</a>
-            <a href="catalog.html?cat=safety">בטיחות ומיגון</a>
+            <a href="catalog?cat=paper">מוצרי נייר וניגוב</a>
+            <a href="catalog?cat=cleaning">חומרי ניקוי</a>
+            <a href="catalog?cat=disposable">חד פעמי ואירוח</a>
+            <a href="catalog?cat=takeaway">אריזות Take Away</a>
+            <a href="catalog?cat=coffee">קפה, שתייה וכיבוד</a>
+            <a href="catalog?cat=safety">בטיחות ומיגון</a>
           </div>
         </div>
 
         <div class="footer__col">
           <h4>קישורים מהירים</h4>
           <div class="footer__links">
-            <a href="catalog.html">קטלוג מוצרים</a>
-            <a href="about.html">אודות</a>
-            <a href="blog.html">בלוג</a>
-            <a href="faq.html">שאלות ותשובות</a>
-            <a href="contact.html">צרו קשר</a>
-            <a href="tracking.html">מעקב משלוחים</a>
+            <a href="catalog">קטלוג מוצרים</a>
+            <a href="about">אודות</a>
+            <a href="blog">בלוג</a>
+            <a href="faq">שאלות ותשובות</a>
+            <a href="contact">צרו קשר</a>
+            <a href="tracking">מעקב משלוחים</a>
           </div>
         </div>
 
@@ -567,12 +567,12 @@
       <div class="footer__bottom">
         <span class="footer__copyright">&copy; 2026 וואי מרקט — נגלר סחר והפצה. כל הזכויות שמורות.</span>
         <div class="footer__legal">
-          <a href="legal/terms.html">תקנון האתר</a>
-          <a href="legal/privacy.html">מדיניות פרטיות</a>
-          <a href="legal/shipping.html">מדיניות משלוחים</a>
-          <a href="legal/returns.html">החזרות וביטולים</a>
-          <a href="legal/accessibility.html">נגישות</a>
-          <a href="legal/cookies.html">עוגיות</a>
+          <a href="legal/terms">תקנון האתר</a>
+          <a href="legal/privacy">מדיניות פרטיות</a>
+          <a href="legal/shipping">מדיניות משלוחים</a>
+          <a href="legal/returns">החזרות וביטולים</a>
+          <a href="legal/accessibility">נגישות</a>
+          <a href="legal/cookies">עוגיות</a>
         </div>
       </div>
     </div>
@@ -588,7 +588,7 @@
   <div class="cookie-banner">
     <p class="cookie-banner__text">
       אתר זה משתמש בעוגיות כדי לשפר את חוויית הגלישה שלכם.
-      <a href="legal/cookies.html">למידע נוסף</a>
+      <a href="legal/cookies">למידע נוסף</a>
     </p>
     <div class="cookie-banner__actions">
       <button class="btn btn--sm btn--white" data-cookie-accept>אישור</button>

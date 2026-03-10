@@ -95,7 +95,7 @@
       const count = allProducts.filter(p => p.categorySlug === cat.slug).length;
       const link = document.createElement('a');
       link.className = 'category-list__item';
-      link.href = `catalog.html?cat=${cat.slug}`;
+      link.href = `catalog?cat=${cat.slug}`;
       link.dataset.category = cat.slug;
       link.innerHTML = `<span>${cat.name}</span><span class="category-list__count">${count}</span>`;
       list.appendChild(link);

@@ -46,7 +46,7 @@
                onerror="this.src='https://placehold.co/80x80/f0f2f5/5a6577?text=${encodeURIComponent((item.name || '').substring(0,8))}'">
         </div>
         <div class="cart-item__details">
-          <h3 class="cart-item__name">${item.slug ? `<a href="products/${item.slug}.html">${item.name}</a>` : item.name}</h3>
+          <h3 class="cart-item__name">${item.slug ? `<a href="products/${item.slug}">${item.name}</a>` : item.name}</h3>
           <div class="cart-item__unit">${item.unit || ''}</div>
           <div class="cart-item__price">${item.price ? formatPrice(item.price) : 'צרו קשר'}</div>
         </div>
