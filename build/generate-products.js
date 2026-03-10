@@ -89,8 +89,11 @@ function generateProductPage(product, categories, allProducts) {
   <meta property="og:url" content="${productUrl}">
   <meta property="og:locale" content="he_IL">
   <meta property="og:site_name" content="וואי מרקט">
+  <meta property="og:image:width" content="600">
+  <meta property="og:image:height" content="600">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${product.name} | וואי מרקט">
+  <meta name="twitter:description" content="${product.name} - ${categoryName}. מחירי סיטונאות, משלוח ארצי.">
   <meta name="twitter:image" content="${SITE_URL}${product.imageUrl || '/items/' + product.id + '.jpg'}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
