@@ -510,7 +510,7 @@ a:focus-visible {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-xl);
   padding: var(--space-xl);
-  min-width: 600px;
+  min-width: min(600px, calc(100vw - 2rem));
   max-width: calc(100vw - 2rem);
   opacity: 0;
   visibility: hidden;
