@@ -287,6 +287,33 @@
   .blog-article__title {
     font-size: var(--fs-2xl);
   }
+
+  /* Registration benefits padding */
+  .registration-benefits {
+    padding: var(--space-2xl) var(--space-md);
+  }
+
+  /* Blog standalone articles (inline style override) */
+  .article-container {
+    padding: 1.5rem 1rem !important;
+  }
+
+  .article-container h1 {
+    font-size: 1.5rem !important;
+  }
+
+  .article-container h2 {
+    font-size: 1.25rem !important;
+  }
+
+  .cta-box {
+    padding: 1.5rem 1rem !important;
+  }
+
+  .cta-box a {
+    padding: 12px 20px !important;
+    font-size: 0.95rem !important;
+  }
 }
 
 /* ---- Mobile: up to 480px ---- */
@@ -386,6 +413,15 @@
     display: none;
   }
 
+  .header__register-btn span {
+    display: none;
+  }
+
+  .header__register-btn {
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--fs-base);
+  }
+
   /* Product Detail */
   .product-pricing__price {
     font-size: var(--fs-2xl);
@@ -414,6 +450,40 @@
   /* Blog Article */
   .blog-article__title {
     font-size: var(--fs-xl);
+  }
+
+  /* Blog standalone articles */
+  .article-container h1 {
+    font-size: 1.3rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .article-container h2 {
+    font-size: 1.1rem !important;
+  }
+
+  .article-container h3 {
+    font-size: 1rem !important;
+  }
+
+  .toc {
+    padding: 1rem !important;
+  }
+
+  .key-takeaway {
+    padding: 0.75rem 1rem !important;
+  }
+
+  .faq-section {
+    padding: 1rem !important;
+  }
+
+  .blog-cta-box {
+    padding: var(--space-lg) var(--space-md) !important;
+  }
+
+  .blog-cta-box h3 {
+    font-size: var(--fs-lg) !important;
   }
 
   /* CTA */
