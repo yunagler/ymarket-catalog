@@ -1,36 +1,71 @@
-# Y Market - Robots.txt
-# Updated: 2026-03-09
-
 User-agent: *
 Allow: /
 Disallow: /build/
 Disallow: /data/
-Disallow: /js/analytics.js
+Disallow: /cdn-cgi/
 Disallow: /cart.html
 Disallow: /checkout.html
-Disallow: /login.html
-Disallow: /register.html
 Disallow: /order-success.html
 
-# Welcome AI Crawlers (GEO Strategy)
-User-agent: GPTBot
-Allow: /
-Allow: /blog/
-Allow: /category/
-Allow: /products/
-Allow: /faq.html
-Allow: /about.html
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Google-Extended
+# Traditional Search Engines
+User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
+User-agent: Slurp
+Allow: /
+
+# AI Search & Retrieval Bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Gemini
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Brave
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: FacebookExternalHit
+Allow: /
+
+User-agent: BingPreview
+Allow: /
+
+# Block irrelevant scrapers
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Crawl-delay: 10
+
 Sitemap: https://ymarket.co.il/sitemap.xml
+Sitemap: https://ymarket.co.il/sitemap-blog.xml

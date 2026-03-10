@@ -115,7 +115,7 @@
           <div class="form-group">
             <label class="form-label" for="reg-password">סיסמה לפורטל *</label>
             <div style="position: relative;">
-              <input type="password" class="form-input" id="reg-password" name="password" placeholder="לפחות 4 תווים" minlength="4" required>
+              <input type="password" class="form-input" id="reg-password" name="password" placeholder="לפחות 8 תווים" minlength="8" required>
               <button type="button" id="togglePassword" style="position: absolute; left: 4px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: var(--color-text-light); font-size: var(--fs-base); min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center;" aria-label="הצג סיסמה">
                 <i class="fas fa-eye"></i>
               </button>
@@ -152,6 +152,7 @@
 
   <script src="js/main.min.js"></script>
   <script src="js/analytics.min.js"></script>
+  <script src="js/schema-markup.js" defer></script>
   <script>
   (function() {
     const PORTAL_URL = 'https://app.ymarket.co.il';
@@ -189,8 +190,8 @@
         return;
       }
 
-      if (password.length < 4) {
-        errorEl.textContent = 'סיסמה חייבת להכיל לפחות 4 תווים';
+      if (password.length < 8) {
+        errorEl.textContent = 'סיסמה חייבת להכיל לפחות 8 תווים';
         errorEl.style.display = 'block';
         return;
       }
