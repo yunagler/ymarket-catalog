@@ -128,7 +128,12 @@ function initScrollAnimations() {
 
 /* ---- Counter Animation ---- */
 function animateCounters() {
-  document.querySelectorAll('[data-count]').forEach(el => {
+  const counters = document.querySelectorAll('[data-count]');
+  if (!counters.length) return;
+
+  function animateEl(el) {
+    if (el.dataset.animated) return;
+    el.dataset.animated = '1';
     const target = parseInt(el.dataset.count, 10);
     const suffix = el.dataset.suffix || '';
     const prefix = el.dataset.prefix || '';
@@ -144,7 +149,21 @@ function animateCounters() {
     }
 
     requestAnimationFrame(update);
-  });
+  }
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateEl(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    counters.forEach(el => observer.observe(el));
+  } else {
+    counters.forEach(animateEl);
+  }
 }
 
 /* ---- Cookie Consent ---- */

@@ -285,7 +285,7 @@
         btn.innerHTML = '<i class="fas fa-check"></i> נוסף';
         setTimeout(() => {
           btn.classList.remove('added');
-          btn.innerHTML = '<i class="fas fa-cart-plus"></i> הוסף';
+          btn.innerHTML = '<i class="fas fa-cart-plus"></i> הוסף לעגלה';
         }, 1500);
         if (input) input.value = '1';
       });
@@ -363,7 +363,7 @@
                   <input type="number" class="product-card__qty-input" id="qty-${p.id}" value="1" min="1" max="999">
                   <button class="product-card__qty-btn" data-action="increase" data-id="${p.id}">+</button>
                 </div>
-                <button class="product-card__add-btn" data-id="${p.id}"><i class="fas fa-cart-plus"></i> הוסף</button>
+                <button class="product-card__add-btn" data-id="${p.id}"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
               </div>
             ` : `<a href="https://wa.me/972549922492?text=היי, מתעניין ב${encodeURIComponent(p.name)}" class="product-card__add-btn" target="_blank"><i class="fab fa-whatsapp"></i> בקשו הצעת מחיר</a>`}
           </div>
