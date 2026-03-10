@@ -307,11 +307,7 @@ function initCartButton() {
   if (!cartBtn) return;
 
   cartBtn.addEventListener('click', () => {
-    // Detect if we're in a subdirectory
-    const isSubDir = window.location.pathname.includes('/legal/') ||
-                     window.location.pathname.includes('/products/') ||
-                     window.location.pathname.includes('/blog/');
-    window.location.href = isSubDir ? '../cart' : 'cart';
+    window.location.href = '/cart';
   });
 }
 
