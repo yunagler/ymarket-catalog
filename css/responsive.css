@@ -48,6 +48,24 @@
   }
 }
 
+/* ---- Small Tablet / Large Phone: 900px ---- */
+@media (max-width: 900px) {
+  /* Mega-menu: 2 columns instead of 3 */
+  .mega-menu__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Categories grid */
+  .categories-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Checkout: stack */
+  .checkout-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ---- Tablet: 768px ---- */
 @media (max-width: 768px) {
   :root {

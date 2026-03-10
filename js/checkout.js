@@ -118,9 +118,13 @@
         notes: notes || undefined
       };
 
+      var headers = { 'Content-Type': 'application/json' };
+      var csrfMeta = document.querySelector('meta[name="csrf-token"]');
+      if (csrfMeta) headers['X-CSRF-Token'] = csrfMeta.content;
+
       fetch(API_BASE + '/api/b2c/orders', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: headers,
         body: JSON.stringify(payload)
       })
       .then(function(res) {

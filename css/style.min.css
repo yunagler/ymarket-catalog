@@ -104,6 +104,30 @@
   --z-toast: 500;
   --z-whatsapp: 600;
 }
+
+/* ---- Dark Mode ---- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-white: #1a1a2e;
+    --color-bg: #12121f;
+    --color-bg-alt: #1e1e30;
+    --color-border: #2e2e45;
+    --color-border-light: #252540;
+    --color-text: #e8e8f0;
+    --color-text-secondary: #a0a0b8;
+    --color-text-light: #7878a0;
+    --color-text-on-primary: #FFFFFF;
+
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.35);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 12px 36px rgba(0, 0, 0, 0.45);
+  }
+
+  img {
+    opacity: 0.92;
+  }
+}
 /* ===========================================
    Y Market - Base Styles
    Reset, RTL, Typography
@@ -1705,6 +1729,24 @@ a:focus-visible {
   /* Checkout grid */
   .checkout-grid {
     grid-template-columns: 1fr 320px;
+  }
+}
+
+/* ---- Small Tablet / Large Phone: 900px ---- */
+@media (max-width: 900px) {
+  /* Mega-menu: 2 columns instead of 3 */
+  .mega-menu__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Categories grid */
+  .categories-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Checkout: stack */
+  .checkout-grid {
+    grid-template-columns: 1fr;
   }
 }
 
