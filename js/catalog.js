@@ -95,10 +95,9 @@
       const count = allProducts.filter(p => p.categorySlug === cat.slug).length;
       const link = document.createElement('a');
       link.className = 'category-list__item';
-      link.href = `/category/${cat.slug}/`;
+      link.href = `catalog.html?cat=${cat.slug}`;
       link.dataset.category = cat.slug;
       link.innerHTML = `<span>${cat.name}</span><span class="category-list__count">${count}</span>`;
-      // Navigate to dedicated category page
       list.appendChild(link);
     });
 
@@ -111,9 +110,17 @@
     document.getElementById('categoryList')?.addEventListener('click', (e) => {
       const btn = e.target.closest('.category-list__item');
       if (!btn) return;
+      e.preventDefault();
       document.querySelectorAll('.category-list__item').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       currentCategory = btn.dataset.category;
+      const url = new URL(window.location);
+      if (currentCategory === 'all') {
+        url.searchParams.delete('cat');
+      } else {
+        url.searchParams.set('cat', currentCategory);
+      }
+      history.pushState(null, '', url);
       updateTitle();
       render();
     });
