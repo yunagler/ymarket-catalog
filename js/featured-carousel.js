@@ -80,7 +80,7 @@
     slide.dataset.fallback = fallback;
     slide.innerHTML =
       '<div class="featured-slide">' +
-        '<a href="products/' + safeSlug + '" class="featured-slide__image">' +
+        '<a href="products/' + safeSlug + '" class="featured-slide__image" aria-label="' + safeName + '">' +
           '<img src="' + imgSrc + '" alt="' + safeName + '" loading="lazy" onerror="this.onerror=null;this.src=this.closest(\'[data-fallback]\').dataset.fallback;">' +
         '</a>' +
         '<div class="featured-slide__body">' +

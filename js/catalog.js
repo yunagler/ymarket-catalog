@@ -341,7 +341,7 @@
     return `
       <div class="product-card" data-fallback="${fallbackImg}">
         <div class="product-card__image">
-          <a href="${productUrl}">
+          <a href="${productUrl}" aria-label="${safeName}">
             <img src="${imgSrc}" alt="${safeName}" loading="lazy"
                  onerror="this.onerror=null;this.src=this.closest('.product-card').dataset.fallback;">
           </a>
