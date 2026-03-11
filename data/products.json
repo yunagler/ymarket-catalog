@@ -26,7 +26,7 @@
       "name": "חומרי ניקוי וכימיקלים",
       "slug": "חומרי-ניקוי-וכימיקלים",
       "icon": "fa-box",
-      "itemCount": 76
+      "itemCount": 77
     },
     {
       "id": 5,
@@ -8102,6 +8102,26 @@
       "productStatus": "active",
       "description": "",
       "partNumber": "",
+      "searchTags": "",
+      "alternatives": []
+    },
+    {
+      "id": 270,
+      "name": "מסיר עובש מתז 1 ליטר - סנט מוריץ",
+      "slug": "מסיר-עובש-מתז-1-ליטר-סנט-מוריץ",
+      "saleNis": 12,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "חומרי-ניקוי-וכימיקלים",
+      "categoryName": "חומרי ניקוי וכימיקלים",
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/286.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "7290002814665",
       "searchTags": "",
       "alternatives": []
     },
@@ -16526,6 +16546,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-11T20:24:40.353Z",
-  "totalItems": 819
+  "exportedAt": "2026-03-11T20:25:21.321Z",
+  "totalItems": 820
 }
