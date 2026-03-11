@@ -12,7 +12,7 @@
       "name": "כלי עבודה וציוד משקי",
       "slug": "כלי-עבודה-וציוד-משקי",
       "icon": "fa-box",
-      "itemCount": 30
+      "itemCount": 31
     },
     {
       "id": 3,
@@ -4323,6 +4323,26 @@
       "alternatives": []
     },
     {
+      "id": 228,
+      "name": "מגב מתכת 40 (עם אברגה)",
+      "slug": "מגב-מתכת-40-עם-אברגה",
+      "saleNis": 15,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "כלי-עבודה-וציוד-משקי",
+      "categoryName": "כלי עבודה וציוד משקי",
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/244.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "7290000599755",
+      "searchTags": "",
+      "alternatives": []
+    },
+    {
       "id": 187,
       "name": "מגב פלסטיק (40) BASIC",
       "slug": "מגב-פלסטיק-40-BASIC",
@@ -7626,26 +7646,6 @@
       "alternatives": []
     },
     {
-      "id": 905,
-      "name": "מכסה לקראפט - 1300 מ\"ל",
-      "slug": "מכסה-לקראפט-1300-מ-ל-2",
-      "saleNis": 0.76,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "אריזות-מזון-ו-Take-Away",
-      "categoryName": "אריזות מזון ו-Take Away",
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/922.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "searchTags": "",
-      "alternatives": []
-    },
-    {
       "id": 640,
       "name": "מכסה לקראפט - 1300 מ\"ל",
       "slug": "מכסה-לקראפט-1300-מ-ל",
@@ -7658,6 +7658,26 @@
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "/items/656.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "searchTags": "",
+      "alternatives": []
+    },
+    {
+      "id": 905,
+      "name": "מכסה לקראפט - 1300 מ\"ל",
+      "slug": "מכסה-לקראפט-1300-מ-ל-2",
+      "saleNis": 0.76,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/922.jpg",
       "isFeatured": false,
       "productStatus": "active",
       "description": "",
@@ -16446,6 +16466,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-11T20:09:42.015Z",
-  "totalItems": 815
+  "exportedAt": "2026-03-11T20:10:32.700Z",
+  "totalItems": 816
 }
