@@ -365,7 +365,22 @@
       "description": "",
       "partNumber": "7290011442019",
       "searchTags": "",
-      "alternatives": []
+      "alternatives": [
+        {
+          "id": 441,
+          "name": "מרכך כביסה כחול",
+          "saleNis": 14,
+          "imageUrl": "/items/457.jpg",
+          "slug": "מרכך-כביסה-כחול"
+        },
+        {
+          "id": 434,
+          "name": "מרכך כביסה 1 ליטר אקסטרא בישום - בניחוח מלדיבים",
+          "saleNis": 10,
+          "imageUrl": "/items/450.jpg",
+          "slug": "מרכך-כביסה-1-ליטר-אקסטרא-בישום-בניחוח-מלדיבים"
+        }
+      ]
     },
     {
       "id": 441,
@@ -16668,6 +16683,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-11T20:35:58.350Z",
+  "exportedAt": "2026-03-11T20:37:28.384Z",
   "totalItems": 825
 }
