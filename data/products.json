@@ -3353,7 +3353,7 @@
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
       "categoryName": "בטיחות ומיגון אישי (PPE)",
       "unit": "",
-      "unitsPerPack": 1,
+      "unitsPerPack": 100,
       "imageUrl": "/items/75.jpg",
       "isFeatured": false,
       "productStatus": "active",
@@ -16426,6 +16426,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-11T19:20:57.618Z",
+  "exportedAt": "2026-03-11T19:25:53.163Z",
   "totalItems": 814
 }
