@@ -98,7 +98,7 @@
 
   async function init() {
     try {
-      var res = await fetch('data/products.json');
+      var res = await fetch('/data/products.json');
       var data = await res.json();
       var items = (data.items || []).filter(function(item) { return item.isFeatured; });
 
