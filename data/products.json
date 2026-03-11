@@ -345,7 +345,22 @@
       "description": "",
       "partNumber": "7290011442613",
       "searchTags": "",
-      "alternatives": []
+      "alternatives": [
+        {
+          "id": 442,
+          "name": "מרכך כביסה ורוד",
+          "saleNis": 14,
+          "imageUrl": "/items/458.jpg",
+          "slug": "מרכך-כביסה-ורוד"
+        },
+        {
+          "id": 441,
+          "name": "מרכך כביסה כחול",
+          "saleNis": 14,
+          "imageUrl": "/items/457.jpg",
+          "slug": "מרכך-כביסה-כחול"
+        }
+      ]
     },
     {
       "id": 442,
@@ -16698,6 +16713,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-11T20:38:39.902Z",
+  "exportedAt": "2026-03-11T20:39:06.727Z",
   "totalItems": 825
 }
