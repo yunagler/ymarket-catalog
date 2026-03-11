@@ -92,7 +92,7 @@
     }
 
     categories.forEach(cat => {
-      const count = allProducts.filter(p => p.categorySlug === cat.slug).length;
+      const count = allProducts.filter(p => p.categorySlug === cat.slug || (p.categorySlugs && p.categorySlugs.includes(cat.slug))).length;
       const link = document.createElement('a');
       link.className = 'category-list__item';
       link.href = `/category/${cat.slug}/`;
@@ -206,7 +206,7 @@
 
     // Category filter
     if (currentCategory !== 'all') {
-      filtered = filtered.filter(p => p.categorySlug === currentCategory);
+      filtered = filtered.filter(p => p.categorySlug === currentCategory || (p.categorySlugs && p.categorySlugs.includes(currentCategory)));
     }
 
     // Search

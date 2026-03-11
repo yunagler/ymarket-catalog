@@ -131,7 +131,10 @@ function formatPrice(price) {
 }
 
 function generateCategoryPage(category, products, allCategories) {
-  const categoryProducts = products.filter(p => p.categorySlug === category.slug);
+  const categoryProducts = products.filter(p =>
+    p.categorySlug === category.slug ||
+    (p.categorySlugs && p.categorySlugs.includes(category.slug))
+  );
   const categoryUrl = `${SITE_URL}/category/${category.slug}/`;
 
   const catSeo = CATEGORY_SEO[category.slug] || {};
