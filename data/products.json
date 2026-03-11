@@ -221,6 +221,46 @@
       "alternatives": []
     },
     {
+      "id": 886,
+      "name": "כפפות ניטריל כחול (סטוק) - ללא חזרות",
+      "slug": "כפפות-ניטריל-כחול-סטוק-ללא-חזרות",
+      "saleNis": 11,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "בטיחות-ומיגון-אישי-PPE",
+      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/903.jpg",
+      "isFeatured": true,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "searchTags": "",
+      "alternatives": []
+    },
+    {
+      "id": 448,
+      "name": "לטקס ללא אבקה 50 יח'",
+      "slug": "לטקס-ללא-אבקה-50-יח",
+      "saleNis": 10,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "בטיחות-ומיגון-אישי-PPE",
+      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/464.jpg",
+      "isFeatured": true,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "searchTags": "",
+      "alternatives": []
+    },
+    {
       "id": 49,
       "name": "מגבון (Delux) ריחני בשקית - 72 יח' ",
       "slug": "מגבון-Delux-ריחני-בשקית-72-יח",
@@ -3423,26 +3463,6 @@
       "alternatives": []
     },
     {
-      "id": 886,
-      "name": "כפפות ניטריל כחול (סטוק) - ללא חזרות",
-      "slug": "כפפות-ניטריל-כחול-סטוק-ללא-חזרות",
-      "saleNis": 11,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/903.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "searchTags": "",
-      "alternatives": []
-    },
-    {
       "id": 332,
       "name": "כפפפות בד בד",
       "slug": "כפפפות-בד-בד",
@@ -3639,26 +3659,6 @@
       "productStatus": "active",
       "description": "",
       "partNumber": "58",
-      "searchTags": "",
-      "alternatives": []
-    },
-    {
-      "id": 448,
-      "name": "לטקס ללא אבקה 50 יח'",
-      "slug": "לטקס-ללא-אבקה-50-יח",
-      "saleNis": 10,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/464.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
       "searchTags": "",
       "alternatives": []
     },
@@ -16446,6 +16446,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-11T20:00:43.444Z",
+  "exportedAt": "2026-03-11T20:01:55.808Z",
   "totalItems": 815
 }
