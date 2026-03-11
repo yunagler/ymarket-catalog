@@ -1,6 +1,13 @@
 {
   "categories": [
     {
+      "id": 21,
+      "name": "סטוק עד הבית",
+      "slug": "סטוק-עד-הבית",
+      "icon": "fa-box",
+      "itemCount": 1
+    },
+    {
       "id": 1,
       "name": "בטיחות ומיגון אישי (PPE)",
       "slug": "בטיחות-ומיגון-אישי-PPE",
@@ -8366,6 +8373,41 @@
       "alternatives": []
     },
     {
+      "id": 13,
+      "name": "מסכה כירוגית (3 שכבות) לילדים - ורוד - 50 יח'",
+      "slug": "מסכה-כירוגית-3-שכבות-לילדים-ורוד-50-יח",
+      "saleNis": 7,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "סטוק-עד-הבית",
+      "categoryName": "סטוק עד הבית",
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/14.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "מסכות לפנים לא גדולות (נוער)",
+      "partNumber": "6939456721983",
+      "searchTags": "",
+      "alternatives": [
+        {
+          "id": 5,
+          "name": "מסכה כירוגית (3 שכבות) - כחול גינס - 50 יח'",
+          "saleNis": 7,
+          "imageUrl": "/items/5.jpg",
+          "slug": "מסכה-כירוגית-3-שכבות-כחול-גינס-50-יח"
+        },
+        {
+          "id": 65,
+          "name": "מסכה כירוגית (3 שכבות) - אפור - 50 יח'",
+          "saleNis": 7,
+          "imageUrl": "/items/81.jpg",
+          "slug": "מסכה-כירוגית-3-שכבות-אפור-50-יח"
+        }
+      ]
+    },
+    {
       "id": 879,
       "name": "מספרי גדר חי טלסקופי טפלון",
       "slug": "מספרי-גדר-חי-טלסקופי-טפלון",
@@ -11666,26 +11708,6 @@
       "alternatives": []
     },
     {
-      "id": 363,
-      "name": "סט 4 מדגיש צבעוני",
-      "slug": "סט-4-מדגיש-צבעוני",
-      "saleNis": 9.5,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/379.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "searchTags": "",
-      "alternatives": []
-    },
-    {
       "id": 393,
       "name": "סט 4 מדגיש צבעוני",
       "slug": "סט-4-מדגיש-צבעוני-2",
@@ -11698,6 +11720,26 @@
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "/items/409.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "searchTags": "",
+      "alternatives": []
+    },
+    {
+      "id": 363,
+      "name": "סט 4 מדגיש צבעוני",
+      "slug": "סט-4-מדגיש-צבעוני",
+      "saleNis": 9.5,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "ציוד-משרדי-וכללי",
+      "categoryName": "ציוד משרדי וכללי",
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/379.jpg",
       "isFeatured": false,
       "productStatus": "active",
       "description": "",
@@ -16586,6 +16628,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-11T20:27:11.762Z",
-  "totalItems": 822
+  "exportedAt": "2026-03-11T20:31:26.797Z",
+  "totalItems": 823
 }
