@@ -433,6 +433,26 @@
       ]
     },
     {
+      "id": 239,
+      "name": "משחת כלים בניחוח לימון 20 ק\"ג (סו קלין)",
+      "slug": "משחת-כלים-בניחוח-לימון-20-ק-ג-סו-קלין",
+      "saleNis": 65,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "חומרי-ניקוי-וכימיקלים",
+      "categoryName": "חומרי ניקוי וכימיקלים",
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/255.jpg",
+      "isFeatured": true,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "searchTags": "",
+      "alternatives": []
+    },
+    {
       "id": 91,
       "name": "נייר סופג לאקי 2 שכבות 6 גלילים ",
       "slug": "נייר-סופג-לאקי-2-שכבות-6-גלילים",
@@ -9313,26 +9333,6 @@
       "alternatives": []
     },
     {
-      "id": 239,
-      "name": "משחת כלים בניחוח לימון 20 ק\"ג (סו קלין)",
-      "slug": "משחת-כלים-בניחוח-לימון-20-ק-ג-סו-קלין",
-      "saleNis": 65,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "חומרי-ניקוי-וכימיקלים",
-      "categoryName": "חומרי ניקוי וכימיקלים",
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/255.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "searchTags": "",
-      "alternatives": []
-    },
-    {
       "id": 663,
       "name": "משחת שניים קולגייט טריפל אקשן 75 מ\"ל",
       "slug": "משחת-שניים-קולגייט-טריפל-אקשן-75-מ-ל",
@@ -16713,6 +16713,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-11T20:39:17.500Z",
+  "exportedAt": "2026-03-11T20:41:45.809Z",
   "totalItems": 825
 }
