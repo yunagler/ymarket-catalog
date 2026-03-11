@@ -33,7 +33,7 @@
       "name": "אריזות מזון ו-Take Away",
       "slug": "אריזות-מזון-ו-Take-Away",
       "icon": "fa-box",
-      "itemCount": 135
+      "itemCount": 136
     },
     {
       "id": 6,
@@ -7566,6 +7566,26 @@
       "alternatives": []
     },
     {
+      "id": 643,
+      "name": "מכסה לגביע קראפט - 450 מ\"ל",
+      "slug": "מכסה-לגביע-קראפט-450-מ-ל",
+      "saleNis": 0,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/659.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "searchTags": "",
+      "alternatives": []
+    },
+    {
       "id": 328,
       "name": "מכסה לגביע רוטב 1-2OZ ארוז 2500 יח",
       "slug": "מכסה-לגביע-רוטב-1-2OZ-ארוז-2500-יח",
@@ -11586,26 +11606,6 @@
       "alternatives": []
     },
     {
-      "id": 393,
-      "name": "סט 4 מדגיש צבעוני",
-      "slug": "סט-4-מדגיש-צבעוני-2",
-      "saleNis": 10,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/409.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "searchTags": "",
-      "alternatives": []
-    },
-    {
       "id": 363,
       "name": "סט 4 מדגיש צבעוני",
       "slug": "סט-4-מדגיש-צבעוני",
@@ -11618,6 +11618,26 @@
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "/items/379.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "searchTags": "",
+      "alternatives": []
+    },
+    {
+      "id": 393,
+      "name": "סט 4 מדגיש צבעוני",
+      "slug": "סט-4-מדגיש-צבעוני-2",
+      "saleNis": 10,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "ציוד-משרדי-וכללי",
+      "categoryName": "ציוד משרדי וכללי",
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/409.jpg",
       "isFeatured": false,
       "productStatus": "active",
       "description": "",
@@ -16506,6 +16526,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-11T20:21:15.916Z",
-  "totalItems": 818
+  "exportedAt": "2026-03-11T20:21:33.577Z",
+  "totalItems": 819
 }
