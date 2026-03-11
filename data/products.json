@@ -201,6 +201,26 @@
       "alternatives": []
     },
     {
+      "id": 34,
+      "name": "ויטריל שחור (Perfect) מידה S - (100 יח) - ללא אבקה",
+      "slug": "ויטריל-שחור-Perfect-מידה-S-100-יח-ללא-אבקה",
+      "saleNis": 14,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "בטיחות-ומיגון-אישי-PPE",
+      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/50.jpg",
+      "isFeatured": true,
+      "productStatus": "active",
+      "description": "כפפות ויטריל - צבע שחור - 100 יח' בקופסא - סינטטי אלסטי - מאושר מטעם הבד\"ץ העדה החרדית - מתאים לעבודה עם מזון - ללא אבקה",
+      "partNumber": "7290113288836",
+      "searchTags": "",
+      "alternatives": []
+    },
+    {
       "id": 49,
       "name": "מגבון (Delux) ריחני בשקית - 72 יח' ",
       "slug": "מגבון-Delux-ריחני-בשקית-72-יח",
@@ -2099,26 +2119,6 @@
       "productStatus": "active",
       "description": "",
       "partNumber": "0787269067769",
-      "searchTags": "",
-      "alternatives": []
-    },
-    {
-      "id": 34,
-      "name": "ויטריל שחור (Perfect) מידה S - (100 יח) - ללא אבקה",
-      "slug": "ויטריל-שחור-Perfect-מידה-S-100-יח-ללא-אבקה",
-      "saleNis": 14,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/50.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "כפפות ויטריל - צבע שחור - 100 יח' בקופסא - סינטטי אלסטי - מאושר מטעם הבד\"ץ העדה החרדית - מתאים לעבודה עם מזון - ללא אבקה",
-      "partNumber": "7290113288836",
       "searchTags": "",
       "alternatives": []
     },
@@ -16426,6 +16426,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-11T19:52:25.404Z",
+  "exportedAt": "2026-03-11T19:54:24.288Z",
   "totalItems": 814
 }
