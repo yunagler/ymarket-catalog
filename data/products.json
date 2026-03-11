@@ -11164,7 +11164,7 @@
       "id": 1049,
       "name": "נרות נשמה 48 שעות",
       "slug": "נרות-נשמה-48-שעות",
-      "saleNis": 0,
+      "saleNis": 5,
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
@@ -11178,7 +11178,29 @@
       "description": "",
       "partNumber": "",
       "searchTags": "",
-      "alternatives": []
+      "alternatives": [
+        {
+          "id": 54,
+          "name": "50 להבונים לשבתות וחגים (נרות חימום)",
+          "saleNis": 10,
+          "imageUrl": "/items/70.jpg",
+          "slug": "50-להבונים-לשבתות-וחגים-נרות-חימום"
+        },
+        {
+          "id": 615,
+          "name": "נרות נשמה 24 שעות",
+          "saleNis": 2,
+          "imageUrl": "/items/631.jpg",
+          "slug": "נרות-נשמה-24-שעות"
+        },
+        {
+          "id": 1050,
+          "name": "נרות נשמה 72 שעות",
+          "saleNis": 0,
+          "imageUrl": "/items/1068.jpg",
+          "slug": "נרות-נשמה-72-שעות"
+        }
+      ]
     },
     {
       "id": 1050,
@@ -11821,26 +11843,6 @@
       "alternatives": []
     },
     {
-      "id": 393,
-      "name": "סט 4 מדגיש צבעוני",
-      "slug": "סט-4-מדגיש-צבעוני-2",
-      "saleNis": 10,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/409.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "searchTags": "",
-      "alternatives": []
-    },
-    {
       "id": 363,
       "name": "סט 4 מדגיש צבעוני",
       "slug": "סט-4-מדגיש-צבעוני",
@@ -11853,6 +11855,26 @@
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "/items/379.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "searchTags": "",
+      "alternatives": []
+    },
+    {
+      "id": 393,
+      "name": "סט 4 מדגיש צבעוני",
+      "slug": "סט-4-מדגיש-צבעוני-2",
+      "saleNis": 10,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "ציוד-משרדי-וכללי",
+      "categoryName": "ציוד משרדי וכללי",
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/409.jpg",
       "isFeatured": false,
       "productStatus": "active",
       "description": "",
@@ -16741,6 +16763,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-11T20:53:52.076Z",
+  "exportedAt": "2026-03-11T20:55:18.211Z",
   "totalItems": 826
 }
