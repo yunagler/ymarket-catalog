@@ -26,7 +26,7 @@
       "name": "חומרי ניקוי וכימיקלים",
       "slug": "חומרי-ניקוי-וכימיקלים",
       "icon": "fa-box",
-      "itemCount": 78
+      "itemCount": 79
     },
     {
       "id": 5,
@@ -8222,6 +8222,26 @@
       "productStatus": "active",
       "description": "",
       "partNumber": "7290002814191",
+      "searchTags": "",
+      "alternatives": []
+    },
+    {
+      "id": 160,
+      "name": "מסיר שומנים קר מתז 750 מ\"ל - סנט מוריץ",
+      "slug": "מסיר-שומנים-קר-מתז-750-מ-ל-סנט-מוריץ",
+      "saleNis": 15,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "חומרי-ניקוי-וכימיקלים",
+      "categoryName": "חומרי ניקוי וכימיקלים",
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/176.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "7290002814016",
       "searchTags": "",
       "alternatives": []
     },
@@ -16566,6 +16586,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-11T20:26:54.948Z",
-  "totalItems": 821
+  "exportedAt": "2026-03-11T20:27:11.762Z",
+  "totalItems": 822
 }
