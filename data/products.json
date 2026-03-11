@@ -11110,7 +11110,15 @@
       "description": "",
       "partNumber": "7290014945739",
       "searchTags": "",
-      "alternatives": []
+      "alternatives": [
+        {
+          "id": 547,
+          "name": "נילון נצמד (אופל-פירות) 45/1300",
+          "saleNis": 35,
+          "imageUrl": "/items/563.jpg",
+          "slug": "נילון-נצמד-אופל-פירות-45-1300"
+        }
+      ]
     },
     {
       "id": 708,
@@ -16733,6 +16741,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-11T20:52:16.524Z",
+  "exportedAt": "2026-03-11T20:53:05.335Z",
   "totalItems": 826
 }
