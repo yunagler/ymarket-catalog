@@ -12,7 +12,7 @@
       "name": "כלי עבודה וציוד משקי",
       "slug": "כלי-עבודה-וציוד-משקי",
       "icon": "fa-box",
-      "itemCount": 31
+      "itemCount": 32
     },
     {
       "id": 3,
@@ -4339,6 +4339,26 @@
       "productStatus": "active",
       "description": "",
       "partNumber": "7290000599755",
+      "searchTags": "",
+      "alternatives": []
+    },
+    {
+      "id": 229,
+      "name": "מגב מתכת 60 (עם אברגה)",
+      "slug": "מגב-מתכת-60-עם-אברגה",
+      "saleNis": 22,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "כלי-עבודה-וציוד-משקי",
+      "categoryName": "כלי עבודה וציוד משקי",
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/245.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "7290000599526",
       "searchTags": "",
       "alternatives": []
     },
@@ -16466,6 +16486,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-11T20:10:32.700Z",
-  "totalItems": 816
+  "exportedAt": "2026-03-11T20:10:59.857Z",
+  "totalItems": 817
 }
