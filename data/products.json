@@ -96,7 +96,7 @@
       "name": "עזרה ראשונה - רפואי",
       "slug": "עזרה-ראשונה-רפואי",
       "icon": "fa-box",
-      "itemCount": 25
+      "itemCount": 26
     },
     {
       "id": 17,
@@ -9533,6 +9533,26 @@
       "alternatives": []
     },
     {
+      "id": 147,
+      "name": "נוזל 70% אלכוהול לחיטוי כללי ומשטחים (SEPTAMED) - חצי ליטר",
+      "slug": "נוזל-70-אלכוהול-לחיטוי-כללי-ומשטחים-SEPTAMED-חצי-ליטר",
+      "saleNis": 35,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "עזרה-ראשונה-רפואי",
+      "categoryName": "עזרה ראשונה - רפואי",
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/163.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "7290115291292",
+      "searchTags": "",
+      "alternatives": []
+    },
+    {
       "id": 850,
       "name": "נוזל C7 עוצמתי - 4 ליטר BLINX",
       "slug": "נוזל-C7-עוצמתי-4-ליטר-BLINX",
@@ -16713,6 +16733,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-11T20:41:45.809Z",
-  "totalItems": 825
+  "exportedAt": "2026-03-11T20:43:07.956Z",
+  "totalItems": 826
 }
