@@ -11206,7 +11206,7 @@
       "id": 1050,
       "name": "נרות נשמה 72 שעות",
       "slug": "נרות-נשמה-72-שעות",
-      "saleNis": 0,
+      "saleNis": 12,
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
@@ -11220,7 +11220,29 @@
       "description": "",
       "partNumber": "",
       "searchTags": "",
-      "alternatives": []
+      "alternatives": [
+        {
+          "id": 54,
+          "name": "50 להבונים לשבתות וחגים (נרות חימום)",
+          "saleNis": 10,
+          "imageUrl": "/items/70.jpg",
+          "slug": "50-להבונים-לשבתות-וחגים-נרות-חימום"
+        },
+        {
+          "id": 615,
+          "name": "נרות נשמה 24 שעות",
+          "saleNis": 2,
+          "imageUrl": "/items/631.jpg",
+          "slug": "נרות-נשמה-24-שעות"
+        },
+        {
+          "id": 1049,
+          "name": "נרות נשמה 48 שעות",
+          "saleNis": 0,
+          "imageUrl": "/items/1067.jpg",
+          "slug": "נרות-נשמה-48-שעות"
+        }
+      ]
     },
     {
       "id": 169,
@@ -16763,6 +16785,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-11T20:55:50.177Z",
+  "exportedAt": "2026-03-11T20:56:38.066Z",
   "totalItems": 826
 }
