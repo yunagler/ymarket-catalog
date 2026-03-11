@@ -146,9 +146,21 @@ function generateCategoryPage(category, products, allCategories) {
     const imgSrc = p.imageUrl || `/items/${p.id}.jpg`;
     const hasPromo = p.productStatus === 'on_sale' && p.originalPrice;
 
+    // Status badge
+    let badgeHtml = '';
+    if (hasPromo) {
+      badgeHtml = `<div class="product-card__badge" style="background:#dc2626;color:#fff;position:absolute;top:8px;right:8px;padding:4px 10px;border-radius:6px;font-size:0.75rem;font-weight:700;z-index:2">${p.discountPercent ? Math.round(p.discountPercent) + '%-' : (p.promotionLabel || 'מבצע')}</div>`;
+    } else if (p.productStatus === 'recommended' || p.isFeatured) {
+      badgeHtml = '<div class="product-card__badge" style="background:#16a34a;color:#fff;position:absolute;top:8px;right:8px;padding:4px 10px;border-radius:6px;font-size:0.75rem;font-weight:700;z-index:2">מומלץ</div>';
+    } else if (p.productStatus === 'new') {
+      badgeHtml = '<div class="product-card__badge" style="background:#2563eb;color:#fff;position:absolute;top:8px;right:8px;padding:4px 10px;border-radius:6px;font-size:0.75rem;font-weight:700;z-index:2">חדש</div>';
+    } else if (p.productStatus === 'clearance') {
+      badgeHtml = '<div class="product-card__badge" style="background:#dc2626;color:#fff;position:absolute;top:8px;right:8px;padding:4px 10px;border-radius:6px;font-size:0.75rem;font-weight:700;z-index:2">חיסול</div>';
+    }
+
     return `
-    <div class="product-card">
-      ${hasPromo ? `<div class="product-card__badge">${p.promotionLabel || 'מבצע'}</div>` : ''}
+    <div class="product-card" style="position:relative">
+      ${badgeHtml}
       <div class="product-card__image">
         <a href="/products/${p.slug}/">
           <img src="${imgSrc}" alt="${p.name}" loading="lazy"

@@ -213,11 +213,15 @@ function generateProductPage(product, categories, allProducts) {
 
           <div class="product-highlights">
             <div class="product-highlights__item"><i class="fas fa-check-circle"></i> <span>במלאי - מוכן למשלוח</span></div>
-            <div class="product-highlights__item"><i class="fas fa-shipping-fast"></i> <span>1-2 ימי עסקים</span></div>
+            <div class="product-highlights__item"><i class="fas fa-shipping-fast"></i> <span>${product.leadTimeDays ? product.leadTimeDays + ' ימי עסקים' : '1-2 ימי עסקים'}</span></div>
             <div class="product-highlights__item"><i class="fas fa-shield-alt"></i> <span>הזמנה מינימלית: 1,600₪</span></div>
+            ${product.barcode ? `<div class="product-highlights__item"><i class="fas fa-barcode"></i> <span>ברקוד: ${product.barcode}</span></div>` : ''}
+            ${product.maxOrderQty ? `<div class="product-highlights__item"><i class="fas fa-cubes"></i> <span>מקס' להזמנה: ${product.maxOrderQty} יח'</span></div>` : ''}
           </div>
 
           ${product.description ? `<div class="product-description"><h3>תיאור</h3><p>${product.description}</p></div>` : ''}
+          ${product.technicalDesc ? `<div class="product-description" style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:16px 20px;margin-top:1rem;"><h3 style="font-size:1rem;margin-bottom:0.5rem;"><i class="fas fa-clipboard-list" style="color:var(--color-primary,#1B3A5C);margin-left:6px;"></i>מפרט טכני</h3><p style="white-space:pre-line;color:var(--color-text-secondary,#4b5563);font-size:0.9rem;line-height:1.7">${product.technicalDesc}</p></div>` : ''}
+          ${product.videoUrl ? `<div style="margin-top:1rem;"><a href="${product.videoUrl}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#dc2626;color:#fff;padding:10px 20px;border-radius:8px;font-weight:600;text-decoration:none;font-size:0.95rem;"><i class="fas fa-play-circle"></i> צפו בסרטון מוצר</a></div>` : ''}
           ${specsHtml}
           ${bulkCtaHtml}
         </div>
