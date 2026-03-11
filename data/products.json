@@ -96,7 +96,7 @@
       "name": "עזרה ראשונה - רפואי",
       "slug": "עזרה-ראשונה-רפואי",
       "icon": "fa-box",
-      "itemCount": 24
+      "itemCount": 25
     },
     {
       "id": 17,
@@ -7773,26 +7773,6 @@
       "alternatives": []
     },
     {
-      "id": 640,
-      "name": "מכסה לקראפט - 1300 מ\"ל",
-      "slug": "מכסה-לקראפט-1300-מ-ל",
-      "saleNis": 0,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "אריזות-מזון-ו-Take-Away",
-      "categoryName": "אריזות מזון ו-Take Away",
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/656.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "searchTags": "",
-      "alternatives": []
-    },
-    {
       "id": 905,
       "name": "מכסה לקראפט - 1300 מ\"ל",
       "slug": "מכסה-לקראפט-1300-מ-ל-2",
@@ -7805,6 +7785,26 @@
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "/items/922.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "searchTags": "",
+      "alternatives": []
+    },
+    {
+      "id": 640,
+      "name": "מכסה לקראפט - 1300 מ\"ל",
+      "slug": "מכסה-לקראפט-1300-מ-ל",
+      "saleNis": 0,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/656.jpg",
       "isFeatured": false,
       "productStatus": "active",
       "description": "",
@@ -8466,6 +8466,26 @@
           "slug": "מסכה-כירוגית-3-שכבות-אפור-50-יח"
         }
       ]
+    },
+    {
+      "id": 69,
+      "name": "מסכה רפואית צבע תכלת -  TCare",
+      "slug": "מסכה-רפואית-צבע-תכלת-TCare",
+      "saleNis": 10,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "עזרה-ראשונה-רפואי",
+      "categoryName": "עזרה ראשונה - רפואי",
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/85.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "5425032882472",
+      "searchTags": "",
+      "alternatives": []
     },
     {
       "id": 879,
@@ -11708,26 +11728,6 @@
       "alternatives": []
     },
     {
-      "id": 393,
-      "name": "סט 4 מדגיש צבעוני",
-      "slug": "סט-4-מדגיש-צבעוני-2",
-      "saleNis": 10,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/409.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "searchTags": "",
-      "alternatives": []
-    },
-    {
       "id": 363,
       "name": "סט 4 מדגיש צבעוני",
       "slug": "סט-4-מדגיש-צבעוני",
@@ -11740,6 +11740,26 @@
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "/items/379.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "searchTags": "",
+      "alternatives": []
+    },
+    {
+      "id": 393,
+      "name": "סט 4 מדגיש צבעוני",
+      "slug": "סט-4-מדגיש-צבעוני-2",
+      "saleNis": 10,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "ציוד-משרדי-וכללי",
+      "categoryName": "ציוד משרדי וכללי",
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/409.jpg",
       "isFeatured": false,
       "productStatus": "active",
       "description": "",
@@ -16628,6 +16648,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-11T20:34:03.321Z",
-  "totalItems": 823
+  "exportedAt": "2026-03-11T20:34:18.773Z",
+  "totalItems": 824
 }
