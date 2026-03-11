@@ -26,7 +26,7 @@
       "name": "חומרי ניקוי וכימיקלים",
       "slug": "חומרי-ניקוי-וכימיקלים",
       "icon": "fa-box",
-      "itemCount": 77
+      "itemCount": 78
     },
     {
       "id": 5,
@@ -7706,26 +7706,6 @@
       "alternatives": []
     },
     {
-      "id": 905,
-      "name": "מכסה לקראפט - 1300 מ\"ל",
-      "slug": "מכסה-לקראפט-1300-מ-ל-2",
-      "saleNis": 0.76,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "אריזות-מזון-ו-Take-Away",
-      "categoryName": "אריזות מזון ו-Take Away",
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/922.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "searchTags": "",
-      "alternatives": []
-    },
-    {
       "id": 640,
       "name": "מכסה לקראפט - 1300 מ\"ל",
       "slug": "מכסה-לקראפט-1300-מ-ל",
@@ -7738,6 +7718,26 @@
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "/items/656.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "searchTags": "",
+      "alternatives": []
+    },
+    {
+      "id": 905,
+      "name": "מכסה לקראפט - 1300 מ\"ל",
+      "slug": "מכסה-לקראפט-1300-מ-ל-2",
+      "saleNis": 0.76,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/922.jpg",
       "isFeatured": false,
       "productStatus": "active",
       "description": "",
@@ -8202,6 +8202,26 @@
       "productStatus": "active",
       "description": "",
       "partNumber": "7290117761762",
+      "searchTags": "",
+      "alternatives": []
+    },
+    {
+      "id": 159,
+      "name": "מסיר שומנים קר 5 ליטר - סנט מוריץ",
+      "slug": "מסיר-שומנים-קר-5-ליטר-סנט-מוריץ",
+      "saleNis": 50,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "חומרי-ניקוי-וכימיקלים",
+      "categoryName": "חומרי ניקוי וכימיקלים",
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/175.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "7290002814191",
       "searchTags": "",
       "alternatives": []
     },
@@ -16546,6 +16566,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-11T20:25:21.321Z",
-  "totalItems": 820
+  "exportedAt": "2026-03-11T20:26:17.411Z",
+  "totalItems": 821
 }
