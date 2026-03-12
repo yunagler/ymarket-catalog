@@ -54,7 +54,7 @@
       "name": "טקסטיל, מטליות וסחבות",
       "slug": "טקסטיל-מטליות-וסחבות",
       "icon": "fa-box",
-      "itemCount": 30
+      "itemCount": 31
     },
     {
       "id": 7,
@@ -821,6 +821,34 @@
       "productStatus": "active",
       "description": "",
       "partNumber": "",
+      "barcode": "",
+      "searchTags": "",
+      "technicalDesc": "",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": []
+    },
+    {
+      "id": 380,
+      "name": "2 מטליות מיקרופייבר ג'מבו לרצפה 60*90 ס\"מ",
+      "slug": "2-מטליות-מיקרופייבר-ג-מבו-לרצפה-60-90-ס-מ",
+      "saleNis": 15,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "טקסטיל-מטליות-וסחבות",
+      "categoryName": "טקסטיל, מטליות וסחבות",
+      "categorySlugs": [
+        "טקסטיל-מטליות-וסחבות"
+      ],
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/396.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "7290016387339",
       "barcode": "",
       "searchTags": "",
       "technicalDesc": "",
@@ -10821,34 +10849,6 @@
       "alternatives": []
     },
     {
-      "id": 905,
-      "name": "מכסה לקראפט - 1300 מ\"ל",
-      "slug": "מכסה-לקראפט-1300-מ-ל-2",
-      "saleNis": 0.76,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "אריזות-מזון-ו-Take-Away",
-      "categoryName": "אריזות מזון ו-Take Away",
-      "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/922.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "barcode": "",
-      "searchTags": "",
-      "technicalDesc": "",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": []
-    },
-    {
       "id": 640,
       "name": "מכסה לקראפט - 1300 מ\"ל",
       "slug": "מכסה-לקראפט-1300-מ-ל",
@@ -10864,6 +10864,34 @@
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "/items/656.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "barcode": "",
+      "searchTags": "",
+      "technicalDesc": "",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": []
+    },
+    {
+      "id": 905,
+      "name": "מכסה לקראפט - 1300 מ\"ל",
+      "slug": "מכסה-לקראפט-1300-מ-ל-2",
+      "saleNis": 0.76,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
+      "categorySlugs": [
+        "אריזות-מזון-ו-Take-Away"
+      ],
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/922.jpg",
       "isFeatured": false,
       "productStatus": "active",
       "description": "",
@@ -16325,34 +16353,6 @@
       "alternatives": []
     },
     {
-      "id": 393,
-      "name": "סט 4 מדגיש צבעוני",
-      "slug": "סט-4-מדגיש-צבעוני-2",
-      "saleNis": 10,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
-      "categorySlugs": [
-        "ציוד-משרדי-וכללי"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/409.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "barcode": "",
-      "searchTags": "",
-      "technicalDesc": "",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": []
-    },
-    {
       "id": 363,
       "name": "סט 4 מדגיש צבעוני",
       "slug": "סט-4-מדגיש-צבעוני",
@@ -16368,6 +16368,34 @@
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "/items/379.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "barcode": "",
+      "searchTags": "",
+      "technicalDesc": "",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": []
+    },
+    {
+      "id": 393,
+      "name": "סט 4 מדגיש צבעוני",
+      "slug": "סט-4-מדגיש-צבעוני-2",
+      "saleNis": 10,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "ציוד-משרדי-וכללי",
+      "categoryName": "ציוד משרדי וכללי",
+      "categorySlugs": [
+        "ציוד-משרדי-וכללי"
+      ],
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/409.jpg",
       "isFeatured": false,
       "productStatus": "active",
       "description": "",
@@ -23301,6 +23329,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-12T12:32:58.519Z",
-  "totalItems": 822
+  "exportedAt": "2026-03-12T12:33:21.345Z",
+  "totalItems": 823
 }
