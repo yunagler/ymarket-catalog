@@ -10,6 +10,15 @@
       "itemCount": 1
     },
     {
+      "id": 23,
+      "name": "קרצוף ורחצה",
+      "slug": "קרצוף-ורחצה",
+      "icon": "fa-box",
+      "parentId": 6,
+      "sortOrder": 0,
+      "itemCount": 1
+    },
+    {
       "id": 21,
       "name": "סטוק עד הבית",
       "slug": "סטוק-עד-הבית",
@@ -185,10 +194,11 @@
       "categorySlug": "טקסטיל-מטליות-וסחבות",
       "categoryName": "טקסטיל, מטליות וסחבות",
       "categorySlugs": [
-        "טקסטיל-מטליות-וסחבות"
+        "טקסטיל-מטליות-וסחבות",
+        "קרצוף-ורחצה"
       ],
       "unit": "",
-      "unitsPerPack": 48,
+      "unitsPerPack": 1,
       "imageUrl": "/items/183.jpg",
       "isFeatured": true,
       "productStatus": "active",
@@ -200,7 +210,22 @@
       "videoUrl": "",
       "leadTimeDays": null,
       "maxOrderQty": null,
-      "alternatives": []
+      "alternatives": [
+        {
+          "id": 202,
+          "name": "3 כריות ברזל לקרצוף חזק",
+          "saleNis": 7,
+          "imageUrl": "/items/218.jpg",
+          "slug": "3-כריות-ברזל-לקרצוף-חזק"
+        },
+        {
+          "id": 646,
+          "name": "כריות יפניות פנינה - Shiny",
+          "saleNis": 9,
+          "imageUrl": "/items/662.jpg",
+          "slug": "כריות-יפניות-פנינה-Shiny"
+        }
+      ]
     },
     {
       "id": 840,
@@ -23363,6 +23388,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-12T14:02:57.985Z",
+  "exportedAt": "2026-03-12T14:09:01.257Z",
   "totalItems": 822
 }
