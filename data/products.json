@@ -75,7 +75,7 @@
       "name": "מוצרי נייר וניגוב",
       "slug": "מוצרי-נייר-וניגוב",
       "icon": "fa-box",
-      "itemCount": 40
+      "itemCount": 38
     },
     {
       "id": 10,
@@ -14985,62 +14985,6 @@
       "alternatives": []
     },
     {
-      "id": 601,
-      "name": "נייר קרן תעשייתי 4 ק\"ג דגם 1000",
-      "slug": "נייר-קרן-תעשייתי-4-ק-ג-דגם-1000",
-      "saleNis": 60,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "מוצרי-נייר-וניגוב",
-      "categoryName": "מוצרי נייר וניגוב",
-      "categorySlugs": [
-        "מוצרי-נייר-וניגוב"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/617.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "barcode": "",
-      "searchTags": "",
-      "technicalDesc": "",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": []
-    },
-    {
-      "id": 709,
-      "name": "נייר קרן תעשייתי 5 ק\"ג דגם 1200",
-      "slug": "נייר-קרן-תעשייתי-5-ק-ג-דגם-1200",
-      "saleNis": 90,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "מוצרי-נייר-וניגוב",
-      "categoryName": "מוצרי נייר וניגוב",
-      "categorySlugs": [
-        "מוצרי-נייר-וניגוב"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/725.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "barcode": "",
-      "searchTags": "",
-      "technicalDesc": "",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": []
-    },
-    {
       "id": 936,
       "name": "נייר תעשייתי 100% תאית - 2.7 ק\"ג",
       "slug": "נייר-תעשייתי-100-תאית-2-7-ק-ג",
@@ -23301,6 +23245,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-12T12:18:35.733Z",
-  "totalItems": 822
+  "exportedAt": "2026-03-12T12:30:18.657Z",
+  "totalItems": 820
 }
