@@ -81,23 +81,34 @@
   }
 
   // ---- Build Category Tree from flat list ----
+  var categoryMap = {};
   function buildCategoryTree(flatCats) {
-    var map = {};
-    flatCats.forEach(function(c) { map[c.id] = Object.assign({}, c, { children: [] }); });
+    categoryMap = {};
+    flatCats.forEach(function(c) { categoryMap[c.id] = Object.assign({}, c, { children: [] }); });
     var roots = [];
-    Object.keys(map).forEach(function(id) {
-      var cat = map[id];
-      if (cat.parentId && map[cat.parentId]) {
-        map[cat.parentId].children.push(cat);
+    Object.keys(categoryMap).forEach(function(id) {
+      var cat = categoryMap[id];
+      if (cat.parentId && categoryMap[cat.parentId]) {
+        categoryMap[cat.parentId].children.push(cat);
       } else {
         roots.push(cat);
       }
     });
-    // Sort by sortOrder
     var sortFn = function(a, b) { return (a.sortOrder || 0) - (b.sortOrder || 0); };
     roots.sort(sortFn);
     roots.forEach(function(r) { r.children.sort(sortFn); });
     return roots;
+  }
+
+  // Get nested URL path for category
+  function getCatUrl(cat) {
+    var slugs = [];
+    var current = cat;
+    while (current) {
+      slugs.unshift(current.slug);
+      current = current.parentId ? categoryMap[current.parentId] : null;
+    }
+    return '/category/' + slugs.join('/') + '/';
   }
 
   // ---- Build Category Sidebar ----
@@ -119,7 +130,7 @@
 
       const link = document.createElement('a');
       link.className = 'category-list__item';
-      link.href = `/category/${cat.slug}/`;
+      link.href = getCatUrl(cat);
       link.dataset.category = cat.slug;
       if (depth > 0) {
         link.style.paddingRight = (16 + depth * 16) + 'px';
@@ -170,7 +181,7 @@
 
       const link = document.createElement('a');
       link.className = 'category-list__item';
-      link.href = `/category/${cat.slug}/`;
+      link.href = getCatUrl(cat);
       link.dataset.category = cat.slug;
       link.style.paddingRight = (16 + depth * 16) + 'px';
       link.style.fontSize = '0.9em';
@@ -224,7 +235,8 @@
       e.preventDefault();
       const slug = btn.dataset.category;
       if (slug && slug !== 'all') {
-        window.location.href = '/category/' + slug + '/';
+        var catObj = categories.find(function(c) { return c.slug === slug; });
+        window.location.href = catObj ? getCatUrl(categoryMap[catObj.id] || catObj) : '/category/' + slug + '/';
       } else {
         document.querySelectorAll('.category-list__item').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
@@ -287,7 +299,9 @@
 
     // Redirect old ?cat= URLs to /category/ clean URLs
     if (cat) {
-      window.location.replace('/category/' + encodeURIComponent(cat) + '/');
+      var catObj = categories.find(function(c) { return c.slug === cat; });
+      var url = catObj && categoryMap[catObj.id] ? getCatUrl(categoryMap[catObj.id]) : '/category/' + encodeURIComponent(cat) + '/';
+      window.location.replace(url);
       return;
     }
 
