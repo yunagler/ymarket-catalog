@@ -952,7 +952,7 @@
       "unitsPerPack": 2,
       "imageUrl": "/items/396.jpg",
       "isFeatured": false,
-      "productStatus": "active",
+      "productStatus": "recommended",
       "description": "",
       "partNumber": "7290016387339",
       "barcode": "",
@@ -23460,6 +23460,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-12T15:42:16.339Z",
+  "exportedAt": "2026-03-12T15:43:28.093Z",
   "totalItems": 823
 }
