@@ -556,6 +556,30 @@ function main() {
 
   console.log(`Generated ${count} category pages (tree structure) in ${CATEGORY_DIR}`);
 
+  // Generate redirect pages for old Hebrew slug URLs (where seoSlug differs from slug)
+  let redirectCount = 0;
+  for (const category of categories) {
+    if (!category.seoSlug || !category.slug || category.seoSlug === category.slug) continue;
+    // Build the old Hebrew slug directory path
+    const treeCategory = catMap.get(category.id);
+    const chain = getParentChain(treeCategory || category, catMap);
+    const oldSlugs = chain.map(c => c.slug);
+    oldSlugs.push(category.slug);
+    const oldDir = path.join(CATEGORY_DIR, ...oldSlugs);
+    const newUrl = getCategoryUrlPath(treeCategory || category, catMap);
+
+    // Only create redirect if old path differs from new
+    const oldUrl = '/category/' + oldSlugs.join('/') + '/';
+    if (oldUrl === newUrl) continue;
+
+    fs.mkdirSync(oldDir, { recursive: true });
+    fs.writeFileSync(path.join(oldDir, 'index.html'),
+      `<!DOCTYPE html><html lang="he"><head><meta charset="UTF-8"><meta http-equiv="refresh" content="0;url=${newUrl}"><link rel="canonical" href="https://ymarket.co.il${newUrl}"><title>הפניה...</title></head><body><p>הדף עבר: <a href="${newUrl}">${category.name}</a></p></body></html>`,
+      'utf-8');
+    redirectCount++;
+  }
+  if (redirectCount > 0) console.log(`Created ${redirectCount} redirect pages for old URLs`);
+
   // Update all static HTML files with correct seoSlug-based links
   updateStaticLinks(categories, catMap);
 }

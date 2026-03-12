@@ -20,18 +20,21 @@
 ## קטגוריות מוצרים ודפים
 - דף הבית: https://ymarket.co.il
 - קטלוג כללי: https://ymarket.co.il/catalog
-- מוצרי נייר וניגוב (נייר טואלט, מגבות, מפיות): https://ymarket.co.il/catalog?cat=מוצרי-נייר-וניגוב
-- חומרי ניקוי וכימיקלים: https://ymarket.co.il/catalog?cat=חומרי-ניקוי-וכימיקלים
-- חד פעמי ואירוח: https://ymarket.co.il/catalog?cat=חד-פעמי-ואירוח
-- אריזות מזון ו-Take Away: https://ymarket.co.il/catalog?cat=אריזות-מזון-ו-Take-Away
-- בטיחות ומיגון אישי (PPE): https://ymarket.co.il/catalog?cat=בטיחות-ומיגון-אישי-PPE
-- טקסטיל, מטליות וסחבות: https://ymarket.co.il/catalog?cat=טקסטיל-מטליות-וסחבות
-- קפה, שתייה וכיבוד: https://ymarket.co.il/catalog?cat=קפה-שתייה-וכיבוד
-- ציוד משרדי וכללי: https://ymarket.co.il/catalog?cat=ציוד-משרדי-וכללי
-- עזרה ראשונה ורפואי: https://ymarket.co.il/catalog?cat=עזרה-ראשונה-רפואי
-- טואלטיקה וטיפוח: https://ymarket.co.il/catalog?cat=טואלטיקה-וטיפוח-אישי
-- כלי עבודה וציוד משקי: https://ymarket.co.il/catalog?cat=כלי-עבודה-וציוד-משקי
-- שקיות ופתרונות אשפה: https://ymarket.co.il/catalog?cat=שקיות-ופתרונות-אשפה
+- מוצרי נייר וניגוב: https://ymarket.co.il/category/bulk-paper-towel-office-supplies/
+- חומרי ניקוי וכימיקלים: https://ymarket.co.il/category/industrial-cleaning-supplies-wholesale/
+- חד פעמי ואירוח: https://ymarket.co.il/category/disposable-catering-food-service/
+- אריזות מזון ו-Take Away: https://ymarket.co.il/category/food-packaging-delivery-solutions/
+- בטיחות ומיגון אישי (PPE): https://ymarket.co.il/category/safety-ppe-equipment-for-business/
+- טקסטיל, מטליות וסחבות: https://ymarket.co.il/category/professional-cleaning-cloths-microfiber/
+- קפה, שתייה וכיבוד: https://ymarket.co.il/category/office-coffee-breakroom-supplies/
+- שקיות ופתרונות אשפה: https://ymarket.co.il/category/heavy-duty-garbage-bags-wholesale/
+- ציוד משרדי וכללי: https://ymarket.co.il/category/ציוד-משרדי-וכללי/
+- עזרה ראשונה ורפואי: https://ymarket.co.il/category/עזרה-ראשונה-רפואי/
+- טואלטיקה וטיפוח: https://ymarket.co.il/category/טואלטיקה-וטיפוח-אישי/
+- כלי עבודה וציוד משקי: https://ymarket.co.il/category/כלי-עבודה-וציוד-משקי/
+- עטיפה, אריזה ולוגיסטיקה: https://ymarket.co.il/category/עטיפה-אריזה-ולוגיסטיקה/
+- ציוד טכני ואחזקה: https://ymarket.co.il/category/ציוד-טכני-ואחזקה/
+- סטוק עד הבית: https://ymarket.co.il/category/סטוק-עד-הבית/
 
 ## מאמרי בלוג
 - המדריך המלא לאספקה מוסדית 2026: https://ymarket.co.il/blog/complete-guide-institutional-supplies

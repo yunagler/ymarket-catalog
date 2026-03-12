@@ -17,10 +17,12 @@ function getAllHtmlFiles(dir, base = '') {
     const relPath = base ? `${base}/${entry.name}` : entry.name;
 
     if (entry.isDirectory()) {
-      if (['build', 'node_modules', 'images', 'css', 'js', 'data', '.git', 'items'].includes(entry.name)) continue;
+      if (['build', 'node_modules', 'images', 'css', 'js', 'data', '.git', '.claude', 'items', 'fonts'].includes(entry.name)) continue;
       files.push(...getAllHtmlFiles(fullPath, relPath));
-    } else if (entry.name.endsWith('')) {
-      files.push(relPath);
+    } else if (entry.name.endsWith('.html')) {
+      // Strip .html extension for clean URLs
+      const clean = relPath.replace(/\.html$/, '');
+      files.push(clean);
     }
   }
   return files;
@@ -65,7 +67,11 @@ function generateSitemap() {
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
-  for (const file of htmlFiles) {
+  // Filter out non-content files
+  const excludePatterns = ['404', 'gallery', 'login', 'register', 'order-success'];
+  const filteredFiles = htmlFiles.filter(f => !excludePatterns.some(p => f === p || f.startsWith(p + '/')));
+
+  for (const file of filteredFiles) {
     const urlPath = fileToUrl(file);
     // Encode Hebrew chars in URL for sitemap
     const encodedPath = urlPath.split('/').map(part => encodeURIComponent(decodeURIComponent(part))).join('/');
