@@ -20,6 +20,46 @@ function formatPrice(price) {
   }).format(price);
 }
 
+// Footer category IDs and display names (top-level categories to show in footer)
+const FOOTER_CATEGORIES = [
+  { id: 9, label: 'מוצרי נייר וניגוב' },
+  { id: 4, label: 'חומרי ניקוי' },
+  { id: 7, label: 'חד פעמי ואירוח' },
+  { id: 5, label: 'אריזות Take Away' },
+  { id: 10, label: 'קפה, שתייה וכיבוד' },
+  { id: 1, label: 'בטיחות ומיגון' },
+];
+
+function buildFooterCategoryLinks(categories) {
+  return FOOTER_CATEGORIES.map(fc => {
+    const cat = categories.find(c => c.id === fc.id);
+    const slug = cat ? (cat.seoSlug || cat.slug) : `cat-${fc.id}`;
+    return `<a href="/category/${slug}/">${fc.label}</a>`;
+  }).join('');
+}
+
+// Resolve the correct category URL path using seoSlug when available
+function getCategoryUrl(product, categories) {
+  if (!product.categorySlug) return '/catalog';
+  // Find the category in the data
+  const cat = categories.find(c => c.slug === product.categorySlug);
+  if (cat && cat.seoSlug) {
+    // Build parent chain for nested categories
+    const slugs = [];
+    let current = cat;
+    while (current && current.parentId) {
+      const parent = categories.find(c => c.id === current.parentId);
+      if (parent) {
+        slugs.unshift(parent.seoSlug || parent.slug);
+        current = parent;
+      } else break;
+    }
+    slugs.push(cat.seoSlug);
+    return '/category/' + slugs.join('/') + '/';
+  }
+  return '/category/' + product.categorySlug + '/';
+}
+
 function generateProductPage(product, categories, allProducts) {
   const price = product.saleNis ? formatPrice(product.saleNis) : '';
   const perUnit = product.saleNis && product.unitsPerPack > 1
@@ -28,6 +68,7 @@ function generateProductPage(product, categories, allProducts) {
   const hasPromo = product.productStatus === 'on_sale' && product.originalPrice;
   const promoLabel = product.promotionLabel || 'מבצע';
   const categoryName = product.categoryName || '';
+  const categoryUrl = getCategoryUrl(product, categories);
   const imgSrc = product.imageUrl || `/items/${product.id}.jpg`;
   const productUrl = `${SITE_URL}/products/${product.slug}/`;
 
@@ -127,7 +168,7 @@ function generateProductPage(product, categories, allProducts) {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "דף הבית", "item": SITE_URL + "/" },
       { "@type": "ListItem", "position": 2, "name": "מוצרים", "item": SITE_URL + "/catalog" },
-      ...(categoryName ? [{ "@type": "ListItem", "position": 3, "name": categoryName, "item": SITE_URL + "/category/" + product.categorySlug + "/" }] : []),
+      ...(categoryName ? [{ "@type": "ListItem", "position": 3, "name": categoryName, "item": SITE_URL + categoryUrl }] : []),
       { "@type": "ListItem", "position": categoryName ? 4 : 3, "name": product.name }
     ]
   })}</script>
@@ -161,7 +202,7 @@ function generateProductPage(product, categories, allProducts) {
       <span class="breadcrumb__separator"><i class="fas fa-chevron-left"></i></span>
       <a href="/catalog">מוצרים</a>
       <span class="breadcrumb__separator"><i class="fas fa-chevron-left"></i></span>
-      <a href="/category/${product.categorySlug}/">${categoryName}</a>
+      <a href="${categoryUrl}">${categoryName}</a>
       <span class="breadcrumb__separator"><i class="fas fa-chevron-left"></i></span>
       <span class="breadcrumb__current">${product.name}</span>
     </nav>
@@ -239,7 +280,7 @@ function generateProductPage(product, categories, allProducts) {
   <footer class="footer"><div class="container">
     <div class="footer__grid">
       <div class="footer__brand"><img src="/images/logo/logo-white.png" alt="וואי מרקט" width="112" height="60"><p>נגלר סחר והפצה — סחר, שיווק והפצה של מוצרי צריכה שוטפת לעסקים ומוסדות בכל רחבי הארץ.</p><div class="footer__social"><a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a><a href="https://www.facebook.com/profile.php?id=100083110428101" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/ymarket.ai" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div></div>
-      <div class="footer__col"><h4>קטגוריות</h4><div class="footer__links"><a href="/category/מוצרי-נייר-וניגוב/">מוצרי נייר וניגוב</a><a href="/category/חומרי-ניקוי-וכימיקלים/">חומרי ניקוי</a><a href="/category/חד-פעמי-ואירוח/">חד פעמי ואירוח</a><a href="/category/אריזות-מזון-ו-Take-Away/">אריזות Take Away</a><a href="/category/קפה-שתייה-וכיבוד/">קפה, שתייה וכיבוד</a><a href="/category/בטיחות-ומיגון-אישי-PPE/">בטיחות ומיגון</a></div></div>
+      <div class="footer__col"><h4>קטגוריות</h4><div class="footer__links">${buildFooterCategoryLinks(categories)}</div></div>
       <div class="footer__col"><h4>קישורים מהירים</h4><div class="footer__links"><a href="/catalog">קטלוג מוצרים</a><a href="/about">אודות</a><a href="/blog">בלוג</a><a href="/faq">שאלות ותשובות</a><a href="/contact">צרו קשר</a><a href="/tracking">מעקב משלוחים</a></div></div>
       <div class="footer__col"><h4>צרו קשר</h4><div class="footer__contact-item"><i class="fas fa-phone-alt"></i><a href="tel:037740400">03-7740400</a></div><div class="footer__contact-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/972549922492" target="_blank" rel="noopener">WhatsApp</a></div><div class="footer__contact-item"><i class="fas fa-envelope"></i><a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a></div><div class="footer__contact-item"><i class="fas fa-clock"></i><span>א'-ה' 08:00-17:00</span></div></div>
     </div>

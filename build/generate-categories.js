@@ -555,6 +555,98 @@ function main() {
   }
 
   console.log(`Generated ${count} category pages (tree structure) in ${CATEGORY_DIR}`);
+
+  // Update all static HTML files with correct seoSlug-based links
+  updateStaticLinks(categories, catMap);
+}
+
+/**
+ * Update hardcoded category links across all static HTML files.
+ * Replaces /category/{hebrew-slug}/ with /category/{seoSlug}/ wherever seoSlug is defined.
+ */
+function updateStaticLinks(categories, catMap) {
+  // Build mapping: old URL path → new URL path (only for categories with seoSlug)
+  const urlReplacements = new Map();
+  for (const cat of categories) {
+    if (!cat.seoSlug || !cat.slug) continue;
+    // Old path uses original slug
+    const oldSlugs = [];
+    let current = cat;
+    while (current.parentId && catMap.has(current.parentId)) {
+      current = catMap.get(current.parentId);
+      oldSlugs.unshift(current.slug);
+    }
+    oldSlugs.push(cat.slug);
+    const oldPath = '/category/' + oldSlugs.join('/') + '/';
+
+    // New path uses seoSlug
+    const treeCat = catMap.get(cat.id) || cat;
+    const newPath = getCategoryUrlPath(treeCat, catMap);
+
+    if (oldPath !== newPath) {
+      urlReplacements.set(oldPath, newPath);
+    }
+  }
+
+  if (urlReplacements.size === 0) {
+    console.log('No URL replacements needed.');
+    return;
+  }
+
+  console.log(`\nUpdating static links (${urlReplacements.size} URL mappings):`);
+  for (const [oldUrl, newUrl] of urlReplacements) {
+    console.log(`  ${oldUrl} → ${newUrl}`);
+  }
+
+  // Collect all HTML files to update
+  const htmlFiles = [];
+
+  // Root HTML files
+  const rootFiles = fs.readdirSync(ROOT_DIR).filter(f => f.endsWith('.html'));
+  htmlFiles.push(...rootFiles.map(f => path.join(ROOT_DIR, f)));
+
+  // Blog HTML files
+  const blogDir = path.join(ROOT_DIR, 'blog');
+  if (fs.existsSync(blogDir)) {
+    const blogFiles = fs.readdirSync(blogDir).filter(f => f.endsWith('.html'));
+    htmlFiles.push(...blogFiles.map(f => path.join(blogDir, f)));
+  }
+
+  // Legal HTML files
+  const legalDir = path.join(ROOT_DIR, 'legal');
+  if (fs.existsSync(legalDir)) {
+    const legalFiles = fs.readdirSync(legalDir).filter(f => f.endsWith('.html'));
+    htmlFiles.push(...legalFiles.map(f => path.join(legalDir, f)));
+  }
+
+  let updatedCount = 0;
+  for (const filePath of htmlFiles) {
+    let content = fs.readFileSync(filePath, 'utf-8');
+    let modified = false;
+
+    for (const [oldUrl, newUrl] of urlReplacements) {
+      // Replace href="..." patterns and also relative ../category/... patterns in blog posts
+      const patterns = [
+        `href="${oldUrl}"`,
+        `href="..${oldUrl}"`,
+      ];
+      for (const pattern of patterns) {
+        const replacement = pattern.startsWith('href="..') ? `href="..${newUrl}"` : `href="${newUrl}"`;
+        if (content.includes(pattern)) {
+          content = content.split(pattern).join(replacement);
+          modified = true;
+        }
+      }
+    }
+
+    if (modified) {
+      fs.writeFileSync(filePath, content, 'utf-8');
+      updatedCount++;
+      console.log(`  Updated: ${path.relative(ROOT_DIR, filePath)}`);
+    }
+  }
+
+  console.log(`Updated links in ${updatedCount} HTML files.`);
 }
 
 main();
