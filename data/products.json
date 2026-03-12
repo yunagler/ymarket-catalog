@@ -40,7 +40,7 @@
       "name": "חומרי ניקוי וכימיקלים",
       "slug": "חומרי-ניקוי-וכימיקלים",
       "icon": "fa-box",
-      "itemCount": 82
+      "itemCount": 81
     },
     {
       "id": 5,
@@ -1825,34 +1825,6 @@
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "/items/1073.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "barcode": "",
-      "searchTags": "",
-      "technicalDesc": "",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": []
-    },
-    {
-      "id": 1023,
-      "name": "ג'רם X - לכתמים 1 ליטר",
-      "slug": "ג-רם-X-לכתמים-1-ליטר",
-      "saleNis": 0,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "חומרי-ניקוי-וכימיקלים",
-      "categoryName": "חומרי ניקוי וכימיקלים",
-      "categorySlugs": [
-        "חומרי-ניקוי-וכימיקלים"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/1041.jpg",
       "isFeatured": false,
       "productStatus": "active",
       "description": "",
@@ -16493,34 +16465,6 @@
       "alternatives": []
     },
     {
-      "id": 393,
-      "name": "סט 4 מדגיש צבעוני",
-      "slug": "סט-4-מדגיש-צבעוני-2",
-      "saleNis": 10,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
-      "categorySlugs": [
-        "ציוד-משרדי-וכללי"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/409.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "barcode": "",
-      "searchTags": "",
-      "technicalDesc": "",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": []
-    },
-    {
       "id": 363,
       "name": "סט 4 מדגיש צבעוני",
       "slug": "סט-4-מדגיש-צבעוני",
@@ -16536,6 +16480,34 @@
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "/items/379.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "barcode": "",
+      "searchTags": "",
+      "technicalDesc": "",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": []
+    },
+    {
+      "id": 393,
+      "name": "סט 4 מדגיש צבעוני",
+      "slug": "סט-4-מדגיש-צבעוני-2",
+      "saleNis": 10,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "ציוד-משרדי-וכללי",
+      "categoryName": "ציוד משרדי וכללי",
+      "categorySlugs": [
+        "ציוד-משרדי-וכללי"
+      ],
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/409.jpg",
       "isFeatured": false,
       "productStatus": "active",
       "description": "",
@@ -23469,6 +23441,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-12T12:00:52.888Z",
-  "totalItems": 828
+  "exportedAt": "2026-03-12T12:16:19.029Z",
+  "totalItems": 827
 }
