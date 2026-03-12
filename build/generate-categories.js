@@ -165,20 +165,25 @@ function getParentChain(category, catMap) {
   return chain;
 }
 
+// Get the effective slug for a category (seoSlug if set, otherwise slug)
+function getEffectiveSlug(category) {
+  return category.seoSlug || category.slug;
+}
+
 // Build full URL path for a category (nested under parents)
-// e.g. /category/אריזות-מזון-ו-Take-Away/גביעים/
+// e.g. /category/industrial-cleaning-supplies-wholesale/ or /category/אריזות-מזון-ו-Take-Away/גביעים/
 function getCategoryUrlPath(category, catMap) {
   const chain = getParentChain(category, catMap);
-  const slugs = chain.map(c => c.slug);
-  slugs.push(category.slug);
+  const slugs = chain.map(c => getEffectiveSlug(c));
+  slugs.push(getEffectiveSlug(category));
   return '/category/' + slugs.join('/') + '/';
 }
 
 // Build filesystem path for a category page
 function getCategoryFsPath(category, catMap, categoryDir) {
   const chain = getParentChain(category, catMap);
-  const slugs = chain.map(c => c.slug);
-  slugs.push(category.slug);
+  const slugs = chain.map(c => getEffectiveSlug(c));
+  slugs.push(getEffectiveSlug(category));
   return path.join(categoryDir, ...slugs);
 }
 

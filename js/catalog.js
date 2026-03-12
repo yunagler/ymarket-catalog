@@ -100,12 +100,12 @@
     return roots;
   }
 
-  // Get nested URL path for category
+  // Get nested URL path for category (uses seoSlug if available)
   function getCatUrl(cat) {
     var slugs = [];
     var current = cat;
     while (current) {
-      slugs.unshift(current.slug);
+      slugs.unshift(current.seoSlug || current.slug);
       current = current.parentId ? categoryMap[current.parentId] : null;
     }
     return '/category/' + slugs.join('/') + '/';
