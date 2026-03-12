@@ -199,6 +199,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://ymarket.co.il/category/%D7%90%D7%A8%D7%99%D7%96%D7%95%D7%AA-%D7%9E%D7%96%D7%95%D7%9F-%D7%95-Take-Away/%D7%A7%D7%A8%D7%90%D7%A4%D7%98%D7%99%D7%9D/index.html</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://ymarket.co.il/category/%D7%91%D7%98%D7%99%D7%97%D7%95%D7%AA-%D7%95%D7%9E%D7%99%D7%92%D7%95%D7%9F-%D7%90%D7%99%D7%A9%D7%99-PPE/index.html</loc>
     <lastmod>2026-03-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -770,6 +776,12 @@
   </url>
   <url>
     <loc>https://ymarket.co.il/products/%D7%92%D7%91%D7%99%D7%A2-%D7%9C%D7%97%D7%9E%D7%95%D7%A6%D7%99%D7%9D-80-%D7%9E-%D7%9C-%D7%90%D7%95%D7%91%D7%9C%D7%99-%D7%A9%D7%A7%D7%95%D7%A3-%D7%90%D7%A8%D7%95%D7%96-1000-%D7%99%D7%97/index.html</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://ymarket.co.il/products/%D7%92%D7%91%D7%99%D7%A2-%D7%A7%D7%A8%D7%90%D7%A4%D7%98-%D7%97%D7%95%D7%9D-450-%D7%9E-%D7%9C-%D7%90%D7%A8%D7%95%D7%96-500-%D7%99%D7%97/index.html</loc>
     <lastmod>2026-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
