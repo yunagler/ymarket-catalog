@@ -831,7 +831,22 @@
       "videoUrl": "",
       "leadTimeDays": null,
       "maxOrderQty": null,
-      "alternatives": []
+      "alternatives": [
+        {
+          "id": 202,
+          "name": "3 כריות ברזל לקרצוף חזק",
+          "saleNis": 7,
+          "imageUrl": "/items/218.jpg",
+          "slug": "3-כריות-ברזל-לקרצוף-חזק"
+        },
+        {
+          "id": 182,
+          "name": "4 כריות מתכת - Shiny",
+          "saleNis": 8,
+          "imageUrl": "/items/198.jpg",
+          "slug": "4-כריות-מתכת-Shiny"
+        }
+      ]
     },
     {
       "id": 571,
@@ -23333,6 +23348,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-12T13:49:39.046Z",
+  "exportedAt": "2026-03-12T13:59:25.735Z",
   "totalItems": 822
 }
