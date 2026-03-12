@@ -1,13 +1,34 @@
 {
   "categories": [
     {
+      "id": 21,
+      "name": "סטוק עד הבית",
+      "slug": "סטוק-עד-הבית",
+      "icon": "fa-box",
+      "parentId": null,
+      "sortOrder": 0,
+      "itemCount": 8,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
       "id": 28,
-      "name": "קראפטים",
+      "name": "קרפטים",
       "slug": "קראפטים",
       "icon": "fa-box",
       "parentId": 5,
       "sortOrder": 0,
-      "itemCount": 1
+      "itemCount": 1,
+      "metaTitle": "קרפטים ואריזות מזון בסיטונאות לעסקים | Ymarket",
+      "metaDescription": "מגוון קרפטים, שקיות נייר ואריזות למסעדות בסיטונאות. משלוח מהיר עד 72 שעות, מינימום הזמנה 1,600₪. לייעוץ והזמנות חייגו: 3497* מרכז שירות Ymarket",
+      "seoSlug": "kraft-paper-packaging-wholesale",
+      "seoContent": "<h2>פתרונות אריזה וקרפטים לעסקים בסיטונאות</h2>\n<p>עולם המשלוחים וה-Take Away מחייב אריזה חזקה, ייצוגית ושומרת טריות. ב-YMARKET אנו מספקים מגוון רחב של קרפטים, שקיות נייר חומות ולבנות, ומארזי קרטון המותאמים אישית לצרכי העסק שלכם. כל מוצרי האריזה שלנו עומדים בתקני איכות מחמירים ומבטיחים שהלקוח שלכם יקבל את המנה בדיוק כפי שיצאה מהמטבח.</p>\n<p>צריכים עזרה בבחירת סוג האריזה המתאים? המומחים שלנו זמינים עבורכם. ניתן לבצע הזמנה ישירות דרך האתר או לחייג למרכז ההזמנות המקוצר שלנו בטלפון 3497*. אנו מתחייבים לאספקה מהירה לגוש דן והמרכז תוך 24-72 שעות.</p>",
+      "imageUrl": null,
+      "imageAlt": "קרפטים ושקיות נייר חומות בסיטונאות למסעדות ומשלוחים - וואי מרקט"
     },
     {
       "id": 23,
@@ -16,7 +37,13 @@
       "icon": "fa-box",
       "parentId": 6,
       "sortOrder": 0,
-      "itemCount": 1
+      "itemCount": 1,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
     },
     {
       "id": 22,
@@ -25,25 +52,13 @@
       "icon": "fa-box",
       "parentId": 6,
       "sortOrder": 0,
-      "itemCount": 2
-    },
-    {
-      "id": 21,
-      "name": "סטוק עד הבית",
-      "slug": "סטוק-עד-הבית",
-      "icon": "fa-box",
-      "parentId": null,
-      "sortOrder": 0,
-      "itemCount": 8
-    },
-    {
-      "id": 19,
-      "name": "גביעים",
-      "slug": "גביעים",
-      "icon": "fa-box",
-      "parentId": 5,
-      "sortOrder": 1,
-      "itemCount": 2
+      "itemCount": 2,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
     },
     {
       "id": 1,
@@ -52,7 +67,28 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 1,
-      "itemCount": 84
+      "itemCount": 84,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": "safety-ppe-equipment-for-business",
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": "ציוד בטיחות ומיגון אישי לעסקים - YMARKET"
+    },
+    {
+      "id": 19,
+      "name": "גביעים",
+      "slug": "גביעים",
+      "icon": "fa-box",
+      "parentId": 5,
+      "sortOrder": 1,
+      "itemCount": 2,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
     },
     {
       "id": 2,
@@ -61,7 +97,13 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 2,
-      "itemCount": 32
+      "itemCount": 32,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
     },
     {
       "id": 3,
@@ -70,7 +112,13 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 3,
-      "itemCount": 40
+      "itemCount": 40,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": "heavy-duty-garbage-bags-wholesale",
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": "שקיות אשפה מוסדיות בסיטונאות - YMARKET"
     },
     {
       "id": 4,
@@ -79,7 +127,13 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 4,
-      "itemCount": 81
+      "itemCount": 81,
+      "metaTitle": "חומרי ניקוי בסיטונאות למוסדות ועסקים | Ymarket",
+      "metaDescription": "ספק חומרי ניקוי תעשייתיים אמין. אקונומיקה, חומצות, מסירי שומנים וסבונים בסטנדרטים הגבוהים ביותר. אספקה תוך 24-72 שעות לגוש דן והמרכז.",
+      "seoSlug": "industrial-cleaning-supplies-wholesale",
+      "seoContent": "<h2>אספקת חומרי ניקוי בסיטונאות לעסקים ומוסדות</h2><p>מחפשים ספק חומרי ניקוי אמין עם גב מקצועי? ב-YMARKET אנחנו מבינים שחומרי ניקיון הם לא רק מוצר, אלא כלי עבודה קריטי לשמירה על היגיינה ובטיחות בעסק שלכם. אנחנו מספקים פתרונות ניקוי תעשייתיים הכוללים אקונומיקה מרוכזת, חומצות, מסירי שומנים עוצמתיים וסבונים לידיים ולרצפה, כולם בסטנדרטים הגבוהים ביותר.</p><p>השירות שלנו מותאם במיוחד לחברות ניקיון, מסעדות, משרדים ומוסדות חינוך באזור גוש דן והמרכז, עם התחייבות לאספקה מהירה תוך 24 עד 72 שעות. עם מינימום הזמנה של 1,600₪, אתם נהנים ממחירי סיטונאות ישירים שחוסכים לכם בעלויות התפעול השוטפות.</p>",
+      "imageUrl": null,
+      "imageAlt": "אספקת חומרי ניקוי בסיטונאות למשרדים ומוסדות - YMARKET"
     },
     {
       "id": 5,
@@ -88,7 +142,13 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 5,
-      "itemCount": 139
+      "itemCount": 139,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": "food-packaging-delivery-solutions",
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": "אריזות מזון ופתרונות Take Away בסיטונאות - YMARKET"
     },
     {
       "id": 6,
@@ -97,7 +157,13 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 6,
-      "itemCount": 31
+      "itemCount": 31,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": "professional-cleaning-cloths-microfiber",
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": "מטליות מיקרופייבר וסחבות מקצועיות - YMARKET"
     },
     {
       "id": 7,
@@ -106,7 +172,13 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 7,
-      "itemCount": 96
+      "itemCount": 96,
+      "metaTitle": "כלים חד פעמיים ואירוח בסיטונאות | Ymarket",
+      "metaDescription": "כוסות, צלחות, סכו\"ם ופתרונות אריזה למסעדות, קייטרינג ומשרדים. איכות גבוהה במחירי סיטונאות. אספקה מהירה לכל הארץ.",
+      "seoSlug": "disposable-catering-food-service",
+      "seoContent": "<h2>כלים חד פעמיים ופתרונות אריזה בסיטונאות</h2><p>בעולם האירוח והמזון, הפרזנטציה והאיכות של הכלי החד-פעמי משפיעים ישירות על חוויית הלקוח. YMARKET מציעה קטלוג עשיר של כוסות לשתייה חמה וקרה, צלחות, סכו\"ם ופתרונות אריזה למשלוחים (Take Away) המותאמים למסעדות ובתי קפה.</p><p>המוצרים שלנו נבחרים בקפידה כדי לשלב בין עמידות, עיצוב ומחיר תחרותי. בין אם אתם זקוקים לכמויות גדולות של כוסות נייר למשרד או למארזי מזון ייעודיים, אנחנו מספקים את המענה המהיר והמשתלם ביותר לעסקים בישראל.</p>",
+      "imageUrl": null,
+      "imageAlt": "כלים חד פעמיים ופתרונות אירוח בסיטונאות - YMARKET"
     },
     {
       "id": 8,
@@ -115,7 +187,13 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 9,
-      "itemCount": 38
+      "itemCount": 38,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
     },
     {
       "id": 9,
@@ -124,7 +202,13 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 10,
-      "itemCount": 38
+      "itemCount": 38,
+      "metaTitle": "מוצרי נייר וניגוב בסיטונאות למשרדים ומוסדות | Ymarket",
+      "metaDescription": "נייר טואלט תעשייתי, מגבות ניגוב ידיים, מפיות ונייר תעשייתי. מותגים מובילים במחירי סיטונאות. הזמנה חוזרת בקליק ואספקה מהירה.",
+      "seoSlug": "bulk-paper-towel-office-supplies",
+      "seoContent": "<h2>מוצרי נייר בסיטונאות - פתרונות ניגוב והיגיינה למשרד</h2><p>ניהול מלאי מוצרי הנייר הוא חלק בלתי נפרד מהתחזוקה השוטפת של כל עסק מודרני. ב-YMARKET תמצאו מגוון רחב של פתרונות נייר: נייר טואלט תעשייתי (גלילי ענק), מגבות ניגוב ידיים (צץ-רץ), מפיות למסעדות ונייר ניגוב במטבח התעשייתי.</p><p>אנחנו עובדים עם המותגים המובילים בשוק כדי להבטיח ספיגה מקסימלית וחיסכון בעלויות לטווח ארוך. המערכת הדיגיטלית שלנו מאפשרת לכם לבצע הזמנות חוזרות בקלות ולקבל אספקה מהירה ישירות למחסן או למשרד, כך שלא תיתקעו לעולם ללא מלאי זמין.</p>",
+      "imageUrl": null,
+      "imageAlt": "מוצרי נייר וניגוב בסיטונאות למשרדים - YMARKET"
     },
     {
       "id": 10,
@@ -133,7 +217,13 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 11,
-      "itemCount": 19
+      "itemCount": 19,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": "office-coffee-breakroom-supplies",
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": "קפה שתייה וכיבוד למשרדים - YMARKET"
     },
     {
       "id": 11,
@@ -142,7 +232,13 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 12,
-      "itemCount": 122
+      "itemCount": 122,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
     },
     {
       "id": 12,
@@ -151,7 +247,13 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 13,
-      "itemCount": 57
+      "itemCount": 57,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
     },
     {
       "id": 13,
@@ -160,7 +262,13 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 14,
-      "itemCount": 27
+      "itemCount": 27,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
     },
     {
       "id": 17,
@@ -169,7 +277,13 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 19,
-      "itemCount": 24
+      "itemCount": 24,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
     }
   ],
   "items": [
@@ -2257,7 +2371,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "קראפטים",
-      "categoryName": "קראפטים",
+      "categoryName": "קרפטים",
       "categorySlugs": [
         "קראפטים"
       ],
@@ -23461,6 +23575,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-12T16:20:10.162Z",
+  "exportedAt": "2026-03-12T18:38:28.816Z",
   "totalItems": 823
 }
