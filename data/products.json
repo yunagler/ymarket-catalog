@@ -34,7 +34,7 @@
       "icon": "fa-box",
       "parentId": 5,
       "sortOrder": 1,
-      "itemCount": 1
+      "itemCount": 2
     },
     {
       "id": 1,
@@ -2085,7 +2085,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "גביעים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -2100,7 +2101,29 @@
       "videoUrl": "",
       "leadTimeDays": null,
       "maxOrderQty": null,
-      "alternatives": []
+      "alternatives": [
+        {
+          "id": 598,
+          "name": "גביע 150 (125 גר') - א' 2000",
+          "saleNis": 0,
+          "imageUrl": "/items/614.jpg",
+          "slug": "גביע-150-125-גר-א-2000"
+        },
+        {
+          "id": 620,
+          "name": "מכסה 101 (מתאים 150, 250, 500 גבוה) - א' 2000 יח'",
+          "saleNis": 180,
+          "imageUrl": "/items/636.jpg",
+          "slug": "מכסה-101-מתאים-150-250-500-גבוה-א-2000-יח"
+        },
+        {
+          "id": 617,
+          "name": "גביע 250 PP - א' 2000 יח'",
+          "saleNis": 320,
+          "imageUrl": "/items/633.jpg",
+          "slug": "גביע-250-PP-א-2000-יח"
+        }
+      ]
     },
     {
       "id": 617,
@@ -10947,34 +10970,6 @@
       "alternatives": []
     },
     {
-      "id": 905,
-      "name": "מכסה לקראפט - 1300 מ\"ל",
-      "slug": "מכסה-לקראפט-1300-מ-ל-2",
-      "saleNis": 0.76,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "אריזות-מזון-ו-Take-Away",
-      "categoryName": "אריזות מזון ו-Take Away",
-      "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/922.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "barcode": "",
-      "searchTags": "",
-      "technicalDesc": "",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": []
-    },
-    {
       "id": 640,
       "name": "מכסה לקראפט - 1300 מ\"ל",
       "slug": "מכסה-לקראפט-1300-מ-ל",
@@ -10990,6 +10985,34 @@
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "/items/656.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "barcode": "",
+      "searchTags": "",
+      "technicalDesc": "",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": []
+    },
+    {
+      "id": 905,
+      "name": "מכסה לקראפט - 1300 מ\"ל",
+      "slug": "מכסה-לקראפט-1300-מ-ל-2",
+      "saleNis": 0.76,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
+      "categorySlugs": [
+        "אריזות-מזון-ו-Take-Away"
+      ],
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/922.jpg",
       "isFeatured": false,
       "productStatus": "active",
       "description": "",
@@ -23427,6 +23450,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-12T15:09:19.652Z",
+  "exportedAt": "2026-03-12T15:13:56.290Z",
   "totalItems": 823
 }
