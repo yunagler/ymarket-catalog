@@ -54,7 +54,7 @@
       "name": "טקסטיל, מטליות וסחבות",
       "slug": "טקסטיל-מטליות-וסחבות",
       "icon": "fa-box",
-      "itemCount": 31
+      "itemCount": 28
     },
     {
       "id": 7,
@@ -110,7 +110,7 @@
       "name": "טואלטיקה וטיפוח אישי",
       "slug": "טואלטיקה-וטיפוח-אישי",
       "icon": "fa-box",
-      "itemCount": 25
+      "itemCount": 24
     }
   ],
   "items": [
@@ -6432,34 +6432,6 @@
       "alternatives": []
     },
     {
-      "id": 658,
-      "name": "מגבון בד לך - לניקוי כללי ",
-      "slug": "מגבון-בד-לך-לניקוי-כללי",
-      "saleNis": 2.8,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "טואלטיקה-וטיפוח-אישי",
-      "categoryName": "טואלטיקה וטיפוח אישי",
-      "categorySlugs": [
-        "טואלטיקה-וטיפוח-אישי"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/674.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "barcode": "",
-      "searchTags": "",
-      "technicalDesc": "",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": []
-    },
-    {
       "id": 371,
       "name": "מגבון בדיספנסר 100 יח' (DLux)",
       "slug": "מגבון-בדיספנסר-100-יח-DLux",
@@ -9725,90 +9697,6 @@
       "productStatus": "active",
       "description": "",
       "partNumber": "7290018213995",
-      "barcode": "",
-      "searchTags": "",
-      "technicalDesc": "",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": []
-    },
-    {
-      "id": 1110,
-      "name": "מטליות מיקרו-פייבר לרצפה (Platinum) - א' 3 יח'",
-      "slug": "מטליות-מיקרו-פייבר-לרצפה-Platinum-א-3-יח",
-      "saleNis": 10,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "טקסטיל-מטליות-וסחבות",
-      "categoryName": "טקסטיל, מטליות וסחבות",
-      "categorySlugs": [
-        "טקסטיל-מטליות-וסחבות"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/1129.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "barcode": "",
-      "searchTags": "",
-      "technicalDesc": "",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": []
-    },
-    {
-      "id": 110,
-      "name": "מטליות מיקרו פייבר לניגוב מושלם - 10 יח'",
-      "slug": "מטליות-מיקרו-פייבר-לניגוב-מושלם-10-יח",
-      "saleNis": 12,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "טקסטיל-מטליות-וסחבות",
-      "categoryName": "טקסטיל, מטליות וסחבות",
-      "categorySlugs": [
-        "טקסטיל-מטליות-וסחבות"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/126.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "7290107740258",
-      "barcode": "",
-      "searchTags": "",
-      "technicalDesc": "",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": []
-    },
-    {
-      "id": 1109,
-      "name": "מטליות מיקרופיבר (EXELLENT) - א' 5 יח'",
-      "slug": "מטליות-מיקרופיבר-EXELLENT-א-5-יח",
-      "saleNis": 8,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "טקסטיל-מטליות-וסחבות",
-      "categoryName": "טקסטיל, מטליות וסחבות",
-      "categorySlugs": [
-        "טקסטיל-מטליות-וסחבות"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/1128.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
       "barcode": "",
       "searchTags": "",
       "technicalDesc": "",
@@ -23441,6 +23329,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-12T12:16:58.386Z",
-  "totalItems": 827
+  "exportedAt": "2026-03-12T12:17:47.214Z",
+  "totalItems": 823
 }
