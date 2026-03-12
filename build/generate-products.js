@@ -341,6 +341,7 @@ function generateProductPage(product, categories, allProducts) {
     });
   })();
   </script>
+  <script src="/js/shared-header.js"></script>
 </body>
 </html>`;
 }

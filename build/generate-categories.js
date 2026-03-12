@@ -493,6 +493,7 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
       });
     });
   </script>
+  <script src="/js/shared-header.js"></script>
 </body>
 </html>`;
 }
