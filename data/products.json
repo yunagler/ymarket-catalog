@@ -1,15 +1,6 @@
 {
   "categories": [
     {
-      "id": 19,
-      "name": "גביעים",
-      "slug": "גביעים",
-      "icon": "fa-box",
-      "parentId": 5,
-      "sortOrder": 0,
-      "itemCount": 1
-    },
-    {
       "id": 23,
       "name": "קרצוף ורחצה",
       "slug": "קרצוף-ורחצה",
@@ -26,6 +17,15 @@
       "parentId": null,
       "sortOrder": 0,
       "itemCount": 8
+    },
+    {
+      "id": 19,
+      "name": "גביעים",
+      "slug": "גביעים",
+      "icon": "fa-box",
+      "parentId": 5,
+      "sortOrder": 1,
+      "itemCount": 1
     },
     {
       "id": 1,
@@ -23390,6 +23390,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-12T14:10:27.088Z",
+  "exportedAt": "2026-03-12T14:29:50.787Z",
   "totalItems": 822
 }
