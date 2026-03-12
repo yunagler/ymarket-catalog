@@ -5,6 +5,8 @@
       "name": "גביעים",
       "slug": "גביעים",
       "icon": "fa-box",
+      "parentId": 5,
+      "sortOrder": 0,
       "itemCount": 1
     },
     {
@@ -12,6 +14,8 @@
       "name": "סטוק עד הבית",
       "slug": "סטוק-עד-הבית",
       "icon": "fa-box",
+      "parentId": null,
+      "sortOrder": 0,
       "itemCount": 8
     },
     {
@@ -19,6 +23,8 @@
       "name": "בטיחות ומיגון אישי (PPE)",
       "slug": "בטיחות-ומיגון-אישי-PPE",
       "icon": "fa-box",
+      "parentId": null,
+      "sortOrder": 1,
       "itemCount": 84
     },
     {
@@ -26,6 +32,8 @@
       "name": "כלי עבודה וציוד משקי",
       "slug": "כלי-עבודה-וציוד-משקי",
       "icon": "fa-box",
+      "parentId": null,
+      "sortOrder": 2,
       "itemCount": 32
     },
     {
@@ -33,6 +41,8 @@
       "name": "שקיות ופתרונות אשפה",
       "slug": "שקיות-ופתרונות-אשפה",
       "icon": "fa-box",
+      "parentId": null,
+      "sortOrder": 3,
       "itemCount": 40
     },
     {
@@ -40,6 +50,8 @@
       "name": "חומרי ניקוי וכימיקלים",
       "slug": "חומרי-ניקוי-וכימיקלים",
       "icon": "fa-box",
+      "parentId": null,
+      "sortOrder": 4,
       "itemCount": 81
     },
     {
@@ -47,6 +59,8 @@
       "name": "אריזות מזון ו-Take Away",
       "slug": "אריזות-מזון-ו-Take-Away",
       "icon": "fa-box",
+      "parentId": null,
+      "sortOrder": 5,
       "itemCount": 138
     },
     {
@@ -54,6 +68,8 @@
       "name": "טקסטיל, מטליות וסחבות",
       "slug": "טקסטיל-מטליות-וסחבות",
       "icon": "fa-box",
+      "parentId": null,
+      "sortOrder": 6,
       "itemCount": 31
     },
     {
@@ -61,6 +77,8 @@
       "name": "חד פעמי ואירוח",
       "slug": "חד-פעמי-ואירוח",
       "icon": "fa-box",
+      "parentId": null,
+      "sortOrder": 7,
       "itemCount": 96
     },
     {
@@ -68,6 +86,8 @@
       "name": "עטיפה, אריזה ולוגיסטיקה",
       "slug": "עטיפה-אריזה-ולוגיסטיקה",
       "icon": "fa-box",
+      "parentId": null,
+      "sortOrder": 9,
       "itemCount": 38
     },
     {
@@ -75,6 +95,8 @@
       "name": "מוצרי נייר וניגוב",
       "slug": "מוצרי-נייר-וניגוב",
       "icon": "fa-box",
+      "parentId": null,
+      "sortOrder": 10,
       "itemCount": 38
     },
     {
@@ -82,6 +104,8 @@
       "name": "קפה, שתייה וכיבוד",
       "slug": "קפה-שתייה-וכיבוד",
       "icon": "fa-box",
+      "parentId": null,
+      "sortOrder": 11,
       "itemCount": 19
     },
     {
@@ -89,6 +113,8 @@
       "name": "ציוד משרדי וכללי",
       "slug": "ציוד-משרדי-וכללי",
       "icon": "fa-box",
+      "parentId": null,
+      "sortOrder": 12,
       "itemCount": 122
     },
     {
@@ -96,6 +122,8 @@
       "name": "ציוד טכני ואחזקה",
       "slug": "ציוד-טכני-ואחזקה",
       "icon": "fa-box",
+      "parentId": null,
+      "sortOrder": 13,
       "itemCount": 57
     },
     {
@@ -103,6 +131,8 @@
       "name": "עזרה ראשונה - רפואי",
       "slug": "עזרה-ראשונה-רפואי",
       "icon": "fa-box",
+      "parentId": null,
+      "sortOrder": 14,
       "itemCount": 27
     },
     {
@@ -110,6 +140,8 @@
       "name": "טואלטיקה וטיפוח אישי",
       "slug": "טואלטיקה-וטיפוח-אישי",
       "icon": "fa-box",
+      "parentId": null,
+      "sortOrder": 19,
       "itemCount": 24
     }
   ],
@@ -515,7 +547,7 @@
       "id": 441,
       "name": "מרכך כביסה כחול",
       "slug": "מרכך-כביסה-כחול",
-      "saleNis": 9.6,
+      "saleNis": 10,
       "originalPrice": 14,
       "discountPercent": null,
       "promotionLabel": null,
@@ -10821,34 +10853,6 @@
       "alternatives": []
     },
     {
-      "id": 905,
-      "name": "מכסה לקראפט - 1300 מ\"ל",
-      "slug": "מכסה-לקראפט-1300-מ-ל-2",
-      "saleNis": 0.76,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "אריזות-מזון-ו-Take-Away",
-      "categoryName": "אריזות מזון ו-Take Away",
-      "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/922.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "barcode": "",
-      "searchTags": "",
-      "technicalDesc": "",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": []
-    },
-    {
       "id": 640,
       "name": "מכסה לקראפט - 1300 מ\"ל",
       "slug": "מכסה-לקראפט-1300-מ-ל",
@@ -10864,6 +10868,34 @@
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "/items/656.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "barcode": "",
+      "searchTags": "",
+      "technicalDesc": "",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": []
+    },
+    {
+      "id": 905,
+      "name": "מכסה לקראפט - 1300 מ\"ל",
+      "slug": "מכסה-לקראפט-1300-מ-ל-2",
+      "saleNis": 0.76,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
+      "categorySlugs": [
+        "אריזות-מזון-ו-Take-Away"
+      ],
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/922.jpg",
       "isFeatured": false,
       "productStatus": "active",
       "description": "",
@@ -16325,34 +16357,6 @@
       "alternatives": []
     },
     {
-      "id": 393,
-      "name": "סט 4 מדגיש צבעוני",
-      "slug": "סט-4-מדגיש-צבעוני-2",
-      "saleNis": 10,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
-      "categorySlugs": [
-        "ציוד-משרדי-וכללי"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/409.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "barcode": "",
-      "searchTags": "",
-      "technicalDesc": "",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": []
-    },
-    {
       "id": 363,
       "name": "סט 4 מדגיש צבעוני",
       "slug": "סט-4-מדגיש-צבעוני",
@@ -16368,6 +16372,34 @@
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "/items/379.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "barcode": "",
+      "searchTags": "",
+      "technicalDesc": "",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": []
+    },
+    {
+      "id": 393,
+      "name": "סט 4 מדגיש צבעוני",
+      "slug": "סט-4-מדגיש-צבעוני-2",
+      "saleNis": 10,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "ציוד-משרדי-וכללי",
+      "categoryName": "ציוד משרדי וכללי",
+      "categorySlugs": [
+        "ציוד-משרדי-וכללי"
+      ],
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/409.jpg",
       "isFeatured": false,
       "productStatus": "active",
       "description": "",
@@ -23301,6 +23333,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-12T12:43:48.117Z",
+  "exportedAt": "2026-03-12T13:49:39.046Z",
   "totalItems": 822
 }

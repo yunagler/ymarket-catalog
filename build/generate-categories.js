@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
  * Generate individual category HTML pages from products.json
+ * Supports hierarchical categories (parent → children tree)
  * Uses directory-based clean URLs: /category/{slug}/index.html
- * So URL is /category/{slug}/ (no .html extension)
  */
 
 const fs = require('fs');
@@ -13,7 +13,7 @@ const CATEGORY_DIR = path.join(ROOT_DIR, 'category');
 const DATA_PATH = path.join(ROOT_DIR, 'data', 'products.json');
 const SITE_URL = 'https://ymarket.co.il';
 
-// SEO data per category - optimized titles, descriptions, H1s, SEO text, FAQs
+// SEO data per category
 const CATEGORY_SEO = {
   'חומרי-ניקוי-וכימיקלים': {
     title: 'חומרי ניקוי בסיטונאות למוסדות ועסקים | וואי מרקט',
@@ -130,23 +130,138 @@ function formatPrice(price) {
   }).format(price);
 }
 
-function generateCategoryPage(category, products, allCategories) {
+// Build tree from flat categories list
+function buildCategoryTree(flatCategories) {
+  const map = new Map();
+  flatCategories.forEach(c => map.set(c.id, { ...c, children: [] }));
+
+  const roots = [];
+  for (const cat of map.values()) {
+    if (cat.parentId && map.has(cat.parentId)) {
+      map.get(cat.parentId).children.push(cat);
+    } else {
+      roots.push(cat);
+    }
+  }
+
+  // Sort children by sortOrder
+  const sortChildren = (cats) => {
+    cats.sort((a, b) => (a.sortOrder || 0) - (b.sortOrder || 0));
+    cats.forEach(c => sortChildren(c.children));
+  };
+  sortChildren(roots);
+
+  return { roots, map };
+}
+
+// Get parent category chain for breadcrumb
+function getParentChain(category, catMap) {
+  const chain = [];
+  let current = category;
+  while (current.parentId && catMap.has(current.parentId)) {
+    current = catMap.get(current.parentId);
+    chain.unshift(current);
+  }
+  return chain;
+}
+
+// Build full URL path for a category (nested under parents)
+// e.g. /category/אריזות-מזון-ו-Take-Away/גביעים/
+function getCategoryUrlPath(category, catMap) {
+  const chain = getParentChain(category, catMap);
+  const slugs = chain.map(c => c.slug);
+  slugs.push(category.slug);
+  return '/category/' + slugs.join('/') + '/';
+}
+
+// Build filesystem path for a category page
+function getCategoryFsPath(category, catMap, categoryDir) {
+  const chain = getParentChain(category, catMap);
+  const slugs = chain.map(c => c.slug);
+  slugs.push(category.slug);
+  return path.join(categoryDir, ...slugs);
+}
+
+// Build sidebar HTML with tree structure
+function buildSidebarHtml(roots, currentSlug, catMap) {
+  function renderNode(cat, depth) {
+    const isActive = cat.slug === currentSlug;
+    const hasChildren = cat.children && cat.children.length > 0;
+    const isAncestor = hasChildren && isDescendant(currentSlug, cat, catMap);
+    const isOpen = isActive || isAncestor;
+    const catUrl = getCategoryUrlPath(cat, catMap);
+
+    let html = `<a href="${catUrl}" class="category-list__item${isActive ? ' active' : ''}" style="${depth > 0 ? `padding-right:${16 + depth * 16}px;font-size:0.9em;` : ''}">`;
+    if (hasChildren) {
+      html += `<i class="fas fa-chevron-down" style="font-size:0.6em;margin-left:4px;transition:transform 0.2s;${isOpen ? '' : 'transform:rotate(90deg);'}"></i>`;
+    }
+    html += `<span>${cat.name}</span><span class="category-list__count">${cat.itemCount}</span></a>`;
+
+    if (hasChildren) {
+      html += `<div class="category-children" style="${isOpen ? '' : 'display:none;'}">`;
+      for (const child of cat.children) {
+        html += renderNode(child, depth + 1);
+      }
+      html += '</div>';
+    }
+
+    return html;
+  }
+
+  function isDescendant(slug, parent, map) {
+    for (const child of parent.children) {
+      if (child.slug === slug) return true;
+      if (child.children && isDescendant(slug, child, map)) return true;
+    }
+    return false;
+  }
+
+  return roots.map(cat => renderNode(cat, 0)).join('\n');
+}
+
+function generateCategoryPage(category, products, allCategories, catMap, treeRoots) {
   const categoryProducts = products.filter(p =>
     p.categorySlug === category.slug ||
     (p.categorySlugs && p.categorySlugs.includes(category.slug))
   );
-  const categoryUrl = `${SITE_URL}/category/${category.slug}/`;
+  const categoryPath = getCategoryUrlPath(category, catMap);
+  const categoryUrl = `${SITE_URL}${categoryPath}`;
 
   const catSeo = CATEGORY_SEO[category.slug] || {};
   const seoDesc = catSeo.metaDesc || `${category.name} - ${categoryProducts.length} מוצרים במחירי סיטונאות. וואי מרקט - אספקה חכמה לעסקים ומוסדות. משלוח ארצי.`;
   const h1Text = catSeo.h1 || category.name;
   const pageTitle = catSeo.title || `${category.name} | וואי מרקט - אספקה למוסדות ועסקים`;
 
+  // Build breadcrumb with parent chain
+  const parentChain = getParentChain(category, catMap);
+  let breadcrumbHtml = `<a href="/">דף הבית</a>
+      <span class="breadcrumb__separator"><i class="fas fa-chevron-left"></i></span>
+      <a href="/catalog">מוצרים</a>`;
+  for (const parent of parentChain) {
+    const parentUrl = getCategoryUrlPath(parent, catMap);
+    breadcrumbHtml += `
+      <span class="breadcrumb__separator"><i class="fas fa-chevron-left"></i></span>
+      <a href="${parentUrl}">${parent.name}</a>`;
+  }
+  breadcrumbHtml += `
+      <span class="breadcrumb__separator"><i class="fas fa-chevron-left"></i></span>
+      <span class="breadcrumb__current">${category.name}</span>`;
+
+  // Breadcrumb JSON-LD
+  const breadcrumbItems = [
+    { "@type": "ListItem", "position": 1, "name": "דף הבית", "item": SITE_URL + "/" },
+    { "@type": "ListItem", "position": 2, "name": "מוצרים", "item": SITE_URL + "/catalog" }
+  ];
+  parentChain.forEach((parent, i) => {
+    const parentUrl = getCategoryUrlPath(parent, catMap);
+    breadcrumbItems.push({ "@type": "ListItem", "position": 3 + i, "name": parent.name, "item": `${SITE_URL}${parentUrl}` });
+  });
+  breadcrumbItems.push({ "@type": "ListItem", "position": 3 + parentChain.length, "name": category.name });
+
   const productsHtml = categoryProducts.map(p => {
     const imgSrc = p.imageUrl || `/items/${p.id}.jpg`;
     const hasPromo = p.productStatus === 'on_sale' && p.originalPrice;
 
-    // Status badge
     let badgeHtml = '';
     if (hasPromo) {
       badgeHtml = `<div class="product-card__badge" style="background:#dc2626;color:#fff;position:absolute;top:8px;right:8px;padding:4px 10px;border-radius:6px;font-size:0.75rem;font-weight:700;z-index:2">${p.discountPercent ? Math.round(p.discountPercent) + '%-' : (p.promotionLabel || 'מבצע')}</div>`;
@@ -180,10 +295,24 @@ function generateCategoryPage(category, products, allCategories) {
     </div>`;
   }).join('\n');
 
-  const sidebarHtml = allCategories
-    .filter(c => c.slug !== category.slug)
-    .map(c => `<a href="/category/${c.slug}/" class="category-list__item"><span>${c.name}</span><span class="category-list__count">${c.itemCount}</span></a>`)
-    .join('\n');
+  // Sidebar with tree structure
+  const sidebarHtml = buildSidebarHtml(treeRoots, category.slug, catMap);
+
+  // Show subcategories links if this category has children
+  const children = catMap.get(category.id)?.children || [];
+  let subcategoriesHtml = '';
+  if (children.length > 0) {
+    subcategoriesHtml = `<div class="subcategories-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-bottom:24px;">
+      ${children.map(child => {
+        const childUrl = getCategoryUrlPath(child, catMap);
+        return `<a href="${childUrl}" class="subcategory-card" style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:#f8f9fa;border:1px solid #e5e7eb;border-radius:10px;text-decoration:none;color:#1f2937;transition:all 0.2s;font-size:0.95rem;">
+          <i class="fas ${child.icon || 'fa-folder'}" style="color:#1B3A5C;font-size:1.1rem;"></i>
+          <span>${child.name}</span>
+          <span style="margin-right:auto;color:#9ca3af;font-size:0.8rem;">${child.itemCount}</span>
+        </a>`;
+      }).join('\n')}
+    </div>`;
+  }
 
   const jsonLd = JSON.stringify({
     "@context": "https://schema.org",
@@ -237,7 +366,14 @@ function generateCategoryPage(category, products, allCategories) {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="/css/style.min.css">
   <link rel="stylesheet" href="/css/pages/catalog.min.css">
-  <style>.category-seo{margin-top:2.5rem;padding:2rem;background:#fff;border-top:2px solid #e5e7eb;line-height:1.8}.category-seo h2{font-size:1.25rem;margin-bottom:1rem;color:var(--color-text,#1f2937)}.category-seo p{margin-bottom:1rem;color:var(--color-text-secondary,#4b5563)}.category-seo a{color:var(--color-primary,#1B3A5C);text-decoration:underline}</style>
+  <style>
+    .category-seo{margin-top:2.5rem;padding:2rem;background:#fff;border-top:2px solid #e5e7eb;line-height:1.8}
+    .category-seo h2{font-size:1.25rem;margin-bottom:1rem;color:var(--color-text,#1f2937)}
+    .category-seo p{margin-bottom:1rem;color:var(--color-text-secondary,#4b5563)}
+    .category-seo a{color:var(--color-primary,#1B3A5C);text-decoration:underline}
+    .category-children{border-right:2px solid #e5e7eb;margin-right:12px;}
+    .subcategory-card:hover{background:#eef2ff !important;border-color:#c7d2fe !important;}
+  </style>
   <script type="application/ld+json">${jsonLd}</script>
   ${(catSeo.faqs && catSeo.faqs.length > 0) ? `<script type="application/ld+json">${JSON.stringify({
     "@context": "https://schema.org",
@@ -251,11 +387,7 @@ function generateCategoryPage(category, products, allCategories) {
   <script type="application/ld+json">${JSON.stringify({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "דף הבית", "item": SITE_URL + "/" },
-      { "@type": "ListItem", "position": 2, "name": "מוצרים", "item": SITE_URL + "/catalog" },
-      { "@type": "ListItem", "position": 3, "name": category.name }
-    ]
+    "itemListElement": breadcrumbItems
   })}</script>
 </head>
 <body>
@@ -280,11 +412,7 @@ function generateCategoryPage(category, products, allCategories) {
 
   <div class="container">
     <nav class="breadcrumb" aria-label="ניווט פירורי לחם">
-      <a href="/">דף הבית</a>
-      <span class="breadcrumb__separator"><i class="fas fa-chevron-left"></i></span>
-      <a href="/catalog">מוצרים</a>
-      <span class="breadcrumb__separator"><i class="fas fa-chevron-left"></i></span>
-      <span class="breadcrumb__current">${category.name}</span>
+      ${breadcrumbHtml}
     </nav>
   </div>
 
@@ -295,9 +423,8 @@ function generateCategoryPage(category, products, allCategories) {
           <div class="sidebar-section">
             <h3>קטגוריות</h3>
             <div class="category-list">
-              <a href="/category/${category.slug}/" class="category-list__item active"><span>${category.name}</span><span class="category-list__count">${categoryProducts.length}</span></a>
               ${sidebarHtml}
-              <a href="/catalog" class="category-list__item"><span>כל המוצרים</span></a>
+              <a href="/catalog" class="category-list__item" style="margin-top:8px;border-top:1px solid #e5e7eb;padding-top:8px;"><span>כל המוצרים</span></a>
             </div>
           </div>
         </aside>
@@ -306,6 +433,7 @@ function generateCategoryPage(category, products, allCategories) {
             <h1>${h1Text}</h1>
             <p>${categoryProducts.length} מוצרים</p>
           </div>
+          ${subcategoriesHtml}
           <div class="products-grid">
             ${productsHtml}
           </div>
@@ -333,6 +461,28 @@ function generateCategoryPage(category, products, allCategories) {
 
   <a href="https://wa.me/972549922492" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   <script src="/js/main.min.js?v=20260310b"></script>
+  <script>
+    // Toggle subcategory visibility in sidebar
+    document.querySelectorAll('.category-list__item').forEach(function(item) {
+      item.addEventListener('click', function(e) {
+        var children = this.nextElementSibling;
+        if (children && children.classList.contains('category-children')) {
+          var icon = this.querySelector('.fa-chevron-down');
+          if (icon) {
+            if (children.style.display === 'none') {
+              children.style.display = '';
+              icon.style.transform = '';
+            } else if (!this.classList.contains('active')) {
+              // Only toggle if not navigating to this category
+              e.preventDefault();
+              children.style.display = 'none';
+              icon.style.transform = 'rotate(90deg)';
+            }
+          }
+        }
+      });
+    });
+  </script>
 </body>
 </html>`;
 }
@@ -365,23 +515,36 @@ function main() {
     return;
   }
 
+  // Build category tree
+  const { roots: treeRoots, map: catMap } = buildCategoryTree(categories);
+
   // Clean category directory completely
   if (fs.existsSync(CATEGORY_DIR)) {
     cleanDir(CATEGORY_DIR);
   }
 
-  // Generate each category page as /category/{slug}/index.html
+  // Track generated slugs to prevent duplicates
+  const generatedSlugs = new Set();
+
+  // Generate page for EVERY category (parents and children), one page per slug
   let count = 0;
   for (const category of categories) {
     if (!category.slug) continue;
-    const html = generateCategoryPage(category, products, categories);
+    if (generatedSlugs.has(category.slug)) {
+      console.warn(`Skipping duplicate slug: ${category.slug}`);
+      continue;
+    }
+    generatedSlugs.add(category.slug);
+
+    const treeCategory = catMap.get(category.id);
+    const html = generateCategoryPage(treeCategory || category, products, categories, catMap, treeRoots);
     const slugDir = path.join(CATEGORY_DIR, category.slug);
     fs.mkdirSync(slugDir, { recursive: true });
     fs.writeFileSync(path.join(slugDir, 'index.html'), html, 'utf-8');
     count++;
   }
 
-  console.log(`Generated ${count} category pages in ${CATEGORY_DIR}`);
+  console.log(`Generated ${count} category pages (tree structure) in ${CATEGORY_DIR}`);
 }
 
 main();
