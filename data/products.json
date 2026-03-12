@@ -874,7 +874,22 @@
       "videoUrl": "",
       "leadTimeDays": null,
       "maxOrderQty": null,
-      "alternatives": []
+      "alternatives": [
+        {
+          "id": 234,
+          "name": "שקיות הקפאה רב שימושיות 35*25 - 200 יח'",
+          "saleNis": 10,
+          "imageUrl": "/items/250.jpg",
+          "slug": "שקיות-הקפאה-רב-שימושיות-35-25-200-יח"
+        },
+        {
+          "id": 548,
+          "name": "שקיות שקילה נילון 25*18 ל - 1 ק\"ג",
+          "saleNis": 15,
+          "imageUrl": "/items/564.jpg",
+          "slug": "שקיות-שקילה-נילון-25-18-ל-1-ק-ג"
+        }
+      ]
     },
     {
       "id": 380,
@@ -16372,34 +16387,6 @@
       "alternatives": []
     },
     {
-      "id": 363,
-      "name": "סט 4 מדגיש צבעוני",
-      "slug": "סט-4-מדגיש-צבעוני",
-      "saleNis": 9.5,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
-      "categorySlugs": [
-        "ציוד-משרדי-וכללי"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/379.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "barcode": "",
-      "searchTags": "",
-      "technicalDesc": "",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": []
-    },
-    {
       "id": 393,
       "name": "סט 4 מדגיש צבעוני",
       "slug": "סט-4-מדגיש-צבעוני-2",
@@ -16415,6 +16402,34 @@
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "/items/409.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "barcode": "",
+      "searchTags": "",
+      "technicalDesc": "",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": []
+    },
+    {
+      "id": 363,
+      "name": "סט 4 מדגיש צבעוני",
+      "slug": "סט-4-מדגיש-צבעוני",
+      "saleNis": 9.5,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "ציוד-משרדי-וכללי",
+      "categoryName": "ציוד משרדי וכללי",
+      "categorySlugs": [
+        "ציוד-משרדי-וכללי"
+      ],
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/379.jpg",
       "isFeatured": false,
       "productStatus": "active",
       "description": "",
@@ -23348,6 +23363,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-12T14:01:12.318Z",
+  "exportedAt": "2026-03-12T14:02:57.985Z",
   "totalItems": 822
 }
