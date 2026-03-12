@@ -19,7 +19,7 @@
       "name": "בטיחות ומיגון אישי (PPE)",
       "slug": "בטיחות-ומיגון-אישי-PPE",
       "icon": "fa-box",
-      "itemCount": 85
+      "itemCount": 84
     },
     {
       "id": 2,
@@ -10765,34 +10765,6 @@
       "alternatives": []
     },
     {
-      "id": 905,
-      "name": "מכסה לקראפט - 1300 מ\"ל",
-      "slug": "מכסה-לקראפט-1300-מ-ל-2",
-      "saleNis": 0.76,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "אריזות-מזון-ו-Take-Away",
-      "categoryName": "אריזות מזון ו-Take Away",
-      "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/922.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "barcode": "",
-      "searchTags": "",
-      "technicalDesc": "",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": []
-    },
-    {
       "id": 640,
       "name": "מכסה לקראפט - 1300 מ\"ל",
       "slug": "מכסה-לקראפט-1300-מ-ל",
@@ -10808,6 +10780,34 @@
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "/items/656.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "barcode": "",
+      "searchTags": "",
+      "technicalDesc": "",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": []
+    },
+    {
+      "id": 905,
+      "name": "מכסה לקראפט - 1300 מ\"ל",
+      "slug": "מכסה-לקראפט-1300-מ-ל-2",
+      "saleNis": 0.76,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
+      "categorySlugs": [
+        "אריזות-מזון-ו-Take-Away"
+      ],
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/922.jpg",
       "isFeatured": false,
       "productStatus": "active",
       "description": "",
@@ -13712,34 +13712,6 @@
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "/items/880.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "barcode": "",
-      "searchTags": "",
-      "technicalDesc": "",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": []
-    },
-    {
-      "id": 867,
-      "name": "נטריל אפור (Perfect) - מידה S - (100 יח) - ללא אבקה",
-      "slug": "נטריל-אפור-Perfect-מידה-S-100-יח-ללא-אבקה",
-      "saleNis": 18,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
-      "categorySlugs": [
-        "בטיחות-ומיגון-אישי-PPE"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/884.jpg",
       "isFeatured": false,
       "productStatus": "active",
       "description": "",
@@ -23329,6 +23301,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-12T12:17:47.214Z",
-  "totalItems": 823
+  "exportedAt": "2026-03-12T12:18:35.733Z",
+  "totalItems": 822
 }
