@@ -70,7 +70,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 5,
-      "itemCount": 138
+      "itemCount": 139
     },
     {
       "id": 6,
@@ -8626,9 +8626,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "",
-      "categoryName": "",
-      "categorySlugs": [],
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
+      "categorySlugs": [
+        "אריזות-מזון-ו-Take-Away"
+      ],
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "",
@@ -23388,6 +23390,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-12T14:09:01.257Z",
+  "exportedAt": "2026-03-12T14:10:27.088Z",
   "totalItems": 822
 }
