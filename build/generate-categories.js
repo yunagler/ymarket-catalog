@@ -228,9 +228,13 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
   const categoryUrl = `${SITE_URL}${categoryPath}`;
 
   const catSeo = CATEGORY_SEO[category.slug] || {};
-  const seoDesc = catSeo.metaDesc || `${category.name} - ${categoryProducts.length} מוצרים במחירי סיטונאות. וואי מרקט - אספקה חכמה לעסקים ומוסדות. משלוח ארצי.`;
+  // DB SEO fields (from products.json) take priority over hardcoded CATEGORY_SEO, with final fallback to defaults
+  const seoDesc = category.metaDescription || catSeo.metaDesc || `${category.name} - ${categoryProducts.length} מוצרים במחירי סיטונאות. וואי מרקט - אספקה חכמה לעסקים ומוסדות. משלוח ארצי.`;
   const h1Text = catSeo.h1 || category.name;
-  const pageTitle = catSeo.title || `${category.name} | וואי מרקט - אספקה למוסדות ועסקים`;
+  const pageTitle = category.metaTitle || catSeo.title || `${category.name} | וואי מרקט - אספקה למוסדות ועסקים`;
+  const seoContentBlock = category.seoContent || catSeo.seoText || '';
+  const categoryImage = category.imageUrl || null;
+  const categoryImageAlt = category.imageAlt || category.name;
 
   // Build breadcrumb with parent chain
   const parentChain = getParentChain(category, catMap);
@@ -430,6 +434,7 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
         </aside>
         <div class="catalog-main">
           <div class="catalog-header">
+            ${categoryImage ? `<img src="${categoryImage}" alt="${categoryImageAlt}" class="category-hero-img" style="max-height:200px;width:100%;object-fit:cover;border-radius:12px;margin-bottom:1rem;" />` : ''}
             <h1>${h1Text}</h1>
             <p>${categoryProducts.length} מוצרים</p>
           </div>
@@ -437,7 +442,7 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
           <div class="products-grid">
             ${productsHtml}
           </div>
-          ${catSeo.seoText || ''}
+          ${seoContentBlock ? `<div class="category-seo">${seoContentBlock}</div>` : ''}
           <div class="category-cta" style="background:var(--color-bg-light,#f8f9fa);border-radius:12px;padding:2rem;margin-top:2rem;text-align:center;">
             <h3 style="margin-bottom:0.5rem;">צריכים כמות גדולה? קבלו הצעת מחיר מותאמת אישית</h3>
             <p style="color:var(--color-text-light,#6b7280);margin-bottom:1rem;">לקוחות עסקיים נהנים ממחירים מיוחדים, אספקה שוטפת ושירות אישי</p>
