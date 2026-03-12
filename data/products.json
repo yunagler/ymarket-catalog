@@ -25,7 +25,7 @@
       "icon": "fa-box",
       "parentId": 6,
       "sortOrder": 0,
-      "itemCount": 1
+      "itemCount": 2
     },
     {
       "id": 21,
@@ -831,10 +831,11 @@
       "categorySlug": "טקסטיל-מטליות-וסחבות",
       "categoryName": "טקסטיל, מטליות וסחבות",
       "categorySlugs": [
-        "טקסטיל-מטליות-וסחבות"
+        "טקסטיל-מטליות-וסחבות",
+        "מטליות"
       ],
       "unit": "",
-      "unitsPerPack": 1,
+      "unitsPerPack": 10,
       "imageUrl": "/items/182.jpg",
       "isFeatured": false,
       "productStatus": "active",
@@ -23460,6 +23461,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-12T16:16:59.284Z",
+  "exportedAt": "2026-03-12T16:20:10.162Z",
   "totalItems": 823
 }
