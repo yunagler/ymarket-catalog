@@ -19,6 +19,15 @@
       "itemCount": 1
     },
     {
+      "id": 22,
+      "name": "מטליות",
+      "slug": "מטליות",
+      "icon": "fa-box",
+      "parentId": 6,
+      "sortOrder": 0,
+      "itemCount": 1
+    },
+    {
       "id": 21,
       "name": "סטוק עד הבית",
       "slug": "סטוק-עד-הבית",
@@ -936,17 +945,18 @@
       "categorySlug": "טקסטיל-מטליות-וסחבות",
       "categoryName": "טקסטיל, מטליות וסחבות",
       "categorySlugs": [
-        "טקסטיל-מטליות-וסחבות"
+        "טקסטיל-מטליות-וסחבות",
+        "מטליות"
       ],
       "unit": "",
-      "unitsPerPack": 1,
+      "unitsPerPack": 2,
       "imageUrl": "/items/396.jpg",
       "isFeatured": false,
       "productStatus": "active",
       "description": "",
       "partNumber": "7290016387339",
       "barcode": "",
-      "searchTags": "",
+      "searchTags": "סמרטוט, מיקרו, מטלית",
       "technicalDesc": "",
       "videoUrl": "",
       "leadTimeDays": null,
@@ -23450,6 +23460,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-12T15:18:15.228Z",
+  "exportedAt": "2026-03-12T15:42:16.339Z",
   "totalItems": 823
 }
