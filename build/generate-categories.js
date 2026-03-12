@@ -538,7 +538,7 @@ function main() {
 
     const treeCategory = catMap.get(category.id);
     const html = generateCategoryPage(treeCategory || category, products, categories, catMap, treeRoots);
-    const slugDir = path.join(CATEGORY_DIR, category.slug);
+    const slugDir = getCategoryFsPath(treeCategory || category, catMap, CATEGORY_DIR);
     fs.mkdirSync(slugDir, { recursive: true });
     fs.writeFileSync(path.join(slugDir, 'index.html'), html, 'utf-8');
     count++;
