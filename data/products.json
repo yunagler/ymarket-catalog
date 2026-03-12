@@ -2049,7 +2049,7 @@
       "id": 598,
       "name": "גביע 150 (125 גר') - א' 2000",
       "slug": "גביע-150-125-גר-א-2000",
-      "saleNis": 0,
+      "saleNis": 185,
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
@@ -23427,6 +23427,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-12T14:30:17.949Z",
+  "exportedAt": "2026-03-12T15:08:40.869Z",
   "totalItems": 823
 }
