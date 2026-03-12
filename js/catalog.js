@@ -152,34 +152,23 @@
         childContainer.style.borderRight = '2px solid #e5e7eb';
         childContainer.style.marginRight = '12px';
 
-        // Toggle on parent click - always toggle, never navigate
+        // Toggle on parent click
         link.addEventListener('click', function(e) {
-          e.preventDefault();
-          e.stopPropagation();
           if (childContainer.style.display === 'none') {
             childContainer.style.display = '';
             var icon = link.querySelector('.fa-chevron-down');
             if (icon) icon.style.transform = '';
           } else {
+            e.preventDefault();
             childContainer.style.display = 'none';
             var icon2 = link.querySelector('.fa-chevron-down');
             if (icon2) icon2.style.transform = 'rotate(90deg)';
           }
         });
 
-        // Add a small "go" link to navigate to parent category page
-        var goLink = document.createElement('a');
-        goLink.href = getCatUrl(cat);
-        goLink.className = 'category-list__go';
-        goLink.innerHTML = '<i class="fas fa-arrow-left" style="font-size:0.6em;"></i>';
-        goLink.title = 'עבור לדף ' + cat.name;
-        goLink.style.cssText = 'padding:4px 6px;margin-right:auto;color:#9ca3af;font-size:0.75rem;text-decoration:none;border-radius:4px;transition:color 0.2s;';
-        goLink.addEventListener('mouseenter', function() { goLink.style.color = '#1B3A5C'; });
-        goLink.addEventListener('mouseleave', function() { goLink.style.color = '#9ca3af'; });
-        goLink.addEventListener('click', function(e) { e.stopPropagation(); }); // Let it navigate
-        link.appendChild(goLink);
-
         list.appendChild(childContainer);
+        const origParent = list;
+        // Temporarily redirect appends to childContainer
         cat.children.forEach(function(child) {
           renderNodeInto(child, depth + 1, childContainer);
         });
@@ -213,29 +202,17 @@
         childContainer.style.marginRight = '12px';
 
         link.addEventListener('click', function(e) {
-          e.preventDefault();
-          e.stopPropagation();
           if (childContainer.style.display === 'none') {
             childContainer.style.display = '';
             var icon = link.querySelector('.fa-chevron-down');
             if (icon) icon.style.transform = '';
           } else {
+            e.preventDefault();
             childContainer.style.display = 'none';
             var icon2 = link.querySelector('.fa-chevron-down');
             if (icon2) icon2.style.transform = 'rotate(90deg)';
           }
         });
-
-        var goLink2 = document.createElement('a');
-        goLink2.href = getCatUrl(cat);
-        goLink2.className = 'category-list__go';
-        goLink2.innerHTML = '<i class="fas fa-arrow-left" style="font-size:0.6em;"></i>';
-        goLink2.title = 'עבור לדף ' + cat.name;
-        goLink2.style.cssText = 'padding:4px 6px;margin-right:auto;color:#9ca3af;font-size:0.75rem;text-decoration:none;border-radius:4px;transition:color 0.2s;';
-        goLink2.addEventListener('mouseenter', function() { goLink2.style.color = '#1B3A5C'; });
-        goLink2.addEventListener('mouseleave', function() { goLink2.style.color = '#9ca3af'; });
-        goLink2.addEventListener('click', function(e) { e.stopPropagation(); });
-        link.appendChild(goLink2);
 
         container.appendChild(childContainer);
         cat.children.forEach(function(child) {
@@ -251,15 +228,16 @@
 
   // ---- Event Listeners ----
   function setupEventListeners() {
-    // Category click - parent categories toggle children, leaf categories navigate
+    // Category click
     document.getElementById('categoryList')?.addEventListener('click', (e) => {
       const btn = e.target.closest('.category-list__item');
       if (!btn) return;
+      e.preventDefault();
       const slug = btn.dataset.category;
-
-      // "All" button - filter in-page
-      if (!slug || slug === 'all') {
-        e.preventDefault();
+      if (slug && slug !== 'all') {
+        var catObj = categories.find(function(c) { return c.slug === slug; });
+        window.location.href = catObj ? getCatUrl(categoryMap[catObj.id] || catObj) : '/category/' + slug + '/';
+      } else {
         document.querySelectorAll('.category-list__item').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         currentCategory = 'all';
@@ -268,23 +246,7 @@
         history.pushState(null, '', url);
         updateTitle();
         render();
-        return;
       }
-
-      // Check if this is a parent category with children
-      var catObj = categories.find(function(c) { return c.slug === slug; });
-      var treeCat = catObj ? categoryMap[catObj.id] : null;
-      var hasChildren = treeCat && treeCat.children && treeCat.children.length > 0;
-
-      if (hasChildren) {
-        // Parent: let the toggle handler on renderNode handle it, don't navigate
-        // The toggle handler was already added in renderNode/renderNodeInto
-        return; // Don't preventDefault - let the renderNode handler decide
-      }
-
-      // Leaf category: navigate to category page
-      e.preventDefault();
-      window.location.href = catObj ? getCatUrl(treeCat || catObj) : '/category/' + slug + '/';
     });
 
     // Search input

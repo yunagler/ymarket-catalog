@@ -212,34 +212,6 @@
   font-weight: var(--fw-medium);
 }
 
-.mega-menu__category-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.mega-menu__subcats {
-  display: flex;
-  flex-direction: column;
-  padding-right: 44px;
-  margin-top: 2px;
-  margin-bottom: 4px;
-}
-
-.mega-menu__subcat {
-  font-size: 0.8rem;
-  color: var(--color-text-secondary);
-  text-decoration: none;
-  padding: 3px 8px;
-  border-radius: var(--radius-sm);
-  transition: all var(--transition-fast);
-  line-height: 1.6;
-}
-
-.mega-menu__subcat:hover {
-  color: var(--color-primary);
-  background: var(--color-bg);
-}
-
 /* ---- Header Actions ---- */
 .header__actions {
   display: flex;
