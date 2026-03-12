@@ -1,6 +1,21 @@
 {
   "categories": [
     {
+      "id": 22,
+      "name": "מטליות",
+      "slug": "מטליות",
+      "icon": "fa-box",
+      "parentId": 6,
+      "sortOrder": 0,
+      "itemCount": 2,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
       "id": 21,
       "name": "סטוק עד הבית",
       "slug": "סטוק-עד-הבית",
@@ -16,18 +31,48 @@
       "imageAlt": null
     },
     {
+      "id": 30,
+      "name": "קיסמים, קשים ושיפודים",
+      "slug": "קיסמים-קשים-ושיפודים",
+      "icon": "fa-box",
+      "parentId": 5,
+      "sortOrder": 0,
+      "itemCount": 12,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 29,
+      "name": "כוסות צלחות וסכום",
+      "slug": "כוסות-צלחות-וסכום",
+      "icon": "fa-box",
+      "parentId": 5,
+      "sortOrder": 0,
+      "itemCount": 38,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
       "id": 28,
       "name": "קרפטים",
       "slug": "קראפטים",
       "icon": "fa-box",
       "parentId": 5,
       "sortOrder": 0,
-      "itemCount": 1,
+      "itemCount": 29,
       "metaTitle": "קרפטים ואריזות מזון בסיטונאות לעסקים | Ymarket",
       "metaDescription": "מגוון קרפטים, שקיות נייר ואריזות למסעדות בסיטונאות. משלוח מהיר עד 72 שעות, מינימום הזמנה 1,600₪. לייעוץ והזמנות חייגו: 3497* מרכז שירות Ymarket",
       "seoSlug": "kraft-paper-packaging-wholesale",
       "seoContent": "<h2>פתרונות אריזה וקרפטים לעסקים בסיטונאות</h2>\n<p>עולם המשלוחים וה-Take Away מחייב אריזה חזקה, ייצוגית ושומרת טריות. ב-YMARKET אנו מספקים מגוון רחב של קרפטים, שקיות נייר חומות ולבנות, ומארזי קרטון המותאמים אישית לצרכי העסק שלכם. כל מוצרי האריזה שלנו עומדים בתקני איכות מחמירים ומבטיחים שהלקוח שלכם יקבל את המנה בדיוק כפי שיצאה מהמטבח.</p>\n<p>צריכים עזרה בבחירת סוג האריזה המתאים? המומחים שלנו זמינים עבורכם. ניתן לבצע הזמנה ישירות דרך האתר או לחייג למרכז ההזמנות המקוצר שלנו בטלפון 3497*. אנו מתחייבים לאספקה מהירה לגוש דן והמרכז תוך 24-72 שעות.</p>",
-      "imageUrl": null,
+      "imageUrl": "https://ymarket.co.il/images/categories/kraft-paper-packaging-wholesale.png",
       "imageAlt": "קרפטים ושקיות נייר חומות בסיטונאות למסעדות ומשלוחים - וואי מרקט"
     },
     {
@@ -46,13 +91,13 @@
       "imageAlt": null
     },
     {
-      "id": 22,
-      "name": "מטליות",
-      "slug": "מטליות",
+      "id": 19,
+      "name": "גביעים",
+      "slug": "גביעים",
       "icon": "fa-box",
-      "parentId": 6,
-      "sortOrder": 0,
-      "itemCount": 2,
+      "parentId": 5,
+      "sortOrder": 1,
+      "itemCount": 17,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -76,13 +121,13 @@
       "imageAlt": "ציוד בטיחות ומיגון אישי לעסקים - YMARKET"
     },
     {
-      "id": 19,
-      "name": "גביעים",
-      "slug": "גביעים",
+      "id": 2,
+      "name": "כלי עבודה וציוד משקי",
+      "slug": "כלי-עבודה-וציוד-משקי",
       "icon": "fa-box",
-      "parentId": 5,
-      "sortOrder": 1,
-      "itemCount": 2,
+      "parentId": null,
+      "sortOrder": 2,
+      "itemCount": 32,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -91,13 +136,13 @@
       "imageAlt": null
     },
     {
-      "id": 2,
-      "name": "כלי עבודה וציוד משקי",
-      "slug": "כלי-עבודה-וציוד-משקי",
+      "id": 27,
+      "name": "מיכלים",
+      "slug": "מיכלים",
       "icon": "fa-box",
-      "parentId": null,
+      "parentId": 5,
       "sortOrder": 2,
-      "itemCount": 32,
+      "itemCount": 15,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -121,6 +166,21 @@
       "imageAlt": "שקיות אשפה מוסדיות בסיטונאות - YMARKET"
     },
     {
+      "id": 25,
+      "name": "מגשי פלסטיק",
+      "slug": "מגשי-פלסטיק",
+      "icon": "fa-box",
+      "parentId": 5,
+      "sortOrder": 3,
+      "itemCount": 9,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
       "id": 4,
       "name": "חומרי ניקוי וכימיקלים",
       "slug": "חומרי-ניקוי-וכימיקלים",
@@ -136,13 +196,43 @@
       "imageAlt": "אספקת חומרי ניקוי בסיטונאות למשרדים ומוסדות - YMARKET"
     },
     {
+      "id": 24,
+      "name": "מגשי קלקר",
+      "slug": "מגשי-קלקר",
+      "icon": "fa-box",
+      "parentId": 5,
+      "sortOrder": 4,
+      "itemCount": 44,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 26,
+      "name": "מגשי אלומניום",
+      "slug": "מגשי-אלומניום",
+      "icon": "fa-box",
+      "parentId": 5,
+      "sortOrder": 5,
+      "itemCount": 18,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
       "id": 5,
       "name": "אריזות מזון ו-Take Away",
       "slug": "אריזות-מזון-ו-Take-Away",
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 5,
-      "itemCount": 139,
+      "itemCount": 140,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": "food-packaging-delivery-solutions",
@@ -839,7 +929,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קיסמים-קשים-ושיפודים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -1929,7 +2020,9 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום",
+        "אריזות-מזון-ו-Take-Away"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -1957,7 +2050,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -2261,7 +2355,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "גביעים"
       ],
       "unit": "",
       "unitsPerPack": 2000,
@@ -2289,7 +2384,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "גביעים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -2317,7 +2413,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "גביעים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -2345,7 +2442,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "גביעים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -2401,7 +2499,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "גביעים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -2429,7 +2528,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "גביעים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -2457,7 +2557,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "גביעים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -2485,7 +2586,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "גביעים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -2513,7 +2615,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "גביעים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -4278,7 +4381,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -4334,7 +4438,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -4418,7 +4523,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -4474,7 +4580,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -4502,7 +4609,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -4558,7 +4666,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -4586,7 +4695,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -4614,7 +4724,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -4642,7 +4753,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -4670,7 +4782,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -5034,7 +5147,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -5062,7 +5176,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -5174,7 +5289,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -5706,7 +5822,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -5762,7 +5879,9 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "כוסות-צלחות-וסכום",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7162,7 +7281,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7190,7 +7310,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-אלומניום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7218,7 +7339,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-אלומניום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7246,7 +7368,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-אלומניום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7274,7 +7397,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-אלומניום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7302,7 +7426,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-אלומניום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7330,7 +7455,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-אלומניום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7358,7 +7484,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-אלומניום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7386,7 +7513,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7414,7 +7542,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-אלומניום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7442,7 +7571,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-אלומניום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7470,7 +7600,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-אלומניום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7498,7 +7629,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-אלומניום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7526,7 +7658,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-אלומניום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7554,7 +7687,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-אלומניום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7582,7 +7716,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-אלומניום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7610,7 +7745,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מיכלים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7638,7 +7774,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-פלסטיק"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7666,7 +7803,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-פלסטיק"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7694,7 +7832,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-פלסטיק"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7722,7 +7861,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-פלסטיק"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7750,7 +7890,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-פלסטיק"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7778,7 +7919,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-פלסטיק"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7806,7 +7948,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-פלסטיק"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7834,7 +7977,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-פלסטיק"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7862,7 +8006,9 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7890,7 +8036,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7918,7 +8065,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7946,7 +8094,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7974,7 +8123,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8002,7 +8152,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8030,7 +8181,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8058,7 +8210,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8086,7 +8239,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8114,7 +8268,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8142,7 +8297,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8170,7 +8326,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8198,7 +8355,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8226,7 +8384,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8254,7 +8413,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8282,7 +8442,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8310,7 +8471,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8338,7 +8500,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8366,7 +8529,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8394,7 +8558,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8422,7 +8587,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8450,7 +8616,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8478,7 +8645,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8506,7 +8674,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8534,7 +8703,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8562,7 +8732,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8590,7 +8761,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8618,7 +8790,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8646,7 +8819,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8674,7 +8848,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8702,7 +8877,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8730,7 +8906,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8758,7 +8935,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8786,7 +8964,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8814,7 +8993,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8842,7 +9022,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8870,7 +9051,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8898,7 +9080,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8926,7 +9109,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8954,7 +9138,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8982,7 +9167,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -9010,7 +9196,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -9038,7 +9225,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מיכלים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -9346,7 +9534,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -9374,7 +9563,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -10250,7 +10440,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מיכלים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -10278,7 +10469,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מיכלים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -10306,7 +10498,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מיכלים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -10334,7 +10527,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מיכלים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -10362,7 +10556,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מיכלים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -10390,7 +10585,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מיכלים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -10418,7 +10614,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מיכלים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -10446,7 +10643,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מיכלים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -10474,7 +10672,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מיכלים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -10502,7 +10701,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מיכלים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -10530,7 +10730,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מיכלים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -10558,7 +10759,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מיכלים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -10586,7 +10788,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מיכלים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -10670,7 +10873,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "גביעים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -10698,7 +10902,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "גביעים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -10769,7 +10974,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "גביעים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -10797,7 +11003,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "גביעים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -10853,7 +11060,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -10881,7 +11089,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -10909,7 +11118,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -10937,7 +11147,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "גביעים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -10965,7 +11176,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -10993,7 +11205,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-אלומניום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -11021,7 +11234,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-אלומניום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -11049,7 +11263,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -11077,39 +11292,12 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
       ],
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "/items/661.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "barcode": "",
-      "searchTags": "",
-      "technicalDesc": "",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": []
-    },
-    {
-      "id": 640,
-      "name": "מכסה לקראפט - 1300 מ\"ל",
-      "slug": "מכסה-לקראפט-1300-מ-ל",
-      "saleNis": 0,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "אריזות-מזון-ו-Take-Away",
-      "categoryName": "אריזות מזון ו-Take Away",
-      "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/656.jpg",
       "isFeatured": false,
       "productStatus": "active",
       "description": "",
@@ -11133,11 +11321,41 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
       ],
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "/items/922.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "barcode": "",
+      "searchTags": "",
+      "technicalDesc": "",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": []
+    },
+    {
+      "id": 640,
+      "name": "מכסה לקראפט - 1300 מ\"ל",
+      "slug": "מכסה-לקראפט-1300-מ-ל",
+      "saleNis": 0,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
+      "categorySlugs": [
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
+      ],
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/656.jpg",
       "isFeatured": false,
       "productStatus": "active",
       "description": "",
@@ -11161,7 +11379,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -11189,7 +11408,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -11217,7 +11437,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-אלומניום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -11245,7 +11466,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-אלומניום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -11273,7 +11495,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -11301,7 +11524,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -11329,7 +11553,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -11581,7 +11806,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -12971,7 +13197,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -16861,7 +17088,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -16889,7 +17117,9 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "גביעים",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -17281,7 +17511,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -19241,7 +19472,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -19269,7 +19501,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -19325,7 +19558,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -19353,7 +19587,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -19521,7 +19756,9 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "כוסות-צלחות-וסכום",
+        "מגשי-פלסטיק"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -19885,7 +20122,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -19913,7 +20151,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -19941,7 +20180,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -20025,7 +20265,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קיסמים-קשים-ושיפודים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -20053,7 +20294,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "קיסמים-קשים-ושיפודים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -20081,7 +20323,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קיסמים-קשים-ושיפודים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -20109,7 +20352,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "קיסמים-קשים-ושיפודים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -20361,7 +20605,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מגשי-קלקר"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -20417,7 +20662,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "כוסות-צלחות-וסכום"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -20501,7 +20747,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -20529,7 +20776,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -20557,7 +20805,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -20585,7 +20834,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -20613,7 +20863,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -20641,7 +20892,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -20922,7 +21174,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -20950,7 +21203,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -20978,7 +21232,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "קיסמים-קשים-ושיפודים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -21314,7 +21569,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "קיסמים-קשים-ושיפודים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -21342,7 +21598,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "קיסמים-קשים-ושיפודים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -21370,7 +21627,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "קיסמים-קשים-ושיפודים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -21398,7 +21656,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "קיסמים-קשים-ושיפודים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -21426,7 +21685,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קיסמים-קשים-ושיפודים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -21454,7 +21714,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "קיסמים-קשים-ושיפודים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -22295,7 +22556,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -22323,7 +22585,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -22351,7 +22614,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -22379,7 +22643,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -22687,7 +22952,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -22715,7 +22981,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -22967,7 +23234,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -22995,7 +23263,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -23023,7 +23292,8 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -23575,6 +23845,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-12T18:38:28.816Z",
+  "exportedAt": "2026-03-12T21:53:49.178Z",
   "totalItems": 823
 }
