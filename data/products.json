@@ -471,8 +471,8 @@
       "id": 442,
       "name": "מרכך כביסה ורוד",
       "slug": "מרכך-כביסה-ורוד",
-      "saleNis": 14,
-      "originalPrice": 18.67,
+      "saleNis": 10,
+      "originalPrice": 14,
       "discountPercent": 25,
       "promotionLabel": null,
       "categorySlug": "חומרי-ניקוי-וכימיקלים",
@@ -23469,6 +23469,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-12T08:09:57.631Z",
+  "exportedAt": "2026-03-12T08:16:38.623Z",
   "totalItems": 828
 }
