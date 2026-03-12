@@ -403,7 +403,7 @@
       "slug": "מרכך-כביסה-כחול",
       "saleNis": 14,
       "originalPrice": null,
-      "discountPercent": null,
+      "discountPercent": 25,
       "promotionLabel": null,
       "categorySlug": "חומרי-ניקוי-וכימיקלים",
       "categoryName": "חומרי ניקוי וכימיקלים",
@@ -411,7 +411,7 @@
       "unitsPerPack": 1,
       "imageUrl": "/items/457.jpg",
       "isFeatured": true,
-      "productStatus": "active",
+      "productStatus": "on_sale",
       "description": "",
       "partNumber": "7290011442019",
       "searchTags": "",
@@ -16845,6 +16845,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-12T06:51:25.177Z",
+  "exportedAt": "2026-03-12T06:51:55.983Z",
   "totalItems": 829
 }
