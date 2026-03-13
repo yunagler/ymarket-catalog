@@ -322,7 +322,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 12,
-      "itemCount": 122,
+      "itemCount": 123,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -17029,9 +17029,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "",
-      "categoryName": "",
-      "categorySlugs": [],
+      "categorySlug": "ציוד-משרדי-וכללי",
+      "categoryName": "ציוד משרדי וכללי",
+      "categorySlugs": [
+        "ציוד-משרדי-וכללי"
+      ],
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "/items/1131.jpg",
@@ -23843,6 +23845,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-13T20:33:54.756Z",
+  "exportedAt": "2026-03-13T20:34:40.248Z",
   "totalItems": 823
 }
