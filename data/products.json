@@ -352,7 +352,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 14,
-      "itemCount": 38,
+      "itemCount": 39,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -18828,7 +18828,8 @@
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
       "categoryName": "בטיחות ומיגון אישי (PPE)",
       "categorySlugs": [
-        "בטיחות-ומיגון-אישי-PPE"
+        "בטיחות-ומיגון-אישי-PPE",
+        "עזרה-ראשונה-רפואי"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -23845,6 +23846,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-13T19:36:07.138Z",
+  "exportedAt": "2026-03-13T19:36:20.078Z",
   "totalItems": 823
 }
