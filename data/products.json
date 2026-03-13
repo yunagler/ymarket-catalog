@@ -172,7 +172,7 @@
       "icon": "fa-box",
       "parentId": 2,
       "sortOrder": 0,
-      "itemCount": 1,
+      "itemCount": 2,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -6733,7 +6733,8 @@
       "categorySlug": "כלי-עבודה-וציוד-משקי",
       "categoryName": "כלי עבודה וציוד משקי",
       "categorySlugs": [
-        "כלי-עבודה-וציוד-משקי"
+        "כלי-עבודה-וציוד-משקי",
+        "-מטאטאים-מגבים-ומקלות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -11436,35 +11437,6 @@
       "alternatives": []
     },
     {
-      "id": 640,
-      "name": "מכסה לקראפט - 1300 מ\"ל",
-      "slug": "מכסה-לקראפט-1300-מ-ל",
-      "saleNis": 0,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "אריזות-מזון-ו-Take-Away",
-      "categoryName": "אריזות מזון ו-Take Away",
-      "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away",
-        "קראפטים"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/656.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "barcode": "",
-      "searchTags": "",
-      "technicalDesc": "",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": []
-    },
-    {
       "id": 905,
       "name": "מכסה לקראפט - 1300 מ\"ל",
       "slug": "מכסה-לקראפט-1300-מ-ל-2",
@@ -11481,6 +11453,35 @@
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "/items/922.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "barcode": "",
+      "searchTags": "",
+      "technicalDesc": "",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": []
+    },
+    {
+      "id": 640,
+      "name": "מכסה לקראפט - 1300 מ\"ל",
+      "slug": "מכסה-לקראפט-1300-מ-ל",
+      "saleNis": 0,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
+      "categorySlugs": [
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
+      ],
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/656.jpg",
       "isFeatured": false,
       "productStatus": "active",
       "description": "",
@@ -23993,6 +23994,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-13T22:32:04.885Z",
+  "exportedAt": "2026-03-13T22:32:16.290Z",
   "totalItems": 823
 }

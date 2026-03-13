@@ -76,6 +76,57 @@
     fbq('track', 'PageView');
   }
 
+  // ---- Facebook Pixel Commerce Events ----
+  if (window.YMarketAnalytics) {
+    window.YMarketAnalytics.fbViewContent = function(product) {
+      if (window.fbq) {
+        fbq('track', 'ViewContent', {
+          content_ids: ['YM_' + product.id],
+          content_name: product.name,
+          content_type: 'product',
+          value: product.price || 0,
+          currency: 'ILS'
+        });
+      }
+    };
+
+    window.YMarketAnalytics.fbAddToCart = function(product) {
+      if (window.fbq) {
+        fbq('track', 'AddToCart', {
+          content_ids: ['YM_' + product.id],
+          content_name: product.name,
+          content_type: 'product',
+          value: product.price || 0,
+          currency: 'ILS',
+          contents: [{ id: 'YM_' + product.id, quantity: product.quantity || 1 }]
+        });
+      }
+    };
+
+    window.YMarketAnalytics.fbSearch = function(searchTerm) {
+      if (window.fbq) {
+        fbq('track', 'Search', { search_string: searchTerm });
+      }
+    };
+
+    window.YMarketAnalytics.fbLead = function(method) {
+      if (window.fbq) {
+        fbq('track', 'Lead', { content_name: method });
+      }
+    };
+
+    window.YMarketAnalytics.fbInitiateCheckout = function(items, total) {
+      if (window.fbq) {
+        fbq('track', 'InitiateCheckout', {
+          content_ids: items.map(function(i) { return 'YM_' + i.id; }),
+          num_items: items.length,
+          value: total || 0,
+          currency: 'ILS'
+        });
+      }
+    };
+  }
+
   // ---- Microsoft Clarity ----
   if (CLARITY_ID) {
     (function(c,l,a,r,i,t,y){
