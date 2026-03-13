@@ -82,7 +82,7 @@
       "icon": "fa-box",
       "parentId": 1,
       "sortOrder": 0,
-      "itemCount": 21,
+      "itemCount": 22,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -14619,7 +14619,8 @@
       "categoryName": "מיגון ובטיחות בעבודה (PPE)",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE",
-        "-כפפות-עבודה-ומגן"
+        "-כפפות-עבודה-ומגן",
+        "-כפפות-חדפעמיות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -23948,6 +23949,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-13T22:03:48.071Z",
+  "exportedAt": "2026-03-13T22:03:58.335Z",
   "totalItems": 823
 }
