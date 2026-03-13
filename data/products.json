@@ -11311,35 +11311,6 @@
       "alternatives": []
     },
     {
-      "id": 905,
-      "name": "מכסה לקראפט - 1300 מ\"ל",
-      "slug": "מכסה-לקראפט-1300-מ-ל-2",
-      "saleNis": 0.76,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "אריזות-מזון-ו-Take-Away",
-      "categoryName": "אריזות מזון ו-Take Away",
-      "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away",
-        "קראפטים"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/922.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "barcode": "",
-      "searchTags": "",
-      "technicalDesc": "",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": []
-    },
-    {
       "id": 640,
       "name": "מכסה לקראפט - 1300 מ\"ל",
       "slug": "מכסה-לקראפט-1300-מ-ל",
@@ -11356,6 +11327,35 @@
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "/items/656.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "barcode": "",
+      "searchTags": "",
+      "technicalDesc": "",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": []
+    },
+    {
+      "id": 905,
+      "name": "מכסה לקראפט - 1300 מ\"ל",
+      "slug": "מכסה-לקראפט-1300-מ-ל-2",
+      "saleNis": 0.76,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
+      "categorySlugs": [
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
+      ],
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/922.jpg",
       "isFeatured": false,
       "productStatus": "active",
       "description": "",
@@ -23845,6 +23845,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-13T15:47:34.130Z",
+  "exportedAt": "2026-03-13T15:49:12.369Z",
   "totalItems": 823
 }
