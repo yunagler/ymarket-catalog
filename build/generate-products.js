@@ -499,6 +499,7 @@ function generateProductPage(product, categories, allProducts) {
 
   <a href="https://wa.me/972549922492?text=שלום, אשמח לקבל הצעת מחיר" class="whatsapp-float" target="_blank" rel="noopener" aria-label="שלחו הודעה בוואטסאפ"><i class="fab fa-whatsapp"></i><span class="whatsapp-float__tooltip">צריכים עזרה? דברו איתנו</span></a>
   <script src="/js/main.min.js?v=20260310b"></script>
+  <script src="/js/analytics.js?v=20260314"></script>
   <script>
   (function() {
     var PRODUCT = ${JSON.stringify({
@@ -507,8 +508,18 @@ function generateProductPage(product, categories, allProducts) {
       price: product.saleNis || 0,
       unit: product.unit || '',
       imageUrl: imgSrc,
-      slug: product.slug
+      slug: product.slug,
+      categoryName: primaryCat ? primaryCat.name : ''
     })};
+
+    // Facebook Pixel - ViewContent (product page view)
+    if (window.YMarketAnalytics && window.YMarketAnalytics.fbViewContent) {
+      window.YMarketAnalytics.fbViewContent(PRODUCT);
+    }
+    // GA4 - view_item
+    if (window.YMarketAnalytics && window.YMarketAnalytics.trackViewItem) {
+      window.YMarketAnalytics.trackViewItem(PRODUCT);
+    }
 
     // Quantity controls
     var qtyInput = document.getElementById('qtyInput');
