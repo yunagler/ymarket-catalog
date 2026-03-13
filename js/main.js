@@ -4,6 +4,7 @@
    =========================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initActiveNav();
   initMobileNav();
   initStickyHeader();
   initScrollAnimations();
@@ -16,6 +17,32 @@ document.addEventListener('DOMContentLoaded', () => {
   initCartButton();
   updateCartBadge();
 });
+
+/* ---- Active Navigation Link ---- */
+function initActiveNav() {
+  const path = window.location.pathname;
+  // Remove any hardcoded active class
+  document.querySelectorAll('.main-nav__link.active').forEach(el => el.classList.remove('active'));
+
+  // Determine which nav item is active
+  let activeNav = null;
+  if (path === '/' || path === '/index' || path === '/index.html') {
+    activeNav = 'home';
+  } else if (path.startsWith('/catalog') || path.startsWith('/category/') || path.startsWith('/products/')) {
+    activeNav = 'catalog';
+  } else if (path.startsWith('/about')) {
+    activeNav = 'about';
+  } else if (path.startsWith('/blog')) {
+    activeNav = 'blog';
+  } else if (path.startsWith('/contact')) {
+    activeNav = 'contact';
+  }
+
+  if (activeNav) {
+    const link = document.querySelector('[data-nav="' + activeNav + '"]');
+    if (link) link.classList.add('active');
+  }
+}
 
 /* ---- Mobile Navigation ---- */
 function initMobileNav() {

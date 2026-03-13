@@ -97,12 +97,12 @@
   --transition-slow: 400ms ease;
 
   /* Z-Index Scale */
-  --z-dropdown: 100;
-  --z-sticky: 200;
-  --z-overlay: 300;
-  --z-modal: 400;
-  --z-toast: 500;
-  --z-whatsapp: 600;
+  --z-dropdown: 1000;
+  --z-sticky: 9000;
+  --z-overlay: 9500;
+  --z-modal: 9800;
+  --z-toast: 9900;
+  --z-whatsapp: 8000;
 }
 
 /* ---- Dark Mode ---- */
