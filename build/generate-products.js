@@ -96,7 +96,8 @@ function generateProductPage(product, categories, allProducts) {
   const categoryUrl = primaryCat ? getFullCategoryUrl(primaryCat, categories) : getCategoryUrl(product, categories);
   const parentChain = primaryCat ? getParentChain(primaryCat, categories) : [];
   const imgSrc = product.imageUrl || `/items/${product.id}.jpg`;
-  const productUrl = `${SITE_URL}/products/${product.slug}/`;
+  const canonicalSlug = product.seoSlug || product.slug;
+  const productUrl = `${SITE_URL}/products/${canonicalSlug}/`;
 
   // SEO overrides from products.json
   const seo = product.seo || {};
@@ -115,6 +116,29 @@ function generateProductPage(product, categories, allProducts) {
         <p style="margin:0 0 8px;font-weight:600;color:var(--color-text,#1f2937);"><i class="fas fa-boxes" style="color:var(--color-primary,#1B3A5C);margin-left:6px;"></i> ${seo.bulkCta.title || 'צריכים כמות גדולה?'}</p>
         <p style="margin:0 0 12px;font-size:0.9rem;color:var(--color-text-secondary,#4b5563);">${seo.bulkCta.text || 'קבלו הצעת מחיר מותאמת עם הנחת כמות'}</p>
         <a href="https://wa.me/972549922492?text=${encodeURIComponent(seo.bulkCta.waText || 'היי, אני מעוניין בהצעת מחיר ל' + product.name + ' בכמות גדולה')}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#25D366;color:#fff;padding:8px 20px;border-radius:8px;font-weight:600;text-decoration:none;font-size:0.95rem;"><i class="fab fa-whatsapp"></i> בקשו הצעת מחיר</a>
+      </div>` : '';
+
+  const geoContentHtml = seo.geoContent
+    ? `<div class="product-geo-content" style="margin-top:1.5rem;padding:24px;background:linear-gradient(135deg,#f8fafc 0%,#f0f4f8 100%);border:1px solid #e2e8f0;border-radius:14px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+          <div style="width:28px;height:28px;border-radius:8px;background:#1B3A5C;color:#fff;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">E</div>
+          <span style="font-size:0.85rem;font-weight:600;color:#1B3A5C;">מידע מקצועי</span>
+        </div>
+        <div style="font-size:0.9rem;line-height:1.8;color:#374151;">${seo.geoContent}</div>
+      </div>` : '';
+
+  const faqsHtml = (seo.faqs && seo.faqs.length > 0)
+    ? `<div class="product-faq" style="margin-top:1.5rem;">
+        <h3 style="font-size:1.05rem;font-weight:700;color:#1B3A5C;margin-bottom:12px;display:flex;align-items:center;gap:8px;"><i class="fas fa-question-circle" style="color:#2563eb;"></i> שאלות נפוצות</h3>
+        ${seo.faqs.map(f => `
+          <details style="margin-bottom:8px;background:#fff;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;">
+            <summary style="padding:12px 16px;cursor:pointer;font-weight:600;font-size:0.9rem;color:#1f2937;list-style:none;display:flex;align-items:center;justify-content:space-between;">
+              ${f.question}
+              <i class="fas fa-chevron-down" style="font-size:0.7rem;color:#9ca3af;transition:transform 0.2s;"></i>
+            </summary>
+            <div style="padding:0 16px 14px;font-size:0.88rem;color:#4b5563;line-height:1.7;">${f.answer}</div>
+          </details>
+        `).join('')}
       </div>` : '';
 
   // Related products from same category
@@ -137,15 +161,20 @@ function generateProductPage(product, categories, allProducts) {
     </div>
   `).join('');
 
+  const productDescription = product.description || `${product.name} - ${categoryName}`;
+  const schemaDescription = seo.isB2BBulk ? `סיטונאות / Wholesale - ${productDescription}` : productDescription;
   const jsonLd = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Product",
     "name": product.name,
-    "description": product.description || `${product.name} - ${categoryName}`,
+    "description": schemaDescription,
     "image": `${SITE_URL}${product.imageUrl || '/items/' + product.id + '.jpg'}`,
     "url": productUrl,
     "brand": { "@type": "Brand", "name": "וואי מרקט" },
     "category": categoryName,
+    ...(product.partNumber ? { "sku": product.partNumber } : {}),
+    ...(seo.gtin ? { "gtin": seo.gtin } : {}),
+    ...(seo.mpn ? { "mpn": seo.mpn } : {}),
     ...(product.saleNis ? {
       "offers": {
         "@type": "Offer",
@@ -202,6 +231,15 @@ function generateProductPage(product, categories, allProducts) {
       { "@type": "ListItem", "position": 3 + parentChain.length + (primaryCat ? 1 : 0), "name": product.name }
     ]
   })}</script>
+  ${(seo.faqs && seo.faqs.length > 0) ? `<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": seo.faqs.map(f => ({
+      "@type": "Question",
+      "name": f.question,
+      "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+    }))
+  })}</script>` : ''}
 </head>
 <body>
   <div class="top-bar"><div class="container"><div class="top-bar__info"><div class="top-bar__item"><i class="fas fa-phone-alt"></i> <a href="tel:037740400">03-7740400</a></div><div class="top-bar__item"><i class="fas fa-envelope"></i> <a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a></div><div class="top-bar__item"><i class="fas fa-clock"></i> <span>א'-ה' 08:00-17:00</span></div></div><div class="top-bar__social"><a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a><a href="https://www.facebook.com/profile.php?id=100083110428101" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/ymarket.ai" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div></div></div>
@@ -247,7 +285,7 @@ function generateProductPage(product, categories, allProducts) {
       <div class="product-detail__grid">
         <div class="product-gallery">
           <div class="product-gallery__main">
-            <img src="${imgSrc}" alt="${product.name}"
+            <img src="${imgSrc}" alt="${seo.imageAlt || product.name}"
                  onerror="this.src='https://placehold.co/500x500/f0f2f5/5a6577?text=${encodeURIComponent((product.name || '').substring(0,15))}'">
           </div>
         </div>
@@ -277,6 +315,7 @@ function generateProductPage(product, categories, allProducts) {
               : ''
             }
             <a href="https://wa.me/972549922492?text=היי, מתעניין ב${encodeURIComponent(product.name)}" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> שאלו אותנו</a>
+            <a href="tel:*3497" class="btn btn--phone btn--lg" style="display:inline-flex;align-items:center;gap:8px;background:#1B3A5C;color:#fff;padding:12px 24px;border-radius:12px;font-weight:600;text-decoration:none;font-size:0.95rem;margin-top:8px;justify-content:center;width:100%;"><i class="fas fa-phone-alt"></i> חייגו *3497</a>
           </div>
 
           <div class="product-trust-badges">
@@ -299,6 +338,8 @@ function generateProductPage(product, categories, allProducts) {
           ${product.videoUrl ? `<div style="margin-top:1rem;"><a href="${product.videoUrl}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#dc2626;color:#fff;padding:10px 20px;border-radius:8px;font-weight:600;text-decoration:none;font-size:0.95rem;"><i class="fas fa-play-circle"></i> צפו בסרטון מוצר</a></div>` : ''}
           ${specsHtml}
           ${bulkCtaHtml}
+          ${geoContentHtml}
+          ${faqsHtml}
         </div>
       </div>
 
