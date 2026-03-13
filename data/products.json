@@ -1,13 +1,13 @@
 {
   "categories": [
     {
-      "id": 21,
-      "name": "סטוק עד הבית",
-      "slug": "סטוק-עד-הבית",
+      "id": 29,
+      "name": "כוסות צלחות וסכום",
+      "slug": "כוסות-צלחות-וסכום",
       "icon": "fa-box",
-      "parentId": null,
+      "parentId": 5,
       "sortOrder": 0,
-      "itemCount": 9,
+      "itemCount": 38,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -16,13 +16,13 @@
       "imageAlt": null
     },
     {
-      "id": 22,
-      "name": "מטליות",
-      "slug": "מטליות",
+      "id": 30,
+      "name": "קיסמים, קשים ושיפודים",
+      "slug": "קיסמים-קשים-ושיפודים",
       "icon": "fa-box",
-      "parentId": 6,
+      "parentId": 5,
       "sortOrder": 0,
-      "itemCount": 2,
+      "itemCount": 12,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -91,13 +91,13 @@
       "imageAlt": null
     },
     {
-      "id": 30,
-      "name": "קיסמים, קשים ושיפודים",
-      "slug": "קיסמים-קשים-ושיפודים",
+      "id": 21,
+      "name": "סטוק עד הבית",
+      "slug": "סטוק-עד-הבית",
       "icon": "fa-box",
-      "parentId": 5,
+      "parentId": null,
       "sortOrder": 0,
-      "itemCount": 12,
+      "itemCount": 9,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -106,13 +106,28 @@
       "imageAlt": null
     },
     {
-      "id": 29,
-      "name": "כוסות צלחות וסכום",
-      "slug": "כוסות-צלחות-וסכום",
+      "id": 22,
+      "name": "מטליות",
+      "slug": "מטליות",
       "icon": "fa-box",
-      "parentId": 5,
+      "parentId": 6,
       "sortOrder": 0,
-      "itemCount": 38,
+      "itemCount": 2,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 23,
+      "name": "קרצוף ורחצה",
+      "slug": "קרצוף-ורחצה",
+      "icon": "fa-box",
+      "parentId": 6,
+      "sortOrder": 0,
+      "itemCount": 1,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -136,11 +151,11 @@
       "imageAlt": "קרפטים ושקיות נייר חומות בסיטונאות למסעדות ומשלוחים - וואי מרקט"
     },
     {
-      "id": 23,
-      "name": "קרצוף ורחצה",
-      "slug": "קרצוף-ורחצה",
+      "id": 37,
+      "name": "דליים, כפות אשפה ומרססים",
+      "slug": "דליים-כפות-אשפה-ומרססים",
       "icon": "fa-box",
-      "parentId": 6,
+      "parentId": 2,
       "sortOrder": 0,
       "itemCount": 1,
       "metaTitle": null,
@@ -2257,7 +2272,8 @@
       "categorySlug": "כלי-עבודה-וציוד-משקי",
       "categoryName": "כלי עבודה וציוד משקי",
       "categorySlugs": [
-        "כלי-עבודה-וציוד-משקי"
+        "כלי-עבודה-וציוד-משקי",
+        "דליים-כפות-אשפה-ומרססים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -11401,35 +11417,6 @@
       "alternatives": []
     },
     {
-      "id": 640,
-      "name": "מכסה לקראפט - 1300 מ\"ל",
-      "slug": "מכסה-לקראפט-1300-מ-ל",
-      "saleNis": 0,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "אריזות-מזון-ו-Take-Away",
-      "categoryName": "אריזות מזון ו-Take Away",
-      "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away",
-        "קראפטים"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/656.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "barcode": "",
-      "searchTags": "",
-      "technicalDesc": "",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": []
-    },
-    {
       "id": 905,
       "name": "מכסה לקראפט - 1300 מ\"ל",
       "slug": "מכסה-לקראפט-1300-מ-ל-2",
@@ -11446,6 +11433,35 @@
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "/items/922.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "barcode": "",
+      "searchTags": "",
+      "technicalDesc": "",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": []
+    },
+    {
+      "id": 640,
+      "name": "מכסה לקראפט - 1300 מ\"ל",
+      "slug": "מכסה-לקראפט-1300-מ-ל",
+      "saleNis": 0,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
+      "categorySlugs": [
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
+      ],
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/656.jpg",
       "isFeatured": false,
       "productStatus": "active",
       "description": "",
@@ -23958,6 +23974,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-13T22:13:56.933Z",
+  "exportedAt": "2026-03-13T22:30:20.846Z",
   "totalItems": 823
 }
