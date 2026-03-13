@@ -292,7 +292,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 6,
-      "itemCount": 31,
+      "itemCount": 32,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": "professional-cleaning-cloths-microfiber",
@@ -5403,7 +5403,8 @@
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
       "categoryName": "מיגון ובטיחות בעבודה (PPE)",
       "categorySlugs": [
-        "בטיחות-ומיגון-אישי-PPE"
+        "בטיחות-ומיגון-אישי-PPE",
+        "טקסטיל-מטליות-וסחבות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -23901,6 +23902,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-13T21:47:09.167Z",
+  "exportedAt": "2026-03-13T21:47:34.079Z",
   "totalItems": 823
 }
