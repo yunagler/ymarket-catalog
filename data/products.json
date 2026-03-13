@@ -97,7 +97,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 1,
-      "itemCount": 63,
+      "itemCount": 62,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": "safety-ppe-equipment-for-business",
@@ -3986,10 +3986,9 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "היגיינה, בטיחות ומיגון",
+      "categorySlug": "ציוד-משרדי-וכללי",
+      "categoryName": "ציוד משרדי וכללי",
       "categorySlugs": [
-        "בטיחות-ומיגון-אישי-PPE",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -23846,6 +23845,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-13T21:05:38.967Z",
+  "exportedAt": "2026-03-13T21:06:18.093Z",
   "totalItems": 823
 }
