@@ -112,7 +112,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 1,
-      "itemCount": 65,
+      "itemCount": 64,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": "safety-ppe-equipment-for-business",
@@ -352,7 +352,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 14,
-      "itemCount": 46,
+      "itemCount": 47,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -18601,10 +18601,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categorySlug": "עזרה-ראשונה-רפואי",
+      "categoryName": "עזרה ראשונה - רפואי",
       "categorySlugs": [
-        "בטיחות-ומיגון-אישי-PPE"
+        "עזרה-ראשונה-רפואי"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -23845,6 +23845,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-13T20:33:15.598Z",
+  "exportedAt": "2026-03-13T20:33:29.862Z",
   "totalItems": 823
 }
