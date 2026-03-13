@@ -60,6 +60,28 @@ function getCategoryUrl(product, categories) {
   return '/category/' + product.categorySlug + '/';
 }
 
+// Build full parent chain for a category (for breadcrumbs)
+function getParentChain(cat, categories) {
+  const chain = [];
+  let current = cat;
+  while (current && current.parentId) {
+    const parent = categories.find(c => c.id === current.parentId);
+    if (parent) {
+      chain.unshift(parent);
+      current = parent;
+    } else break;
+  }
+  return chain;
+}
+
+// Get full category URL path including all ancestors
+function getFullCategoryUrl(cat, categories) {
+  const chain = getParentChain(cat, categories);
+  const slugs = chain.map(c => c.seoSlug || c.slug);
+  slugs.push(cat.seoSlug || cat.slug);
+  return '/category/' + slugs.join('/') + '/';
+}
+
 function generateProductPage(product, categories, allProducts) {
   const price = product.saleNis ? formatPrice(product.saleNis) : '';
   const perUnit = product.saleNis && product.unitsPerPack > 1
@@ -68,7 +90,11 @@ function generateProductPage(product, categories, allProducts) {
   const hasPromo = product.productStatus === 'on_sale' && product.originalPrice;
   const promoLabel = product.promotionLabel || 'מבצע';
   const categoryName = product.categoryName || '';
-  const categoryUrl = getCategoryUrl(product, categories);
+  // Use primary category (first in categorySlugs or categorySlug) for canonical breadcrumb
+  const primaryCatSlug = product.categorySlug;
+  const primaryCat = categories.find(c => c.slug === primaryCatSlug);
+  const categoryUrl = primaryCat ? getFullCategoryUrl(primaryCat, categories) : getCategoryUrl(product, categories);
+  const parentChain = primaryCat ? getParentChain(primaryCat, categories) : [];
   const imgSrc = product.imageUrl || `/items/${product.id}.jpg`;
   const productUrl = `${SITE_URL}/products/${product.slug}/`;
 
@@ -168,8 +194,12 @@ function generateProductPage(product, categories, allProducts) {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "דף הבית", "item": SITE_URL + "/" },
       { "@type": "ListItem", "position": 2, "name": "מוצרים", "item": SITE_URL + "/catalog" },
-      ...(categoryName ? [{ "@type": "ListItem", "position": 3, "name": categoryName, "item": SITE_URL + categoryUrl }] : []),
-      { "@type": "ListItem", "position": categoryName ? 4 : 3, "name": product.name }
+      ...parentChain.map((ancestor, i) => ({
+        "@type": "ListItem", "position": 3 + i, "name": ancestor.name,
+        "item": SITE_URL + getFullCategoryUrl(ancestor, categories)
+      })),
+      ...(primaryCat ? [{ "@type": "ListItem", "position": 3 + parentChain.length, "name": primaryCat.name, "item": SITE_URL + categoryUrl }] : []),
+      { "@type": "ListItem", "position": 3 + parentChain.length + (primaryCat ? 1 : 0), "name": product.name }
     ]
   })}</script>
 </head>
@@ -201,8 +231,12 @@ function generateProductPage(product, categories, allProducts) {
       <a href="/">דף הבית</a>
       <span class="breadcrumb__separator"><i class="fas fa-chevron-left"></i></span>
       <a href="/catalog">מוצרים</a>
+      ${parentChain.map(ancestor => `
       <span class="breadcrumb__separator"><i class="fas fa-chevron-left"></i></span>
-      <a href="${categoryUrl}">${categoryName}</a>
+      <a href="${getFullCategoryUrl(ancestor, categories)}">${ancestor.name}</a>`).join('')}
+      ${primaryCat ? `
+      <span class="breadcrumb__separator"><i class="fas fa-chevron-left"></i></span>
+      <a href="${categoryUrl}">${primaryCat.name}</a>` : ''}
       <span class="breadcrumb__separator"><i class="fas fa-chevron-left"></i></span>
       <span class="breadcrumb__current">${product.name}</span>
     </nav>

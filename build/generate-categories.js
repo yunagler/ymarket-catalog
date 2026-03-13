@@ -187,20 +187,36 @@ function getCategoryFsPath(category, catMap, categoryDir) {
   return path.join(categoryDir, ...slugs);
 }
 
+// Get total item count including all descendants
+function getTotalItemCount(cat, catMap, products) {
+  const slugs = getDescendantSlugs(cat, catMap);
+  const seen = new Set();
+  let count = 0;
+  for (const p of products) {
+    if (seen.has(p.id)) continue;
+    if (slugs.has(p.categorySlug) || (p.categorySlugs && p.categorySlugs.some(s => slugs.has(s)))) {
+      seen.add(p.id);
+      count++;
+    }
+  }
+  return count;
+}
+
 // Build sidebar HTML with tree structure
-function buildSidebarHtml(roots, currentSlug, catMap) {
+function buildSidebarHtml(roots, currentSlug, catMap, products) {
   function renderNode(cat, depth) {
     const isActive = cat.slug === currentSlug;
     const hasChildren = cat.children && cat.children.length > 0;
     const isAncestor = hasChildren && isDescendant(currentSlug, cat, catMap);
     const isOpen = isActive || isAncestor;
     const catUrl = getCategoryUrlPath(cat, catMap);
+    const totalCount = getTotalItemCount(cat, catMap, products);
 
     let html = `<a href="${catUrl}" class="category-list__item${isActive ? ' active' : ''}" style="${depth > 0 ? `padding-right:${16 + depth * 16}px;font-size:0.9em;` : ''}">`;
     if (hasChildren) {
       html += `<i class="fas fa-chevron-down" style="font-size:0.6em;margin-left:4px;transition:transform 0.2s;${isOpen ? '' : 'transform:rotate(90deg);'}"></i>`;
     }
-    html += `<span>${cat.name}</span><span class="category-list__count">${cat.itemCount}</span></a>`;
+    html += `<span>${cat.name}</span><span class="category-list__count">${totalCount}</span></a>`;
 
     if (hasChildren) {
       html += `<div class="category-children" style="${isOpen ? '' : 'display:none;'}">`;
@@ -224,11 +240,31 @@ function buildSidebarHtml(roots, currentSlug, catMap) {
   return roots.map(cat => renderNode(cat, 0)).join('\n');
 }
 
+// Collect all descendant slugs for a category (for product inheritance)
+function getDescendantSlugs(category, catMap) {
+  const slugs = new Set([category.slug]);
+  const children = catMap.get(category.id)?.children || [];
+  for (const child of children) {
+    for (const s of getDescendantSlugs(child, catMap)) {
+      slugs.add(s);
+    }
+  }
+  return slugs;
+}
+
 function generateCategoryPage(category, products, allCategories, catMap, treeRoots) {
-  const categoryProducts = products.filter(p =>
-    p.categorySlug === category.slug ||
-    (p.categorySlugs && p.categorySlugs.includes(category.slug))
-  );
+  // Include products from ALL descendant categories (inheritance)
+  const descendantSlugs = getDescendantSlugs(category, catMap);
+  const seen = new Set();
+  const categoryProducts = products.filter(p => {
+    const match = descendantSlugs.has(p.categorySlug) ||
+      (p.categorySlugs && p.categorySlugs.some(s => descendantSlugs.has(s)));
+    if (match && !seen.has(p.id)) {
+      seen.add(p.id);
+      return true;
+    }
+    return false;
+  });
   const categoryPath = getCategoryUrlPath(category, catMap);
   const categoryUrl = `${SITE_URL}${categoryPath}`;
 
@@ -304,8 +340,8 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
     </div>`;
   }).join('\n');
 
-  // Sidebar with tree structure
-  const sidebarHtml = buildSidebarHtml(treeRoots, category.slug, catMap);
+  // Sidebar with tree structure (pass products for accurate counts)
+  const sidebarHtml = buildSidebarHtml(treeRoots, category.slug, catMap, products);
 
   // Show subcategories links if this category has children
   const children = catMap.get(category.id)?.children || [];

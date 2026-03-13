@@ -1,6 +1,6 @@
 /* ===========================================
    Y Market - Catalog Page
-   Product filtering, search, cart
+   Hierarchical category filtering, search, cart
    =========================================== */
 
 (function() {
@@ -29,59 +29,15 @@
       const data = await res.json();
       allProducts = data.items || [];
       categories = data.categories || [];
-      buildCategoryList();
     } catch (e) {
-      console.warn('Could not load products.json, using sample data');
-      loadSampleData();
-      buildCategoryList();
+      console.warn('Could not load products.json');
     }
   }
 
-  // ---- Sample data for development ----
-  function loadSampleData() {
-    categories = [
-      { id: 1, name: 'בטיחות ומיגון אישי', slug: 'בטיחות-ומיגון-אישי-PPE', icon: 'fa-hard-hat', itemCount: 12 },
-      { id: 2, name: 'כלי עבודה וציוד משקי', slug: 'כלי-עבודה-וציוד-משקי', icon: 'fa-tools', itemCount: 15 },
-      { id: 3, name: 'שקיות ופתרונות אשפה', slug: 'שקיות-ופתרונות-אשפה', icon: 'fa-trash-alt', itemCount: 8 },
-      { id: 4, name: 'חומרי ניקוי וכימיקלים', slug: 'חומרי-ניקוי-וכימיקלים', icon: 'fa-spray-can', itemCount: 20 },
-      { id: 5, name: 'אריזות מזון ו-Take Away', slug: 'אריזות-מזון-ו-Take-Away', icon: 'fa-box-open', itemCount: 18 },
-      { id: 6, name: 'טקסטיל, מטליות וסחבות', slug: 'טקסטיל-מטליות-וסחבות', icon: 'fa-tshirt', itemCount: 10 },
-      { id: 7, name: 'חד פעמי ואירוח', slug: 'חד-פעמי-ואירוח', icon: 'fa-utensils', itemCount: 22 },
-      { id: 9, name: 'מוצרי נייר וניגוב', slug: 'מוצרי-נייר-וניגוב', icon: 'fa-toilet-paper', itemCount: 25 },
-      { id: 10, name: 'קפה, שתייה וכיבוד', slug: 'קפה-שתייה-וכיבוד', icon: 'fa-coffee', itemCount: 14 },
-      { id: 11, name: 'ציוד משרדי וכללי', slug: 'ציוד-משרדי-וכללי', icon: 'fa-pen', itemCount: 8 },
-      { id: 13, name: 'עזרה ראשונה - רפואי', slug: 'עזרה-ראשונה-רפואי', icon: 'fa-first-aid', itemCount: 6 },
-      { id: 17, name: 'טואלטיקה וטיפוח', slug: 'טואלטיקה-וטיפוח-אישי', icon: 'fa-pump-soap', itemCount: 7 }
-    ];
-
-    // Sample products
-    const samples = [
-      { name: 'נייר טואלט הרקולס 48 גלילים', slug: 'toilet-paper-hercules-48', saleNis: 89.90, categorySlug: 'מוצרי-נייר-וניגוב', unit: 'שק', unitsPerPack: 48 },
-      { name: 'מגבות נייר אוורסט 6 גלילים', slug: 'paper-towels-everest-6', saleNis: 45.00, categorySlug: 'מוצרי-נייר-וניגוב', unit: 'חבילה', unitsPerPack: 6 },
-      { name: 'סבון ידיים נוזלי 5 ליטר', slug: 'hand-soap-5l', saleNis: 32.00, categorySlug: 'חומרי-ניקוי-וכימיקלים', unit: 'מיכל', unitsPerPack: 1 },
-      { name: 'נוזל כלים מרוכז 4 ליטר', slug: 'dish-soap-4l', saleNis: 28.00, categorySlug: 'חומרי-ניקוי-וכימיקלים', unit: 'מיכל', unitsPerPack: 1 },
-      { name: 'צלחות חד פעמיות 100 יח', slug: 'disposable-plates-100', saleNis: 19.90, categorySlug: 'חד-פעמי-ואירוח', unit: 'חבילה', unitsPerPack: 100 },
-      { name: 'כוסות פלסטיק 200 מ"ל 100 יח', slug: 'plastic-cups-200ml', saleNis: 15.00, categorySlug: 'חד-פעמי-ואירוח', unit: 'שרוול', unitsPerPack: 100 },
-      { name: 'מטליות מיקרופייבר 10 יח', slug: 'microfiber-cloths-10', saleNis: 35.00, categorySlug: 'טקסטיל-מטליות-וסחבות', unit: 'חבילה', unitsPerPack: 10 },
-      { name: 'שקיות אשפה 75x90 שחור', slug: 'trash-bags-75x90', saleNis: 22.00, categorySlug: 'שקיות-ופתרונות-אשפה', unit: 'גליל', unitsPerPack: 25 },
-      { name: 'כפפות ניטריל M 100 יח', slug: 'nitrile-gloves-m-100', saleNis: 29.90, categorySlug: 'בטיחות-ומיגון-אישי-PPE', unit: 'קופסה', unitsPerPack: 100 },
-      { name: 'קפה שחור טורקי 200 גר', slug: 'turkish-coffee-200g', saleNis: 18.00, categorySlug: 'קפה-שתייה-וכיבוד', unit: 'חבילה', unitsPerPack: 1 },
-      { name: 'קופסאות מזון Take Away 50 יח', slug: 'takeaway-boxes-50', saleNis: 42.00, categorySlug: 'אריזות-מזון-ו-Take-Away', unit: 'חבילה', unitsPerPack: 50 },
-      { name: 'נייר תעשייתי 6 גלילים', slug: 'industrial-paper-6', saleNis: 65.00, categorySlug: 'מוצרי-נייר-וניגוב', unit: 'שק', unitsPerPack: 6 },
-    ];
-
-    allProducts = samples.map((p, i) => ({
-      id: i + 1,
-      ...p,
-      categoryName: categories.find(c => c.slug === p.categorySlug)?.name || '',
-      imageUrl: `images/products/${i + 1}.jpg`,
-      isFeatured: i < 4,
-      productStatus: i === 0 ? 'recommended' : 'active'
-    }));
-  }
-
-  // ---- Build Category Tree from flat list ----
+  // ---- Category Tree ----
   var categoryMap = {};
+  var treeRoots = [];
+
   function buildCategoryTree(flatCats) {
     categoryMap = {};
     flatCats.forEach(function(c) { categoryMap[c.id] = Object.assign({}, c, { children: [] }); });
@@ -95,193 +51,300 @@
       }
     });
     var sortFn = function(a, b) { return (a.sortOrder || 0) - (b.sortOrder || 0); };
-    roots.sort(sortFn);
-    roots.forEach(function(r) { r.children.sort(sortFn); });
+    function sortDeep(arr) { arr.sort(sortFn); arr.forEach(function(c) { if (c.children.length) sortDeep(c.children); }); }
+    sortDeep(roots);
     return roots;
   }
 
-  // Get nested URL path for category (uses seoSlug if available)
-  function getCatUrl(cat) {
-    var slugs = [];
-    var current = cat;
-    while (current) {
-      slugs.unshift(current.seoSlug || current.slug);
-      current = current.parentId ? categoryMap[current.parentId] : null;
+  function getDescendantSlugs(cat) {
+    var slugs = [cat.slug];
+    if (cat.children) {
+      cat.children.forEach(function(child) {
+        slugs = slugs.concat(getDescendantSlugs(child));
+      });
     }
-    return '/category/' + slugs.join('/') + '/';
+    return slugs;
+  }
+
+  function getHierarchicalCount(cat) {
+    var slugs = getDescendantSlugs(cat);
+    var seen = {};
+    var count = 0;
+    allProducts.forEach(function(p) {
+      if (seen[p.id]) return;
+      var match = slugs.indexOf(p.categorySlug) !== -1 ||
+        (p.categorySlugs && p.categorySlugs.some(function(s) { return slugs.indexOf(s) !== -1; }));
+      if (match) { seen[p.id] = true; count++; }
+    });
+    return count;
+  }
+
+  function findCatBySlug(slug) {
+    for (var id in categoryMap) {
+      if (categoryMap[id].slug === slug) return categoryMap[id];
+    }
+    return null;
+  }
+
+  function getParentChain(cat) {
+    var chain = [];
+    var current = cat;
+    while (current && current.parentId && categoryMap[current.parentId]) {
+      current = categoryMap[current.parentId];
+      chain.unshift(current);
+    }
+    return chain;
+  }
+
+  function isDescendantOf(slug, parentCat) {
+    if (parentCat.slug === slug) return true;
+    for (var i = 0; i < parentCat.children.length; i++) {
+      if (isDescendantOf(slug, parentCat.children[i])) return true;
+    }
+    return false;
   }
 
   // ---- Build Category Sidebar ----
   function buildCategoryList() {
-    const list = document.getElementById('categoryList');
+    var list = document.getElementById('categoryList');
     if (!list) return;
 
-    const totalBtn = list.querySelector('[data-category="all"]');
+    treeRoots = buildCategoryTree(categories);
+
+    // Clear all except "all" button
+    var allItems = list.querySelectorAll('.category-list__item:not([data-category="all"]), .category-children');
+    allItems.forEach(function(el) { el.remove(); });
+
+    var totalBtn = list.querySelector('[data-category="all"]');
     if (totalBtn) {
-      const count = totalBtn.querySelector('.category-list__count');
+      var count = totalBtn.querySelector('.category-list__count');
       if (count) count.textContent = allProducts.length;
     }
 
-    const tree = buildCategoryTree(categories);
+    var activeCat = currentCategory !== 'all' ? findCatBySlug(currentCategory) : null;
 
-    function renderNode(cat, depth) {
-      const itemCount = allProducts.filter(p => p.categorySlug === cat.slug || (p.categorySlugs && p.categorySlugs.includes(cat.slug))).length;
-      const hasChildren = cat.children && cat.children.length > 0;
+    function renderNode(cat, depth, container) {
+      var itemCount = getHierarchicalCount(cat);
+      var hasChildren = cat.children && cat.children.length > 0;
+      var isActive = currentCategory === cat.slug;
+      var isAncestor = activeCat && hasChildren && isDescendantOf(currentCategory, cat);
+      var isOpen = isActive || isAncestor;
 
-      const link = document.createElement('a');
-      link.className = 'category-list__item';
-      link.href = getCatUrl(cat);
+      var link = document.createElement('a');
+      link.className = 'category-list__item' + (isActive ? ' active' : '');
+      link.href = '#';
       link.dataset.category = cat.slug;
       if (depth > 0) {
         link.style.paddingRight = (16 + depth * 16) + 'px';
         link.style.fontSize = '0.9em';
       }
 
-      let inner = '';
+      var inner = '';
       if (hasChildren) {
-        inner += '<i class="fas fa-chevron-down" style="font-size:0.6em;margin-left:4px;transition:transform 0.2s;transform:rotate(90deg);"></i>';
+        inner += '<i class="fas fa-chevron-down" style="font-size:0.6em;margin-left:4px;transition:transform 0.2s;' + (isOpen ? '' : 'transform:rotate(90deg);') + '"></i>';
       }
-      inner += `<span>${cat.name}</span><span class="category-list__count">${itemCount}</span>`;
-      link.innerHTML = inner;
-      list.appendChild(link);
-
-      if (hasChildren) {
-        const childContainer = document.createElement('div');
-        childContainer.className = 'category-children';
-        childContainer.style.display = 'none';
-        childContainer.style.borderRight = '2px solid #e5e7eb';
-        childContainer.style.marginRight = '12px';
-
-        // Toggle on parent click
-        link.addEventListener('click', function(e) {
-          if (childContainer.style.display === 'none') {
-            childContainer.style.display = '';
-            var icon = link.querySelector('.fa-chevron-down');
-            if (icon) icon.style.transform = '';
-          } else {
-            e.preventDefault();
-            childContainer.style.display = 'none';
-            var icon2 = link.querySelector('.fa-chevron-down');
-            if (icon2) icon2.style.transform = 'rotate(90deg)';
-          }
-        });
-
-        list.appendChild(childContainer);
-        const origParent = list;
-        // Temporarily redirect appends to childContainer
-        cat.children.forEach(function(child) {
-          renderNodeInto(child, depth + 1, childContainer);
-        });
-      }
-    }
-
-    function renderNodeInto(cat, depth, container) {
-      const itemCount = allProducts.filter(p => p.categorySlug === cat.slug || (p.categorySlugs && p.categorySlugs.includes(cat.slug))).length;
-      const hasChildren = cat.children && cat.children.length > 0;
-
-      const link = document.createElement('a');
-      link.className = 'category-list__item';
-      link.href = getCatUrl(cat);
-      link.dataset.category = cat.slug;
-      link.style.paddingRight = (16 + depth * 16) + 'px';
-      link.style.fontSize = '0.9em';
-
-      let inner = '';
-      if (hasChildren) {
-        inner += '<i class="fas fa-chevron-down" style="font-size:0.6em;margin-left:4px;transition:transform 0.2s;transform:rotate(90deg);"></i>';
-      }
-      inner += `<span>${cat.name}</span><span class="category-list__count">${itemCount}</span>`;
+      inner += '<span>' + escapeHtml(cat.name) + '</span><span class="category-list__count">' + itemCount + '</span>';
       link.innerHTML = inner;
       container.appendChild(link);
 
       if (hasChildren) {
-        const childContainer = document.createElement('div');
+        var childContainer = document.createElement('div');
         childContainer.className = 'category-children';
-        childContainer.style.display = 'none';
+        childContainer.style.display = isOpen ? '' : 'none';
         childContainer.style.borderRight = '2px solid #e5e7eb';
         childContainer.style.marginRight = '12px';
-
-        link.addEventListener('click', function(e) {
-          if (childContainer.style.display === 'none') {
-            childContainer.style.display = '';
-            var icon = link.querySelector('.fa-chevron-down');
-            if (icon) icon.style.transform = '';
-          } else {
-            e.preventDefault();
-            childContainer.style.display = 'none';
-            var icon2 = link.querySelector('.fa-chevron-down');
-            if (icon2) icon2.style.transform = 'rotate(90deg)';
-          }
-        });
-
         container.appendChild(childContainer);
+
         cat.children.forEach(function(child) {
-          renderNodeInto(child, depth + 1, childContainer);
+          renderNode(child, depth + 1, childContainer);
         });
       }
     }
 
-    tree.forEach(function(cat) { renderNode(cat, 0); });
+    treeRoots.forEach(function(cat) { renderNode(cat, 0, list); });
 
-    document.getElementById('totalCount').textContent = allProducts.length;
+    var totalCountEl = document.getElementById('totalCount');
+    if (totalCountEl) totalCountEl.textContent = allProducts.length;
+
+    // Update "all" button active state
+    if (totalBtn) {
+      totalBtn.classList.toggle('active', currentCategory === 'all');
+    }
+  }
+
+  // ---- Breadcrumb ----
+  function updateBreadcrumb() {
+    var nav = document.querySelector('.breadcrumb');
+    if (!nav) return;
+
+    var html = '<a href="/">דף הבית</a>' +
+      '<span class="breadcrumb__separator"><i class="fas fa-chevron-left"></i></span>';
+
+    if (currentCategory === 'all') {
+      html += '<span class="breadcrumb__current">קטלוג מוצרים</span>';
+    } else {
+      html += '<a href="/catalog" data-breadcrumb-all>קטלוג מוצרים</a>';
+      var cat = findCatBySlug(currentCategory);
+      if (cat) {
+        var chain = getParentChain(cat);
+        chain.forEach(function(ancestor) {
+          html += '<span class="breadcrumb__separator"><i class="fas fa-chevron-left"></i></span>' +
+            '<a href="#" data-breadcrumb-cat="' + ancestor.slug + '">' + escapeHtml(ancestor.name) + '</a>';
+        });
+        html += '<span class="breadcrumb__separator"><i class="fas fa-chevron-left"></i></span>' +
+          '<span class="breadcrumb__current">' + escapeHtml(cat.name) + '</span>';
+      }
+    }
+
+    nav.innerHTML = html;
+
+    // Breadcrumb click handlers
+    nav.querySelectorAll('[data-breadcrumb-cat]').forEach(function(el) {
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        selectCategory(el.getAttribute('data-breadcrumb-cat'));
+      });
+    });
+    var allLink = nav.querySelector('[data-breadcrumb-all]');
+    if (allLink) {
+      allLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        selectCategory('all');
+      });
+    }
+  }
+
+  // ---- Subcategory Cards ----
+  function renderSubcategoryCards() {
+    // Remove existing
+    var existing = document.getElementById('subcategoriesGrid');
+    if (existing) existing.remove();
+
+    if (currentCategory === 'all') return;
+    var cat = findCatBySlug(currentCategory);
+    if (!cat || !cat.children || cat.children.length === 0) return;
+
+    var grid = document.createElement('div');
+    grid.id = 'subcategoriesGrid';
+    grid.className = 'subcategories-grid';
+    grid.style.cssText = 'display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-bottom:24px;';
+
+    cat.children.forEach(function(child) {
+      var count = getHierarchicalCount(child);
+      var card = document.createElement('a');
+      card.href = '#';
+      card.dataset.subcategory = child.slug;
+      card.className = 'subcategory-card';
+      card.style.cssText = 'display:flex;align-items:center;gap:10px;padding:12px 16px;background:#f8f9fa;border:1px solid #e5e7eb;border-radius:10px;text-decoration:none;color:#1f2937;transition:all 0.2s;font-size:0.95rem;cursor:pointer;';
+      card.innerHTML = '<i class="fas ' + (child.icon || 'fa-folder') + '" style="color:#1B3A5C;font-size:1.1rem;"></i>' +
+        '<span>' + escapeHtml(child.name) + '</span>' +
+        '<span style="margin-right:auto;color:#9ca3af;font-size:0.8rem;">' + count + '</span>';
+      card.addEventListener('click', function(e) {
+        e.preventDefault();
+        selectCategory(child.slug);
+      });
+      card.addEventListener('mouseenter', function() { card.style.background = '#eef2ff'; card.style.borderColor = '#c7d2fe'; });
+      card.addEventListener('mouseleave', function() { card.style.background = '#f8f9fa'; card.style.borderColor = '#e5e7eb'; });
+      grid.appendChild(card);
+    });
+
+    var productsGrid = document.getElementById('productsGrid');
+    if (productsGrid) productsGrid.parentNode.insertBefore(grid, productsGrid);
+  }
+
+  // ---- Select Category ----
+  function selectCategory(slug) {
+    currentCategory = slug;
+    var url = new URL(window.location);
+    if (slug === 'all') {
+      url.searchParams.delete('cat');
+    } else {
+      url.searchParams.set('cat', slug);
+    }
+    history.pushState(null, '', url);
+    updateTitle();
+    updateBreadcrumb();
+    buildCategoryList();
+    renderSubcategoryCards();
+    render();
+
+    // Scroll to top of catalog
+    var header = document.querySelector('.catalog-header');
+    if (header) header.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   // ---- Event Listeners ----
   function setupEventListeners() {
-    // Category click
-    document.getElementById('categoryList')?.addEventListener('click', (e) => {
-      const btn = e.target.closest('.category-list__item');
+    // Category click - inline filtering
+    document.getElementById('categoryList')?.addEventListener('click', function(e) {
+      var btn = e.target.closest('.category-list__item');
       if (!btn) return;
       e.preventDefault();
-      const slug = btn.dataset.category;
-      if (slug && slug !== 'all') {
-        var catObj = categories.find(function(c) { return c.slug === slug; });
-        window.location.href = catObj ? getCatUrl(categoryMap[catObj.id] || catObj) : '/category/' + slug + '/';
-      } else {
-        document.querySelectorAll('.category-list__item').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentCategory = 'all';
-        const url = new URL(window.location);
-        url.searchParams.delete('cat');
-        history.pushState(null, '', url);
-        updateTitle();
-        render();
+      var slug = btn.dataset.category;
+
+      if (slug === 'all') {
+        selectCategory('all');
+        return;
       }
+
+      if (!slug) return;
+
+      // If this category has children, toggle expand/collapse
+      var childContainer = btn.nextElementSibling;
+      if (childContainer && childContainer.classList.contains('category-children')) {
+        var icon = btn.querySelector('.fa-chevron-down');
+        // If already active on this category, just toggle children visibility
+        if (currentCategory === slug) {
+          if (childContainer.style.display === 'none') {
+            childContainer.style.display = '';
+            if (icon) icon.style.transform = '';
+          } else {
+            childContainer.style.display = 'none';
+            if (icon) icon.style.transform = 'rotate(90deg)';
+          }
+          return;
+        }
+        // Otherwise expand and select
+        childContainer.style.display = '';
+        if (icon) icon.style.transform = '';
+      }
+
+      selectCategory(slug);
     });
 
     // Search input
-    const searchInput = document.getElementById('searchInput');
-    let searchTimeout;
-    searchInput?.addEventListener('input', (e) => {
+    var searchInput = document.getElementById('searchInput');
+    var searchTimeout;
+    searchInput?.addEventListener('input', function(e) {
       clearTimeout(searchTimeout);
-      searchTimeout = setTimeout(() => {
+      searchTimeout = setTimeout(function() {
         currentSearch = e.target.value.trim();
         render();
       }, 300);
     });
 
     // Sort
-    document.getElementById('sortSelect')?.addEventListener('change', (e) => {
+    document.getElementById('sortSelect')?.addEventListener('change', function(e) {
       currentSort = e.target.value;
       render();
     });
 
     // Price filter
-    document.getElementById('priceFilterBtn')?.addEventListener('click', () => {
+    document.getElementById('priceFilterBtn')?.addEventListener('click', function() {
       priceMin = Math.max(0, parseFloat(document.getElementById('priceMin').value) || 0);
       priceMax = Math.max(0, parseFloat(document.getElementById('priceMax').value) || Infinity);
       render();
     });
 
     // Mobile filter toggle
-    const sidebar = document.getElementById('catalogSidebar');
-    const overlay = document.getElementById('catalogOverlay');
-    const openSidebar = () => {
+    var sidebar = document.getElementById('catalogSidebar');
+    var overlay = document.getElementById('catalogOverlay');
+    var openSidebar = function() {
       sidebar?.classList.add('open');
       overlay?.classList.add('active');
       document.body.style.overflow = 'hidden';
     };
-    const closeSidebar = () => {
+    var closeSidebar = function() {
       sidebar?.classList.remove('open');
       overlay?.classList.remove('active');
       document.body.style.overflow = '';
@@ -289,70 +352,88 @@
     document.getElementById('mobileFilterBtn')?.addEventListener('click', openSidebar);
     document.getElementById('closeSidebar')?.addEventListener('click', closeSidebar);
     overlay?.addEventListener('click', closeSidebar);
+
+    // Browser back/forward
+    window.addEventListener('popstate', function() {
+      applyURLParams();
+      render();
+    });
   }
 
   // ---- URL Params ----
   function applyURLParams() {
-    const params = new URLSearchParams(window.location.search);
-    const cat = params.get('cat');
-    const search = params.get('search');
+    var params = new URLSearchParams(window.location.search);
+    var cat = params.get('cat');
+    var search = params.get('search');
 
-    // Redirect old ?cat= URLs to /category/ clean URLs
     if (cat) {
-      var catObj = categories.find(function(c) { return c.slug === cat; });
-      var url = catObj && categoryMap[catObj.id] ? getCatUrl(categoryMap[catObj.id]) : '/category/' + encodeURIComponent(cat) + '/';
-      window.location.replace(url);
-      return;
+      currentCategory = cat;
+    } else {
+      currentCategory = 'all';
     }
 
     if (search) {
-      // Sanitize search input from URL
       currentSearch = search.replace(/[<>"']/g, '');
-      const searchInput = document.getElementById('searchInput');
+      var searchInput = document.getElementById('searchInput');
       if (searchInput) searchInput.value = currentSearch;
     }
+
+    // Rebuild UI for selected category
+    buildCategoryList();
+    updateTitle();
+    updateBreadcrumb();
+    renderSubcategoryCards();
   }
 
   // ---- Update Title ----
   function updateTitle() {
-    const titleEl = document.getElementById('catalogTitle');
+    var titleEl = document.getElementById('catalogTitle');
     if (!titleEl) return;
     if (currentCategory === 'all') {
       titleEl.textContent = 'כל המוצרים';
     } else {
-      const cat = categories.find(c => c.slug === currentCategory);
+      var cat = findCatBySlug(currentCategory);
       titleEl.textContent = cat ? cat.name : 'מוצרים';
     }
   }
 
   // ---- Filter & Sort ----
   function getFilteredProducts() {
-    let filtered = allProducts;
+    var filtered = allProducts;
 
-    // Category filter
+    // Category filter (includes all descendant categories)
     if (currentCategory !== 'all') {
-      filtered = filtered.filter(p => p.categorySlug === currentCategory || (p.categorySlugs && p.categorySlugs.includes(currentCategory)));
+      var catObj = findCatBySlug(currentCategory);
+      var slugs = catObj ? getDescendantSlugs(catObj) : [currentCategory];
+      var seen = {};
+      filtered = filtered.filter(function(p) {
+        if (seen[p.id]) return false;
+        var match = slugs.indexOf(p.categorySlug) !== -1 ||
+          (p.categorySlugs && p.categorySlugs.some(function(s) { return slugs.indexOf(s) !== -1; }));
+        if (match) { seen[p.id] = true; return true; }
+        return false;
+      });
     }
 
     // Search
     if (currentSearch) {
-      const q = currentSearch.toLowerCase();
-      filtered = filtered.filter(p =>
-        p.name.toLowerCase().includes(q) ||
-        (p.description || '').toLowerCase().includes(q) ||
-        (p.searchTags || '').toLowerCase().includes(q) ||
-        (p.partNumber || '').toLowerCase().includes(q)
-      );
+      var q = currentSearch.toLowerCase();
+      filtered = filtered.filter(function(p) {
+        return p.name.toLowerCase().includes(q) ||
+          (p.description || '').toLowerCase().includes(q) ||
+          (p.searchTags || '').toLowerCase().includes(q) ||
+          (p.partNumber || '').toLowerCase().includes(q);
+      });
     }
 
     // Price range
-    filtered = filtered.filter(p => {
-      const price = p.saleNis || 0;
+    filtered = filtered.filter(function(p) {
+      var price = p.saleNis || 0;
       return price >= priceMin && price <= priceMax;
     });
 
     // Sort
-    filtered.sort((a, b) => {
+    filtered.sort(function(a, b) {
       switch (currentSort) {
         case 'name-asc': return (a.name || '').localeCompare(b.name || '', 'he');
         case 'name-desc': return (b.name || '').localeCompare(a.name || '', 'he');
@@ -367,12 +448,12 @@
 
   // ---- Render Products ----
   function render() {
-    const grid = document.getElementById('productsGrid');
-    const noResults = document.getElementById('noResults');
-    const countEl = document.getElementById('resultCount');
+    var grid = document.getElementById('productsGrid');
+    var noResults = document.getElementById('noResults');
+    var countEl = document.getElementById('resultCount');
     if (!grid) return;
 
-    const products = getFilteredProducts();
+    var products = getFilteredProducts();
     countEl.textContent = products.length;
 
     if (products.length === 0) {
@@ -382,15 +463,15 @@
     }
 
     noResults.style.display = 'none';
-    grid.innerHTML = products.map(p => renderProductCard(p)).join('');
+    grid.innerHTML = products.map(function(p) { return renderProductCard(p); }).join('');
 
     // Attach quantity +/- events
-    grid.querySelectorAll('.product-card__qty-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const id = btn.dataset.id;
-        const input = document.getElementById('qty-' + id);
+    grid.querySelectorAll('.product-card__qty-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var id = btn.dataset.id;
+        var input = document.getElementById('qty-' + id);
         if (!input) return;
-        let val = parseInt(input.value) || 1;
+        var val = parseInt(input.value) || 1;
         if (btn.dataset.action === 'increase') val++;
         else if (val > 1) val--;
         input.value = val;
@@ -398,16 +479,16 @@
     });
 
     // Attach add-to-cart events
-    grid.querySelectorAll('.product-card__add-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
+    grid.querySelectorAll('.product-card__add-btn').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
         e.preventDefault();
-        const id = parseInt(btn.dataset.id);
-        const input = document.getElementById('qty-' + id);
-        const qty = input ? Math.max(1, parseInt(input.value) || 1) : 1;
+        var id = parseInt(btn.dataset.id);
+        var input = document.getElementById('qty-' + id);
+        var qty = input ? Math.max(1, parseInt(input.value) || 1) : 1;
         addToCart(id, qty);
         btn.classList.add('added');
         btn.innerHTML = '<i class="fas fa-check"></i> נוסף';
-        setTimeout(() => {
+        setTimeout(function() {
           btn.classList.remove('added');
           btn.innerHTML = '<i class="fas fa-cart-plus"></i> הוסף לעגלה';
         }, 1500);
@@ -418,19 +499,18 @@
 
   // ---- Product Card HTML ----
   function renderProductCard(p) {
-    const price = p.saleNis ? formatPrice(p.saleNis) : '';
-    const perUnit = p.saleNis && p.unitsPerPack > 1
-      ? `${formatPrice(p.saleNis / p.unitsPerPack)} ליחידה`
+    var price = p.saleNis ? formatPrice(p.saleNis) : '';
+    var perUnit = p.saleNis && p.unitsPerPack > 1
+      ? formatPrice(p.saleNis / p.unitsPerPack) + ' ליחידה'
       : '';
 
-    // Promotion support
-    const hasPromo = p.productStatus === 'on_sale' && p.originalPrice;
-    const promoLabel = p.promotionLabel || 'מבצע';
-    const discountText = p.discountPercent ? `${Math.round(p.discountPercent)}%-` : '';
+    var hasPromo = p.productStatus === 'on_sale' && p.originalPrice;
+    var promoLabel = p.promotionLabel || 'מבצע';
+    var discountText = p.discountPercent ? Math.round(p.discountPercent) + '%-' : '';
 
-    let badgeHtml = '';
+    var badgeHtml = '';
     if (hasPromo) {
-      badgeHtml = `<span class="product-card__badge product-card__badge--sale">${discountText || promoLabel}</span>`;
+      badgeHtml = '<span class="product-card__badge product-card__badge--sale">' + (discountText || promoLabel) + '</span>';
     } else if (p.productStatus === 'on_sale') {
       badgeHtml = '<span class="product-card__badge product-card__badge--sale">מבצע</span>';
     } else if (p.productStatus === 'recommended') {
@@ -441,69 +521,63 @@
       badgeHtml = '<span class="product-card__badge product-card__badge--sale">חיסול</span>';
     }
 
-    // Price display with strikethrough for promotions
-    let priceHtml = '';
+    var priceHtml = '';
     if (price) {
       if (hasPromo) {
-        priceHtml = `
-          <div class="product-card__price product-card__price--sale">${price}</div>
-          <div class="product-card__price-original">${formatPrice(p.originalPrice)}</div>
-        `;
+        priceHtml = '<div class="product-card__price product-card__price--sale">' + price + '</div>' +
+          '<div class="product-card__price-original">' + formatPrice(p.originalPrice) + '</div>';
       } else {
-        priceHtml = `<div class="product-card__price">${price}</div>`;
+        priceHtml = '<div class="product-card__price">' + price + '</div>';
       }
     } else {
       priceHtml = '<div class="product-card__price" style="color:var(--color-text-light)">צרו קשר למחיר</div>';
     }
 
-    const productUrl = p.slug ? '/products/' + encodeURIComponent(p.slug) + '/' : '#';
-    const imgSrc = p.imageUrl || 'images/products/placeholder.jpg';
-    const safeName = escapeHtml(p.name);
-    const safeCategoryName = escapeHtml(p.categoryName || '');
-    const fallbackImg = 'https://placehold.co/300x300/f0f2f5/5a6577?text=' + encodeURIComponent((p.name || 'מוצר').substring(0, 15));
+    var productUrl = p.slug ? '/products/' + encodeURIComponent(p.slug) + '/' : '#';
+    var imgSrc = p.imageUrl || 'images/products/placeholder.jpg';
+    var safeName = escapeHtml(p.name);
+    var safeCategoryName = escapeHtml(p.categoryName || '');
+    var fallbackImg = 'https://placehold.co/300x300/f0f2f5/5a6577?text=' + encodeURIComponent((p.name || 'מוצר').substring(0, 15));
 
-    return `
-      <div class="product-card" data-fallback="${fallbackImg}">
-        <div class="product-card__image">
-          <a href="${productUrl}" aria-label="${safeName}">
-            <img src="${imgSrc}" alt="${safeName}" loading="lazy"
-                 onerror="this.onerror=null;this.src=this.closest('.product-card').dataset.fallback;">
-          </a>
-          ${badgeHtml}
-        </div>
-        <div class="product-card__body">
-          <div class="product-card__category">${safeCategoryName}</div>
-          <h3 class="product-card__name"><a href="${productUrl}">${safeName}</a></h3>
-          ${p.unit ? `<div class="product-card__pack">${p.unitsPerPack || ''} ${p.unit || ''}</div>` : ''}
-          <div class="product-card__pricing">
-            ${priceHtml}
-            ${perUnit ? `<div class="product-card__price-unit">${perUnit}</div>` : ''}
-          </div>
-          <div class="product-card__actions">
-            ${price ? `
-              <div class="product-card__qty-row">
-                <div class="product-card__qty-selector">
-                  <button class="product-card__qty-btn" data-action="decrease" data-id="${p.id}">-</button>
-                  <input type="number" class="product-card__qty-input" id="qty-${p.id}" value="1" min="1" max="999">
-                  <button class="product-card__qty-btn" data-action="increase" data-id="${p.id}">+</button>
-                </div>
-                <button class="product-card__add-btn" data-id="${p.id}"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
-              </div>
-            ` : `<a href="https://wa.me/972549922492?text=היי, מתעניין ב${encodeURIComponent(p.name)}" class="product-card__add-btn" target="_blank"><i class="fab fa-whatsapp"></i> בקשו הצעת מחיר</a>`}
-          </div>
-        </div>
-      </div>
-    `;
+    return '<div class="product-card" data-fallback="' + fallbackImg + '">' +
+      '<div class="product-card__image">' +
+        '<a href="' + productUrl + '" aria-label="' + safeName + '">' +
+          '<img src="' + imgSrc + '" alt="' + safeName + '" loading="lazy" onerror="this.onerror=null;this.src=this.closest(\'.product-card\').dataset.fallback;">' +
+        '</a>' +
+        badgeHtml +
+      '</div>' +
+      '<div class="product-card__body">' +
+        '<div class="product-card__category">' + safeCategoryName + '</div>' +
+        '<h3 class="product-card__name"><a href="' + productUrl + '">' + safeName + '</a></h3>' +
+        (p.unit ? '<div class="product-card__pack">' + (p.unitsPerPack || '') + ' ' + (p.unit || '') + '</div>' : '') +
+        '<div class="product-card__pricing">' +
+          priceHtml +
+          (perUnit ? '<div class="product-card__price-unit">' + perUnit + '</div>' : '') +
+        '</div>' +
+        '<div class="product-card__actions">' +
+          (price ?
+            '<div class="product-card__qty-row">' +
+              '<div class="product-card__qty-selector">' +
+                '<button class="product-card__qty-btn" data-action="decrease" data-id="' + p.id + '">-</button>' +
+                '<input type="number" class="product-card__qty-input" id="qty-' + p.id + '" value="1" min="1" max="999">' +
+                '<button class="product-card__qty-btn" data-action="increase" data-id="' + p.id + '">+</button>' +
+              '</div>' +
+              '<button class="product-card__add-btn" data-id="' + p.id + '"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>' +
+            '</div>'
+          : '<a href="https://wa.me/972549922492?text=היי, מתעניין ב' + encodeURIComponent(p.name) + '" class="product-card__add-btn" target="_blank"><i class="fab fa-whatsapp"></i> בקשו הצעת מחיר</a>') +
+        '</div>' +
+      '</div>' +
+    '</div>';
   }
 
   // ---- Cart ----
   function addToCart(productId, qty) {
     var quantity = qty || 1;
-    const product = allProducts.find(p => p.id === productId);
+    var product = allProducts.find(function(p) { return p.id === productId; });
     if (!product) return;
 
-    const cart = JSON.parse(localStorage.getItem('ym_cart') || '[]');
-    const existing = cart.find(item => item.id === productId);
+    var cart = JSON.parse(localStorage.getItem('ym_cart') || '[]');
+    var existing = cart.find(function(item) { return item.id === productId; });
 
     if (existing) {
       existing.quantity += quantity;
@@ -520,8 +594,10 @@
     }
 
     localStorage.setItem('ym_cart', JSON.stringify(cart));
-    window.YMarket?.updateCartBadge();
-    window.YMarket?.showToast('המוצר נוסף לעגלה');
+    if (window.YMarket) {
+      window.YMarket.updateCartBadge();
+      window.YMarket.showToast('המוצר נוסף לעגלה');
+    }
   }
 
   // ---- Escape HTML ----
