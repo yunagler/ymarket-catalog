@@ -277,7 +277,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 3,
-      "itemCount": 38,
+      "itemCount": 39,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": "heavy-duty-garbage-bags-wholesale",
@@ -22885,7 +22885,8 @@
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
       "categoryName": "עטיפה, אריזה ולוגיסטיקה",
       "categorySlugs": [
-        "עטיפה-אריזה-ולוגיסטיקה"
+        "עטיפה-אריזה-ולוגיסטיקה",
+        "שקיות-ופתרונות-אשפה"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -24058,6 +24059,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-13T23:28:50.992Z",
+  "exportedAt": "2026-03-13T23:30:13.230Z",
   "totalItems": 823
 }
