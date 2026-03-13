@@ -42,6 +42,15 @@
     localStorage.setItem('ym_cart', JSON.stringify(cart));
     if (window.YMarket) window.YMarket.updateCartBadge();
     if (window.YMarket) window.YMarket.showToast('המוצר נוסף לעגלה');
+
+    // Facebook Pixel - AddToCart
+    if (window.YMarketAnalytics && window.YMarketAnalytics.fbAddToCart) {
+      window.YMarketAnalytics.fbAddToCart({ id: product.id, name: product.name, price: product.saleNis || 0, quantity: 1 });
+    }
+    // GA4 - add_to_cart
+    if (window.YMarketAnalytics && window.YMarketAnalytics.trackAddToCart) {
+      window.YMarketAnalytics.trackAddToCart({ id: product.id, name: product.name, price: product.saleNis || 0, quantity: 1 });
+    }
   }
 
   function escHtml(str) {
