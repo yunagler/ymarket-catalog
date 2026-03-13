@@ -7,7 +7,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 0,
-      "itemCount": 8,
+      "itemCount": 9,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -82,7 +82,7 @@
       "icon": "fa-box",
       "parentId": 1,
       "sortOrder": 0,
-      "itemCount": 6,
+      "itemCount": 9,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -662,7 +662,8 @@
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
       "categoryName": "מיגון ובטיחות בעבודה (PPE)",
       "categorySlugs": [
-        "בטיחות-ומיגון-אישי-PPE"
+        "בטיחות-ומיגון-אישי-PPE",
+        "סטוק-עד-הבית"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -5676,7 +5677,8 @@
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
       "categoryName": "מיגון ובטיחות בעבודה (PPE)",
       "categorySlugs": [
-        "בטיחות-ומיגון-אישי-PPE"
+        "בטיחות-ומיגון-אישי-PPE",
+        "-כפפות-חדפעמיות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -5704,7 +5706,8 @@
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
       "categoryName": "מיגון ובטיחות בעבודה (PPE)",
       "categorySlugs": [
-        "בטיחות-ומיגון-אישי-PPE"
+        "בטיחות-ומיגון-אישי-PPE",
+        "-כפפות-חדפעמיות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -5732,7 +5735,8 @@
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
       "categoryName": "מיגון ובטיחות בעבודה (PPE)",
       "categorySlugs": [
-        "בטיחות-ומיגון-אישי-PPE"
+        "בטיחות-ומיגון-אישי-PPE",
+        "-כפפות-חדפעמיות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -23922,6 +23926,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-13T21:54:27.818Z",
+  "exportedAt": "2026-03-13T21:54:43.028Z",
   "totalItems": 823
 }
