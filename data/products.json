@@ -37,7 +37,7 @@
       "icon": "fa-box",
       "parentId": 1,
       "sortOrder": 0,
-      "itemCount": 8,
+      "itemCount": 9,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -12396,7 +12396,8 @@
       "categorySlug": "עזרה-ראשונה-רפואי",
       "categoryName": "עזרה ראשונה - רפואי",
       "categorySlugs": [
-        "עזרה-ראשונה-רפואי"
+        "עזרה-ראשונה-רפואי",
+        "מסכות-פנים-והגנת-נשימה"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -23956,6 +23957,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-13T22:10:36.799Z",
+  "exportedAt": "2026-03-13T22:11:47.142Z",
   "totalItems": 823
 }
