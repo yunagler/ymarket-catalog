@@ -157,7 +157,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 1,
-      "itemCount": 60,
+      "itemCount": 61,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": "safety-ppe-equipment-for-business",
@@ -12397,7 +12397,8 @@
       "categoryName": "עזרה ראשונה - רפואי",
       "categorySlugs": [
         "עזרה-ראשונה-רפואי",
-        "מסכות-פנים-והגנת-נשימה"
+        "מסכות-פנים-והגנת-נשימה",
+        "בטיחות-ומיגון-אישי-PPE"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -23957,6 +23958,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-13T22:11:47.142Z",
+  "exportedAt": "2026-03-13T22:12:44.339Z",
   "totalItems": 823
 }
