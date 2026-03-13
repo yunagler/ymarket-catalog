@@ -112,7 +112,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 1,
-      "itemCount": 75,
+      "itemCount": 74,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": "safety-ppe-equipment-for-business",
@@ -352,7 +352,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 14,
-      "itemCount": 36,
+      "itemCount": 37,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -11311,35 +11311,6 @@
       "alternatives": []
     },
     {
-      "id": 905,
-      "name": "מכסה לקראפט - 1300 מ\"ל",
-      "slug": "מכסה-לקראפט-1300-מ-ל-2",
-      "saleNis": 0.76,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "אריזות-מזון-ו-Take-Away",
-      "categoryName": "אריזות מזון ו-Take Away",
-      "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away",
-        "קראפטים"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/922.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "barcode": "",
-      "searchTags": "",
-      "technicalDesc": "",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": []
-    },
-    {
       "id": 640,
       "name": "מכסה לקראפט - 1300 מ\"ל",
       "slug": "מכסה-לקראפט-1300-מ-ל",
@@ -11356,6 +11327,35 @@
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "/items/656.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "barcode": "",
+      "searchTags": "",
+      "technicalDesc": "",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": []
+    },
+    {
+      "id": 905,
+      "name": "מכסה לקראפט - 1300 מ\"ל",
+      "slug": "מכסה-לקראפט-1300-מ-ל-2",
+      "saleNis": 0.76,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
+      "categorySlugs": [
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
+      ],
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/922.jpg",
       "isFeatured": false,
       "productStatus": "active",
       "description": "",
@@ -18881,10 +18881,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categorySlug": "עזרה-ראשונה-רפואי",
+      "categoryName": "עזרה ראשונה - רפואי",
       "categorySlugs": [
-        "בטיחות-ומיגון-אישי-PPE"
+        "עזרה-ראשונה-רפואי"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -23845,6 +23845,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-13T19:35:18.274Z",
+  "exportedAt": "2026-03-13T19:35:35.865Z",
   "totalItems": 823
 }
