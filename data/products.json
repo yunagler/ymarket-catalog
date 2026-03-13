@@ -67,7 +67,7 @@
       "icon": "fa-box",
       "parentId": 1,
       "sortOrder": 0,
-      "itemCount": 5,
+      "itemCount": 6,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -12646,7 +12646,8 @@
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
       "categoryName": "מיגון ובטיחות בעבודה (PPE)",
       "categorySlugs": [
-        "בטיחות-ומיגון-אישי-PPE"
+        "בטיחות-ומיגון-אישי-PPE",
+        "ביגוד-מגן-וסינרים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -23938,6 +23939,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-13T21:59:42.709Z",
+  "exportedAt": "2026-03-13T22:00:44.160Z",
   "totalItems": 823
 }
