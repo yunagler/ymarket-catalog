@@ -82,7 +82,7 @@
       "icon": "fa-box",
       "parentId": 1,
       "sortOrder": 0,
-      "itemCount": 28,
+      "itemCount": 29,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -664,7 +664,8 @@
       "categoryName": "מיגון ובטיחות בעבודה (PPE)",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE",
-        "סטוק-עד-הבית"
+        "סטוק-עד-הבית",
+        "-כפפות-חדפעמיות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -23955,6 +23956,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-13T22:09:06.930Z",
+  "exportedAt": "2026-03-13T22:10:36.799Z",
   "totalItems": 823
 }
