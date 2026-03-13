@@ -598,6 +598,15 @@
       window.YMarket.updateCartBadge();
       window.YMarket.showToast('המוצר נוסף לעגלה');
     }
+
+    // Facebook Pixel - AddToCart
+    if (window.YMarketAnalytics && window.YMarketAnalytics.fbAddToCart) {
+      window.YMarketAnalytics.fbAddToCart({ id: product.id, name: product.name, price: product.saleNis, quantity: quantity });
+    }
+    // GA4 - AddToCart
+    if (window.YMarketAnalytics && window.YMarketAnalytics.trackAddToCart) {
+      window.YMarketAnalytics.trackAddToCart({ id: product.id, name: product.name, price: product.saleNis, quantity: quantity });
+    }
   }
 
   // ---- Escape HTML ----
