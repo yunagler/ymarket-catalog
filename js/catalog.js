@@ -320,6 +320,15 @@
       searchTimeout = setTimeout(function() {
         currentSearch = e.target.value.trim();
         render();
+        // Facebook Pixel + GA4 - Search
+        if (currentSearch.length >= 2) {
+          if (window.YMarketAnalytics && window.YMarketAnalytics.fbSearch) {
+            window.YMarketAnalytics.fbSearch(currentSearch);
+          }
+          if (window.YMarketAnalytics && window.YMarketAnalytics.trackSearch) {
+            window.YMarketAnalytics.trackSearch(currentSearch);
+          }
+        }
       }, 300);
     });
 
