@@ -157,7 +157,7 @@
       "icon": "fa-box",
       "parentId": 2,
       "sortOrder": 0,
-      "itemCount": 3,
+      "itemCount": 4,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -5099,7 +5099,8 @@
       "categorySlug": "כלי-עבודה-וציוד-משקי",
       "categoryName": "כלי עבודה וציוד משקי",
       "categorySlugs": [
-        "כלי-עבודה-וציוד-משקי"
+        "כלי-עבודה-וציוד-משקי",
+        "דליים-כפות-אשפה-ומרססים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -23976,6 +23977,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-13T22:31:11.963Z",
+  "exportedAt": "2026-03-13T22:31:53.069Z",
   "totalItems": 823
 }
