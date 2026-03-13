@@ -1,6 +1,36 @@
 {
   "categories": [
     {
+      "id": 28,
+      "name": "קרפטים",
+      "slug": "קראפטים",
+      "icon": "fa-box",
+      "parentId": 5,
+      "sortOrder": 0,
+      "itemCount": 29,
+      "metaTitle": "קרפטים ואריזות מזון בסיטונאות לעסקים | Ymarket",
+      "metaDescription": "מגוון קרפטים, שקיות נייר ואריזות למסעדות בסיטונאות. משלוח מהיר עד 72 שעות, מינימום הזמנה 1,600₪. לייעוץ והזמנות חייגו: 3497* מרכז שירות Ymarket",
+      "seoSlug": "kraft-paper-packaging-wholesale",
+      "seoContent": "<h2>פתרונות אריזה וקרפטים לעסקים בסיטונאות</h2>\n<p>עולם המשלוחים וה-Take Away מחייב אריזה חזקה, ייצוגית ושומרת טריות. ב-YMARKET אנו מספקים מגוון רחב של קרפטים, שקיות נייר חומות ולבנות, ומארזי קרטון המותאמים אישית לצרכי העסק שלכם. כל מוצרי האריזה שלנו עומדים בתקני איכות מחמירים ומבטיחים שהלקוח שלכם יקבל את המנה בדיוק כפי שיצאה מהמטבח.</p>\n<p>צריכים עזרה בבחירת סוג האריזה המתאים? המומחים שלנו זמינים עבורכם. ניתן לבצע הזמנה ישירות דרך האתר או לחייג למרכז ההזמנות המקוצר שלנו בטלפון 3497*. אנו מתחייבים לאספקה מהירה לגוש דן והמרכז תוך 24-72 שעות.</p>",
+      "imageUrl": "https://ymarket.co.il/images/categories/kraft-paper-packaging-wholesale.png",
+      "imageAlt": "קרפטים ושקיות נייר חומות בסיטונאות למסעדות ומשלוחים - וואי מרקט"
+    },
+    {
+      "id": 29,
+      "name": "כוסות צלחות וסכום",
+      "slug": "כוסות-צלחות-וסכום",
+      "icon": "fa-box",
+      "parentId": 5,
+      "sortOrder": 0,
+      "itemCount": 38,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
       "id": 22,
       "name": "מטליות",
       "slug": "מטליות",
@@ -8,6 +38,21 @@
       "parentId": 6,
       "sortOrder": 0,
       "itemCount": 2,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 23,
+      "name": "קרצוף ורחצה",
+      "slug": "קרצוף-ורחצה",
+      "icon": "fa-box",
+      "parentId": 6,
+      "sortOrder": 0,
+      "itemCount": 1,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -46,49 +91,19 @@
       "imageAlt": null
     },
     {
-      "id": 29,
-      "name": "כוסות צלחות וסכום",
-      "slug": "כוסות-צלחות-וסכום",
+      "id": 1,
+      "name": "היגיינה, בטיחות ומיגון",
+      "slug": "בטיחות-ומיגון-אישי-PPE",
       "icon": "fa-box",
-      "parentId": 5,
-      "sortOrder": 0,
-      "itemCount": 38,
+      "parentId": null,
+      "sortOrder": 1,
+      "itemCount": 63,
       "metaTitle": null,
       "metaDescription": null,
-      "seoSlug": null,
+      "seoSlug": "safety-ppe-equipment-for-business",
       "seoContent": null,
       "imageUrl": null,
-      "imageAlt": null
-    },
-    {
-      "id": 28,
-      "name": "קרפטים",
-      "slug": "קראפטים",
-      "icon": "fa-box",
-      "parentId": 5,
-      "sortOrder": 0,
-      "itemCount": 29,
-      "metaTitle": "קרפטים ואריזות מזון בסיטונאות לעסקים | Ymarket",
-      "metaDescription": "מגוון קרפטים, שקיות נייר ואריזות למסעדות בסיטונאות. משלוח מהיר עד 72 שעות, מינימום הזמנה 1,600₪. לייעוץ והזמנות חייגו: 3497* מרכז שירות Ymarket",
-      "seoSlug": "kraft-paper-packaging-wholesale",
-      "seoContent": "<h2>פתרונות אריזה וקרפטים לעסקים בסיטונאות</h2>\n<p>עולם המשלוחים וה-Take Away מחייב אריזה חזקה, ייצוגית ושומרת טריות. ב-YMARKET אנו מספקים מגוון רחב של קרפטים, שקיות נייר חומות ולבנות, ומארזי קרטון המותאמים אישית לצרכי העסק שלכם. כל מוצרי האריזה שלנו עומדים בתקני איכות מחמירים ומבטיחים שהלקוח שלכם יקבל את המנה בדיוק כפי שיצאה מהמטבח.</p>\n<p>צריכים עזרה בבחירת סוג האריזה המתאים? המומחים שלנו זמינים עבורכם. ניתן לבצע הזמנה ישירות דרך האתר או לחייג למרכז ההזמנות המקוצר שלנו בטלפון 3497*. אנו מתחייבים לאספקה מהירה לגוש דן והמרכז תוך 24-72 שעות.</p>",
-      "imageUrl": "https://ymarket.co.il/images/categories/kraft-paper-packaging-wholesale.png",
-      "imageAlt": "קרפטים ושקיות נייר חומות בסיטונאות למסעדות ומשלוחים - וואי מרקט"
-    },
-    {
-      "id": 23,
-      "name": "קרצוף ורחצה",
-      "slug": "קרצוף-ורחצה",
-      "icon": "fa-box",
-      "parentId": 6,
-      "sortOrder": 0,
-      "itemCount": 1,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
+      "imageAlt": "ציוד בטיחות ומיגון אישי לעסקים - YMARKET"
     },
     {
       "id": 19,
@@ -104,21 +119,6 @@
       "seoContent": null,
       "imageUrl": null,
       "imageAlt": null
-    },
-    {
-      "id": 1,
-      "name": "בטיחות ומיגון אישי (PPE)",
-      "slug": "בטיחות-ומיגון-אישי-PPE",
-      "icon": "fa-box",
-      "parentId": null,
-      "sortOrder": 1,
-      "itemCount": 63,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": "safety-ppe-equipment-for-business",
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": "ציוד בטיחות ומיגון אישי לעסקים - YMARKET"
     },
     {
       "id": 2,
@@ -151,21 +151,6 @@
       "imageAlt": null
     },
     {
-      "id": 3,
-      "name": "שקיות ופתרונות אשפה",
-      "slug": "שקיות-ופתרונות-אשפה",
-      "icon": "fa-box",
-      "parentId": null,
-      "sortOrder": 3,
-      "itemCount": 40,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": "heavy-duty-garbage-bags-wholesale",
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": "שקיות אשפה מוסדיות בסיטונאות - YMARKET"
-    },
-    {
       "id": 25,
       "name": "מגשי פלסטיק",
       "slug": "מגשי-פלסטיק",
@@ -179,6 +164,21 @@
       "seoContent": null,
       "imageUrl": null,
       "imageAlt": null
+    },
+    {
+      "id": 3,
+      "name": "שקיות ופתרונות אשפה",
+      "slug": "שקיות-ופתרונות-אשפה",
+      "icon": "fa-box",
+      "parentId": null,
+      "sortOrder": 3,
+      "itemCount": 40,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": "heavy-duty-garbage-bags-wholesale",
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": "שקיות אשפה מוסדיות בסיטונאות - YMARKET"
     },
     {
       "id": 4,
@@ -322,7 +322,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 12,
-      "itemCount": 123,
+      "itemCount": 124,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -542,7 +542,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -570,7 +570,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE",
         "סטוק-עד-הבית"
@@ -599,7 +599,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -1430,7 +1430,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -1458,7 +1458,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -3483,7 +3483,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -3511,7 +3511,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -3539,7 +3539,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -3567,7 +3567,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -3931,7 +3931,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -3987,9 +3987,10 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
-        "בטיחות-ומיגון-אישי-PPE"
+        "בטיחות-ומיגון-אישי-PPE",
+        "ציוד-משרדי-וכללי"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -4351,7 +4352,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -4865,7 +4866,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -4893,7 +4894,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -5316,7 +5317,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -5344,7 +5345,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -5372,7 +5373,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -5400,7 +5401,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -5428,7 +5429,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -5456,7 +5457,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -5596,7 +5597,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -5624,7 +5625,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -5652,7 +5653,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -5680,7 +5681,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -5708,7 +5709,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -5736,7 +5737,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -5764,7 +5765,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -5792,7 +5793,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -7055,7 +7056,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -12085,7 +12086,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -12113,7 +12114,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -12141,7 +12142,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -12169,7 +12170,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -12197,7 +12198,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -12225,7 +12226,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -12550,7 +12551,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -12578,7 +12579,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -13476,7 +13477,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -14290,7 +14291,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -14318,7 +14319,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -14346,7 +14347,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -14374,7 +14375,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -14402,7 +14403,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -14430,7 +14431,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -14458,7 +14459,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -14486,7 +14487,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -14514,7 +14515,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -14542,7 +14543,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -14570,7 +14571,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -14598,7 +14599,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -14626,7 +14627,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -14654,7 +14655,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -14682,7 +14683,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -14710,7 +14711,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -14738,7 +14739,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -17285,7 +17286,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -17313,7 +17314,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -17341,7 +17342,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -17846,7 +17847,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -18546,7 +18547,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -18574,7 +18575,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -23347,7 +23348,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "בטיחות ומיגון אישי (PPE)",
+      "categoryName": "היגיינה, בטיחות ומיגון",
       "categorySlugs": [
         "בטיחות-ומיגון-אישי-PPE"
       ],
@@ -23845,6 +23846,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-13T20:34:47.107Z",
+  "exportedAt": "2026-03-13T21:05:38.967Z",
   "totalItems": 823
 }
