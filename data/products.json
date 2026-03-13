@@ -172,7 +172,7 @@
       "icon": "fa-box",
       "parentId": 2,
       "sortOrder": 0,
-      "itemCount": 6,
+      "itemCount": 7,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -4404,7 +4404,8 @@
       "categorySlug": "ציוד-טכני-ואחזקה",
       "categoryName": "ציוד טכני ואחזקה",
       "categorySlugs": [
-        "ציוד-טכני-ואחזקה"
+        "ציוד-טכני-ואחזקה",
+        "דליים-כפות-אשפה-ומרססים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -24051,6 +24052,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-13T22:39:00.670Z",
+  "exportedAt": "2026-03-13T22:39:18.718Z",
   "totalItems": 823
 }
