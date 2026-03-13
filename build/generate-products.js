@@ -559,6 +559,15 @@ function generateProductPage(product, categories, allProducts) {
       localStorage.setItem('ym_cart', JSON.stringify(cart));
       if (window.YMarket) window.YMarket.updateCartBadge();
       if (window.YMarket) window.YMarket.showToast('המוצר נוסף לעגלה');
+
+      // Facebook Pixel - AddToCart
+      if (window.YMarketAnalytics && window.YMarketAnalytics.fbAddToCart) {
+        window.YMarketAnalytics.fbAddToCart({ id: PRODUCT.id, name: PRODUCT.name, price: PRODUCT.price, quantity: qty });
+      }
+      // GA4 - add_to_cart
+      if (window.YMarketAnalytics && window.YMarketAnalytics.trackAddToCart) {
+        window.YMarketAnalytics.trackAddToCart({ id: PRODUCT.id, name: PRODUCT.name, price: PRODUCT.price, quantity: qty });
+      }
     });
   })();
   </script>

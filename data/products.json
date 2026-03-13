@@ -172,7 +172,7 @@
       "icon": "fa-box",
       "parentId": 2,
       "sortOrder": 0,
-      "itemCount": 4,
+      "itemCount": 5,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -6821,7 +6821,8 @@
       "categorySlug": "כלי-עבודה-וציוד-משקי",
       "categoryName": "כלי עבודה וציוד משקי",
       "categorySlugs": [
-        "כלי-עבודה-וציוד-משקי"
+        "כלי-עבודה-וציוד-משקי",
+        "-מטאטאים-מגבים-ומקלות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -23997,6 +23998,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-13T22:32:49.756Z",
+  "exportedAt": "2026-03-13T22:33:04.026Z",
   "totalItems": 823
 }
