@@ -52,7 +52,7 @@
       "icon": "fa-box",
       "parentId": 5,
       "sortOrder": 0,
-      "itemCount": 2,
+      "itemCount": 3,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -187,7 +187,7 @@
       "icon": "fa-box",
       "parentId": 6,
       "sortOrder": 0,
-      "itemCount": 2,
+      "itemCount": 3,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -412,7 +412,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 9,
-      "itemCount": 34,
+      "itemCount": 33,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -2928,7 +2928,8 @@
       "categoryName": "טקסטיל, מטליות וסחבות",
       "categorySlugs": [
         "טקסטיל-מטליות-וסחבות",
-        "עטיפה-אריזה-ולוגיסטיקה"
+        "ניירות-רדיד-ועטיפות-מזון",
+        "מטליות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -24078,6 +24079,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T10:27:09.779Z",
+  "exportedAt": "2026-03-14T10:28:45.151Z",
   "totalItems": 823
 }
