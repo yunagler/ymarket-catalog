@@ -1,51 +1,6 @@
 {
   "categories": [
     {
-      "id": 50,
-      "name": "נייר תעשייתי",
-      "slug": "ממחטות-וטישו",
-      "icon": "fa-box",
-      "parentId": 9,
-      "sortOrder": 0,
-      "itemCount": 10,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
-      "id": 34,
-      "name": "מסכות פנים והגנת נשימה",
-      "slug": "מסכות-פנים-והגנת-נשימה",
-      "icon": "fa-box",
-      "parentId": 1,
-      "sortOrder": 0,
-      "itemCount": 9,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
-      "id": 35,
-      "name": " מטאטאים, מגבים ומקלות",
-      "slug": "-מטאטאים-מגבים-ומקלות",
-      "icon": "fa-box",
-      "parentId": 2,
-      "sortOrder": 0,
-      "itemCount": 17,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
       "id": 36,
       "name": "פחי אשפה למוסדות",
       "slug": "פחי-אשפה-למוסדות",
@@ -301,11 +256,11 @@
       "imageAlt": null
     },
     {
-      "id": 21,
-      "name": "סטוק עד הבית",
-      "slug": "סטוק-עד-הבית",
+      "id": 50,
+      "name": "נייר תעשייתי",
+      "slug": "ממחטות-וטישו",
       "icon": "fa-box",
-      "parentId": null,
+      "parentId": 9,
       "sortOrder": 0,
       "itemCount": 10,
       "metaTitle": null,
@@ -316,13 +271,13 @@
       "imageAlt": null
     },
     {
-      "id": 22,
-      "name": "מטליות",
-      "slug": "מטליות",
+      "id": 23,
+      "name": "קרצוף, ספוגים וכריות",
+      "slug": "קרצוף-ורחצה",
       "icon": "fa-box",
       "parentId": 6,
       "sortOrder": 0,
-      "itemCount": 11,
+      "itemCount": 1,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -331,13 +286,13 @@
       "imageAlt": null
     },
     {
-      "id": 23,
-      "name": "קרצוף ורחצה",
-      "slug": "קרצוף-ורחצה",
+      "id": 21,
+      "name": "סטוק עד הבית",
+      "slug": "סטוק-עד-הבית",
       "icon": "fa-box",
-      "parentId": 6,
+      "parentId": null,
       "sortOrder": 0,
-      "itemCount": 1,
+      "itemCount": 10,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -428,6 +383,36 @@
       "parentId": 1,
       "sortOrder": 0,
       "itemCount": 6,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 34,
+      "name": "מסכות פנים והגנת נשימה",
+      "slug": "מסכות-פנים-והגנת-נשימה",
+      "icon": "fa-box",
+      "parentId": 1,
+      "sortOrder": 0,
+      "itemCount": 9,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 35,
+      "name": " מטאטאים, מגבים ומקלות",
+      "slug": "-מטאטאים-מגבים-ומקלות",
+      "icon": "fa-box",
+      "parentId": 2,
+      "sortOrder": 0,
+      "itemCount": 17,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -556,21 +541,6 @@
       "imageAlt": "אספקת חומרי ניקוי בסיטונאות למשרדים ומוסדות - YMARKET"
     },
     {
-      "id": 26,
-      "name": "מגשי אלומניום",
-      "slug": "מגשי-אלומניום",
-      "icon": "fa-box",
-      "parentId": 5,
-      "sortOrder": 5,
-      "itemCount": 19,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
       "id": 5,
       "name": "אריזות מזון ו-Take Away",
       "slug": "אריזות-מזון-ו-Take-Away",
@@ -584,6 +554,21 @@
       "seoContent": null,
       "imageUrl": null,
       "imageAlt": "אריזות מזון ופתרונות Take Away בסיטונאות - YMARKET"
+    },
+    {
+      "id": 26,
+      "name": "מגשי אלומניום",
+      "slug": "מגשי-אלומניום",
+      "icon": "fa-box",
+      "parentId": 5,
+      "sortOrder": 5,
+      "itemCount": 19,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
     },
     {
       "id": 6,
@@ -1395,8 +1380,7 @@
       "categorySlug": "טקסטיל-מטליות-וסחבות",
       "categoryName": "טקסטיל, מטליות וסחבות",
       "categorySlugs": [
-        "טקסטיל-מטליות-וסחבות",
-        "מטליות"
+        "טקסטיל-מטליות-וסחבות"
       ],
       "unit": "",
       "unitsPerPack": 10,
@@ -1511,8 +1495,7 @@
       "categorySlug": "טקסטיל-מטליות-וסחבות",
       "categoryName": "טקסטיל, מטליות וסחבות",
       "categorySlugs": [
-        "טקסטיל-מטליות-וסחבות",
-        "מטליות"
+        "טקסטיל-מטליות-וסחבות"
       ],
       "unit": "",
       "unitsPerPack": 2,
@@ -1540,8 +1523,7 @@
       "categorySlug": "טקסטיל-מטליות-וסחבות",
       "categoryName": "טקסטיל, מטליות וסחבות",
       "categorySlugs": [
-        "טקסטיל-מטליות-וסחבות",
-        "מטליות"
+        "טקסטיל-מטליות-וסחבות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -1625,8 +1607,7 @@
       "categorySlug": "טקסטיל-מטליות-וסחבות",
       "categoryName": "טקסטיל, מטליות וסחבות",
       "categorySlugs": [
-        "טקסטיל-מטליות-וסחבות",
-        "מטליות"
+        "טקסטיל-מטליות-וסחבות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -3154,8 +3135,7 @@
       "categoryName": "טקסטיל, מטליות וסחבות",
       "categorySlugs": [
         "טקסטיל-מטליות-וסחבות",
-        "ניירות-רדיד-ועטיפות-מזון",
-        "מטליות"
+        "ניירות-רדיד-ועטיפות-מזון"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7188,7 +7168,6 @@
       "categorySlugs": [
         "חומרי-ניקוי-וכימיקלים",
         "ניקוי-משטחים-מיוחדים",
-        "מטליות",
         "טקסטיל-מטליות-וסחבות"
       ],
       "unit": "",
@@ -7247,8 +7226,7 @@
       "categorySlugs": [
         "חומרי-ניקוי-וכימיקלים",
         "ניקוי-משטחים-מיוחדים",
-        "טקסטיל-מטליות-וסחבות",
-        "מטליות"
+        "טקסטיל-מטליות-וסחבות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -10666,8 +10644,7 @@
       "categorySlug": "טקסטיל-מטליות-וסחבות",
       "categoryName": "טקסטיל, מטליות וסחבות",
       "categorySlugs": [
-        "טקסטיל-מטליות-וסחבות",
-        "מטליות"
+        "טקסטיל-מטליות-וסחבות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -10695,8 +10672,7 @@
       "categorySlug": "טקסטיל-מטליות-וסחבות",
       "categoryName": "טקסטיל, מטליות וסחבות",
       "categorySlugs": [
-        "טקסטיל-מטליות-וסחבות",
-        "מטליות"
+        "טקסטיל-מטליות-וסחבות"
       ],
       "unit": "12",
       "unitsPerPack": 12,
@@ -10732,8 +10708,7 @@
       "categorySlug": "טקסטיל-מטליות-וסחבות",
       "categoryName": "טקסטיל, מטליות וסחבות",
       "categorySlugs": [
-        "טקסטיל-מטליות-וסחבות",
-        "מטליות"
+        "טקסטיל-מטליות-וסחבות"
       ],
       "unit": "",
       "unitsPerPack": 12,
@@ -10790,8 +10765,7 @@
       "categorySlug": "טקסטיל-מטליות-וסחבות",
       "categoryName": "טקסטיל, מטליות וסחבות",
       "categorySlugs": [
-        "טקסטיל-מטליות-וסחבות",
-        "מטליות"
+        "טקסטיל-מטליות-וסחבות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -24508,6 +24482,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T14:33:49.587Z",
+  "exportedAt": "2026-03-14T14:38:21.432Z",
   "totalItems": 823
 }
