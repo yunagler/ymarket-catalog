@@ -172,7 +172,7 @@
       "icon": "fa-box",
       "parentId": 4,
       "sortOrder": 0,
-      "itemCount": 8,
+      "itemCount": 9,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -202,7 +202,7 @@
       "icon": "fa-box",
       "parentId": 4,
       "sortOrder": 0,
-      "itemCount": 13,
+      "itemCount": 12,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -14151,7 +14151,7 @@
       "categoryName": "חומרי ניקוי וכימיקלים",
       "categorySlugs": [
         "חומרי-ניקוי-וכימיקלים",
-        "מסירי-שומן-וכימיקלים"
+        "נוזלי-רצפות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -24403,6 +24403,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T13:51:00.073Z",
+  "exportedAt": "2026-03-14T13:51:11.860Z",
   "totalItems": 823
 }
