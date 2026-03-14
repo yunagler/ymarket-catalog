@@ -352,7 +352,7 @@
       "icon": "fa-box",
       "parentId": 4,
       "sortOrder": 0,
-      "itemCount": 11,
+      "itemCount": 12,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -24339,7 +24339,8 @@
       "categoryName": "סטוק עד הבית",
       "categorySlugs": [
         "סטוק-עד-הבית",
-        "חומרי-ניקוי-וכימיקלים"
+        "חומרי-ניקוי-וכימיקלים",
+        "ניקוי-משטחים-מיוחדים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -24415,6 +24416,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T14:00:38.391Z",
+  "exportedAt": "2026-03-14T14:02:42.024Z",
   "totalItems": 823
 }
