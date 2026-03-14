@@ -487,7 +487,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 4,
-      "itemCount": 81,
+      "itemCount": 82,
       "metaTitle": "חומרי ניקוי בסיטונאות למוסדות ועסקים | Ymarket",
       "metaDescription": "ספק חומרי ניקוי תעשייתיים אמין. אקונומיקה, חומצות, מסירי שומנים וסבונים בסטנדרטים הגבוהים ביותר. אספקה תוך 24-72 שעות לגוש דן והמרכז.",
       "seoSlug": "industrial-cleaning-supplies-wholesale",
@@ -16531,7 +16531,8 @@
       "categoryName": "טואלטיקה וטיפוח אישי",
       "categorySlugs": [
         "טואלטיקה-וטיפוח-אישי",
-        "סבונים-וניקוי-ידיים"
+        "סבונים-וניקוי-ידיים",
+        "חומרי-ניקוי-וכימיקלים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -24359,6 +24360,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T13:43:16.218Z",
+  "exportedAt": "2026-03-14T13:43:51.404Z",
   "totalItems": 823
 }
