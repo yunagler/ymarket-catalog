@@ -271,11 +271,15 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
   const catSeo = CATEGORY_SEO[category.slug] || {};
   // DB SEO fields (from products.json) take priority over hardcoded CATEGORY_SEO, with final fallback to defaults
   const seoDesc = category.metaDescription || catSeo.metaDesc || `${category.name} - ${categoryProducts.length} מוצרים במחירי סיטונאות. וואי מרקט - אספקה חכמה לעסקים ומוסדות. משלוח ארצי.`;
-  const h1Text = catSeo.h1 || category.name;
+  const h1Text = category.h1Override || catSeo.h1 || category.name;
   const pageTitle = category.metaTitle || catSeo.title || `${category.name} | וואי מרקט - אספקה למוסדות ועסקים`;
   const seoContentBlock = category.seoContent || catSeo.seoText || '';
   const categoryImage = category.imageUrl || null;
   const categoryImageAlt = category.imageAlt || category.name;
+  // FAQ: prefer DB faqs (from category.faqs), fallback to hardcoded CATEGORY_SEO faqs
+  const categoryFaqs = (category.faqs && category.faqs.length > 0) ? category.faqs : (catSeo.faqs || []);
+  // GEO content from DB
+  const geoContentBlock = category.geoContent || '';
 
   // Build breadcrumb with parent chain
   const parentChain = getParentChain(category, catMap);
@@ -420,13 +424,13 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
     .subcategory-card:hover{background:#eef2ff !important;border-color:#c7d2fe !important;}
   </style>
   <script type="application/ld+json">${jsonLd}</script>
-  ${(catSeo.faqs && catSeo.faqs.length > 0) ? `<script type="application/ld+json">${JSON.stringify({
+  ${(categoryFaqs && categoryFaqs.length > 0) ? `<script type="application/ld+json">${JSON.stringify({
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": catSeo.faqs.map(f => ({
+    "mainEntity": categoryFaqs.map(f => ({
       "@type": "Question",
-      "name": f.q,
-      "acceptedAnswer": { "@type": "Answer", "text": f.a }
+      "name": f.q || f.question,
+      "acceptedAnswer": { "@type": "Answer", "text": f.a || f.answer }
     }))
   }, null, 2)}</script>` : ''}
   <script type="application/ld+json">${JSON.stringify({
@@ -484,6 +488,25 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
             ${productsHtml}
           </div>
           ${seoContentBlock ? `<div class="category-seo">${seoContentBlock}</div>` : ''}
+          ${geoContentBlock ? `<div class="category-geo" style="margin-top:1.5rem;padding:24px;background:linear-gradient(135deg,#f8fafc 0%,#f0f4f8 100%);border:1px solid #e2e8f0;border-radius:14px;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+              <div style="width:28px;height:28px;border-radius:8px;background:#1B3A5C;color:#fff;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">E</div>
+              <span style="font-size:0.85rem;font-weight:600;color:#1B3A5C;">מידע מקצועי</span>
+            </div>
+            <div style="font-size:0.9rem;line-height:1.8;color:#374151;">${geoContentBlock}</div>
+          </div>` : ''}
+          ${categoryFaqs.length > 0 ? `<div class="category-faq" style="margin-top:1.5rem;">
+            <h3 style="font-size:1.05rem;font-weight:700;color:#1B3A5C;margin-bottom:12px;display:flex;align-items:center;gap:8px;"><i class="fas fa-question-circle" style="color:#2563eb;"></i> שאלות נפוצות</h3>
+            ${categoryFaqs.map(f => `
+              <details style="margin-bottom:8px;background:#fff;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;">
+                <summary style="padding:12px 16px;cursor:pointer;font-weight:600;font-size:0.9rem;color:#1f2937;list-style:none;display:flex;align-items:center;justify-content:space-between;">
+                  ${f.q || f.question}
+                  <i class="fas fa-chevron-down" style="font-size:0.7rem;color:#9ca3af;transition:transform 0.2s;"></i>
+                </summary>
+                <div style="padding:0 16px 14px;font-size:0.88rem;color:#4b5563;line-height:1.7;">${f.a || f.answer}</div>
+              </details>
+            `).join('')}
+          </div>` : ''}
           <div class="category-cta" style="background:var(--color-bg-light,#f8f9fa);border-radius:12px;padding:2rem;margin-top:2rem;text-align:center;">
             <h3 style="margin-bottom:0.5rem;">צריכים כמות גדולה? קבלו הצעת מחיר מותאמת אישית</h3>
             <p style="color:var(--color-text-light,#6b7280);margin-bottom:1rem;">לקוחות עסקיים נהנים ממחירים מיוחדים, אספקה שוטפת ושירות אישי</p>
