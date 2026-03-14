@@ -472,7 +472,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 3,
-      "itemCount": 44,
+      "itemCount": 41,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": "heavy-duty-garbage-bags-wholesale",
@@ -16244,7 +16244,6 @@
         "כוסות-צלחות-וסכום",
         "מגשי-פלסטיק",
         "מגשי-אלומניום",
-        "שקיות-ופתרונות-אשפה",
         "סטוק-עד-הבית",
         "ניירות-רדיד-ועטיפות-מזון"
       ],
@@ -23057,10 +23056,9 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "שקיות-ופתרונות-אשפה",
-      "categoryName": "שקיות ופתרונות אשפה",
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "שקיות-ופתרונות-אשפה",
         "אריזות-מזון-ו-Take-Away",
         "ניירות-רדיד-ועטיפות-מזון"
       ],
@@ -23582,10 +23580,9 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "שקיות-ופתרונות-אשפה",
-      "categoryName": "שקיות ופתרונות אשפה",
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "שקיות-ופתרונות-אשפה",
         "אריזות-מזון-ו-Take-Away"
       ],
       "unit": "",
@@ -24424,6 +24421,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T14:10:11.961Z",
+  "exportedAt": "2026-03-14T14:11:04.869Z",
   "totalItems": 823
 }
