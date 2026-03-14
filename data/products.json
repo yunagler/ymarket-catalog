@@ -547,7 +547,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 6,
-      "itemCount": 32,
+      "itemCount": 33,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": "professional-cleaning-cloths-microfiber",
@@ -7193,7 +7193,8 @@
       "categoryName": "חומרי ניקוי וכימיקלים",
       "categorySlugs": [
         "חומרי-ניקוי-וכימיקלים",
-        "ניקוי-משטחים-מיוחדים"
+        "ניקוי-משטחים-מיוחדים",
+        "טקסטיל-מטליות-וסחבות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -24403,6 +24404,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T13:51:11.860Z",
+  "exportedAt": "2026-03-14T13:56:46.829Z",
   "totalItems": 823
 }
