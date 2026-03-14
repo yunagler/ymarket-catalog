@@ -1,36 +1,6 @@
 {
   "categories": [
     {
-      "id": 55,
-      "name": "מגבונים רטובים",
-      "slug": "מגבונים-רטובים",
-      "icon": "fa-box",
-      "parentId": 6,
-      "sortOrder": 0,
-      "itemCount": 6,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
-      "id": 36,
-      "name": "פחי אשפה למוסדות",
-      "slug": "פחי-אשפה-למוסדות",
-      "icon": "fa-box",
-      "parentId": 2,
-      "sortOrder": 0,
-      "itemCount": 6,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
       "id": 37,
       "name": "דליים, כפות אשפה ומרססים",
       "slug": "דליים-כפות-אשפה-ומרססים",
@@ -76,178 +46,13 @@
       "imageAlt": "קרפטים ושקיות נייר חומות בסיטונאות למסעדות ומשלוחים - וואי מרקט"
     },
     {
-      "id": 39,
-      "name": "ניירות, עטיפה ושקיות מזון",
-      "slug": "ניירות-רדיד-ועטיפות-מזון",
-      "icon": "fa-box",
-      "parentId": 5,
-      "sortOrder": 0,
-      "itemCount": 28,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
-      "id": 40,
-      "name": "נוזלי רצפות",
-      "slug": "נוזלי-רצפות",
-      "icon": "fa-box",
-      "parentId": 4,
-      "sortOrder": 0,
-      "itemCount": 9,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
-      "id": 41,
-      "name": "אקונומיקה וחיטוי",
-      "slug": "אקונומיקה-וחיטוי",
-      "icon": "fa-box",
-      "parentId": 4,
-      "sortOrder": 0,
-      "itemCount": 8,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
-      "id": 42,
-      "name": "מסירי שומן וכימיקלים",
-      "slug": "מסירי-שומן-וכימיקלים",
-      "icon": "fa-box",
-      "parentId": 4,
-      "sortOrder": 0,
-      "itemCount": 12,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
-      "id": 43,
-      "name": "נוזלי כלים ומדיחים",
-      "slug": "נוזלי-כלים-ומדיחים",
-      "icon": "fa-box",
-      "parentId": 4,
-      "sortOrder": 0,
-      "itemCount": 12,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
-      "id": 44,
-      "name": "סבונים וניקוי ידיים",
-      "slug": "סבונים-וניקוי-ידיים",
-      "icon": "fa-box",
-      "parentId": 4,
-      "sortOrder": 0,
-      "itemCount": 4,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
-      "id": 45,
-      "name": "מבשמים ושירותים",
-      "slug": "מבשמים-ושירותים",
-      "icon": "fa-box",
-      "parentId": 4,
-      "sortOrder": 0,
-      "itemCount": 29,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
-      "id": 48,
-      "name": "מגבות נייר ידיים",
-      "slug": "מגבות-נייר-ידיים",
+      "id": 50,
+      "name": "נייר תעשייתי",
+      "slug": "ממחטות-וטישו",
       "icon": "fa-box",
       "parentId": 9,
       "sortOrder": 0,
-      "itemCount": 12,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
-      "id": 49,
-      "name": "מפיות",
-      "slug": "מפיות",
-      "icon": "fa-box",
-      "parentId": 9,
-      "sortOrder": 0,
-      "itemCount": 9,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
-      "id": 47,
-      "name": "נייר טואלט ואף",
-      "slug": "נייר-טואלט",
-      "icon": "fa-box",
-      "parentId": 9,
-      "sortOrder": 0,
-      "itemCount": 12,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
-      "id": 51,
-      "name": "שקיות שירות וחנות",
-      "slug": "שקיות-שירות-וחנות",
-      "icon": "fa-box",
-      "parentId": 3,
-      "sortOrder": 0,
-      "itemCount": 24,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
-      "id": 52,
-      "name": "שקיות אשפה סטנדרטיות",
-      "slug": "שקיות-אשפה-סטנדרטיות",
-      "icon": "fa-box",
-      "parentId": 3,
-      "sortOrder": 0,
-      "itemCount": 15,
+      "itemCount": 10,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -271,13 +76,103 @@
       "imageAlt": null
     },
     {
-      "id": 50,
-      "name": "נייר תעשייתי",
-      "slug": "ממחטות-וטישו",
+      "id": 52,
+      "name": "שקיות אשפה סטנדרטיות",
+      "slug": "שקיות-אשפה-סטנדרטיות",
+      "icon": "fa-box",
+      "parentId": 3,
+      "sortOrder": 0,
+      "itemCount": 15,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 51,
+      "name": "שקיות שירות וחנות",
+      "slug": "שקיות-שירות-וחנות",
+      "icon": "fa-box",
+      "parentId": 3,
+      "sortOrder": 0,
+      "itemCount": 24,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 47,
+      "name": "נייר טואלט ואף",
+      "slug": "נייר-טואלט",
       "icon": "fa-box",
       "parentId": 9,
       "sortOrder": 0,
-      "itemCount": 10,
+      "itemCount": 12,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 55,
+      "name": "מגבונים רטובים",
+      "slug": "מגבונים-רטובים",
+      "icon": "fa-box",
+      "parentId": 6,
+      "sortOrder": 0,
+      "itemCount": 6,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 49,
+      "name": "מפיות",
+      "slug": "מפיות",
+      "icon": "fa-box",
+      "parentId": 9,
+      "sortOrder": 0,
+      "itemCount": 9,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 48,
+      "name": "מגבות נייר ידיים",
+      "slug": "מגבות-נייר-ידיים",
+      "icon": "fa-box",
+      "parentId": 9,
+      "sortOrder": 0,
+      "itemCount": 12,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 45,
+      "name": "מבשמים ושירותים",
+      "slug": "מבשמים-ושירותים",
+      "icon": "fa-box",
+      "parentId": 4,
+      "sortOrder": 0,
+      "itemCount": 29,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -331,6 +226,81 @@
       "imageAlt": null
     },
     {
+      "id": 44,
+      "name": "סבונים וניקוי ידיים",
+      "slug": "סבונים-וניקוי-ידיים",
+      "icon": "fa-box",
+      "parentId": 4,
+      "sortOrder": 0,
+      "itemCount": 4,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 43,
+      "name": "נוזלי כלים ומדיחים",
+      "slug": "נוזלי-כלים-ומדיחים",
+      "icon": "fa-box",
+      "parentId": 4,
+      "sortOrder": 0,
+      "itemCount": 12,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 42,
+      "name": "מסירי שומן וכימיקלים",
+      "slug": "מסירי-שומן-וכימיקלים",
+      "icon": "fa-box",
+      "parentId": 4,
+      "sortOrder": 0,
+      "itemCount": 12,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 41,
+      "name": "אקונומיקה וחיטוי",
+      "slug": "אקונומיקה-וחיטוי",
+      "icon": "fa-box",
+      "parentId": 4,
+      "sortOrder": 0,
+      "itemCount": 8,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 40,
+      "name": "נוזלי רצפות",
+      "slug": "נוזלי-רצפות",
+      "icon": "fa-box",
+      "parentId": 4,
+      "sortOrder": 0,
+      "itemCount": 9,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
       "id": 21,
       "name": "סטוק עד הבית",
       "slug": "סטוק-עד-הבית",
@@ -367,7 +337,7 @@
       "icon": "fa-box",
       "parentId": 5,
       "sortOrder": 0,
-      "itemCount": 39,
+      "itemCount": 47,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -383,6 +353,21 @@
       "parentId": 5,
       "sortOrder": 0,
       "itemCount": 12,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 39,
+      "name": "ניירות, עטיפה ושקיות מזון",
+      "slug": "ניירות-רדיד-ועטיפות-מזון",
+      "icon": "fa-box",
+      "parentId": 5,
+      "sortOrder": 0,
+      "itemCount": 28,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -466,6 +451,36 @@
       "imageAlt": null
     },
     {
+      "id": 36,
+      "name": "פחי אשפה למוסדות",
+      "slug": "פחי-אשפה-למוסדות",
+      "icon": "fa-box",
+      "parentId": 2,
+      "sortOrder": 0,
+      "itemCount": 6,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 57,
+      "name": "סכו\"ם רב-פעמי",
+      "slug": "reusable-cutlery",
+      "icon": "fa-box",
+      "parentId": 56,
+      "sortOrder": 1,
+      "itemCount": 9,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
       "id": 1,
       "name": "מיגון ובטיחות בעבודה (PPE)",
       "slug": "בטיחות-ומיגון-אישי-PPE",
@@ -487,7 +502,37 @@
       "icon": "fa-box",
       "parentId": 5,
       "sortOrder": 1,
-      "itemCount": 17,
+      "itemCount": 18,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 60,
+      "name": "צלחות חד פעמי",
+      "slug": "disposable-plates",
+      "icon": "fa-box",
+      "parentId": 7,
+      "sortOrder": 1,
+      "itemCount": 18,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 61,
+      "name": "סכו\"ם חד פעמי",
+      "slug": "disposable-cutlery",
+      "icon": "fa-box",
+      "parentId": 7,
+      "sortOrder": 2,
+      "itemCount": 16,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -526,6 +571,21 @@
       "imageAlt": null
     },
     {
+      "id": 58,
+      "name": "צלחות וכלי הגשה רב-פעמיים",
+      "slug": "reusable-plates-serving",
+      "icon": "fa-box",
+      "parentId": 56,
+      "sortOrder": 2,
+      "itemCount": 3,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
       "id": 25,
       "name": "מגשי פלסטיק לבשר",
       "slug": "מגשי-פלסטיק",
@@ -533,6 +593,21 @@
       "parentId": 5,
       "sortOrder": 3,
       "itemCount": 10,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 59,
+      "name": "אחסון ואביזרי מטבח",
+      "slug": "kitchen-storage-accessories",
+      "icon": "fa-box",
+      "parentId": 56,
+      "sortOrder": 3,
+      "itemCount": 2,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -554,6 +629,21 @@
       "seoContent": null,
       "imageUrl": null,
       "imageAlt": "שקיות אשפה מוסדיות בסיטונאות - YMARKET"
+    },
+    {
+      "id": 62,
+      "name": "מפות ואירוח שולחן",
+      "slug": "tablecloths-hospitality",
+      "icon": "fa-box",
+      "parentId": 7,
+      "sortOrder": 3,
+      "itemCount": 13,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
     },
     {
       "id": 24,
@@ -586,13 +676,43 @@
       "imageAlt": "אספקת חומרי ניקוי בסיטונאות למשרדים ומוסדות - YMARKET"
     },
     {
+      "id": 63,
+      "name": "קיסמים ושיפודים",
+      "slug": "toothpicks-skewers",
+      "icon": "fa-box",
+      "parentId": 7,
+      "sortOrder": 4,
+      "itemCount": 7,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 64,
+      "name": "נרות ואירוח מיוחד",
+      "slug": "candles-special-hospitality",
+      "icon": "fa-box",
+      "parentId": 7,
+      "sortOrder": 5,
+      "itemCount": 4,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
       "id": 5,
       "name": "אריזות מזון ו-Take Away",
       "slug": "אריזות-מזון-ו-Take-Away",
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 5,
-      "itemCount": 167,
+      "itemCount": 191,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": "food-packaging-delivery-solutions",
@@ -637,7 +757,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 7,
-      "itemCount": 96,
+      "itemCount": 58,
       "metaTitle": "כלים חד פעמיים ואירוח בסיטונאות | Ymarket",
       "metaDescription": "כוסות, צלחות, סכו\"ם ופתרונות אריזה למסעדות, קייטרינג ומשרדים. איכות גבוהה במחירי סיטונאות. אספקה מהירה לכל הארץ.",
       "seoSlug": "disposable-catering-food-service",
@@ -749,6 +869,21 @@
       "seoContent": null,
       "imageUrl": null,
       "imageAlt": null
+    },
+    {
+      "id": 56,
+      "name": "כלי הגשה רב-פעמיים",
+      "slug": "reusable-serving-tools",
+      "icon": "fa-box",
+      "parentId": null,
+      "sortOrder": 100,
+      "itemCount": 14,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
     }
   ],
   "items": [
@@ -760,9 +895,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "candles-special-hospitality",
+      "categoryName": "נרות ואירוח מיוחד",
       "categorySlugs": [
+        "candles-special-hospitality",
         "חד-פעמי-ואירוח"
       ],
       "unit": "",
@@ -1743,9 +1879,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "tablecloths-hospitality",
+      "categoryName": "מפות ואירוח שולחן",
       "categorySlugs": [
+        "tablecloths-hospitality",
         "חד-פעמי-ואירוח"
       ],
       "unit": "",
@@ -2419,9 +2556,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-cutlery",
+      "categoryName": "סכו\"ם חד פעמי",
       "categorySlugs": [
+        "disposable-cutlery",
         "חד-פעמי-ואירוח",
         "כוסות-צלחות-וסכום",
         "אריזות-מזון-ו-Take-Away"
@@ -2449,9 +2587,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-cutlery",
+      "categoryName": "סכו\"ם חד פעמי",
       "categorySlugs": [
+        "disposable-cutlery",
         "חד-פעמי-ואירוח",
         "כוסות-צלחות-וסכום"
       ],
@@ -2650,10 +2789,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "גביעים",
+      "categoryName": "גביעים ומיכלי רוטב",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "גביעים",
+        "אריזות-מזון-ו-Take-Away"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -3275,9 +3415,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "tablecloths-hospitality",
+      "categoryName": "מפות ואירוח שולחן",
       "categorySlugs": [
+        "tablecloths-hospitality",
         "חד-פעמי-ואירוח"
       ],
       "unit": "",
@@ -3303,9 +3444,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "tablecloths-hospitality",
+      "categoryName": "מפות ואירוח שולחן",
       "categorySlugs": [
+        "tablecloths-hospitality",
         "חד-פעמי-ואירוח"
       ],
       "unit": "",
@@ -4810,11 +4952,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "כוסות-צלחות-וסכום",
+      "categoryName": "כוסות צלחות וסכום",
       "categorySlugs": [
-        "חד-פעמי-ואירוח",
-        "כוסות-צלחות-וסכום"
+        "כוסות-צלחות-וסכום",
+        "אריזות-מזון-ו-Take-Away"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -4839,10 +4981,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "כוסות-צלחות-וסכום",
+      "categoryName": "כוסות צלחות וסכום",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "כוסות-צלחות-וסכום",
+        "אריזות-מזון-ו-Take-Away"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -4867,11 +5010,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "כוסות-צלחות-וסכום",
+      "categoryName": "כוסות צלחות וסכום",
       "categorySlugs": [
-        "חד-פעמי-ואירוח",
-        "כוסות-צלחות-וסכום"
+        "כוסות-צלחות-וסכום",
+        "אריזות-מזון-ו-Take-Away"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -4896,10 +5039,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "כוסות-צלחות-וסכום",
+      "categoryName": "כוסות צלחות וסכום",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "כוסות-צלחות-וסכום",
+        "אריזות-מזון-ו-Take-Away"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -4924,10 +5068,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "כוסות-צלחות-וסכום",
+      "categoryName": "כוסות צלחות וסכום",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "כוסות-צלחות-וסכום",
+        "אריזות-מזון-ו-Take-Away"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -4952,11 +5097,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "כוסות-צלחות-וסכום",
+      "categoryName": "כוסות צלחות וסכום",
       "categorySlugs": [
-        "חד-פעמי-ואירוח",
-        "כוסות-צלחות-וסכום"
+        "כוסות-צלחות-וסכום",
+        "אריזות-מזון-ו-Take-Away"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -4981,10 +5126,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "כוסות-צלחות-וסכום",
+      "categoryName": "כוסות צלחות וסכום",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "כוסות-צלחות-וסכום",
+        "אריזות-מזון-ו-Take-Away"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -5038,11 +5184,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "כוסות-צלחות-וסכום",
+      "categoryName": "כוסות צלחות וסכום",
       "categorySlugs": [
-        "חד-פעמי-ואירוח",
-        "כוסות-צלחות-וסכום"
+        "כוסות-צלחות-וסכום",
+        "אריזות-מזון-ו-Take-Away"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -5067,10 +5213,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "כוסות-צלחות-וסכום",
+      "categoryName": "כוסות צלחות וסכום",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "כוסות-צלחות-וסכום",
+        "אריזות-מזון-ו-Take-Away"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -5095,11 +5242,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "כוסות-צלחות-וסכום",
+      "categoryName": "כוסות צלחות וסכום",
       "categorySlugs": [
-        "חד-פעמי-ואירוח",
-        "כוסות-צלחות-וסכום"
+        "כוסות-צלחות-וסכום",
+        "אריזות-מזון-ו-Take-Away"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -5124,11 +5271,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "כוסות-צלחות-וסכום",
+      "categoryName": "כוסות צלחות וסכום",
       "categorySlugs": [
-        "חד-פעמי-ואירוח",
-        "כוסות-צלחות-וסכום"
+        "כוסות-צלחות-וסכום",
+        "אריזות-מזון-ו-Take-Away"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -5153,11 +5300,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "כוסות-צלחות-וסכום",
+      "categoryName": "כוסות צלחות וסכום",
       "categorySlugs": [
-        "חד-פעמי-ואירוח",
-        "כוסות-צלחות-וסכום"
+        "כוסות-צלחות-וסכום",
+        "אריזות-מזון-ו-Take-Away"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -5182,11 +5329,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "כוסות-צלחות-וסכום",
+      "categoryName": "כוסות צלחות וסכום",
       "categorySlugs": [
-        "חד-פעמי-ואירוח",
-        "כוסות-צלחות-וסכום"
+        "כוסות-צלחות-וסכום",
+        "אריזות-מזון-ו-Take-Away"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -5211,11 +5358,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "כוסות-צלחות-וסכום",
+      "categoryName": "כוסות צלחות וסכום",
       "categorySlugs": [
-        "חד-פעמי-ואירוח",
-        "כוסות-צלחות-וסכום"
+        "כוסות-צלחות-וסכום",
+        "אריזות-מזון-ו-Take-Away"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -5240,10 +5387,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "כוסות-צלחות-וסכום",
+      "categoryName": "כוסות צלחות וסכום",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "כוסות-צלחות-וסכום",
+        "אריזות-מזון-ו-Take-Away"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -5384,10 +5532,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "reusable-cutlery",
+      "categoryName": "סכו\"ם רב-פעמי",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "reusable-cutlery",
+        "reusable-serving-tools"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -5412,9 +5561,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-cutlery",
+      "categoryName": "סכו\"ם חד פעמי",
       "categorySlugs": [
+        "disposable-cutlery",
         "חד-פעמי-ואירוח"
       ],
       "unit": "",
@@ -5555,9 +5705,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-cutlery",
+      "categoryName": "סכו\"ם חד פעמי",
       "categorySlugs": [
+        "disposable-cutlery",
         "חד-פעמי-ואירוח"
       ],
       "unit": "",
@@ -5583,9 +5734,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-cutlery",
+      "categoryName": "סכו\"ם חד פעמי",
       "categorySlugs": [
+        "disposable-cutlery",
         "חד-פעמי-ואירוח",
         "כוסות-צלחות-וסכום"
       ],
@@ -5612,9 +5764,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-cutlery",
+      "categoryName": "סכו\"ם חד פעמי",
       "categorySlugs": [
+        "disposable-cutlery",
         "חד-פעמי-ואירוח",
         "כוסות-צלחות-וסכום"
       ],
@@ -5641,10 +5794,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "reusable-cutlery",
+      "categoryName": "סכו\"ם רב-פעמי",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "reusable-cutlery",
+        "reusable-serving-tools"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -5669,9 +5823,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-cutlery",
+      "categoryName": "סכו\"ם חד פעמי",
       "categorySlugs": [
+        "disposable-cutlery",
         "חד-פעמי-ואירוח"
       ],
       "unit": "",
@@ -5697,9 +5852,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-cutlery",
+      "categoryName": "סכו\"ם חד פעמי",
       "categorySlugs": [
+        "disposable-cutlery",
         "חד-פעמי-ואירוח"
       ],
       "unit": "",
@@ -5725,9 +5881,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-cutlery",
+      "categoryName": "סכו\"ם חד פעמי",
       "categorySlugs": [
+        "disposable-cutlery",
         "חד-פעמי-ואירוח",
         "כוסות-צלחות-וסכום"
       ],
@@ -6274,9 +6431,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-plates",
+      "categoryName": "צלחות חד פעמי",
       "categorySlugs": [
+        "disposable-plates",
         "חד-פעמי-ואירוח",
         "כוסות-צלחות-וסכום"
       ],
@@ -6303,9 +6461,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-plates",
+      "categoryName": "צלחות חד פעמי",
       "categorySlugs": [
+        "disposable-plates",
         "חד-פעמי-ואירוח"
       ],
       "unit": "",
@@ -7316,9 +7475,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "tablecloths-hospitality",
+      "categoryName": "מפות ואירוח שולחן",
       "categorySlugs": [
+        "tablecloths-hospitality",
         "חד-פעמי-ואירוח"
       ],
       "unit": "",
@@ -7344,9 +7504,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "tablecloths-hospitality",
+      "categoryName": "מפות ואירוח שולחן",
       "categorySlugs": [
+        "tablecloths-hospitality",
         "חד-פעמי-ואירוח"
       ],
       "unit": "",
@@ -7770,9 +7931,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-plates",
+      "categoryName": "צלחות חד פעמי",
       "categorySlugs": [
+        "disposable-plates",
         "חד-פעמי-ואירוח",
         "כוסות-צלחות-וסכום"
       ],
@@ -9939,10 +10101,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "reusable-cutlery",
+      "categoryName": "סכו\"ם רב-פעמי",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "reusable-cutlery",
+        "reusable-serving-tools"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -9967,9 +10130,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-cutlery",
+      "categoryName": "סכו\"ם חד פעמי",
       "categorySlugs": [
+        "disposable-cutlery",
         "חד-פעמי-ואירוח"
       ],
       "unit": "",
@@ -9995,9 +10159,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-cutlery",
+      "categoryName": "סכו\"ם חד פעמי",
       "categorySlugs": [
+        "disposable-cutlery",
         "חד-פעמי-ואירוח"
       ],
       "unit": "",
@@ -10023,9 +10188,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-cutlery",
+      "categoryName": "סכו\"ם חד פעמי",
       "categorySlugs": [
+        "disposable-cutlery",
         "חד-פעמי-ואירוח",
         "כוסות-צלחות-וסכום"
       ],
@@ -10052,9 +10218,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-cutlery",
+      "categoryName": "סכו\"ם חד פעמי",
       "categorySlugs": [
+        "disposable-cutlery",
         "חד-פעמי-ואירוח",
         "כוסות-צלחות-וסכום"
       ],
@@ -11541,10 +11708,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "כוסות-צלחות-וסכום",
+      "categoryName": "כוסות צלחות וסכום",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "כוסות-צלחות-וסכום",
+        "אריזות-מזון-ו-Take-Away"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -11569,11 +11737,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "כוסות-צלחות-וסכום",
+      "categoryName": "כוסות צלחות וסכום",
       "categorySlugs": [
-        "חד-פעמי-ואירוח",
-        "כוסות-צלחות-וסכום"
+        "כוסות-צלחות-וסכום",
+        "אריזות-מזון-ו-Take-Away"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -11598,11 +11766,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "כוסות-צלחות-וסכום",
+      "categoryName": "כוסות צלחות וסכום",
       "categorySlugs": [
-        "חד-פעמי-ואירוח",
-        "כוסות-צלחות-וסכום"
+        "כוסות-צלחות-וסכום",
+        "אריזות-מזון-ו-Take-Away"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -11685,11 +11853,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "כוסות-צלחות-וסכום",
+      "categoryName": "כוסות צלחות וסכום",
       "categorySlugs": [
-        "חד-פעמי-ואירוח",
-        "כוסות-צלחות-וסכום"
+        "כוסות-צלחות-וסכום",
+        "אריזות-מזון-ו-Take-Away"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -12004,11 +12172,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "כוסות-צלחות-וסכום",
+      "categoryName": "כוסות צלחות וסכום",
       "categorySlugs": [
-        "חד-פעמי-ואירוח",
-        "כוסות-צלחות-וסכום"
+        "כוסות-צלחות-וסכום",
+        "אריזות-מזון-ו-Take-Away"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -12033,11 +12201,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "כוסות-צלחות-וסכום",
+      "categoryName": "כוסות צלחות וסכום",
       "categorySlugs": [
-        "חד-פעמי-ואירוח",
-        "כוסות-צלחות-וסכום"
+        "כוסות-צלחות-וסכום",
+        "אריזות-מזון-ו-Take-Away"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -12062,11 +12230,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "כוסות-צלחות-וסכום",
+      "categoryName": "כוסות צלחות וסכום",
       "categorySlugs": [
-        "חד-פעמי-ואירוח",
-        "כוסות-צלחות-וסכום"
+        "כוסות-צלחות-וסכום",
+        "אריזות-מזון-ו-Take-Away"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -13251,11 +13419,12 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "tablecloths-hospitality",
+      "categoryName": "מפות ואירוח שולחן",
       "categorySlugs": [
-        "חד-פעמי-ואירוח",
+        "tablecloths-hospitality",
         "מוצרי-נייר-וניגוב",
+        "חד-פעמי-ואירוח",
         "מפיות"
       ],
       "unit": "",
@@ -13281,11 +13450,12 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "tablecloths-hospitality",
+      "categoryName": "מפות ואירוח שולחן",
       "categorySlugs": [
-        "חד-פעמי-ואירוח",
+        "tablecloths-hospitality",
         "מוצרי-נייר-וניגוב",
+        "חד-פעמי-ואירוח",
         "מפיות"
       ],
       "unit": "",
@@ -13340,12 +13510,13 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "tablecloths-hospitality",
+      "categoryName": "מפות ואירוח שולחן",
       "categorySlugs": [
-        "חד-פעמי-ואירוח",
+        "tablecloths-hospitality",
         "מוצרי-נייר-וניגוב",
-        "מפיות"
+        "מפיות",
+        "חד-פעמי-ואירוח"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -13428,11 +13599,12 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "tablecloths-hospitality",
+      "categoryName": "מפות ואירוח שולחן",
       "categorySlugs": [
-        "חד-פעמי-ואירוח",
+        "tablecloths-hospitality",
         "מוצרי-נייר-וניגוב",
+        "חד-פעמי-ואירוח",
         "מפיות"
       ],
       "unit": "",
@@ -13458,9 +13630,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "tablecloths-hospitality",
+      "categoryName": "מפות ואירוח שולחן",
       "categorySlugs": [
+        "tablecloths-hospitality",
         "חד-פעמי-ואירוח"
       ],
       "unit": "",
@@ -13486,9 +13659,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "tablecloths-hospitality",
+      "categoryName": "מפות ואירוח שולחן",
       "categorySlugs": [
+        "tablecloths-hospitality",
         "חד-פעמי-ואירוח"
       ],
       "unit": "",
@@ -13514,9 +13688,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "tablecloths-hospitality",
+      "categoryName": "מפות ואירוח שולחן",
       "categorySlugs": [
+        "tablecloths-hospitality",
         "חד-פעמי-ואירוח"
       ],
       "unit": "",
@@ -13740,9 +13915,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-plates",
+      "categoryName": "צלחות חד פעמי",
       "categorySlugs": [
+        "disposable-plates",
         "חד-פעמי-ואירוח",
         "כוסות-צלחות-וסכום"
       ],
@@ -13769,9 +13945,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-plates",
+      "categoryName": "צלחות חד פעמי",
       "categorySlugs": [
+        "disposable-plates",
         "חד-פעמי-ואירוח"
       ],
       "unit": "",
@@ -14108,11 +14285,12 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "kitchen-storage-accessories",
+      "categoryName": "אחסון ואביזרי מטבח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח",
-        "מפיות"
+        "kitchen-storage-accessories",
+        "מפיות",
+        "reusable-serving-tools"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -16459,9 +16637,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "candles-special-hospitality",
+      "categoryName": "נרות ואירוח מיוחד",
       "categorySlugs": [
+        "candles-special-hospitality",
         "חד-פעמי-ואירוח"
       ],
       "unit": "",
@@ -16487,9 +16666,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "candles-special-hospitality",
+      "categoryName": "נרות ואירוח מיוחד",
       "categorySlugs": [
+        "candles-special-hospitality",
         "חד-פעמי-ואירוח"
       ],
       "unit": "",
@@ -16537,9 +16717,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "candles-special-hospitality",
+      "categoryName": "נרות ואירוח מיוחד",
       "categorySlugs": [
+        "candles-special-hospitality",
         "חד-פעמי-ואירוח"
       ],
       "unit": "",
@@ -17327,10 +17508,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "reusable-cutlery",
+      "categoryName": "סכו\"ם רב-פעמי",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "reusable-cutlery",
+        "reusable-serving-tools"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -17355,10 +17537,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "reusable-cutlery",
+      "categoryName": "סכו\"ם רב-פעמי",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "reusable-cutlery",
+        "reusable-serving-tools"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -17383,10 +17566,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "reusable-cutlery",
+      "categoryName": "סכו\"ם רב-פעמי",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "reusable-cutlery",
+        "reusable-serving-tools"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -17523,10 +17707,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "reusable-cutlery",
+      "categoryName": "סכו\"ם רב-פעמי",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "reusable-cutlery",
+        "reusable-serving-tools"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -17551,10 +17736,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "reusable-cutlery",
+      "categoryName": "סכו\"ם רב-פעמי",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "reusable-cutlery",
+        "reusable-serving-tools"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -17719,9 +17905,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-cutlery",
+      "categoryName": "סכו\"ם חד פעמי",
       "categorySlugs": [
+        "disposable-cutlery",
         "חד-פעמי-ואירוח",
         "כוסות-צלחות-וסכום"
       ],
@@ -18004,10 +18191,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "kitchen-storage-accessories",
+      "categoryName": "אחסון ואביזרי מטבח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "kitchen-storage-accessories",
+        "reusable-serving-tools"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -18032,10 +18220,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "reusable-cutlery",
+      "categoryName": "סכו\"ם רב-פעמי",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "reusable-cutlery",
+        "reusable-serving-tools"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -18116,9 +18305,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-cutlery",
+      "categoryName": "סכו\"ם חד פעמי",
       "categorySlugs": [
+        "disposable-cutlery",
         "חד-פעמי-ואירוח"
       ],
       "unit": "",
@@ -18144,9 +18334,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-cutlery",
+      "categoryName": "סכו\"ם חד פעמי",
       "categorySlugs": [
+        "disposable-cutlery",
         "חד-פעמי-ואירוח",
         "כוסות-צלחות-וסכום"
       ],
@@ -19809,9 +20000,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "tablecloths-hospitality",
+      "categoryName": "מפות ואירוח שולחן",
       "categorySlugs": [
+        "tablecloths-hospitality",
         "חד-פעמי-ואירוח"
       ],
       "unit": "",
@@ -20034,9 +20226,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-plates",
+      "categoryName": "צלחות חד פעמי",
       "categorySlugs": [
+        "disposable-plates",
         "חד-פעמי-ואירוח"
       ],
       "unit": "",
@@ -20062,9 +20255,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-plates",
+      "categoryName": "צלחות חד פעמי",
       "categorySlugs": [
+        "disposable-plates",
         "חד-פעמי-ואירוח"
       ],
       "unit": "",
@@ -20090,9 +20284,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-plates",
+      "categoryName": "צלחות חד פעמי",
       "categorySlugs": [
+        "disposable-plates",
         "חד-פעמי-ואירוח"
       ],
       "unit": "",
@@ -20118,9 +20313,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-plates",
+      "categoryName": "צלחות חד פעמי",
       "categorySlugs": [
+        "disposable-plates",
         "חד-פעמי-ואירוח",
         "כוסות-צלחות-וסכום"
       ],
@@ -20147,9 +20343,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-plates",
+      "categoryName": "צלחות חד פעמי",
       "categorySlugs": [
+        "disposable-plates",
         "חד-פעמי-ואירוח",
         "כוסות-צלחות-וסכום"
       ],
@@ -20176,9 +20373,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-plates",
+      "categoryName": "צלחות חד פעמי",
       "categorySlugs": [
+        "disposable-plates",
         "חד-פעמי-ואירוח"
       ],
       "unit": "",
@@ -20204,9 +20402,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-plates",
+      "categoryName": "צלחות חד פעמי",
       "categorySlugs": [
+        "disposable-plates",
         "חד-פעמי-ואירוח",
         "כוסות-צלחות-וסכום"
       ],
@@ -20233,9 +20432,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-plates",
+      "categoryName": "צלחות חד פעמי",
       "categorySlugs": [
+        "disposable-plates",
         "חד-פעמי-ואירוח",
         "כוסות-צלחות-וסכום"
       ],
@@ -20262,9 +20462,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-plates",
+      "categoryName": "צלחות חד פעמי",
       "categorySlugs": [
+        "disposable-plates",
         "חד-פעמי-ואירוח"
       ],
       "unit": "",
@@ -20290,9 +20491,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-plates",
+      "categoryName": "צלחות חד פעמי",
       "categorySlugs": [
+        "disposable-plates",
         "חד-פעמי-ואירוח"
       ],
       "unit": "",
@@ -20318,9 +20520,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-plates",
+      "categoryName": "צלחות חד פעמי",
       "categorySlugs": [
+        "disposable-plates",
         "חד-פעמי-ואירוח"
       ],
       "unit": "",
@@ -20346,10 +20549,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "reusable-plates-serving",
+      "categoryName": "צלחות וכלי הגשה רב-פעמיים",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "reusable-plates-serving",
+        "reusable-serving-tools"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -20374,10 +20578,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "reusable-plates-serving",
+      "categoryName": "צלחות וכלי הגשה רב-פעמיים",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "reusable-plates-serving",
+        "reusable-serving-tools"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -20941,9 +21146,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "toothpicks-skewers",
+      "categoryName": "קיסמים ושיפודים",
       "categorySlugs": [
+        "toothpicks-skewers",
         "חד-פעמי-ואירוח",
         "קיסמים-קשים-ושיפודים"
       ],
@@ -20999,9 +21205,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "toothpicks-skewers",
+      "categoryName": "קיסמים ושיפודים",
       "categorySlugs": [
+        "toothpicks-skewers",
         "חד-פעמי-ואירוח",
         "קיסמים-קשים-ושיפודים"
       ],
@@ -21309,9 +21516,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-plates",
+      "categoryName": "צלחות חד פעמי",
       "categorySlugs": [
+        "disposable-plates",
         "חד-פעמי-ואירוח",
         "כוסות-צלחות-וסכום"
       ],
@@ -21338,9 +21546,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "disposable-plates",
+      "categoryName": "צלחות חד פעמי",
       "categorySlugs": [
+        "disposable-plates",
         "חד-פעמי-ואירוח"
       ],
       "unit": "",
@@ -21366,10 +21575,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "reusable-plates-serving",
+      "categoryName": "צלחות וכלי הגשה רב-פעמיים",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "reusable-plates-serving",
+        "reusable-serving-tools"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -21881,11 +22091,12 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "כוסות-צלחות-וסכום",
+      "categoryName": "כוסות צלחות וסכום",
       "categorySlugs": [
-        "חד-פעמי-ואירוח",
-        "קיסמים-קשים-ושיפודים"
+        "כוסות-צלחות-וסכום",
+        "קיסמים-קשים-ושיפודים",
+        "אריזות-מזון-ו-Take-Away"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -22221,9 +22432,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "toothpicks-skewers",
+      "categoryName": "קיסמים ושיפודים",
       "categorySlugs": [
+        "toothpicks-skewers",
         "חד-פעמי-ואירוח",
         "קיסמים-קשים-ושיפודים"
       ],
@@ -22250,9 +22462,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "toothpicks-skewers",
+      "categoryName": "קיסמים ושיפודים",
       "categorySlugs": [
+        "toothpicks-skewers",
         "חד-פעמי-ואירוח",
         "קיסמים-קשים-ושיפודים"
       ],
@@ -22279,9 +22492,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "toothpicks-skewers",
+      "categoryName": "קיסמים ושיפודים",
       "categorySlugs": [
+        "toothpicks-skewers",
         "חד-פעמי-ואירוח",
         "קיסמים-קשים-ושיפודים"
       ],
@@ -22308,9 +22522,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "toothpicks-skewers",
+      "categoryName": "קיסמים ושיפודים",
       "categorySlugs": [
+        "toothpicks-skewers",
         "חד-פעמי-ואירוח",
         "קיסמים-קשים-ושיפודים"
       ],
@@ -22366,9 +22581,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "חד-פעמי-ואירוח",
-      "categoryName": "חד פעמי ואירוח",
+      "categorySlug": "toothpicks-skewers",
+      "categoryName": "קיסמים ושיפודים",
       "categorySlugs": [
+        "toothpicks-skewers",
         "חד-פעמי-ואירוח",
         "קיסמים-קשים-ושיפודים"
       ],
@@ -24560,6 +24776,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T14:42:58.660Z",
+  "exportedAt": "2026-03-14T15:23:47.744Z",
   "totalItems": 823
 }
