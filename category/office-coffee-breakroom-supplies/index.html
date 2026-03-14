@@ -76,13 +76,9 @@
     .consult-cta__btn{margin-right:auto;display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:#25d366;color:#fff;border-radius:10px;font-weight:700;font-size:0.95rem;text-decoration:none;white-space:nowrap;transition:all 0.2s;box-shadow:0 2px 8px rgba(37,211,102,0.3)}
     .consult-cta__btn:hover{transform:scale(1.04);box-shadow:0 4px 14px rgba(37,211,102,0.4)}
     @media(max-width:640px){.consult-cta{flex-direction:column;text-align:center;gap:12px}.consult-cta__btn{margin:0 auto}}
-    /* Hero overlay */
-    .hero-wrapper{position:relative;border-radius:12px;overflow:hidden;margin-bottom:1rem}
-    .hero-wrapper img{display:block;width:100%;max-height:260px;object-fit:cover}
-    .hero-overlay{position:absolute;bottom:0;left:0;right:0;padding:24px 28px 20px;background:linear-gradient(to top,rgba(17,42,69,0.95) 0%,rgba(17,42,69,0.75) 50%,transparent 100%);color:#fff}
-    .hero-overlay h1{font-size:1.35rem;font-weight:800;margin:0 0 6px;text-shadow:0 2px 8px rgba(0,0,0,0.5);line-height:1.4}
-    .hero-overlay p{font-size:0.85rem;opacity:0.95;margin:0;text-shadow:0 1px 4px rgba(0,0,0,0.4)}
-    @media(max-width:480px){.hero-overlay h1{font-size:1.1rem}.hero-overlay{padding:16px 18px 14px}}
+    /* Hero image - clean, no overlay text */
+    .hero-wrapper{border-radius:12px;overflow:hidden;margin-bottom:1rem}
+    .hero-wrapper img{display:block;width:100%;height:200px;object-fit:cover}
     .mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:999;background:#fff;box-shadow:0 -2px 12px rgba(0,0,0,0.12);padding:10px 16px;gap:10px;align-items:center;}
     .mobile-cta-bar a{flex:1;text-align:center;padding:12px 8px;border-radius:10px;font-weight:600;font-size:0.95rem;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:6px;}
     .mobile-cta-bar .cta-wa{background:#25d366;color:#fff;}
@@ -678,16 +674,10 @@
         </aside>
         <div class="catalog-main">
           <div class="catalog-header">
-            
-            <div class="hero-wrapper">
-              <img src="/images/categories/office-coffee-breakroom-supplies.webp" alt="קפה שתייה וכיבוד למשרדים - YMARKET - מבחר מוצרים בסיטונאות | וואי מרקט" width="1200" height="400" fetchpriority="high" />
-              <div class="hero-overlay">
-                <h1>קפה, שתייה וכיבוד – אספקה ישירה מהיצרן לעסק שלך</h1>
-                <p>19 מוצרים במחירי סיטונאות | אספקה תוך 24-72 שעות</p>
-              </div>
-            </div>
-            
-            <p style="font-size:0.8rem;color:#9ca3af;margin-top:4px;">עודכן לאחרונה: 14.3.2026</p>
+            <div class="hero-wrapper"><img src="/images/categories/office-coffee-breakroom-supplies.webp" alt="קפה שתייה וכיבוד למשרדים - YMARKET - מבחר מוצרים בסיטונאות | וואי מרקט" width="1200" height="400" fetchpriority="high" /></div>
+            <h1>קפה, שתייה וכיבוד – אספקה ישירה מהיצרן לעסק שלך</h1>
+            <p style="font-size:0.9rem;color:#6b7280;margin-top:2px;">19 מוצרים במחירי סיטונאות</p>
+            <p style="font-size:0.78rem;color:#9ca3af;margin-top:4px;">עודכן לאחרונה: 14.3.2026</p>
           </div>
           <div class="trust-badges">
             <div class="trust-badges__item">
@@ -1357,18 +1347,17 @@
                 </a>
             </div>
           </div>
-          <div class="category-cta" style="background:linear-gradient(135deg,#1B3A5C 0%,#2a5080 100%);border-radius:16px;padding:2.5rem;margin-top:2rem;text-align:center;color:#fff;position:relative;overflow:hidden;">
-            <div style="position:absolute;top:-20px;left:-20px;width:120px;height:120px;background:rgba(255,255,255,0.05);border-radius:50%"></div>
-            <div style="position:absolute;bottom:-30px;right:-30px;width:160px;height:160px;background:rgba(255,255,255,0.03);border-radius:50%"></div>
-            <div style="position:relative;z-index:1">
-              <div style="font-size:2rem;margin-bottom:12px;"><i class="fas fa-calculator"></i></div>
-              <h3 style="margin-bottom:0.5rem;font-size:1.2rem;font-weight:800;">קבלו הצעת מחיר תוך דקות</h3>
-              <p style="opacity:0.85;margin-bottom:1.2rem;max-width:500px;margin-left:auto;margin-right:auto;">שלחו רשימת מוצרים בוואטסאפ ונחזור עם הצעה מותאמת כולל מחיר משלוח — בדרך כלל תוך שעה</p>
-              <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
-                <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A7%D7%A4%D7%94%2C%20%D7%A9%D7%AA%D7%99%D7%99%D7%94%20%D7%95%D7%9B%D7%99%D7%91%D7%95%D7%93" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:#25d366;color:#fff;border-radius:12px;font-weight:700;font-size:1rem;text-decoration:none;transition:transform 0.2s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"><i class="fab fa-whatsapp" style="font-size:1.2rem"></i> שלחו הודעה בוואטסאפ</a>
-                <a href="tel:037740400" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.3);border-radius:12px;font-weight:600;font-size:1rem;text-decoration:none;transition:background 0.2s" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'"><i class="fas fa-phone-alt"></i> 03-7740400</a>
-              </div>
-              <p style="margin-top:12px;font-size:0.78rem;opacity:0.65;">מינימום הזמנה 1,600 ₪ + מע"מ | ניתן לשלב מוצרים מכל הקטגוריות</p>
+          <div class="category-cta" style="background:#fff;border:2px solid #e5e7eb;border-radius:16px;padding:2rem;margin-top:2rem;text-align:center;">
+            <div style="display:flex;justify-content:center;gap:2rem;margin-bottom:1.2rem;flex-wrap:wrap">
+              <div style="text-align:center"><div style="font-size:1.6rem;font-weight:800;color:#1B3A5C">19+</div><div style="font-size:0.78rem;color:#6b7280">מוצרים בקטגוריה</div></div>
+              <div style="text-align:center"><div style="font-size:1.6rem;font-weight:800;color:#16a34a">24-72</div><div style="font-size:0.78rem;color:#6b7280">שעות אספקה</div></div>
+              <div style="text-align:center"><div style="font-size:1.6rem;font-weight:800;color:#d97706">1,600₪</div><div style="font-size:0.78rem;color:#6b7280">מינימום הזמנה + מע"מ</div></div>
+            </div>
+            <h3 style="margin-bottom:0.4rem;font-size:1.1rem;font-weight:700;color:#1f2937;">הוסיפו מוצרים לעגלה והשלימו הזמנה</h3>
+            <p style="color:#6b7280;margin-bottom:1rem;font-size:0.88rem;">ניתן לשלב מוצרים מכל הקטגוריות בהזמנה אחת</p>
+            <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+              <a href="/cart" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:#1B3A5C;color:#fff;border-radius:12px;font-weight:700;font-size:1rem;text-decoration:none;transition:background 0.2s" onmouseover="this.style.background='#112a45'" onmouseout="this.style.background='#1B3A5C'"><i class="fas fa-shopping-cart"></i> עברו לעגלה</a>
+              <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A2%D7%96%D7%A8%D7%94%20%D7%91%D7%94%D7%96%D7%9E%D7%A0%D7%94%20%D7%9E%D7%A7%D7%A4%D7%94%2C%20%D7%A9%D7%AA%D7%99%D7%99%D7%94%20%D7%95%D7%9B%D7%99%D7%91%D7%95%D7%93" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:#fff;color:#1f2937;border:1px solid #d1d5db;border-radius:12px;font-weight:600;font-size:1rem;text-decoration:none;transition:border-color 0.2s" onmouseover="this.style.borderColor='#25d366'" onmouseout="this.style.borderColor='#d1d5db'"><i class="fab fa-whatsapp" style="color:#25d366"></i> עזרה בהזמנה</a>
             </div>
           </div>
         </div>
