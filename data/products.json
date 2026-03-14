@@ -592,7 +592,7 @@
       "icon": "fa-box",
       "parentId": 13,
       "sortOrder": 1,
-      "itemCount": 13,
+      "itemCount": 12,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -2726,8 +2726,7 @@
       "categoryName": "עזרה ראשונה וציוד רפואי לעסקים",
       "categorySlugs": [
         "עזרה-ראשונה-רפואי",
-        "bandaging-wound-care",
-        "first-aid-kits"
+        "bandaging-wound-care"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -25470,6 +25469,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T16:43:11.760Z",
+  "exportedAt": "2026-03-14T16:43:41.498Z",
   "totalItems": 824
 }
