@@ -247,7 +247,7 @@
       "icon": "fa-box",
       "parentId": 9,
       "sortOrder": 0,
-      "itemCount": 10,
+      "itemCount": 9,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -3295,8 +3295,7 @@
       "categorySlug": "מוצרי-נייר-וניגוב",
       "categoryName": "מוצרי נייר וניגוב",
       "categorySlugs": [
-        "מוצרי-נייר-וניגוב",
-        "ממחטות-וטישו"
+        "מוצרי-נייר-וניגוב"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -24508,6 +24507,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T14:19:34.886Z",
+  "exportedAt": "2026-03-14T14:20:54.419Z",
   "totalItems": 823
 }
