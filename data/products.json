@@ -1,13 +1,13 @@
 {
   "categories": [
     {
-      "id": 37,
-      "name": "דליים, כפות אשפה ומרססים",
-      "slug": "דליים-כפות-אשפה-ומרססים",
+      "id": 21,
+      "name": "סטוק עד הבית",
+      "slug": "סטוק-עד-הבית",
       "icon": "fa-box",
-      "parentId": 2,
+      "parentId": null,
       "sortOrder": 0,
-      "itemCount": 8,
+      "itemCount": 10,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -16,13 +16,13 @@
       "imageAlt": null
     },
     {
-      "id": 38,
-      "name": "אביזרי שירותים ושלטי בטיחות",
-      "slug": "אביזרי-שירותים-ושלטי-בטיחות",
+      "id": 46,
+      "name": "ניקוי משטחים מיוחדים",
+      "slug": "ניקוי-משטחים-מיוחדים",
       "icon": "fa-box",
-      "parentId": 2,
+      "parentId": 4,
       "sortOrder": 0,
-      "itemCount": 4,
+      "itemCount": 13,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -31,28 +31,28 @@
       "imageAlt": null
     },
     {
-      "id": 28,
-      "name": "קרפטים וקופסאות",
-      "slug": "קראפטים",
+      "id": 29,
+      "name": "כוסות צלחות וסכום",
+      "slug": "כוסות-צלחות-וסכום",
       "icon": "fa-box",
       "parentId": 5,
       "sortOrder": 0,
-      "itemCount": 29,
-      "metaTitle": "קרפטים ואריזות מזון בסיטונאות לעסקים | Ymarket",
-      "metaDescription": "מגוון קרפטים, שקיות נייר ואריזות למסעדות בסיטונאות. משלוח מהיר עד 72 שעות, מינימום הזמנה 1,600₪. לייעוץ והזמנות חייגו: 3497* מרכז שירות Ymarket",
-      "seoSlug": "kraft-paper-packaging-wholesale",
-      "seoContent": "<h2>פתרונות אריזה וקרפטים לעסקים בסיטונאות</h2>\n<p>עולם המשלוחים וה-Take Away מחייב אריזה חזקה, ייצוגית ושומרת טריות. ב-YMARKET אנו מספקים מגוון רחב של קרפטים, שקיות נייר חומות ולבנות, ומארזי קרטון המותאמים אישית לצרכי העסק שלכם. כל מוצרי האריזה שלנו עומדים בתקני איכות מחמירים ומבטיחים שהלקוח שלכם יקבל את המנה בדיוק כפי שיצאה מהמטבח.</p>\n<p>צריכים עזרה בבחירת סוג האריזה המתאים? המומחים שלנו זמינים עבורכם. ניתן לבצע הזמנה ישירות דרך האתר או לחייג למרכז ההזמנות המקוצר שלנו בטלפון 3497*. אנו מתחייבים לאספקה מהירה לגוש דן והמרכז תוך 24-72 שעות.</p>",
-      "imageUrl": "https://ymarket.co.il/images/categories/kraft-paper-packaging-wholesale.png",
-      "imageAlt": "קרפטים ושקיות נייר חומות בסיטונאות למסעדות ומשלוחים - וואי מרקט"
+      "itemCount": 47,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
     },
     {
-      "id": 50,
-      "name": "נייר תעשייתי",
-      "slug": "ממחטות-וטישו",
+      "id": 30,
+      "name": "קיסמים, קשים ושיפודים",
+      "slug": "קיסמים-קשים-ושיפודים",
       "icon": "fa-box",
-      "parentId": 9,
+      "parentId": 5,
       "sortOrder": 0,
-      "itemCount": 10,
+      "itemCount": 12,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -121,21 +121,6 @@
       "imageAlt": null
     },
     {
-      "id": 55,
-      "name": "מגבונים רטובים",
-      "slug": "מגבונים-רטובים",
-      "icon": "fa-box",
-      "parentId": 6,
-      "sortOrder": 0,
-      "itemCount": 6,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
       "id": 49,
       "name": "מפיות",
       "slug": "מפיות",
@@ -181,51 +166,6 @@
       "imageAlt": null
     },
     {
-      "id": 54,
-      "name": "מטליות כותנה וסחבות",
-      "slug": "מטליות-כותנה-וסחבות",
-      "icon": "fa-box",
-      "parentId": 6,
-      "sortOrder": 0,
-      "itemCount": 9,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
-      "id": 22,
-      "name": "מטליות מיקרופייבר",
-      "slug": "מטליות",
-      "icon": "fa-box",
-      "parentId": 6,
-      "sortOrder": 0,
-      "itemCount": 9,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
-      "id": 23,
-      "name": "קרצוף, ספוגים וכריות",
-      "slug": "קרצוף-ורחצה",
-      "icon": "fa-box",
-      "parentId": 6,
-      "sortOrder": 0,
-      "itemCount": 10,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
       "id": 44,
       "name": "סבונים וניקוי ידיים",
       "slug": "סבונים-וניקוי-ידיים",
@@ -248,6 +188,21 @@
       "parentId": 4,
       "sortOrder": 0,
       "itemCount": 12,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 55,
+      "name": "מגבונים רטובים",
+      "slug": "מגבונים-רטובים",
+      "icon": "fa-box",
+      "parentId": 6,
+      "sortOrder": 0,
+      "itemCount": 6,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -301,58 +256,43 @@
       "imageAlt": null
     },
     {
-      "id": 21,
-      "name": "סטוק עד הבית",
-      "slug": "סטוק-עד-הבית",
+      "id": 54,
+      "name": "מטליות כותנה וסחבות",
+      "slug": "מטליות-כותנה-וסחבות",
       "icon": "fa-box",
-      "parentId": null,
+      "parentId": 6,
+      "sortOrder": 0,
+      "itemCount": 9,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 22,
+      "name": "מטליות מיקרופייבר",
+      "slug": "מטליות",
+      "icon": "fa-box",
+      "parentId": 6,
+      "sortOrder": 0,
+      "itemCount": 9,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 23,
+      "name": "קרצוף, ספוגים וכריות",
+      "slug": "קרצוף-ורחצה",
+      "icon": "fa-box",
+      "parentId": 6,
       "sortOrder": 0,
       "itemCount": 10,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
-      "id": 46,
-      "name": "ניקוי משטחים מיוחדים",
-      "slug": "ניקוי-משטחים-מיוחדים",
-      "icon": "fa-box",
-      "parentId": 4,
-      "sortOrder": 0,
-      "itemCount": 13,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
-      "id": 29,
-      "name": "כוסות צלחות וסכום",
-      "slug": "כוסות-צלחות-וסכום",
-      "icon": "fa-box",
-      "parentId": 5,
-      "sortOrder": 0,
-      "itemCount": 47,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
-      "id": 30,
-      "name": "קיסמים, קשים ושיפודים",
-      "slug": "קיסמים-קשים-ושיפודים",
-      "icon": "fa-box",
-      "parentId": 5,
-      "sortOrder": 0,
-      "itemCount": 12,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -376,28 +316,28 @@
       "imageAlt": null
     },
     {
-      "id": 31,
-      "name": " כפפות חד-פעמיות",
-      "slug": "-כפפות-חדפעמיות",
+      "id": 28,
+      "name": "קרפטים וקופסאות",
+      "slug": "קראפטים",
       "icon": "fa-box",
-      "parentId": 1,
+      "parentId": 5,
       "sortOrder": 0,
       "itemCount": 29,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
+      "metaTitle": "קרפטים ואריזות מזון בסיטונאות לעסקים | Ymarket",
+      "metaDescription": "מגוון קרפטים, שקיות נייר ואריזות למסעדות בסיטונאות. משלוח מהיר עד 72 שעות, מינימום הזמנה 1,600₪. לייעוץ והזמנות חייגו: 3497* מרכז שירות Ymarket",
+      "seoSlug": "kraft-paper-packaging-wholesale",
+      "seoContent": "<h2>פתרונות אריזה וקרפטים לעסקים בסיטונאות</h2>\n<p>עולם המשלוחים וה-Take Away מחייב אריזה חזקה, ייצוגית ושומרת טריות. ב-YMARKET אנו מספקים מגוון רחב של קרפטים, שקיות נייר חומות ולבנות, ומארזי קרטון המותאמים אישית לצרכי העסק שלכם. כל מוצרי האריזה שלנו עומדים בתקני איכות מחמירים ומבטיחים שהלקוח שלכם יקבל את המנה בדיוק כפי שיצאה מהמטבח.</p>\n<p>צריכים עזרה בבחירת סוג האריזה המתאים? המומחים שלנו זמינים עבורכם. ניתן לבצע הזמנה ישירות דרך האתר או לחייג למרכז ההזמנות המקוצר שלנו בטלפון 3497*. אנו מתחייבים לאספקה מהירה לגוש דן והמרכז תוך 24-72 שעות.</p>",
+      "imageUrl": "https://ymarket.co.il/images/categories/kraft-paper-packaging-wholesale.png",
+      "imageAlt": "קרפטים ושקיות נייר חומות בסיטונאות למסעדות ומשלוחים - וואי מרקט"
     },
     {
-      "id": 32,
-      "name": "ביגוד מגן וסינרים",
-      "slug": "ביגוד-מגן-וסינרים",
+      "id": 50,
+      "name": "נייר תעשייתי",
+      "slug": "ממחטות-וטישו",
       "icon": "fa-box",
-      "parentId": 1,
+      "parentId": 9,
       "sortOrder": 0,
-      "itemCount": 9,
+      "itemCount": 10,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -406,28 +346,43 @@
       "imageAlt": null
     },
     {
-      "id": 33,
-      "name": " כפפות עבודה ומגן",
-      "slug": "-כפפות-עבודה-ומגן",
+      "id": 38,
+      "name": "אביזרי שירותים ושלטי בטיחות",
+      "slug": "אביזרי-שירותים-ושלטי-בטיחות",
       "icon": "fa-box",
-      "parentId": 1,
+      "parentId": 2,
+      "sortOrder": 0,
+      "itemCount": 4,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 37,
+      "name": "דליים, כפות אשפה ומרססים",
+      "slug": "דליים-כפות-אשפה-ומרססים",
+      "icon": "fa-box",
+      "parentId": 2,
+      "sortOrder": 0,
+      "itemCount": 8,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 36,
+      "name": "פחי אשפה למוסדות",
+      "slug": "פחי-אשפה-למוסדות",
+      "icon": "fa-box",
+      "parentId": 2,
       "sortOrder": 0,
       "itemCount": 6,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
-      "id": 34,
-      "name": "מסכות פנים והגנת נשימה",
-      "slug": "מסכות-פנים-והגנת-נשימה",
-      "icon": "fa-box",
-      "parentId": 1,
-      "sortOrder": 0,
-      "itemCount": 9,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -451,13 +406,58 @@
       "imageAlt": null
     },
     {
-      "id": 36,
-      "name": "פחי אשפה למוסדות",
-      "slug": "פחי-אשפה-למוסדות",
+      "id": 34,
+      "name": "מסכות פנים והגנת נשימה",
+      "slug": "מסכות-פנים-והגנת-נשימה",
       "icon": "fa-box",
-      "parentId": 2,
+      "parentId": 1,
+      "sortOrder": 0,
+      "itemCount": 10,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 33,
+      "name": " כפפות עבודה ומגן",
+      "slug": "-כפפות-עבודה-ומגן",
+      "icon": "fa-box",
+      "parentId": 1,
       "sortOrder": 0,
       "itemCount": 6,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 32,
+      "name": "ביגוד מגן וסינרים",
+      "slug": "ביגוד-מגן-וסינרים",
+      "icon": "fa-box",
+      "parentId": 1,
+      "sortOrder": 0,
+      "itemCount": 9,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 31,
+      "name": " כפפות חד-פעמיות",
+      "slug": "-כפפות-חדפעמיות",
+      "icon": "fa-box",
+      "parentId": 1,
+      "sortOrder": 0,
+      "itemCount": 29,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -487,7 +487,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 1,
-      "itemCount": 61,
+      "itemCount": 62,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": "safety-ppe-equipment-for-business",
@@ -511,6 +511,21 @@
       "imageAlt": null
     },
     {
+      "id": 66,
+      "name": "מצעים ושמיכות",
+      "slug": "bedding-blankets",
+      "icon": "fa-box",
+      "parentId": 65,
+      "sortOrder": 1,
+      "itemCount": 5,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
       "id": 60,
       "name": "צלחות חד פעמי",
       "slug": "disposable-plates",
@@ -526,13 +541,28 @@
       "imageAlt": null
     },
     {
-      "id": 61,
-      "name": "סכו\"ם חד פעמי",
-      "slug": "disposable-cutlery",
+      "id": 71,
+      "name": "כלי כתיבה",
+      "slug": "writing-instruments",
       "icon": "fa-box",
-      "parentId": 7,
+      "parentId": 11,
+      "sortOrder": 1,
+      "itemCount": 35,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 67,
+      "name": "מגבות וביגוד",
+      "slug": "towels-clothing",
+      "icon": "fa-box",
+      "parentId": 65,
       "sortOrder": 2,
-      "itemCount": 16,
+      "itemCount": 2,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -548,6 +578,36 @@
       "parentId": null,
       "sortOrder": 2,
       "itemCount": 32,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 72,
+      "name": "ניירת ופנקסים",
+      "slug": "paper-notebooks",
+      "icon": "fa-box",
+      "parentId": 11,
+      "sortOrder": 2,
+      "itemCount": 13,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 61,
+      "name": "סכו\"ם חד פעמי",
+      "slug": "disposable-cutlery",
+      "icon": "fa-box",
+      "parentId": 7,
+      "sortOrder": 2,
+      "itemCount": 16,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -586,13 +646,13 @@
       "imageAlt": null
     },
     {
-      "id": 25,
-      "name": "מגשי פלסטיק לבשר",
-      "slug": "מגשי-פלסטיק",
+      "id": 73,
+      "name": "ארגון ותיוק",
+      "slug": "organization-filing",
       "icon": "fa-box",
-      "parentId": 5,
+      "parentId": 11,
       "sortOrder": 3,
-      "itemCount": 10,
+      "itemCount": 21,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -601,13 +661,43 @@
       "imageAlt": null
     },
     {
-      "id": 59,
-      "name": "אחסון ואביזרי מטבח",
-      "slug": "kitchen-storage-accessories",
+      "id": 68,
+      "name": "תיקים ואביזרי נשיאה",
+      "slug": "bags-carrying-accessories",
       "icon": "fa-box",
-      "parentId": 56,
+      "parentId": 65,
       "sortOrder": 3,
       "itemCount": 2,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 62,
+      "name": "מפות ואירוח שולחן",
+      "slug": "tablecloths-hospitality",
+      "icon": "fa-box",
+      "parentId": 7,
+      "sortOrder": 3,
+      "itemCount": 12,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 25,
+      "name": "מגשי פלסטיק לבשר",
+      "slug": "מגשי-פלסטיק",
+      "icon": "fa-box",
+      "parentId": 5,
+      "sortOrder": 3,
+      "itemCount": 10,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -631,13 +721,28 @@
       "imageAlt": "שקיות אשפה מוסדיות בסיטונאות - YMARKET"
     },
     {
-      "id": 62,
-      "name": "מפות ואירוח שולחן",
-      "slug": "tablecloths-hospitality",
+      "id": 59,
+      "name": "אחסון ואביזרי מטבח",
+      "slug": "kitchen-storage-accessories",
+      "icon": "fa-box",
+      "parentId": 56,
+      "sortOrder": 3,
+      "itemCount": 2,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 63,
+      "name": "קיסמים ושיפודים",
+      "slug": "toothpicks-skewers",
       "icon": "fa-box",
       "parentId": 7,
-      "sortOrder": 3,
-      "itemCount": 12,
+      "sortOrder": 4,
+      "itemCount": 7,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -661,6 +766,36 @@
       "imageAlt": null
     },
     {
+      "id": 69,
+      "name": "ריהוט וציוד מוסדי",
+      "slug": "furniture-institutional-equipment",
+      "icon": "fa-box",
+      "parentId": 65,
+      "sortOrder": 4,
+      "itemCount": 1,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 74,
+      "name": "כלי שולחן ואביזרי משרד",
+      "slug": "desk-accessories",
+      "icon": "fa-box",
+      "parentId": 11,
+      "sortOrder": 4,
+      "itemCount": 17,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
       "id": 4,
       "name": "חומרי ניקוי וכימיקלים",
       "slug": "חומרי-ניקוי-וכימיקלים",
@@ -676,13 +811,13 @@
       "imageAlt": "אספקת חומרי ניקוי בסיטונאות למשרדים ומוסדות - YMARKET"
     },
     {
-      "id": 63,
-      "name": "קיסמים ושיפודים",
-      "slug": "toothpicks-skewers",
+      "id": 64,
+      "name": "נרות ואירוח מיוחד",
+      "slug": "candles-special-hospitality",
       "icon": "fa-box",
       "parentId": 7,
-      "sortOrder": 4,
-      "itemCount": 7,
+      "sortOrder": 5,
+      "itemCount": 4,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -691,13 +826,43 @@
       "imageAlt": null
     },
     {
-      "id": 64,
-      "name": "נרות ואירוח מיוחד",
-      "slug": "candles-special-hospitality",
+      "id": 70,
+      "name": "כלי מטבח רב-פעמיים",
+      "slug": "reusable-kitchen-tools",
       "icon": "fa-box",
-      "parentId": 7,
+      "parentId": 65,
       "sortOrder": 5,
-      "itemCount": 4,
+      "itemCount": 2,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 26,
+      "name": "מגשי אלומניום",
+      "slug": "מגשי-אלומניום",
+      "icon": "fa-box",
+      "parentId": 5,
+      "sortOrder": 5,
+      "itemCount": 19,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 75,
+      "name": "מדבקות ותוויות",
+      "slug": "labels-stickers",
+      "icon": "fa-box",
+      "parentId": 11,
+      "sortOrder": 5,
+      "itemCount": 12,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -721,21 +886,6 @@
       "imageAlt": "אריזות מזון ופתרונות Take Away בסיטונאות - YMARKET"
     },
     {
-      "id": 26,
-      "name": "מגשי אלומניום",
-      "slug": "מגשי-אלומניום",
-      "icon": "fa-box",
-      "parentId": 5,
-      "sortOrder": 5,
-      "itemCount": 19,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
       "id": 6,
       "name": "טקסטיל, מטליות וסחבות",
       "slug": "טקסטיל-מטליות-וסחבות",
@@ -751,6 +901,21 @@
       "imageAlt": "מטליות מיקרופייבר וסחבות מקצועיות - YMARKET"
     },
     {
+      "id": 76,
+      "name": "סוללות וחשמל",
+      "slug": "batteries-electrical",
+      "icon": "fa-box",
+      "parentId": 11,
+      "sortOrder": 6,
+      "itemCount": 8,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
       "id": 7,
       "name": "חד פעמי ואירוח",
       "slug": "חד-פעמי-ואירוח",
@@ -764,6 +929,21 @@
       "seoContent": "<h2>כלים חד פעמיים ופתרונות אריזה בסיטונאות</h2><p>בעולם האירוח והמזון, הפרזנטציה והאיכות של הכלי החד-פעמי משפיעים ישירות על חוויית הלקוח. YMARKET מציעה קטלוג עשיר של כוסות לשתייה חמה וקרה, צלחות, סכו\"ם ופתרונות אריזה למשלוחים (Take Away) המותאמים למסעדות ובתי קפה.</p><p>המוצרים שלנו נבחרים בקפידה כדי לשלב בין עמידות, עיצוב ומחיר תחרותי. בין אם אתם זקוקים לכמויות גדולות של כוסות נייר למשרד או למארזי מזון ייעודיים, אנחנו מספקים את המענה המהיר והמשתלם ביותר לעסקים בישראל.</p>",
       "imageUrl": null,
       "imageAlt": "כלים חד פעמיים ופתרונות אירוח בסיטונאות - YMARKET"
+    },
+    {
+      "id": 77,
+      "name": "ציוד קופה ומחשב",
+      "slug": "pos-computer-supplies",
+      "icon": "fa-box",
+      "parentId": 11,
+      "sortOrder": 7,
+      "itemCount": 6,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
     },
     {
       "id": 8,
@@ -817,7 +997,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 12,
-      "itemCount": 124,
+      "itemCount": 111,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -850,6 +1030,21 @@
       "itemCount": 47,
       "metaTitle": null,
       "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 65,
+      "name": "טקסטיל, ביגוד ומוצרי מגורים",
+      "slug": "textiles-clothing-living-supplies",
+      "icon": "fa-box",
+      "parentId": null,
+      "sortOrder": 15,
+      "itemCount": 12,
+      "metaTitle": null,
+      "metaDescription": "מצעים, שמיכות, מגבות, ביגוד וציוד מגורים לחברות כוח אדם, בתי מלון ומוסדות",
       "seoSlug": null,
       "seoContent": null,
       "imageUrl": null,
@@ -1173,9 +1368,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "desk-accessories",
+      "categoryName": "כלי שולחן ואביזרי משרד",
       "categorySlugs": [
+        "desk-accessories",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -1201,9 +1397,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "organization-filing",
+      "categoryName": "ארגון ותיוק",
       "categorySlugs": [
+        "organization-filing",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -1937,9 +2134,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "paper-notebooks",
+      "categoryName": "ניירת ופנקסים",
       "categorySlugs": [
+        "paper-notebooks",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -2472,10 +2670,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "furniture-institutional-equipment",
+      "categoryName": "ריהוט וציוד מוסדי",
       "categorySlugs": [
-        "ציוד-משרדי-וכללי"
+        "furniture-institutional-equipment",
+        "textiles-clothing-living-supplies"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -2646,9 +2845,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "paper-notebooks",
+      "categoryName": "ניירת ופנקסים",
       "categorySlugs": [
+        "paper-notebooks",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -2674,9 +2874,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "paper-notebooks",
+      "categoryName": "ניירת ופנקסים",
       "categorySlugs": [
+        "paper-notebooks",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -2702,9 +2903,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "paper-notebooks",
+      "categoryName": "ניירת ופנקסים",
       "categorySlugs": [
+        "paper-notebooks",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -3216,9 +3418,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "desk-accessories",
+      "categoryName": "כלי שולחן ואביזרי משרד",
       "categorySlugs": [
+        "desk-accessories",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -3244,9 +3447,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "desk-accessories",
+      "categoryName": "כלי שולחן ואביזרי משרד",
       "categorySlugs": [
+        "desk-accessories",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -3272,9 +3476,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "desk-accessories",
+      "categoryName": "כלי שולחן ואביזרי משרד",
       "categorySlugs": [
+        "desk-accessories",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -3614,9 +3819,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "desk-accessories",
+      "categoryName": "כלי שולחן ואביזרי משרד",
       "categorySlugs": [
+        "desk-accessories",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -3642,10 +3848,12 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "labels-stickers",
+      "categoryName": "מדבקות ותוויות",
       "categorySlugs": [
-        "ציוד-משרדי-וכללי"
+        "labels-stickers",
+        "ציוד-משרדי-וכללי",
+        "desk-accessories"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -3670,10 +3878,12 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "labels-stickers",
+      "categoryName": "מדבקות ותוויות",
       "categorySlugs": [
-        "ציוד-משרדי-וכללי"
+        "labels-stickers",
+        "ציוד-משרדי-וכללי",
+        "desk-accessories"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -3840,9 +4050,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "paper-notebooks",
+      "categoryName": "ניירת ופנקסים",
       "categorySlugs": [
+        "paper-notebooks",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -4183,9 +4394,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "organization-filing",
+      "categoryName": "ארגון ותיוק",
       "categorySlugs": [
+        "organization-filing",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -4211,9 +4423,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "desk-accessories",
+      "categoryName": "כלי שולחן ואביזרי משרד",
       "categorySlugs": [
+        "desk-accessories",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -4414,9 +4627,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "organization-filing",
+      "categoryName": "ארגון ותיוק",
       "categorySlugs": [
+        "organization-filing",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -4442,9 +4656,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "organization-filing",
+      "categoryName": "ארגון ותיוק",
       "categorySlugs": [
+        "organization-filing",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -4555,10 +4770,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "towels-clothing",
+      "categoryName": "מגבות וביגוד",
       "categorySlugs": [
-        "ציוד-משרדי-וכללי"
+        "towels-clothing",
+        "textiles-clothing-living-supplies"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -4613,9 +4829,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "pos-computer-supplies",
+      "categoryName": "ציוד קופה ומחשב",
       "categorySlugs": [
+        "pos-computer-supplies",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -4669,9 +4886,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -4697,9 +4915,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -4725,9 +4944,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -4753,9 +4973,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -4895,9 +5116,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "batteries-electrical",
+      "categoryName": "סוללות וחשמל",
       "categorySlugs": [
+        "batteries-electrical",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -5677,10 +5899,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "reusable-kitchen-tools",
+      "categoryName": "כלי מטבח רב-פעמיים",
       "categorySlugs": [
-        "ציוד-משרדי-וכללי"
+        "reusable-kitchen-tools",
+        "textiles-clothing-living-supplies"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -6115,10 +6338,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "bedding-blankets",
+      "categoryName": "מצעים ושמיכות",
       "categorySlugs": [
-        "ציוד-משרדי-וכללי"
+        "bedding-blankets",
+        "textiles-clothing-living-supplies"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -6171,9 +6395,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "organization-filing",
+      "categoryName": "ארגון ותיוק",
       "categorySlugs": [
+        "organization-filing",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -6548,9 +6773,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "organization-filing",
+      "categoryName": "ארגון ותיוק",
       "categorySlugs": [
+        "organization-filing",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -6576,9 +6802,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "organization-filing",
+      "categoryName": "ארגון ותיוק",
       "categorySlugs": [
+        "organization-filing",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -7591,10 +7818,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "towels-clothing",
+      "categoryName": "מגבות וביגוד",
       "categorySlugs": [
-        "ציוד-משרדי-וכללי"
+        "towels-clothing",
+        "textiles-clothing-living-supplies"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -9933,9 +10161,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "labels-stickers",
+      "categoryName": "מדבקות ותוויות",
       "categorySlugs": [
+        "labels-stickers",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -9961,9 +10190,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "labels-stickers",
+      "categoryName": "מדבקות ותוויות",
       "categorySlugs": [
+        "labels-stickers",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -9989,9 +10219,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "labels-stickers",
+      "categoryName": "מדבקות ותוויות",
       "categorySlugs": [
+        "labels-stickers",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -10017,9 +10248,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "labels-stickers",
+      "categoryName": "מדבקות ותוויות",
       "categorySlugs": [
+        "labels-stickers",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -10045,9 +10277,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "labels-stickers",
+      "categoryName": "מדבקות ותוויות",
       "categorySlugs": [
+        "labels-stickers",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -10073,9 +10306,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "labels-stickers",
+      "categoryName": "מדבקות ותוויות",
       "categorySlugs": [
+        "labels-stickers",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -10276,9 +10510,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "paper-notebooks",
+      "categoryName": "ניירת ופנקסים",
       "categorySlugs": [
+        "paper-notebooks",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -10304,9 +10539,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "paper-notebooks",
+      "categoryName": "ניירת ופנקסים",
       "categorySlugs": [
+        "paper-notebooks",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -10332,9 +10568,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "paper-notebooks",
+      "categoryName": "ניירת ופנקסים",
       "categorySlugs": [
+        "paper-notebooks",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -10360,9 +10597,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "paper-notebooks",
+      "categoryName": "ניירת ופנקסים",
       "categorySlugs": [
+        "paper-notebooks",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -10388,9 +10626,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "paper-notebooks",
+      "categoryName": "ניירת ופנקסים",
       "categorySlugs": [
+        "paper-notebooks",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -10416,9 +10655,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "paper-notebooks",
+      "categoryName": "ניירת ופנקסים",
       "categorySlugs": [
+        "paper-notebooks",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -10444,9 +10684,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -10472,9 +10713,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -11030,10 +11272,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "bags-carrying-accessories",
+      "categoryName": "תיקים ואביזרי נשיאה",
       "categorySlugs": [
-        "ציוד-משרדי-וכללי"
+        "bags-carrying-accessories",
+        "textiles-clothing-living-supplies"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -11058,9 +11301,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "paper-notebooks",
+      "categoryName": "ניירת ופנקסים",
       "categorySlugs": [
+        "paper-notebooks",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -12259,9 +12503,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "labels-stickers",
+      "categoryName": "מדבקות ותוויות",
       "categorySlugs": [
+        "labels-stickers",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -12399,9 +12644,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "desk-accessories",
+      "categoryName": "כלי שולחן ואביזרי משרד",
       "categorySlugs": [
+        "desk-accessories",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -12427,9 +12673,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "desk-accessories",
+      "categoryName": "כלי שולחן ואביזרי משרד",
       "categorySlugs": [
+        "desk-accessories",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -12948,12 +13195,13 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "מסכות-פנים-והגנת-נשימה",
+      "categoryName": "מסכות פנים והגנת נשימה",
       "categorySlugs": [
-        "ציוד-משרדי-וכללי",
+        "מסכות-פנים-והגנת-נשימה",
         "עזרה-ראשונה-רפואי",
-        "סטוק-עד-הבית"
+        "סטוק-עד-הבית",
+        "בטיחות-ומיגון-אישי-PPE"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -13051,9 +13299,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "desk-accessories",
+      "categoryName": "כלי שולחן ואביזרי משרד",
       "categorySlugs": [
+        "desk-accessories",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -13079,9 +13328,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "desk-accessories",
+      "categoryName": "כלי שולחן ואביזרי משרד",
       "categorySlugs": [
+        "desk-accessories",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -13333,9 +13583,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "desk-accessories",
+      "categoryName": "כלי שולחן ואביזרי משרד",
       "categorySlugs": [
+        "desk-accessories",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -13974,9 +14225,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -14002,9 +14254,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -14030,9 +14283,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -14058,9 +14312,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -14142,9 +14397,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "pos-computer-supplies",
+      "categoryName": "ציוד קופה ומחשב",
       "categorySlugs": [
+        "pos-computer-supplies",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -15534,7 +15790,9 @@
       "categorySlug": "ציוד-משרדי-וכללי",
       "categoryName": "ציוד משרדי וכללי",
       "categorySlugs": [
-        "ציוד-משרדי-וכללי"
+        "ציוד-משרדי-וכללי",
+        "labels-stickers",
+        "organization-filing"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -15819,9 +16077,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "pos-computer-supplies",
+      "categoryName": "ציוד קופה ומחשב",
       "categorySlugs": [
+        "pos-computer-supplies",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -15847,9 +16106,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "pos-computer-supplies",
+      "categoryName": "ציוד קופה ומחשב",
       "categorySlugs": [
+        "pos-computer-supplies",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -15875,9 +16135,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "pos-computer-supplies",
+      "categoryName": "ציוד קופה ומחשב",
       "categorySlugs": [
+        "pos-computer-supplies",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -15903,9 +16164,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "pos-computer-supplies",
+      "categoryName": "ציוד קופה ומחשב",
       "categorySlugs": [
+        "pos-computer-supplies",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -16308,9 +16570,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "paper-notebooks",
+      "categoryName": "ניירת ופנקסים",
       "categorySlugs": [
+        "paper-notebooks",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -16481,9 +16744,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "labels-stickers",
+      "categoryName": "מדבקות ותוויות",
       "categorySlugs": [
+        "labels-stickers",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -17197,9 +17461,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "batteries-electrical",
+      "categoryName": "סוללות וחשמל",
       "categorySlugs": [
+        "batteries-electrical",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -17225,9 +17490,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "batteries-electrical",
+      "categoryName": "סוללות וחשמל",
       "categorySlugs": [
+        "batteries-electrical",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -17253,9 +17519,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "batteries-electrical",
+      "categoryName": "סוללות וחשמל",
       "categorySlugs": [
+        "batteries-electrical",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -17281,9 +17548,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "batteries-electrical",
+      "categoryName": "סוללות וחשמל",
       "categorySlugs": [
+        "batteries-electrical",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -17309,9 +17577,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "batteries-electrical",
+      "categoryName": "סוללות וחשמל",
       "categorySlugs": [
+        "batteries-electrical",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -17337,9 +17606,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "batteries-electrical",
+      "categoryName": "סוללות וחשמל",
       "categorySlugs": [
+        "batteries-electrical",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -17365,9 +17635,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "batteries-electrical",
+      "categoryName": "סוללות וחשמל",
       "categorySlugs": [
+        "batteries-electrical",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -17480,9 +17751,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -17595,10 +17867,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "reusable-kitchen-tools",
+      "categoryName": "כלי מטבח רב-פעמיים",
       "categorySlugs": [
-        "ציוד-משרדי-וכללי"
+        "reusable-kitchen-tools",
+        "textiles-clothing-living-supplies"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -17623,42 +17896,15 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "/items/380.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "barcode": "",
-      "searchTags": "",
-      "technicalDesc": "",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": []
-    },
-    {
-      "id": 393,
-      "name": "סט 4 מדגיש צבעוני",
-      "slug": "סט-4-מדגיש-צבעוני-2",
-      "saleNis": 10,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
-      "categorySlugs": [
-        "ציוד-משרדי-וכללי"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/409.jpg",
       "isFeatured": false,
       "productStatus": "active",
       "description": "",
@@ -17679,14 +17925,44 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "/items/379.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "barcode": "",
+      "searchTags": "",
+      "technicalDesc": "",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": []
+    },
+    {
+      "id": 393,
+      "name": "סט 4 מדגיש צבעוני",
+      "slug": "סט-4-מדגיש-צבעוני-2",
+      "saleNis": 10,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
+      "categorySlugs": [
+        "writing-instruments",
+        "ציוד-משרדי-וכללי"
+      ],
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/409.jpg",
       "isFeatured": false,
       "productStatus": "active",
       "description": "",
@@ -17765,9 +18041,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -17793,9 +18070,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -17849,10 +18127,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "bedding-blankets",
+      "categoryName": "מצעים ושמיכות",
       "categorySlugs": [
-        "ציוד-משרדי-וכללי"
+        "bedding-blankets",
+        "textiles-clothing-living-supplies"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -17877,10 +18156,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "bedding-blankets",
+      "categoryName": "מצעים ושמיכות",
       "categorySlugs": [
-        "ציוד-משרדי-וכללי"
+        "bedding-blankets",
+        "textiles-clothing-living-supplies"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -18051,9 +18331,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "desk-accessories",
+      "categoryName": "כלי שולחן ואביזרי משרד",
       "categorySlugs": [
+        "desk-accessories",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -18079,9 +18360,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "desk-accessories",
+      "categoryName": "כלי שולחן ואביזרי משרד",
       "categorySlugs": [
+        "desk-accessories",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -18508,9 +18790,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "organization-filing",
+      "categoryName": "ארגון ותיוק",
       "categorySlugs": [
+        "organization-filing",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -18536,9 +18819,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "organization-filing",
+      "categoryName": "ארגון ותיוק",
       "categorySlugs": [
+        "organization-filing",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -18760,9 +19044,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "labels-stickers",
+      "categoryName": "מדבקות ותוויות",
       "categorySlugs": [
+        "labels-stickers",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -18817,9 +19102,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -18873,9 +19159,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -18901,9 +19188,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -18929,9 +19217,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -18957,9 +19246,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -18985,9 +19275,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -19013,9 +19304,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -19041,9 +19333,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -19069,9 +19362,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -19097,9 +19391,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -19125,9 +19420,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -19153,9 +19449,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -19181,9 +19478,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -19209,9 +19507,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -19237,9 +19536,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -19265,9 +19565,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -19293,9 +19594,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -19321,9 +19623,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -19349,9 +19652,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
       "categorySlugs": [
+        "writing-instruments",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -20169,9 +20473,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "desk-accessories",
+      "categoryName": "כלי שולחן ואביזרי משרד",
       "categorySlugs": [
+        "desk-accessories",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -21061,9 +21366,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "organization-filing",
+      "categoryName": "ארגון ותיוק",
       "categorySlugs": [
+        "organization-filing",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -21235,9 +21541,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "organization-filing",
+      "categoryName": "ארגון ותיוק",
       "categorySlugs": [
+        "organization-filing",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -21263,9 +21570,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "organization-filing",
+      "categoryName": "ארגון ותיוק",
       "categorySlugs": [
+        "organization-filing",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -21291,9 +21599,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "organization-filing",
+      "categoryName": "ארגון ותיוק",
       "categorySlugs": [
+        "organization-filing",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -21319,9 +21628,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "organization-filing",
+      "categoryName": "ארגון ותיוק",
       "categorySlugs": [
+        "organization-filing",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -21347,9 +21657,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "organization-filing",
+      "categoryName": "ארגון ותיוק",
       "categorySlugs": [
+        "organization-filing",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -21375,9 +21686,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "organization-filing",
+      "categoryName": "ארגון ותיוק",
       "categorySlugs": [
+        "organization-filing",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -21403,9 +21715,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "organization-filing",
+      "categoryName": "ארגון ותיוק",
       "categorySlugs": [
+        "organization-filing",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -21431,9 +21744,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "organization-filing",
+      "categoryName": "ארגון ותיוק",
       "categorySlugs": [
+        "organization-filing",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -22348,9 +22662,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "desk-accessories",
+      "categoryName": "כלי שולחן ואביזרי משרד",
       "categorySlugs": [
+        "desk-accessories",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -22640,10 +22955,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "bedding-blankets",
+      "categoryName": "מצעים ושמיכות",
       "categorySlugs": [
-        "ציוד-משרדי-וכללי"
+        "bedding-blankets",
+        "textiles-clothing-living-supplies"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -22668,10 +22984,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "bedding-blankets",
+      "categoryName": "מצעים ושמיכות",
       "categorySlugs": [
-        "ציוד-משרדי-וכללי"
+        "bedding-blankets",
+        "textiles-clothing-living-supplies"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -24442,9 +24759,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "organization-filing",
+      "categoryName": "ארגון ותיוק",
       "categorySlugs": [
+        "organization-filing",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -24470,9 +24788,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "organization-filing",
+      "categoryName": "ארגון ותיוק",
       "categorySlugs": [
+        "organization-filing",
         "ציוד-משרדי-וכללי"
       ],
       "unit": "",
@@ -24582,10 +24901,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
+      "categorySlug": "bags-carrying-accessories",
+      "categoryName": "תיקים ואביזרי נשיאה",
       "categorySlugs": [
-        "ציוד-משרדי-וכללי"
+        "bags-carrying-accessories",
+        "textiles-clothing-living-supplies"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -24776,6 +25096,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T15:27:12.870Z",
+  "exportedAt": "2026-03-14T15:46:24.568Z",
   "totalItems": 823
 }
