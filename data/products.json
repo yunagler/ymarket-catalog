@@ -442,7 +442,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 5,
-      "itemCount": 163,
+      "itemCount": 164,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": "food-packaging-delivery-solutions",
@@ -1324,7 +1324,8 @@
       "categorySlug": "ניירות-רדיד-ועטיפות-מזון",
       "categoryName": "ניירות, עטיפה ושקיות מזון",
       "categorySlugs": [
-        "ניירות-רדיד-ועטיפות-מזון"
+        "ניירות-רדיד-ועטיפות-מזון",
+        "אריזות-מזון-ו-Take-Away"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -24242,6 +24243,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T11:19:25.029Z",
+  "exportedAt": "2026-03-14T11:25:20.940Z",
   "totalItems": 823
 }
