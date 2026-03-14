@@ -457,7 +457,7 @@
       "icon": "fa-box",
       "parentId": 1,
       "sortOrder": 0,
-      "itemCount": 16,
+      "itemCount": 17,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -8087,7 +8087,8 @@
       "categoryName": "ציוד טכני ואחזקה",
       "categorySlugs": [
         "ציוד-טכני-ואחזקה",
-        "בטיחות-ומיגון-אישי-PPE"
+        "בטיחות-ומיגון-אישי-PPE",
+        "ביגוד-מגן-וסינרים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -25229,6 +25230,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T16:06:35.975Z",
+  "exportedAt": "2026-03-14T16:06:51.231Z",
   "totalItems": 823
 }
