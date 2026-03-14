@@ -292,7 +292,7 @@
       "icon": "fa-box",
       "parentId": 3,
       "sortOrder": 0,
-      "itemCount": 2,
+      "itemCount": 3,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -23865,7 +23865,8 @@
       "categoryName": "שקיות ופתרונות אשפה",
       "categorySlugs": [
         "שקיות-ופתרונות-אשפה",
-        "שקיות-שירות-וחנות"
+        "שקיות-שירות-וחנות",
+        "שקיות-אשפה-כבדות-תעשייה"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -24508,6 +24509,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T14:21:34.826Z",
+  "exportedAt": "2026-03-14T14:23:22.576Z",
   "totalItems": 823
 }
