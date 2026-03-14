@@ -1,21 +1,6 @@
 {
   "categories": [
     {
-      "id": 29,
-      "name": "כוסות צלחות וסכום",
-      "slug": "כוסות-צלחות-וסכום",
-      "icon": "fa-box",
-      "parentId": 5,
-      "sortOrder": 0,
-      "itemCount": 39,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
       "id": 30,
       "name": "קיסמים, קשים ושיפודים",
       "slug": "קיסמים-קשים-ושיפודים",
@@ -23,21 +8,6 @@
       "parentId": 5,
       "sortOrder": 0,
       "itemCount": 12,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
-      "id": 34,
-      "name": "מסכות פנים והגנת נשימה",
-      "slug": "מסכות-פנים-והגנת-נשימה",
-      "icon": "fa-box",
-      "parentId": 1,
-      "sortOrder": 0,
-      "itemCount": 9,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -151,6 +121,21 @@
       "imageAlt": "קרפטים ושקיות נייר חומות בסיטונאות למסעדות ומשלוחים - וואי מרקט"
     },
     {
+      "id": 29,
+      "name": "כוסות צלחות וסכום",
+      "slug": "כוסות-צלחות-וסכום",
+      "icon": "fa-box",
+      "parentId": 5,
+      "sortOrder": 0,
+      "itemCount": 39,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
       "id": 38,
       "name": "אביזרי שירותים ושלטי בטיחות",
       "slug": "אביזרי-שירותים-ושלטי-בטיחות",
@@ -203,6 +188,21 @@
       "parentId": 2,
       "sortOrder": 0,
       "itemCount": 17,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 34,
+      "name": "מסכות פנים והגנת נשימה",
+      "slug": "מסכות-פנים-והגנת-נשימה",
+      "icon": "fa-box",
+      "parentId": 1,
+      "sortOrder": 0,
+      "itemCount": 9,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -271,6 +271,21 @@
       "imageAlt": null
     },
     {
+      "id": 25,
+      "name": "מגשי פלסטיק",
+      "slug": "מגשי-פלסטיק",
+      "icon": "fa-box",
+      "parentId": 5,
+      "sortOrder": 3,
+      "itemCount": 10,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
       "id": 3,
       "name": "שקיות ופתרונות אשפה",
       "slug": "שקיות-ופתרונות-אשפה",
@@ -286,13 +301,13 @@
       "imageAlt": "שקיות אשפה מוסדיות בסיטונאות - YMARKET"
     },
     {
-      "id": 25,
-      "name": "מגשי פלסטיק",
-      "slug": "מגשי-פלסטיק",
+      "id": 24,
+      "name": "מגשי קלקר",
+      "slug": "מגשי-קלקר",
       "icon": "fa-box",
       "parentId": 5,
-      "sortOrder": 3,
-      "itemCount": 10,
+      "sortOrder": 4,
+      "itemCount": 44,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -314,21 +329,6 @@
       "seoContent": "<h2>אספקת חומרי ניקוי בסיטונאות לעסקים ומוסדות</h2><p>מחפשים ספק חומרי ניקוי אמין עם גב מקצועי? ב-YMARKET אנחנו מבינים שחומרי ניקיון הם לא רק מוצר, אלא כלי עבודה קריטי לשמירה על היגיינה ובטיחות בעסק שלכם. אנחנו מספקים פתרונות ניקוי תעשייתיים הכוללים אקונומיקה מרוכזת, חומצות, מסירי שומנים עוצמתיים וסבונים לידיים ולרצפה, כולם בסטנדרטים הגבוהים ביותר.</p><p>השירות שלנו מותאם במיוחד לחברות ניקיון, מסעדות, משרדים ומוסדות חינוך באזור גוש דן והמרכז, עם התחייבות לאספקה מהירה תוך 24 עד 72 שעות. עם מינימום הזמנה של 1,600₪, אתם נהנים ממחירי סיטונאות ישירים שחוסכים לכם בעלויות התפעול השוטפות.</p>",
       "imageUrl": null,
       "imageAlt": "אספקת חומרי ניקוי בסיטונאות למשרדים ומוסדות - YMARKET"
-    },
-    {
-      "id": 24,
-      "name": "מגשי קלקר",
-      "slug": "מגשי-קלקר",
-      "icon": "fa-box",
-      "parentId": 5,
-      "sortOrder": 4,
-      "itemCount": 44,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
     },
     {
       "id": 5,
@@ -392,7 +392,7 @@
     },
     {
       "id": 8,
-      "name": "עטיפה, אריזה ולוגיסטיקה",
+      "name": "אריזה לוגיסטית ומחסן",
       "slug": "עטיפה-אריזה-ולוגיסטיקה",
       "icon": "fa-box",
       "parentId": null,
@@ -1109,7 +1109,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה"
       ],
@@ -1231,7 +1231,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה"
       ],
@@ -1949,7 +1949,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה"
       ],
@@ -3445,7 +3445,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה",
         "שקיות-ופתרונות-אשפה"
@@ -3474,7 +3474,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה"
       ],
@@ -4375,7 +4375,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה"
       ],
@@ -5062,7 +5062,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה",
         "שקיות-ופתרונות-אשפה"
@@ -11019,7 +11019,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה"
       ],
@@ -12594,7 +12594,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה"
       ],
@@ -12622,7 +12622,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה"
       ],
@@ -12650,7 +12650,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה"
       ],
@@ -14996,7 +14996,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה"
       ],
@@ -15024,7 +15024,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה"
       ],
@@ -15052,7 +15052,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה"
       ],
@@ -15080,7 +15080,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה"
       ],
@@ -15528,7 +15528,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה"
       ],
@@ -15556,7 +15556,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה"
       ],
@@ -15584,7 +15584,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה"
       ],
@@ -15612,7 +15612,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה"
       ],
@@ -15640,7 +15640,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה"
       ],
@@ -15668,7 +15668,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה"
       ],
@@ -15953,7 +15953,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה"
       ],
@@ -15981,7 +15981,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה"
       ],
@@ -16017,7 +16017,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה"
       ],
@@ -17410,7 +17410,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה"
       ],
@@ -18083,7 +18083,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה"
       ],
@@ -19572,7 +19572,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה"
       ],
@@ -21473,7 +21473,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה"
       ],
@@ -21501,7 +21501,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה"
       ],
@@ -21529,7 +21529,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה"
       ],
@@ -22096,7 +22096,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה"
       ],
@@ -22885,7 +22885,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה",
         "שקיות-ופתרונות-אשפה"
@@ -22914,7 +22914,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה",
         "שקיות-ופתרונות-אשפה"
@@ -22943,7 +22943,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה",
         "שקיות-ופתרונות-אשפה"
@@ -22972,7 +22972,7 @@
       "discountPercent": null,
       "promotionLabel": null,
       "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "עטיפה, אריזה ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
       "categorySlugs": [
         "עטיפה-אריזה-ולוגיסטיקה",
         "שקיות-ופתרונות-אשפה"
@@ -24064,6 +24064,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-13T23:49:36.376Z",
+  "exportedAt": "2026-03-14T10:03:27.264Z",
   "totalItems": 823
 }
