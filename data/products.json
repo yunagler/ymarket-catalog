@@ -802,7 +802,7 @@
       "icon": "fa-box",
       "parentId": 17,
       "sortOrder": 3,
-      "itemCount": 3,
+      "itemCount": 4,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -1192,7 +1192,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 19,
-      "itemCount": 27,
+      "itemCount": 28,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -7984,7 +7984,9 @@
       "categoryName": "מוצרי נייר וניגוב",
       "categorySlugs": [
         "מוצרי-נייר-וניגוב",
-        "נייר-טואלט"
+        "נייר-טואלט",
+        "טואלטיקה-וטיפוח-אישי",
+        "personal-wet-wipes"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -18134,35 +18136,6 @@
       "alternatives": []
     },
     {
-      "id": 393,
-      "name": "סט 4 מדגיש צבעוני",
-      "slug": "סט-4-מדגיש-צבעוני-2",
-      "saleNis": 10,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "writing-instruments",
-      "categoryName": "כלי כתיבה",
-      "categorySlugs": [
-        "writing-instruments",
-        "ציוד-משרדי-וכללי"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/409.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "barcode": "",
-      "searchTags": "",
-      "technicalDesc": "",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": []
-    },
-    {
       "id": 363,
       "name": "סט 4 מדגיש צבעוני",
       "slug": "סט-4-מדגיש-צבעוני",
@@ -18179,6 +18152,35 @@
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "/items/379.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "barcode": "",
+      "searchTags": "",
+      "technicalDesc": "",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": []
+    },
+    {
+      "id": 393,
+      "name": "סט 4 מדגיש צבעוני",
+      "slug": "סט-4-מדגיש-צבעוני-2",
+      "saleNis": 10,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
+      "categorySlugs": [
+        "writing-instruments",
+        "ציוד-משרדי-וכללי"
+      ],
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/409.jpg",
       "isFeatured": false,
       "productStatus": "active",
       "description": "",
@@ -25344,6 +25346,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T16:19:22.192Z",
+  "exportedAt": "2026-03-14T16:20:32.695Z",
   "totalItems": 824
 }
