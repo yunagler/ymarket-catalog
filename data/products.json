@@ -412,7 +412,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 9,
-      "itemCount": 27,
+      "itemCount": 16,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -15604,10 +15604,9 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "אריזה לוגיסטית ומחסן",
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "עטיפה-אריזה-ולוגיסטיקה",
         "אריזות-מזון-ו-Take-Away",
         "ניירות-רדיד-ועטיפות-מזון"
       ],
@@ -15634,10 +15633,9 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "אריזה לוגיסטית ומחסן",
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "עטיפה-אריזה-ולוגיסטיקה",
         "אריזות-מזון-ו-Take-Away",
         "ניירות-רדיד-ועטיפות-מזון"
       ],
@@ -15664,10 +15662,9 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "אריזה לוגיסטית ומחסן",
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "עטיפה-אריזה-ולוגיסטיקה",
         "אריזות-מזון-ו-Take-Away",
         "ניירות-רדיד-ועטיפות-מזון"
       ],
@@ -15694,10 +15691,9 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "אריזה לוגיסטית ומחסן",
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "עטיפה-אריזה-ולוגיסטיקה",
         "אריזות-מזון-ו-Take-Away",
         "ניירות-רדיד-ועטיפות-מזון"
       ],
@@ -15981,10 +15977,9 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "אריזה לוגיסטית ומחסן",
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "עטיפה-אריזה-ולוגיסטיקה",
         "אריזות-מזון-ו-Take-Away",
         "ניירות-רדיד-ועטיפות-מזון"
       ],
@@ -16011,10 +16006,9 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "אריזה לוגיסטית ומחסן",
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "עטיפה-אריזה-ולוגיסטיקה",
         "אריזות-מזון-ו-Take-Away",
         "ניירות-רדיד-ועטיפות-מזון"
       ],
@@ -16049,10 +16043,9 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "אריזה לוגיסטית ומחסן",
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "עטיפה-אריזה-ולוגיסטיקה",
         "אריזות-מזון-ו-Take-Away",
         "ניירות-רדיד-ועטיפות-מזון"
       ],
@@ -17068,34 +17061,6 @@
       "alternatives": []
     },
     {
-      "id": 393,
-      "name": "סט 4 מדגיש צבעוני",
-      "slug": "סט-4-מדגיש-צבעוני-2",
-      "saleNis": 10,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
-      "categorySlugs": [
-        "ציוד-משרדי-וכללי"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/409.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "barcode": "",
-      "searchTags": "",
-      "technicalDesc": "",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": []
-    },
-    {
       "id": 363,
       "name": "סט 4 מדגיש צבעוני",
       "slug": "סט-4-מדגיש-צבעוני",
@@ -17111,6 +17076,34 @@
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "/items/379.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "barcode": "",
+      "searchTags": "",
+      "technicalDesc": "",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": []
+    },
+    {
+      "id": 393,
+      "name": "סט 4 מדגיש צבעוני",
+      "slug": "סט-4-מדגיש-צבעוני-2",
+      "saleNis": 10,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "ציוד-משרדי-וכללי",
+      "categoryName": "ציוד משרדי וכללי",
+      "categorySlugs": [
+        "ציוד-משרדי-וכללי"
+      ],
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/409.jpg",
       "isFeatured": false,
       "productStatus": "active",
       "description": "",
@@ -19606,10 +19599,9 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "אריזה לוגיסטית ומחסן",
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "עטיפה-אריזה-ולוגיסטיקה",
         "אריזות-מזון-ו-Take-Away",
         "ניירות-רדיד-ועטיפות-מזון"
       ],
@@ -21509,10 +21501,9 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "אריזה לוגיסטית ומחסן",
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "עטיפה-אריזה-ולוגיסטיקה",
         "אריזות-מזון-ו-Take-Away",
         "ניירות-רדיד-ועטיפות-מזון"
       ],
@@ -21539,10 +21530,9 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "אריזה לוגיסטית ומחסן",
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "עטיפה-אריזה-ולוגיסטיקה",
         "אריזות-מזון-ו-Take-Away",
         "ניירות-רדיד-ועטיפות-מזון"
       ],
@@ -21569,10 +21559,9 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "אריזה לוגיסטית ומחסן",
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "עטיפה-אריזה-ולוגיסטיקה",
         "אריזות-מזון-ו-Take-Away",
         "ניירות-רדיד-ועטיפות-מזון"
       ],
@@ -24117,6 +24106,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T10:47:23.763Z",
+  "exportedAt": "2026-03-14T10:48:00.910Z",
   "totalItems": 823
 }
