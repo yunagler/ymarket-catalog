@@ -52,7 +52,7 @@
       "icon": "fa-box",
       "parentId": 5,
       "sortOrder": 0,
-      "itemCount": 9,
+      "itemCount": 10,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -352,7 +352,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 5,
-      "itemCount": 146,
+      "itemCount": 147,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": "food-packaging-delivery-solutions",
@@ -412,7 +412,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 9,
-      "itemCount": 28,
+      "itemCount": 27,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -15575,10 +15575,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "אריזה לוגיסטית ומחסן",
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "עטיפה-אריזה-ולוגיסטיקה"
+        "אריזות-מזון-ו-Take-Away",
+        "ניירות-רדיד-ועטיפות-מזון"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -24084,6 +24085,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T10:36:41.176Z",
+  "exportedAt": "2026-03-14T10:40:44.726Z",
   "totalItems": 823
 }
