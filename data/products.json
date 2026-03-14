@@ -1087,7 +1087,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 13,
-      "itemCount": 51,
+      "itemCount": 50,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -8083,10 +8083,9 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "בטיחות-ומיגון-אישי-PPE",
+      "categoryName": "מיגון ובטיחות בעבודה (PPE)",
       "categorySlugs": [
-        "ציוד-טכני-ואחזקה",
         "בטיחות-ומיגון-אישי-PPE",
         "ביגוד-מגן-וסינרים"
       ],
@@ -25230,6 +25229,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T16:06:51.231Z",
+  "exportedAt": "2026-03-14T16:07:15.558Z",
   "totalItems": 823
 }
