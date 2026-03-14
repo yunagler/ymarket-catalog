@@ -31,12 +31,59 @@
   <style>
     .category-seo{margin-top:2.5rem;padding:2rem;background:#fff;border-top:2px solid #e5e7eb;line-height:1.8}
     .category-seo h2{font-size:1.25rem;margin-bottom:1rem;color:var(--color-text,#1f2937)}
+    .category-seo h3{font-size:1.1rem;margin:1.2rem 0 0.6rem;color:var(--color-text,#1f2937)}
     .category-seo p{margin-bottom:1rem;color:var(--color-text-secondary,#4b5563)}
+    .category-seo ul,.category-seo ol{margin:0.5rem 0 1rem 1.5rem;color:var(--color-text-secondary,#4b5563);line-height:1.8}
+    .category-seo li{margin-bottom:0.3rem}
     .category-seo a{color:var(--color-primary,#1B3A5C);text-decoration:underline}
     .category-children{border-right:2px solid #e5e7eb;margin-right:12px;}
     .subcategory-card:hover{background:#eef2ff !important;border-color:#c7d2fe !important;}
     details summary .fa-chevron-down{transition:transform 0.3s ease;}
     details[open] summary .fa-chevron-down{transform:rotate(180deg);}
+    /* Trust badges bar */
+    .trust-badges{display:flex;gap:0;background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;margin-bottom:1.5rem;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+    .trust-badges__item{flex:1;display:flex;align-items:center;gap:10px;padding:14px 16px;border-left:1px solid #f0f0f0;text-align:right}
+    .trust-badges__item:last-child{border-left:none}
+    .trust-badges__icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+    .trust-badges__text{font-size:0.82rem;line-height:1.3}
+    .trust-badges__text strong{display:block;font-size:0.88rem;color:#1f2937}
+    .trust-badges__text span{color:#6b7280}
+    @media(max-width:768px){.trust-badges{flex-wrap:wrap}.trust-badges__item{flex:1 1 45%;border-bottom:1px solid #f0f0f0;padding:10px 12px}}
+    @media(max-width:480px){.trust-badges__item{flex:1 1 100%}}
+    /* Why YMarket section */
+    .why-ym{margin:1.5rem 0;padding:24px;background:linear-gradient(135deg,#f0f4ff 0%,#f8fafc 100%);border:1px solid #dde4f0;border-radius:14px}
+    .why-ym__title{font-size:1rem;font-weight:700;color:#1B3A5C;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+    .why-ym__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .why-ym__card{display:flex;align-items:flex-start;gap:10px;padding:14px;background:#fff;border-radius:10px;border:1px solid #e8ecf4}
+    .why-ym__card i{font-size:1.2rem;color:#1B3A5C;margin-top:2px;flex-shrink:0}
+    .why-ym__card strong{display:block;font-size:0.88rem;color:#1f2937;margin-bottom:2px}
+    .why-ym__card span{font-size:0.8rem;color:#6b7280;line-height:1.4}
+    @media(max-width:640px){.why-ym__grid{grid-template-columns:1fr}}
+    /* Stats counter */
+    .stats-bar{display:flex;justify-content:center;gap:2rem;padding:16px 0;margin-bottom:1rem;border-bottom:1px solid #f0f0f0}
+    .stats-bar__item{text-align:center}
+    .stats-bar__num{font-size:1.5rem;font-weight:800;color:#1B3A5C}
+    .stats-bar__label{font-size:0.78rem;color:#6b7280;margin-top:2px}
+    @media(max-width:480px){.stats-bar{gap:1rem}.stats-bar__num{font-size:1.2rem}}
+    /* Enhanced product card */
+    .product-card__quote{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px;padding:8px 12px;background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;border-radius:8px;font-size:0.78rem;font-weight:600;text-decoration:none;transition:all 0.2s}
+    .product-card__quote:hover{background:#16a34a;color:#fff;border-color:#16a34a}
+    .product-card__vol-badge{position:absolute;top:8px;left:8px;background:#7c3aed;color:#fff;padding:3px 8px;border-radius:6px;font-size:0.7rem;font-weight:700;z-index:2}
+    /* Consultation CTA */
+    .consult-cta{display:flex;align-items:center;gap:20px;margin:1.5rem 0;padding:20px 24px;background:linear-gradient(135deg,#1B3A5C,#2a5080);border-radius:14px;color:#fff}
+    .consult-cta__icon{font-size:2.2rem;opacity:0.9;flex-shrink:0}
+    .consult-cta__text h3{font-size:1rem;font-weight:700;margin-bottom:4px}
+    .consult-cta__text p{font-size:0.85rem;opacity:0.85;margin:0}
+    .consult-cta__btn{margin-right:auto;display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:#25d366;color:#fff;border-radius:10px;font-weight:700;font-size:0.9rem;text-decoration:none;white-space:nowrap;transition:transform 0.2s}
+    .consult-cta__btn:hover{transform:scale(1.04)}
+    @media(max-width:640px){.consult-cta{flex-direction:column;text-align:center;gap:12px}.consult-cta__btn{margin:0 auto}}
+    /* Hero overlay */
+    .hero-wrapper{position:relative;border-radius:12px;overflow:hidden;margin-bottom:1rem}
+    .hero-wrapper img{display:block;width:100%;max-height:260px;object-fit:cover}
+    .hero-overlay{position:absolute;bottom:0;left:0;right:0;padding:20px 24px;background:linear-gradient(transparent,rgba(27,58,92,0.85));color:#fff}
+    .hero-overlay h1{font-size:1.5rem;font-weight:800;margin:0 0 4px;text-shadow:0 1px 4px rgba(0,0,0,0.3)}
+    .hero-overlay p{font-size:0.88rem;opacity:0.9;margin:0}
+    @media(max-width:480px){.hero-overlay h1{font-size:1.15rem}.hero-overlay{padding:14px 16px}}
     .mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:999;background:#fff;box-shadow:0 -2px 12px rgba(0,0,0,0.12);padding:10px 16px;gap:10px;align-items:center;}
     .mobile-cta-bar a{flex:1;text-align:center;padding:12px 8px;border-radius:10px;font-weight:600;font-size:0.95rem;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:6px;}
     .mobile-cta-bar .cta-wa{background:#25d366;color:#fff;}
@@ -646,10 +693,34 @@
         </aside>
         <div class="catalog-main">
           <div class="catalog-header">
-            <img src="/images/categories/maintenance-technical-equipment-wholesale.webp" alt="ציוד טכני ואחזקה - מבחר מוצרים בסיטונאות | וואי מרקט" class="category-hero-img" style="max-height:220px;width:100%;object-fit:cover;border-radius:12px;margin-bottom:1rem;" width="1200" height="400" fetchpriority="high" />
-            <h1>ציוד טכני ואחזקה – אספקה ישירה מהיצרן לעסק שלך</h1>
-            <p>50 מוצרים</p>
+            
+            <div class="hero-wrapper">
+              <img src="/images/categories/maintenance-technical-equipment-wholesale.webp" alt="ציוד טכני ואחזקה - מבחר מוצרים בסיטונאות | וואי מרקט" width="1200" height="400" fetchpriority="high" />
+              <div class="hero-overlay">
+                <h1>ציוד טכני ואחזקה – אספקה ישירה מהיצרן לעסק שלך</h1>
+                <p>50 מוצרים במחירי סיטונאות | אספקה תוך 24-72 שעות</p>
+              </div>
+            </div>
+            
             <p style="font-size:0.8rem;color:#9ca3af;margin-top:4px;">עודכן לאחרונה: 14.3.2026</p>
+          </div>
+          <div class="trust-badges">
+            <div class="trust-badges__item">
+              <div class="trust-badges__icon" style="background:#f0fdf4;color:#16a34a"><i class="fas fa-truck"></i></div>
+              <div class="trust-badges__text"><strong>אספקה מהירה</strong><span>24-72 שעות לכל הארץ</span></div>
+            </div>
+            <div class="trust-badges__item">
+              <div class="trust-badges__icon" style="background:#eff6ff;color:#2563eb"><i class="fas fa-tags"></i></div>
+              <div class="trust-badges__text"><strong>מחירי סיטונאות</strong><span>ישירות מהמפיץ</span></div>
+            </div>
+            <div class="trust-badges__item">
+              <div class="trust-badges__icon" style="background:#fef3c7;color:#d97706"><i class="fas fa-headset"></i></div>
+              <div class="trust-badges__text"><strong>ייעוץ אישי</strong><span>צוות מקצועי לשירותכם</span></div>
+            </div>
+            <div class="trust-badges__item">
+              <div class="trust-badges__icon" style="background:#fdf2f8;color:#db2777"><i class="fas fa-file-invoice"></i></div>
+              <div class="trust-badges__text"><strong>חשבונית מס</strong><span>מע"מ + תנאי תשלום</span></div>
+            </div>
           </div>
           <div class="subcategories-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-bottom:24px;">
       <a href="/category/maintenance-technical-equipment-wholesale/garden-tools-grounds-maintenance/" class="subcategory-card" style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:#f8f9fa;border:1px solid #e5e7eb;border-radius:10px;text-decoration:none;color:#1f2937;transition:all 0.2s;font-size:0.95rem;">
@@ -682,6 +753,7 @@
             
     <div class="product-card" style="position:relative">
       
+      
       <div class="product-card__image">
         <a href="/products/אזיקונים-שחור-3-6-300-עבה-במיוחד-100-יח/">
           <img src="/items/1044.jpg" alt="אזיקונים (שחור) 3.6*300 עבה במיוחד  - 100 יח'" width="300" height="300" fetchpriority="high"
@@ -692,10 +764,12 @@
         <h3 class="product-card__name"><a href="/products/אזיקונים-שחור-3-6-300-עבה-במיוחד-100-יח/">אזיקונים (שחור) 3.6*300 עבה במיוחד  - 100 יח'</a></h3>
         
         <div class="product-card__price">‏15 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%90%D7%96%D7%99%D7%A7%D7%95%D7%A0%D7%99%D7%9D%20(%D7%A9%D7%97%D7%95%D7%A8)%203.6*300%20%D7%A2%D7%91%D7%94%20%D7%91%D7%9E%D7%99%D7%95%D7%97%D7%93%20%20-%20100%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/אזיקונים-שחור-7-6-300-עבה-במיוחד-100-יח/">
@@ -707,10 +781,12 @@
         <h3 class="product-card__name"><a href="/products/אזיקונים-שחור-7-6-300-עבה-במיוחד-100-יח/">אזיקונים (שחור) 7.6*300 עבה במיוחד  - 100 יח'</a></h3>
         
         <div class="product-card__price">‏38 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%90%D7%96%D7%99%D7%A7%D7%95%D7%A0%D7%99%D7%9D%20(%D7%A9%D7%97%D7%95%D7%A8)%207.6*300%20%D7%A2%D7%91%D7%94%20%D7%91%D7%9E%D7%99%D7%95%D7%97%D7%93%20%20-%20100%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/אזיקונים-שחור-7-6-400-עבה-במיוחד-100-יח/">
@@ -722,10 +798,12 @@
         <h3 class="product-card__name"><a href="/products/אזיקונים-שחור-7-6-400-עבה-במיוחד-100-יח/">אזיקונים (שחור) 7.6*400 עבה במיוחד  - 100 יח'</a></h3>
         
         <div class="product-card__price">‏54 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%90%D7%96%D7%99%D7%A7%D7%95%D7%A0%D7%99%D7%9D%20(%D7%A9%D7%97%D7%95%D7%A8)%207.6*400%20%D7%A2%D7%91%D7%94%20%D7%91%D7%9E%D7%99%D7%95%D7%97%D7%93%20%20-%20100%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/את-רפת-מרובע-ידית/">
@@ -737,10 +815,12 @@
         <h3 class="product-card__name"><a href="/products/את-רפת-מרובע-ידית/">את רפת מרובע + ידית</a></h3>
         
         <div class="product-card__price">‏40 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%90%D7%AA%20%D7%A8%D7%A4%D7%AA%20%D7%9E%D7%A8%D7%95%D7%91%D7%A2%20%2B%20%D7%99%D7%93%D7%99%D7%AA" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/את-שפיכה-מקל-עץ/">
@@ -752,10 +832,12 @@
         <h3 class="product-card__name"><a href="/products/את-שפיכה-מקל-עץ/">את שפיכה + מקל עץ</a></h3>
         
         <div class="product-card__price">‏80 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%90%D7%AA%20%D7%A9%D7%A4%D7%99%D7%9B%D7%94%20%2B%20%D7%9E%D7%A7%D7%9C%20%D7%A2%D7%A5" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/גליל-PVC-חדרי-קירור-שקוף-2-200-גליל-50-מ/">
@@ -767,10 +849,12 @@
         <h3 class="product-card__name"><a href="/products/גליל-PVC-חדרי-קירור-שקוף-2-200-גליל-50-מ/">גליל PVC חדרי קירור שקוף - 2*200 גליל 50 מ'</a></h3>
         
         <div class="product-card__price">‏1,200 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%92%D7%9C%D7%99%D7%9C%20PVC%20%D7%97%D7%93%D7%A8%D7%99%20%D7%A7%D7%99%D7%A8%D7%95%D7%A8%20%D7%A9%D7%A7%D7%95%D7%A3%20-%202*200%20%D7%92%D7%9C%D7%99%D7%9C%2050%20%D7%9E'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/חותך-ברזל-דMCC-איכותי-900-ממ/">
@@ -782,10 +866,12 @@
         <h3 class="product-card__name"><a href="/products/חותך-ברזל-דMCC-איכותי-900-ממ/">חותך ברזל דMCC איכותי 900 ממ</a></h3>
         
         <div class="product-card__price">‏250 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%97%D7%95%D7%AA%D7%9A%20%D7%91%D7%A8%D7%96%D7%9C%20%D7%93MCC%20%D7%90%D7%99%D7%9B%D7%95%D7%AA%D7%99%20900%20%D7%9E%D7%9E" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/טוריה-מרובע-ידית/">
@@ -797,10 +883,12 @@
         <h3 class="product-card__name"><a href="/products/טוריה-מרובע-ידית/">טוריה מרובע + ידית</a></h3>
         
         <div class="product-card__price">‏40 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%98%D7%95%D7%A8%D7%99%D7%94%20%D7%9E%D7%A8%D7%95%D7%91%D7%A2%20%2B%20%D7%99%D7%93%D7%99%D7%AA" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/ידית-לטוריה/">
@@ -812,10 +900,12 @@
         <h3 class="product-card__name"><a href="/products/ידית-לטוריה/">ידית לטוריה</a></h3>
         
         <div class="product-card__price">‏20 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%99%D7%93%D7%99%D7%AA%20%D7%9C%D7%98%D7%95%D7%A8%D7%99%D7%94" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/יעה-מתכת-ידית-הארכה-25-75-ס-מ/">
@@ -827,10 +917,12 @@
         <h3 class="product-card__name"><a href="/products/יעה-מתכת-ידית-הארכה-25-75-ס-מ/">יעה מתכת + ידית הארכה 25*75 ס"מ</a></h3>
         
         <div class="product-card__price">‏29 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%99%D7%A2%D7%94%20%D7%9E%D7%AA%D7%9B%D7%AA%20%2B%20%D7%99%D7%93%D7%99%D7%AA%20%D7%94%D7%90%D7%A8%D7%9B%D7%94%2025*75%20%D7%A1%22%D7%9E" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/יעה-נירוסטה-ידית/">
@@ -842,10 +934,12 @@
         <h3 class="product-card__name"><a href="/products/יעה-נירוסטה-ידית/">יעה נירוסטה + ידית</a></h3>
         
         <div class="product-card__price">‏25 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%99%D7%A2%D7%94%20%D7%A0%D7%99%D7%A8%D7%95%D7%A1%D7%98%D7%94%20%2B%20%D7%99%D7%93%D7%99%D7%AA" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/כף-אשפה-מתכת-תושבת-לידית/">
@@ -857,10 +951,12 @@
         <h3 class="product-card__name"><a href="/products/כף-אשפה-מתכת-תושבת-לידית/">כף אשפה מתכת + תושבת לידית</a></h3>
         
         <div class="product-card__price">‏10 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9B%D7%A3%20%D7%90%D7%A9%D7%A4%D7%94%20%D7%9E%D7%AA%D7%9B%D7%AA%20%2B%20%D7%AA%D7%95%D7%A9%D7%91%D7%AA%20%D7%9C%D7%99%D7%93%D7%99%D7%AA" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/מברשת-אוניברסלית-מידה-4/">
@@ -872,10 +968,12 @@
         <h3 class="product-card__name"><a href="/products/מברשת-אוניברסלית-מידה-4/">מברשת אוניברסלית מידה 4 </a></h3>
         
         <div class="product-card__price">‏15 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%91%D7%A8%D7%A9%D7%AA%20%D7%90%D7%95%D7%A0%D7%99%D7%91%D7%A8%D7%A1%D7%9C%D7%99%D7%AA%20%D7%9E%D7%99%D7%93%D7%94%204%20" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/מברשת-פלדה-פליז-6-שורות-ידית-עץ-מקצועי/">
@@ -887,10 +985,12 @@
         <h3 class="product-card__name"><a href="/products/מברשת-פלדה-פליז-6-שורות-ידית-עץ-מקצועי/">מברשת פלדה פליז 6 שורות ידית עץ מקצועי</a></h3>
         
         <div class="product-card__price">‏18 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%91%D7%A8%D7%A9%D7%AA%20%D7%A4%D7%9C%D7%93%D7%94%20%D7%A4%D7%9C%D7%99%D7%96%206%20%D7%A9%D7%95%D7%A8%D7%95%D7%AA%20%D7%99%D7%93%D7%99%D7%AA%20%D7%A2%D7%A5%20%D7%9E%D7%A7%D7%A6%D7%95%D7%A2%D7%99" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/מגרפה-14-שן-מחוזקת-ידית-עץ/">
@@ -902,10 +1002,12 @@
         <h3 class="product-card__name"><a href="/products/מגרפה-14-שן-מחוזקת-ידית-עץ/">מגרפה 14 שן מחוזקת + ידית עץ</a></h3>
         
         <div class="product-card__price">‏30 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%92%D7%A8%D7%A4%D7%94%2014%20%D7%A9%D7%9F%20%D7%9E%D7%97%D7%95%D7%96%D7%A7%D7%AA%20%2B%20%D7%99%D7%93%D7%99%D7%AA%20%D7%A2%D7%A5" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/מגרפה-פס-סגור-מקל/">
@@ -917,10 +1019,12 @@
         <h3 class="product-card__name"><a href="/products/מגרפה-פס-סגור-מקל/">מגרפה פס סגור + מקל</a></h3>
         
         <div class="product-card__price">‏45 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%92%D7%A8%D7%A4%D7%94%20%D7%A4%D7%A1%20%D7%A1%D7%92%D7%95%D7%A8%20%2B%20%D7%9E%D7%A7%D7%9C" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/מגרפת-דשא-פלסטיק-גדולה-מקל/">
@@ -932,10 +1036,12 @@
         <h3 class="product-card__name"><a href="/products/מגרפת-דשא-פלסטיק-גדולה-מקל/">מגרפת דשא פלסטיק גדולה + מקל</a></h3>
         
         <div class="product-card__price">‏35 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%92%D7%A8%D7%A4%D7%AA%20%D7%93%D7%A9%D7%90%20%D7%A4%D7%9C%D7%A1%D7%98%D7%99%D7%A7%20%D7%92%D7%93%D7%95%D7%9C%D7%94%20%2B%20%D7%9E%D7%A7%D7%9C" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/מגרפת-עלים-18-שניים-ידית-עץ/">
@@ -947,10 +1053,12 @@
         <h3 class="product-card__name"><a href="/products/מגרפת-עלים-18-שניים-ידית-עץ/">מגרפת עלים 18 שניים + ידית עץ</a></h3>
         
         <div class="product-card__price">‏30 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%92%D7%A8%D7%A4%D7%AA%20%D7%A2%D7%9C%D7%99%D7%9D%2018%20%D7%A9%D7%A0%D7%99%D7%99%D7%9D%20%2B%20%D7%99%D7%93%D7%99%D7%AA%20%D7%A2%D7%A5" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/מגרפת-עלים-18-שניים-חזקה-מקל-עץ/">
@@ -962,10 +1070,12 @@
         <h3 class="product-card__name"><a href="/products/מגרפת-עלים-18-שניים-חזקה-מקל-עץ/">מגרפת עלים 18 שניים חזקה + מקל עץ</a></h3>
         
         <div class="product-card__price">‏35 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%92%D7%A8%D7%A4%D7%AA%20%D7%A2%D7%9C%D7%99%D7%9D%2018%20%D7%A9%D7%A0%D7%99%D7%99%D7%9D%20%D7%97%D7%96%D7%A7%D7%94%20%2B%20%D7%9E%D7%A7%D7%9C%20%D7%A2%D7%A5" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/מזמרה-דגם-הדר-חיתוף-עד-25-מ-מ/">
@@ -977,10 +1087,12 @@
         <h3 class="product-card__name"><a href="/products/מזמרה-דגם-הדר-חיתוף-עד-25-מ-מ/">מזמרה דגם הדר חיתוף עד 25 מ"מ</a></h3>
         
         <div class="product-card__price">‏55 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%96%D7%9E%D7%A8%D7%94%20%D7%93%D7%92%D7%9D%20%D7%94%D7%93%D7%A8%20%D7%97%D7%99%D7%AA%D7%95%D7%A3%20%D7%A2%D7%93%2025%20%D7%9E%22%D7%9E" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/מלכודת-זבובון-גדולה-עם-פתיון-30-ס-מ-אורך-USA/">
@@ -992,10 +1104,12 @@
         <h3 class="product-card__name"><a href="/products/מלכודת-זבובון-גדולה-עם-פתיון-30-ס-מ-אורך-USA/">מלכודת "זבובון" גדולה עם פתיון 30 ס"מ אורך - USA</a></h3>
         
         <div class="product-card__price">‏40 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%9C%D7%9B%D7%95%D7%93%D7%AA%20%22%D7%96%D7%91%D7%95%D7%91%D7%95%D7%9F%22%20%D7%92%D7%93%D7%95%D7%9C%D7%94%20%D7%A2%D7%9D%20%D7%A4%D7%AA%D7%99%D7%95%D7%9F%2030%20%D7%A1%22%D7%9E%20%D7%90%D7%95%D7%A8%D7%9A%20-%20USA" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/ממית-קלקר-מרובע-5-ליטר/">
@@ -1007,10 +1121,12 @@
         <h3 class="product-card__name"><a href="/products/ממית-קלקר-מרובע-5-ליטר/">ממית קלקר מרובע - 5 ליטר </a></h3>
         
         <div class="product-card__price">‏25 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%9E%D7%99%D7%AA%20%D7%A7%D7%9C%D7%A7%D7%A8%20%D7%9E%D7%A8%D7%95%D7%91%D7%A2%20-%205%20%D7%9C%D7%99%D7%98%D7%A8%20" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/מספרי-גדר-חי-טלסקופי-טפלון/">
@@ -1022,10 +1138,12 @@
         <h3 class="product-card__name"><a href="/products/מספרי-גדר-חי-טלסקופי-טפלון/">מספרי גדר חי טלסקופי טפלון</a></h3>
         
         <div class="product-card__price">‏110 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%A1%D7%A4%D7%A8%D7%99%20%D7%92%D7%93%D7%A8%20%D7%97%D7%99%20%D7%98%D7%9C%D7%A1%D7%A7%D7%95%D7%A4%D7%99%20%D7%98%D7%A4%D7%9C%D7%95%D7%9F" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/מעדר-אספלט-רחב-איכותי-רוחב-40-ס-מ-מקל/">
@@ -1037,10 +1155,12 @@
         <h3 class="product-card__name"><a href="/products/מעדר-אספלט-רחב-איכותי-רוחב-40-ס-מ-מקל/">מעדר אספלט רחב איכותי רוחב 40 ס"מ + מקל </a></h3>
         
         <div class="product-card__price">‏45 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%A2%D7%93%D7%A8%20%D7%90%D7%A1%D7%A4%D7%9C%D7%98%20%D7%A8%D7%97%D7%91%20%D7%90%D7%99%D7%9B%D7%95%D7%AA%D7%99%20%D7%A8%D7%95%D7%97%D7%91%2040%20%D7%A1%22%D7%9E%20%2B%20%D7%9E%D7%A7%D7%9C%20" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/מעדר-לב-ידית/">
@@ -1052,10 +1172,12 @@
         <h3 class="product-card__name"><a href="/products/מעדר-לב-ידית/">מעדר לב + ידית</a></h3>
         
         <div class="product-card__price">‏50 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%A2%D7%93%D7%A8%20%D7%9C%D7%91%20%2B%20%D7%99%D7%93%D7%99%D7%AA" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/מעשב-ידני-מקצועי-ידית-36-ס-מ/">
@@ -1067,10 +1189,12 @@
         <h3 class="product-card__name"><a href="/products/מעשב-ידני-מקצועי-ידית-36-ס-מ/">מעשב ידני מקצועי - ידית 36 ס"מ</a></h3>
         
         <div class="product-card__price">‏38 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%A2%D7%A9%D7%91%20%D7%99%D7%93%D7%A0%D7%99%20%D7%9E%D7%A7%D7%A6%D7%95%D7%A2%D7%99%20-%20%D7%99%D7%93%D7%99%D7%AA%2036%20%D7%A1%22%D7%9E" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/מקוש-ידית-פיבר-1-5-קג/">
@@ -1082,10 +1206,12 @@
         <h3 class="product-card__name"><a href="/products/מקוש-ידית-פיבר-1-5-קג/">מקוש + ידית פיבר 1.5 קג'</a></h3>
         
         <div class="product-card__price">‏120 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%A7%D7%95%D7%A9%20%2B%20%D7%99%D7%93%D7%99%D7%AA%20%D7%A4%D7%99%D7%91%D7%A8%201.5%20%D7%A7%D7%92'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/מריצה-גלגל-אחד-60-ל/">
@@ -1097,10 +1223,12 @@
         <h3 class="product-card__name"><a href="/products/מריצה-גלגל-אחד-60-ל/">מריצה גלגל אחד - 60 ל'</a></h3>
         
         <div class="product-card__price">‏310 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%A8%D7%99%D7%A6%D7%94%20%D7%92%D7%9C%D7%92%D7%9C%20%D7%90%D7%97%D7%93%20-%2060%20%D7%9C'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/משחרר-ברגים-BIG-400/">
@@ -1112,10 +1240,12 @@
         <h3 class="product-card__name"><a href="/products/משחרר-ברגים-BIG-400/">משחרר ברגים BIG 400</a></h3>
         
         <div class="product-card__price">‏15 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%A9%D7%97%D7%A8%D7%A8%20%D7%91%D7%A8%D7%92%D7%99%D7%9D%20BIG%20400" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/מתלה-נירוסטה-לוילון-2-200-כולל-אביזרי-תליה-1-מטר/">
@@ -1127,10 +1257,12 @@
         <h3 class="product-card__name"><a href="/products/מתלה-נירוסטה-לוילון-2-200-כולל-אביזרי-תליה-1-מטר/">מתלה נירוסטה לוילון 2*200 כולל אביזרי תליה - 1 מטר</a></h3>
         
         <div class="product-card__price">‏339 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%AA%D7%9C%D7%94%20%D7%A0%D7%99%D7%A8%D7%95%D7%A1%D7%98%D7%94%20%D7%9C%D7%95%D7%99%D7%9C%D7%95%D7%9F%202*200%20%D7%9B%D7%95%D7%9C%D7%9C%20%D7%90%D7%91%D7%99%D7%96%D7%A8%D7%99%20%D7%AA%D7%9C%D7%99%D7%94%20-%201%20%D7%9E%D7%98%D7%A8" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/סט-מגרדת-פלסטיק-סכינים-להחלפה/">
@@ -1142,10 +1274,12 @@
         <h3 class="product-card__name"><a href="/products/סט-מגרדת-פלסטיק-סכינים-להחלפה/">סט מגרדת פלסטיק + סכינים להחלפה</a></h3>
         
         <div class="product-card__price">‏10 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A1%D7%98%20%D7%9E%D7%92%D7%A8%D7%93%D7%AA%20%D7%A4%D7%9C%D7%A1%D7%98%D7%99%D7%A7%20%2B%20%D7%A1%D7%9B%D7%99%D7%A0%D7%99%D7%9D%20%D7%9C%D7%94%D7%97%D7%9C%D7%A4%D7%94" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/סכין-יפני-רחב-מתכת/">
@@ -1157,10 +1291,12 @@
         <h3 class="product-card__name"><a href="/products/סכין-יפני-רחב-מתכת/">סכין יפני רחב מתכת</a></h3>
         
         <div class="product-card__price">‏10 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A1%D7%9B%D7%99%D7%9F%20%D7%99%D7%A4%D7%A0%D7%99%20%D7%A8%D7%97%D7%91%20%D7%9E%D7%AA%D7%9B%D7%AA" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/סכין-יפני-רחב-פלסטיק-איכותי/">
@@ -1172,10 +1308,12 @@
         <h3 class="product-card__name"><a href="/products/סכין-יפני-רחב-פלסטיק-איכותי/">סכין יפני רחב פלסטיק - איכותי</a></h3>
         
         <div class="product-card__price">‏10 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A1%D7%9B%D7%99%D7%9F%20%D7%99%D7%A4%D7%A0%D7%99%20%D7%A8%D7%97%D7%91%20%D7%A4%D7%9C%D7%A1%D7%98%D7%99%D7%A7%20-%20%D7%90%D7%99%D7%9B%D7%95%D7%AA%D7%99" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/ספריי-יסוד-אפור/">
@@ -1187,10 +1325,12 @@
         <h3 class="product-card__name"><a href="/products/ספריי-יסוד-אפור/">ספריי יסוד אפור</a></h3>
         
         <div class="product-card__price">‏15 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A1%D7%A4%D7%A8%D7%99%D7%99%20%D7%99%D7%A1%D7%95%D7%93%20%D7%90%D7%A4%D7%95%D7%A8" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/ספריי-יסוד-חום/">
@@ -1202,10 +1342,12 @@
         <h3 class="product-card__name"><a href="/products/ספריי-יסוד-חום/">ספריי יסוד חום</a></h3>
         
         <div class="product-card__price">‏12 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A1%D7%A4%D7%A8%D7%99%D7%99%20%D7%99%D7%A1%D7%95%D7%93%20%D7%97%D7%95%D7%9D" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/ספריי-כסף-מבריק/">
@@ -1217,10 +1359,12 @@
         <h3 class="product-card__name"><a href="/products/ספריי-כסף-מבריק/">ספריי כסף מבריק</a></h3>
         
         <div class="product-card__price">צרו קשר</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A1%D7%A4%D7%A8%D7%99%D7%99%20%D7%9B%D7%A1%D7%A3%20%D7%9E%D7%91%D7%A8%D7%99%D7%A7" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/ספריי-שחור-מבריק/">
@@ -1232,10 +1376,12 @@
         <h3 class="product-card__name"><a href="/products/ספריי-שחור-מבריק/">ספריי שחור מבריק</a></h3>
         
         <div class="product-card__price">‏12 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A1%D7%A4%D7%A8%D7%99%D7%99%20%D7%A9%D7%97%D7%95%D7%A8%20%D7%9E%D7%91%D7%A8%D7%99%D7%A7" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/סרט-הזהרה-אדום-לבן/">
@@ -1247,10 +1393,12 @@
         <h3 class="product-card__name"><a href="/products/סרט-הזהרה-אדום-לבן/">סרט הזהרה - אדום לבן</a></h3>
         
         <div class="product-card__price">‏16 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A1%D7%A8%D7%98%20%D7%94%D7%96%D7%94%D7%A8%D7%94%20-%20%D7%90%D7%93%D7%95%D7%9D%20%D7%9C%D7%91%D7%9F" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/עגלת-משא-עם-2-גלגלים/">
@@ -1262,10 +1410,12 @@
         <h3 class="product-card__name"><a href="/products/עגלת-משא-עם-2-גלגלים/">עגלת משא עם 2 גלגלים</a></h3>
         
         <div class="product-card__price">‏250 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A2%D7%92%D7%9C%D7%AA%20%D7%9E%D7%A9%D7%90%20%D7%A2%D7%9D%202%20%D7%92%D7%9C%D7%92%D7%9C%D7%99%D7%9D" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/קטלן-יתושים/">
@@ -1277,10 +1427,12 @@
         <h3 class="product-card__name"><a href="/products/קטלן-יתושים/">קטלן יתושים</a></h3>
         
         <div class="product-card__price">‏150 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A7%D7%98%D7%9C%D7%9F%20%D7%99%D7%AA%D7%95%D7%A9%D7%99%D7%9D" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/קרבינה-מאובטחת-טבעת-מסתובבת-70-ממ/">
@@ -1292,10 +1444,12 @@
         <h3 class="product-card__name"><a href="/products/קרבינה-מאובטחת-טבעת-מסתובבת-70-ממ/">קרבינה מאובטחת + טבעת מסתובבת 70 ממ</a></h3>
         
         <div class="product-card__price">‏24 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A7%D7%A8%D7%91%D7%99%D7%A0%D7%94%20%D7%9E%D7%90%D7%95%D7%91%D7%98%D7%97%D7%AA%20%2B%20%D7%98%D7%91%D7%A2%D7%AA%20%D7%9E%D7%A1%D7%AA%D7%95%D7%91%D7%91%D7%AA%2070%20%D7%9E%D7%9E" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/קרבינה-מאובטחת-קפיצי-80-ממ-אגס/">
@@ -1307,10 +1461,12 @@
         <h3 class="product-card__name"><a href="/products/קרבינה-מאובטחת-קפיצי-80-ממ-אגס/">קרבינה מאובטחת קפיצי 80 ממ אגס</a></h3>
         
         <div class="product-card__price">‏18 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A7%D7%A8%D7%91%D7%99%D7%A0%D7%94%20%D7%9E%D7%90%D7%95%D7%91%D7%98%D7%97%D7%AA%20%D7%A7%D7%A4%D7%99%D7%A6%D7%99%2080%20%D7%9E%D7%9E%20%D7%90%D7%92%D7%A1" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/רולר-צבע-אקרילי-מידה-9/">
@@ -1322,10 +1478,12 @@
         <h3 class="product-card__name"><a href="/products/רולר-צבע-אקרילי-מידה-9/">רולר צבע אקרילי מידה 9</a></h3>
         
         <div class="product-card__price">‏20 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A8%D7%95%D7%9C%D7%A8%20%D7%A6%D7%91%D7%A2%20%D7%90%D7%A7%D7%A8%D7%99%D7%9C%D7%99%20%D7%9E%D7%99%D7%93%D7%94%209" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/רצ-ט-קשירה-מקצועי-אורך-4-מטר-רוחב-1-500-ק-ג/">
@@ -1337,10 +1495,12 @@
         <h3 class="product-card__name"><a href="/products/רצ-ט-קשירה-מקצועי-אורך-4-מטר-רוחב-1-500-ק-ג/">רצ'ט קשירה מקצועי אורך 4 מטר רוחב 1"  - 500 ק"ג</a></h3>
         
         <div class="product-card__price">‏45 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A8%D7%A6'%D7%98%20%D7%A7%D7%A9%D7%99%D7%A8%D7%94%20%D7%9E%D7%A7%D7%A6%D7%95%D7%A2%D7%99%20%D7%90%D7%95%D7%A8%D7%9A%204%20%D7%9E%D7%98%D7%A8%20%D7%A8%D7%95%D7%97%D7%91%201%22%20%20-%20500%20%D7%A7%22%D7%92" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/רצ-ט-קשירה-מקצועי-אורך-6-מטר-רוחב-1-5-1000-ק-ג/">
@@ -1352,10 +1512,12 @@
         <h3 class="product-card__name"><a href="/products/רצ-ט-קשירה-מקצועי-אורך-6-מטר-רוחב-1-5-1000-ק-ג/">רצ'ט קשירה מקצועי אורך 6 מטר רוחב 1.5" - 1000 ק"ג</a></h3>
         
         <div class="product-card__price">‏60 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A8%D7%A6'%D7%98%20%D7%A7%D7%A9%D7%99%D7%A8%D7%94%20%D7%9E%D7%A7%D7%A6%D7%95%D7%A2%D7%99%20%D7%90%D7%95%D7%A8%D7%9A%206%20%D7%9E%D7%98%D7%A8%20%D7%A8%D7%95%D7%97%D7%91%201.5%22%20-%201000%20%D7%A7%22%D7%92" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/רצ-ט-קשירה-מקצועי-אורך-6-מטר-רוחב-2-3000-ק-ג/">
@@ -1367,10 +1529,12 @@
         <h3 class="product-card__name"><a href="/products/רצ-ט-קשירה-מקצועי-אורך-6-מטר-רוחב-2-3000-ק-ג/">רצ'ט קשירה מקצועי אורך 6 מטר רוחב 2" - 3000 ק"ג</a></h3>
         
         <div class="product-card__price">‏80 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A8%D7%A6'%D7%98%20%D7%A7%D7%A9%D7%99%D7%A8%D7%94%20%D7%9E%D7%A7%D7%A6%D7%95%D7%A2%D7%99%20%D7%90%D7%95%D7%A8%D7%9A%206%20%D7%9E%D7%98%D7%A8%20%D7%A8%D7%95%D7%97%D7%91%202%22%20-%203000%20%D7%A7%22%D7%92" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/שטיח-גומי-זיגזג-מגומי-15-מ-1-2-מ-5-מלימטר/">
@@ -1382,10 +1546,12 @@
         <h3 class="product-card__name"><a href="/products/שטיח-גומי-זיגזג-מגומי-15-מ-1-2-מ-5-מלימטר/">שטיח גומי זיגזג מגומי - 15 מ' 1.2 מ' 5 מלימטר</a></h3>
         
         <div class="product-card__price">‏2,500 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A9%D7%98%D7%99%D7%97%20%D7%92%D7%95%D7%9E%D7%99%20%D7%96%D7%99%D7%92%D7%96%D7%92%20%D7%9E%D7%92%D7%95%D7%9E%D7%99%20-%2015%20%D7%9E'%201.2%20%D7%9E'%205%20%D7%9E%D7%9C%D7%99%D7%9E%D7%98%D7%A8" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/שפכתל-מידה-2-ידית-סיליקון/">
@@ -1397,10 +1563,12 @@
         <h3 class="product-card__name"><a href="/products/שפכתל-מידה-2-ידית-סיליקון/">שפכתל מידה 2 + ידית סיליקון</a></h3>
         
         <div class="product-card__price">‏10 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A9%D7%A4%D7%9B%D7%AA%D7%9C%20%D7%9E%D7%99%D7%93%D7%94%202%20%2B%20%D7%99%D7%93%D7%99%D7%AA%20%D7%A1%D7%99%D7%9C%D7%99%D7%A7%D7%95%D7%9F" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/שפכתל-מידה-4-ידית-סיליקון/">
@@ -1412,10 +1580,12 @@
         <h3 class="product-card__name"><a href="/products/שפכתל-מידה-4-ידית-סיליקון/">שפכתל מידה 4 + ידית סיליקון</a></h3>
         
         <div class="product-card__price">‏15 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A9%D7%A4%D7%9B%D7%AA%D7%9C%20%D7%9E%D7%99%D7%93%D7%94%204%20%2B%20%D7%99%D7%93%D7%99%D7%AA%20%D7%A1%D7%99%D7%9C%D7%99%D7%A7%D7%95%D7%9F" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
 
     <div class="product-card" style="position:relative">
+      
       
       <div class="product-card__image">
         <a href="/products/תנור-גינה-2500-וואט/">
@@ -1427,8 +1597,38 @@
         <h3 class="product-card__name"><a href="/products/תנור-גינה-2500-וואט/">תנור גינה 2500 וואט</a></h3>
         
         <div class="product-card__price">‏260 ‏₪</div>
+        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%AA%D7%A0%D7%95%D7%A8%20%D7%92%D7%99%D7%A0%D7%94%202500%20%D7%95%D7%95%D7%90%D7%98" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
       </div>
     </div>
+          </div>
+          <div class="consult-cta">
+            <i class="fas fa-user-tie consult-cta__icon"></i>
+            <div class="consult-cta__text">
+              <h3>לא בטוחים מה מתאים? נשמח לייעץ</h3>
+              <p>הצוות שלנו מכיר את המוצרים לעומק ויתאים עבורכם את הפתרון המדויק</p>
+            </div>
+            <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%99%D7%99%D7%A2%D7%95%D7%A5%20%D7%91%D7%A0%D7%95%D7%A9%D7%90%20%D7%A6%D7%99%D7%95%D7%93%20%D7%98%D7%9B%D7%A0%D7%99%20%D7%95%D7%90%D7%97%D7%96%D7%A7%D7%94" target="_blank" rel="noopener" class="consult-cta__btn"><i class="fab fa-whatsapp"></i> ייעוץ חינם</a>
+          </div>
+          <div class="why-ym">
+            <div class="why-ym__title"><i class="fas fa-award" style="color:#d97706"></i> למה עסקים בוחרים בוואי מרקט</div>
+            <div class="why-ym__grid">
+              <div class="why-ym__card">
+                <i class="fas fa-box-open"></i>
+                <div><strong>ספק אחד לכל המוצרים</strong><span>חומרי ניקוי, נייר, חד פעמי, ציוד משרדי — הכל בהזמנה אחת, חשבונית אחת</span></div>
+              </div>
+              <div class="why-ym__card">
+                <i class="fas fa-hand-holding-usd"></i>
+                <div><strong>מחירים ישירים ללא תיווך</strong><span>חסכו 15-30% בעלויות הרכש השוטפות — אנחנו מפיצים ישירים</span></div>
+              </div>
+              <div class="why-ym__card">
+                <i class="fas fa-shipping-fast"></i>
+                <div><strong>אספקה עד הדלת תוך 24-72 שעות</strong><span>פריסה ארצית — גוש דן, חיפה, ירושלים, ב"ש ועד אילת</span></div>
+              </div>
+              <div class="why-ym__card">
+                <i class="fas fa-redo-alt"></i>
+                <div><strong>הזמנה חוזרת בקליק</strong><span>לקוחות קבועים נהנים ממחירון אישי, אשראי ושירות מועדף</span></div>
+              </div>
+            </div>
           </div>
           <div class="category-seo"><div class="category-seo">
   <h2>ציוד אחזקה — כדי שלא תעצרו קו ייצור בגלל מפתח חסר</h2>
@@ -1508,12 +1708,19 @@
                 </a>
             </div>
           </div>
-          <div class="category-cta" style="background:var(--color-bg-light,#f8f9fa);border-radius:12px;padding:2rem;margin-top:2rem;text-align:center;">
-            <h3 style="margin-bottom:0.5rem;">צריכים כמות גדולה? קבלו הצעת מחיר מותאמת אישית</h3>
-            <p style="color:var(--color-text-light,#6b7280);margin-bottom:1rem;">לקוחות עסקיים נהנים ממחירים מיוחדים, אספקה שוטפת ושירות אישי</p>
-            <a href="https://wa.me/972549922492?text=היי, אשמח לקבל הצעת מחיר ל%D7%A6%D7%99%D7%95%D7%93%20%D7%98%D7%9B%D7%A0%D7%99%20%D7%95%D7%90%D7%97%D7%96%D7%A7%D7%94" target="_blank" rel="noopener" class="btn btn--whatsapp" style="display:inline-flex;align-items:center;gap:8px;padding:12px 28px;font-size:1.05rem;"><i class="fab fa-whatsapp"></i> שלחו הודעה בוואטסאפ</a>
-            <span style="display:inline-block;margin:0 12px;color:var(--color-text-light);">או</span>
-            <a href="tel:037740400" class="btn btn--outline" style="display:inline-flex;align-items:center;gap:8px;padding:12px 28px;font-size:1.05rem;"><i class="fas fa-phone-alt"></i> 03-7740400</a>
+          <div class="category-cta" style="background:linear-gradient(135deg,#1B3A5C 0%,#2a5080 100%);border-radius:16px;padding:2.5rem;margin-top:2rem;text-align:center;color:#fff;position:relative;overflow:hidden;">
+            <div style="position:absolute;top:-20px;left:-20px;width:120px;height:120px;background:rgba(255,255,255,0.05);border-radius:50%"></div>
+            <div style="position:absolute;bottom:-30px;right:-30px;width:160px;height:160px;background:rgba(255,255,255,0.03);border-radius:50%"></div>
+            <div style="position:relative;z-index:1">
+              <div style="font-size:2rem;margin-bottom:12px;"><i class="fas fa-calculator"></i></div>
+              <h3 style="margin-bottom:0.5rem;font-size:1.2rem;font-weight:800;">קבלו הצעת מחיר תוך דקות</h3>
+              <p style="opacity:0.85;margin-bottom:1.2rem;max-width:500px;margin-left:auto;margin-right:auto;">שלחו רשימת מוצרים בוואטסאפ ונחזור עם הצעה מותאמת כולל מחיר משלוח — בדרך כלל תוך שעה</p>
+              <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+                <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A6%D7%99%D7%95%D7%93%20%D7%98%D7%9B%D7%A0%D7%99%20%D7%95%D7%90%D7%97%D7%96%D7%A7%D7%94" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:#25d366;color:#fff;border-radius:12px;font-weight:700;font-size:1rem;text-decoration:none;transition:transform 0.2s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"><i class="fab fa-whatsapp" style="font-size:1.2rem"></i> שלחו הודעה בוואטסאפ</a>
+                <a href="tel:037740400" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.3);border-radius:12px;font-weight:600;font-size:1rem;text-decoration:none;transition:background 0.2s" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'"><i class="fas fa-phone-alt"></i> 03-7740400</a>
+              </div>
+              <p style="margin-top:12px;font-size:0.78rem;opacity:0.65;">מינימום הזמנה 1,600 ₪ + מע"מ | ניתן לשלב מוצרים מכל הקטגוריות</p>
+            </div>
           </div>
         </div>
       </div>
