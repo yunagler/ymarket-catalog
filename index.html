@@ -248,15 +248,6 @@
   <div class="mobile-overlay"></div>
   <div class="search-overlay"><div class="search-overlay__inner"><form action="/catalog" method="get"><input type="search" name="search" class="search-overlay__input" placeholder="חפשו מוצר..." aria-label="חיפוש מוצר" autocomplete="off"></form></div></div>
 
-  <!-- Search Overlay -->
-  <div class="search-overlay">
-    <div class="search-overlay__inner">
-      <form action="catalog" method="get">
-        <input type="search" name="search" class="search-overlay__input" placeholder="חפשו מוצר..." aria-label="חיפוש מוצר" autocomplete="off">
-      </form>
-    </div>
-  </div>
-
   <main id="main-content">
 
   <!-- Hero Section -->
@@ -282,7 +273,7 @@
             <div class="hero__stat-label">לקוחות פעילים</div>
           </div>
           <div class="hero__stat">
-            <div class="hero__stat-number" data-count="180" data-suffix="+">0</div>
+            <div class="hero__stat-number" data-count="900" data-suffix="+">0</div>
             <div class="hero__stat-label">מוצרים בקטלוג</div>
           </div>
           <div class="hero__stat">
@@ -397,6 +388,36 @@
           <span class="category-card__name">ציוד משרדי וכללי</span>
           <span class="category-card__count">עטים, נייר, מוצרי משרד</span>
         </a>
+        <a href="/category/heavy-duty-garbage-bags-wholesale/" class="category-card animate-on-scroll">
+          <div class="category-card__icon"><i class="fas fa-trash-alt"></i></div>
+          <span class="category-card__name">שקיות ופתרונות אשפה</span>
+          <span class="category-card__count">שקיות אשפה, ניילונים</span>
+        </a>
+        <a href="/category/ציוד-טכני-ואחזקה/" class="category-card animate-on-scroll">
+          <div class="category-card__icon"><i class="fas fa-wrench"></i></div>
+          <span class="category-card__name">ציוד טכני ואחזקה</span>
+          <span class="category-card__count">כלי עבודה, תחזוקה</span>
+        </a>
+        <a href="/category/עטיפה-אריזה-ולוגיסטיקה/" class="category-card animate-on-scroll">
+          <div class="category-card__icon"><i class="fas fa-tape"></i></div>
+          <span class="category-card__name">עטיפה, אריזה ולוגיסטיקה</span>
+          <span class="category-card__count">דבקים, סרטים, אריזה</span>
+        </a>
+        <a href="/category/עזרה-ראשונה-רפואי/" class="category-card animate-on-scroll">
+          <div class="category-card__icon"><i class="fas fa-first-aid"></i></div>
+          <span class="category-card__name">עזרה ראשונה - רפואי</span>
+          <span class="category-card__count">תחבושות, כפפות, AED</span>
+        </a>
+        <a href="/category/טואלטיקה-וטיפוח-אישי/" class="category-card animate-on-scroll">
+          <div class="category-card__icon"><i class="fas fa-pump-soap"></i></div>
+          <span class="category-card__name">טואלטיקה וטיפוח</span>
+          <span class="category-card__count">סבונים, שמפו, דאודורנט</span>
+        </a>
+        <a href="/category/כלי-עבודה-וציוד-משקי/" class="category-card animate-on-scroll">
+          <div class="category-card__icon"><i class="fas fa-tools"></i></div>
+          <span class="category-card__name">כלי עבודה וציוד משקי</span>
+          <span class="category-card__count">מגבים, דליים, עגלות</span>
+        </a>
       </div>
       <div class="text-center" style="margin-top: var(--space-xl);">
         <a href="catalog" class="btn btn--secondary">לכל הקטגוריות <i class="fas fa-arrow-left"></i></a>
@@ -496,6 +517,21 @@
           <h3>רפואה ובריאות</h3>
           <p>כפפות, מסכות, חומרי חיטוי וציוד מיגון למרפאות, מעבדות ומוסדות בריאות. עמידה בתקנים מחמירים.</p>
         </div>
+        <div class="segment-card">
+          <i class="fas fa-drumstick-bite"></i>
+          <h3>אטליזים וחנויות מזון</h3>
+          <p>שקיות ואקום, אריזות מזון, כפפות, סכינים חד פעמיים, מגשי הגשה ומוצרי אריזה לבשר, דגים ומוצרי מזון טריים.</p>
+        </div>
+        <div class="segment-card">
+          <i class="fas fa-industry"></i>
+          <h3>מפעלי ייצור ותעשייה</h3>
+          <p>ציוד בטיחות, מוצרי ניקיון תעשייתי, שקיות אשפה כבדות, סרטי דבק ומוצרי אריזה למפעלים וקווי ייצור.</p>
+        </div>
+        <div class="segment-card">
+          <i class="fas fa-users-cog"></i>
+          <h3>חברות כוח אדם ושירותים</h3>
+          <p>ציוד ניקיון, מוצרי נייר, טואלטיקה וחומרי חיטוי לחברות כוח אדם המנהלות אתרים ומשרדים מרובים.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -508,8 +544,8 @@
       <div class="areas-content">
         <div class="areas-main">
           <p>וואי מרקט מספקת <strong>חומרי ניקיון, מוצרי נייר, כלים חד פעמיים ומוצרי צריכה שוטפת</strong> לעסקים ומוסדות בכל רחבי ישראל. עיקר פעילותנו מתרכזת באזור גוש דן והמרכז עם משלוחים יומיים ל<strong>תל אביב, פתח תקווה, ראשון לציון, הרצליה, רמת גן, חולון, בת ים, גבעתיים, רעננה וכפר סבא</strong>.</p>
-          <p>אנו מספקים גם לאזורי <strong>חיפה והצפון, ירושלים, באר שבע, אשדוד, אשקלון ועד אילת</strong>. כל הזמנה מעל 200₪ נשלחת עם שירות משלוחים מקצועי, ישירות לפתח העסק שלכם.</p>
-          <p>עם מעל <strong>800 מוצרים מקצועיים</strong> במלאי, <strong>שירות אישי וצמוד</strong> ו<strong>מחירי סיטונאות</strong> תחרותיים - וואי מרקט היא השותפה האמינה שלכם לאספקה חכמה ומדויקת.</p>
+          <p>אנו מספקים גם לאזורי <strong>חיפה והצפון, ירושלים, באר שבע, אשדוד, אשקלון ועד אילת</strong>. משלוחים מקצועיים ישירות לפתח העסק שלכם. מינימום הזמנה <strong>1,600 ₪ + מע"מ</strong>.</p>
+          <p>עם מעל <strong>900 מוצרים מקצועיים</strong> במלאי, <strong>שירות אישי וצמוד</strong> ו<strong>מחירי סיטונאות</strong> תחרותיים - וואי מרקט היא השותפה האמינה שלכם לאספקה חכמה ומדויקת.</p>
         </div>
       </div>
     </div>
@@ -570,7 +606,7 @@
   <section class="cta-section section">
     <div class="container">
       <h2>מוכנים להזמין?</h2>
-      <p>צרו קשר עכשיו וקבלו הצעת מחיר מותאמת לעסק שלכם. מינימום הזמנה 500 ש"ח פלוס מע"מ.</p>
+      <p>צרו קשר עכשיו וקבלו הצעת מחיר מותאמת לעסק שלכם. מינימום הזמנה 1,600 ש"ח + מע"מ.</p>
       <div class="cta-section__actions">
         <a href="register" class="btn btn--register btn--lg">
           <i class="fas fa-user-plus"></i> הרשמה בחינם
@@ -586,7 +622,7 @@
   </section>
 
   <!-- Footer -->
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <footer class="footer">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <footer class="footer">
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
@@ -608,6 +644,10 @@
             <a href="/category/food-packaging-delivery-solutions/">אריזות Take Away</a>
             <a href="/category/office-coffee-breakroom-supplies/">קפה, שתייה וכיבוד</a>
             <a href="/category/safety-ppe-equipment-for-business/">בטיחות ומיגון</a>
+            <a href="/category/heavy-duty-garbage-bags-wholesale/">שקיות אשפה</a>
+            <a href="/category/professional-cleaning-cloths-microfiber/">טקסטיל ומטליות</a>
+            <a href="/category/ציוד-משרדי-וכללי/">ציוד משרדי</a>
+            <a href="/category/ציוד-טכני-ואחזקה/">ציוד טכני</a>
           </div>
         </div>
 
