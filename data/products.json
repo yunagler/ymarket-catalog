@@ -652,7 +652,7 @@
       "icon": "fa-box",
       "parentId": 11,
       "sortOrder": 3,
-      "itemCount": 21,
+      "itemCount": 22,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -16744,11 +16744,12 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "labels-stickers",
-      "categoryName": "מדבקות ותוויות",
+      "categorySlug": "ציוד-משרדי-וכללי",
+      "categoryName": "ציוד משרדי וכללי",
       "categorySlugs": [
+        "ציוד-משרדי-וכללי",
         "labels-stickers",
-        "ציוד-משרדי-וכללי"
+        "organization-filing"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -25096,6 +25097,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T15:46:24.568Z",
+  "exportedAt": "2026-03-14T15:46:38.363Z",
   "totalItems": 823
 }
