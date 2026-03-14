@@ -1,6 +1,21 @@
 {
   "categories": [
     {
+      "id": 53,
+      "name": "שקיות אשפה כבדות — תעשייה",
+      "slug": "שקיות-אשפה-כבדות-תעשייה",
+      "icon": "fa-box",
+      "parentId": 3,
+      "sortOrder": 0,
+      "itemCount": 2,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
       "id": 34,
       "name": "מסכות פנים והגנת נשימה",
       "slug": "מסכות-פנים-והגנת-נשימה",
@@ -22589,7 +22604,8 @@
       "categorySlug": "שקיות-ופתרונות-אשפה",
       "categoryName": "שקיות ופתרונות אשפה",
       "categorySlugs": [
-        "שקיות-ופתרונות-אשפה"
+        "שקיות-ופתרונות-אשפה",
+        "שקיות-אשפה-כבדות-תעשייה"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -23819,7 +23835,8 @@
       "categorySlug": "שקיות-ופתרונות-אשפה",
       "categoryName": "שקיות ופתרונות אשפה",
       "categorySlugs": [
-        "שקיות-ופתרונות-אשפה"
+        "שקיות-ופתרונות-אשפה",
+        "שקיות-אשפה-כבדות-תעשייה"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -24491,6 +24508,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T14:19:14.337Z",
+  "exportedAt": "2026-03-14T14:19:34.886Z",
   "totalItems": 823
 }
