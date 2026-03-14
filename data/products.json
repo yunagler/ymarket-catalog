@@ -442,7 +442,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 10,
-      "itemCount": 38,
+      "itemCount": 42,
       "metaTitle": "מוצרי נייר וניגוב בסיטונאות למשרדים ומוסדות | Ymarket",
       "metaDescription": "נייר טואלט תעשייתי, מגבות ניגוב ידיים, מפיות ונייר תעשייתי. מותגים מובילים במחירי סיטונאות. הזמנה חוזרת בקליק ואספקה מהירה.",
       "seoSlug": "bulk-paper-towel-office-supplies",
@@ -12939,7 +12939,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "מוצרי-נייר-וניגוב"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -12967,7 +12968,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "מוצרי-נייר-וניגוב"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -13024,7 +13026,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "מוצרי-נייר-וניגוב"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -13110,7 +13113,8 @@
       "categorySlug": "חד-פעמי-ואירוח",
       "categoryName": "חד פעמי ואירוח",
       "categorySlugs": [
-        "חד-פעמי-ואירוח"
+        "חד-פעמי-ואירוח",
+        "מוצרי-נייר-וניגוב"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -24125,6 +24129,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T11:05:40.770Z",
+  "exportedAt": "2026-03-14T11:07:03.494Z",
   "totalItems": 823
 }
