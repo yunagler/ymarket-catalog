@@ -66,9 +66,8 @@
     .stats-bar__label{font-size:0.78rem;color:#6b7280;margin-top:2px}
     @media(max-width:480px){.stats-bar{gap:1rem}.stats-bar__num{font-size:1.2rem}}
     /* Enhanced product card */
-    .product-card__quote{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px;padding:8px 12px;background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;border-radius:8px;font-size:0.78rem;font-weight:600;text-decoration:none;transition:all 0.2s}
-    .product-card__quote:hover{background:#16a34a;color:#fff;border-color:#16a34a}
     .product-card__vol-badge{position:absolute;top:8px;left:8px;background:#7c3aed;color:#fff;padding:3px 8px;border-radius:6px;font-size:0.7rem;font-weight:700;z-index:2}
+    .product-card__pricing{margin-bottom:4px}
     /* Consultation CTA */
     .consult-cta{display:flex;align-items:center;gap:20px;margin:1.5rem 0;padding:20px 24px;background:linear-gradient(135deg,#1B3A5C,#2a5080);border-radius:14px;color:#fff}
     .consult-cta__icon{font-size:2.2rem;opacity:0.9;flex-shrink:0}
@@ -572,8 +571,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/6-מפות-שולחן-מנילון-שקוף-לאירוח-1-35-300/">6 מפות שולחן מנילון שקוף לאירוח 1.35*300</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏8 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C6%20%D7%9E%D7%A4%D7%95%D7%AA%20%D7%A9%D7%95%D7%9C%D7%97%D7%9F%20%D7%9E%D7%A0%D7%99%D7%9C%D7%95%D7%9F%20%D7%A9%D7%A7%D7%95%D7%A3%20%D7%9C%D7%90%D7%99%D7%A8%D7%95%D7%97%201.35*300" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="634">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-634" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="634">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="634" data-name="6 מפות שולחן מנילון שקוף לאירוח 1.35*300" data-price="8" data-unit="" data-img="/items/650.jpg" data-slug="6-מפות-שולחן-מנילון-שקוף-לאירוח-1-35-300"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -589,8 +599,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/גליל-מפה-25-מטר-כחול-שמיים/">גליל מפה 25 מטר כחול שמיים</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏25 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%92%D7%9C%D7%99%D7%9C%20%D7%9E%D7%A4%D7%94%2025%20%D7%9E%D7%98%D7%A8%20%D7%9B%D7%97%D7%95%D7%9C%20%D7%A9%D7%9E%D7%99%D7%99%D7%9D" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="350">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-350" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="350">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="350" data-name="גליל מפה 25 מטר כחול שמיים" data-price="25" data-unit="" data-img="/items/366.jpg" data-slug="גליל-מפה-25-מטר-כחול-שמיים"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -606,8 +627,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/גליל-מפה-25-מטר-לבן/">גליל מפה 25 מטר לבן</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏25 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%92%D7%9C%D7%99%D7%9C%20%D7%9E%D7%A4%D7%94%2025%20%D7%9E%D7%98%D7%A8%20%D7%9C%D7%91%D7%9F" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="351">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-351" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="351">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="351" data-name="גליל מפה 25 מטר לבן" data-price="25" data-unit="" data-img="/items/367.jpg" data-slug="גליל-מפה-25-מטר-לבן"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -623,8 +655,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מגבון-אישי-חלק-לבן-1000-יחידות/">מגבון אישי חלק (לבן) 1000 יחידות</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏90 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%92%D7%91%D7%95%D7%9F%20%D7%90%D7%99%D7%A9%D7%99%20%D7%97%D7%9C%D7%A7%20(%D7%9C%D7%91%D7%9F)%201000%20%D7%99%D7%97%D7%99%D7%93%D7%95%D7%AA" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="319">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-319" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="319">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="319" data-name="מגבון אישי חלק (לבן) 1000 יחידות" data-price="90" data-unit="" data-img="/items/335.jpg" data-slug="מגבון-אישי-חלק-לבן-1000-יחידות"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -640,8 +683,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מגבון-אישי-חלק-שחור-1000-יחידות/">מגבון אישי חלק (שחור) 1000 יחידות</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏90 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%92%D7%91%D7%95%D7%9F%20%D7%90%D7%99%D7%A9%D7%99%20%D7%97%D7%9C%D7%A7%20(%D7%A9%D7%97%D7%95%D7%A8)%201000%20%D7%99%D7%97%D7%99%D7%93%D7%95%D7%AA" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="917">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-917" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="917">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="917" data-name="מגבון אישי חלק (שחור) 1000 יחידות" data-price="90" data-unit="" data-img="/items/934.jpg" data-slug="מגבון-אישי-חלק-שחור-1000-יחידות"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -657,8 +711,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מפיות-1-8-23-33-ארוז-2400-יח/">מפיות 1/8 23*33 ארוז 2400 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏150 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%A4%D7%99%D7%95%D7%AA%201%2F8%2023*33%20%D7%90%D7%A8%D7%95%D7%96%202400%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="284">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-284" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="284">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="284" data-name="מפיות 1/8 23*33 ארוז 2400 יח'" data-price="150" data-unit="" data-img="/items/300.jpg" data-slug="מפיות-1-8-23-33-ארוז-2400-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -674,8 +739,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מפיות-1-8-33-33-ארוז-2400-יח/">מפיות 1/8 33*33 ארוז 2400 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏110 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%A4%D7%99%D7%95%D7%AA%201%2F8%2033*33%20%D7%90%D7%A8%D7%95%D7%96%202400%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="368">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-368" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="368">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="368" data-name="מפיות 1/8 33*33 ארוז 2400 יח'" data-price="110" data-unit="" data-img="/items/384.jpg" data-slug="מפיות-1-8-33-33-ארוז-2400-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -691,8 +767,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מפיות-בד-אירלד-1-8-40-40-ארוז-700-יח/">מפיות בד אירלד 1/8 40*40 ארוז 700 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏295 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%A4%D7%99%D7%95%D7%AA%20%D7%91%D7%93%20%D7%90%D7%99%D7%A8%D7%9C%D7%93%201%2F8%2040*40%20%D7%90%D7%A8%D7%95%D7%96%20700%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="1105">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-1105" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="1105">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="1105" data-name="מפיות בד אירלד 1/8 40*40 ארוז 700 יח'" data-price="295" data-unit="" data-img="/items/1123.jpg" data-slug="מפיות-בד-אירלד-1-8-40-40-ארוז-700-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -708,8 +795,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מפיות-קוקטייל-טישו-דו-שכבתי-23-25-5000-יח/">מפיות קוקטייל טישו דו-שכבתי 23*25 (5000 יח')</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏122 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%A4%D7%99%D7%95%D7%AA%20%D7%A7%D7%95%D7%A7%D7%98%D7%99%D7%99%D7%9C%20%D7%98%D7%99%D7%A9%D7%95%20%D7%93%D7%95-%D7%A9%D7%9B%D7%91%D7%AA%D7%99%2023*25%20(5000%20%D7%99%D7%97')" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="118">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-118" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="118">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="118" data-name="מפיות קוקטייל טישו דו-שכבתי 23*25 (5000 יח')" data-price="122" data-unit="" data-img="/items/134.jpg" data-slug="מפיות-קוקטייל-טישו-דו-שכבתי-23-25-5000-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -725,8 +823,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מפת-גליל-נילון-45-135-1-3-ק-ג/">מפת גליל נילון 45*135 - 1.3 ק"ג</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏32 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%A4%D7%AA%20%D7%92%D7%9C%D7%99%D7%9C%20%D7%A0%D7%99%D7%9C%D7%95%D7%9F%2045*135%20-%201.3%20%D7%A7%22%D7%92" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="919">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-919" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="919">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="919" data-name="מפת גליל נילון 45*135 - 1.3 ק&quot;ג" data-price="32" data-unit="" data-img="/items/936.jpg" data-slug="מפת-גליל-נילון-45-135-1-3-ק-ג"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -742,8 +851,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מפת-שולחן-מהודרת-120-180/">מפת שולחן מהודרת 120*180</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏5 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%A4%D7%AA%20%D7%A9%D7%95%D7%9C%D7%97%D7%9F%20%D7%9E%D7%94%D7%95%D7%93%D7%A8%D7%AA%20120*180" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="436">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-436" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="436">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="436" data-name="מפת שולחן מהודרת 120*180" data-price="5" data-unit="" data-img="/items/452.jpg" data-slug="מפת-שולחן-מהודרת-120-180"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -759,8 +879,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מפת-שולחן-נילון-לאירוח-8-יח/">מפת שולחן נילון לאירוח - 8 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏7 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%A4%D7%AA%20%D7%A9%D7%95%D7%9C%D7%97%D7%9F%20%D7%A0%D7%99%D7%9C%D7%95%D7%9F%20%D7%9C%D7%90%D7%99%D7%A8%D7%95%D7%97%20-%208%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="447">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-447" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="447">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="447" data-name="מפת שולחן נילון לאירוח - 8 יח'" data-price="7" data-unit="" data-img="/items/463.jpg" data-slug="מפת-שולחן-נילון-לאירוח-8-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
           </div>
@@ -1018,13 +1149,73 @@
               children.style.display = '';
               icon.style.transform = '';
             } else if (!this.classList.contains('active')) {
-              // Only toggle if not navigating to this category
               e.preventDefault();
               children.style.display = 'none';
               icon.style.transform = 'rotate(90deg)';
             }
           }
         }
+      });
+    });
+
+    // ---- Ecommerce: Add to Cart ----
+    function ymAddToCart(btn) {
+      var id = parseInt(btn.dataset.id);
+      var input = document.getElementById('qty-' + id);
+      var qty = input ? Math.max(1, parseInt(input.value) || 1) : 1;
+      var cart = JSON.parse(localStorage.getItem('ym_cart') || '[]');
+      var existing = cart.find(function(item) { return item.id === id; });
+      if (existing) {
+        existing.quantity += qty;
+      } else {
+        cart.push({
+          id: id,
+          name: btn.dataset.name,
+          price: parseFloat(btn.dataset.price),
+          unit: btn.dataset.unit,
+          imageUrl: btn.dataset.img,
+          slug: btn.dataset.slug,
+          quantity: qty
+        });
+      }
+      localStorage.setItem('ym_cart', JSON.stringify(cart));
+      if (window.YMarket) {
+        window.YMarket.updateCartBadge();
+        window.YMarket.showToast(btn.dataset.name + ' נוסף לעגלה');
+      }
+      btn.classList.add('added');
+      btn.innerHTML = '<i class="fas fa-check"></i> נוסף!';
+      setTimeout(function() {
+        btn.classList.remove('added');
+        btn.innerHTML = '<i class="fas fa-cart-plus"></i> הוסף לעגלה';
+      }, 1500);
+      if (input) input.value = '1';
+      // Analytics
+      if (window.YMarketAnalytics && window.YMarketAnalytics.fbAddToCart) {
+        window.YMarketAnalytics.fbAddToCart({ id: id, name: btn.dataset.name, price: parseFloat(btn.dataset.price), quantity: qty });
+      }
+      if (window.YMarketAnalytics && window.YMarketAnalytics.trackAddToCart) {
+        window.YMarketAnalytics.trackAddToCart({ id: id, name: btn.dataset.name, price: parseFloat(btn.dataset.price), quantity: qty });
+      }
+    }
+
+    // Quantity +/- buttons
+    document.querySelectorAll('.product-card__qty-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var input = document.getElementById('qty-' + btn.dataset.id);
+        if (!input) return;
+        var val = parseInt(input.value) || 1;
+        if (btn.dataset.action === 'increase') val++;
+        else if (val > 1) val--;
+        input.value = val;
+      });
+    });
+
+    // Add to cart buttons
+    document.querySelectorAll('.product-card__add-btn[data-id]').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        ymAddToCart(btn);
       });
     });
   </script>

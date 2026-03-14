@@ -66,9 +66,8 @@
     .stats-bar__label{font-size:0.78rem;color:#6b7280;margin-top:2px}
     @media(max-width:480px){.stats-bar{gap:1rem}.stats-bar__num{font-size:1.2rem}}
     /* Enhanced product card */
-    .product-card__quote{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px;padding:8px 12px;background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;border-radius:8px;font-size:0.78rem;font-weight:600;text-decoration:none;transition:all 0.2s}
-    .product-card__quote:hover{background:#16a34a;color:#fff;border-color:#16a34a}
     .product-card__vol-badge{position:absolute;top:8px;left:8px;background:#7c3aed;color:#fff;padding:3px 8px;border-radius:6px;font-size:0.7rem;font-weight:700;z-index:2}
+    .product-card__pricing{margin-bottom:4px}
     /* Consultation CTA */
     .consult-cta{display:flex;align-items:center;gap:20px;margin:1.5rem 0;padding:20px 24px;background:linear-gradient(135deg,#1B3A5C,#2a5080);border-radius:14px;color:#fff}
     .consult-cta__icon{font-size:2.2rem;opacity:0.9;flex-shrink:0}
@@ -723,8 +722,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מאג-טרמוס-נירוסטה-450-מ-ל/">מאג טרמוס נירוסטה 450 מ"ל</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏39 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%90%D7%92%20%D7%98%D7%A8%D7%9E%D7%95%D7%A1%20%D7%A0%D7%99%D7%A8%D7%95%D7%A1%D7%98%D7%94%20450%20%D7%9E%22%D7%9C" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="665">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-665" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="665">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="665" data-name="מאג טרמוס נירוסטה 450 מ&quot;ל" data-price="39" data-unit="" data-img="/items/681.jpg" data-slug="מאג-טרמוס-נירוסטה-450-מ-ל"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -740,8 +750,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מים-2-ליטר-עין-גדי-א-שישיה/">מים 2 ליטר עין גדי - א' שישיה</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏15 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%99%D7%9D%202%20%D7%9C%D7%99%D7%98%D7%A8%20%D7%A2%D7%99%D7%9F%20%D7%92%D7%93%D7%99%20-%20%D7%90'%20%D7%A9%D7%99%D7%A9%D7%99%D7%94" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="792">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-792" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="792">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="792" data-name="מים 2 ליטר עין גדי - א' שישיה" data-price="15" data-unit="" data-img="/items/809.jpg" data-slug="מים-2-ליטר-עין-גדי-א-שישיה"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -757,8 +778,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מלח-הארץ-ים-יבש-500-גרם-מלחיה/">מלח הארץ ים יבש 500 גרם - מלחיה</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏9,000 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%9C%D7%97%20%D7%94%D7%90%D7%A8%D7%A5%20%D7%99%D7%9D%20%D7%99%D7%91%D7%A9%20500%20%D7%92%D7%A8%D7%9D%20-%20%D7%9E%D7%9C%D7%97%D7%99%D7%94" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="486">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-486" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="486">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="486" data-name="מלח הארץ ים יבש 500 גרם - מלחיה" data-price="9000" data-unit="" data-img="/items/502.jpg" data-slug="מלח-הארץ-ים-יבש-500-גרם-מלחיה"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -774,8 +806,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מלח-ממותג-מיתוג-חדש/">מלח ממותג - מיתוג חדש</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏30 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%9C%D7%97%20%D7%9E%D7%9E%D7%95%D7%AA%D7%92%20-%20%D7%9E%D7%99%D7%AA%D7%95%D7%92%20%D7%97%D7%93%D7%A9" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="418">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-418" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="418">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="418" data-name="מלח ממותג - מיתוג חדש" data-price="30" data-unit="" data-img="/items/434.jpg" data-slug="מלח-ממותג-מיתוג-חדש"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -791,8 +834,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מצת-כיס-מעוצב-דיספליים-מגוון-צבעים/">מצת כיס מעוצב (דיספליים) מגוון צבעים</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏7 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%A6%D7%AA%20%D7%9B%D7%99%D7%A1%20%D7%9E%D7%A2%D7%95%D7%A6%D7%91%20(%D7%93%D7%99%D7%A1%D7%A4%D7%9C%D7%99%D7%99%D7%9D)%20%D7%9E%D7%92%D7%95%D7%95%D7%9F%20%D7%A6%D7%91%D7%A2%D7%99%D7%9D" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="1088">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-1088" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="1088">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="1088" data-name="מצת כיס מעוצב (דיספליים) מגוון צבעים" data-price="7" data-unit="" data-img="/items/1106.jpg" data-slug="מצת-כיס-מעוצב-דיספליים-מגוון-צבעים"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -808,8 +862,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מצת-מתקפל-דיספנסר-מגוון-צבעים/">מצת מתקפל (דיספנסר) מגוון צבעים</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏15 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%A6%D7%AA%20%D7%9E%D7%AA%D7%A7%D7%A4%D7%9C%20(%D7%93%D7%99%D7%A1%D7%A4%D7%A0%D7%A1%D7%A8)%20%D7%9E%D7%92%D7%95%D7%95%D7%9F%20%D7%A6%D7%91%D7%A2%D7%99%D7%9D" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="1087">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-1087" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="1087">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="1087" data-name="מצת מתקפל (דיספנסר) מגוון צבעים" data-price="15" data-unit="" data-img="/items/1105.jpg" data-slug="מצת-מתקפל-דיספנסר-מגוון-צבעים"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -825,8 +890,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/סוכר-חום-מנות-1000-יח/">סוכר חום מנות 1000 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏72 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A1%D7%95%D7%9B%D7%A8%20%D7%97%D7%95%D7%9D%20%D7%9E%D7%A0%D7%95%D7%AA%201000%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="245">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-245" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="245">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="245" data-name="סוכר חום מנות 1000 יח'" data-price="72" data-unit="" data-img="/items/261.jpg" data-slug="סוכר-חום-מנות-1000-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -842,8 +918,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/סוכר-לבן-1-קג/">סוכר לבן 1 קג</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏5 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A1%D7%95%D7%9B%D7%A8%20%D7%9C%D7%91%D7%9F%201%20%D7%A7%D7%92" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="210">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-210" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="210">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="210" data-name="סוכר לבן 1 קג" data-price="5" data-unit="" data-img="/items/226.jpg" data-slug="סוכר-לבן-1-קג"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -859,8 +946,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/סוכר-מנות-1000-יח/">סוכר מנות 1000 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏50 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A1%D7%95%D7%9B%D7%A8%20%D7%9E%D7%A0%D7%95%D7%AA%201000%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="244">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-244" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="244">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="244" data-name="סוכר מנות 1000 יח'" data-price="50" data-unit="" data-img="/items/260.jpg" data-slug="סוכר-מנות-1000-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -876,8 +974,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/סוכרזית-מנות-1000-יח/">סוכרזית מנות 1000 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏70 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A1%D7%95%D7%9B%D7%A8%D7%96%D7%99%D7%AA%20%D7%9E%D7%A0%D7%95%D7%AA%201000%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="246">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-246" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="246">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="246" data-name="סוכרזית מנות 1000 יח'" data-price="70" data-unit="" data-img="/items/262.jpg" data-slug="סוכרזית-מנות-1000-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -893,8 +1002,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/סוכרזית-קלאסי/">סוכרזית קלאסי</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏22 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A1%D7%95%D7%9B%D7%A8%D7%96%D7%99%D7%AA%20%D7%A7%D7%9C%D7%90%D7%A1%D7%99" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="394">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-394" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="394">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="394" data-name="סוכרזית קלאסי" data-price="22" data-unit="" data-img="/items/410.jpg" data-slug="סוכרזית-קלאסי"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -910,8 +1030,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/צנצנת-קפה-זכוכית/">צנצנת קפה זכוכית</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏12 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A6%D7%A0%D7%A6%D7%A0%D7%AA%20%D7%A7%D7%A4%D7%94%20%D7%96%D7%9B%D7%95%D7%9B%D7%99%D7%AA" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="793">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-793" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="793">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="793" data-name="צנצנת קפה זכוכית" data-price="12" data-unit="" data-img="/items/810.jpg" data-slug="צנצנת-קפה-זכוכית"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -927,8 +1058,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/קפה-טורקי-100-גר-עלית/">קפה טורקי 100 גר' - עלית</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏8 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A7%D7%A4%D7%94%20%D7%98%D7%95%D7%A8%D7%A7%D7%99%20100%20%D7%92%D7%A8'%20-%20%D7%A2%D7%9C%D7%99%D7%AA" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="567">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-567" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="567">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="567" data-name="קפה טורקי 100 גר' - עלית" data-price="8" data-unit="" data-img="/items/583.jpg" data-slug="קפה-טורקי-100-גר-עלית"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -944,8 +1086,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/קפה-טורקי-200-גר-עלית/">קפה טורקי 200 גר' - עלית</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏17 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A7%D7%A4%D7%94%20%D7%98%D7%95%D7%A8%D7%A7%D7%99%20200%20%D7%92%D7%A8'%20-%20%D7%A2%D7%9C%D7%99%D7%AA" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="213">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-213" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="213">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="213" data-name="קפה טורקי 200 גר' - עלית" data-price="17" data-unit="" data-img="/items/229.jpg" data-slug="קפה-טורקי-200-גר-עלית"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -961,8 +1114,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/קפה-נמס-200-גר/">קפה נמס 200 גר'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏25 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A7%D7%A4%D7%94%20%D7%A0%D7%9E%D7%A1%20200%20%D7%92%D7%A8'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="214">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-214" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="214">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="214" data-name="קפה נמס 200 גר'" data-price="25" data-unit="" data-img="/items/230.jpg" data-slug="קפה-נמס-200-גר"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -978,8 +1142,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/קפה-נמס-טסטר-צ-ויס-אדום-200-גרם/">קפה נמס טסטר צ'ויס אדום 200 גרם</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏35 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A7%D7%A4%D7%94%20%D7%A0%D7%9E%D7%A1%20%D7%98%D7%A1%D7%98%D7%A8%20%D7%A6'%D7%95%D7%99%D7%A1%20%D7%90%D7%93%D7%95%D7%9D%20200%20%D7%92%D7%A8%D7%9D" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="106">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-106" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="106">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="106" data-name="קפה נמס טסטר צ'ויס אדום 200 גרם" data-price="35" data-unit="" data-img="/items/122.jpg" data-slug="קפה-נמס-טסטר-צ-ויס-אדום-200-גרם"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -995,8 +1170,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/קפה-שחור-1-קג-מוסדי-עלית/">קפה שחור 1 קג מוסדי - עלית</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏40 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A7%D7%A4%D7%94%20%D7%A9%D7%97%D7%95%D7%A8%201%20%D7%A7%D7%92%20%D7%9E%D7%95%D7%A1%D7%93%D7%99%20-%20%D7%A2%D7%9C%D7%99%D7%AA" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="212">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-212" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="212">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="212" data-name="קפה שחור 1 קג מוסדי - עלית" data-price="40" data-unit="" data-img="/items/228.jpg" data-slug="קפה-שחור-1-קג-מוסדי-עלית"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1012,8 +1198,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/תה-ויצוצקי-מוסדי-100-יח-כשר-מהדרין/">תה ויצוצקי מוסדי 100 יח' - כשר מהדרין</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏8 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%AA%D7%94%20%D7%95%D7%99%D7%A6%D7%95%D7%A6%D7%A7%D7%99%20%D7%9E%D7%95%D7%A1%D7%93%D7%99%20100%20%D7%99%D7%97'%20-%20%D7%9B%D7%A9%D7%A8%20%D7%9E%D7%94%D7%93%D7%A8%D7%99%D7%9F" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="456">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-456" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="456">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="456" data-name="תה ויצוצקי מוסדי 100 יח' - כשר מהדרין" data-price="8" data-unit="" data-img="/items/472.jpg" data-slug="תה-ויצוצקי-מוסדי-100-יח-כשר-מהדרין"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1029,8 +1226,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/תה-ליפטון-100-150-גר/">תה ליפטון 100 - 150 גר'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏15 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%AA%D7%94%20%D7%9C%D7%99%D7%A4%D7%98%D7%95%D7%9F%20100%20-%20150%20%D7%92%D7%A8'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="215">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-215" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="215">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="215" data-name="תה ליפטון 100 - 150 גר'" data-price="15" data-unit="" data-img="/items/231.jpg" data-slug="תה-ליפטון-100-150-גר"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
           </div>
@@ -1262,13 +1470,73 @@
               children.style.display = '';
               icon.style.transform = '';
             } else if (!this.classList.contains('active')) {
-              // Only toggle if not navigating to this category
               e.preventDefault();
               children.style.display = 'none';
               icon.style.transform = 'rotate(90deg)';
             }
           }
         }
+      });
+    });
+
+    // ---- Ecommerce: Add to Cart ----
+    function ymAddToCart(btn) {
+      var id = parseInt(btn.dataset.id);
+      var input = document.getElementById('qty-' + id);
+      var qty = input ? Math.max(1, parseInt(input.value) || 1) : 1;
+      var cart = JSON.parse(localStorage.getItem('ym_cart') || '[]');
+      var existing = cart.find(function(item) { return item.id === id; });
+      if (existing) {
+        existing.quantity += qty;
+      } else {
+        cart.push({
+          id: id,
+          name: btn.dataset.name,
+          price: parseFloat(btn.dataset.price),
+          unit: btn.dataset.unit,
+          imageUrl: btn.dataset.img,
+          slug: btn.dataset.slug,
+          quantity: qty
+        });
+      }
+      localStorage.setItem('ym_cart', JSON.stringify(cart));
+      if (window.YMarket) {
+        window.YMarket.updateCartBadge();
+        window.YMarket.showToast(btn.dataset.name + ' נוסף לעגלה');
+      }
+      btn.classList.add('added');
+      btn.innerHTML = '<i class="fas fa-check"></i> נוסף!';
+      setTimeout(function() {
+        btn.classList.remove('added');
+        btn.innerHTML = '<i class="fas fa-cart-plus"></i> הוסף לעגלה';
+      }, 1500);
+      if (input) input.value = '1';
+      // Analytics
+      if (window.YMarketAnalytics && window.YMarketAnalytics.fbAddToCart) {
+        window.YMarketAnalytics.fbAddToCart({ id: id, name: btn.dataset.name, price: parseFloat(btn.dataset.price), quantity: qty });
+      }
+      if (window.YMarketAnalytics && window.YMarketAnalytics.trackAddToCart) {
+        window.YMarketAnalytics.trackAddToCart({ id: id, name: btn.dataset.name, price: parseFloat(btn.dataset.price), quantity: qty });
+      }
+    }
+
+    // Quantity +/- buttons
+    document.querySelectorAll('.product-card__qty-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var input = document.getElementById('qty-' + btn.dataset.id);
+        if (!input) return;
+        var val = parseInt(input.value) || 1;
+        if (btn.dataset.action === 'increase') val++;
+        else if (val > 1) val--;
+        input.value = val;
+      });
+    });
+
+    // Add to cart buttons
+    document.querySelectorAll('.product-card__add-btn[data-id]').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        ymAddToCart(btn);
       });
     });
   </script>

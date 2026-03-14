@@ -66,9 +66,8 @@
     .stats-bar__label{font-size:0.78rem;color:#6b7280;margin-top:2px}
     @media(max-width:480px){.stats-bar{gap:1rem}.stats-bar__num{font-size:1.2rem}}
     /* Enhanced product card */
-    .product-card__quote{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px;padding:8px 12px;background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;border-radius:8px;font-size:0.78rem;font-weight:600;text-decoration:none;transition:all 0.2s}
-    .product-card__quote:hover{background:#16a34a;color:#fff;border-color:#16a34a}
     .product-card__vol-badge{position:absolute;top:8px;left:8px;background:#7c3aed;color:#fff;padding:3px 8px;border-radius:6px;font-size:0.7rem;font-weight:700;z-index:2}
+    .product-card__pricing{margin-bottom:4px}
     /* Consultation CTA */
     .consult-cta{display:flex;align-items:center;gap:20px;margin:1.5rem 0;padding:20px 24px;background:linear-gradient(135deg,#1B3A5C,#2a5080);border-radius:14px;color:#fff}
     .consult-cta__icon{font-size:2.2rem;opacity:0.9;flex-shrink:0}
@@ -748,8 +747,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/בוחשן-קפה-פלסטיק-1000-יח/">בוחשן קפה פלסטיק - 1000 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏25 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%91%D7%95%D7%97%D7%A9%D7%9F%20%D7%A7%D7%A4%D7%94%20%D7%A4%D7%9C%D7%A1%D7%98%D7%99%D7%A7%20-%201000%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="303">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-303" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="303">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="303" data-name="בוחשן קפה פלסטיק - 1000 יח'" data-price="25" data-unit="" data-img="/items/319.jpg" data-slug="בוחשן-קפה-פלסטיק-1000-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -765,8 +775,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/בוחשנים-מעץ-1000-יח/">בוחשנים מעץ (1000 יח)</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏25 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%91%D7%95%D7%97%D7%A9%D7%A0%D7%99%D7%9D%20%D7%9E%D7%A2%D7%A5%20(1000%20%D7%99%D7%97)" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="323">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-323" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="323">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="323" data-name="בוחשנים מעץ (1000 יח)" data-price="25" data-unit="" data-img="/items/339.jpg" data-slug="בוחשנים-מעץ-1000-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -782,8 +803,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/כוס-330-cc-ספלאש-97-א-1000-יח/">כוס 330 cc (ספלאש 97) א' 1000 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏180 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9B%D7%95%D7%A1%20330%20cc%20(%D7%A1%D7%A4%D7%9C%D7%90%D7%A9%2097)%20%D7%90'%201000%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="581">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-581" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="581">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="581" data-name="כוס 330 cc (ספלאש 97) א' 1000 יח'" data-price="180" data-unit="" data-img="/items/597.jpg" data-slug="כוס-330-cc-ספלאש-97-א-1000-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -799,8 +831,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/כוס-330-איכותית-2000-יח/">כוס 330 איכותית - 2000 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏190 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9B%D7%95%D7%A1%20330%20%D7%90%D7%99%D7%9B%D7%95%D7%AA%D7%99%D7%AA%20-%202000%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="135">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-135" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="135">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="135" data-name="כוס 330 איכותית - 2000 יח'" data-price="190" data-unit="" data-img="/items/151.jpg" data-slug="כוס-330-איכותית-2000-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -816,8 +859,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/כוס-500-cc-ספלאש-98-א-1000-יח/">כוס 500 cc (ספלאש 98) א' 1000 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏235 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9B%D7%95%D7%A1%20500%20cc%20(%D7%A1%D7%A4%D7%9C%D7%90%D7%A9%2098)%20%D7%90'%201000%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="582">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-582" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="582">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="582" data-name="כוס 500 cc (ספלאש 98) א' 1000 יח'" data-price="235" data-unit="" data-img="/items/598.jpg" data-slug="כוס-500-cc-ספלאש-98-א-1000-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -833,8 +887,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/כוס-500-מל/">כוס 500 מל</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏350 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9B%D7%95%D7%A1%20500%20%D7%9E%D7%9C" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="301">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-301" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="301">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="301" data-name="כוס 500 מל" data-price="350" data-unit="" data-img="/items/317.jpg" data-slug="כוס-500-מל"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -850,8 +915,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/כוס-חם-12-OZ-1000-יח/">כוס חם 12 OZ - 1000 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏220 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9B%D7%95%D7%A1%20%D7%97%D7%9D%2012%20OZ%20-%201000%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="439">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-439" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="439">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="439" data-name="כוס חם 12 OZ - 1000 יח'" data-price="220" data-unit="" data-img="/items/455.jpg" data-slug="כוס-חם-12-OZ-1000-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -867,8 +943,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/כוס-חם-8-לבן-OZ-1000-יח/">כוס חם 8 (לבן) OZ - 1000 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏120 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9B%D7%95%D7%A1%20%D7%97%D7%9D%208%20(%D7%9C%D7%91%D7%9F)%20OZ%20-%201000%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="473">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-473" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="473">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="473" data-name="כוס חם 8 (לבן) OZ - 1000 יח'" data-price="120" data-unit="" data-img="/items/489.jpg" data-slug="כוס-חם-8-לבן-OZ-1000-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -884,8 +971,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/כוס-חם-9-OZ-דגם-לואי-א-1000-יח/">כוס חם 9 OZ דגם לואי א' 1000 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏120 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9B%D7%95%D7%A1%20%D7%97%D7%9D%209%20OZ%20%D7%93%D7%92%D7%9D%20%D7%9C%D7%95%D7%90%D7%99%20%D7%90'%201000%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="590">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-590" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="590">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="590" data-name="כוס חם 9 OZ דגם לואי א' 1000 יח'" data-price="120" data-unit="" data-img="/items/606.jpg" data-slug="כוס-חם-9-OZ-דגם-לואי-א-1000-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -901,8 +999,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/כוס-חם-9-OZ-לבן-חלק-א-1000-יח/">כוס חם 9 OZ לבן חלק א' 1000 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏120 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9B%D7%95%D7%A1%20%D7%97%D7%9D%209%20OZ%20%D7%9C%D7%91%D7%9F%20%D7%97%D7%9C%D7%A7%20%D7%90'%201000%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="542">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-542" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="542">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="542" data-name="כוס חם 9 OZ לבן חלק א' 1000 יח'" data-price="120" data-unit="" data-img="/items/558.jpg" data-slug="כוס-חם-9-OZ-לבן-חלק-א-1000-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -918,8 +1027,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/כוס-טוליפ-330-ארוז-1000-כוסות-בקרטון/">כוס טוליפ 330 - ארוז 1000 כוסות בקרטון</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏328.44 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9B%D7%95%D7%A1%20%D7%98%D7%95%D7%9C%D7%99%D7%A4%20330%20-%20%D7%90%D7%A8%D7%95%D7%96%201000%20%D7%9B%D7%95%D7%A1%D7%95%D7%AA%20%D7%91%D7%A7%D7%A8%D7%98%D7%95%D7%9F" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="157">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-157" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="157">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="157" data-name="כוס טוליפ 330 - ארוז 1000 כוסות בקרטון" data-price="328.44" data-unit="" data-img="/items/173.jpg" data-slug="כוס-טוליפ-330-ארוז-1000-כוסות-בקרטון"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -935,8 +1055,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/כוס-יהלום-250-מ-ל-40-יח/">כוס יהלום 250 מ"ל - 40 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏5 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9B%D7%95%D7%A1%20%D7%99%D7%94%D7%9C%D7%95%D7%9D%20250%20%D7%9E%22%D7%9C%20-%2040%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="560">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-560" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="560">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="560" data-name="כוס יהלום 250 מ&quot;ל - 40 יח'" data-price="5" data-unit="" data-img="/items/576.jpg" data-slug="כוס-יהלום-250-מ-ל-40-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -952,8 +1083,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/כוסות-חד-פעמי-100יח-Splash-180cc-קרטון-3000-יח/">כוסות חד פעמי (100יח) Splash - 180cc - קרטון 3000 יח</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏110 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9B%D7%95%D7%A1%D7%95%D7%AA%20%D7%97%D7%93%20%D7%A4%D7%A2%D7%9E%D7%99%20(100%D7%99%D7%97)%20Splash%20-%20180cc%20-%20%D7%A7%D7%A8%D7%98%D7%95%D7%9F%203000%20%D7%99%D7%97" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="67">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-67" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="67">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="67" data-name="כוסות חד פעמי (100יח) Splash - 180cc - קרטון 3000 יח" data-price="110" data-unit="" data-img="/items/83.jpg" data-slug="כוסות-חד-פעמי-100יח-Splash-180cc-קרטון-3000-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -969,8 +1111,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/כוסות-חד-פעמי-חם-10-oz-50-יח-WP-בקרטון-1000-יח/">כוסות חד פעמי חם 10 oz (50 יח) - WP - בקרטון 1000 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏170 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9B%D7%95%D7%A1%D7%95%D7%AA%20%D7%97%D7%93%20%D7%A4%D7%A2%D7%9E%D7%99%20%D7%97%D7%9D%2010%20oz%20(50%20%D7%99%D7%97)%20-%20WP%20-%20%D7%91%D7%A7%D7%A8%D7%98%D7%95%D7%9F%201000%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="96">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-96" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="96">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="96" data-name="כוסות חד פעמי חם 10 oz (50 יח) - WP - בקרטון 1000 יח'" data-price="170" data-unit="" data-img="/items/112.jpg" data-slug="כוסות-חד-פעמי-חם-10-oz-50-יח-WP-בקרטון-1000-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -986,8 +1139,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/כוסות-חד-פעמי-חם-16-oz-1000-יח/">כוסות חד פעמי חם 16 oz (1000 יח)</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏260 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9B%D7%95%D7%A1%D7%95%D7%AA%20%D7%97%D7%93%20%D7%A4%D7%A2%D7%9E%D7%99%20%D7%97%D7%9D%2016%20oz%20(1000%20%D7%99%D7%97)" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="549">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-549" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="549">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="549" data-name="כוסות חד פעמי חם 16 oz (1000 יח)" data-price="260" data-unit="" data-img="/items/565.jpg" data-slug="כוסות-חד-פעמי-חם-16-oz-1000-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1003,8 +1167,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/כוסות-חד-פעמי-חם-4-oz-50-יח-WP-בקרטון-2000-יח/">כוסות חד פעמי חם 4 oz (50 יח') - WP - בקרטון 2000 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏120 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9B%D7%95%D7%A1%D7%95%D7%AA%20%D7%97%D7%93%20%D7%A4%D7%A2%D7%9E%D7%99%20%D7%97%D7%9D%204%20oz%20(50%20%D7%99%D7%97')%20-%20WP%20-%20%D7%91%D7%A7%D7%A8%D7%98%D7%95%D7%9F%202000%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="279">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-279" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="279">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="279" data-name="כוסות חד פעמי חם 4 oz (50 יח') - WP - בקרטון 2000 יח'" data-price="120" data-unit="" data-img="/items/295.jpg" data-slug="כוסות-חד-פעמי-חם-4-oz-50-יח-WP-בקרטון-2000-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1020,8 +1195,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/כוסות-חד-פעמי-חם-8-oz-דניאל-1000-יח/">כוסות חד פעמי חם 8 oz (דניאל) - 1000 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏165 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9B%D7%95%D7%A1%D7%95%D7%AA%20%D7%97%D7%93%20%D7%A4%D7%A2%D7%9E%D7%99%20%D7%97%D7%9D%208%20oz%20(%D7%93%D7%A0%D7%99%D7%90%D7%9C)%20-%201000%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="68">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-68" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="68">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="68" data-name="כוסות חד פעמי חם 8 oz (דניאל) - 1000 יח'" data-price="165" data-unit="" data-img="/items/84.jpg" data-slug="כוסות-חד-פעמי-חם-8-oz-דניאל-1000-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1037,8 +1223,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/כוסות-חד-פעמי-חם-8B-oz-50-יח-WP-בקרטון-1000-יח/">כוסות חד פעמי חם 8B oz (50 יח) - WP - בקרטון 1000 יח</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏100 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9B%D7%95%D7%A1%D7%95%D7%AA%20%D7%97%D7%93%20%D7%A4%D7%A2%D7%9E%D7%99%20%D7%97%D7%9D%208B%20oz%20(50%20%D7%99%D7%97)%20-%20WP%20-%20%D7%91%D7%A7%D7%A8%D7%98%D7%95%D7%9F%201000%20%D7%99%D7%97" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="79">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-79" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="79">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="79" data-name="כוסות חד פעמי חם 8B oz (50 יח) - WP - בקרטון 1000 יח" data-price="100" data-unit="" data-img="/items/95.jpg" data-slug="כוסות-חד-פעמי-חם-8B-oz-50-יח-WP-בקרטון-1000-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1054,8 +1251,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/כף-שחורה-ארוז-50-יח-בחבילה/">כף שחורה ארוז 50 יח' בחבילה</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏7 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9B%D7%A3%20%D7%A9%D7%97%D7%95%D7%A8%D7%94%20%D7%90%D7%A8%D7%95%D7%96%2050%20%D7%99%D7%97'%20%D7%91%D7%97%D7%91%D7%99%D7%9C%D7%94" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="1036">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-1036" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="1036">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="1036" data-name="כף שחורה ארוז 50 יח' בחבילה" data-price="7" data-unit="" data-img="/items/1054.jpg" data-slug="כף-שחורה-ארוז-50-יח-בחבילה"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1071,8 +1279,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/כף-שקופה-ארוז-50-יח-בחבילה/">כף שקופה ארוז 50 יח' בחבילה</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏5 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9B%D7%A3%20%D7%A9%D7%A7%D7%95%D7%A4%D7%94%20%D7%90%D7%A8%D7%95%D7%96%2050%20%D7%99%D7%97'%20%D7%91%D7%97%D7%91%D7%99%D7%9C%D7%94" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="220">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-220" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="220">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="220" data-name="כף שקופה ארוז 50 יח' בחבילה" data-price="5" data-unit="" data-img="/items/236.jpg" data-slug="כף-שקופה-ארוז-50-יח-בחבילה"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1088,8 +1307,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/כפית-שקופה-ארוז-50-יח-בחבילה/">כפית שקופה - ארוז 50 יח' בחבילה </a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏4 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9B%D7%A4%D7%99%D7%AA%20%D7%A9%D7%A7%D7%95%D7%A4%D7%94%20-%20%D7%90%D7%A8%D7%95%D7%96%2050%20%D7%99%D7%97'%20%D7%91%D7%97%D7%91%D7%99%D7%9C%D7%94%20" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="217">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-217" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="217">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="217" data-name="כפית שקופה - ארוז 50 יח' בחבילה " data-price="4" data-unit="" data-img="/items/233.jpg" data-slug="כפית-שקופה-ארוז-50-יח-בחבילה"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1105,8 +1335,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/לפתניה-P-P-לבן-חוויה-ארוז-100-יח/">לפתניה P.P. (לבן) חוויה ארוז 100 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏8 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9C%D7%A4%D7%AA%D7%A0%D7%99%D7%94%20P.P.%20(%D7%9C%D7%91%D7%9F)%20%D7%97%D7%95%D7%95%D7%99%D7%94%20%D7%90%D7%A8%D7%95%D7%96%20100%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="907">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-907" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="907">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="907" data-name="לפתניה P.P. (לבן) חוויה ארוז 100 יח'" data-price="8" data-unit="" data-img="/items/924.jpg" data-slug="לפתניה-P-P-לבן-חוויה-ארוז-100-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1122,8 +1363,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/לפתניה-קלקר-ארוז-1500-יח/">לפתניה קלקר ארוז 1500 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏135 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9C%D7%A4%D7%AA%D7%A0%D7%99%D7%94%20%D7%A7%D7%9C%D7%A7%D7%A8%20%D7%90%D7%A8%D7%95%D7%96%201500%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="125">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-125" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="125">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="125" data-name="לפתניה קלקר ארוז 1500 יח'" data-price="135" data-unit="" data-img="/items/141.jpg" data-slug="לפתניה-קלקר-ארוז-1500-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1139,8 +1391,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מגש-אובלי-עמוק-P-P-לבן-חוויה-ארוז-20-יח/">מגש אובלי עמוק P.P. (לבן) חוויה ארוז 20 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏9 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%92%D7%A9%20%D7%90%D7%95%D7%91%D7%9C%D7%99%20%D7%A2%D7%9E%D7%95%D7%A7%20P.P.%20(%D7%9C%D7%91%D7%9F)%20%D7%97%D7%95%D7%95%D7%99%D7%94%20%D7%90%D7%A8%D7%95%D7%96%2020%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="922">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-922" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="922">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="922" data-name="מגש אובלי עמוק P.P. (לבן) חוויה ארוז 20 יח'" data-price="9" data-unit="" data-img="/items/940.jpg" data-slug="מגש-אובלי-עמוק-P-P-לבן-חוויה-ארוז-20-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1156,8 +1419,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מגש-אלומניום-אינגליש-קייק-קצר/">מגש אלומניום אינגליש קייק קצר</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏0.5 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%92%D7%A9%20%D7%90%D7%9C%D7%95%D7%9E%D7%A0%D7%99%D7%95%D7%9D%20%D7%90%D7%99%D7%A0%D7%92%D7%9C%D7%99%D7%A9%20%D7%A7%D7%99%D7%99%D7%A7%20%D7%A7%D7%A6%D7%A8" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="569">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-569" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="569">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="569" data-name="מגש אלומניום אינגליש קייק קצר" data-price="0.5" data-unit="" data-img="/items/585.jpg" data-slug="מגש-אלומניום-אינגליש-קייק-קצר"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1173,8 +1447,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מגש-קלקר-אובלי-א-500-יח/">מגש קלקר אובלי א' 500 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏135 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%92%D7%A9%20%D7%A7%D7%9C%D7%A7%D7%A8%20%D7%90%D7%95%D7%91%D7%9C%D7%99%20%D7%90'%20500%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="385">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-385" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="385">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="385" data-name="מגש קלקר אובלי א' 500 יח'" data-price="135" data-unit="" data-img="/items/401.jpg" data-slug="מגש-קלקר-אובלי-א-500-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1190,8 +1475,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מזלג-שחור-ארוז-50-יח-בחבילה/">מזלג שחור ארוז 50 יח' בחבילה</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏6 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%96%D7%9C%D7%92%20%D7%A9%D7%97%D7%95%D7%A8%20%D7%90%D7%A8%D7%95%D7%96%2050%20%D7%99%D7%97'%20%D7%91%D7%97%D7%91%D7%99%D7%9C%D7%94" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="1037">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-1037" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="1037">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="1037" data-name="מזלג שחור ארוז 50 יח' בחבילה" data-price="6" data-unit="" data-img="/items/1055.jpg" data-slug="מזלג-שחור-ארוז-50-יח-בחבילה"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1207,8 +1503,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מזלג-שקוף-ארוז-50-יח-בחבילה/">מזלג שקוף ארוז 50 יח' בחבילה</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏5 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%96%D7%9C%D7%92%20%D7%A9%D7%A7%D7%95%D7%A3%20%D7%90%D7%A8%D7%95%D7%96%2050%20%D7%99%D7%97'%20%D7%91%D7%97%D7%91%D7%99%D7%9C%D7%94" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="218">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-218" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="218">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="218" data-name="מזלג שקוף ארוז 50 יח' בחבילה" data-price="5" data-unit="" data-img="/items/234.jpg" data-slug="מזלג-שקוף-ארוז-50-יח-בחבילה"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1224,8 +1531,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מכסה-כיפה-85-עם-חור-2000-יח/">מכסה כיפה 85 עם חור - 2000 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏260 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%9B%D7%A1%D7%94%20%D7%9B%D7%99%D7%A4%D7%94%2085%20%D7%A2%D7%9D%20%D7%97%D7%95%D7%A8%20-%202000%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="158">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-158" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="158">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="158" data-name="מכסה כיפה 85 עם חור - 2000 יח'" data-price="260" data-unit="" data-img="/items/174.jpg" data-slug="מכסה-כיפה-85-עם-חור-2000-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1241,8 +1559,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מכסה-כיפה-לכוס-95-א-1000-יח/">מכסה כיפה לכוס 95 א' 1000 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏135 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%9B%D7%A1%D7%94%20%D7%9B%D7%99%D7%A4%D7%94%20%D7%9C%D7%9B%D7%95%D7%A1%2095%20%D7%90'%201000%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="583">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-583" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="583">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="583" data-name="מכסה כיפה לכוס 95 א' 1000 יח'" data-price="135" data-unit="" data-img="/items/599.jpg" data-slug="מכסה-כיפה-לכוס-95-א-1000-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1258,8 +1587,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מכסה-כיפה-לכוס-טוליפ-330-א-1000-יח/">מכסה כיפה לכוס טוליפ 330 - א' 1000 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏166.6 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%9B%D7%A1%D7%94%20%D7%9B%D7%99%D7%A4%D7%94%20%D7%9C%D7%9B%D7%95%D7%A1%20%D7%98%D7%95%D7%9C%D7%99%D7%A4%20330%20-%20%D7%90'%201000%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="1094">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-1094" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="1094">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="1094" data-name="מכסה כיפה לכוס טוליפ 330 - א' 1000 יח'" data-price="166.6" data-unit="" data-img="/items/1112.jpg" data-slug="מכסה-כיפה-לכוס-טוליפ-330-א-1000-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1275,8 +1615,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מכסה-לכוס-10-OZ-א-1000-יח/">מכסה לכוס 10 OZ - א' 1000 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏160 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%9B%D7%A1%D7%94%20%D7%9C%D7%9B%D7%95%D7%A1%2010%20OZ%20-%20%D7%90'%201000%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="734">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-734" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="734">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="734" data-name="מכסה לכוס 10 OZ - א' 1000 יח'" data-price="160" data-unit="" data-img="/items/750.jpg" data-slug="מכסה-לכוס-10-OZ-א-1000-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1292,8 +1643,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מכסה-שחור-לכוס-8-OZ-א-1000-יח/">מכסה שחור לכוס 8 OZ - א' 1000 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏155 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%9B%D7%A1%D7%94%20%D7%A9%D7%97%D7%95%D7%A8%20%D7%9C%D7%9B%D7%95%D7%A1%208%20OZ%20-%20%D7%90'%201000%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="938">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-938" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="938">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="938" data-name="מכסה שחור לכוס 8 OZ - א' 1000 יח'" data-price="155" data-unit="" data-img="/items/956.jpg" data-slug="מכסה-שחור-לכוס-8-OZ-א-1000-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1309,8 +1671,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מכסה-שטוח-שחור-לכוס-95-א-1000-יח/">מכסה שטוח שחור לכוס 95 א' 1000 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏150 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%9B%D7%A1%D7%94%20%D7%A9%D7%98%D7%95%D7%97%20%D7%A9%D7%97%D7%95%D7%A8%20%D7%9C%D7%9B%D7%95%D7%A1%2095%20%D7%90'%201000%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="585">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-585" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="585">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="585" data-name="מכסה שטוח שחור לכוס 95 א' 1000 יח'" data-price="150" data-unit="" data-img="/items/601.jpg" data-slug="מכסה-שטוח-שחור-לכוס-95-א-1000-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1326,8 +1699,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מכסה-שטוח-שקוף-לכוס-95-א-1000-יח/">מכסה שטוח שקוף לכוס 95 א' 1000 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏145 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%9B%D7%A1%D7%94%20%D7%A9%D7%98%D7%95%D7%97%20%D7%A9%D7%A7%D7%95%D7%A3%20%D7%9C%D7%9B%D7%95%D7%A1%2095%20%D7%90'%201000%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="584">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-584" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="584">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="584" data-name="מכסה שטוח שקוף לכוס 95 א' 1000 יח'" data-price="145" data-unit="" data-img="/items/600.jpg" data-slug="מכסה-שטוח-שקוף-לכוס-95-א-1000-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1343,8 +1727,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מרקיה-P-P-לבן-חוויה-ארוז-100-יח/">מרקיה P.P. (לבן) חוויה ארוז 100 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏13 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%A8%D7%A7%D7%99%D7%94%20P.P.%20(%D7%9C%D7%91%D7%9F)%20%D7%97%D7%95%D7%95%D7%99%D7%94%20%D7%90%D7%A8%D7%95%D7%96%20100%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="909">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-909" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="909">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="909" data-name="מרקיה P.P. (לבן) חוויה ארוז 100 יח'" data-price="13" data-unit="" data-img="/items/926.jpg" data-slug="מרקיה-P-P-לבן-חוויה-ארוז-100-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1360,8 +1755,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/נילון-כיסוי-מזון-fresh-cover-30-יח/">נילון כיסוי מזון - fresh cover (30 יח')</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏8 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A0%D7%99%D7%9C%D7%95%D7%9F%20%D7%9B%D7%99%D7%A1%D7%95%D7%99%20%D7%9E%D7%96%D7%95%D7%9F%20-%20fresh%20cover%20(30%20%D7%99%D7%97')" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="251">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-251" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="251">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="251" data-name="נילון כיסוי מזון - fresh cover (30 יח')" data-price="8" data-unit="" data-img="/items/267.jpg" data-slug="נילון-כיסוי-מזון-fresh-cover-30-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1377,8 +1783,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/סט-סכום-5-פריטים-שחור-ארוז-500-יח/">סט סכום 5 פריטים שחור ארוז 500 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏100 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A1%D7%98%20%D7%A1%D7%9B%D7%95%D7%9D%205%20%D7%A4%D7%A8%D7%99%D7%98%D7%99%D7%9D%20%D7%A9%D7%97%D7%95%D7%A8%20%D7%90%D7%A8%D7%95%D7%96%20500%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="283">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-283" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="283">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="283" data-name="סט סכום 5 פריטים שחור ארוז 500 יח'" data-price="100" data-unit="" data-img="/items/299.jpg" data-slug="סט-סכום-5-פריטים-שחור-ארוז-500-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1394,8 +1811,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/סט-קערה-שחורה-מכסה-500-מ-ל-א-280-יחידות/">סט קערה שחורה + מכסה 500 מ"ל א' 280 יחידות</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏320 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A1%D7%98%20%D7%A7%D7%A2%D7%A8%D7%94%20%D7%A9%D7%97%D7%95%D7%A8%D7%94%20%2B%20%D7%9E%D7%9B%D7%A1%D7%94%20500%20%D7%9E%22%D7%9C%20%D7%90'%20280%20%D7%99%D7%97%D7%99%D7%93%D7%95%D7%AA" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="348">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-348" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="348">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="348" data-name="סט קערה שחורה + מכסה 500 מ&quot;ל א' 280 יחידות" data-price="320" data-unit="" data-img="/items/364.jpg" data-slug="סט-קערה-שחורה-מכסה-500-מ-ל-א-280-יחידות"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1411,8 +1839,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/סכין-שקוף-ארוז-50-יח-בחבילה/">סכין שקוף ארוז 50 יח' בחבילה</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏4 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A1%D7%9B%D7%99%D7%9F%20%D7%A9%D7%A7%D7%95%D7%A3%20%D7%90%D7%A8%D7%95%D7%96%2050%20%D7%99%D7%97'%20%D7%91%D7%97%D7%91%D7%99%D7%9C%D7%94" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="219">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-219" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="219">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="219" data-name="סכין שקוף ארוז 50 יח' בחבילה" data-price="4" data-unit="" data-img="/items/235.jpg" data-slug="סכין-שקוף-ארוז-50-יח-בחבילה"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1428,8 +1867,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/צלחת-P-P-גדולה-9-לבן-Happy-ארוז-100-יח/">צלחת P.P. גדולה 9 (לבן) Happy ארוז 100 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏19 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A6%D7%9C%D7%97%D7%AA%20P.P.%20%D7%92%D7%93%D7%95%D7%9C%D7%94%209%20(%D7%9C%D7%91%D7%9F)%20Happy%20%D7%90%D7%A8%D7%95%D7%96%20100%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="372">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-372" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="372">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="372" data-name="צלחת P.P. גדולה 9 (לבן) Happy ארוז 100 יח'" data-price="19" data-unit="" data-img="/items/388.jpg" data-slug="צלחת-P-P-גדולה-9-לבן-Happy-ארוז-100-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1445,8 +1895,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/צלחת-P-P-גדולה-9-קרם-Happy-ארוז-100-יח/">צלחת P.P. גדולה 9 (קרם) Happy ארוז 100 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏19 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A6%D7%9C%D7%97%D7%AA%20P.P.%20%D7%92%D7%93%D7%95%D7%9C%D7%94%209%20(%D7%A7%D7%A8%D7%9D)%20Happy%20%D7%90%D7%A8%D7%95%D7%96%20100%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="906">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-906" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="906">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="906" data-name="צלחת P.P. גדולה 9 (קרם) Happy ארוז 100 יח'" data-price="19" data-unit="" data-img="/items/923.jpg" data-slug="צלחת-P-P-גדולה-9-קרם-Happy-ארוז-100-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1462,8 +1923,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/צלחת-P-P-קטנה-7-לבן-Happy-ארוז-100-יח/">צלחת P.P. קטנה 7 (לבן) Happy ארוז 100 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏12 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A6%D7%9C%D7%97%D7%AA%20P.P.%20%D7%A7%D7%98%D7%A0%D7%94%207%20(%D7%9C%D7%91%D7%9F)%20Happy%20%D7%90%D7%A8%D7%95%D7%96%20100%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="119">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-119" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="119">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="119" data-name="צלחת P.P. קטנה 7 (לבן) Happy ארוז 100 יח'" data-price="12" data-unit="" data-img="/items/135.jpg" data-slug="צלחת-P-P-קטנה-7-לבן-Happy-ארוז-100-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1479,8 +1951,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/צלחת-P-P-קטנה-7-קרם-Happy-ארוז-100-יח/">צלחת P.P. קטנה 7 (קרם) Happy ארוז 100 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏12 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A6%D7%9C%D7%97%D7%AA%20P.P.%20%D7%A7%D7%98%D7%A0%D7%94%207%20(%D7%A7%D7%A8%D7%9D)%20Happy%20%D7%90%D7%A8%D7%95%D7%96%20100%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="920">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-920" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="920">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="920" data-name="צלחת P.P. קטנה 7 (קרם) Happy ארוז 100 יח'" data-price="12" data-unit="" data-img="/items/937.jpg" data-slug="צלחת-P-P-קטנה-7-קרם-Happy-ארוז-100-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1496,8 +1979,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/צלחת-קלקר-עגול-500-יח/">צלחת קלקר עגול 500 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏240 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A6%D7%9C%D7%97%D7%AA%20%D7%A7%D7%9C%D7%A7%D7%A8%20%D7%A2%D7%92%D7%95%D7%9C%20500%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="1082">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-1082" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="1082">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="1082" data-name="צלחת קלקר עגול 500 יח'" data-price="240" data-unit="" data-img="/items/1100.jpg" data-slug="צלחת-קלקר-עגול-500-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1513,8 +2007,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/קסרול-P-P-לבן-חוויה-ארוז-100-יח/">קסרול P.P. (לבן) חוויה ארוז 100 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏10 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A7%D7%A1%D7%A8%D7%95%D7%9C%20P.P.%20(%D7%9C%D7%91%D7%9F)%20%D7%97%D7%95%D7%95%D7%99%D7%94%20%D7%90%D7%A8%D7%95%D7%96%20100%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="908">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-908" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="908">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="908" data-name="קסרול P.P. (לבן) חוויה ארוז 100 יח'" data-price="10" data-unit="" data-img="/items/925.jpg" data-slug="קסרול-P-P-לבן-חוויה-ארוז-100-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1530,8 +2035,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/קש-ארומה-0-8-שחור-250-יח/">קש ארומה 0.8 שחור - 250 יח</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏8 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A7%D7%A9%20%D7%90%D7%A8%D7%95%D7%9E%D7%94%200.8%20%D7%A9%D7%97%D7%95%D7%A8%20-%20250%20%D7%99%D7%97" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="318">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-318" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="318">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="318" data-name="קש ארומה 0.8 שחור - 250 יח" data-price="8" data-unit="" data-img="/items/334.jpg" data-slug="קש-ארומה-0-8-שחור-250-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
           </div>
@@ -1789,13 +2305,73 @@
               children.style.display = '';
               icon.style.transform = '';
             } else if (!this.classList.contains('active')) {
-              // Only toggle if not navigating to this category
               e.preventDefault();
               children.style.display = 'none';
               icon.style.transform = 'rotate(90deg)';
             }
           }
         }
+      });
+    });
+
+    // ---- Ecommerce: Add to Cart ----
+    function ymAddToCart(btn) {
+      var id = parseInt(btn.dataset.id);
+      var input = document.getElementById('qty-' + id);
+      var qty = input ? Math.max(1, parseInt(input.value) || 1) : 1;
+      var cart = JSON.parse(localStorage.getItem('ym_cart') || '[]');
+      var existing = cart.find(function(item) { return item.id === id; });
+      if (existing) {
+        existing.quantity += qty;
+      } else {
+        cart.push({
+          id: id,
+          name: btn.dataset.name,
+          price: parseFloat(btn.dataset.price),
+          unit: btn.dataset.unit,
+          imageUrl: btn.dataset.img,
+          slug: btn.dataset.slug,
+          quantity: qty
+        });
+      }
+      localStorage.setItem('ym_cart', JSON.stringify(cart));
+      if (window.YMarket) {
+        window.YMarket.updateCartBadge();
+        window.YMarket.showToast(btn.dataset.name + ' נוסף לעגלה');
+      }
+      btn.classList.add('added');
+      btn.innerHTML = '<i class="fas fa-check"></i> נוסף!';
+      setTimeout(function() {
+        btn.classList.remove('added');
+        btn.innerHTML = '<i class="fas fa-cart-plus"></i> הוסף לעגלה';
+      }, 1500);
+      if (input) input.value = '1';
+      // Analytics
+      if (window.YMarketAnalytics && window.YMarketAnalytics.fbAddToCart) {
+        window.YMarketAnalytics.fbAddToCart({ id: id, name: btn.dataset.name, price: parseFloat(btn.dataset.price), quantity: qty });
+      }
+      if (window.YMarketAnalytics && window.YMarketAnalytics.trackAddToCart) {
+        window.YMarketAnalytics.trackAddToCart({ id: id, name: btn.dataset.name, price: parseFloat(btn.dataset.price), quantity: qty });
+      }
+    }
+
+    // Quantity +/- buttons
+    document.querySelectorAll('.product-card__qty-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var input = document.getElementById('qty-' + btn.dataset.id);
+        if (!input) return;
+        var val = parseInt(input.value) || 1;
+        if (btn.dataset.action === 'increase') val++;
+        else if (val > 1) val--;
+        input.value = val;
+      });
+    });
+
+    // Add to cart buttons
+    document.querySelectorAll('.product-card__add-btn[data-id]').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        ymAddToCart(btn);
       });
     });
   </script>

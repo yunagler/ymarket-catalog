@@ -66,9 +66,8 @@
     .stats-bar__label{font-size:0.78rem;color:#6b7280;margin-top:2px}
     @media(max-width:480px){.stats-bar{gap:1rem}.stats-bar__num{font-size:1.2rem}}
     /* Enhanced product card */
-    .product-card__quote{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px;padding:8px 12px;background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;border-radius:8px;font-size:0.78rem;font-weight:600;text-decoration:none;transition:all 0.2s}
-    .product-card__quote:hover{background:#16a34a;color:#fff;border-color:#16a34a}
     .product-card__vol-badge{position:absolute;top:8px;left:8px;background:#7c3aed;color:#fff;padding:3px 8px;border-radius:6px;font-size:0.7rem;font-weight:700;z-index:2}
+    .product-card__pricing{margin-bottom:4px}
     /* Consultation CTA */
     .consult-cta{display:flex;align-items:center;gap:20px;margin:1.5rem 0;padding:20px 24px;background:linear-gradient(135deg,#1B3A5C,#2a5080);border-radius:14px;color:#fff}
     .consult-cta__icon{font-size:2.2rem;opacity:0.9;flex-shrink:0}
@@ -748,8 +747,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/ויטריל-שחור-Perfect-מידה-S-100-יח-ללא-אבקה/">ויטריל שחור (Perfect) מידה S - (100 יח) - ללא אבקה</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏14 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%95%D7%99%D7%98%D7%A8%D7%99%D7%9C%20%D7%A9%D7%97%D7%95%D7%A8%20(Perfect)%20%D7%9E%D7%99%D7%93%D7%94%20S%20-%20(100%20%D7%99%D7%97)%20-%20%D7%9C%D7%9C%D7%90%20%D7%90%D7%91%D7%A7%D7%94" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="34">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-34" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="34">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="34" data-name="ויטריל שחור (Perfect) מידה S - (100 יח) - ללא אבקה" data-price="14" data-unit="" data-img="/items/50.jpg" data-slug="ויטריל-שחור-Perfect-מידה-S-100-יח-ללא-אבקה"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -765,8 +775,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/כפפות-ניטריל-כחול-סטוק-ללא-חזרות/">כפפות ניטריל כחול (סטוק) - ללא חזרות</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏11 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9B%D7%A4%D7%A4%D7%95%D7%AA%20%D7%A0%D7%99%D7%98%D7%A8%D7%99%D7%9C%20%D7%9B%D7%97%D7%95%D7%9C%20(%D7%A1%D7%98%D7%95%D7%A7)%20-%20%D7%9C%D7%9C%D7%90%20%D7%97%D7%96%D7%A8%D7%95%D7%AA" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="886">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-886" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="886">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="886" data-name="כפפות ניטריל כחול (סטוק) - ללא חזרות" data-price="11" data-unit="" data-img="/items/903.jpg" data-slug="כפפות-ניטריל-כחול-סטוק-ללא-חזרות"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -782,8 +803,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/לטקס-ללא-אבקה-50-יח/">לטקס ללא אבקה 50 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏10 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9C%D7%98%D7%A7%D7%A1%20%D7%9C%D7%9C%D7%90%20%D7%90%D7%91%D7%A7%D7%94%2050%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="448">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-448" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="448">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="448" data-name="לטקס ללא אבקה 50 יח'" data-price="10" data-unit="" data-img="/items/464.jpg" data-slug="לטקס-ללא-אבקה-50-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -799,8 +831,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/ווניל-שקוף-לבן-IT-TAI-מידה-L-100-יח-ללא-אבקה/">ווניל שקוף/לבן (IT-TAI) - מידה L - (100 יח) - ללא אבקה</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏18 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%95%D7%95%D7%A0%D7%99%D7%9C%20%D7%A9%D7%A7%D7%95%D7%A3%2F%D7%9C%D7%91%D7%9F%20(IT-TAI)%20-%20%D7%9E%D7%99%D7%93%D7%94%20L%20-%20(100%20%D7%99%D7%97)%20-%20%D7%9C%D7%9C%D7%90%20%D7%90%D7%91%D7%A7%D7%94" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="98">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-98" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="98">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="98" data-name="ווניל שקוף/לבן (IT-TAI) - מידה L - (100 יח) - ללא אבקה" data-price="18" data-unit="" data-img="/items/114.jpg" data-slug="ווניל-שקוף-לבן-IT-TAI-מידה-L-100-יח-ללא-אבקה"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -816,8 +859,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/ווניל-שקוף-לבן-IT-TAI-מידה-M-100-יח-ללא-אבקה/">ווניל שקוף/לבן (IT-TAI) - מידה M - (100 יח) - ללא אבקה</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏18 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%95%D7%95%D7%A0%D7%99%D7%9C%20%D7%A9%D7%A7%D7%95%D7%A3%2F%D7%9C%D7%91%D7%9F%20(IT-TAI)%20-%20%D7%9E%D7%99%D7%93%D7%94%20M%20-%20(100%20%D7%99%D7%97)%20-%20%D7%9C%D7%9C%D7%90%20%D7%90%D7%91%D7%A7%D7%94" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="97">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-97" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="97">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="97" data-name="ווניל שקוף/לבן (IT-TAI) - מידה M - (100 יח) - ללא אבקה" data-price="18" data-unit="" data-img="/items/113.jpg" data-slug="ווניל-שקוף-לבן-IT-TAI-מידה-M-100-יח-ללא-אבקה"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -833,8 +887,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/ווניל-שקוף-לבן-IT-TAI-מידה-S-100-יח-ללא-אבקה/">ווניל שקוף/לבן (IT-TAI) - מידה S - (100 יח) - ללא אבקה</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏18 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%95%D7%95%D7%A0%D7%99%D7%9C%20%D7%A9%D7%A7%D7%95%D7%A3%2F%D7%9C%D7%91%D7%9F%20(IT-TAI)%20-%20%D7%9E%D7%99%D7%93%D7%94%20S%20-%20(100%20%D7%99%D7%97)%20-%20%D7%9C%D7%9C%D7%90%20%D7%90%D7%91%D7%A7%D7%94" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="435">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-435" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="435">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="435" data-name="ווניל שקוף/לבן (IT-TAI) - מידה S - (100 יח) - ללא אבקה" data-price="18" data-unit="" data-img="/items/451.jpg" data-slug="ווניל-שקוף-לבן-IT-TAI-מידה-S-100-יח-ללא-אבקה"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -850,8 +915,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/ווניל-שקוף-לבן-IT-TAI-מידה-XL-100-יח-ללא-אבקה/">ווניל שקוף/לבן (IT-TAI) - מידה XL - (100 יח) - ללא אבקה</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏18 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%95%D7%95%D7%A0%D7%99%D7%9C%20%D7%A9%D7%A7%D7%95%D7%A3%2F%D7%9C%D7%91%D7%9F%20(IT-TAI)%20-%20%D7%9E%D7%99%D7%93%D7%94%20XL%20-%20(100%20%D7%99%D7%97)%20-%20%D7%9C%D7%9C%D7%90%20%D7%90%D7%91%D7%A7%D7%94" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="99">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-99" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="99">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="99" data-name="ווניל שקוף/לבן (IT-TAI) - מידה XL - (100 יח) - ללא אבקה" data-price="18" data-unit="" data-img="/items/115.jpg" data-slug="ווניל-שקוף-לבן-IT-TAI-מידה-XL-100-יח-ללא-אבקה"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -867,8 +943,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/כפפה-נילון-שקופה-Liron-מידה-L-100-יח/">כפפה נילון שקופה (Liron) - מידה L - (100 יח)</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏4 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9B%D7%A4%D7%A4%D7%94%20%D7%A0%D7%99%D7%9C%D7%95%D7%9F%20%D7%A9%D7%A7%D7%95%D7%A4%D7%94%20(Liron)%20-%20%D7%9E%D7%99%D7%93%D7%94%20L%20-%20(100%20%D7%99%D7%97)" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="59">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-59" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="59">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="59" data-name="כפפה נילון שקופה (Liron) - מידה L - (100 יח)" data-price="4" data-unit="" data-img="/items/75.jpg" data-slug="כפפה-נילון-שקופה-Liron-מידה-L-100-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -884,8 +971,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/לטקס-ללא-אבקה-Perfect-מידה-L-100-יח/">לטקס ללא אבקה (Perfect) מידה L - (100 יח)</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏20 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9C%D7%98%D7%A7%D7%A1%20%D7%9C%D7%9C%D7%90%20%D7%90%D7%91%D7%A7%D7%94%20(Perfect)%20%D7%9E%D7%99%D7%93%D7%94%20L%20-%20(100%20%D7%99%D7%97)" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="40">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-40" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="40">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="40" data-name="לטקס ללא אבקה (Perfect) מידה L - (100 יח)" data-price="20" data-unit="" data-img="/items/56.jpg" data-slug="לטקס-ללא-אבקה-Perfect-מידה-L-100-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -901,8 +999,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/לטקס-ללא-אבקה-Perfect-מידה-M-100-יח/">לטקס ללא אבקה (Perfect) מידה M - (100 יח)</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏20 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9C%D7%98%D7%A7%D7%A1%20%D7%9C%D7%9C%D7%90%20%D7%90%D7%91%D7%A7%D7%94%20(Perfect)%20%D7%9E%D7%99%D7%93%D7%94%20M%20-%20(100%20%D7%99%D7%97)" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="39">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-39" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="39">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="39" data-name="לטקס ללא אבקה (Perfect) מידה M - (100 יח)" data-price="20" data-unit="" data-img="/items/55.jpg" data-slug="לטקס-ללא-אבקה-Perfect-מידה-M-100-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -918,8 +1027,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/לטקס-ללא-אבקה-Perfect-מידה-S-100-יח/">לטקס ללא אבקה (Perfect) מידה S - (100 יח)</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏20 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9C%D7%98%D7%A7%D7%A1%20%D7%9C%D7%9C%D7%90%20%D7%90%D7%91%D7%A7%D7%94%20(Perfect)%20%D7%9E%D7%99%D7%93%D7%94%20S%20-%20(100%20%D7%99%D7%97)" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="38">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-38" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="38">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="38" data-name="לטקס ללא אבקה (Perfect) מידה S - (100 יח)" data-price="20" data-unit="" data-img="/items/54.jpg" data-slug="לטקס-ללא-אבקה-Perfect-מידה-S-100-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -935,8 +1055,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/לטקס-ללא-אבקה-Perfect-מידה-XL-100-יח/">לטקס ללא אבקה (Perfect) מידה XL - (100 יח)</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏20 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9C%D7%98%D7%A7%D7%A1%20%D7%9C%D7%9C%D7%90%20%D7%90%D7%91%D7%A7%D7%94%20(Perfect)%20%D7%9E%D7%99%D7%93%D7%94%20XL%20-%20(100%20%D7%99%D7%97)" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="41">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-41" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="41">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="41" data-name="לטקס ללא אבקה (Perfect) מידה XL - (100 יח)" data-price="20" data-unit="" data-img="/items/57.jpg" data-slug="לטקס-ללא-אבקה-Perfect-מידה-XL-100-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -952,8 +1083,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/לטקס-עם-אבקה-Perfect-מידה-L-100-יח/">לטקס עם אבקה (Perfect) מידה L - (100 יח)</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏18 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9C%D7%98%D7%A7%D7%A1%20%D7%A2%D7%9D%20%D7%90%D7%91%D7%A7%D7%94%20(Perfect)%20%D7%9E%D7%99%D7%93%D7%94%20L%20-%20(100%20%D7%99%D7%97)" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="44">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-44" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="44">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="44" data-name="לטקס עם אבקה (Perfect) מידה L - (100 יח)" data-price="18" data-unit="" data-img="/items/60.jpg" data-slug="לטקס-עם-אבקה-Perfect-מידה-L-100-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -969,8 +1111,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/לטקס-עם-אבקה-Perfect-מידה-M-100-יח/">לטקס עם אבקה (Perfect) מידה M - (100 יח)</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏18 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9C%D7%98%D7%A7%D7%A1%20%D7%A2%D7%9D%20%D7%90%D7%91%D7%A7%D7%94%20(Perfect)%20%D7%9E%D7%99%D7%93%D7%94%20M%20-%20(100%20%D7%99%D7%97)" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="43">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-43" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="43">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="43" data-name="לטקס עם אבקה (Perfect) מידה M - (100 יח)" data-price="18" data-unit="" data-img="/items/59.jpg" data-slug="לטקס-עם-אבקה-Perfect-מידה-M-100-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -986,8 +1139,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/לטקס-עם-אבקה-Perfect-מידה-S-100-יח/">לטקס עם אבקה (Perfect) מידה S - (100 יח)</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏18 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9C%D7%98%D7%A7%D7%A1%20%D7%A2%D7%9D%20%D7%90%D7%91%D7%A7%D7%94%20(Perfect)%20%D7%9E%D7%99%D7%93%D7%94%20S%20-%20(100%20%D7%99%D7%97)" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="42">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-42" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="42">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="42" data-name="לטקס עם אבקה (Perfect) מידה S - (100 יח)" data-price="18" data-unit="" data-img="/items/58.jpg" data-slug="לטקס-עם-אבקה-Perfect-מידה-S-100-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1003,8 +1167,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/לטקס-עם-אבקה-Perfect-מידה-XL-100-יח/">לטקס עם אבקה (Perfect) מידה XL - (100 יח)</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏18 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9C%D7%98%D7%A7%D7%A1%20%D7%A2%D7%9D%20%D7%90%D7%91%D7%A7%D7%94%20(Perfect)%20%D7%9E%D7%99%D7%93%D7%94%20XL%20-%20(100%20%D7%99%D7%97)" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="45">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-45" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="45">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="45" data-name="לטקס עם אבקה (Perfect) מידה XL - (100 יח)" data-price="18" data-unit="" data-img="/items/61.jpg" data-slug="לטקס-עם-אבקה-Perfect-מידה-XL-100-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1020,8 +1195,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/נטריל-ורוד-ללא-אבקה-מידה-M-א-100-יח/">נטריל ורוד ללא אבקה מידה M - א' 100 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏22 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A0%D7%98%D7%A8%D7%99%D7%9C%20%D7%95%D7%A8%D7%95%D7%93%20%D7%9C%D7%9C%D7%90%20%D7%90%D7%91%D7%A7%D7%94%20%D7%9E%D7%99%D7%93%D7%94%20M%20-%20%D7%90'%20100%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="882">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-882" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="882">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="882" data-name="נטריל ורוד ללא אבקה מידה M - א' 100 יח'" data-price="22" data-unit="" data-img="/items/899.jpg" data-slug="נטריל-ורוד-ללא-אבקה-מידה-M-א-100-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1037,8 +1223,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/נטריל-ורוד-ללא-אבקה-מידה-S-א-100-יח/">נטריל ורוד ללא אבקה מידה S - א' 100 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏22 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A0%D7%98%D7%A8%D7%99%D7%9C%20%D7%95%D7%A8%D7%95%D7%93%20%D7%9C%D7%9C%D7%90%20%D7%90%D7%91%D7%A7%D7%94%20%D7%9E%D7%99%D7%93%D7%94%20S%20-%20%D7%90'%20100%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="944">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-944" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="944">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="944" data-name="נטריל ורוד ללא אבקה מידה S - א' 100 יח'" data-price="22" data-unit="" data-img="/items/962.jpg" data-slug="נטריל-ורוד-ללא-אבקה-מידה-S-א-100-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1054,8 +1251,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/נטריל-כחול-DR-BOO-מידה-S-100-יח-ללא-אבקה/">נטריל כחול ( DR BOO) - מידה S - (100 יח' - ללא אבקה </a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏25 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A0%D7%98%D7%A8%D7%99%D7%9C%20%D7%9B%D7%97%D7%95%D7%9C%20(%20DR%20BOO)%20-%20%D7%9E%D7%99%D7%93%D7%94%20S%20-%20(100%20%D7%99%D7%97'%20-%20%D7%9C%D7%9C%D7%90%20%D7%90%D7%91%D7%A7%D7%94%20" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="75">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-75" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="75">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="75" data-name="נטריל כחול ( DR BOO) - מידה S - (100 יח' - ללא אבקה " data-price="25" data-unit="" data-img="/items/91.jpg" data-slug="נטריל-כחול-DR-BOO-מידה-S-100-יח-ללא-אבקה"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1071,8 +1279,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/נטריל-כחול-Perfect-מידה-L-100-יח-ללא-אבקה/">נטריל כחול (Perfect) - מידה L - (100 יח) - ללא אבקה</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏18 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A0%D7%98%D7%A8%D7%99%D7%9C%20%D7%9B%D7%97%D7%95%D7%9C%20(Perfect)%20-%20%D7%9E%D7%99%D7%93%D7%94%20L%20-%20(100%20%D7%99%D7%97)%20-%20%D7%9C%D7%9C%D7%90%20%D7%90%D7%91%D7%A7%D7%94" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="63">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-63" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="63">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="63" data-name="נטריל כחול (Perfect) - מידה L - (100 יח) - ללא אבקה" data-price="18" data-unit="" data-img="/items/79.jpg" data-slug="נטריל-כחול-Perfect-מידה-L-100-יח-ללא-אבקה"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1088,8 +1307,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/נטריל-כחול-Perfect-מידה-M-100-יח-ללא-אבקה/">נטריל כחול (Perfect) - מידה M - (100 יח) - ללא אבקה</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏18 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A0%D7%98%D7%A8%D7%99%D7%9C%20%D7%9B%D7%97%D7%95%D7%9C%20(Perfect)%20-%20%D7%9E%D7%99%D7%93%D7%94%20M%20-%20(100%20%D7%99%D7%97)%20-%20%D7%9C%D7%9C%D7%90%20%D7%90%D7%91%D7%A7%D7%94" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="62">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-62" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="62">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="62" data-name="נטריל כחול (Perfect) - מידה M - (100 יח) - ללא אבקה" data-price="18" data-unit="" data-img="/items/78.jpg" data-slug="נטריל-כחול-Perfect-מידה-M-100-יח-ללא-אבקה"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1105,8 +1335,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/נטריל-כחול-Perfect-מידה-S-100-יח-ללא-אבקה/">נטריל כחול (Perfect) - מידה S - (100 יח) - ללא אבקה</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏18 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A0%D7%98%D7%A8%D7%99%D7%9C%20%D7%9B%D7%97%D7%95%D7%9C%20(Perfect)%20-%20%D7%9E%D7%99%D7%93%D7%94%20S%20-%20(100%20%D7%99%D7%97)%20-%20%D7%9C%D7%9C%D7%90%20%D7%90%D7%91%D7%A7%D7%94" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="61">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-61" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="61">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="61" data-name="נטריל כחול (Perfect) - מידה S - (100 יח) - ללא אבקה" data-price="18" data-unit="" data-img="/items/77.jpg" data-slug="נטריל-כחול-Perfect-מידה-S-100-יח-ללא-אבקה"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1122,8 +1363,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/נטריל-כחול-Perfect-מידה-XL-100-יח-ללא-אבקה/">נטריל כחול (Perfect) - מידה XL - (100 יח) - ללא אבקה</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏18 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A0%D7%98%D7%A8%D7%99%D7%9C%20%D7%9B%D7%97%D7%95%D7%9C%20(Perfect)%20-%20%D7%9E%D7%99%D7%93%D7%94%20XL%20-%20(100%20%D7%99%D7%97)%20-%20%D7%9C%D7%9C%D7%90%20%D7%90%D7%91%D7%A7%D7%94" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="64">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-64" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="64">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="64" data-name="נטריל כחול (Perfect) - מידה XL - (100 יח) - ללא אבקה" data-price="18" data-unit="" data-img="/items/80.jpg" data-slug="נטריל-כחול-Perfect-מידה-XL-100-יח-ללא-אבקה"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1139,8 +1391,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/נטריל-כחול-Perfect-מידה-XS-100-יח-ללא-אבקה/">נטריל כחול (Perfect) - מידה XS - (100 יח) - ללא אבקה</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏20 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A0%D7%98%D7%A8%D7%99%D7%9C%20%D7%9B%D7%97%D7%95%D7%9C%20(Perfect)%20-%20%D7%9E%D7%99%D7%93%D7%94%20XS%20-%20(100%20%D7%99%D7%97)%20-%20%D7%9C%D7%9C%D7%90%20%D7%90%D7%91%D7%A7%D7%94" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="227">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-227" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="227">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="227" data-name="נטריל כחול (Perfect) - מידה XS - (100 יח) - ללא אבקה" data-price="20" data-unit="" data-img="/items/243.jpg" data-slug="נטריל-כחול-Perfect-מידה-XS-100-יח-ללא-אבקה"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1156,8 +1419,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/נטריל-כתום-מחוספסות-XL/">נטריל כתום מחוספסות XL</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏22 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A0%D7%98%D7%A8%D7%99%D7%9C%20%D7%9B%D7%AA%D7%95%D7%9D%20%D7%9E%D7%97%D7%95%D7%A1%D7%A4%D7%A1%D7%95%D7%AA%20XL" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="470">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-470" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="470">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="470" data-name="נטריל כתום מחוספסות XL" data-price="22" data-unit="" data-img="/items/486.jpg" data-slug="נטריל-כתום-מחוספסות-XL"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1173,8 +1447,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/נטריל-שחור-Perfect-מידה-L-100-יח-ללא-אבקה/">נטריל שחור (Perfect) - מידה L - (100 יח) - ללא אבקה</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏18 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A0%D7%98%D7%A8%D7%99%D7%9C%20%D7%A9%D7%97%D7%95%D7%A8%20(Perfect)%20-%20%D7%9E%D7%99%D7%93%D7%94%20L%20-%20(100%20%D7%99%D7%97)%20-%20%D7%9C%D7%9C%D7%90%20%D7%90%D7%91%D7%A7%D7%94" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="19">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-19" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="19">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="19" data-name="נטריל שחור (Perfect) - מידה L - (100 יח) - ללא אבקה" data-price="18" data-unit="" data-img="/items/35.jpg" data-slug="נטריל-שחור-Perfect-מידה-L-100-יח-ללא-אבקה"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1190,8 +1475,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/נטריל-שחור-Perfect-מידה-M-100-יח-ללא-אבקה/">נטריל שחור (Perfect) - מידה M - (100 יח) - ללא אבקה</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏18 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A0%D7%98%D7%A8%D7%99%D7%9C%20%D7%A9%D7%97%D7%95%D7%A8%20(Perfect)%20-%20%D7%9E%D7%99%D7%93%D7%94%20M%20-%20(100%20%D7%99%D7%97)%20-%20%D7%9C%D7%9C%D7%90%20%D7%90%D7%91%D7%A7%D7%94" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="18">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-18" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="18">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="18" data-name="נטריל שחור (Perfect) - מידה M - (100 יח) - ללא אבקה" data-price="18" data-unit="" data-img="/items/34.jpg" data-slug="נטריל-שחור-Perfect-מידה-M-100-יח-ללא-אבקה"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1207,8 +1503,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/נטריל-שחור-Perfect-מידה-S-100-יח-ללא-אבקה/">נטריל שחור (Perfect) - מידה S - (100 יח) - ללא אבקה</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏18 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A0%D7%98%D7%A8%D7%99%D7%9C%20%D7%A9%D7%97%D7%95%D7%A8%20(Perfect)%20-%20%D7%9E%D7%99%D7%93%D7%94%20S%20-%20(100%20%D7%99%D7%97)%20-%20%D7%9C%D7%9C%D7%90%20%D7%90%D7%91%D7%A7%D7%94" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="20">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-20" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="20">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="20" data-name="נטריל שחור (Perfect) - מידה S - (100 יח) - ללא אבקה" data-price="18" data-unit="" data-img="/items/36.jpg" data-slug="נטריל-שחור-Perfect-מידה-S-100-יח-ללא-אבקה"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1224,8 +1531,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/נטריל-שחור-Perfect-מידה-XL-100-יח-ללא-אבקה/">נטריל שחור (Perfect) - מידה XL - (100 יח) - ללא אבקה</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏18 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A0%D7%98%D7%A8%D7%99%D7%9C%20%D7%A9%D7%97%D7%95%D7%A8%20(Perfect)%20-%20%D7%9E%D7%99%D7%93%D7%94%20XL%20-%20(100%20%D7%99%D7%97)%20-%20%D7%9C%D7%9C%D7%90%20%D7%90%D7%91%D7%A7%D7%94" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="21">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-21" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="21">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="21" data-name="נטריל שחור (Perfect) - מידה XL - (100 יח) - ללא אבקה" data-price="18" data-unit="" data-img="/items/37.jpg" data-slug="נטריל-שחור-Perfect-מידה-XL-100-יח-ללא-אבקה"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
           </div>
@@ -1478,13 +1796,73 @@
               children.style.display = '';
               icon.style.transform = '';
             } else if (!this.classList.contains('active')) {
-              // Only toggle if not navigating to this category
               e.preventDefault();
               children.style.display = 'none';
               icon.style.transform = 'rotate(90deg)';
             }
           }
         }
+      });
+    });
+
+    // ---- Ecommerce: Add to Cart ----
+    function ymAddToCart(btn) {
+      var id = parseInt(btn.dataset.id);
+      var input = document.getElementById('qty-' + id);
+      var qty = input ? Math.max(1, parseInt(input.value) || 1) : 1;
+      var cart = JSON.parse(localStorage.getItem('ym_cart') || '[]');
+      var existing = cart.find(function(item) { return item.id === id; });
+      if (existing) {
+        existing.quantity += qty;
+      } else {
+        cart.push({
+          id: id,
+          name: btn.dataset.name,
+          price: parseFloat(btn.dataset.price),
+          unit: btn.dataset.unit,
+          imageUrl: btn.dataset.img,
+          slug: btn.dataset.slug,
+          quantity: qty
+        });
+      }
+      localStorage.setItem('ym_cart', JSON.stringify(cart));
+      if (window.YMarket) {
+        window.YMarket.updateCartBadge();
+        window.YMarket.showToast(btn.dataset.name + ' נוסף לעגלה');
+      }
+      btn.classList.add('added');
+      btn.innerHTML = '<i class="fas fa-check"></i> נוסף!';
+      setTimeout(function() {
+        btn.classList.remove('added');
+        btn.innerHTML = '<i class="fas fa-cart-plus"></i> הוסף לעגלה';
+      }, 1500);
+      if (input) input.value = '1';
+      // Analytics
+      if (window.YMarketAnalytics && window.YMarketAnalytics.fbAddToCart) {
+        window.YMarketAnalytics.fbAddToCart({ id: id, name: btn.dataset.name, price: parseFloat(btn.dataset.price), quantity: qty });
+      }
+      if (window.YMarketAnalytics && window.YMarketAnalytics.trackAddToCart) {
+        window.YMarketAnalytics.trackAddToCart({ id: id, name: btn.dataset.name, price: parseFloat(btn.dataset.price), quantity: qty });
+      }
+    }
+
+    // Quantity +/- buttons
+    document.querySelectorAll('.product-card__qty-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var input = document.getElementById('qty-' + btn.dataset.id);
+        if (!input) return;
+        var val = parseInt(input.value) || 1;
+        if (btn.dataset.action === 'increase') val++;
+        else if (val > 1) val--;
+        input.value = val;
+      });
+    });
+
+    // Add to cart buttons
+    document.querySelectorAll('.product-card__add-btn[data-id]').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        ymAddToCart(btn);
       });
     });
   </script>

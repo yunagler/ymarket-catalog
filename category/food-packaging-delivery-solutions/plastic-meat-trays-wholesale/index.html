@@ -66,9 +66,8 @@
     .stats-bar__label{font-size:0.78rem;color:#6b7280;margin-top:2px}
     @media(max-width:480px){.stats-bar{gap:1rem}.stats-bar__num{font-size:1.2rem}}
     /* Enhanced product card */
-    .product-card__quote{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px;padding:8px 12px;background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;border-radius:8px;font-size:0.78rem;font-weight:600;text-decoration:none;transition:all 0.2s}
-    .product-card__quote:hover{background:#16a34a;color:#fff;border-color:#16a34a}
     .product-card__vol-badge{position:absolute;top:8px;left:8px;background:#7c3aed;color:#fff;padding:3px 8px;border-radius:6px;font-size:0.7rem;font-weight:700;z-index:2}
+    .product-card__pricing{margin-bottom:4px}
     /* Consultation CTA */
     .consult-cta{display:flex;align-items:center;gap:20px;margin:1.5rem 0;padding:20px 24px;background:linear-gradient(135deg,#1B3A5C,#2a5080);border-radius:14px;color:#fff}
     .consult-cta__icon{font-size:2.2rem;opacity:0.9;flex-shrink:0}
@@ -528,8 +527,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מגש-פלסטיק-כחול-מחוזק-כרעיים-500-יח/">מגש פלסטיק כחול (מחוזק) - כרעיים 500 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏250 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%92%D7%A9%20%D7%A4%D7%9C%D7%A1%D7%98%D7%99%D7%A7%20%D7%9B%D7%97%D7%95%D7%9C%20(%D7%9E%D7%97%D7%95%D7%96%D7%A7)%20-%20%D7%9B%D7%A8%D7%A2%D7%99%D7%99%D7%9D%20500%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="1080">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-1080" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="1080">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="1080" data-name="מגש פלסטיק כחול (מחוזק) - כרעיים 500 יח'" data-price="250" data-unit="" data-img="/items/1098.jpg" data-slug="מגש-פלסטיק-כחול-מחוזק-כרעיים-500-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -545,8 +555,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מגש-פלסטיק-לבן-קבב-675-יח/">מגש פלסטיק לבן - קבב 675 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏312.38 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%92%D7%A9%20%D7%A4%D7%9C%D7%A1%D7%98%D7%99%D7%A7%20%D7%9C%D7%91%D7%9F%20-%20%D7%A7%D7%91%D7%91%20675%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="755">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-755" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="755">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="755" data-name="מגש פלסטיק לבן - קבב 675 יח'" data-price="312.38" data-unit="" data-img="/items/771.jpg" data-slug="מגש-פלסטיק-לבן-קבב-675-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -562,8 +583,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מגש-פלסטיק-לבן-שניצל-1000-יח/">מגש פלסטיק לבן - שניצל 1000 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏240 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%92%D7%A9%20%D7%A4%D7%9C%D7%A1%D7%98%D7%99%D7%A7%20%D7%9C%D7%91%D7%9F%20-%20%D7%A9%D7%A0%D7%99%D7%A6%D7%9C%201000%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="891">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-891" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="891">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="891" data-name="מגש פלסטיק לבן - שניצל 1000 יח'" data-price="240" data-unit="" data-img="/items/908.jpg" data-slug="מגש-פלסטיק-לבן-שניצל-1000-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -579,8 +611,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מגש-פלסטיק-לבן-מחוזק-כרעיים-480-יח/">מגש פלסטיק לבן (מחוזק) - כרעיים 480 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏260 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%92%D7%A9%20%D7%A4%D7%9C%D7%A1%D7%98%D7%99%D7%A7%20%D7%9C%D7%91%D7%9F%20(%D7%9E%D7%97%D7%95%D7%96%D7%A7)%20-%20%D7%9B%D7%A8%D7%A2%D7%99%D7%99%D7%9D%20480%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="887">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-887" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="887">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="887" data-name="מגש פלסטיק לבן (מחוזק) - כרעיים 480 יח'" data-price="260" data-unit="" data-img="/items/904.jpg" data-slug="מגש-פלסטיק-לבן-מחוזק-כרעיים-480-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -596,8 +639,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מגש-פלסטיק-שחור-קבב-מחזוק-750-יח/">מגש פלסטיק שחור - קבב מחזוק 750 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏346.66 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%92%D7%A9%20%D7%A4%D7%9C%D7%A1%D7%98%D7%99%D7%A7%20%D7%A9%D7%97%D7%95%D7%A8%20-%20%D7%A7%D7%91%D7%91%20%D7%9E%D7%97%D7%96%D7%95%D7%A7%20750%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="756">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-756" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="756">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="756" data-name="מגש פלסטיק שחור - קבב מחזוק 750 יח'" data-price="346.66" data-unit="" data-img="/items/772.jpg" data-slug="מגש-פלסטיק-שחור-קבב-מחזוק-750-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -613,8 +667,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מגש-פלסטיק-שחור-שניצל-600-יח/">מגש פלסטיק שחור - שניצל 600 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏240 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%92%D7%A9%20%D7%A4%D7%9C%D7%A1%D7%98%D7%99%D7%A7%20%D7%A9%D7%97%D7%95%D7%A8%20-%20%D7%A9%D7%A0%D7%99%D7%A6%D7%9C%20600%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="890">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-890" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="890">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="890" data-name="מגש פלסטיק שחור - שניצל 600 יח'" data-price="240" data-unit="" data-img="/items/907.jpg" data-slug="מגש-פלסטיק-שחור-שניצל-600-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -630,8 +695,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מגש-פלסטיק-שחור-מחוזק-כרעיים-500-יח/">מגש פלסטיק שחור (מחוזק) - כרעיים 500 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏260 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%92%D7%A9%20%D7%A4%D7%9C%D7%A1%D7%98%D7%99%D7%A7%20%D7%A9%D7%97%D7%95%D7%A8%20(%D7%9E%D7%97%D7%95%D7%96%D7%A7)%20-%20%D7%9B%D7%A8%D7%A2%D7%99%D7%99%D7%9D%20500%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="754">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-754" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="754">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="754" data-name="מגש פלסטיק שחור (מחוזק) - כרעיים 500 יח'" data-price="260" data-unit="" data-img="/items/770.jpg" data-slug="מגש-פלסטיק-שחור-מחוזק-כרעיים-500-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -647,8 +723,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מגש-פלסטיק-שחור-מחוזק-צלעות-סופג-480-יח/">מגש פלסטיק שחור (מחוזק+) - צלעות סופג - 480 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏360 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%92%D7%A9%20%D7%A4%D7%9C%D7%A1%D7%98%D7%99%D7%A7%20%D7%A9%D7%97%D7%95%D7%A8%20(%D7%9E%D7%97%D7%95%D7%96%D7%A7%2B)%20-%20%D7%A6%D7%9C%D7%A2%D7%95%D7%AA%20%D7%A1%D7%95%D7%A4%D7%92%20-%20480%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="921">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-921" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="921">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="921" data-name="מגש פלסטיק שחור (מחוזק+) - צלעות סופג - 480 יח'" data-price="360" data-unit="" data-img="/items/939.jpg" data-slug="מגש-פלסטיק-שחור-מחוזק-צלעות-סופג-480-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -664,8 +751,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/נילון-כיסוי-מזון-fresh-cover-30-יח/">נילון כיסוי מזון - fresh cover (30 יח')</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏8 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A0%D7%99%D7%9C%D7%95%D7%9F%20%D7%9B%D7%99%D7%A1%D7%95%D7%99%20%D7%9E%D7%96%D7%95%D7%9F%20-%20fresh%20cover%20(30%20%D7%99%D7%97')" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="251">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-251" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="251">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="251" data-name="נילון כיסוי מזון - fresh cover (30 יח')" data-price="8" data-unit="" data-img="/items/267.jpg" data-slug="נילון-כיסוי-מזון-fresh-cover-30-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -681,8 +779,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/צלחת-קלקר-עגול-500-יח/">צלחת קלקר עגול 500 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏240 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A6%D7%9C%D7%97%D7%AA%20%D7%A7%D7%9C%D7%A7%D7%A8%20%D7%A2%D7%92%D7%95%D7%9C%20500%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="1082">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-1082" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="1082">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="1082" data-name="צלחת קלקר עגול 500 יח'" data-price="240" data-unit="" data-img="/items/1100.jpg" data-slug="צלחת-קלקר-עגול-500-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
           </div>
@@ -940,13 +1049,73 @@
               children.style.display = '';
               icon.style.transform = '';
             } else if (!this.classList.contains('active')) {
-              // Only toggle if not navigating to this category
               e.preventDefault();
               children.style.display = 'none';
               icon.style.transform = 'rotate(90deg)';
             }
           }
         }
+      });
+    });
+
+    // ---- Ecommerce: Add to Cart ----
+    function ymAddToCart(btn) {
+      var id = parseInt(btn.dataset.id);
+      var input = document.getElementById('qty-' + id);
+      var qty = input ? Math.max(1, parseInt(input.value) || 1) : 1;
+      var cart = JSON.parse(localStorage.getItem('ym_cart') || '[]');
+      var existing = cart.find(function(item) { return item.id === id; });
+      if (existing) {
+        existing.quantity += qty;
+      } else {
+        cart.push({
+          id: id,
+          name: btn.dataset.name,
+          price: parseFloat(btn.dataset.price),
+          unit: btn.dataset.unit,
+          imageUrl: btn.dataset.img,
+          slug: btn.dataset.slug,
+          quantity: qty
+        });
+      }
+      localStorage.setItem('ym_cart', JSON.stringify(cart));
+      if (window.YMarket) {
+        window.YMarket.updateCartBadge();
+        window.YMarket.showToast(btn.dataset.name + ' נוסף לעגלה');
+      }
+      btn.classList.add('added');
+      btn.innerHTML = '<i class="fas fa-check"></i> נוסף!';
+      setTimeout(function() {
+        btn.classList.remove('added');
+        btn.innerHTML = '<i class="fas fa-cart-plus"></i> הוסף לעגלה';
+      }, 1500);
+      if (input) input.value = '1';
+      // Analytics
+      if (window.YMarketAnalytics && window.YMarketAnalytics.fbAddToCart) {
+        window.YMarketAnalytics.fbAddToCart({ id: id, name: btn.dataset.name, price: parseFloat(btn.dataset.price), quantity: qty });
+      }
+      if (window.YMarketAnalytics && window.YMarketAnalytics.trackAddToCart) {
+        window.YMarketAnalytics.trackAddToCart({ id: id, name: btn.dataset.name, price: parseFloat(btn.dataset.price), quantity: qty });
+      }
+    }
+
+    // Quantity +/- buttons
+    document.querySelectorAll('.product-card__qty-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var input = document.getElementById('qty-' + btn.dataset.id);
+        if (!input) return;
+        var val = parseInt(input.value) || 1;
+        if (btn.dataset.action === 'increase') val++;
+        else if (val > 1) val--;
+        input.value = val;
+      });
+    });
+
+    // Add to cart buttons
+    document.querySelectorAll('.product-card__add-btn[data-id]').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        ymAddToCart(btn);
       });
     });
   </script>

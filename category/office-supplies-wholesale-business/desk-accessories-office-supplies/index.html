@@ -66,9 +66,8 @@
     .stats-bar__label{font-size:0.78rem;color:#6b7280;margin-top:2px}
     @media(max-width:480px){.stats-bar{gap:1rem}.stats-bar__num{font-size:1.2rem}}
     /* Enhanced product card */
-    .product-card__quote{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px;padding:8px 12px;background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;border-radius:8px;font-size:0.78rem;font-weight:600;text-decoration:none;transition:all 0.2s}
-    .product-card__quote:hover{background:#16a34a;color:#fff;border-color:#16a34a}
     .product-card__vol-badge{position:absolute;top:8px;left:8px;background:#7c3aed;color:#fff;padding:3px 8px;border-radius:6px;font-size:0.7rem;font-weight:700;z-index:2}
+    .product-card__pricing{margin-bottom:4px}
     /* Consultation CTA */
     .consult-cta{display:flex;align-items:center;gap:20px;margin:1.5rem 0;padding:20px 24px;background:linear-gradient(135deg,#1B3A5C,#2a5080);border-radius:14px;color:#fff}
     .consult-cta__icon{font-size:2.2rem;opacity:0.9;flex-shrink:0}
@@ -682,8 +681,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מספריים-ארגו-21-ס-מ/">מספריים ארגו 21 ס"מ</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏17 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%A1%D7%A4%D7%A8%D7%99%D7%99%D7%9D%20%D7%90%D7%A8%D7%92%D7%95%2021%20%D7%A1%22%D7%9E" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="358">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-358" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="358">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="358" data-name="מספריים ארגו 21 ס&quot;מ" data-price="17" data-unit="" data-img="/items/374.jpg" data-slug="מספריים-ארגו-21-ס-מ"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -699,8 +709,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/גומיות-רגיל-100-גרם/">גומיות רגיל 100 גרם</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏8 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%92%D7%95%D7%9E%D7%99%D7%95%D7%AA%20%D7%A8%D7%92%D7%99%D7%9C%20100%20%D7%92%D7%A8%D7%9D" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="958">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-958" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="958">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="958" data-name="גומיות רגיל 100 גרם" data-price="8" data-unit="" data-img="/items/976.jpg" data-slug="גומיות-רגיל-100-גרם"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -716,8 +737,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/גומיות-רחבות-500-גרם/">גומיות רחבות 500 גרם</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏24 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%92%D7%95%D7%9E%D7%99%D7%95%D7%AA%20%D7%A8%D7%97%D7%91%D7%95%D7%AA%20500%20%D7%92%D7%A8%D7%9D" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="489">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-489" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="489">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="489" data-name="גומיות רחבות 500 גרם" data-price="24" data-unit="" data-img="/items/505.jpg" data-slug="גומיות-רחבות-500-גרם"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -733,8 +765,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/גיליוטינה-סכין-3914-ל-10-דף-KW-A3/">גיליוטינה סכין 3914 ל 10 דף - KW-A3</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏400 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%92%D7%99%D7%9C%D7%99%D7%95%D7%98%D7%99%D7%A0%D7%94%20%D7%A1%D7%9B%D7%99%D7%9F%203914%20%D7%9C%2010%20%D7%93%D7%A3%20-%20KW-A3" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="674">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-674" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="674">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="674" data-name="גיליוטינה סכין 3914 ל 10 דף - KW-A3" data-price="400" data-unit="" data-img="/items/690.jpg" data-slug="גיליוטינה-סכין-3914-ל-10-דף-KW-A3"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -750,8 +793,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/דבק-סטיק-גדול/">דבק סטיק גדול</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏10 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%93%D7%91%D7%A7%20%D7%A1%D7%98%D7%99%D7%A7%20%D7%92%D7%93%D7%95%D7%9C" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="795">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-795" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="795">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="795" data-name="דבק סטיק גדול" data-price="10" data-unit="" data-img="/items/812.jpg" data-slug="דבק-סטיק-גדול"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -767,8 +821,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/דבקיות-לבנות-32-דף-20-30/">דבקיות לבנות 32 דף 20/30</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏8 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%93%D7%91%D7%A7%D7%99%D7%95%D7%AA%20%D7%9C%D7%91%D7%A0%D7%95%D7%AA%2032%20%D7%93%D7%A3%2020%2F30" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="636">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-636" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="636">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="636" data-name="דבקיות לבנות 32 דף 20/30" data-price="8" data-unit="" data-img="/items/652.jpg" data-slug="דבקיות-לבנות-32-דף-20-30"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -784,8 +849,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/דבקיות-לבנות-32-דף-בערך-50-30/">דבקיות לבנות 32 דף בערך 50/30</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏8 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%93%D7%91%D7%A7%D7%99%D7%95%D7%AA%20%D7%9C%D7%91%D7%A0%D7%95%D7%AA%2032%20%D7%93%D7%A3%20%D7%91%D7%A2%D7%A8%D7%9A%2050%2F30" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="720">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-720" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="720">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="720" data-name="דבקיות לבנות 32 דף בערך 50/30" data-price="8" data-unit="" data-img="/items/736.jpg" data-slug="דבקיות-לבנות-32-דף-בערך-50-30"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -801,8 +877,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/חולץ-סיכות-משובח/">חולץ סיכות משובח</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏5 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%97%D7%95%D7%9C%D7%A5%20%D7%A1%D7%99%D7%9B%D7%95%D7%AA%20%D7%9E%D7%A9%D7%95%D7%91%D7%97" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="700">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-700" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="700">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="700" data-name="חולץ סיכות משובח" data-price="5" data-unit="" data-img="/items/716.jpg" data-slug="חולץ-סיכות-משובח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -818,8 +905,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מנקב-בנוני-מחורר/">מנקב בנוני ( מחורר )</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏25 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%A0%D7%A7%D7%91%20%D7%91%D7%A0%D7%95%D7%A0%D7%99%20(%20%D7%9E%D7%97%D7%95%D7%A8%D7%A8%20)" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="392">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-392" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="392">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="392" data-name="מנקב בנוני ( מחורר )" data-price="25" data-unit="" data-img="/items/408.jpg" data-slug="מנקב-בנוני-מחורר"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -835,8 +933,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מנקב-קנגרו-600-ל-25-דף/">מנקב קנגרו 600 ל 25 דף</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏25 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%A0%D7%A7%D7%91%20%D7%A7%D7%A0%D7%92%D7%A8%D7%95%20600%20%D7%9C%2025%20%D7%93%D7%A3" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="718">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-718" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="718">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="718" data-name="מנקב קנגרו 600 ל 25 דף" data-price="25" data-unit="" data-img="/items/734.jpg" data-slug="מנקב-קנגרו-600-ל-25-דף"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -852,8 +961,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מספריים-8-ידית-גומי/">מספריים 8 ידית גומי</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏12 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%A1%D7%A4%D7%A8%D7%99%D7%99%D7%9D%208%20%D7%99%D7%93%D7%99%D7%AA%20%D7%92%D7%95%D7%9E%D7%99" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="606">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-606" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="606">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="606" data-name="מספריים 8 ידית גומי" data-price="12" data-unit="" data-img="/items/622.jpg" data-slug="מספריים-8-ידית-גומי"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -869,8 +989,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מספרים-1-2-8-POP/">מספרים 1/2 8 POP</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏4 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%A1%D7%A4%D7%A8%D7%99%D7%9D%201%2F2%208%20POP" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="420">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-420" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="420">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="420" data-name="מספרים 1/2 8 POP" data-price="4" data-unit="" data-img="/items/436.jpg" data-slug="מספרים-1-2-8-POP"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -886,8 +1017,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/מעמד-משולב-מתכת-שחור/">מעמד משולב מתכת שחור</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏20 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%A2%D7%9E%D7%93%20%D7%9E%D7%A9%D7%95%D7%9C%D7%91%20%D7%9E%D7%AA%D7%9B%D7%AA%20%D7%A9%D7%97%D7%95%D7%A8" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="423">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-423" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="423">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="423" data-name="מעמד משולב מתכת שחור" data-price="20" data-unit="" data-img="/items/439.jpg" data-slug="מעמד-משולב-מתכת-שחור"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -903,8 +1045,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/סיכות-26-6/">סיכות 26/6</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏4 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A1%D7%99%D7%9B%D7%95%D7%AA%2026%2F6" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="421">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-421" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="421">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="421" data-name="סיכות 26/6" data-price="4" data-unit="" data-img="/items/437.jpg" data-slug="סיכות-26-6"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -920,8 +1073,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/סיכות-ראש-צבעוני-ללוח-שעם/">סיכות ראש  צבעוני ללוח שעם</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏5 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A1%D7%99%D7%9B%D7%95%D7%AA%20%D7%A8%D7%90%D7%A9%20%20%D7%A6%D7%91%D7%A2%D7%95%D7%A0%D7%99%20%D7%9C%D7%9C%D7%95%D7%97%20%D7%A9%D7%A2%D7%9D" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="610">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-610" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="610">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="610" data-name="סיכות ראש  צבעוני ללוח שעם" data-price="5" data-unit="" data-img="/items/626.jpg" data-slug="סיכות-ראש-צבעוני-ללוח-שעם"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -937,8 +1101,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/צלוטייפ-33-3-4/">צלוטייפ 33*3\4 </a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏1.5 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A6%D7%9C%D7%95%D7%98%D7%99%D7%99%D7%A4%2033*3%5C4%20" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="365">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-365" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="365">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="365" data-name="צלוטייפ 33*3\4 " data-price="1.5" data-unit="" data-img="/items/381.jpg" data-slug="צלוטייפ-33-3-4"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -954,8 +1129,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/שדכן-סיכות-מס-45-קנגרו/">שדכן סיכות מס 45 קנגרו</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏12 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A9%D7%93%D7%9B%D7%9F%20%D7%A1%D7%99%D7%9B%D7%95%D7%AA%20%D7%9E%D7%A1%2045%20%D7%A7%D7%A0%D7%92%D7%A8%D7%95" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="359">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-359" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="359">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="359" data-name="שדכן סיכות מס 45 קנגרו" data-price="12" data-unit="" data-img="/items/375.jpg" data-slug="שדכן-סיכות-מס-45-קנגרו"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
           </div>
@@ -1213,13 +1399,73 @@
               children.style.display = '';
               icon.style.transform = '';
             } else if (!this.classList.contains('active')) {
-              // Only toggle if not navigating to this category
               e.preventDefault();
               children.style.display = 'none';
               icon.style.transform = 'rotate(90deg)';
             }
           }
         }
+      });
+    });
+
+    // ---- Ecommerce: Add to Cart ----
+    function ymAddToCart(btn) {
+      var id = parseInt(btn.dataset.id);
+      var input = document.getElementById('qty-' + id);
+      var qty = input ? Math.max(1, parseInt(input.value) || 1) : 1;
+      var cart = JSON.parse(localStorage.getItem('ym_cart') || '[]');
+      var existing = cart.find(function(item) { return item.id === id; });
+      if (existing) {
+        existing.quantity += qty;
+      } else {
+        cart.push({
+          id: id,
+          name: btn.dataset.name,
+          price: parseFloat(btn.dataset.price),
+          unit: btn.dataset.unit,
+          imageUrl: btn.dataset.img,
+          slug: btn.dataset.slug,
+          quantity: qty
+        });
+      }
+      localStorage.setItem('ym_cart', JSON.stringify(cart));
+      if (window.YMarket) {
+        window.YMarket.updateCartBadge();
+        window.YMarket.showToast(btn.dataset.name + ' נוסף לעגלה');
+      }
+      btn.classList.add('added');
+      btn.innerHTML = '<i class="fas fa-check"></i> נוסף!';
+      setTimeout(function() {
+        btn.classList.remove('added');
+        btn.innerHTML = '<i class="fas fa-cart-plus"></i> הוסף לעגלה';
+      }, 1500);
+      if (input) input.value = '1';
+      // Analytics
+      if (window.YMarketAnalytics && window.YMarketAnalytics.fbAddToCart) {
+        window.YMarketAnalytics.fbAddToCart({ id: id, name: btn.dataset.name, price: parseFloat(btn.dataset.price), quantity: qty });
+      }
+      if (window.YMarketAnalytics && window.YMarketAnalytics.trackAddToCart) {
+        window.YMarketAnalytics.trackAddToCart({ id: id, name: btn.dataset.name, price: parseFloat(btn.dataset.price), quantity: qty });
+      }
+    }
+
+    // Quantity +/- buttons
+    document.querySelectorAll('.product-card__qty-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var input = document.getElementById('qty-' + btn.dataset.id);
+        if (!input) return;
+        var val = parseInt(input.value) || 1;
+        if (btn.dataset.action === 'increase') val++;
+        else if (val > 1) val--;
+        input.value = val;
+      });
+    });
+
+    // Add to cart buttons
+    document.querySelectorAll('.product-card__add-btn[data-id]').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        ymAddToCart(btn);
       });
     });
   </script>

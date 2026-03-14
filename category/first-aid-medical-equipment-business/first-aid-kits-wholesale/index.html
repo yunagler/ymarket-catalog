@@ -66,9 +66,8 @@
     .stats-bar__label{font-size:0.78rem;color:#6b7280;margin-top:2px}
     @media(max-width:480px){.stats-bar{gap:1rem}.stats-bar__num{font-size:1.2rem}}
     /* Enhanced product card */
-    .product-card__quote{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px;padding:8px 12px;background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;border-radius:8px;font-size:0.78rem;font-weight:600;text-decoration:none;transition:all 0.2s}
-    .product-card__quote:hover{background:#16a34a;color:#fff;border-color:#16a34a}
     .product-card__vol-badge{position:absolute;top:8px;left:8px;background:#7c3aed;color:#fff;padding:3px 8px;border-radius:6px;font-size:0.7rem;font-weight:700;z-index:2}
+    .product-card__pricing{margin-bottom:4px}
     /* Consultation CTA */
     .consult-cta{display:flex;align-items:center;gap:20px;margin:1.5rem 0;padding:20px 24px;background:linear-gradient(135deg,#1B3A5C,#2a5080);border-radius:14px;color:#fff}
     .consult-cta__icon{font-size:2.2rem;opacity:0.9;flex-shrink:0}
@@ -572,8 +571,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/ערכות-עזרה-ראשונה-לסירות/">ערכות עזרה ראשונה לסירות</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏168 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A2%D7%A8%D7%9B%D7%95%D7%AA%20%D7%A2%D7%96%D7%A8%D7%94%20%D7%A8%D7%90%D7%A9%D7%95%D7%A0%D7%94%20%D7%9C%D7%A1%D7%99%D7%A8%D7%95%D7%AA" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="504">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-504" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="504">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="504" data-name="ערכות עזרה ראשונה לסירות" data-price="168" data-unit="" data-img="/items/520.jpg" data-slug="ערכות-עזרה-ראשונה-לסירות"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -589,8 +599,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/ערכת-בסיסית-לרכב/">ערכת בסיסית לרכב</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏50 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A2%D7%A8%D7%9B%D7%AA%20%D7%91%D7%A1%D7%99%D7%A1%D7%99%D7%AA%20%D7%9C%D7%A8%D7%9B%D7%91" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="501">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-501" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="501">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="501" data-name="ערכת בסיסית לרכב" data-price="50" data-unit="" data-img="/items/517.jpg" data-slug="ערכת-בסיסית-לרכב"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -606,8 +627,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/ערכת-עזרה-ראשונה-1-19-עובדים/">ערכת עזרה ראשונה - 1-19 עובדים</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏160 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A2%D7%A8%D7%9B%D7%AA%20%D7%A2%D7%96%D7%A8%D7%94%20%D7%A8%D7%90%D7%A9%D7%95%D7%A0%D7%94%20-%201-19%20%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="493">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-493" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="493">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="493" data-name="ערכת עזרה ראשונה - 1-19 עובדים" data-price="160" data-unit="" data-img="/items/509.jpg" data-slug="ערכת-עזרה-ראשונה-1-19-עובדים"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -623,8 +655,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/ערכת-עזרה-ראשונה-149-עובדים/">ערכת עזרה ראשונה - 149 עובדים</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏300 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A2%D7%A8%D7%9B%D7%AA%20%D7%A2%D7%96%D7%A8%D7%94%20%D7%A8%D7%90%D7%A9%D7%95%D7%A0%D7%94%20-%20149%20%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="496">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-496" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="496">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="496" data-name="ערכת עזרה ראשונה - 149 עובדים" data-price="300" data-unit="" data-img="/items/512.jpg" data-slug="ערכת-עזרה-ראשונה-149-עובדים"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -640,8 +683,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/ערכת-עזרה-ראשונה-49-עובדים/">ערכת עזרה ראשונה - 49 עובדים</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏180 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A2%D7%A8%D7%9B%D7%AA%20%D7%A2%D7%96%D7%A8%D7%94%20%D7%A8%D7%90%D7%A9%D7%95%D7%A0%D7%94%20-%2049%20%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="494">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-494" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="494">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="494" data-name="ערכת עזרה ראשונה - 49 עובדים" data-price="180" data-unit="" data-img="/items/510.jpg" data-slug="ערכת-עזרה-ראשונה-49-עובדים"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -657,8 +711,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/ערכת-עזרה-ראשונה-99-עובדים/">ערכת עזרה ראשונה - 99 עובדים</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏240 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A2%D7%A8%D7%9B%D7%AA%20%D7%A2%D7%96%D7%A8%D7%94%20%D7%A8%D7%90%D7%A9%D7%95%D7%A0%D7%94%20-%2099%20%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="495">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-495" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="495">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="495" data-name="ערכת עזרה ראשונה - 99 עובדים" data-price="240" data-unit="" data-img="/items/511.jpg" data-slug="ערכת-עזרה-ראשונה-99-עובדים"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -674,8 +739,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/ערכת-עזרה-ראשונה-למובילי-חומ-ס/">ערכת עזרה ראשונה למובילי חומ"ס</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏138 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A2%D7%A8%D7%9B%D7%AA%20%D7%A2%D7%96%D7%A8%D7%94%20%D7%A8%D7%90%D7%A9%D7%95%D7%A0%D7%94%20%D7%9C%D7%9E%D7%95%D7%91%D7%99%D7%9C%D7%99%20%D7%97%D7%95%D7%9E%22%D7%A1" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="503">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-503" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="503">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="503" data-name="ערכת עזרה ראשונה למובילי חומ&quot;ס" data-price="138" data-unit="" data-img="/items/519.jpg" data-slug="ערכת-עזרה-ראשונה-למובילי-חומ-ס"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -691,8 +767,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/ערכת-עזרה-ראשונה-למטבחים/">ערכת עזרה ראשונה למטבחים</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏418 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A2%D7%A8%D7%9B%D7%AA%20%D7%A2%D7%96%D7%A8%D7%94%20%D7%A8%D7%90%D7%A9%D7%95%D7%A0%D7%94%20%D7%9C%D7%9E%D7%98%D7%91%D7%97%D7%99%D7%9D" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="497">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-497" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="497">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="497" data-name="ערכת עזרה ראשונה למטבחים" data-price="418" data-unit="" data-img="/items/513.jpg" data-slug="ערכת-עזרה-ראשונה-למטבחים"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -708,8 +795,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/ערכת-עזרה-ראשונה-לרכב-ציבורי/">ערכת עזרה ראשונה לרכב ציבורי</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏278 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A2%D7%A8%D7%9B%D7%AA%20%D7%A2%D7%96%D7%A8%D7%94%20%D7%A8%D7%90%D7%A9%D7%95%D7%A0%D7%94%20%D7%9C%D7%A8%D7%9B%D7%91%20%D7%A6%D7%99%D7%91%D7%95%D7%A8%D7%99" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="502">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-502" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="502">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="502" data-name="ערכת עזרה ראשונה לרכב ציבורי" data-price="278" data-unit="" data-img="/items/518.jpg" data-slug="ערכת-עזרה-ראשונה-לרכב-ציבורי"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -725,8 +823,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/ערכת-עזרה-ראשונה-תקן-משרד-החינוך/">ערכת עזרה ראשונה תקן משרד החינוך</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏318 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A2%D7%A8%D7%9B%D7%AA%20%D7%A2%D7%96%D7%A8%D7%94%20%D7%A8%D7%90%D7%A9%D7%95%D7%A0%D7%94%20%D7%AA%D7%A7%D7%9F%20%D7%9E%D7%A9%D7%A8%D7%93%20%D7%94%D7%97%D7%99%D7%A0%D7%95%D7%9A" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="499">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-499" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="499">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="499" data-name="ערכת עזרה ראשונה תקן משרד החינוך" data-price="318" data-unit="" data-img="/items/515.jpg" data-slug="ערכת-עזרה-ראשונה-תקן-משרד-החינוך"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -742,8 +851,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/ערכת-עזרה-ראשונה-תקן-משרד-התחבורה/">ערכת עזרה ראשונה תקן משרד התחבורה</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏358 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A2%D7%A8%D7%9B%D7%AA%20%D7%A2%D7%96%D7%A8%D7%94%20%D7%A8%D7%90%D7%A9%D7%95%D7%A0%D7%94%20%D7%AA%D7%A7%D7%9F%20%D7%9E%D7%A9%D7%A8%D7%93%20%D7%94%D7%AA%D7%97%D7%91%D7%95%D7%A8%D7%94" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="500">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-500" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="500">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="500" data-name="ערכת עזרה ראשונה תקן משרד התחבורה" data-price="358" data-unit="" data-img="/items/516.jpg" data-slug="ערכת-עזרה-ראשונה-תקן-משרד-התחבורה"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -759,8 +879,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/ערכת-עזרה-ראשונה-תקן-פיקוד-העורף/">ערכת עזרה ראשונה תקן פיקוד העורף</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏398 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A2%D7%A8%D7%9B%D7%AA%20%D7%A2%D7%96%D7%A8%D7%94%20%D7%A8%D7%90%D7%A9%D7%95%D7%A0%D7%94%20%D7%AA%D7%A7%D7%9F%20%D7%A4%D7%99%D7%A7%D7%95%D7%93%20%D7%94%D7%A2%D7%95%D7%A8%D7%A3" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="498">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-498" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="498">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="498" data-name="ערכת עזרה ראשונה תקן פיקוד העורף" data-price="398" data-unit="" data-img="/items/514.jpg" data-slug="ערכת-עזרה-ראשונה-תקן-פיקוד-העורף"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
           </div>
@@ -1018,13 +1149,73 @@
               children.style.display = '';
               icon.style.transform = '';
             } else if (!this.classList.contains('active')) {
-              // Only toggle if not navigating to this category
               e.preventDefault();
               children.style.display = 'none';
               icon.style.transform = 'rotate(90deg)';
             }
           }
         }
+      });
+    });
+
+    // ---- Ecommerce: Add to Cart ----
+    function ymAddToCart(btn) {
+      var id = parseInt(btn.dataset.id);
+      var input = document.getElementById('qty-' + id);
+      var qty = input ? Math.max(1, parseInt(input.value) || 1) : 1;
+      var cart = JSON.parse(localStorage.getItem('ym_cart') || '[]');
+      var existing = cart.find(function(item) { return item.id === id; });
+      if (existing) {
+        existing.quantity += qty;
+      } else {
+        cart.push({
+          id: id,
+          name: btn.dataset.name,
+          price: parseFloat(btn.dataset.price),
+          unit: btn.dataset.unit,
+          imageUrl: btn.dataset.img,
+          slug: btn.dataset.slug,
+          quantity: qty
+        });
+      }
+      localStorage.setItem('ym_cart', JSON.stringify(cart));
+      if (window.YMarket) {
+        window.YMarket.updateCartBadge();
+        window.YMarket.showToast(btn.dataset.name + ' נוסף לעגלה');
+      }
+      btn.classList.add('added');
+      btn.innerHTML = '<i class="fas fa-check"></i> נוסף!';
+      setTimeout(function() {
+        btn.classList.remove('added');
+        btn.innerHTML = '<i class="fas fa-cart-plus"></i> הוסף לעגלה';
+      }, 1500);
+      if (input) input.value = '1';
+      // Analytics
+      if (window.YMarketAnalytics && window.YMarketAnalytics.fbAddToCart) {
+        window.YMarketAnalytics.fbAddToCart({ id: id, name: btn.dataset.name, price: parseFloat(btn.dataset.price), quantity: qty });
+      }
+      if (window.YMarketAnalytics && window.YMarketAnalytics.trackAddToCart) {
+        window.YMarketAnalytics.trackAddToCart({ id: id, name: btn.dataset.name, price: parseFloat(btn.dataset.price), quantity: qty });
+      }
+    }
+
+    // Quantity +/- buttons
+    document.querySelectorAll('.product-card__qty-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var input = document.getElementById('qty-' + btn.dataset.id);
+        if (!input) return;
+        var val = parseInt(input.value) || 1;
+        if (btn.dataset.action === 'increase') val++;
+        else if (val > 1) val--;
+        input.value = val;
+      });
+    });
+
+    // Add to cart buttons
+    document.querySelectorAll('.product-card__add-btn[data-id]').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        ymAddToCart(btn);
       });
     });
   </script>

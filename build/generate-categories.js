@@ -341,6 +341,22 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
     // Volume badge for items with bulk packaging
     const volBadge = (p.unitsPerPack && p.unitsPerPack >= 6) ? '<div class="product-card__vol-badge"><i class="fas fa-cubes" style="font-size:0.6rem"></i> הנחת כמות</div>' : '';
 
+    // Add to cart button (ecommerce) or WhatsApp for items without price
+    const actionsHtml = p.saleNis
+      ? `<div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="${p.id}">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-${p.id}" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="${p.id}">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="${p.id}" data-name="${(p.name || '').replace(/"/g, '&quot;')}" data-price="${p.saleNis}" data-unit="${(p.unit || '').replace(/"/g, '&quot;')}" data-img="${imgSrc}" data-slug="${p.slug}"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>`
+      : `<div class="product-card__actions">
+          <a href="https://wa.me/972549922492?text=${encodeURIComponent('היי, מתעניין ב' + p.name)}" class="product-card__add-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> בקשו הצעת מחיר</a>
+        </div>`;
+
     return `
     <div class="product-card" style="position:relative">
       ${badgeHtml}
@@ -354,13 +370,15 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/${p.slug}/">${p.name}</a></h3>
         ${p.unit ? `<div class="product-card__unit">${p.unitsPerPack > 1 ? p.unitsPerPack + ' ' : ''}${p.unit}</div>` : ''}
+        <div class="product-card__pricing">
         ${p.saleNis
           ? hasPromo
             ? `<div class="product-card__price" style="color:#dc2626">${formatPrice(p.saleNis)}</div><div style="text-decoration:line-through;color:#9ca3af;font-size:0.85rem">${formatPrice(p.originalPrice)}</div>`
             : `<div class="product-card__price">${formatPrice(p.saleNis)}</div>`
-          : '<div class="product-card__price">צרו קשר</div>'
+          : '<div class="product-card__price" style="color:var(--color-text-light)">צרו קשר למחיר</div>'
         }
-        <a href="https://wa.me/972549922492?text=${encodeURIComponent('היי, אשמח לקבל הצעת מחיר ל' + p.name)}" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        ${actionsHtml}
       </div>
     </div>`;
   }).join('\n');
@@ -559,9 +577,8 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
     .stats-bar__label{font-size:0.78rem;color:#6b7280;margin-top:2px}
     @media(max-width:480px){.stats-bar{gap:1rem}.stats-bar__num{font-size:1.2rem}}
     /* Enhanced product card */
-    .product-card__quote{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px;padding:8px 12px;background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;border-radius:8px;font-size:0.78rem;font-weight:600;text-decoration:none;transition:all 0.2s}
-    .product-card__quote:hover{background:#16a34a;color:#fff;border-color:#16a34a}
     .product-card__vol-badge{position:absolute;top:8px;left:8px;background:#7c3aed;color:#fff;padding:3px 8px;border-radius:6px;font-size:0.7rem;font-weight:700;z-index:2}
+    .product-card__pricing{margin-bottom:4px}
     /* Consultation CTA */
     .consult-cta{display:flex;align-items:center;gap:20px;margin:1.5rem 0;padding:20px 24px;background:linear-gradient(135deg,#1B3A5C,#2a5080);border-radius:14px;color:#fff}
     .consult-cta__icon{font-size:2.2rem;opacity:0.9;flex-shrink:0}
@@ -816,13 +833,73 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
               children.style.display = '';
               icon.style.transform = '';
             } else if (!this.classList.contains('active')) {
-              // Only toggle if not navigating to this category
               e.preventDefault();
               children.style.display = 'none';
               icon.style.transform = 'rotate(90deg)';
             }
           }
         }
+      });
+    });
+
+    // ---- Ecommerce: Add to Cart ----
+    function ymAddToCart(btn) {
+      var id = parseInt(btn.dataset.id);
+      var input = document.getElementById('qty-' + id);
+      var qty = input ? Math.max(1, parseInt(input.value) || 1) : 1;
+      var cart = JSON.parse(localStorage.getItem('ym_cart') || '[]');
+      var existing = cart.find(function(item) { return item.id === id; });
+      if (existing) {
+        existing.quantity += qty;
+      } else {
+        cart.push({
+          id: id,
+          name: btn.dataset.name,
+          price: parseFloat(btn.dataset.price),
+          unit: btn.dataset.unit,
+          imageUrl: btn.dataset.img,
+          slug: btn.dataset.slug,
+          quantity: qty
+        });
+      }
+      localStorage.setItem('ym_cart', JSON.stringify(cart));
+      if (window.YMarket) {
+        window.YMarket.updateCartBadge();
+        window.YMarket.showToast(btn.dataset.name + ' נוסף לעגלה');
+      }
+      btn.classList.add('added');
+      btn.innerHTML = '<i class="fas fa-check"></i> נוסף!';
+      setTimeout(function() {
+        btn.classList.remove('added');
+        btn.innerHTML = '<i class="fas fa-cart-plus"></i> הוסף לעגלה';
+      }, 1500);
+      if (input) input.value = '1';
+      // Analytics
+      if (window.YMarketAnalytics && window.YMarketAnalytics.fbAddToCart) {
+        window.YMarketAnalytics.fbAddToCart({ id: id, name: btn.dataset.name, price: parseFloat(btn.dataset.price), quantity: qty });
+      }
+      if (window.YMarketAnalytics && window.YMarketAnalytics.trackAddToCart) {
+        window.YMarketAnalytics.trackAddToCart({ id: id, name: btn.dataset.name, price: parseFloat(btn.dataset.price), quantity: qty });
+      }
+    }
+
+    // Quantity +/- buttons
+    document.querySelectorAll('.product-card__qty-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var input = document.getElementById('qty-' + btn.dataset.id);
+        if (!input) return;
+        var val = parseInt(input.value) || 1;
+        if (btn.dataset.action === 'increase') val++;
+        else if (val > 1) val--;
+        input.value = val;
+      });
+    });
+
+    // Add to cart buttons
+    document.querySelectorAll('.product-card__add-btn[data-id]').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        ymAddToCart(btn);
       });
     });
   </script>

@@ -66,9 +66,8 @@
     .stats-bar__label{font-size:0.78rem;color:#6b7280;margin-top:2px}
     @media(max-width:480px){.stats-bar{gap:1rem}.stats-bar__num{font-size:1.2rem}}
     /* Enhanced product card */
-    .product-card__quote{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px;padding:8px 12px;background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;border-radius:8px;font-size:0.78rem;font-weight:600;text-decoration:none;transition:all 0.2s}
-    .product-card__quote:hover{background:#16a34a;color:#fff;border-color:#16a34a}
     .product-card__vol-badge{position:absolute;top:8px;left:8px;background:#7c3aed;color:#fff;padding:3px 8px;border-radius:6px;font-size:0.7rem;font-weight:700;z-index:2}
+    .product-card__pricing{margin-bottom:4px}
     /* Consultation CTA */
     .consult-cta{display:flex;align-items:center;gap:20px;margin:1.5rem 0;padding:20px 24px;background:linear-gradient(135deg,#1B3A5C,#2a5080);border-radius:14px;color:#fff}
     .consult-cta__icon{font-size:2.2rem;opacity:0.9;flex-shrink:0}
@@ -572,8 +571,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/משחת-כלים-בניחוח-לימון-20-ק-ג-סו-קלין/">משחת כלים בניחוח לימון 20 ק"ג (סו קלין)</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏65 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%A9%D7%97%D7%AA%20%D7%9B%D7%9C%D7%99%D7%9D%20%D7%91%D7%A0%D7%99%D7%97%D7%95%D7%97%20%D7%9C%D7%99%D7%9E%D7%95%D7%9F%2020%20%D7%A7%22%D7%92%20(%D7%A1%D7%95%20%D7%A7%D7%9C%D7%99%D7%9F)" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="239">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-239" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="239">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="239" data-name="משחת כלים בניחוח לימון 20 ק&quot;ג (סו קלין)" data-price="65" data-unit="" data-img="/items/255.jpg" data-slug="משחת-כלים-בניחוח-לימון-20-ק-ג-סו-קלין"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -589,8 +599,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/נוזל-הברקה-טארגט-למדיח-כלים-תעשייתי-18-ק-ג/">נוזל הברקה (טארגט) למדיח כלים תעשייתי 18 ק"ג</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏185 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A0%D7%95%D7%96%D7%9C%20%D7%94%D7%91%D7%A8%D7%A7%D7%94%20(%D7%98%D7%90%D7%A8%D7%92%D7%98)%20%D7%9C%D7%9E%D7%93%D7%99%D7%97%20%D7%9B%D7%9C%D7%99%D7%9D%20%D7%AA%D7%A2%D7%A9%D7%99%D7%99%D7%AA%D7%99%2018%20%D7%A7%22%D7%92" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="588">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-588" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="588">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="588" data-name="נוזל הברקה (טארגט) למדיח כלים תעשייתי 18 ק&quot;ג" data-price="185" data-unit="" data-img="/items/604.jpg" data-slug="נוזל-הברקה-טארגט-למדיח-כלים-תעשייתי-18-ק-ג"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -606,8 +627,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/נוזל-כלים-12-1-ליטר-BLINX/">נוזל כלים 12% - 1 ליטר BLINX</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏8 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A0%D7%95%D7%96%D7%9C%20%D7%9B%D7%9C%D7%99%D7%9D%2012%25%20-%201%20%D7%9C%D7%99%D7%98%D7%A8%20BLINX" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="853">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-853" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="853">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="853" data-name="נוזל כלים 12% - 1 ליטר BLINX" data-price="8" data-unit="" data-img="/items/870.jpg" data-slug="נוזל-כלים-12-1-ליטר-BLINX"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -623,8 +655,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/נוזל-כלים-12-4-ליטר-BLINX/">נוזל כלים 12% - 4 ליטר BLINX</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏18 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A0%D7%95%D7%96%D7%9C%20%D7%9B%D7%9C%D7%99%D7%9D%2012%25%20-%204%20%D7%9C%D7%99%D7%98%D7%A8%20BLINX" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="845">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-845" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="845">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="845" data-name="נוזל כלים 12% - 4 ליטר BLINX" data-price="18" data-unit="" data-img="/items/862.jpg" data-slug="נוזל-כלים-12-4-ליטר-BLINX"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -640,8 +683,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/נוזל-כלים-18-1-ליטר-BLINX/">נוזל כלים 18% - 1 ליטר BLINX</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏12 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A0%D7%95%D7%96%D7%9C%20%D7%9B%D7%9C%D7%99%D7%9D%2018%25%20-%201%20%D7%9C%D7%99%D7%98%D7%A8%20BLINX" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="854">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-854" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="854">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="854" data-name="נוזל כלים 18% - 1 ליטר BLINX" data-price="12" data-unit="" data-img="/items/871.jpg" data-slug="נוזל-כלים-18-1-ליטר-BLINX"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -657,8 +711,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/נוזל-כלים-18-4-ליטר-BLINX/">נוזל כלים 18% - 4 ליטר BLINX</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏22 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A0%D7%95%D7%96%D7%9C%20%D7%9B%D7%9C%D7%99%D7%9D%2018%25%20-%204%20%D7%9C%D7%99%D7%98%D7%A8%20BLINX" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="846">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-846" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="846">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="846" data-name="נוזל כלים 18% - 4 ליטר BLINX" data-price="22" data-unit="" data-img="/items/863.jpg" data-slug="נוזל-כלים-18-4-ליטר-BLINX"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -674,8 +739,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/נוזל-כלים-24-4-ליטר-BLINX/">נוזל כלים 24% - 4 ליטר BLINX</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏23 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A0%D7%95%D7%96%D7%9C%20%D7%9B%D7%9C%D7%99%D7%9D%2024%25%20-%204%20%D7%9C%D7%99%D7%98%D7%A8%20BLINX" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="1007">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-1007" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="1007">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="1007" data-name="נוזל כלים 24% - 4 ליטר BLINX" data-price="23" data-unit="" data-img="/items/1025.jpg" data-slug="נוזל-כלים-24-4-ליטר-BLINX"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -691,8 +767,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/נוזל-כלים-24-משאבה-1-ליטר/">נוזל כלים 24% (משאבה) - 1 ליטר </a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏10 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A0%D7%95%D7%96%D7%9C%20%D7%9B%D7%9C%D7%99%D7%9D%2024%25%20(%D7%9E%D7%A9%D7%90%D7%91%D7%94)%20-%201%20%D7%9C%D7%99%D7%98%D7%A8%20" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="862">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-862" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="862">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="862" data-name="נוזל כלים 24% (משאבה) - 1 ליטר " data-price="10" data-unit="" data-img="/items/879.jpg" data-slug="נוזל-כלים-24-משאבה-1-ליטר"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -708,8 +795,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/נוזל-למדיחים-טארגט-24-ק-ג/">נוזל למדיחים (טארגט) - 24 ק"ג</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏270 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A0%D7%95%D7%96%D7%9C%20%D7%9C%D7%9E%D7%93%D7%99%D7%97%D7%99%D7%9D%20(%D7%98%D7%90%D7%A8%D7%92%D7%98)%20-%2024%20%D7%A7%22%D7%92" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="981">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-981" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="981">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="981" data-name="נוזל למדיחים (טארגט) - 24 ק&quot;ג" data-price="270" data-unit="" data-img="/items/999.jpg" data-slug="נוזל-למדיחים-טארגט-24-ק-ג"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -725,8 +823,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/סבון-קצף-איכותי-1-ליטר/">סבון קצף איכותי 1 ליטר</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏15 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A1%D7%91%D7%95%D7%9F%20%D7%A7%D7%A6%D7%A3%20%D7%90%D7%99%D7%9B%D7%95%D7%AA%D7%99%201%20%D7%9C%D7%99%D7%98%D7%A8" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="352">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-352" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="352">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="352" data-name="סבון קצף איכותי 1 ליטר" data-price="15" data-unit="" data-img="/items/368.jpg" data-slug="סבון-קצף-איכותי-1-ליטר"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -742,8 +851,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/סבוניה-500-מ-ל-F032/">סבוניה 500 מ"ל (F032)</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏25 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A1%D7%91%D7%95%D7%A0%D7%99%D7%94%20500%20%D7%9E%22%D7%9C%20(F032)" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="573">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-573" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="573">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="573" data-name="סבוניה 500 מ&quot;ל (F032)" data-price="25" data-unit="" data-img="/items/589.jpg" data-slug="סבוניה-500-מ-ל-F032"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -759,8 +879,19 @@
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/קפסולת-מדיח-של-פריי-פליטינום-פלוס-5-יח/">קפסולת מדיח של פריי - פליטינום פלוס - 5 יח'</a></h3>
         
+        <div class="product-card__pricing">
         <div class="product-card__price">‏5.4 ‏₪</div>
-        <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A7%D7%A4%D7%A1%D7%95%D7%9C%D7%AA%20%D7%9E%D7%93%D7%99%D7%97%20%D7%A9%D7%9C%20%D7%A4%D7%A8%D7%99%D7%99%20-%20%D7%A4%D7%9C%D7%99%D7%98%D7%99%D7%A0%D7%95%D7%9D%20%D7%A4%D7%9C%D7%95%D7%A1%20-%205%20%D7%99%D7%97'" target="_blank" rel="noopener" class="product-card__quote"><i class="fab fa-whatsapp"></i> הצעת מחיר</a>
+        </div>
+        <div class="product-card__actions">
+          <div class="product-card__qty-row">
+            <div class="product-card__qty-selector">
+              <button class="product-card__qty-btn" data-action="decrease" data-id="112">-</button>
+              <input type="number" class="product-card__qty-input" id="qty-112" value="1" min="1" max="999">
+              <button class="product-card__qty-btn" data-action="increase" data-id="112">+</button>
+            </div>
+            <button class="product-card__add-btn" data-id="112" data-name="קפסולת מדיח של פריי - פליטינום פלוס - 5 יח'" data-price="5.4" data-unit="" data-img="/items/128.jpg" data-slug="קפסולת-מדיח-של-פריי-פליטינום-פלוס-5-יח"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+          </div>
+        </div>
       </div>
     </div>
           </div>
@@ -1018,13 +1149,73 @@
               children.style.display = '';
               icon.style.transform = '';
             } else if (!this.classList.contains('active')) {
-              // Only toggle if not navigating to this category
               e.preventDefault();
               children.style.display = 'none';
               icon.style.transform = 'rotate(90deg)';
             }
           }
         }
+      });
+    });
+
+    // ---- Ecommerce: Add to Cart ----
+    function ymAddToCart(btn) {
+      var id = parseInt(btn.dataset.id);
+      var input = document.getElementById('qty-' + id);
+      var qty = input ? Math.max(1, parseInt(input.value) || 1) : 1;
+      var cart = JSON.parse(localStorage.getItem('ym_cart') || '[]');
+      var existing = cart.find(function(item) { return item.id === id; });
+      if (existing) {
+        existing.quantity += qty;
+      } else {
+        cart.push({
+          id: id,
+          name: btn.dataset.name,
+          price: parseFloat(btn.dataset.price),
+          unit: btn.dataset.unit,
+          imageUrl: btn.dataset.img,
+          slug: btn.dataset.slug,
+          quantity: qty
+        });
+      }
+      localStorage.setItem('ym_cart', JSON.stringify(cart));
+      if (window.YMarket) {
+        window.YMarket.updateCartBadge();
+        window.YMarket.showToast(btn.dataset.name + ' נוסף לעגלה');
+      }
+      btn.classList.add('added');
+      btn.innerHTML = '<i class="fas fa-check"></i> נוסף!';
+      setTimeout(function() {
+        btn.classList.remove('added');
+        btn.innerHTML = '<i class="fas fa-cart-plus"></i> הוסף לעגלה';
+      }, 1500);
+      if (input) input.value = '1';
+      // Analytics
+      if (window.YMarketAnalytics && window.YMarketAnalytics.fbAddToCart) {
+        window.YMarketAnalytics.fbAddToCart({ id: id, name: btn.dataset.name, price: parseFloat(btn.dataset.price), quantity: qty });
+      }
+      if (window.YMarketAnalytics && window.YMarketAnalytics.trackAddToCart) {
+        window.YMarketAnalytics.trackAddToCart({ id: id, name: btn.dataset.name, price: parseFloat(btn.dataset.price), quantity: qty });
+      }
+    }
+
+    // Quantity +/- buttons
+    document.querySelectorAll('.product-card__qty-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var input = document.getElementById('qty-' + btn.dataset.id);
+        if (!input) return;
+        var val = parseInt(input.value) || 1;
+        if (btn.dataset.action === 'increase') val++;
+        else if (val > 1) val--;
+        input.value = val;
+      });
+    });
+
+    // Add to cart buttons
+    document.querySelectorAll('.product-card__add-btn[data-id]').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        ymAddToCart(btn);
       });
     });
   </script>
