@@ -232,7 +232,7 @@
       "icon": "fa-box",
       "parentId": 4,
       "sortOrder": 0,
-      "itemCount": 1,
+      "itemCount": 4,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -10789,7 +10789,8 @@
       "categorySlug": "חומרי-ניקוי-וכימיקלים",
       "categoryName": "חומרי ניקוי וכימיקלים",
       "categorySlugs": [
-        "חומרי-ניקוי-וכימיקלים"
+        "חומרי-ניקוי-וכימיקלים",
+        "סבונים-וניקוי-ידיים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -16529,7 +16530,8 @@
       "categorySlug": "טואלטיקה-וטיפוח-אישי",
       "categoryName": "טואלטיקה וטיפוח אישי",
       "categorySlugs": [
-        "טואלטיקה-וטיפוח-אישי"
+        "טואלטיקה-וטיפוח-אישי",
+        "סבונים-וניקוי-ידיים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -16557,7 +16559,8 @@
       "categorySlug": "טואלטיקה-וטיפוח-אישי",
       "categoryName": "טואלטיקה וטיפוח אישי",
       "categorySlugs": [
-        "טואלטיקה-וטיפוח-אישי"
+        "טואלטיקה-וטיפוח-אישי",
+        "סבונים-וניקוי-ידיים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -24356,6 +24359,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T13:42:41.216Z",
+  "exportedAt": "2026-03-14T13:43:16.218Z",
   "totalItems": 823
 }
