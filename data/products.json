@@ -487,7 +487,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 5,
-      "itemCount": 164,
+      "itemCount": 165,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": "food-packaging-delivery-solutions",
@@ -4304,7 +4304,8 @@
       "categoryName": "חומרי ניקוי וכימיקלים",
       "categorySlugs": [
         "חומרי-ניקוי-וכימיקלים",
-        "אקונומיקה-וחיטוי"
+        "אקונומיקה-וחיטוי",
+        "אריזות-מזון-ו-Take-Away"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -24306,6 +24307,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T13:33:11.305Z",
+  "exportedAt": "2026-03-14T13:33:29.130Z",
   "totalItems": 823
 }
