@@ -547,7 +547,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 4,
-      "itemCount": 82,
+      "itemCount": 83,
       "metaTitle": "חומרי ניקוי בסיטונאות למוסדות ועסקים | Ymarket",
       "metaDescription": "ספק חומרי ניקוי תעשייתיים אמין. אקונומיקה, חומצות, מסירי שומנים וסבונים בסטנדרטים הגבוהים ביותר. אספקה תוך 24-72 שעות לגוש דן והמרכז.",
       "seoSlug": "industrial-cleaning-supplies-wholesale",
@@ -592,7 +592,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 6,
-      "itemCount": 34,
+      "itemCount": 33,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": "professional-cleaning-cloths-microfiber",
@@ -6806,11 +6806,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "טקסטיל-מטליות-וסחבות",
-      "categoryName": "טקסטיל, מטליות וסחבות",
+      "categorySlug": "מבשמים-ושירותים",
+      "categoryName": "מבשמים ושירותים",
       "categorySlugs": [
-        "טקסטיל-מטליות-וסחבות",
-        "מבשמים-ושירותים"
+        "מבשמים-ושירותים",
+        "חומרי-ניקוי-וכימיקלים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -24508,6 +24508,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T14:23:56.913Z",
+  "exportedAt": "2026-03-14T14:33:42.209Z",
   "totalItems": 823
 }
