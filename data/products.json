@@ -1,43 +1,13 @@
 {
   "categories": [
     {
-      "id": 21,
-      "name": "סטוק עד הבית",
-      "slug": "סטוק-עד-הבית",
+      "id": 31,
+      "name": " כפפות חד-פעמיות",
+      "slug": "-כפפות-חדפעמיות",
       "icon": "fa-box",
-      "parentId": null,
+      "parentId": 1,
       "sortOrder": 0,
-      "itemCount": 10,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
-      "id": 46,
-      "name": "ניקוי משטחים מיוחדים",
-      "slug": "ניקוי-משטחים-מיוחדים",
-      "icon": "fa-box",
-      "parentId": 4,
-      "sortOrder": 0,
-      "itemCount": 13,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
-      "id": 29,
-      "name": "כוסות צלחות וסכום",
-      "slug": "כוסות-צלחות-וסכום",
-      "icon": "fa-box",
-      "parentId": 5,
-      "sortOrder": 0,
-      "itemCount": 47,
+      "itemCount": 29,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -61,13 +31,43 @@
       "imageAlt": null
     },
     {
-      "id": 53,
-      "name": "שקיות אשפה כבדות — תעשייה",
-      "slug": "שקיות-אשפה-כבדות-תעשייה",
+      "id": 29,
+      "name": "כוסות צלחות וסכום",
+      "slug": "כוסות-צלחות-וסכום",
       "icon": "fa-box",
-      "parentId": 3,
+      "parentId": 5,
       "sortOrder": 0,
-      "itemCount": 3,
+      "itemCount": 47,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 46,
+      "name": "ניקוי משטחים מיוחדים",
+      "slug": "ניקוי-משטחים-מיוחדים",
+      "icon": "fa-box",
+      "parentId": 4,
+      "sortOrder": 0,
+      "itemCount": 13,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 21,
+      "name": "סטוק עד הבית",
+      "slug": "סטוק-עד-הבית",
+      "icon": "fa-box",
+      "parentId": null,
+      "sortOrder": 0,
+      "itemCount": 10,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -241,6 +241,21 @@
       "imageAlt": null
     },
     {
+      "id": 54,
+      "name": "מטליות כותנה וסחבות",
+      "slug": "מטליות-כותנה-וסחבות",
+      "icon": "fa-box",
+      "parentId": 6,
+      "sortOrder": 0,
+      "itemCount": 9,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
       "id": 40,
       "name": "נוזלי רצפות",
       "slug": "נוזלי-רצפות",
@@ -256,13 +271,13 @@
       "imageAlt": null
     },
     {
-      "id": 54,
-      "name": "מטליות כותנה וסחבות",
-      "slug": "מטליות-כותנה-וסחבות",
+      "id": 50,
+      "name": "נייר תעשייתי",
+      "slug": "ממחטות-וטישו",
       "icon": "fa-box",
-      "parentId": 6,
+      "parentId": 9,
       "sortOrder": 0,
-      "itemCount": 9,
+      "itemCount": 10,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -331,13 +346,13 @@
       "imageAlt": "קרפטים ושקיות נייר חומות בסיטונאות למסעדות ומשלוחים - וואי מרקט"
     },
     {
-      "id": 50,
-      "name": "נייר תעשייתי",
-      "slug": "ממחטות-וטישו",
+      "id": 53,
+      "name": "שקיות אשפה כבדות — תעשייה",
+      "slug": "שקיות-אשפה-כבדות-תעשייה",
       "icon": "fa-box",
-      "parentId": 9,
+      "parentId": 3,
       "sortOrder": 0,
-      "itemCount": 10,
+      "itemCount": 3,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -442,22 +457,7 @@
       "icon": "fa-box",
       "parentId": 1,
       "sortOrder": 0,
-      "itemCount": 10,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
-      "id": 31,
-      "name": " כפפות חד-פעמיות",
-      "slug": "-כפפות-חדפעמיות",
-      "icon": "fa-box",
-      "parentId": 1,
-      "sortOrder": 0,
-      "itemCount": 29,
+      "itemCount": 16,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -487,13 +487,28 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 1,
-      "itemCount": 63,
+      "itemCount": 69,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": "safety-ppe-equipment-for-business",
       "seoContent": null,
       "imageUrl": null,
       "imageAlt": "ציוד בטיחות ומיגון אישי לעסקים - YMARKET"
+    },
+    {
+      "id": 78,
+      "name": "כלי גינון וחצרנות",
+      "slug": "garden-yard-tools",
+      "icon": "fa-box",
+      "parentId": 12,
+      "sortOrder": 1,
+      "itemCount": 18,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
     },
     {
       "id": 19,
@@ -556,13 +571,13 @@
       "imageAlt": null
     },
     {
-      "id": 67,
-      "name": "מגבות וביגוד",
-      "slug": "towels-clothing",
+      "id": 2,
+      "name": "כלי עבודה וציוד משקי",
+      "slug": "כלי-עבודה-וציוד-משקי",
       "icon": "fa-box",
-      "parentId": 65,
+      "parentId": null,
       "sortOrder": 2,
-      "itemCount": 2,
+      "itemCount": 32,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -571,13 +586,13 @@
       "imageAlt": null
     },
     {
-      "id": 2,
-      "name": "כלי עבודה וציוד משקי",
-      "slug": "כלי-עבודה-וציוד-משקי",
+      "id": 67,
+      "name": "מגבות וביגוד",
+      "slug": "towels-clothing",
       "icon": "fa-box",
-      "parentId": null,
+      "parentId": 65,
       "sortOrder": 2,
-      "itemCount": 32,
+      "itemCount": 2,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -601,13 +616,13 @@
       "imageAlt": null
     },
     {
-      "id": 61,
-      "name": "סכו\"ם חד פעמי",
-      "slug": "disposable-cutlery",
+      "id": 58,
+      "name": "צלחות וכלי הגשה רב-פעמיים",
+      "slug": "reusable-plates-serving",
       "icon": "fa-box",
-      "parentId": 7,
+      "parentId": 56,
       "sortOrder": 2,
-      "itemCount": 16,
+      "itemCount": 3,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -631,13 +646,13 @@
       "imageAlt": null
     },
     {
-      "id": 58,
-      "name": "צלחות וכלי הגשה רב-פעמיים",
-      "slug": "reusable-plates-serving",
+      "id": 61,
+      "name": "סכו\"ם חד פעמי",
+      "slug": "disposable-cutlery",
       "icon": "fa-box",
-      "parentId": 56,
+      "parentId": 7,
       "sortOrder": 2,
-      "itemCount": 3,
+      "itemCount": 16,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -646,28 +661,13 @@
       "imageAlt": null
     },
     {
-      "id": 73,
-      "name": "ארגון ותיוק",
-      "slug": "organization-filing",
+      "id": 79,
+      "name": "כלי עבודה ואחזקה",
+      "slug": "work-maintenance-tools",
       "icon": "fa-box",
-      "parentId": 11,
-      "sortOrder": 3,
-      "itemCount": 22,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
-      "id": 68,
-      "name": "תיקים ואביזרי נשיאה",
-      "slug": "bags-carrying-accessories",
-      "icon": "fa-box",
-      "parentId": 65,
-      "sortOrder": 3,
-      "itemCount": 2,
+      "parentId": 12,
+      "sortOrder": 2,
+      "itemCount": 15,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -683,6 +683,36 @@
       "parentId": 7,
       "sortOrder": 3,
       "itemCount": 12,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 80,
+      "name": "צביעה וגימור",
+      "slug": "painting-finishing",
+      "icon": "fa-box",
+      "parentId": 12,
+      "sortOrder": 3,
+      "itemCount": 5,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 68,
+      "name": "תיקים ואביזרי נשיאה",
+      "slug": "bags-carrying-accessories",
+      "icon": "fa-box",
+      "parentId": 65,
+      "sortOrder": 3,
+      "itemCount": 2,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -721,6 +751,21 @@
       "imageAlt": "שקיות אשפה מוסדיות בסיטונאות - YMARKET"
     },
     {
+      "id": 73,
+      "name": "ארגון ותיוק",
+      "slug": "organization-filing",
+      "icon": "fa-box",
+      "parentId": 11,
+      "sortOrder": 3,
+      "itemCount": 22,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
       "id": 59,
       "name": "אחסון ואביזרי מטבח",
       "slug": "kitchen-storage-accessories",
@@ -751,6 +796,21 @@
       "imageAlt": null
     },
     {
+      "id": 4,
+      "name": "חומרי ניקוי וכימיקלים",
+      "slug": "חומרי-ניקוי-וכימיקלים",
+      "icon": "fa-box",
+      "parentId": null,
+      "sortOrder": 4,
+      "itemCount": 83,
+      "metaTitle": "חומרי ניקוי בסיטונאות למוסדות ועסקים | Ymarket",
+      "metaDescription": "ספק חומרי ניקוי תעשייתיים אמין. אקונומיקה, חומצות, מסירי שומנים וסבונים בסטנדרטים הגבוהים ביותר. אספקה תוך 24-72 שעות לגוש דן והמרכז.",
+      "seoSlug": "industrial-cleaning-supplies-wholesale",
+      "seoContent": "<h2>אספקת חומרי ניקוי בסיטונאות לעסקים ומוסדות</h2><p>מחפשים ספק חומרי ניקוי אמין עם גב מקצועי? ב-YMARKET אנחנו מבינים שחומרי ניקיון הם לא רק מוצר, אלא כלי עבודה קריטי לשמירה על היגיינה ובטיחות בעסק שלכם. אנחנו מספקים פתרונות ניקוי תעשייתיים הכוללים אקונומיקה מרוכזת, חומצות, מסירי שומנים עוצמתיים וסבונים לידיים ולרצפה, כולם בסטנדרטים הגבוהים ביותר.</p><p>השירות שלנו מותאם במיוחד לחברות ניקיון, מסעדות, משרדים ומוסדות חינוך באזור גוש דן והמרכז, עם התחייבות לאספקה מהירה תוך 24 עד 72 שעות. עם מינימום הזמנה של 1,600₪, אתם נהנים ממחירי סיטונאות ישירים שחוסכים לכם בעלויות התפעול השוטפות.</p>",
+      "imageUrl": null,
+      "imageAlt": "אספקת חומרי ניקוי בסיטונאות למשרדים ומוסדות - YMARKET"
+    },
+    {
       "id": 24,
       "name": "מגשי קלקר",
       "slug": "מגשי-קלקר",
@@ -758,21 +818,6 @@
       "parentId": 5,
       "sortOrder": 4,
       "itemCount": 44,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
-      "id": 69,
-      "name": "ריהוט וציוד מוסדי",
-      "slug": "furniture-institutional-equipment",
-      "icon": "fa-box",
-      "parentId": 65,
-      "sortOrder": 4,
-      "itemCount": 1,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -796,28 +841,28 @@
       "imageAlt": null
     },
     {
-      "id": 4,
-      "name": "חומרי ניקוי וכימיקלים",
-      "slug": "חומרי-ניקוי-וכימיקלים",
+      "id": 69,
+      "name": "ריהוט וציוד מוסדי",
+      "slug": "furniture-institutional-equipment",
       "icon": "fa-box",
-      "parentId": null,
+      "parentId": 65,
       "sortOrder": 4,
-      "itemCount": 83,
-      "metaTitle": "חומרי ניקוי בסיטונאות למוסדות ועסקים | Ymarket",
-      "metaDescription": "ספק חומרי ניקוי תעשייתיים אמין. אקונומיקה, חומצות, מסירי שומנים וסבונים בסטנדרטים הגבוהים ביותר. אספקה תוך 24-72 שעות לגוש דן והמרכז.",
-      "seoSlug": "industrial-cleaning-supplies-wholesale",
-      "seoContent": "<h2>אספקת חומרי ניקוי בסיטונאות לעסקים ומוסדות</h2><p>מחפשים ספק חומרי ניקוי אמין עם גב מקצועי? ב-YMARKET אנחנו מבינים שחומרי ניקיון הם לא רק מוצר, אלא כלי עבודה קריטי לשמירה על היגיינה ובטיחות בעסק שלכם. אנחנו מספקים פתרונות ניקוי תעשייתיים הכוללים אקונומיקה מרוכזת, חומצות, מסירי שומנים עוצמתיים וסבונים לידיים ולרצפה, כולם בסטנדרטים הגבוהים ביותר.</p><p>השירות שלנו מותאם במיוחד לחברות ניקיון, מסעדות, משרדים ומוסדות חינוך באזור גוש דן והמרכז, עם התחייבות לאספקה מהירה תוך 24 עד 72 שעות. עם מינימום הזמנה של 1,600₪, אתם נהנים ממחירי סיטונאות ישירים שחוסכים לכם בעלויות התפעול השוטפות.</p>",
+      "itemCount": 1,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
       "imageUrl": null,
-      "imageAlt": "אספקת חומרי ניקוי בסיטונאות למשרדים ומוסדות - YMARKET"
+      "imageAlt": null
     },
     {
-      "id": 64,
-      "name": "נרות ואירוח מיוחד",
-      "slug": "candles-special-hospitality",
+      "id": 81,
+      "name": "הדברה ומניעת מזיקים",
+      "slug": "pest-control",
       "icon": "fa-box",
-      "parentId": 7,
-      "sortOrder": 5,
-      "itemCount": 4,
+      "parentId": 12,
+      "sortOrder": 4,
+      "itemCount": 3,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -841,13 +886,13 @@
       "imageAlt": null
     },
     {
-      "id": 26,
-      "name": "מגשי אלומניום",
-      "slug": "מגשי-אלומניום",
+      "id": 64,
+      "name": "נרות ואירוח מיוחד",
+      "slug": "candles-special-hospitality",
       "icon": "fa-box",
-      "parentId": 5,
+      "parentId": 7,
       "sortOrder": 5,
-      "itemCount": 19,
+      "itemCount": 4,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -886,6 +931,36 @@
       "imageAlt": "אריזות מזון ופתרונות Take Away בסיטונאות - YMARKET"
     },
     {
+      "id": 26,
+      "name": "מגשי אלומניום",
+      "slug": "מגשי-אלומניום",
+      "icon": "fa-box",
+      "parentId": 5,
+      "sortOrder": 5,
+      "itemCount": 19,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 82,
+      "name": "ציוד מיוחד ולוגיסטיקה",
+      "slug": "special-logistics-equipment",
+      "icon": "fa-box",
+      "parentId": 12,
+      "sortOrder": 5,
+      "itemCount": 5,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
       "id": 6,
       "name": "טקסטיל, מטליות וסחבות",
       "slug": "טקסטיל-מטליות-וסחבות",
@@ -916,21 +991,6 @@
       "imageAlt": null
     },
     {
-      "id": 7,
-      "name": "חד פעמי ואירוח",
-      "slug": "חד-פעמי-ואירוח",
-      "icon": "fa-box",
-      "parentId": null,
-      "sortOrder": 7,
-      "itemCount": 57,
-      "metaTitle": "כלים חד פעמיים ואירוח בסיטונאות | Ymarket",
-      "metaDescription": "כוסות, צלחות, סכו\"ם ופתרונות אריזה למסעדות, קייטרינג ומשרדים. איכות גבוהה במחירי סיטונאות. אספקה מהירה לכל הארץ.",
-      "seoSlug": "disposable-catering-food-service",
-      "seoContent": "<h2>כלים חד פעמיים ופתרונות אריזה בסיטונאות</h2><p>בעולם האירוח והמזון, הפרזנטציה והאיכות של הכלי החד-פעמי משפיעים ישירות על חוויית הלקוח. YMARKET מציעה קטלוג עשיר של כוסות לשתייה חמה וקרה, צלחות, סכו\"ם ופתרונות אריזה למשלוחים (Take Away) המותאמים למסעדות ובתי קפה.</p><p>המוצרים שלנו נבחרים בקפידה כדי לשלב בין עמידות, עיצוב ומחיר תחרותי. בין אם אתם זקוקים לכמויות גדולות של כוסות נייר למשרד או למארזי מזון ייעודיים, אנחנו מספקים את המענה המהיר והמשתלם ביותר לעסקים בישראל.</p>",
-      "imageUrl": null,
-      "imageAlt": "כלים חד פעמיים ופתרונות אירוח בסיטונאות - YMARKET"
-    },
-    {
       "id": 77,
       "name": "ציוד קופה ומחשב",
       "slug": "pos-computer-supplies",
@@ -944,6 +1004,21 @@
       "seoContent": null,
       "imageUrl": null,
       "imageAlt": null
+    },
+    {
+      "id": 7,
+      "name": "חד פעמי ואירוח",
+      "slug": "חד-פעמי-ואירוח",
+      "icon": "fa-box",
+      "parentId": null,
+      "sortOrder": 7,
+      "itemCount": 57,
+      "metaTitle": "כלים חד פעמיים ואירוח בסיטונאות | Ymarket",
+      "metaDescription": "כוסות, צלחות, סכו\"ם ופתרונות אריזה למסעדות, קייטרינג ומשרדים. איכות גבוהה במחירי סיטונאות. אספקה מהירה לכל הארץ.",
+      "seoSlug": "disposable-catering-food-service",
+      "seoContent": "<h2>כלים חד פעמיים ופתרונות אריזה בסיטונאות</h2><p>בעולם האירוח והמזון, הפרזנטציה והאיכות של הכלי החד-פעמי משפיעים ישירות על חוויית הלקוח. YMARKET מציעה קטלוג עשיר של כוסות לשתייה חמה וקרה, צלחות, סכו\"ם ופתרונות אריזה למשלוחים (Take Away) המותאמים למסעדות ובתי קפה.</p><p>המוצרים שלנו נבחרים בקפידה כדי לשלב בין עמידות, עיצוב ומחיר תחרותי. בין אם אתם זקוקים לכמויות גדולות של כוסות נייר למשרד או למארזי מזון ייעודיים, אנחנו מספקים את המענה המהיר והמשתלם ביותר לעסקים בישראל.</p>",
+      "imageUrl": null,
+      "imageAlt": "כלים חד פעמיים ופתרונות אירוח בסיטונאות - YMARKET"
     },
     {
       "id": 8,
@@ -1012,7 +1087,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 13,
-      "itemCount": 58,
+      "itemCount": 51,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -2221,10 +2296,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "ביגוד-מגן-וסינרים",
+      "categoryName": "ביגוד מגן וסינרים",
       "categorySlugs": [
-        "ציוד-טכני-ואחזקה"
+        "ביגוד-מגן-וסינרים",
+        "בטיחות-ומיגון-אישי-PPE"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -2529,10 +2605,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "ביגוד-מגן-וסינרים",
+      "categoryName": "ביגוד מגן וסינרים",
       "categorySlugs": [
-        "ציוד-טכני-ואחזקה"
+        "ביגוד-מגן-וסינרים",
+        "בטיחות-ומיגון-אישי-PPE"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -2699,9 +2776,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "garden-yard-tools",
+      "categoryName": "כלי גינון וחצרנות",
       "categorySlugs": [
+        "garden-yard-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -2727,9 +2805,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "garden-yard-tools",
+      "categoryName": "כלי גינון וחצרנות",
       "categorySlugs": [
+        "garden-yard-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -3505,9 +3584,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "special-logistics-equipment",
+      "categoryName": "ציוד מיוחד ולוגיסטיקה",
       "categorySlugs": [
+        "special-logistics-equipment",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -4685,9 +4765,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "work-maintenance-tools",
+      "categoryName": "כלי עבודה ואחזקה",
       "categorySlugs": [
+        "work-maintenance-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -4742,12 +4823,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "ביגוד-מגן-וסינרים",
+      "categoryName": "ביגוד מגן וסינרים",
       "categorySlugs": [
-        "ציוד-טכני-ואחזקה",
-        "בטיחות-ומיגון-אישי-PPE",
-        "ביגוד-מגן-וסינרים"
+        "ביגוד-מגן-וסינרים",
+        "בטיחות-ומיגון-אישי-PPE"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -4860,9 +4940,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "garden-yard-tools",
+      "categoryName": "כלי גינון וחצרנות",
       "categorySlugs": [
+        "garden-yard-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -5004,9 +5085,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "garden-yard-tools",
+      "categoryName": "כלי גינון וחצרנות",
       "categorySlugs": [
+        "garden-yard-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -5060,9 +5142,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "garden-yard-tools",
+      "categoryName": "כלי גינון וחצרנות",
       "categorySlugs": [
+        "garden-yard-tools",
         "ציוד-טכני-ואחזקה",
         "דליים-כפות-אשפה-ומרססים"
       ],
@@ -5089,9 +5172,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "garden-yard-tools",
+      "categoryName": "כלי גינון וחצרנות",
       "categorySlugs": [
+        "garden-yard-tools",
         "ציוד-טכני-ואחזקה",
         "דליים-כפות-אשפה-ומרססים"
       ],
@@ -6891,9 +6975,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "work-maintenance-tools",
+      "categoryName": "כלי עבודה ואחזקה",
       "categorySlugs": [
+        "work-maintenance-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -6948,9 +7033,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "work-maintenance-tools",
+      "categoryName": "כלי עבודה ואחזקה",
       "categorySlugs": [
+        "work-maintenance-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -7965,10 +8051,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "ביגוד-מגן-וסינרים",
+      "categoryName": "ביגוד מגן וסינרים",
       "categorySlugs": [
-        "ציוד-טכני-ואחזקה"
+        "ביגוד-מגן-וסינרים",
+        "בטיחות-ומיגון-אישי-PPE"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -8021,9 +8108,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "garden-yard-tools",
+      "categoryName": "כלי גינון וחצרנות",
       "categorySlugs": [
+        "garden-yard-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -8049,9 +8137,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "garden-yard-tools",
+      "categoryName": "כלי גינון וחצרנות",
       "categorySlugs": [
+        "garden-yard-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -8077,9 +8166,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "garden-yard-tools",
+      "categoryName": "כלי גינון וחצרנות",
       "categorySlugs": [
+        "garden-yard-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -8105,9 +8195,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "garden-yard-tools",
+      "categoryName": "כלי גינון וחצרנות",
       "categorySlugs": [
+        "garden-yard-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -8133,9 +8224,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "garden-yard-tools",
+      "categoryName": "כלי גינון וחצרנות",
       "categorySlugs": [
+        "garden-yard-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -10486,9 +10578,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "garden-yard-tools",
+      "categoryName": "כלי גינון וחצרנות",
       "categorySlugs": [
+        "garden-yard-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -12592,9 +12685,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "pest-control",
+      "categoryName": "הדברה ומניעת מזיקים",
       "categorySlugs": [
+        "pest-control",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -12620,9 +12714,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "pest-control",
+      "categoryName": "הדברה ומניעת מזיקים",
       "categorySlugs": [
+        "pest-control",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -13275,9 +13370,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "garden-yard-tools",
+      "categoryName": "כלי גינון וחצרנות",
       "categorySlugs": [
+        "garden-yard-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -13445,9 +13541,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "garden-yard-tools",
+      "categoryName": "כלי גינון וחצרנות",
       "categorySlugs": [
+        "garden-yard-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -13473,9 +13570,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "garden-yard-tools",
+      "categoryName": "כלי גינון וחצרנות",
       "categorySlugs": [
+        "garden-yard-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -13559,10 +13657,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "ביגוד-מגן-וסינרים",
+      "categoryName": "ביגוד מגן וסינרים",
       "categorySlugs": [
-        "ציוד-טכני-ואחזקה"
+        "ביגוד-מגן-וסינרים",
+        "בטיחות-ומיגון-אישי-PPE"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -13616,9 +13715,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "garden-yard-tools",
+      "categoryName": "כלי גינון וחצרנות",
       "categorySlugs": [
+        "garden-yard-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -14028,9 +14128,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "work-maintenance-tools",
+      "categoryName": "כלי עבודה ואחזקה",
       "categorySlugs": [
+        "work-maintenance-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -14142,9 +14243,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "garden-yard-tools",
+      "categoryName": "כלי גינון וחצרנות",
       "categorySlugs": [
+        "garden-yard-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -14345,9 +14447,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "work-maintenance-tools",
+      "categoryName": "כלי עבודה ואחזקה",
       "categorySlugs": [
+        "work-maintenance-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -14430,10 +14533,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "ביגוד-מגן-וסינרים",
+      "categoryName": "ביגוד מגן וסינרים",
       "categorySlugs": [
-        "ציוד-טכני-ואחזקה"
+        "ביגוד-מגן-וסינרים",
+        "בטיחות-ומיגון-אישי-PPE"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -14458,9 +14562,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "special-logistics-equipment",
+      "categoryName": "ציוד מיוחד ולוגיסטיקה",
       "categorySlugs": [
+        "special-logistics-equipment",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -17921,35 +18026,6 @@
       "alternatives": []
     },
     {
-      "id": 363,
-      "name": "סט 4 מדגיש צבעוני",
-      "slug": "סט-4-מדגיש-צבעוני",
-      "saleNis": 9.5,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "writing-instruments",
-      "categoryName": "כלי כתיבה",
-      "categorySlugs": [
-        "writing-instruments",
-        "ציוד-משרדי-וכללי"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/379.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "barcode": "",
-      "searchTags": "",
-      "technicalDesc": "",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": []
-    },
-    {
       "id": 393,
       "name": "סט 4 מדגיש צבעוני",
       "slug": "סט-4-מדגיש-צבעוני-2",
@@ -17966,6 +18042,35 @@
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "/items/409.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "barcode": "",
+      "searchTags": "",
+      "technicalDesc": "",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": []
+    },
+    {
+      "id": 363,
+      "name": "סט 4 מדגיש צבעוני",
+      "slug": "סט-4-מדגיש-צבעוני",
+      "saleNis": 9.5,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
+      "categorySlugs": [
+        "writing-instruments",
+        "ציוד-משרדי-וכללי"
+      ],
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/379.jpg",
       "isFeatured": false,
       "productStatus": "active",
       "description": "",
@@ -18102,9 +18207,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "work-maintenance-tools",
+      "categoryName": "כלי עבודה ואחזקה",
       "categorySlugs": [
+        "work-maintenance-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -18534,9 +18640,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "work-maintenance-tools",
+      "categoryName": "כלי עבודה ואחזקה",
       "categorySlugs": [
+        "work-maintenance-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -18562,9 +18669,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "work-maintenance-tools",
+      "categoryName": "כלי עבודה ואחזקה",
       "categorySlugs": [
+        "work-maintenance-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -18851,9 +18959,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "painting-finishing",
+      "categoryName": "צביעה וגימור",
       "categorySlugs": [
+        "painting-finishing",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -18879,9 +18988,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "painting-finishing",
+      "categoryName": "צביעה וגימור",
       "categorySlugs": [
+        "painting-finishing",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -18907,9 +19017,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "painting-finishing",
+      "categoryName": "צביעה וגימור",
       "categorySlugs": [
+        "painting-finishing",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -18935,9 +19046,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "painting-finishing",
+      "categoryName": "צביעה וגימור",
       "categorySlugs": [
+        "painting-finishing",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -19019,9 +19131,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "special-logistics-equipment",
+      "categoryName": "ציוד מיוחד ולוגיסטיקה",
       "categorySlugs": [
+        "special-logistics-equipment",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -19134,9 +19247,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "special-logistics-equipment",
+      "categoryName": "ציוד מיוחד ולוגיסטיקה",
       "categorySlugs": [
+        "special-logistics-equipment",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -21398,9 +21512,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "pest-control",
+      "categoryName": "הדברה ומניעת מזיקים",
       "categorySlugs": [
+        "pest-control",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -21805,10 +21920,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "ביגוד-מגן-וסינרים",
+      "categoryName": "ביגוד מגן וסינרים",
       "categorySlugs": [
-        "ציוד-טכני-ואחזקה"
+        "ביגוד-מגן-וסינרים",
+        "בטיחות-ומיגון-אישי-PPE"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -22294,9 +22410,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "work-maintenance-tools",
+      "categoryName": "כלי עבודה ואחזקה",
       "categorySlugs": [
+        "work-maintenance-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -22322,9 +22439,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "work-maintenance-tools",
+      "categoryName": "כלי עבודה ואחזקה",
       "categorySlugs": [
+        "work-maintenance-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -22525,9 +22643,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "painting-finishing",
+      "categoryName": "צביעה וגימור",
       "categorySlugs": [
+        "painting-finishing",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -22553,9 +22672,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "work-maintenance-tools",
+      "categoryName": "כלי עבודה ואחזקה",
       "categorySlugs": [
+        "work-maintenance-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -22581,9 +22701,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "work-maintenance-tools",
+      "categoryName": "כלי עבודה ואחזקה",
       "categorySlugs": [
+        "work-maintenance-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -22609,9 +22730,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "work-maintenance-tools",
+      "categoryName": "כלי עבודה ואחזקה",
       "categorySlugs": [
+        "work-maintenance-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -22694,9 +22816,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "special-logistics-equipment",
+      "categoryName": "ציוד מיוחד ולוגיסטיקה",
       "categorySlugs": [
+        "special-logistics-equipment",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -23016,9 +23139,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "work-maintenance-tools",
+      "categoryName": "כלי עבודה ואחזקה",
       "categorySlugs": [
+        "work-maintenance-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -23044,9 +23168,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "work-maintenance-tools",
+      "categoryName": "כלי עבודה ואחזקה",
       "categorySlugs": [
+        "work-maintenance-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -24989,9 +25114,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "ציוד-טכני-ואחזקה",
-      "categoryName": "ציוד טכני ואחזקה",
+      "categorySlug": "garden-yard-tools",
+      "categoryName": "כלי גינון וחצרנות",
       "categorySlugs": [
+        "garden-yard-tools",
         "ציוד-טכני-ואחזקה"
       ],
       "unit": "",
@@ -25099,6 +25225,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T15:51:44.577Z",
+  "exportedAt": "2026-03-14T16:03:56.603Z",
   "totalItems": 823
 }
