@@ -532,7 +532,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 5,
-      "itemCount": 166,
+      "itemCount": 167,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": "food-packaging-delivery-solutions",
@@ -23585,7 +23585,8 @@
       "categorySlug": "שקיות-ופתרונות-אשפה",
       "categoryName": "שקיות ופתרונות אשפה",
       "categorySlugs": [
-        "שקיות-ופתרונות-אשפה"
+        "שקיות-ופתרונות-אשפה",
+        "אריזות-מזון-ו-Take-Away"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -24423,6 +24424,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T14:09:15.500Z",
+  "exportedAt": "2026-03-14T14:10:11.961Z",
   "totalItems": 823
 }
