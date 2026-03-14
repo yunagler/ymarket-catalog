@@ -172,7 +172,7 @@
       "icon": "fa-box",
       "parentId": 4,
       "sortOrder": 0,
-      "itemCount": 2,
+      "itemCount": 7,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -14560,7 +14560,8 @@
       "categorySlug": "חומרי-ניקוי-וכימיקלים",
       "categoryName": "חומרי ניקוי וכימיקלים",
       "categorySlugs": [
-        "חומרי-ניקוי-וכימיקלים"
+        "חומרי-ניקוי-וכימיקלים",
+        "נוזלי-רצפות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -14588,7 +14589,8 @@
       "categorySlug": "חומרי-ניקוי-וכימיקלים",
       "categoryName": "חומרי ניקוי וכימיקלים",
       "categorySlugs": [
-        "חומרי-ניקוי-וכימיקלים"
+        "חומרי-ניקוי-וכימיקלים",
+        "נוזלי-רצפות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -14616,7 +14618,8 @@
       "categorySlug": "חומרי-ניקוי-וכימיקלים",
       "categoryName": "חומרי ניקוי וכימיקלים",
       "categorySlugs": [
-        "חומרי-ניקוי-וכימיקלים"
+        "חומרי-ניקוי-וכימיקלים",
+        "נוזלי-רצפות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -14644,7 +14647,8 @@
       "categorySlug": "חומרי-ניקוי-וכימיקלים",
       "categoryName": "חומרי ניקוי וכימיקלים",
       "categorySlugs": [
-        "חומרי-ניקוי-וכימיקלים"
+        "חומרי-ניקוי-וכימיקלים",
+        "נוזלי-רצפות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -14672,7 +14676,8 @@
       "categorySlug": "חומרי-ניקוי-וכימיקלים",
       "categoryName": "חומרי ניקוי וכימיקלים",
       "categorySlugs": [
-        "חומרי-ניקוי-וכימיקלים"
+        "חומרי-ניקוי-וכימיקלים",
+        "נוזלי-רצפות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -24335,6 +24340,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T13:37:36.838Z",
+  "exportedAt": "2026-03-14T13:41:17.154Z",
   "totalItems": 823
 }
