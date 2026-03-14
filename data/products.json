@@ -52,7 +52,7 @@
       "icon": "fa-box",
       "parentId": 5,
       "sortOrder": 0,
-      "itemCount": 1,
+      "itemCount": 2,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -307,7 +307,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 3,
-      "itemCount": 46,
+      "itemCount": 45,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": "heavy-duty-garbage-bags-wholesale",
@@ -412,7 +412,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 9,
-      "itemCount": 35,
+      "itemCount": 34,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -3459,11 +3459,10 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
-      "categoryName": "אריזה לוגיסטית ומחסן",
+      "categorySlug": "ניירות-רדיד-ועטיפות-מזון",
+      "categoryName": "ניירות, עטיפה ושקיות מזון",
       "categorySlugs": [
-        "עטיפה-אריזה-ולוגיסטיקה",
-        "שקיות-ופתרונות-אשפה"
+        "ניירות-רדיד-ועטיפות-מזון"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -24079,6 +24078,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T10:25:47.720Z",
+  "exportedAt": "2026-03-14T10:26:57.272Z",
   "totalItems": 823
 }
