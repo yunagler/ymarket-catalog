@@ -247,7 +247,7 @@
       "icon": "fa-box",
       "parentId": 4,
       "sortOrder": 0,
-      "itemCount": 23,
+      "itemCount": 26,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -16479,7 +16479,8 @@
       "categorySlug": "חומרי-ניקוי-וכימיקלים",
       "categoryName": "חומרי ניקוי וכימיקלים",
       "categorySlugs": [
-        "חומרי-ניקוי-וכימיקלים"
+        "חומרי-ניקוי-וכימיקלים",
+        "מבשמים-ושירותים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -16507,7 +16508,8 @@
       "categorySlug": "חומרי-ניקוי-וכימיקלים",
       "categoryName": "חומרי ניקוי וכימיקלים",
       "categorySlugs": [
-        "חומרי-ניקוי-וכימיקלים"
+        "חומרי-ניקוי-וכימיקלים",
+        "מבשמים-ושירותים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -24348,7 +24350,8 @@
       "categorySlug": "חומרי-ניקוי-וכימיקלים",
       "categoryName": "חומרי ניקוי וכימיקלים",
       "categorySlugs": [
-        "חומרי-ניקוי-וכימיקלים"
+        "חומרי-ניקוי-וכימיקלים",
+        "מבשמים-ושירותים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -24395,6 +24398,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T13:48:07.895Z",
+  "exportedAt": "2026-03-14T13:48:35.480Z",
   "totalItems": 823
 }
