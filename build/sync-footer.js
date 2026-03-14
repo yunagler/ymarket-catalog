@@ -35,8 +35,8 @@ const CANONICAL_FOOTER = `  <footer class="footer">
             <a href="/category/safety-ppe-equipment-for-business/">בטיחות ומיגון</a>
             <a href="/category/heavy-duty-garbage-bags-wholesale/">שקיות אשפה</a>
             <a href="/category/professional-cleaning-cloths-microfiber/">טקסטיל ומטליות</a>
-            <a href="/category/ציוד-משרדי-וכללי/">ציוד משרדי</a>
-            <a href="/category/ציוד-טכני-ואחזקה/">ציוד טכני</a>
+            <a href="/category/office-supplies-wholesale-business/">ציוד משרדי</a>
+            <a href="/category/maintenance-technical-equipment-wholesale/">ציוד טכני</a>
           </div>
         </div>
 

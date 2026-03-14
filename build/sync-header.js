@@ -51,12 +51,12 @@ const CANONICAL_HEADER = `  <div class="top-bar">
               <a href="/category/professional-cleaning-cloths-microfiber/" class="mega-menu__category"><i class="fas fa-tshirt"></i><span class="mega-menu__cat-name">טקסטיל, מטליות וסחבות</span></a>
               <a href="/category/office-coffee-breakroom-supplies/" class="mega-menu__category"><i class="fas fa-coffee"></i><span class="mega-menu__cat-name">קפה, שתייה וכיבוד</span></a>
               <a href="/category/safety-ppe-equipment-for-business/" class="mega-menu__category"><i class="fas fa-hard-hat"></i><span class="mega-menu__cat-name">בטיחות ומיגון אישי</span></a>
-              <a href="/category/ציוד-משרדי-וכללי/" class="mega-menu__category"><i class="fas fa-pen"></i><span class="mega-menu__cat-name">ציוד משרדי וכללי</span></a>
-              <a href="/category/ציוד-טכני-ואחזקה/" class="mega-menu__category"><i class="fas fa-wrench"></i><span class="mega-menu__cat-name">ציוד טכני ואחזקה</span></a>
-              <a href="/category/עטיפה-אריזה-ולוגיסטיקה/" class="mega-menu__category"><i class="fas fa-tape"></i><span class="mega-menu__cat-name">עטיפה, אריזה ולוגיסטיקה</span></a>
-              <a href="/category/עזרה-ראשונה-רפואי/" class="mega-menu__category"><i class="fas fa-first-aid"></i><span class="mega-menu__cat-name">עזרה ראשונה - רפואי</span></a>
-              <a href="/category/טואלטיקה-וטיפוח-אישי/" class="mega-menu__category"><i class="fas fa-pump-soap"></i><span class="mega-menu__cat-name">טואלטיקה וטיפוח</span></a>
-              <a href="/category/כלי-עבודה-וציוד-משקי/" class="mega-menu__category"><i class="fas fa-tools"></i><span class="mega-menu__cat-name">כלי עבודה וציוד משקי</span></a>
+              <a href="/category/office-supplies-wholesale-business/" class="mega-menu__category"><i class="fas fa-pen"></i><span class="mega-menu__cat-name">ציוד משרדי וכללי</span></a>
+              <a href="/category/maintenance-technical-equipment-wholesale/" class="mega-menu__category"><i class="fas fa-wrench"></i><span class="mega-menu__cat-name">ציוד טכני ואחזקה</span></a>
+              <a href="/category/warehouse-packaging-supplies-wholesale/" class="mega-menu__category"><i class="fas fa-tape"></i><span class="mega-menu__cat-name">עטיפה, אריזה ולוגיסטיקה</span></a>
+              <a href="/category/first-aid-medical-equipment-business/" class="mega-menu__category"><i class="fas fa-first-aid"></i><span class="mega-menu__cat-name">עזרה ראשונה - רפואי</span></a>
+              <a href="/category/personal-hygiene-products-wholesale/" class="mega-menu__category"><i class="fas fa-pump-soap"></i><span class="mega-menu__cat-name">טואלטיקה וטיפוח</span></a>
+              <a href="/category/institutional-cleaning-tools-equipment/" class="mega-menu__category"><i class="fas fa-tools"></i><span class="mega-menu__cat-name">כלי עבודה וציוד משקי</span></a>
             </div>
           </div>
         </div>

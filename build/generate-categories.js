@@ -274,12 +274,26 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
   const h1Text = category.h1Override || catSeo.h1 || category.name;
   const pageTitle = category.metaTitle || catSeo.title || `${category.name} | וואי מרקט - אספקה למוסדות ועסקים`;
   const seoContentBlock = category.seoContent || catSeo.seoText || '';
-  const categoryImage = category.imageUrl || null;
   const categoryImageAlt = category.imageAlt || category.name;
   // FAQ: prefer DB faqs (from category.faqs), fallback to hardcoded CATEGORY_SEO faqs
   const categoryFaqs = (category.faqs && category.faqs.length > 0) ? category.faqs : (catSeo.faqs || []);
   // GEO content from DB
   const geoContentBlock = category.geoContent || '';
+
+  // Hero image: DB image, auto-generated hero, or null
+  const effectiveSlug = getEffectiveSlug(category);
+  const heroImageAutoPath = path.join(ROOT_DIR, 'images', 'categories', effectiveSlug + '.webp');
+  const heroImageAutoExists = fs.existsSync(heroImageAutoPath);
+  const categoryImage = category.imageUrl || (heroImageAutoExists ? `/images/categories/${effectiveSlug}.webp` : null);
+
+  // dateModified for freshness signal
+  const today = new Date().toISOString().split('T')[0];
+  const hebrewDate = new Date().toLocaleDateString('he-IL');
+
+  // LCP: first product image for preload
+  const firstProductImg = categoryProducts.length > 0
+    ? (categoryProducts[0].imageUrl || `/items/${categoryProducts[0].id}.jpg`)
+    : null;
 
   // Build breadcrumb with parent chain
   const parentChain = getParentChain(category, catMap);
@@ -307,9 +321,11 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
   });
   breadcrumbItems.push({ "@type": "ListItem", "position": 3 + parentChain.length, "name": category.name });
 
-  const productsHtml = categoryProducts.map(p => {
+  const productsHtml = categoryProducts.map((p, idx) => {
     const imgSrc = p.imageUrl || `/items/${p.id}.jpg`;
     const hasPromo = p.productStatus === 'on_sale' && p.originalPrice;
+    // First 4 images: eager load with high priority for LCP; rest: lazy load
+    const imgLoading = idx < 4 ? 'fetchpriority="high"' : 'loading="lazy"';
 
     let badgeHtml = '';
     if (hasPromo) {
@@ -327,7 +343,7 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
       ${badgeHtml}
       <div class="product-card__image">
         <a href="/products/${p.slug}/">
-          <img src="${imgSrc}" alt="${p.name}" loading="lazy"
+          <img src="${imgSrc}" alt="${p.name}" width="300" height="300" ${imgLoading}
                onerror="this.src='https://placehold.co/300x300/f0f2f5/5a6577?text=${encodeURIComponent((p.name || '').substring(0,15))}'">
         </a>
       </div>
@@ -369,6 +385,8 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
     "name": category.name,
     "description": seoDesc,
     "url": categoryUrl,
+    "dateModified": today,
+    "inLanguage": "he-IL",
     "isPartOf": {
       "@type": "WebSite",
       "name": "וואי מרקט",
@@ -379,14 +397,94 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
       "@type": "ItemList",
       "name": category.name,
       "numberOfItems": categoryProducts.length,
-      "itemListElement": categoryProducts.slice(0, 20).map((p, i) => ({
-        "@type": "ListItem",
-        "position": i + 1,
-        "url": `${SITE_URL}/products/${p.slug}/`,
-        "name": p.name,
-      }))
+      "itemListElement": categoryProducts.slice(0, 20).map((p, i) => {
+        const item = {
+          "@type": "ListItem",
+          "position": i + 1,
+          "url": `${SITE_URL}/products/${p.slug}/`,
+          "name": p.name,
+          "item": {
+            "@type": "Product",
+            "name": p.name,
+            "url": `${SITE_URL}/products/${p.slug}/`,
+            "image": p.imageUrl ? `${SITE_URL}${p.imageUrl}` : `${SITE_URL}/items/${p.id}.jpg`,
+          }
+        };
+        if (p.saleNis) {
+          item.item.offers = {
+            "@type": "Offer",
+            "priceCurrency": "ILS",
+            "price": p.saleNis,
+            "availability": "https://schema.org/InStock",
+            "seller": { "@type": "Organization", "name": "וואי מרקט" }
+          };
+        }
+        return item;
+      })
     }
   }, null, 2);
+
+  // Organization schema (once per page for E-E-A-T)
+  const orgSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "וואי מרקט",
+    "legalName": "נגלר סחר והפצה",
+    "url": SITE_URL,
+    "logo": `${SITE_URL}/images/logo/logo-dark.png`,
+    "foundingDate": "2020",
+    "founder": { "@type": "Person", "name": "יובל נגלר" },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+972-3-7740400",
+      "email": "Pm@ymarket.co.il",
+      "contactType": "sales",
+      "availableLanguage": ["Hebrew", "English"],
+      "areaServed": { "@type": "Country", "name": "Israel" }
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IL",
+      "addressRegion": "מחוז תל אביב"
+    },
+    "areaServed": { "@type": "Country", "name": "Israel" },
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=100083110428101",
+      "https://www.instagram.com/ymarket.ai",
+      "https://wa.me/972549922492"
+    ]
+  });
+
+  // Build related categories section
+  const parentChainForRelated = getParentChain(category, catMap);
+  let relatedCats = [];
+  if (category.parentId && catMap.has(category.parentId)) {
+    const parentCat = catMap.get(category.parentId);
+    relatedCats = (parentCat.children || []).filter(c => c.id !== category.id).slice(0, 4);
+  }
+  if (relatedCats.length < 3) {
+    const rootId = parentChainForRelated.length > 0 ? parentChainForRelated[0].id : category.id;
+    const extras = treeRoots.filter(r => r.id !== rootId && !relatedCats.find(rc => rc.id === r.id)).slice(0, 4 - relatedCats.length);
+    relatedCats = [...relatedCats, ...extras];
+  }
+  const relatedHtml = relatedCats.length > 0 ? `
+          <div class="related-categories" style="margin-top:2rem;">
+            <h3 style="font-size:1.05rem;font-weight:700;color:#1B3A5C;margin-bottom:12px;display:flex;align-items:center;gap:8px;"><i class="fas fa-th-large" style="color:#6366f1;"></i> קטגוריות קשורות</h3>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;">
+              ${relatedCats.map(rc => {
+                const rcUrl = getCategoryUrlPath(rc, catMap);
+                const rcCount = getTotalItemCount(rc, catMap, products);
+                return `<a href="${rcUrl}" style="display:flex;align-items:center;gap:10px;padding:14px 16px;background:#f8f9fa;border:1px solid #e5e7eb;border-radius:10px;text-decoration:none;color:#1f2937;transition:all 0.2s;font-size:0.95rem;" onmouseover="this.style.background='#eef2ff';this.style.borderColor='#c7d2fe'" onmouseout="this.style.background='#f8f9fa';this.style.borderColor='#e5e7eb'">
+                  <i class="fas ${rc.icon || 'fa-folder'}" style="color:#1B3A5C;font-size:1.1rem;"></i>
+                  <span>${rc.name}</span>
+                  <span style="margin-right:auto;color:#9ca3af;font-size:0.8rem;">${rcCount}</span>
+                </a>`;
+              }).join('\n')}
+            </div>
+          </div>` : '';
+
+  // OG image: use hero if available, else default
+  const ogImage = categoryImage ? `${SITE_URL}${categoryImage}` : `${SITE_URL}/images/og-image.jpg`;
 
   return `<!DOCTYPE html>
 <html lang="he" dir="rtl">
@@ -396,6 +494,8 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
   <title>${pageTitle}</title>
   <meta name="description" content="${seoDesc}">
   <link rel="canonical" href="${categoryUrl}">
+  <link rel="alternate" hreflang="he-IL" href="${categoryUrl}">
+  <link rel="alternate" hreflang="x-default" href="${categoryUrl}">
   <link rel="icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta name="theme-color" content="#1B3A5C">
@@ -405,10 +505,11 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
   <meta property="og:url" content="${categoryUrl}">
   <meta property="og:locale" content="he_IL">
   <meta property="og:site_name" content="וואי מרקט">
-  <meta property="og:image" content="${SITE_URL}/images/og-image.jpg">
+  <meta property="og:image" content="${ogImage}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${category.name} | וואי מרקט">
-  <meta name="twitter:image" content="${SITE_URL}/images/og-image.jpg">
+  <meta name="twitter:image" content="${ogImage}">
+  ${firstProductImg ? `<link rel="preload" as="image" href="${firstProductImg}">` : ''}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -422,8 +523,16 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
     .category-seo a{color:var(--color-primary,#1B3A5C);text-decoration:underline}
     .category-children{border-right:2px solid #e5e7eb;margin-right:12px;}
     .subcategory-card:hover{background:#eef2ff !important;border-color:#c7d2fe !important;}
+    details summary .fa-chevron-down{transition:transform 0.3s ease;}
+    details[open] summary .fa-chevron-down{transform:rotate(180deg);}
+    .mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:999;background:#fff;box-shadow:0 -2px 12px rgba(0,0,0,0.12);padding:10px 16px;gap:10px;align-items:center;}
+    .mobile-cta-bar a{flex:1;text-align:center;padding:12px 8px;border-radius:10px;font-weight:600;font-size:0.95rem;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:6px;}
+    .mobile-cta-bar .cta-wa{background:#25d366;color:#fff;}
+    .mobile-cta-bar .cta-phone{background:#f3f4f6;color:#1B3A5C;border:1px solid #d1d5db;}
+    @media(max-width:768px){.mobile-cta-bar{display:flex!important;}body{padding-bottom:70px;}.whatsapp-float{bottom:80px;}}
   </style>
   <script type="application/ld+json">${jsonLd}</script>
+  <script type="application/ld+json">${orgSchema}</script>
   ${(categoryFaqs && categoryFaqs.length > 0) ? `<script type="application/ld+json">${JSON.stringify({
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -479,9 +588,10 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
         </aside>
         <div class="catalog-main">
           <div class="catalog-header">
-            ${categoryImage ? `<img src="${categoryImage}" alt="${categoryImageAlt}" class="category-hero-img" style="max-height:200px;width:100%;object-fit:cover;border-radius:12px;margin-bottom:1rem;" />` : ''}
+            ${categoryImage ? `<img src="${categoryImage}" alt="${categoryImageAlt} - מבחר מוצרים בסיטונאות | וואי מרקט" class="category-hero-img" style="max-height:220px;width:100%;object-fit:cover;border-radius:12px;margin-bottom:1rem;" width="1200" height="400" fetchpriority="high" />` : ''}
             <h1>${h1Text}</h1>
             <p>${categoryProducts.length} מוצרים</p>
+            <p style="font-size:0.8rem;color:#9ca3af;margin-top:4px;">עודכן לאחרונה: ${hebrewDate}</p>
           </div>
           ${subcategoriesHtml}
           <div class="products-grid">
@@ -507,6 +617,7 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
               </details>
             `).join('')}
           </div>` : ''}
+          ${relatedHtml}
           <div class="category-cta" style="background:var(--color-bg-light,#f8f9fa);border-radius:12px;padding:2rem;margin-top:2rem;text-align:center;">
             <h3 style="margin-bottom:0.5rem;">צריכים כמות גדולה? קבלו הצעת מחיר מותאמת אישית</h3>
             <p style="color:var(--color-text-light,#6b7280);margin-bottom:1rem;">לקוחות עסקיים נהנים ממחירים מיוחדים, אספקה שוטפת ושירות אישי</p>
@@ -575,6 +686,10 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
     </div>
   </footer>
 
+  <div class="mobile-cta-bar">
+    <a href="https://wa.me/972549922492?text=היי, אשמח לקבל הצעת מחיר ל${encodeURIComponent(category.name)}" class="cta-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> וואטסאפ</a>
+    <a href="tel:037740400" class="cta-phone"><i class="fas fa-phone-alt"></i> 03-7740400</a>
+  </div>
   <a href="https://wa.me/972549922492" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   <script src="/js/main.min.js?v=20260310b"></script>
   <script>
