@@ -1,66 +1,6 @@
 {
   "categories": [
     {
-      "id": 47,
-      "name": "נייר טואלט ואף",
-      "slug": "נייר-טואלט",
-      "icon": "fa-box",
-      "parentId": 9,
-      "sortOrder": 0,
-      "itemCount": 12,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
-      "id": 31,
-      "name": " כפפות חד-פעמיות",
-      "slug": "-כפפות-חדפעמיות",
-      "icon": "fa-box",
-      "parentId": 1,
-      "sortOrder": 0,
-      "itemCount": 29,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
-      "id": 32,
-      "name": "ביגוד מגן וסינרים",
-      "slug": "ביגוד-מגן-וסינרים",
-      "icon": "fa-box",
-      "parentId": 1,
-      "sortOrder": 0,
-      "itemCount": 9,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
-      "id": 33,
-      "name": " כפפות עבודה ומגן",
-      "slug": "-כפפות-עבודה-ומגן",
-      "icon": "fa-box",
-      "parentId": 1,
-      "sortOrder": 0,
-      "itemCount": 6,
-      "metaTitle": null,
-      "metaDescription": null,
-      "seoSlug": null,
-      "seoContent": null,
-      "imageUrl": null,
-      "imageAlt": null
-    },
-    {
       "id": 34,
       "name": "מסכות פנים והגנת נשימה",
       "slug": "מסכות-פנים-והגנת-נשימה",
@@ -301,6 +241,36 @@
       "imageAlt": null
     },
     {
+      "id": 47,
+      "name": "נייר טואלט ואף",
+      "slug": "נייר-טואלט",
+      "icon": "fa-box",
+      "parentId": 9,
+      "sortOrder": 0,
+      "itemCount": 12,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 52,
+      "name": "שקיות אשפה סטנדרטיות",
+      "slug": "שקיות-אשפה-סטנדרטיות",
+      "icon": "fa-box",
+      "parentId": 3,
+      "sortOrder": 0,
+      "itemCount": 13,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
       "id": 21,
       "name": "סטוק עד הבית",
       "slug": "סטוק-עד-הבית",
@@ -383,6 +353,51 @@
       "parentId": 5,
       "sortOrder": 0,
       "itemCount": 12,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 31,
+      "name": " כפפות חד-פעמיות",
+      "slug": "-כפפות-חדפעמיות",
+      "icon": "fa-box",
+      "parentId": 1,
+      "sortOrder": 0,
+      "itemCount": 29,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 32,
+      "name": "ביגוד מגן וסינרים",
+      "slug": "ביגוד-מגן-וסינרים",
+      "icon": "fa-box",
+      "parentId": 1,
+      "sortOrder": 0,
+      "itemCount": 9,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
+      "id": 33,
+      "name": " כפפות עבודה ומגן",
+      "slug": "-כפפות-עבודה-ומגן",
+      "icon": "fa-box",
+      "parentId": 1,
+      "sortOrder": 0,
+      "itemCount": 6,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -1271,7 +1286,8 @@
       "categorySlug": "שקיות-ופתרונות-אשפה",
       "categoryName": "שקיות ופתרונות אשפה",
       "categorySlugs": [
-        "שקיות-ופתרונות-אשפה"
+        "שקיות-ופתרונות-אשפה",
+        "שקיות-אשפה-סטנדרטיות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -22471,7 +22487,8 @@
       "categorySlug": "שקיות-ופתרונות-אשפה",
       "categoryName": "שקיות ופתרונות אשפה",
       "categorySlugs": [
-        "שקיות-ופתרונות-אשפה"
+        "שקיות-ופתרונות-אשפה",
+        "שקיות-אשפה-סטנדרטיות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -22527,7 +22544,8 @@
       "categorySlug": "שקיות-ופתרונות-אשפה",
       "categoryName": "שקיות ופתרונות אשפה",
       "categorySlugs": [
-        "שקיות-ופתרונות-אשפה"
+        "שקיות-ופתרונות-אשפה",
+        "שקיות-אשפה-סטנדרטיות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -22583,7 +22601,8 @@
       "categorySlug": "שקיות-ופתרונות-אשפה",
       "categoryName": "שקיות ופתרונות אשפה",
       "categorySlugs": [
-        "שקיות-ופתרונות-אשפה"
+        "שקיות-ופתרונות-אשפה",
+        "שקיות-אשפה-סטנדרטיות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -23031,7 +23050,8 @@
       "categorySlug": "שקיות-ופתרונות-אשפה",
       "categoryName": "שקיות ופתרונות אשפה",
       "categorySlugs": [
-        "שקיות-ופתרונות-אשפה"
+        "שקיות-ופתרונות-אשפה",
+        "שקיות-אשפה-סטנדרטיות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -23357,7 +23377,8 @@
       "categorySlug": "שקיות-ופתרונות-אשפה",
       "categoryName": "שקיות ופתרונות אשפה",
       "categorySlugs": [
-        "שקיות-ופתרונות-אשפה"
+        "שקיות-ופתרונות-אשפה",
+        "שקיות-אשפה-סטנדרטיות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -23385,7 +23406,8 @@
       "categorySlug": "שקיות-ופתרונות-אשפה",
       "categoryName": "שקיות ופתרונות אשפה",
       "categorySlugs": [
-        "שקיות-ופתרונות-אשפה"
+        "שקיות-ופתרונות-אשפה",
+        "שקיות-אשפה-סטנדרטיות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -23413,7 +23435,8 @@
       "categorySlug": "שקיות-ופתרונות-אשפה",
       "categoryName": "שקיות ופתרונות אשפה",
       "categorySlugs": [
-        "שקיות-ופתרונות-אשפה"
+        "שקיות-ופתרונות-אשפה",
+        "שקיות-אשפה-סטנדרטיות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -23611,7 +23634,8 @@
       "categorySlug": "שקיות-ופתרונות-אשפה",
       "categoryName": "שקיות ופתרונות אשפה",
       "categorySlugs": [
-        "שקיות-ופתרונות-אשפה"
+        "שקיות-ופתרונות-אשפה",
+        "שקיות-אשפה-סטנדרטיות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -23639,7 +23663,8 @@
       "categorySlug": "שקיות-ופתרונות-אשפה",
       "categoryName": "שקיות ופתרונות אשפה",
       "categorySlugs": [
-        "שקיות-ופתרונות-אשפה"
+        "שקיות-ופתרונות-אשפה",
+        "שקיות-אשפה-סטנדרטיות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -23667,7 +23692,8 @@
       "categorySlug": "שקיות-ופתרונות-אשפה",
       "categoryName": "שקיות ופתרונות אשפה",
       "categorySlugs": [
-        "שקיות-ופתרונות-אשפה"
+        "שקיות-ופתרונות-אשפה",
+        "שקיות-אשפה-סטנדרטיות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -23695,7 +23721,8 @@
       "categorySlug": "שקיות-ופתרונות-אשפה",
       "categoryName": "שקיות ופתרונות אשפה",
       "categorySlugs": [
-        "שקיות-ופתרונות-אשפה"
+        "שקיות-ופתרונות-אשפה",
+        "שקיות-אשפה-סטנדרטיות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -23723,7 +23750,8 @@
       "categorySlug": "שקיות-ופתרונות-אשפה",
       "categoryName": "שקיות ופתרונות אשפה",
       "categorySlugs": [
-        "שקיות-ופתרונות-אשפה"
+        "שקיות-ופתרונות-אשפה",
+        "שקיות-אשפה-סטנדרטיות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -24421,6 +24449,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T14:11:04.869Z",
+  "exportedAt": "2026-03-14T14:17:12.620Z",
   "totalItems": 823
 }
