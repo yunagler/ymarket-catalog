@@ -7,7 +7,7 @@
       "icon": "fa-box",
       "parentId": 6,
       "sortOrder": 0,
-      "itemCount": 3,
+      "itemCount": 6,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -1011,7 +1011,8 @@
       "categorySlug": "טואלטיקה-וטיפוח-אישי",
       "categoryName": "טואלטיקה וטיפוח אישי",
       "categorySlugs": [
-        "טואלטיקה-וטיפוח-אישי"
+        "טואלטיקה-וטיפוח-אישי",
+        "מגבונים-רטובים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7258,7 +7259,8 @@
       "categorySlug": "טואלטיקה-וטיפוח-אישי",
       "categoryName": "טואלטיקה וטיפוח אישי",
       "categorySlugs": [
-        "טואלטיקה-וטיפוח-אישי"
+        "טואלטיקה-וטיפוח-אישי",
+        "מגבונים-רטובים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7373,7 +7375,8 @@
       "categorySlug": "טואלטיקה-וטיפוח-אישי",
       "categoryName": "טואלטיקה וטיפוח אישי",
       "categorySlugs": [
-        "טואלטיקה-וטיפוח-אישי"
+        "טואלטיקה-וטיפוח-אישי",
+        "מגבונים-רטובים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -24557,6 +24560,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T14:42:21.843Z",
+  "exportedAt": "2026-03-14T14:42:58.660Z",
   "totalItems": 823
 }
