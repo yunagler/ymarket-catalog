@@ -172,7 +172,7 @@
       "icon": "fa-box",
       "parentId": 4,
       "sortOrder": 0,
-      "itemCount": 7,
+      "itemCount": 8,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -14494,7 +14494,8 @@
       "categorySlug": "חומרי-ניקוי-וכימיקלים",
       "categoryName": "חומרי ניקוי וכימיקלים",
       "categorySlugs": [
-        "חומרי-ניקוי-וכימיקלים"
+        "חומרי-ניקוי-וכימיקלים",
+        "נוזלי-רצפות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -17343,34 +17344,6 @@
       "alternatives": []
     },
     {
-      "id": 393,
-      "name": "סט 4 מדגיש צבעוני",
-      "slug": "סט-4-מדגיש-צבעוני-2",
-      "saleNis": 10,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "ציוד-משרדי-וכללי",
-      "categoryName": "ציוד משרדי וכללי",
-      "categorySlugs": [
-        "ציוד-משרדי-וכללי"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/409.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "",
-      "partNumber": "",
-      "barcode": "",
-      "searchTags": "",
-      "technicalDesc": "",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": []
-    },
-    {
       "id": 363,
       "name": "סט 4 מדגיש צבעוני",
       "slug": "סט-4-מדגיש-צבעוני",
@@ -17386,6 +17359,34 @@
       "unit": "",
       "unitsPerPack": 1,
       "imageUrl": "/items/379.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "barcode": "",
+      "searchTags": "",
+      "technicalDesc": "",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": []
+    },
+    {
+      "id": 393,
+      "name": "סט 4 מדגיש צבעוני",
+      "slug": "סט-4-מדגיש-צבעוני-2",
+      "saleNis": 10,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "ציוד-משרדי-וכללי",
+      "categoryName": "ציוד משרדי וכללי",
+      "categorySlugs": [
+        "ציוד-משרדי-וכללי"
+      ],
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/409.jpg",
       "isFeatured": false,
       "productStatus": "active",
       "description": "",
@@ -24394,6 +24395,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T13:47:55.233Z",
+  "exportedAt": "2026-03-14T13:48:07.895Z",
   "totalItems": 823
 }
