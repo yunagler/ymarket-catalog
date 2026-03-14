@@ -862,7 +862,7 @@
       "icon": "fa-box",
       "parentId": 11,
       "sortOrder": 5,
-      "itemCount": 12,
+      "itemCount": 11,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -15791,7 +15791,6 @@
       "categoryName": "ציוד משרדי וכללי",
       "categorySlugs": [
         "ציוד-משרדי-וכללי",
-        "labels-stickers",
         "organization-filing"
       ],
       "unit": "",
@@ -25097,6 +25096,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T15:46:38.363Z",
+  "exportedAt": "2026-03-14T15:47:24.155Z",
   "totalItems": 823
 }
