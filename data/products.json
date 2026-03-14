@@ -157,7 +157,7 @@
       "icon": "fa-box",
       "parentId": 5,
       "sortOrder": 0,
-      "itemCount": 26,
+      "itemCount": 28,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -16245,7 +16245,8 @@
         "מגשי-פלסטיק",
         "מגשי-אלומניום",
         "שקיות-ופתרונות-אשפה",
-        "סטוק-עד-הבית"
+        "סטוק-עד-הבית",
+        "ניירות-רדיד-ועטיפות-מזון"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -23060,7 +23061,8 @@
       "categoryName": "שקיות ופתרונות אשפה",
       "categorySlugs": [
         "שקיות-ופתרונות-אשפה",
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "ניירות-רדיד-ועטיפות-מזון"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -24421,6 +24423,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T14:08:02.630Z",
+  "exportedAt": "2026-03-14T14:09:15.500Z",
   "totalItems": 823
 }
