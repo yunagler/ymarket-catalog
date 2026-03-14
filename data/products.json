@@ -322,7 +322,7 @@
       "icon": "fa-box",
       "parentId": 6,
       "sortOrder": 0,
-      "itemCount": 3,
+      "itemCount": 5,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -7136,7 +7136,8 @@
       "categoryName": "חומרי ניקוי וכימיקלים",
       "categorySlugs": [
         "חומרי-ניקוי-וכימיקלים",
-        "ניקוי-משטחים-מיוחדים"
+        "ניקוי-משטחים-מיוחדים",
+        "מטליות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -7194,7 +7195,8 @@
       "categorySlugs": [
         "חומרי-ניקוי-וכימיקלים",
         "ניקוי-משטחים-מיוחדים",
-        "טקסטיל-מטליות-וסחבות"
+        "טקסטיל-מטליות-וסחבות",
+        "מטליות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -24404,6 +24406,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T13:56:46.829Z",
+  "exportedAt": "2026-03-14T13:57:20.300Z",
   "totalItems": 823
 }
