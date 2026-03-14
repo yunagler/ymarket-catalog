@@ -196,6 +196,21 @@
       "imageAlt": null
     },
     {
+      "id": 50,
+      "name": "נייר עשייתי",
+      "slug": "ממחטות-וטישו",
+      "icon": "fa-box",
+      "parentId": 9,
+      "sortOrder": 0,
+      "itemCount": 9,
+      "metaTitle": null,
+      "metaDescription": null,
+      "seoSlug": null,
+      "seoContent": null,
+      "imageUrl": null,
+      "imageAlt": null
+    },
+    {
       "id": 21,
       "name": "סטוק עד הבית",
       "slug": "סטוק-עד-הבית",
@@ -3115,7 +3130,8 @@
       "categorySlug": "מוצרי-נייר-וניגוב",
       "categoryName": "מוצרי נייר וניגוב",
       "categorySlugs": [
-        "מוצרי-נייר-וניגוב"
+        "מוצרי-נייר-וניגוב",
+        "ממחטות-וטישו"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -10544,7 +10560,8 @@
       "categorySlug": "מוצרי-נייר-וניגוב",
       "categoryName": "מוצרי נייר וניגוב",
       "categorySlugs": [
-        "מוצרי-נייר-וניגוב"
+        "מוצרי-נייר-וניגוב",
+        "ממחטות-וטישו"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -13916,7 +13933,8 @@
       "categorySlug": "מוצרי-נייר-וניגוב",
       "categoryName": "מוצרי נייר וניגוב",
       "categorySlugs": [
-        "מוצרי-נייר-וניגוב"
+        "מוצרי-נייר-וניגוב",
+        "ממחטות-וטישו"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -15856,7 +15874,8 @@
       "categorySlug": "מוצרי-נייר-וניגוב",
       "categoryName": "מוצרי נייר וניגוב",
       "categorySlugs": [
-        "מוצרי-נייר-וניגוב"
+        "מוצרי-נייר-וניגוב",
+        "ממחטות-וטישו"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -15884,7 +15903,8 @@
       "categorySlug": "מוצרי-נייר-וניגוב",
       "categoryName": "מוצרי נייר וניגוב",
       "categorySlugs": [
-        "מוצרי-נייר-וניגוב"
+        "מוצרי-נייר-וניגוב",
+        "ממחטות-וטישו"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -15912,7 +15932,8 @@
       "categorySlug": "מוצרי-נייר-וניגוב",
       "categoryName": "מוצרי נייר וניגוב",
       "categorySlugs": [
-        "מוצרי-נייר-וניגוב"
+        "מוצרי-נייר-וניגוב",
+        "ממחטות-וטישו"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -15940,7 +15961,8 @@
       "categorySlug": "מוצרי-נייר-וניגוב",
       "categoryName": "מוצרי נייר וניגוב",
       "categorySlugs": [
-        "מוצרי-נייר-וניגוב"
+        "מוצרי-נייר-וניגוב",
+        "ממחטות-וטישו"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -15968,7 +15990,8 @@
       "categorySlug": "מוצרי-נייר-וניגוב",
       "categoryName": "מוצרי נייר וניגוב",
       "categorySlugs": [
-        "מוצרי-נייר-וניגוב"
+        "מוצרי-נייר-וניגוב",
+        "ממחטות-וטישו"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -16896,7 +16919,8 @@
       "categorySlug": "מוצרי-נייר-וניגוב",
       "categoryName": "מוצרי נייר וניגוב",
       "categorySlugs": [
-        "מוצרי-נייר-וניגוב"
+        "מוצרי-נייר-וניגוב",
+        "ממחטות-וטישו"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -24187,6 +24211,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T11:15:13.761Z",
+  "exportedAt": "2026-03-14T11:15:58.544Z",
   "totalItems": 823
 }
