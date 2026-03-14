@@ -322,7 +322,7 @@
       "icon": "fa-box",
       "parentId": 6,
       "sortOrder": 0,
-      "itemCount": 5,
+      "itemCount": 10,
       "metaTitle": null,
       "metaDescription": null,
       "seoSlug": null,
@@ -1491,7 +1491,8 @@
       "categorySlug": "טקסטיל-מטליות-וסחבות",
       "categoryName": "טקסטיל, מטליות וסחבות",
       "categorySlugs": [
-        "טקסטיל-מטליות-וסחבות"
+        "טקסטיל-מטליות-וסחבות",
+        "מטליות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -1575,7 +1576,8 @@
       "categorySlug": "טקסטיל-מטליות-וסחבות",
       "categoryName": "טקסטיל, מטליות וסחבות",
       "categorySlugs": [
-        "טקסטיל-מטליות-וסחבות"
+        "טקסטיל-מטליות-וסחבות",
+        "מטליות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -10615,7 +10617,8 @@
       "categorySlug": "טקסטיל-מטליות-וסחבות",
       "categoryName": "טקסטיל, מטליות וסחבות",
       "categorySlugs": [
-        "טקסטיל-מטליות-וסחבות"
+        "טקסטיל-מטליות-וסחבות",
+        "מטליות"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -10643,7 +10646,8 @@
       "categorySlug": "טקסטיל-מטליות-וסחבות",
       "categoryName": "טקסטיל, מטליות וסחבות",
       "categorySlugs": [
-        "טקסטיל-מטליות-וסחבות"
+        "טקסטיל-מטליות-וסחבות",
+        "מטליות"
       ],
       "unit": "12",
       "unitsPerPack": 12,
@@ -10679,7 +10683,8 @@
       "categorySlug": "טקסטיל-מטליות-וסחבות",
       "categoryName": "טקסטיל, מטליות וסחבות",
       "categorySlugs": [
-        "טקסטיל-מטליות-וסחבות"
+        "טקסטיל-מטליות-וסחבות",
+        "מטליות"
       ],
       "unit": "",
       "unitsPerPack": 12,
@@ -24407,6 +24412,6 @@
       "alternatives": []
     }
   ],
-  "exportedAt": "2026-03-14T13:57:59.995Z",
+  "exportedAt": "2026-03-14T13:59:00.797Z",
   "totalItems": 823
 }
