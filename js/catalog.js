@@ -13,6 +13,8 @@
   let priceMin = 0;
   let priceMax = Infinity;
   let currentSort = 'name-asc';
+  let currentPage = 1;
+  var ITEMS_PER_PAGE = 24;
 
   // ---- Init ----
   document.addEventListener('DOMContentLoaded', async () => {
@@ -255,6 +257,7 @@
   // ---- Select Category ----
   function selectCategory(slug) {
     currentCategory = slug;
+    currentPage = 1;
     var url = new URL(window.location);
     if (slug === 'all') {
       url.searchParams.delete('cat');
@@ -319,6 +322,7 @@
       clearTimeout(searchTimeout);
       searchTimeout = setTimeout(function() {
         currentSearch = e.target.value.trim();
+        currentPage = 1;
         render();
         // Facebook Pixel + GA4 - Search
         if (currentSearch.length >= 2) {
@@ -335,6 +339,7 @@
     // Sort
     document.getElementById('sortSelect')?.addEventListener('change', function(e) {
       currentSort = e.target.value;
+      currentPage = 1;
       render();
     });
 
@@ -342,6 +347,7 @@
     document.getElementById('priceFilterBtn')?.addEventListener('click', function() {
       priceMin = Math.max(0, parseFloat(document.getElementById('priceMin').value) || 0);
       priceMax = Math.max(0, parseFloat(document.getElementById('priceMax').value) || Infinity);
+      currentPage = 1;
       render();
     });
 
@@ -455,24 +461,34 @@
     return filtered;
   }
 
-  // ---- Render Products ----
+  // ---- Render Products (with pagination) ----
   function render() {
     var grid = document.getElementById('productsGrid');
     var noResults = document.getElementById('noResults');
     var countEl = document.getElementById('resultCount');
     if (!grid) return;
 
-    var products = getFilteredProducts();
-    countEl.textContent = products.length;
+    var allFiltered = getFilteredProducts();
+    var totalProducts = allFiltered.length;
+    countEl.textContent = totalProducts;
 
-    if (products.length === 0) {
+    if (totalProducts === 0) {
       grid.innerHTML = '';
       noResults.style.display = 'block';
+      renderPagination(0, 0);
       return;
     }
 
     noResults.style.display = 'none';
-    grid.innerHTML = products.map(function(p) { return renderProductCard(p); }).join('');
+
+    // Pagination slice
+    var totalPages = Math.ceil(totalProducts / ITEMS_PER_PAGE);
+    if (currentPage > totalPages) currentPage = totalPages;
+    if (currentPage < 1) currentPage = 1;
+    var startIdx = (currentPage - 1) * ITEMS_PER_PAGE;
+    var pageProducts = allFiltered.slice(startIdx, startIdx + ITEMS_PER_PAGE);
+
+    grid.innerHTML = pageProducts.map(function(p) { return renderProductCard(p); }).join('');
 
     // Attach quantity +/- events
     grid.querySelectorAll('.product-card__qty-btn').forEach(function(btn) {
@@ -504,6 +520,83 @@
         if (input) input.value = '1';
       });
     });
+
+    renderPagination(totalPages, totalProducts);
+  }
+
+  // ---- Pagination UI ----
+  function renderPagination(totalPages, totalProducts) {
+    var existing = document.getElementById('catalogPagination');
+    if (existing) existing.remove();
+
+    if (totalPages <= 1) return;
+
+    var nav = document.createElement('nav');
+    nav.id = 'catalogPagination';
+    nav.className = 'pagination';
+    nav.setAttribute('aria-label', 'ניווט עמודים');
+
+    var html = '';
+
+    // Prev button
+    html += '<button class="pagination__btn pagination__prev" ' + (currentPage <= 1 ? 'disabled' : '') + ' data-page="' + (currentPage - 1) + '"><i class="fas fa-chevron-right"></i> הקודם</button>';
+
+    // Page numbers
+    html += '<div class="pagination__pages">';
+    var pages = getPaginationRange(currentPage, totalPages);
+    for (var i = 0; i < pages.length; i++) {
+      if (pages[i] === '...') {
+        html += '<span class="pagination__dots">...</span>';
+      } else {
+        html += '<button class="pagination__page' + (pages[i] === currentPage ? ' active' : '') + '" data-page="' + pages[i] + '">' + pages[i] + '</button>';
+      }
+    }
+    html += '</div>';
+
+    // Next button
+    html += '<button class="pagination__btn pagination__next" ' + (currentPage >= totalPages ? 'disabled' : '') + ' data-page="' + (currentPage + 1) + '">הבא <i class="fas fa-chevron-left"></i></button>';
+
+    // Info
+    var startItem = (currentPage - 1) * ITEMS_PER_PAGE + 1;
+    var endItem = Math.min(currentPage * ITEMS_PER_PAGE, totalProducts);
+    html += '<div class="pagination__info">מציג ' + startItem + '-' + endItem + ' מתוך ' + totalProducts + '</div>';
+
+    nav.innerHTML = html;
+
+    // Insert after products grid
+    var grid = document.getElementById('productsGrid');
+    if (grid) grid.parentNode.insertBefore(nav, grid.nextSibling);
+
+    // Click handlers
+    nav.querySelectorAll('[data-page]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var page = parseInt(btn.dataset.page);
+        if (page >= 1 && page <= totalPages) {
+          currentPage = page;
+          render();
+          // Scroll to top of catalog
+          var header = document.querySelector('.catalog-header');
+          if (header) header.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  }
+
+  // Generate smart page range: [1, '...', 4, 5, 6, '...', 20]
+  function getPaginationRange(current, total) {
+    if (total <= 7) {
+      var arr = [];
+      for (var i = 1; i <= total; i++) arr.push(i);
+      return arr;
+    }
+    var pages = [1];
+    if (current > 3) pages.push('...');
+    var start = Math.max(2, current - 1);
+    var end = Math.min(total - 1, current + 1);
+    for (var j = start; j <= end; j++) pages.push(j);
+    if (current < total - 2) pages.push('...');
+    pages.push(total);
+    return pages;
   }
 
   // ---- Product Card HTML ----

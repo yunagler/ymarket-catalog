@@ -386,3 +386,38 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+
+/* ---- Mobile: fix white space gap ---- */
+@media (max-width: 768px) {
+  .trust-strip {
+    margin-top: 0;
+    border-radius: 0;
+  }
+
+  .trust-strip .container {
+    margin-top: 0;
+  }
+
+  .trust-strip__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .trust-strip__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
