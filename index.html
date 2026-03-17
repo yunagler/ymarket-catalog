@@ -47,8 +47,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 
-  <!-- Swiper -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <!-- Swiper (non-critical, async) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.min.css?v=20260317">
@@ -724,10 +725,10 @@
   </div>
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="js/main.min.js?v=20260317"></script>
-  <script src="js/featured-carousel.min.js?v=20260312"></script>
-  <script src="js/analytics.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="js/main.min.js?v=20260317" defer></script>
+  <script src="js/featured-carousel.min.js?v=20260317" defer></script>
+  <script src="js/analytics.min.js" defer></script>
   <script src="js/schema-markup.js" defer></script>
 </body>
 </html>
