@@ -165,8 +165,11 @@ function animateCounters() {
     const suffix = el.dataset.suffix || '';
     const prefix = el.dataset.prefix || '';
     const duration = 2000;
-    const start = performance.now();
 
+    // Reset to 0 before animating
+    el.textContent = prefix + '0' + suffix;
+
+    const start = performance.now();
     function update(now) {
       const progress = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
@@ -186,7 +189,7 @@ function animateCounters() {
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
     counters.forEach(el => observer.observe(el));
   } else {
     counters.forEach(animateEl);

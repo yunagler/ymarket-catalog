@@ -127,13 +127,7 @@
         { "@type": "OfferCatalog", "name": "טואלטיקה וטיפוח" }
       ]
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "reviewCount": "127",
-      "bestRating": "5",
-      "worstRating": "1"
-    }
+    "foundingDate": "2009"
   };
 
   // === FAQPage Schema (5 שאלות בעברית) ===
