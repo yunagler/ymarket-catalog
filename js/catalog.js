@@ -636,7 +636,8 @@
     }
 
     var productUrl = p.slug ? '/products/' + encodeURIComponent(p.slug) + '/' : '#';
-    var imgSrc = p.imageUrl || 'images/products/placeholder.jpg';
+    var imgFallback = p.imageUrl || '/items/' + p.id + '.jpg';
+    var imgWebp = imgFallback.replace(/\.jpg$/i, '-thumb.webp');
     var safeName = escapeHtml(p.name);
     var safeCategoryName = escapeHtml(p.categoryName || '');
     var fallbackImg = 'https://placehold.co/300x300/f0f2f5/5a6577?text=' + encodeURIComponent((p.name || 'מוצר').substring(0, 15));
@@ -644,7 +645,10 @@
     return '<div class="product-card" data-fallback="' + fallbackImg + '">' +
       '<div class="product-card__image">' +
         '<a href="' + productUrl + '" aria-label="' + safeName + '">' +
-          '<img src="' + imgSrc + '" alt="' + safeName + '" loading="lazy" onerror="this.onerror=null;this.src=this.closest(\'.product-card\').dataset.fallback;">' +
+          '<picture>' +
+            '<source srcset="' + imgWebp + '" type="image/webp">' +
+            '<img src="' + imgFallback + '" alt="' + safeName + '" loading="lazy" width="258" height="258" onerror="this.onerror=null;var s=this.parentElement.querySelector(\'source\');if(s)s.remove();this.src=this.closest(\'.product-card\').dataset.fallback;">' +
+          '</picture>' +
         '</a>' +
         badgeHtml +
       '</div>' +
@@ -689,7 +693,7 @@
         name: product.name,
         price: product.saleNis,
         unit: product.unit,
-        imageUrl: product.imageUrl,
+        imageUrl: (product.imageUrl || '/items/' + product.id + '.jpg').replace(/\.jpg$/i, '-thumb.webp'),
         slug: product.slug,
         quantity: quantity
       });

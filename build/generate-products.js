@@ -96,7 +96,9 @@ function generateProductPage(product, categories, allProducts) {
   const primaryCat = categories.find(c => c.slug === primaryCatSlug);
   const categoryUrl = primaryCat ? getFullCategoryUrl(primaryCat, categories) : getCategoryUrl(product, categories);
   const parentChain = primaryCat ? getParentChain(primaryCat, categories) : [];
-  const imgSrc = product.imageUrl || `/items/${product.id}.jpg`;
+  const imgSrcJpg = product.imageUrl || `/items/${product.id}.jpg`;
+  const imgSrc = imgSrcJpg.replace(/\.jpg$/i, '.webp');
+  const imgSrcThumb = imgSrcJpg.replace(/\.jpg$/i, '-thumb.webp');
   const canonicalSlug = product.seoSlug || product.slug;
   const productUrl = `${SITE_URL}/products/${canonicalSlug}/`;
 
@@ -147,20 +149,26 @@ function generateProductPage(product, categories, allProducts) {
     .filter(p => p.categorySlug === product.categorySlug && p.id !== product.id)
     .slice(0, 4);
 
-  const relatedHtml = related.map(p => `
+  const relatedHtml = related.map(p => {
+    const rJpg = p.imageUrl || `/items/${p.id}.jpg`;
+    const rThumb = rJpg.replace(/\.jpg$/i, '-thumb.webp');
+    return `
     <div class="product-card" style="min-width: 220px;">
       <div class="product-card__image">
         <a href="/products/${p.slug}/" aria-label="${p.name}">
-          <img src="${p.imageUrl || '/items/' + p.id + '.jpg'}" alt="${p.name}" loading="lazy"
-               onerror="this.src='https://placehold.co/300x300/f0f2f5/5a6577?text=${encodeURIComponent((p.name || '').substring(0,15))}'">
+          <picture>
+            <source srcset="${rThumb}" type="image/webp">
+            <img src="${rJpg}" alt="${p.name}" loading="lazy" width="258" height="258"
+                 onerror="this.onerror=null;var s=this.parentElement.querySelector('source');if(s)s.remove();this.src='https://placehold.co/300x300/f0f2f5/5a6577?text=${encodeURIComponent((p.name || '').substring(0,15))}'">
+          </picture>
         </a>
       </div>
       <div class="product-card__body">
         <h3 class="product-card__name"><a href="/products/${p.slug}/">${p.name}</a></h3>
         ${p.saleNis ? `<div class="product-card__price">${formatPrice(p.saleNis)}</div>` : ''}
       </div>
-    </div>
-  `).join('');
+    </div>`;
+  }).join('');
 
   const productDescription = product.description || `${product.name} - ${categoryName}`;
   const schemaDescription = seo.isB2BBulk ? `סיטונאות / Wholesale - ${productDescription}` : productDescription;
@@ -358,8 +366,11 @@ function generateProductPage(product, categories, allProducts) {
       <div class="product-detail__grid">
         <div class="product-gallery">
           <div class="product-gallery__main">
-            <img src="${imgSrc}" alt="${seo.imageAlt || product.name}"
-                 onerror="this.src='https://placehold.co/500x500/f0f2f5/5a6577?text=${encodeURIComponent((product.name || '').substring(0,15))}'">
+            <picture>
+              <source srcset="${imgSrc}" type="image/webp">
+              <img src="${imgSrcJpg}" alt="${seo.imageAlt || product.name}"
+                   onerror="this.onerror=null;var s=this.parentElement.querySelector('source');if(s)s.remove();this.src='https://placehold.co/500x500/f0f2f5/5a6577?text=${encodeURIComponent((product.name || '').substring(0,15))}'">
+            </picture>
           </div>
         </div>
         <div class="product-info">

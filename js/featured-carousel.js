@@ -33,7 +33,7 @@
         name: product.name,
         price: product.saleNis || 0,
         unit: product.unit || '',
-        imageUrl: product.imageUrl || '',
+        imageUrl: getWebpUrl(product.imageUrl, product.id, true),
         slug: product.slug,
         quantity: 1
       });
@@ -57,8 +57,16 @@
     return (str || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
 
+  function getWebpUrl(imageUrl, productId, useThumb) {
+    // Convert /items/ID.jpg to /items/ID.webp or /items/ID-thumb.webp
+    var base = imageUrl || '/items/' + productId + '.jpg';
+    var suffix = useThumb ? '-thumb.webp' : '.webp';
+    return base.replace(/\.jpg$/i, suffix);
+  }
+
   function buildSlide(product) {
-    var imgSrc = product.imageUrl || 'images/products/' + product.id + '.jpg';
+    var imgSrcWebp = getWebpUrl(product.imageUrl, product.id, true);
+    var imgSrcFallback = product.imageUrl || '/items/' + product.id + '.jpg';
     var safeName = escHtml(product.name || '');
     var fallback = 'https://placehold.co/300x300/f0f2f5/5a6577?text=' + encodeURIComponent((product.name || '').substring(0, 15));
     var hasPromo = product.productStatus === 'on_sale' && product.originalPrice;
@@ -89,7 +97,10 @@
     slide.dataset.fallback = fallback;
     slide.innerHTML = '<div class="product-card">' + '<div class="badge-hot">🔥 מומלץ</div>' +
         '<a href="products/' + safeSlug + '" class="featured-slide__image" aria-label="' + safeName + '">' +
-          '<img src="' + imgSrc + '" alt="' + safeName + '" loading="lazy" onerror="this.onerror=null;this.src=this.closest(\'[data-fallback]\').dataset.fallback;">' +
+          '<picture>' +
+            '<source srcset="' + imgSrcWebp + '" type="image/webp">' +
+            '<img src="' + imgSrcFallback + '" alt="' + safeName + '" loading="lazy" width="258" height="258" onerror="this.onerror=null;this.parentElement.parentElement.parentElement.querySelector(\'source\')&&this.parentElement.parentElement.parentElement.querySelector(\'source\').remove();this.src=this.closest(\'[data-fallback]\').dataset.fallback;">' +
+          '</picture>' +
         '</a>' +
         '<div class="featured-slide__body">' +
           '<div class="featured-slide__category">' + escHtml(product.categoryName || '') + '</div>' +

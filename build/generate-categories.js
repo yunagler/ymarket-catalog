@@ -290,10 +290,11 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
   const today = new Date().toISOString().split('T')[0];
   const hebrewDate = new Date().toLocaleDateString('he-IL');
 
-  // LCP: first product image for preload
-  const firstProductImg = categoryProducts.length > 0
+  // LCP: first product image for preload (use WebP thumbnail)
+  const firstProductImgJpg = categoryProducts.length > 0
     ? (categoryProducts[0].imageUrl || `/items/${categoryProducts[0].id}.jpg`)
     : null;
+  const firstProductImg = firstProductImgJpg ? firstProductImgJpg.replace(/\.jpg$/i, '-thumb.webp') : null;
 
   // Build breadcrumb with parent chain
   const parentChain = getParentChain(category, catMap);
@@ -322,7 +323,8 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
   breadcrumbItems.push({ "@type": "ListItem", "position": 3 + parentChain.length, "name": category.name });
 
   const productsHtml = categoryProducts.map((p, idx) => {
-    const imgSrc = p.imageUrl || `/items/${p.id}.jpg`;
+    const imgSrcJpg = p.imageUrl || `/items/${p.id}.jpg`;
+    const imgSrcThumb = imgSrcJpg.replace(/\.jpg$/i, '-thumb.webp');
     const hasPromo = p.productStatus === 'on_sale' && p.originalPrice;
     // First 4 images: eager load with high priority for LCP; rest: lazy load
     const imgLoading = idx < 4 ? 'fetchpriority="high"' : 'loading="lazy"';
@@ -350,7 +352,7 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
               <input type="number" class="product-card__qty-input" id="qty-${p.id}" value="1" min="1" max="999">
               <button class="product-card__qty-btn" data-action="increase" data-id="${p.id}">+</button>
             </div>
-            <button class="product-card__add-btn" data-id="${p.id}" data-name="${(p.name || '').replace(/"/g, '&quot;')}" data-price="${p.saleNis}" data-unit="${(p.unit || '').replace(/"/g, '&quot;')}" data-img="${imgSrc}" data-slug="${p.slug}"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+            <button class="product-card__add-btn" data-id="${p.id}" data-name="${(p.name || '').replace(/"/g, '&quot;')}" data-price="${p.saleNis}" data-unit="${(p.unit || '').replace(/"/g, '&quot;')}" data-img="${imgSrcThumb}" data-slug="${p.slug}"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
           </div>
         </div>`
       : `<div class="product-card__actions">
@@ -363,8 +365,11 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
       ${volBadge}
       <div class="product-card__image">
         <a href="/products/${p.slug}/">
-          <img src="${imgSrc}" alt="${p.name}" width="300" height="300" ${imgLoading}
-               onerror="this.src='https://placehold.co/300x300/f0f2f5/5a6577?text=${encodeURIComponent((p.name || '').substring(0,15))}'">
+          <picture>
+            <source srcset="${imgSrcThumb}" type="image/webp">
+            <img src="${imgSrcJpg}" alt="${p.name}" width="300" height="300" ${imgLoading}
+                 onerror="this.onerror=null;var s=this.parentElement.querySelector('source');if(s)s.remove();this.src='https://placehold.co/300x300/f0f2f5/5a6577?text=${encodeURIComponent((p.name || '').substring(0,15))}'">
+          </picture>
         </a>
       </div>
       <div class="product-card__body">
