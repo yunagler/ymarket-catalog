@@ -226,7 +226,10 @@ function initAccordions() {
       const content = item.querySelector('.accordion__content');
       const isOpen = item.classList.contains('active');
 
-      // Close all others in same accordion
+      // Read layout property BEFORE any DOM writes (avoid forced reflow)
+      const targetHeight = isOpen ? '0' : content.scrollHeight + 'px';
+
+      // Close all others in same accordion (batch writes)
       item.closest('.accordion')?.querySelectorAll('.accordion__item').forEach(other => {
         if (other !== item) {
           other.classList.remove('active');
@@ -237,7 +240,7 @@ function initAccordions() {
 
       item.classList.toggle('active');
       header.setAttribute('aria-expanded', String(!isOpen));
-      body.style.maxHeight = isOpen ? '0' : content.scrollHeight + 'px';
+      body.style.maxHeight = targetHeight;
     });
   });
 }

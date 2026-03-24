@@ -36,13 +36,14 @@
   <link rel="alternate" hreflang="x-default" href="https://ymarket.co.il/">
 
   <!-- Preload critical resources -->
-  <link rel="preload" href="/images/logo/logo-dark.png" as="image">
-  <link rel="preload" href="css/style.min.css?v=20260317" as="style">
+  <link rel="preload" href="/images/logo/logo-dark-2x.png" as="image">
+  <link rel="preload" href="css/style.min.css?v=20260324" as="style">
 
-  <!-- Fonts -->
+  <!-- Fonts - non-render-blocking with media swap pattern -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap"></noscript>
 
   <!-- Icons (async load to avoid render-blocking) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
@@ -53,8 +54,85 @@
   <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/style.min.css?v=20260317">
-  <link rel="stylesheet" href="css/pages/home.min.css?v=20260317">
+  <link rel="stylesheet" href="css/style.min.css?v=20260324">
+  <!-- Home page CSS loaded async with critical CSS inlined below -->
+  <link rel="stylesheet" href="css/pages/home.min.css?v=20260324" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="css/pages/home.min.css?v=20260324"></noscript>
+
+  <!-- Critical CSS: inlined for fast first paint + CLS prevention + font-display + accessibility fixes -->
+  <style>
+    /* Font-display swap for Font Awesome (override CDN) */
+    @font-face {
+      font-family: 'Font Awesome 6 Free';
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Font Awesome 6 Brands';
+      font-display: swap;
+    }
+    /* System font fallback while Heebo loads (prevent CLS) */
+    body {
+      font-family: 'Heebo', 'Assistant', Arial, sans-serif;
+    }
+
+    /* Critical above-the-fold: Hero */
+    .hero { min-height: 480px; }
+    .hero__title { font-size: 3rem; font-weight: 800; line-height: 1.2; }
+    .hero__subtitle { font-size: 1.25rem; line-height: 1.75; }
+    .hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* Critical above-the-fold: Trust strip */
+    .trust-strip { min-height: 100px; }
+    .trust-strip__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .trust-strip__item { display: flex; align-items: center; gap: 1rem; padding: 1.5rem; }
+
+    /* CLS prevention: Categories section */
+    .categories-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; min-height: 400px; }
+    .category-card { min-height: 140px; }
+
+    /* CLS prevention: Stats section */
+    .stats-grid { min-height: 100px; }
+    .stat-item__number { min-height: 48px; }
+
+    /* Accessibility: improved contrast ratios */
+    .category-card__count { color: #4A5568; }
+    .trust-strip__text span { color: #5A6577; }
+    .hero__stat-label { color: rgba(255, 255, 255, 0.85); }
+    .stat-item__label { color: rgba(255, 255, 255, 0.9); }
+    .section-subtitle { color: #4A5568; }
+    .info-card__text { color: #4A5568; }
+    p { color: #4A5568; }
+    .footer__copyright { color: rgba(255, 255, 255, 0.65); }
+    .footer__legal a { color: rgba(255, 255, 255, 0.65); }
+    .footer__brand p { color: rgba(255, 255, 255, 0.8); }
+    .footer__links a { color: rgba(255, 255, 255, 0.85); }
+    .footer__contact-item { color: rgba(255, 255, 255, 0.8); }
+    .footer__contact-item a { color: rgba(255, 255, 255, 0.8); }
+
+    /* Non-composited animation fix: use opacity instead of color transition */
+    .main-nav__link { transition: background-color 0.15s ease, opacity 0.15s ease; }
+    .main-nav__link:hover, .main-nav__link.active { opacity: 1; }
+
+    /* Touch target minimum size */
+    .info-bar__item a, .info-bar__item span { display: inline-flex; align-items: center; min-height: 44px; }
+    .footer__social a { min-width: 44px; min-height: 44px; }
+    .blog-preview-link { display: inline-flex; align-items: center; min-height: 44px; }
+
+    /* Responsive CLS overrides */
+    @media (max-width: 1024px) {
+      .trust-strip__grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .hero { min-height: 360px; }
+      .categories-grid { grid-template-columns: repeat(2, 1fr); min-height: 300px; }
+      .trust-strip__grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .hero { min-height: 300px; }
+      .categories-grid { grid-template-columns: repeat(2, 1fr); min-height: auto; }
+      .trust-strip__grid { grid-template-columns: 1fr; }
+    }
+  </style>
 
   <!-- SEO Sections Styles -->
   <style>
@@ -188,22 +266,24 @@
   <a href="#main-content" class="skip-link">דלג לתוכן הראשי</a>
 
   <!-- Top Bar with B2B Tease -->
-  <div class="top-bar" style="background: var(--color-primary-dark); color: var(--color-accent-gold); text-align: center; padding: 12px 0; font-weight: var(--fw-bold); font-size: var(--fs-sm); border-bottom: 2px solid var(--color-accent-gold); position: sticky; top: 0; z-index: var(--z-sticky); cursor: pointer; transition: background 0.3s;" onclick="window.location.href='register'">
-    <i class="fas fa-crown" style="margin-left: 8px;"></i> רוכשים בכמויות מסחריות? הצטרפו למועדון הלקוחות שלנו וקבלו מחירון סיטונאי ייעודי <i class="fas fa-chevron-left" style="margin-right: 8px; font-size: 0.8em;"></i>
+  <div class="top-bar" style="background: var(--color-primary-dark); color: var(--color-accent-gold); text-align: center; padding: 0; font-weight: var(--fw-bold); font-size: var(--fs-sm); border-bottom: 2px solid var(--color-accent-gold); position: sticky; top: 0; z-index: var(--z-sticky);">
+    <a href="register" style="display: block; padding: 12px 0; color: inherit; text-decoration: none; min-height: 44px; transition: background 0.3s;" aria-label="הצטרפו למועדון הלקוחות - מחירון סיטונאי">
+      <i class="fas fa-crown" style="margin-left: 8px;"></i> רוכשים בכמויות מסחריות? הצטרפו למועדון הלקוחות שלנו וקבלו מחירון סיטונאי ייעודי <i class="fas fa-chevron-left" style="margin-right: 8px; font-size: 0.8em;"></i>
+    </a>
   </div>
   
   <!-- Info Top Bar -->
   <div class="info-bar" style="background: var(--color-white); border-bottom: 1px solid var(--color-border-light);">
-    <div class="container" style="display: flex; justify-content: space-between; padding: 8px 0; font-size: 0.85rem; color: var(--color-text-secondary);">
+    <div class="container" style="display: flex; justify-content: space-between; padding: 8px 0; font-size: 0.85rem; color: #4A5568;">
       <div class="info-bar__left" style="display: flex; gap: var(--space-md);">
-        <div class="info-bar__item"><i class="fas fa-phone-alt"></i> <a href="tel:037740400" style="color: inherit; text-decoration: none;">03-7740400</a></div>
-        <div class="info-bar__item"><i class="fas fa-envelope"></i> <a href="mailto:Pm@ymarket.co.il" style="color: inherit; text-decoration: none;">Pm@ymarket.co.il</a></div>
-        <div class="info-bar__item"><i class="fas fa-clock"></i> <span>א'-ה' 08:00-17:00</span></div>
+        <div class="info-bar__item"><i class="fas fa-phone-alt"></i> <a href="tel:037740400" style="color: #4A5568; text-decoration: none;">03-7740400</a></div>
+        <div class="info-bar__item"><i class="fas fa-envelope"></i> <a href="mailto:Pm@ymarket.co.il" style="color: #4A5568; text-decoration: none;">Pm@ymarket.co.il</a></div>
+        <div class="info-bar__item"><i class="fas fa-clock"></i> <span style="color: #4A5568;">א'-ה' 08:00-17:00</span></div>
       </div>
       <div class="info-bar__right" style="display: flex; gap: var(--space-md);">
-        <a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp" style="color: inherit;"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=100083110428101" target="_blank" rel="noopener" aria-label="Facebook" style="color: inherit;"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/ymarket.ai" target="_blank" rel="noopener" aria-label="Instagram" style="color: inherit;"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp - סרגל עליון" style="color: #4A5568; min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center;"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100083110428101" target="_blank" rel="noopener" aria-label="Facebook - סרגל עליון" style="color: #4A5568; min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center;"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/ymarket.ai" target="_blank" rel="noopener" aria-label="Instagram - סרגל עליון" style="color: #4A5568; min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center;"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
   </div>
@@ -211,7 +291,7 @@
   <header class="header">
     <div class="container">
       <a href="/" class="header__logo">
-        <img src="/images/logo/logo-dark.png" alt="וואי מרקט" width="98" height="52">
+        <img src="/images/logo/logo-dark-2x.png" alt="וואי מרקט" width="98" height="52" fetchpriority="high">
       </a>
       <nav class="main-nav" aria-label="ניווט ראשי">
         <div class="main-nav__item">
@@ -275,7 +355,7 @@
           <h1 class="hero__title" style="font-size: var(--fs-4xl); color: var(--color-primary); font-weight: var(--fw-extrabold); line-height: var(--lh-tight); margin-bottom: var(--space-md);">
             כל המתכלים לעסק.<br>הכל בלחיצת כפתור.
           </h1>
-          <p class="hero__subtitle" style="font-size: var(--fs-lg); color: var(--color-text-secondary); margin-bottom: var(--space-lg); max-width: 90%;">
+          <p class="hero__subtitle" style="font-size: var(--fs-lg); color: #4A5568; margin-bottom: var(--space-lg); max-width: 90%;">
             מכפפות ואריזות עד חומרי ניקוי ונייר. משלוח ישיר עד הדלת, במחירי סיטונאות וללא כאבי ראש.
           </p>
           <div class="hero__actions" style="display: flex; gap: var(--space-md); margin-bottom: var(--space-xl);">
@@ -284,15 +364,9 @@
             </a>
           </div>
           
-          <!-- Social Proof Marquee -->
-          <div class="hero__social-proof" style="display: flex; align-items: center; gap: var(--space-md); opacity: 0.8;">
-            <span style="font-size: var(--fs-sm); font-weight: var(--fw-semibold); color: var(--color-text-light);">הבחירה של מעל 200 מוסדות:</span>
-            <div style="display: flex; gap: var(--space-md); filter: grayscale(100%);">
-              <!-- Placeholder for logos like Shleg Lavan, Fleyshen, etc. -->
-              <span style="font-weight: 800; font-size: var(--fs-md); color: var(--color-primary-dark);">פליישן</span>
-              <span style="font-weight: 800; font-size: var(--fs-md); color: var(--color-primary-dark);">שלג לבן</span>
-              <span style="font-weight: 800; font-size: var(--fs-md); color: var(--color-primary-dark);">א.ס מדיקל</span>
-            </div>
+          <!-- Social Proof -->
+          <div class="hero__social-proof" style="display: flex; align-items: center; gap: var(--space-md);">
+            <span style="font-size: var(--fs-sm); font-weight: var(--fw-semibold); color: #4A5568;">הבחירה של מעל 200 מוסדות ועסקים בכל הארץ</span>
           </div>
         </div>
 
@@ -302,9 +376,9 @@
             <i class="fas fa-crown"></i> מועדון לקוחות אקסקלוסיבי
           </div>
           
-          <h3 style="font-size: var(--fs-2xl); color: var(--color-primary-dark); font-weight: var(--fw-bold); margin-top: var(--space-sm); margin-bottom: var(--space-sm);">
+          <h2 style="font-size: var(--fs-2xl); color: var(--color-primary-dark); font-weight: var(--fw-bold); margin-top: var(--space-sm); margin-bottom: var(--space-sm);">
             קונים קבוע? מגיע לכם מחירון משלכם.
-          </h3>
+          </h2>
           <p style="color: var(--color-text-secondary); line-height: var(--lh-normal); margin-bottom: var(--space-lg);">
             לקוחות עסקיים קבועים (אטליזים, קייטרינג, מוסדות) נהנים מפורטל הזמנות אישי סגור, מחירי יבואן סיטונאיים ושליטה מלאה ברכש.
           </p>
@@ -661,44 +735,48 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <footer class="footer">
+  <footer class="footer">
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <img src="/images/logo/logo-white.png" alt="וואי מרקט" width="112" height="60">
+          <img src="/images/logo/logo-white-2x.png" alt="וואי מרקט" width="112" height="60" loading="lazy">
           <p>נגלר סחר והפצה — סחר, שיווק והפצה של מוצרי צריכה שוטפת לעסקים ומוסדות בכל רחבי הארץ.</p>
           <div class="footer__social">
-            <a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=100083110428101" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/ymarket.ai" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp - פוטר"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100083110428101" target="_blank" rel="noopener" aria-label="Facebook - פוטר"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/ymarket.ai" target="_blank" rel="noopener" aria-label="Instagram - פוטר"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
 
         <div class="footer__col">
           <h4>קטגוריות</h4>
+          <nav aria-label="קטגוריות מוצרים - פוטר">
           <div class="footer__links">
-            <a href="/category/bulk-paper-towel-office-supplies/">מוצרי נייר וניגוב</a>
-            <a href="/category/industrial-cleaning-supplies-wholesale/">חומרי ניקוי</a>
-            <a href="/category/disposable-catering-food-service/">חד פעמי ואירוח</a>
-            <a href="/category/food-packaging-delivery-solutions/">אריזות Take Away</a>
-            <a href="/category/office-coffee-breakroom-supplies/">קפה, שתייה וכיבוד</a>
-            <a href="/category/safety-ppe-equipment-for-business/">בטיחות ומיגון</a>
-            <a href="/category/heavy-duty-garbage-bags-wholesale/">שקיות אשפה</a>
-            <a href="/category/professional-cleaning-cloths-microfiber/">טקסטיל ומטליות</a>
-            <a href="/category/office-supplies-wholesale-business/">ציוד משרדי</a>
-            <a href="/category/maintenance-technical-equipment-wholesale/">ציוד טכני</a>
+            <a href="/category/bulk-paper-towel-office-supplies/" aria-label="מוצרי נייר וניגוב - קטגוריה">מוצרי נייר וניגוב</a>
+            <a href="/category/industrial-cleaning-supplies-wholesale/" aria-label="חומרי ניקוי - קטגוריה">חומרי ניקוי</a>
+            <a href="/category/disposable-catering-food-service/" aria-label="חד פעמי ואירוח - קטגוריה">חד פעמי ואירוח</a>
+            <a href="/category/food-packaging-delivery-solutions/" aria-label="אריזות Take Away - קטגוריה">אריזות Take Away</a>
+            <a href="/category/office-coffee-breakroom-supplies/" aria-label="קפה, שתייה וכיבוד - קטגוריה">קפה, שתייה וכיבוד</a>
+            <a href="/category/safety-ppe-equipment-for-business/" aria-label="בטיחות ומיגון - קטגוריה">בטיחות ומיגון</a>
+            <a href="/category/heavy-duty-garbage-bags-wholesale/" aria-label="שקיות אשפה - קטגוריה">שקיות אשפה</a>
+            <a href="/category/professional-cleaning-cloths-microfiber/" aria-label="טקסטיל ומטליות - קטגוריה">טקסטיל ומטליות</a>
+            <a href="/category/office-supplies-wholesale-business/" aria-label="ציוד משרדי - קטגוריה">ציוד משרדי</a>
+            <a href="/category/maintenance-technical-equipment-wholesale/" aria-label="ציוד טכני - קטגוריה">ציוד טכני</a>
           </div>
+          </nav>
         </div>
 
         <div class="footer__col">
           <h4>קישורים מהירים</h4>
           <div class="footer__links">
-            <a href="/catalog">קטלוג מוצרים</a>
-            <a href="/about">אודות</a>
-            <a href="/blog">בלוג</a>
+            <a href="/catalog" aria-label="קטלוג מוצרים - פוטר">קטלוג מוצרים</a>
+            <a href="/about" aria-label="אודות - פוטר">אודות</a>
+            <a href="/blog" aria-label="בלוג - פוטר">בלוג</a>
             <a href="/faq">שאלות ותשובות</a>
-            <a href="/contact">צרו קשר</a>
+            <a href="/contact" aria-label="צרו קשר - פוטר">צרו קשר</a>
             <a href="/tracking">מעקב משלוחים</a>
           </div>
         </div>
@@ -738,8 +816,6 @@
     </div>
   </footer>
 
-  </main>
-
   <!-- WhatsApp Floating Button -->
   <a href="https://wa.me/972549922492?text=שלום, אשמח לשמוע על המוצרים שלכם" class="whatsapp-float" target="_blank" rel="noopener" aria-label="שלחו הודעה בוואטסאפ">
     <i class="fab fa-whatsapp"></i>
@@ -754,7 +830,7 @@
     </p>
     <div class="cookie-banner__actions">
       <button class="btn btn--sm btn--white" data-cookie-accept>אישור</button>
-      <button class="btn btn--sm btn--secondary" data-cookie-decline style="border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.7);">רק חיוניים</button>
+      <button class="btn btn--sm btn--secondary" data-cookie-decline style="border-color: rgba(255,255,255,0.5); color: rgba(255,255,255,0.9);">רק חיוניים</button>
     </div>
   </div>
 

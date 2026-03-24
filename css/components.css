@@ -521,7 +521,7 @@
 
 .category-card__count {
   font-size: var(--fs-sm);
-  color: var(--color-text-light);
+  color: var(--color-text-secondary);
 }
 
 /* ---- Info Card ---- */

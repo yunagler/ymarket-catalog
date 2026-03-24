@@ -9,6 +9,8 @@
   padding: var(--space-3xl) 0 var(--space-4xl);
   position: relative;
   overflow: hidden;
+  min-height: 480px;
+  contain: layout style;
 }
 
 .hero::before {
@@ -43,7 +45,7 @@
 
 .hero__subtitle {
   font-size: var(--fs-lg);
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: var(--space-xl);
   line-height: var(--lh-relaxed);
 }
@@ -75,7 +77,7 @@
 
 .hero__stat-label {
   font-size: var(--fs-sm);
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 /* ---- Trust Strip ---- */
@@ -131,7 +133,7 @@
 
 .trust-strip__text span {
   font-size: var(--fs-xs);
-  color: var(--color-text-light);
+  color: var(--color-text-secondary);
 }
 
 /* ---- Categories Section ---- */
@@ -311,7 +313,7 @@
 
 .stat-item__label {
   font-size: var(--fs-base);
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* ---- Why Choose Us (Features) ---- */
@@ -385,39 +387,4 @@
   gap: var(--space-md);
   justify-content: center;
   flex-wrap: wrap;
-}
-
-/* ---- Mobile: fix white space gap ---- */
-@media (max-width: 768px) {
-  .trust-strip {
-    margin-top: 0;
-    border-radius: 0;
-  }
-
-  .trust-strip .container {
-    margin-top: 0;
-  }
-
-  .trust-strip__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-md);
-  }
-
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .features-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .trust-strip__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .features-grid {
-    grid-template-columns: 1fr;
-  }
 }

@@ -167,7 +167,7 @@ body {
 .main-nav__link {
     font-weight: var(--fw-semibold);
     color: var(--color-text);
-    transition: color 0.2s;
+    transition: background-color 0.2s, opacity 0.2s;
 }
 
 .main-nav__link:hover {
