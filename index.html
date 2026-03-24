@@ -12,6 +12,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#1B3A5C">
+  <meta name="google-site-verification" content="4XTzI4q3oV5FoW-ZmUx8Q_RjPVZVF8N1ZXz1I0zleK8" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="וואי מרקט | אספקה חכמה ומדויקת של מוצרי צריכה למוסדות ועסקים">
@@ -186,18 +187,23 @@
 
   <a href="#main-content" class="skip-link">דלג לתוכן הראשי</a>
 
-  <!-- Top Bar -->
-  <div class="top-bar">
-    <div class="container">
-      <div class="top-bar__info">
-        <div class="top-bar__item"><i class="fas fa-phone-alt"></i> <a href="tel:037740400">03-7740400</a></div>
-        <div class="top-bar__item"><i class="fas fa-envelope"></i> <a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a></div>
-        <div class="top-bar__item"><i class="fas fa-clock"></i> <span>א'-ה' 08:00-17:00</span></div>
+  <!-- Top Bar with B2B Tease -->
+  <div class="top-bar" style="background: var(--color-primary-dark); color: var(--color-accent-gold); text-align: center; padding: 12px 0; font-weight: var(--fw-bold); font-size: var(--fs-sm); border-bottom: 2px solid var(--color-accent-gold); position: sticky; top: 0; z-index: var(--z-sticky); cursor: pointer; transition: background 0.3s;" onclick="window.location.href='register'">
+    <i class="fas fa-crown" style="margin-left: 8px;"></i> רוכשים בכמויות מסחריות? הצטרפו למועדון הלקוחות שלנו וקבלו מחירון סיטונאי ייעודי <i class="fas fa-chevron-left" style="margin-right: 8px; font-size: 0.8em;"></i>
+  </div>
+  
+  <!-- Info Top Bar -->
+  <div class="info-bar" style="background: var(--color-white); border-bottom: 1px solid var(--color-border-light);">
+    <div class="container" style="display: flex; justify-content: space-between; padding: 8px 0; font-size: 0.85rem; color: var(--color-text-secondary);">
+      <div class="info-bar__left" style="display: flex; gap: var(--space-md);">
+        <div class="info-bar__item"><i class="fas fa-phone-alt"></i> <a href="tel:037740400" style="color: inherit; text-decoration: none;">03-7740400</a></div>
+        <div class="info-bar__item"><i class="fas fa-envelope"></i> <a href="mailto:Pm@ymarket.co.il" style="color: inherit; text-decoration: none;">Pm@ymarket.co.il</a></div>
+        <div class="info-bar__item"><i class="fas fa-clock"></i> <span>א'-ה' 08:00-17:00</span></div>
       </div>
-      <div class="top-bar__social">
-        <a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=100083110428101" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/ymarket.ai" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <div class="info-bar__right" style="display: flex; gap: var(--space-md);">
+        <a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp" style="color: inherit;"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100083110428101" target="_blank" rel="noopener" aria-label="Facebook" style="color: inherit;"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/ymarket.ai" target="_blank" rel="noopener" aria-label="Instagram" style="color: inherit;"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
   </div>
@@ -257,38 +263,66 @@
   <main id="main-content">
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero" style="background: var(--color-bg); padding: var(--space-4xl) 0; position: relative; overflow: hidden; border-bottom: 1px solid var(--color-border-light);">
     <div class="container">
-      <div class="hero__content">
-        <h1 class="hero__title">אספקה חכמה ומדויקת למוסדות ועסקים</h1>
-        <p class="hero__subtitle">מוצרי ניקיון, נייר, חד פעמי, מזון וציוד משרדי — הכל ממקום אחד, במחירי סיטונאות, עם משלוח עד הדלת.</p>
-        <div class="hero__actions">
-          <a href="catalog" class="btn btn--white btn--lg">
-            <i class="fas fa-th-large"></i> צפו בקטלוג
-          </a>
-          <a href="register" class="btn btn--register btn--lg">
-            <i class="fas fa-user-plus"></i> פתחו חשבון עסקי
-          </a>
-          <a href="https://wa.me/972549922492?text=שלום, אשמח לקבל הצעת מחיר" target="_blank" rel="noopener" class="btn btn--whatsapp btn--lg">
-            <i class="fab fa-whatsapp"></i> דברו איתנו
-          </a>
+      <div class="hero__grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: center;">
+        
+        <!-- Left/Right Content: The Public E-Commerce Pitch -->
+        <div class="hero__content" style="z-index: 2;">
+          <div style="display: inline-block; background: var(--color-danger-bg); color: var(--color-danger); padding: 4px 12px; border-radius: var(--radius-pill); font-size: var(--fs-sm); font-weight: var(--fw-bold); margin-bottom: var(--space-md); border: 1px solid rgba(255, 71, 87, 0.2);">
+            ⚡ מלאי זמין לאספקה ב-72 שעות
+          </div>
+          <h1 class="hero__title" style="font-size: var(--fs-4xl); color: var(--color-primary); font-weight: var(--fw-extrabold); line-height: var(--lh-tight); margin-bottom: var(--space-md);">
+            כל המתכלים לעסק.<br>הכל בלחיצת כפתור.
+          </h1>
+          <p class="hero__subtitle" style="font-size: var(--fs-lg); color: var(--color-text-secondary); margin-bottom: var(--space-lg); max-width: 90%;">
+            מכפפות ואריזות עד חומרי ניקוי ונייר. משלוח ישיר עד הדלת, במחירי סיטונאות וללא כאבי ראש.
+          </p>
+          <div class="hero__actions" style="display: flex; gap: var(--space-md); margin-bottom: var(--space-xl);">
+            <a href="catalog" class="btn" style="background: var(--color-accent); color: var(--color-white); padding: 16px 32px; border-radius: var(--radius-md); font-weight: var(--fw-bold); font-size: var(--fs-md); box-shadow: 0 4px 15px rgba(10, 88, 202, 0.3); transition: var(--transition-normal); text-decoration: none;">
+              צפו בקטלוג המלא <i class="fas fa-arrow-left" style="margin-right: 8px;"></i>
+            </a>
+          </div>
+          
+          <!-- Social Proof Marquee -->
+          <div class="hero__social-proof" style="display: flex; align-items: center; gap: var(--space-md); opacity: 0.8;">
+            <span style="font-size: var(--fs-sm); font-weight: var(--fw-semibold); color: var(--color-text-light);">הבחירה של מעל 200 מוסדות:</span>
+            <div style="display: flex; gap: var(--space-md); filter: grayscale(100%);">
+              <!-- Placeholder for logos like Shleg Lavan, Fleyshen, etc. -->
+              <span style="font-weight: 800; font-size: var(--fs-md); color: var(--color-primary-dark);">פליישן</span>
+              <span style="font-weight: 800; font-size: var(--fs-md); color: var(--color-primary-dark);">שלג לבן</span>
+              <span style="font-weight: 800; font-size: var(--fs-md); color: var(--color-primary-dark);">א.ס מדיקל</span>
+            </div>
+          </div>
         </div>
-        <div class="hero__stats">
-          <div class="hero__stat">
-            <div class="hero__stat-number" data-count="214">214</div>
-            <div class="hero__stat-label">לקוחות פעילים</div>
+
+        <!-- The Exclusive Club Card (Right Side) -->
+        <div class="hero__b2b-card" style="background: var(--color-white); padding: var(--space-xl); border-radius: var(--radius-xl); box-shadow: var(--shadow-xl); position: relative; z-index: 2; border: 1px solid var(--color-border-light);">
+          <div style="position: absolute; top: -15px; right: 30px; background: var(--color-primary-dark); color: var(--color-accent-gold); padding: 6px 16px; border-radius: var(--radius-pill); font-size: var(--fs-sm); font-weight: var(--fw-bold); display: flex; align-items: center; gap: 8px; box-shadow: var(--shadow-md);">
+            <i class="fas fa-crown"></i> מועדון לקוחות אקסקלוסיבי
           </div>
-          <div class="hero__stat">
-            <div class="hero__stat-number" data-count="900" data-suffix="+">900+</div>
-            <div class="hero__stat-label">מוצרים בקטלוג</div>
-          </div>
-          <div class="hero__stat">
-            <div class="hero__stat-number" data-count="72" data-suffix=" שעות">72 שעות</div>
-            <div class="hero__stat-label">זמן אספקה</div>
+          
+          <h3 style="font-size: var(--fs-2xl); color: var(--color-primary-dark); font-weight: var(--fw-bold); margin-top: var(--space-sm); margin-bottom: var(--space-sm);">
+            קונים קבוע? מגיע לכם מחירון משלכם.
+          </h3>
+          <p style="color: var(--color-text-secondary); line-height: var(--lh-normal); margin-bottom: var(--space-lg);">
+            לקוחות עסקיים קבועים (אטליזים, קייטרינג, מוסדות) נהנים מפורטל הזמנות אישי סגור, מחירי יבואן סיטונאיים ושליטה מלאה ברכש.
+          </p>
+          
+          <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
+            <a href="register" class="btn" style="background: var(--color-primary-dark); color: var(--color-white); padding: 14px 24px; border-radius: var(--radius-md); font-weight: var(--fw-bold); text-align: center; text-decoration: none; transition: var(--transition-normal);">
+              <i class="fas fa-lock" style="color: var(--color-accent-gold); margin-left: 8px;"></i> הגש בקשה למחירון עסקי
+            </a>
+            <a href="login" class="btn" style="background: transparent; color: var(--color-primary-dark); border: 2px solid var(--color-border); padding: 12px 24px; border-radius: var(--radius-md); font-weight: var(--fw-bold); text-align: center; text-decoration: none; transition: var(--transition-normal);">
+              כניסה לחברי מועדון בפורטל
+            </a>
           </div>
         </div>
+
       </div>
     </div>
+    <!-- Abstract Tech Background Element -->
+    <div style="position: absolute; top: -100px; left: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(10,88,202,0.05) 0%, rgba(248,249,251,0) 70%); border-radius: 50%; z-index: 1;"></div>
   </section>
 
   <!-- Trust Strip -->
