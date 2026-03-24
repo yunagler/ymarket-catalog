@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MKVGJ3XRK5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MKVGJ3XRK5');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>סַפָּק — הדגמת מערכת</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: { sans: ['Heebo', 'sans-serif'] },
+      colors: {
+        navy: { DEFAULT: '#1B3A5C', dark: '#112A45', light: '#2A5080' }
+      }
+    }
+  }
+}
+</script>
+<style>
+body { font-family: 'Heebo', sans-serif; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 3px; }
+.kpi-card { transition: transform 0.15s, box-shadow 0.15s; }
+.kpi-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+@keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+.animate-fade-in { animation: fadeIn 0.3s ease-out; }
+@keyframes slideIn { from { opacity:0; transform:translateX(20px); } to { opacity:1; transform:translateX(0); } }
+.animate-slide-in { animation: slideIn 0.3s ease-out; }
+.nav-item { transition: all 0.15s; }
+.nav-item:hover { background: rgba(255,255,255,0.1); }
+.nav-item.active { background: rgba(255,255,255,0.15); border-right: 3px solid white; }
+.status-badge { display:inline-flex; align-items:center; padding:2px 10px; border-radius:9999px; font-size:0.75rem; font-weight:600; }
+.table-row { transition: background 0.1s; }
+.table-row:hover { background: #f8fafc; }
+</style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+<!-- DEMO BANNER -->
+<div class="bg-gradient-to-l from-blue-600 to-blue-700 text-white text-center py-2 px-4 text-sm font-medium fixed top-0 left-0 right-0 z-50 flex items-center justify-center gap-3">
+  <span>🎮 גרסת הדגמה — נתונים בדויים של "אלפא הפצות"</span>
+  <a href="sapak-landing.html#contact" class="bg-white text-blue-700 px-3 py-1 rounded-md text-xs font-bold hover:bg-blue-50 transition">רוצה את זה בעסק שלך? →</a>
+</div>
+
+<!-- LAYOUT -->
+<div class="flex min-h-screen pt-8">
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar" class="w-60 bg-gradient-to-b from-navy-dark to-navy fixed right-0 top-8 bottom-0 text-white flex flex-col z-40">
+    <div class="p-5 border-b border-white/10">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-lg flex items-center justify-center font-bold text-sm">ס</div>
+        <div>
+          <div class="font-bold text-lg leading-tight">סַפָּק</div>
+          <div class="text-[10px] text-blue-200/60">CRM למפיצים</div>
+        </div>
+      </div>
+      <div class="mt-3 bg-white/10 rounded-lg px-3 py-1.5 text-xs text-blue-100/80">
+        🏢 אלפא הפצות
+      </div>
+    </div>
+    <nav class="flex-1 py-3 overflow-y-auto" id="nav-items"></nav>
+    <div class="p-4 border-t border-white/10 text-xs text-blue-200/50">
+      <div class="flex items-center gap-2">
+        <div class="w-7 h-7 bg-white/10 rounded-full flex items-center justify-center text-xs">ד.כ</div>
+        <div>
+          <div class="text-white/80 font-medium">דני כהן</div>
+          <div>מנהל</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="flex-1 mr-60 min-h-screen">
+    <header class="bg-white border-b border-gray-200 px-6 py-3 sticky top-8 z-30 flex items-center justify-between">
+      <div>
+        <h1 id="page-title" class="text-lg font-bold text-gray-800"></h1>
+        <p id="page-subtitle" class="text-xs text-gray-400"></p>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="relative">
+          <input type="text" id="global-search" placeholder="חיפוש..." class="bg-gray-100 border border-gray-200 rounded-lg px-4 py-2 text-sm w-56 focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-400" oninput="handleSearch(this.value)">
+        </div>
+        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition" onclick="showToast('🔄 סנכרון הושלם בהצלחה')">סנכרון רווחית</button>
+      </div>
+    </header>
+    <div id="content" class="p-6 animate-fade-in"></div>
+  </main>
+</div>
+
+<!-- MODAL -->
+<div id="modal-overlay" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center" onclick="if(event.target===this)closeModal()">
+  <div class="bg-white rounded-xl shadow-2xl w-full max-w-lg max-h-[80vh] overflow-y-auto animate-slide-in">
+    <div class="flex items-center justify-between p-5 border-b" id="modal-header"></div>
+    <div class="p-5" id="modal-body"></div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-gray-800 text-white px-6 py-3 rounded-xl shadow-lg text-sm font-medium z-50 transition-all duration-300 translate-y-20 opacity-0"></div>
+
+<script>
+// ════════════════════════════════════════
+// DATA
+// ════════════════════════════════════════
+const D = {
+  kpis: { sales: 182400, customers: 156, debts: 87200, orders: 67, leads: 8, tasks: 14, healthAvg: 68 },
+  salesByMonth: [98,112,134,95,108,142,126,115,138,155,168,182],
+  months: ['אפר','מאי','יונ','יול','אוג','ספט','אוק','נוב','דצמ','ינו','פבר','מרץ'],
+  customers: [
+    {id:1,name:'שלמה ניקיון בע"מ',city:'תל אביב',phone:'050-1234567',type:'מוסדי',status:'פעיל',lastOrder:'15/03/2026',avg:12400,current:14200,balance:8500,health:82},
+    {id:2,name:'סופר דוד',city:'פתח תקווה',phone:'052-9876543',type:'קמעונאי',status:'פעיל',lastOrder:'12/03/2026',avg:8900,current:7200,balance:0,health:75},
+    {id:3,name:'מסעדת הים',city:'הרצליה',phone:'054-5551234',type:'מוסדי',status:'פעיל',lastOrder:'10/03/2026',avg:6200,current:5800,balance:3200,health:68},
+    {id:4,name:'רם שיווק',city:'ראשון לציון',phone:'050-7771234',type:'סיטונאי',status:'פעיל',lastOrder:'14/03/2026',avg:22000,current:18500,balance:12400,health:71},
+    {id:5,name:'קלין סטאר',city:'חולון',phone:'053-1112222',type:'מוסדי',status:'פעיל',lastOrder:'11/03/2026',avg:4800,current:5200,balance:0,health:88},
+    {id:6,name:'מינימרקט אלון',city:'רמת גן',phone:'050-3334444',type:'קמעונאי',status:'פעיל',lastOrder:'08/03/2026',avg:3200,current:2800,balance:1600,health:62},
+    {id:7,name:'אטליז הבשר של יוסי',city:'בני ברק',phone:'054-6667777',type:'קמעונאי',status:'פעיל',lastOrder:'13/03/2026',avg:5500,current:6100,balance:0,health:79},
+    {id:8,name:'חברת אחזקה גלובל',city:'תל אביב',phone:'052-8889999',type:'מוסדי',status:'פעיל',lastOrder:'01/03/2026',avg:15800,current:0,balance:15800,health:35},
+    {id:9,name:'מכולת השכונה',city:'גבעתיים',phone:'050-1119999',type:'קמעונאי',status:'רדום',lastOrder:'15/01/2026',avg:1800,current:0,balance:900,health:22},
+    {id:10,name:'קייטרינג מגה',city:'ראשון לציון',phone:'053-4445555',type:'מוסדי',status:'פעיל',lastOrder:'14/03/2026',avg:9200,current:11000,balance:4500,health:73},
+    {id:11,name:'ביג קלין שירותים',city:'אשדוד',phone:'054-2223333',type:'מוסדי',status:'פעיל',lastOrder:'09/03/2026',avg:7600,current:6900,balance:7600,health:55},
+    {id:12,name:'סופר פרש',city:'נתניה',phone:'052-6667890',type:'קמעונאי',status:'פעיל',lastOrder:'12/03/2026',avg:4100,current:3800,balance:0,health:81},
+    {id:13,name:'מסעדת פאלאפל הזהב',city:'חיפה',phone:'050-9991111',type:'מזדמן',status:'פעיל',lastOrder:'05/03/2026',avg:2200,current:1900,balance:2200,health:45},
+    {id:14,name:'עולם הנייר',city:'ירושלים',phone:'054-3332211',type:'סיטונאי',status:'פעיל',lastOrder:'11/03/2026',avg:18500,current:16200,balance:0,health:85},
+    {id:15,name:'ספורט פלוס מרכז',city:'הרצליה',phone:'053-7778888',type:'מוסדי',status:'פעיל',lastOrder:'14/03/2026',avg:8800,current:9500,balance:4200,health:70},
+    {id:16,name:'בית קפה ארומה',city:'תל אביב',phone:'050-5554321',type:'מזדמן',status:'רדום',lastOrder:'20/12/2025',avg:1500,current:0,balance:1500,health:15},
+    {id:17,name:'חנות הכל לבית',city:'באר שבע',phone:'052-1234567',type:'קמעונאי',status:'פעיל',lastOrder:'13/03/2026',avg:3400,current:3200,balance:0,health:72},
+    {id:18,name:'מפעלי אריזה דרום',city:'אשדוד',phone:'054-9876543',type:'סיטונאי',status:'פעיל',lastOrder:'10/03/2026',avg:25000,current:22000,balance:18000,health:58},
+    {id:19,name:'גן השושנים',city:'רעננה',phone:'053-1357924',type:'מוסדי',status:'חדש',lastOrder:'14/03/2026',avg:0,current:2800,balance:2800,health:50},
+    {id:20,name:'מלון ים התיכון',city:'תל אביב',phone:'050-2468135',type:'מוסדי',status:'פעיל',lastOrder:'15/03/2026',avg:14200,current:16800,balance:0,health:90},
+  ],
+  orders: [
+    {id:'ORD-1247',customer:'שלמה ניקיון בע"מ',date:'15/03/2026',status:'נשלח',amount:14200,source:'פורטל',agent:'דני'},
+    {id:'ORD-1246',customer:'רם שיווק',date:'14/03/2026',status:'הופק',amount:18500,source:'טלפון',agent:'דני'},
+    {id:'ORD-1245',customer:'קייטרינג מגה',date:'14/03/2026',status:'נשלח',amount:11000,source:'פורטל',agent:'—'},
+    {id:'ORD-1244',customer:'מלון ים התיכון',date:'15/03/2026',status:'חדש',amount:16800,source:'וואטסאפ',agent:'דני'},
+    {id:'ORD-1243',customer:'ספורט פלוס מרכז',date:'14/03/2026',status:'הופק',amount:9500,source:'סוכן',agent:'אבי'},
+    {id:'ORD-1242',customer:'אטליז הבשר של יוסי',date:'13/03/2026',status:'נשלח',amount:6100,source:'טלפון',agent:'דני'},
+    {id:'ORD-1241',customer:'סופר דוד',date:'12/03/2026',status:'נשלח',amount:7200,source:'פורטל',agent:'—'},
+    {id:'ORD-1240',customer:'סופר פרש',date:'12/03/2026',status:'נשלח',amount:3800,source:'טלפון',agent:'אבי'},
+    {id:'ORD-1239',customer:'עולם הנייר',date:'11/03/2026',status:'הופק',amount:16200,source:'וואטסאפ',agent:'דני'},
+    {id:'ORD-1238',customer:'חברת אחזקה גלובל',date:'01/03/2026',status:'ממתין',amount:8900,source:'טלפון',agent:'דני'},
+    {id:'ORD-1237',customer:'ביג קלין שירותים',date:'09/03/2026',status:'נשלח',amount:6900,source:'סוכן',agent:'אבי'},
+    {id:'ORD-1236',customer:'מסעדת הים',date:'10/03/2026',status:'נשלח',amount:5800,source:'פורטל',agent:'—'},
+    {id:'ORD-1235',customer:'חנות הכל לבית',date:'13/03/2026',status:'הופק',amount:3200,source:'טלפון',agent:'דני'},
+  ],
+  debts: [
+    {name:'מפעלי אריזה דרום',total:18000,current:8000,d30:5000,d60:3000,d90:2000,status:'בסיכון'},
+    {name:'חברת אחזקה גלובל',total:15800,current:0,d30:7800,d60:5000,d90:3000,status:'קריטי'},
+    {name:'רם שיווק',total:12400,current:12400,d30:0,d60:0,d90:0,status:'תקין'},
+    {name:'שלמה ניקיון בע"מ',total:8500,current:8500,d30:0,d60:0,d90:0,status:'תקין'},
+    {name:'ביג קלין שירותים',total:7600,current:2600,d30:3000,d60:2000,d90:0,status:'אזהרה'},
+    {name:'ספורט פלוס מרכז',total:4200,current:4200,d30:0,d60:0,d90:0,status:'תקין'},
+    {name:'קייטרינג מגה',total:4500,current:4500,d30:0,d60:0,d90:0,status:'תקין'},
+    {name:'מסעדת הים',total:3200,current:1200,d30:2000,d60:0,d90:0,status:'תקין'},
+    {name:'גן השושנים',total:2800,current:2800,d30:0,d60:0,d90:0,status:'תקין'},
+    {name:'מסעדת פאלאפל הזהב',total:2200,current:0,d30:0,d60:1200,d90:1000,status:'בסיכון'},
+  ],
+  callList: [
+    {name:'חברת אחזקה גלובל',reason:'רדום 14 יום',priority:'גבוה',phone:'052-8889999',lastOrder:'01/03/2026',avg:15800},
+    {name:'מכולת השכונה',reason:'רדום 60+ יום',priority:'גבוה',phone:'050-1119999',lastOrder:'15/01/2026',avg:1800},
+    {name:'בית קפה ארומה',reason:'רדום 90+ יום',priority:'גבוה',phone:'050-5554321',lastOrder:'20/12/2025',avg:1500},
+    {name:'מינימרקט אלון',reason:'ירידה במכירות',priority:'בינוני',phone:'050-3334444',lastOrder:'08/03/2026',avg:3200},
+    {name:'ביג קלין שירותים',reason:'חוב פתוח',priority:'בינוני',phone:'054-2223333',lastOrder:'09/03/2026',avg:7600},
+    {name:'מפעלי אריזה דרום',reason:'חוב + ירידה',priority:'גבוה',phone:'054-9876543',lastOrder:'10/03/2026',avg:25000},
+    {name:'מסעדת פאלאפל הזהב',reason:'חוב ישן',priority:'בינוני',phone:'050-9991111',lastOrder:'05/03/2026',avg:2200},
+    {name:'גן השושנים',reason:'לקוח חדש — מעקב',priority:'נמוך',phone:'053-1357924',lastOrder:'14/03/2026',avg:0},
+  ],
+  segments: {vip:8,growing:22,stable:45,declining:12,atRisk:18,dormant:35,newC:8,churned:8}
+};
+
+// ════════════════════════════════════════
+// NAV
+// ════════════════════════════════════════
+const NAV = [
+  {id:'dashboard',label:'דשבורד',icon:'📊'},
+  {id:'customers',label:'לקוחות',icon:'👥',badge:D.kpis.customers},
+  {id:'orders',label:'הזמנות',icon:'📦',badge:D.orders.length},
+  {id:'collection',label:'גבייה',icon:'💰',badge:D.debts.length},
+  {id:'sales',label:'סוכן מכירות',icon:'⚡',badge:D.callList.length},
+  {id:'ai',label:'סוכן AI',icon:'🧠'},
+  {id:'portal',label:'פורטל לקוחות',icon:'🛒'},
+];
+
+function renderNav() {
+  const el = document.getElementById('nav-items');
+  el.innerHTML = NAV.map(n => `
+    <a href="#" class="nav-item flex items-center gap-3 px-5 py-2.5 text-sm text-blue-100/80 ${location.hash==='#'+n.id||(!location.hash&&n.id==='dashboard')?'active font-bold text-white':''}" onclick="navigate('${n.id}');return false">
+      <span class="text-lg">${n.icon}</span>
+      <span class="flex-1">${n.label}</span>
+      ${n.badge?`<span class="bg-white/15 text-[10px] px-2 py-0.5 rounded-full">${n.badge}</span>`:''}
+    </a>
+  `).join('');
+}
+
+function navigate(page) {
+  location.hash = page;
+  renderNav();
+  const content = document.getElementById('content');
+  content.className = 'p-6 animate-fade-in';
+  const pages = {dashboard:renderDashboard,customers:renderCustomers,orders:renderOrders,collection:renderCollection,sales:renderSales,ai:renderAI,portal:renderPortal};
+  (pages[page]||renderDashboard)();
+}
+
+window.addEventListener('hashchange', () => navigate(location.hash.slice(1)||'dashboard'));
+
+// ════════════════════════════════════════
+// HELPERS
+// ════════════════════════════════════════
+const fmt = n => n.toLocaleString('he-IL');
+const fmtC = n => '₪' + Math.abs(n).toLocaleString('he-IL');
+function kpi(label,value,icon,color='blue',sub='') {
+  return `<div class="kpi-card bg-white rounded-xl border border-gray-200 p-5 cursor-default">
+    <div class="flex items-center justify-between mb-2"><span class="text-2xl">${icon}</span><span class="text-xs text-gray-400">${sub}</span></div>
+    <div class="text-2xl font-bold text-gray-800" style="direction:ltr;text-align:right">${value}</div>
+    <div class="text-xs text-gray-500 mt-1">${label}</div>
+  </div>`;
+}
+function statusBadge(s) {
+  const colors = {פעיל:'bg-green-100 text-green-700',רדום:'bg-red-100 text-red-700',חדש:'bg-blue-100 text-blue-700',תקין:'bg-green-100 text-green-700',אזהרה:'bg-yellow-100 text-yellow-700','בסיכון':'bg-orange-100 text-orange-700',קריטי:'bg-red-100 text-red-700',נשלח:'bg-green-100 text-green-700',הופק:'bg-blue-100 text-blue-700',חדש:'bg-purple-100 text-purple-700',ממתין:'bg-yellow-100 text-yellow-700',גבוה:'bg-red-100 text-red-700',בינוני:'bg-yellow-100 text-yellow-700',נמוך:'bg-gray-100 text-gray-600'};
+  return `<span class="status-badge ${colors[s]||'bg-gray-100 text-gray-600'}">${s}</span>`;
+}
+function setPage(title,sub) {
+  document.getElementById('page-title').textContent=title;
+  document.getElementById('page-subtitle').textContent=sub||'';
+}
+
+// ════════════════════════════════════════
+// DASHBOARD
+// ════════════════════════════════════════
+function renderDashboard() {
+  setPage('דשבורד','סקירה כללית — אלפא הפצות');
+  const c = document.getElementById('content');
+  c.innerHTML = `
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+      ${kpi('מכירות החודש',fmtC(D.kpis.sales),'📈','blue','מרץ 2026')}
+      ${kpi('לקוחות פעילים',fmt(D.kpis.customers),'👥','green')}
+      ${kpi('חובות פתוחים',fmtC(D.kpis.debts),'💰','red',D.debts.length+' לקוחות')}
+      ${kpi('הזמנות החודש',fmt(D.kpis.orders),'📦','blue')}
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+      <div class="lg:col-span-2 bg-white rounded-xl border p-5">
+        <h3 class="font-bold text-gray-700 mb-4">מגמת מכירות — 12 חודשים (אלפי ₪)</h3>
+        <canvas id="salesChart" height="200"></canvas>
+      </div>
+      <div class="bg-white rounded-xl border p-5">
+        <h3 class="font-bold text-gray-700 mb-4">גילול חובות</h3>
+        <canvas id="debtChart" height="200"></canvas>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div class="bg-white rounded-xl border p-5">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="font-bold text-gray-700">לקוחות מובילים</h3>
+          <a href="#" class="text-blue-600 text-xs font-medium" onclick="navigate('customers');return false">הצג הכל →</a>
+        </div>
+        <div class="space-y-3">
+          ${D.customers.sort((a,b)=>b.avg-a.avg).slice(0,5).map(c => `
+            <div class="flex items-center gap-3 cursor-pointer hover:bg-gray-50 rounded-lg p-2 -mx-2" onclick="showCustomer(${c.id})">
+              <div class="w-9 h-9 bg-navy/10 rounded-full flex items-center justify-center text-xs font-bold text-navy">${c.name[0]}${c.name[1]||''}</div>
+              <div class="flex-1 min-w-0">
+                <div class="text-sm font-medium truncate">${c.name}</div>
+                <div class="text-xs text-gray-400">${c.city}</div>
+              </div>
+              <div class="text-sm font-bold text-gray-700" style="direction:ltr">${fmtC(c.avg)}</div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+      <div class="bg-white rounded-xl border p-5">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="font-bold text-gray-700">⚠️ דורשים תשומת לב</h3>
+          <a href="#" class="text-blue-600 text-xs font-medium" onclick="navigate('sales');return false">סוכן מכירות →</a>
+        </div>
+        <div class="space-y-3">
+          ${D.customers.filter(c=>c.health<50).sort((a,b)=>a.health-b.health).slice(0,5).map(c => `
+            <div class="flex items-center gap-3 p-2 rounded-lg ${c.health<25?'bg-red-50':'bg-yellow-50'}">
+              <div class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold ${c.health<25?'bg-red-200 text-red-700':'bg-yellow-200 text-yellow-700'}">${c.health}</div>
+              <div class="flex-1">
+                <div class="text-sm font-medium">${c.name}</div>
+                <div class="text-xs text-gray-500">${c.status==='רדום'?'לא הזמין מ-'+c.lastOrder:'חוב פתוח '+fmtC(c.balance)}</div>
+              </div>
+              <button class="text-xs bg-white border rounded-lg px-3 py-1.5 hover:bg-gray-50" onclick="showToast('📞 מתקשר ל-'+${JSON.stringify(c.name)}+'...')">התקשר</button>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </div>
+  `;
+  // Charts
+  setTimeout(()=>{
+    new Chart(document.getElementById('salesChart'),{type:'bar',data:{labels:D.months,datasets:[{label:'מכירות',data:D.salesByMonth,backgroundColor:'rgba(37,99,235,0.7)',borderRadius:6}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,ticks:{callback:v=>v+'K'}},x:{grid:{display:false}}}}});
+    const debtData = [D.debts.reduce((s,d)=>s+d.current,0),D.debts.reduce((s,d)=>s+d.d30,0),D.debts.reduce((s,d)=>s+d.d60,0),D.debts.reduce((s,d)=>s+d.d90,0)];
+    new Chart(document.getElementById('debtChart'),{type:'doughnut',data:{labels:['שוטף','30-60 יום','60-90 יום','90+ יום'],datasets:[{data:debtData,backgroundColor:['#10b981','#f59e0b','#f97316','#ef4444']}]},options:{responsive:true,plugins:{legend:{position:'bottom',labels:{font:{size:11}}}}}});
+  },100);
+}
+
+// ════════════════════════════════════════
+// CUSTOMERS
+// ════════════════════════════════════════
+function renderCustomers(filter='') {
+  setPage('לקוחות',D.customers.length+' לקוחות במערכת');
+  const filtered = filter ? D.customers.filter(c=>c.name.includes(filter)||c.city.includes(filter)) : D.customers;
+  document.getElementById('content').innerHTML = `
+    <div class="flex items-center gap-3 mb-5 flex-wrap">
+      <input type="text" placeholder="חיפוש לקוח..." class="bg-white border rounded-lg px-4 py-2 text-sm w-64" oninput="renderCustomers(this.value)" value="${filter}">
+      <select class="bg-white border rounded-lg px-3 py-2 text-sm" onchange="filterByType(this.value)">
+        <option value="">כל הסוגים</option><option>מוסדי</option><option>קמעונאי</option><option>סיטונאי</option><option>מזדמן</option>
+      </select>
+      <div class="flex-1"></div>
+      <button class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700" onclick="showToast('➕ טופס לקוח חדש נפתח')">+ לקוח חדש</button>
+    </div>
+    <div class="bg-white rounded-xl border overflow-hidden">
+      <table class="w-full text-sm">
+        <thead class="bg-gray-50 text-xs text-gray-500 uppercase">
+          <tr><th class="text-right p-3">לקוח</th><th class="text-right p-3">סוג</th><th class="text-right p-3">סטטוס</th><th class="text-right p-3">הזמנה אחרונה</th><th class="text-right p-3">ממוצע חודשי</th><th class="text-right p-3">יתרה</th><th class="text-center p-3">בריאות</th><th class="p-3"></th></tr>
+        </thead>
+        <tbody>
+          ${filtered.map(c => `<tr class="table-row border-t cursor-pointer" onclick="showCustomer(${c.id})">
+            <td class="p-3"><div class="flex items-center gap-3"><div class="w-8 h-8 bg-navy/10 rounded-full flex items-center justify-center text-xs font-bold text-navy">${c.name[0]}</div><div><div class="font-medium">${c.name}</div><div class="text-xs text-gray-400">${c.city} · ${c.phone}</div></div></div></td>
+            <td class="p-3 text-xs text-gray-500">${c.type}</td>
+            <td class="p-3">${statusBadge(c.status)}</td>
+            <td class="p-3 text-xs text-gray-600">${c.lastOrder}</td>
+            <td class="p-3 font-medium" style="direction:ltr;text-align:right">${fmtC(c.avg)}</td>
+            <td class="p-3 font-medium ${c.balance>0?'text-red-600':'text-green-600'}" style="direction:ltr;text-align:right">${c.balance>0?fmtC(c.balance):'—'}</td>
+            <td class="p-3 text-center"><span class="inline-flex items-center justify-center w-8 h-8 rounded-full text-xs font-bold ${c.health>=70?'bg-green-100 text-green-700':c.health>=40?'bg-yellow-100 text-yellow-700':'bg-red-100 text-red-700'}">${c.health}</span></td>
+            <td class="p-3"><button class="text-gray-400 hover:text-blue-600" onclick="event.stopPropagation();showToast('📱 WhatsApp נשלח ל-'+${JSON.stringify(c.name)})">💬</button></td>
+          </tr>`).join('')}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function showCustomer(id) {
+  const c = D.customers.find(x=>x.id===id);
+  if(!c)return;
+  openModal(`<div class="flex items-center gap-3"><div class="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center font-bold text-navy">${c.name[0]}</div><div><div class="font-bold">${c.name}</div><div class="text-xs text-gray-400">${c.city} · ${c.phone}</div></div></div>`,`
+    <div class="grid grid-cols-2 gap-3 mb-5">
+      ${kpi('ממוצע חודשי',fmtC(c.avg),'📊')}
+      ${kpi('חודש נוכחי',fmtC(c.current),'📈')}
+      ${kpi('יתרה',c.balance>0?fmtC(c.balance):'₪0','💰')}
+      ${kpi('בריאות',c.health+'/100','❤️')}
+    </div>
+    <div class="space-y-2 text-sm">
+      <div class="flex justify-between py-2 border-b"><span class="text-gray-500">סוג</span><span class="font-medium">${c.type}</span></div>
+      <div class="flex justify-between py-2 border-b"><span class="text-gray-500">סטטוס</span>${statusBadge(c.status)}</div>
+      <div class="flex justify-between py-2 border-b"><span class="text-gray-500">הזמנה אחרונה</span><span class="font-medium">${c.lastOrder}</span></div>
+      <div class="flex justify-between py-2"><span class="text-gray-500">טלפון</span><span class="font-medium">${c.phone}</span></div>
+    </div>
+    <div class="flex gap-2 mt-5">
+      <button class="flex-1 bg-blue-600 text-white py-2 rounded-lg text-sm font-medium hover:bg-blue-700" onclick="showToast('📦 הזמנה חדשה ל-'+${JSON.stringify(c.name)})">📦 הזמנה חדשה</button>
+      <button class="flex-1 bg-green-600 text-white py-2 rounded-lg text-sm font-medium hover:bg-green-700" onclick="showToast('💬 WhatsApp נשלח')">💬 וואטסאפ</button>
+    </div>
+  `);
+}
+
+// ════════════════════════════════════════
+// ORDERS
+// ════════════════════════════════════════
+function renderOrders() {
+  setPage('הזמנות',D.orders.length+' הזמנות החודש');
+  const statuses = {חדש:D.orders.filter(o=>o.status==='חדש').length,ממתין:D.orders.filter(o=>o.status==='ממתין').length,הופק:D.orders.filter(o=>o.status==='הופק').length,נשלח:D.orders.filter(o=>o.status==='נשלח').length};
+  document.getElementById('content').innerHTML = `
+    <div class="flex items-center gap-3 mb-5 flex-wrap">
+      ${Object.entries(statuses).map(([s,n])=>`<div class="bg-white border rounded-lg px-4 py-2 text-sm">${statusBadge(s)} <span class="font-bold mr-1">${n}</span></div>`).join('')}
+      <div class="flex-1"></div>
+      <button class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700" onclick="showToast('📦 הזמנה חדשה נפתחה')">+ הזמנה חדשה</button>
+    </div>
+    <div class="bg-white rounded-xl border overflow-hidden">
+      <table class="w-full text-sm">
+        <thead class="bg-gray-50 text-xs text-gray-500 uppercase"><tr><th class="text-right p-3">מספר</th><th class="text-right p-3">לקוח</th><th class="text-right p-3">תאריך</th><th class="text-right p-3">מקור</th><th class="text-right p-3">סטטוס</th><th class="text-right p-3">סכום</th><th class="text-right p-3">סוכן</th></tr></thead>
+        <tbody>${D.orders.map(o=>`<tr class="table-row border-t cursor-pointer" onclick="showToast('פותח הזמנה ${o.id}...')">
+          <td class="p-3 font-mono text-blue-600 font-medium">${o.id}</td>
+          <td class="p-3 font-medium">${o.customer}</td>
+          <td class="p-3 text-gray-600">${o.date}</td>
+          <td class="p-3"><span class="text-xs bg-gray-100 px-2 py-1 rounded">${o.source}</span></td>
+          <td class="p-3">${statusBadge(o.status)}</td>
+          <td class="p-3 font-bold" style="direction:ltr;text-align:right">${fmtC(o.amount)}</td>
+          <td class="p-3 text-gray-500">${o.agent}</td>
+        </tr>`).join('')}</tbody>
+      </table>
+    </div>
+  `;
+}
+
+// ════════════════════════════════════════
+// COLLECTION
+// ════════════════════════════════════════
+function renderCollection() {
+  setPage('גבייה','מעקב חובות פתוחים');
+  const total=D.debts.reduce((s,d)=>s+d.total,0), d30=D.debts.reduce((s,d)=>s+d.d30,0), d60=D.debts.reduce((s,d)=>s+d.d60,0), d90=D.debts.reduce((s,d)=>s+d.d90,0);
+  document.getElementById('content').innerHTML = `
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+      ${kpi('סה"כ חובות',fmtC(total),'💰','red',D.debts.length+' לקוחות')}
+      ${kpi('שוטף',fmtC(total-d30-d60-d90),'✅','green')}
+      ${kpi('30-60 יום',fmtC(d30),'⚠️','yellow')}
+      ${kpi('90+ יום',fmtC(d90),'🔴','red')}
+    </div>
+    <div class="bg-white rounded-xl border overflow-hidden">
+      <table class="w-full text-sm">
+        <thead class="bg-gray-50 text-xs text-gray-500 uppercase"><tr><th class="text-right p-3">לקוח</th><th class="text-right p-3">סטטוס</th><th class="text-right p-3">סה"כ חוב</th><th class="text-right p-3">שוטף</th><th class="text-right p-3">30-60</th><th class="text-right p-3">60-90</th><th class="text-right p-3">90+</th><th class="p-3"></th></tr></thead>
+        <tbody>${D.debts.map(d=>`<tr class="table-row border-t ${d.status==='קריטי'?'bg-red-50':d.status==='בסיכון'?'bg-orange-50':''}">
+          <td class="p-3 font-medium">${d.name}</td>
+          <td class="p-3">${statusBadge(d.status)}</td>
+          <td class="p-3 font-bold text-red-600" style="direction:ltr;text-align:right">${fmtC(d.total)}</td>
+          <td class="p-3 text-gray-600" style="direction:ltr;text-align:right">${d.current?fmtC(d.current):'—'}</td>
+          <td class="p-3 ${d.d30?'text-yellow-600':'text-gray-300'}" style="direction:ltr;text-align:right">${d.d30?fmtC(d.d30):'—'}</td>
+          <td class="p-3 ${d.d60?'text-orange-600':'text-gray-300'}" style="direction:ltr;text-align:right">${d.d60?fmtC(d.d60):'—'}</td>
+          <td class="p-3 ${d.d90?'text-red-600 font-bold':'text-gray-300'}" style="direction:ltr;text-align:right">${d.d90?fmtC(d.d90):'—'}</td>
+          <td class="p-3"><button class="text-xs bg-green-50 text-green-700 border border-green-200 px-3 py-1.5 rounded-lg hover:bg-green-100" onclick="showToast('💬 תזכורת גבייה נשלחה ל-'+${JSON.stringify(d.name)})">💬 תזכורת</button></td>
+        </tr>`).join('')}</tbody>
+      </table>
+    </div>
+  `;
+}
+
+// ════════════════════════════════════════
+// SALES AGENT
+// ════════════════════════════════════════
+function renderSales() {
+  setPage('סוכן מכירות','רשימת שיחות יומית');
+  document.getElementById('content').innerHTML = `
+    <div class="grid grid-cols-3 gap-4 mb-6">
+      <div class="bg-white rounded-xl border p-5">
+        <div class="text-xs text-gray-500 mb-2">שיחות היום</div>
+        <div class="flex items-end gap-2"><span class="text-3xl font-bold text-blue-600">4</span><span class="text-gray-400 text-sm">/ 8</span></div>
+        <div class="w-full bg-gray-100 rounded-full h-2 mt-3"><div class="bg-blue-600 h-2 rounded-full" style="width:50%"></div></div>
+      </div>
+      <div class="bg-white rounded-xl border p-5">
+        <div class="text-xs text-gray-500 mb-2">הזמנות מהיום</div>
+        <div class="flex items-end gap-2"><span class="text-3xl font-bold text-green-600">2</span><span class="text-gray-400 text-sm">/ 5</span></div>
+        <div class="w-full bg-gray-100 rounded-full h-2 mt-3"><div class="bg-green-600 h-2 rounded-full" style="width:40%"></div></div>
+      </div>
+      <div class="bg-white rounded-xl border p-5">
+        <div class="text-xs text-gray-500 mb-2">מכירות היום</div>
+        <div class="text-3xl font-bold text-gray-800" style="direction:ltr;text-align:right">₪18,400</div>
+        <div class="w-full bg-gray-100 rounded-full h-2 mt-3"><div class="bg-purple-600 h-2 rounded-full" style="width:65%"></div></div>
+      </div>
+    </div>
+    <div class="bg-white rounded-xl border">
+      <div class="p-4 border-b flex items-center justify-between">
+        <h3 class="font-bold text-gray-700">📋 רשימת שיחות — ${D.callList.length} לקוחות</h3>
+        <button class="bg-blue-600 text-white px-3 py-1.5 rounded-lg text-xs font-medium hover:bg-blue-700" onclick="showToast('🤖 AI מייצר רשימה חדשה...')">🤖 חידוש רשימה</button>
+      </div>
+      <div class="divide-y">
+        ${D.callList.map((c,i) => `
+          <div class="flex items-center gap-4 p-4 hover:bg-gray-50 transition">
+            <div class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-xs font-bold text-gray-600">${i+1}</div>
+            <div class="flex-1 min-w-0">
+              <div class="font-medium text-sm">${c.name}</div>
+              <div class="text-xs text-gray-400 flex items-center gap-2 mt-0.5">
+                <span>${c.phone}</span>·<span>הזמנה אחרונה: ${c.lastOrder}</span>·<span>ממוצע: ${fmtC(c.avg)}</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-xs bg-gray-100 px-2 py-1 rounded">${c.reason}</span>
+              ${statusBadge(c.priority)}
+            </div>
+            <div class="flex gap-1.5">
+              <button class="bg-blue-50 text-blue-600 border border-blue-200 px-3 py-1.5 rounded-lg text-xs hover:bg-blue-100" onclick="showToast('📞 מתקשר...')">📞</button>
+              <button class="bg-green-50 text-green-600 border border-green-200 px-3 py-1.5 rounded-lg text-xs hover:bg-green-100" onclick="showToast('💬 WhatsApp')">💬</button>
+              <button class="bg-purple-50 text-purple-600 border border-purple-200 px-3 py-1.5 rounded-lg text-xs hover:bg-purple-100" onclick="showToast('📦 הזמנה חדשה')">📦</button>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
+// ════════════════════════════════════════
+// AI AGENT
+// ════════════════════════════════════════
+function renderAI() {
+  setPage('סוכן AI','סגמנטציה ואסטרטגיה מבוססת AI');
+  const segs = [
+    {name:'VIP',count:D.segments.vip,color:'bg-purple-100 text-purple-700 border-purple-200',icon:'👑',desc:'לקוחות מובילים — לטפח'},
+    {name:'צומחים',count:D.segments.growing,color:'bg-green-100 text-green-700 border-green-200',icon:'📈',desc:'פוטנציאל לגדול'},
+    {name:'יציבים',count:D.segments.stable,color:'bg-blue-100 text-blue-700 border-blue-200',icon:'⚓',desc:'לקוחות קבועים'},
+    {name:'יורדים',count:D.segments.declining,color:'bg-yellow-100 text-yellow-700 border-yellow-200',icon:'📉',desc:'ירידה — לפנות'},
+    {name:'בסיכון',count:D.segments.atRisk,color:'bg-orange-100 text-orange-700 border-orange-200',icon:'⚠️',desc:'סיכון נטישה'},
+    {name:'רדומים',count:D.segments.dormant,color:'bg-red-100 text-red-700 border-red-200',icon:'😴',desc:'לא פעילים'},
+    {name:'חדשים',count:D.segments.newC,color:'bg-cyan-100 text-cyan-700 border-cyan-200',icon:'🌟',desc:'להדרכה ומעקב'},
+    {name:'נטשו',count:D.segments.churned,color:'bg-gray-100 text-gray-600 border-gray-200',icon:'👋',desc:'הפסיקו לקנות'},
+  ];
+  document.getElementById('content').innerHTML = `
+    <div class="flex items-center gap-3 mb-6">
+      <button class="bg-gradient-to-l from-purple-600 to-blue-600 text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:shadow-lg transition" onclick="runAI()">🤖 הרץ ניתוח AI</button>
+      <span class="text-xs text-gray-400">ניתוח אחרון: היום, 09:15</span>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6" id="segment-cards">
+      ${segs.map(s=>`
+        <div class="bg-white rounded-xl border p-5 cursor-pointer hover:shadow-md transition" onclick="showToast('מציג ${s.count} לקוחות בסגמנט ${s.name}')">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-2xl">${s.icon}</span>
+            <span class="text-3xl font-bold text-gray-800">${s.count}</span>
+          </div>
+          <div class="font-bold text-sm">${s.name}</div>
+          <div class="text-xs text-gray-400 mt-0.5">${s.desc}</div>
+        </div>
+      `).join('')}
+    </div>
+    <div class="bg-white rounded-xl border p-5">
+      <h3 class="font-bold text-gray-700 mb-4">🎯 המלצות AI</h3>
+      <div class="space-y-3">
+        <div class="flex items-start gap-3 p-3 bg-red-50 rounded-lg border border-red-100">
+          <span class="text-xl">🔴</span>
+          <div><div class="font-medium text-sm">חברת אחזקה גלובל — סיכון גבוה</div><div class="text-xs text-gray-600 mt-1">לא הזמינו 14 יום. חוב ₪15,800. סיכוי נטישה: 78%. <strong>המלצה:</strong> שיחה אישית + הצעת הנחה 5%.</div></div>
+        </div>
+        <div class="flex items-start gap-3 p-3 bg-yellow-50 rounded-lg border border-yellow-100">
+          <span class="text-xl">🟡</span>
+          <div><div class="font-medium text-sm">מינימרקט אלון — ירידה</div><div class="text-xs text-gray-600 mt-1">ירידה של 30% מממוצע. <strong>המלצה:</strong> להציע חבילת מוצרים חדשה + magic link להזמנה.</div></div>
+        </div>
+        <div class="flex items-start gap-3 p-3 bg-green-50 rounded-lg border border-green-100">
+          <span class="text-xl">🟢</span>
+          <div><div class="font-medium text-sm">מלון ים התיכון — הזדמנות צמיחה</div><div class="text-xs text-gray-600 mt-1">קונה רק ניקיון. פוטנציאל cross-sell: חד"פ, נייר, מזון. <strong>הערכה:</strong> +₪5,000/חודש.</div></div>
+        </div>
+        <div class="flex items-start gap-3 p-3 bg-purple-50 rounded-lg border border-purple-100">
+          <span class="text-xl">🟣</span>
+          <div><div class="font-medium text-sm">גן השושנים — לקוח חדש</div><div class="text-xs text-gray-600 mt-1">הזמנה ראשונה בוצעה. <strong>המלצה:</strong> שיחת מעקב + שליחת קטלוג מלא + הגדרת תדירות הזמנה.</div></div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function runAI() {
+  const btn = event.target;
+  btn.textContent = '🤖 מנתח...';
+  btn.disabled = true;
+  setTimeout(()=>{
+    btn.textContent = '🤖 הרץ ניתוח AI';
+    btn.disabled = false;
+    showToast('✅ ניתוח AI הושלם — 156 לקוחות נותחו, 4 המלצות חדשות');
+  }, 2000);
+}
+
+// ════════════════════════════════════════
+// PORTAL PREVIEW
+// ════════════════════════════════════════
+function renderPortal() {
+  setPage('פורטל לקוחות','תצוגה מקדימה — כך הלקוח שלך רואה את הפורטל');
+  document.getElementById('content').innerHTML = `
+    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-3 mb-5 text-sm text-yellow-800 flex items-center gap-2">
+      💡 זו תצוגה מקדימה של הפורטל שלקוחות שלך רואים. כל לקוח מקבל פורטל ממותג עם הלוגו והצבעים שלך.
+    </div>
+    <div class="bg-white rounded-2xl border-2 border-gray-200 overflow-hidden shadow-lg max-w-4xl mx-auto">
+      <!-- Portal Header -->
+      <div class="bg-gradient-to-l from-navy-dark to-navy p-5 text-white">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center font-bold">א.ה</div>
+            <div><div class="font-bold">אלפא הפצות — פורטל הזמנות</div><div class="text-xs text-blue-200">ברוך הבא, סופר דוד!</div></div>
+          </div>
+          <div class="text-xs text-blue-200">הזמנה אחרונה: 12/03/2026</div>
+        </div>
+      </div>
+      <!-- Portal KPIs -->
+      <div class="grid grid-cols-3 gap-4 p-5 bg-gray-50 border-b">
+        <div class="text-center"><div class="text-xs text-gray-500">הוצאות החודש</div><div class="text-xl font-bold text-navy" style="direction:ltr">₪7,200</div></div>
+        <div class="text-center"><div class="text-xs text-gray-500">תקציב נותר</div><div class="text-xl font-bold text-green-600" style="direction:ltr">₪12,800</div></div>
+        <div class="text-center"><div class="text-xs text-gray-500">הזמנות החודש</div><div class="text-xl font-bold text-navy">3</div></div>
+      </div>
+      <!-- Portal Actions -->
+      <div class="p-5 grid grid-cols-2 gap-4">
+        <button class="bg-blue-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition" onclick="showToast('🛒 קטלוג מוצרים נפתח')">📦 הזמנה חדשה</button>
+        <button class="bg-white border-2 border-gray-200 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 transition" onclick="showToast('🔄 הזמנה חוזרת מהאחרונה')">🔄 הזמנה חוזרת</button>
+      </div>
+      <!-- Portal Recent Orders -->
+      <div class="p-5 border-t">
+        <h3 class="font-bold text-gray-700 mb-3">הזמנות אחרונות</h3>
+        <div class="space-y-2">
+          ${[{id:'ORD-1241',date:'12/03/2026',amount:7200,status:'נשלח'},{id:'ORD-1198',date:'25/02/2026',amount:8900,status:'נשלח'},{id:'ORD-1154',date:'14/02/2026',amount:6400,status:'נשלח'}].map(o=>`
+            <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+              <span class="text-sm font-mono text-blue-600">${o.id}</span>
+              <span class="text-sm text-gray-500">${o.date}</span>
+              ${statusBadge(o.status)}
+              <span class="font-bold text-sm" style="direction:ltr">${fmtC(o.amount)}</span>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+      <div class="bg-gray-50 border-t p-3 text-center text-xs text-gray-400">פורטל מופעל ע"י סַפָּק · הלקוח רואה את המותג שלך בלבד</div>
+    </div>
+  `;
+}
+
+// ════════════════════════════════════════
+// MODAL & TOAST
+// ════════════════════════════════════════
+function openModal(header,body) {
+  document.getElementById('modal-header').innerHTML = header + '<button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 text-xl">✕</button>';
+  document.getElementById('modal-body').innerHTML = body;
+  document.getElementById('modal-overlay').classList.remove('hidden');
+}
+function closeModal() { document.getElementById('modal-overlay').classList.add('hidden'); }
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.remove('translate-y-20','opacity-0');
+  setTimeout(()=>t.classList.add('translate-y-20','opacity-0'), 3000);
+}
+
+function handleSearch(v) {
+  const page = location.hash.slice(1) || 'dashboard';
+  if(page==='customers') renderCustomers(v);
+}
+
+function filterByType(v) {
+  // Simple demo filter
+  showToast('מסנן לפי: ' + (v||'הכל'));
+}
+
+// ════════════════════════════════════════
+// INIT
+// ════════════════════════════════════════
+renderNav();
+navigate(location.hash.slice(1) || 'dashboard');
+</script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+/* =========================================================================
+   YMarket 2026 - Tech & Alive Global Overrides
+   Injected via AI Agent
+   ========================================================================= */
+
+/* Typography & Base */
+body {
+    font-family: var(--font-hebrew);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+/* Global Buttons (The Tech Vibe) */
+.btn {
+    border-radius: var(--radius-md);
+    font-weight: var(--fw-bold);
+    transition: var(--transition-normal);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn--primary, .btn--accent {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    box-shadow: 0 4px 15px rgba(10, 88, 202, 0.25);
+}
+
+.btn--primary:hover, .btn--accent:hover {
+    background-color: #084298; /* Darker vibrant blue */
+}
+
+.btn--register {
+    background-color: var(--color-primary-dark);
+    color: var(--color-accent-gold);
+    border: 1px solid var(--color-accent-gold);
+}
+
+.btn--register:hover {
+    background-color: var(--color-primary);
+    color: #FFF;
+    border-color: transparent;
+}
+
+/* Product Cards - Alive & Selling */
+.product-card, .category-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    padding: var(--space-md);
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.product-card:hover, .category-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: #CFE2FF; /* Subtle tech blue border on hover */
+}
+
+/* Image Zoom Effect inside Cards */
+.product-card__image-wrapper, .category-card__icon {
+    overflow: hidden;
+    position: relative;
+    border-radius: var(--radius-md);
+}
+
+.product-card__image-wrapper img, .product-card img {
+    transition: transform 0.4s ease;
+    width: 100%;
+    object-fit: contain;
+}
+
+.product-card:hover .product-card__image-wrapper img,
+.product-card:hover img {
+    transform: scale(1.06);
+}
+
+/* Pricing & B2B Tease */
+.price-display {
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-extrabold);
+    color: var(--color-text);
+}
+
+.b2b-price-tease {
+    font-size: var(--fs-xs);
+    color: var(--color-text-secondary);
+    background: var(--color-bg-alt);
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 4px;
+    border: 1px solid var(--color-border-light);
+}
+
+.b2b-price-tease i {
+    color: var(--color-primary-dark);
+}
+
+.b2b-price-tease a {
+    color: var(--color-accent);
+    font-weight: var(--fw-bold);
+    text-decoration: none;
+}
+
+.b2b-price-tease a:hover {
+    text-decoration: underline;
+}
+
+/* Badges (Hot, Fast Shipping) */
+.badge-hot {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--color-danger);
+    color: var(--color-white);
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-bold);
+    z-index: 10;
+    box-shadow: 0 2px 6px rgba(255, 71, 87, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.badge-delivery {
+    color: var(--color-success);
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-bold);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 8px;
+}
+
+/* Header & Nav Tech Vibe */
+.header {
+    background: var(--color-white);
+    box-shadow: var(--shadow-sm);
+    border-bottom: 1px solid var(--color-border-light);
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+}
+
+.main-nav__link {
+    font-weight: var(--fw-semibold);
+    color: var(--color-text);
+    transition: color 0.2s;
+}
+
+.main-nav__link:hover {
+    color: var(--color-accent);
+}
+
+/* Forms & Inputs */
+input[type="text"], input[type="email"], input[type="password"], input[type="search"], select, textarea {
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    padding: 12px 16px;
+    font-family: var(--font-hebrew);
+    transition: var(--transition-fast);
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(10, 88, 202, 0.15);
+    outline: none;
+}
+
+/* Cart Icon Pulse Animation */
+@keyframes cartPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); color: var(--color-accent); }
+    100% { transform: scale(1); }
+}
+
+.cart-pulse {
+    animation: cartPulse 0.4s ease-out;
+}

@@ -1,24 +1,25 @@
 /* ===========================================
    Y Market - CSS Variables
-   Brand: Navy #1B3A5C | Professional B2B
+   Brand: Navy #1B3D6A | Tech B2B
    =========================================== */
 
 :root {
-  /* Brand Colors */
-  --color-primary: #1B3A5C;
-  --color-primary-dark: #112A45;
+  /* Brand Colors (Updated from Brandbook 2025) */
+  --color-primary: #1B3D6A;
+  --color-primary-dark: #13355D;
   --color-primary-light: #2A5080;
-  --color-accent: #3A7BD5;
+  --color-accent: #0A58CA; /* Vibrant tech blue for strong CTAs */
   --color-accent-light: #5A9BE6;
-  --color-accent-gold: #e8a735;
-  --color-accent-gold-hover: #d4952e;
+  --color-accent-gold: #D4AF37; /* Exclusive club gold */
+  --color-accent-gold-hover: #B5952F;
+  --color-club-bg: #FFECDE; /* Brand cream/orange tint */
   --color-whatsapp: #25D366;
   --color-whatsapp-hover: #1EBE5A;
 
   /* Neutral Colors */
   --color-white: #FFFFFF;
   --color-bg: #F8F9FB;
-  --color-bg-alt: #EEF1F5;
+  --color-bg-alt: #E5E5E5; /* Brand light gray */
   --color-border: #D8DDE5;
   --color-border-light: #E8ECF1;
   --color-text: #1A1A2E;
@@ -27,18 +28,18 @@
   --color-text-on-primary: #FFFFFF;
 
   /* Status Colors */
-  --color-success: #28A745;
+  --color-success: #198754; /* Brighter success green */
   --color-success-bg: #E8F5E9;
   --color-warning: #F5A623;
   --color-warning-bg: #FFF8E1;
-  --color-danger: #DC3545;
+  --color-danger: #FF4757; /* Hot red for badges */
   --color-danger-bg: #FFEBEE;
   --color-info: #17A2B8;
   --color-info-bg: #E1F5FE;
 
   /* Typography */
-  --font-hebrew: 'Heebo', Arial, sans-serif;
-  --font-english: 'Poppins', sans-serif;
+  --font-hebrew: 'Assistant', 'Heebo', Arial, sans-serif;
+  --font-english: 'AkcelerAalt', 'Poppins', sans-serif;
   --font-body: var(--font-hebrew);
 
   --fs-xs: 0.75rem;     /* 12px */
@@ -85,16 +86,16 @@
   --radius-pill: 50px;
   --radius-round: 50%;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(27, 58, 92, 0.08);
-  --shadow-md: 0 4px 12px rgba(27, 58, 92, 0.1);
-  --shadow-lg: 0 8px 24px rgba(27, 58, 92, 0.12);
-  --shadow-xl: 0 12px 36px rgba(27, 58, 92, 0.15);
+  /* Shadows (Updated for tech feel) */
+  --shadow-sm: 0 2px 8px rgba(27, 61, 106, 0.05);
+  --shadow-md: 0 4px 12px rgba(27, 61, 106, 0.08);
+  --shadow-lg: 0 10px 25px rgba(27, 61, 106, 0.12);
+  --shadow-xl: 0 15px 35px rgba(27, 61, 106, 0.15);
 
   /* Transitions */
-  --transition-fast: 150ms ease;
-  --transition-normal: 250ms ease;
-  --transition-slow: 400ms ease;
+  --transition-fast: 150ms cubic-bezier(0.25, 0.8, 0.25, 1);
+  --transition-normal: 250ms cubic-bezier(0.25, 0.8, 0.25, 1);
+  --transition-slow: 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
 
   /* Z-Index Scale */
   --z-dropdown: 1000;

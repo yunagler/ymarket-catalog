@@ -77,7 +77,7 @@
           priceHtml += '<div class="featured-slide__discount">' + Math.round(product.discountPercent) + '%- הנחה</div>';
         }
       } else {
-        priceHtml = '<div class="featured-slide__prices"><span class="featured-slide__price">' + formatPrice(product.saleNis) + '</span></div>';
+        priceHtml = '<div class="pricing-zone"><div class="price-retail">' + formatPrice(product.saleNis) + '</div><div class="b2b-price-tease"><i class="fas fa-lock"></i> מחיר סיטונאי: <a href="/register">התחבר לצפייה</a></div></div>';
       }
     } else {
       priceHtml = '<div class="featured-slide__prices"><span class="featured-slide__price">צרו קשר למחיר</span></div>';
@@ -87,8 +87,7 @@
     var slide = document.createElement('div');
     slide.className = 'swiper-slide';
     slide.dataset.fallback = fallback;
-    slide.innerHTML =
-      '<div class="featured-slide">' +
+    slide.innerHTML = '<div class="product-card">' + '<div class="badge-hot">🔥 מומלץ</div>' +
         '<a href="products/' + safeSlug + '" class="featured-slide__image" aria-label="' + safeName + '">' +
           '<img src="' + imgSrc + '" alt="' + safeName + '" loading="lazy" onerror="this.onerror=null;this.src=this.closest(\'[data-fallback]\').dataset.fallback;">' +
         '</a>' +
@@ -97,7 +96,7 @@
           '<h3 class="featured-slide__name"><a href="products/' + safeSlug + '">' + safeName + '</a></h3>' +
           priceHtml +
           (product.saleNis
-            ? '<button class="featured-slide__btn" data-id="' + product.id + '"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>'
+            ? '<button class="btn btn--primary featured-slide__btn" data-id="' + product.id + '"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button><div class="badge-delivery"><i class="fas fa-truck"></i> אספקה ב-72 שעות</div>'
             : '') +
         '</div>' +
       '</div>';
