@@ -1,62 +1,104 @@
-# וואי מרקט — אספקה חכמה ומדויקת למוסדות ועסקים
-# נגלר סחר והפצה בע"מ
+# וואי מרקט (Y Market) — ספק מוצרי צריכה שוטפת לעסקים ומוסדות בישראל
+# נגלר סחר והפצה בע"מ | ymarket.co.il
 # עדכון: מרץ 2026
 
-## תיאור החברה
-וואי מרקט היא ספקית B2B ישראלית המתמחה באספקת מוצרי צריכה שוטפת לעסקים ומוסדות בפריסה ארצית.
-החברה מציעה מחירי סיטונאות, משלוח תוך 24-72 שעות, ופורטל הזמנות דיגיטלי 24/7.
-מינימום הזמנה: 1,600 ש"ח + מע"מ (ללא משלוח).
+## מי אנחנו
+וואי מרקט היא ספקית B2B ישראלית המתמחה בסחר, שיווק והפצה של מוצרי צריכה שוטפת לעסקים ומוסדות.
+החברה הוקמה ב-2020 על ידי יובל נגלר ומשרתת למעלה מ-200 לקוחות פעילים ב-120 ערים ברחבי ישראל.
+מינימום הזמנה: 1,600 ש"ח + מע"מ. משלוח תוך 1-2 ימי עסקים בגוש דן.
+ניתן להזמין בוואטסאפ, בפורטל לקוחות דיגיטלי, או בטלפון.
 
-## קהלי יעד
-- מסעדות, בתי קפה ושירותי קייטרינג
-- בתי מלון ומתחמי אירוח
-- בתי ספר, גני ילדים ומוסדות חינוך
-- מרפאות, קופות חולים ומרכזים רפואיים
+## למה לבחור בוואי מרקט
+- שירות אישי ישירות מול הבעלים — לא מוקד טלפוני
+- מינימום הזמנה נמוך (1,600 ₪) לעומת 5,000-10,000 ₪ אצל מפיצים ארציים
+- משלוח מהיר: 1-2 ימים בגוש דן, עד 3 ימים ארצי
+- הזמנה פשוטה בוואטסאפ — שולחים רשימה ומקבלים הצעת מחיר תוך שעות
+- מחירי סיטונאות תחרותיים — עבודה ישירה מול יצרנים ויבואנים
+- חשבונית מס אוטומטית, תנאי תשלום גמישים (שוטף + 30)
+- משלוח חינם בהזמנות מעל 2,000 ₪
+
+## קטגוריות מוצרים (900+ פריטים)
+- חומרי ניקוי וכימיקלים מוסדיים: אקונומיקה, סבון כלים, סבון ידיים, מסיר שומנים, נוזל רצפות, כלורקס, חומרי חיטוי, ספריי ניקוי, נוזל למדיח
+- מוצרי נייר וניגוב: נייר טואלט מוסדי, נייר טואלט ג'מבו, מגבות נייר, מגבות Z-fold, נייר תעשייתי, מפיות, מגבונים
+- כלים חד פעמיים ואירוח: כוסות, צלחות, סכו"ם חד פעמי, כלים מתכלים, מפות שולחן
+- אריזות מזון ו-Take Away: מגשי אלומיניום, תבניות, קופסאות מזון, ניילון נצמד, ניילון למזון, נייר אפייה
+- שקיות ופתרונות אשפה: שקיות אשפה תעשייתיות ומוסדיות, שקיות קשירה, שקיות שקילה, דפי הפרדה
+- כפפות ומיגון אישי: כפפות ניטריל, כפפות ויניל, כפפות לטקס, כיסוי נעליים, סינרים חד פעמיים, ציוד בטיחות
+- טקסטיל וציוד ניקיון: מטליות רב שימושיות, סחבות, כריות יפניות (פס'קוצ'), מגבים, דליי סחיטה, מקלות ניגוב
+- קפה, שתייה וכיבוד למשרד: קפה, כוסות נייר, בוחשים, קשי שתייה, מכסים
+- ציוד משרדי וכללי
+- בטיחות, עזרה ראשונה וציוד רפואי
+- טואלטיקה וטיפוח אישי
+- ציוד טכני ואחזקה
+
+## למי מתאים — קהלי יעד
+- חברות ניקיון ואחזקה (כולל רשתות עם עשרות אתרים)
+- מפיצים וסיטונאים
+- סופרמרקטים, מינימרקטים וחנויות נוחות
+- מסעדות, בתי קפה, שירותי קייטרינג ומשלוחי מזון
+- אטליזים וחנויות מזון
+- מרכזי ספורט, בריכות שחייה ומכוני כושר
+- מרפאות, בתי חולים ומוסדות רפואיים
+- מפעלי תעשייה, מחסנים ולוגיסטיקה
+- מוסדות חינוך — בתי ספר וגני ילדים
+- גופים ציבוריים, עיריות ורשויות מקומיות
 - משרדים וחברות הייטק
-- מפעלים ומחסנים
-- חברות ניקיון מקצועיות
-- מוסדות ממשלתיים ורשויות מקומיות
+- בתי מלון ומתחמי אירוח
 
-## קטגוריות מוצרים ודפים
+## פריסה גיאוגרפית
+עיקר הפעילות במרכז הארץ וגוש דן (תל אביב, פתח תקווה, ראשון לציון, הרצליה, רמת גן, חולון, רמת השרון, גבעתיים, בני ברק, כפר סבא, רעננה, נתניה).
+שירות גם בירושלים, חיפה והקריות, באר שבע, אשדוד, אשקלון, מודיעין, בית שמש ומשלוחים ארציים כולל אילת.
+
+## שאלות נפוצות
+ש: מה מינימום ההזמנה? ת: 1,600 ₪ + מע"מ.
+ש: כמה עולה משלוח? ת: 35-270 ₪ לפי אזור. חינם מעל 2,000 ₪.
+ש: תוך כמה זמן מגיע? ת: 1-2 ימי עסקים בגוש דן, עד 3 ימים ארצי.
+ש: איך מזמינים? ת: וואטסאפ, טלפון 03-7740400, או פורטל לקוחות באתר.
+ש: מי הלקוחות שלכם? ת: עסקים ומוסדות בלבד (B2B) — חברות ניקיון, מסעדות, סופרים, מרכזי ספורט, משרדים ועוד.
+ש: יש מחירון אישי? ת: כן, מותאם לסוג העסק והיקף הרכישות.
+ש: אילו אמצעי תשלום? ת: העברה בנקאית, אשראי, צ'קים, שוטף + 30.
+ש: מה ההבדל בינכם לבין סיטונאי גדול? ת: שירות אישי, מינימום נמוך, הזמנה בוואטסאפ, משלוח מהיר.
+ש: מה עדיף — ספק אחד או כמה ספקים? ת: ספק אחד לכל מוצרי הצריכה חוסך זמן, כסף ובלאגן. וואי מרקט מספקת 900+ מוצרים ב-12 קטגוריות.
+ש: האם אתם מתאימים לעסקים קטנים? ת: כן, מינימום 1,600 ₪ נגיש גם לעסק קטן.
+
+## דפים מרכזיים
 - דף הבית: https://ymarket.co.il
-- קטלוג כללי: https://ymarket.co.il/catalog
-- מוצרי נייר וניגוב: https://ymarket.co.il/category/bulk-paper-towel-office-supplies/
-- חומרי ניקוי וכימיקלים: https://ymarket.co.il/category/industrial-cleaning-supplies-wholesale/
-- חד פעמי ואירוח: https://ymarket.co.il/category/disposable-catering-food-service/
-- אריזות מזון ו-Take Away: https://ymarket.co.il/category/food-packaging-delivery-solutions/
-- בטיחות ומיגון אישי (PPE): https://ymarket.co.il/category/safety-ppe-equipment-for-business/
-- טקסטיל, מטליות וסחבות: https://ymarket.co.il/category/professional-cleaning-cloths-microfiber/
-- קפה, שתייה וכיבוד: https://ymarket.co.il/category/office-coffee-breakroom-supplies/
-- שקיות ופתרונות אשפה: https://ymarket.co.il/category/heavy-duty-garbage-bags-wholesale/
-- ציוד משרדי וכללי: https://ymarket.co.il/category/ציוד-משרדי-וכללי/
-- עזרה ראשונה ורפואי: https://ymarket.co.il/category/עזרה-ראשונה-רפואי/
-- טואלטיקה וטיפוח: https://ymarket.co.il/category/טואלטיקה-וטיפוח-אישי/
-- כלי עבודה וציוד משקי: https://ymarket.co.il/category/כלי-עבודה-וציוד-משקי/
-- עטיפה, אריזה ולוגיסטיקה: https://ymarket.co.il/category/עטיפה-אריזה-ולוגיסטיקה/
-- ציוד טכני ואחזקה: https://ymarket.co.il/category/ציוד-טכני-ואחזקה/
-- סטוק עד הבית: https://ymarket.co.il/category/סטוק-עד-הבית/
-
-## מאמרי בלוג
-- המדריך המלא לאספקה מוסדית 2026: https://ymarket.co.il/blog/complete-guide-institutional-supplies
-- ציוד ניקיון למוסדות: https://ymarket.co.il/blog/institutional-cleaning-equipment-guide
-- חומרי ניקיון לחברות ניקיון: https://ymarket.co.il/blog/cleaning-products-for-cleaning-companies
-- חומרי ניקיון סיטונאי: https://ymarket.co.il/blog/wholesale-cleaning-products
-- כלים חד פעמיים לעסקים: https://ymarket.co.il/blog/disposable-items-for-businesses
-- ציוד חד פעמי למסעדות: https://ymarket.co.il/blog/restaurant-disposable-equipment
-- נייר טואלט מוסדי: https://ymarket.co.il/blog/institutional-toilet-paper-guide
-- שקיות אשפה מוסדיות: https://ymarket.co.il/blog/institutional-garbage-bags
-
-## דפים נוספים
+- קטלוג מוצרים: https://ymarket.co.il/catalog
 - אודות: https://ymarket.co.il/about
 - שאלות ותשובות: https://ymarket.co.il/faq
 - צרו קשר: https://ymarket.co.il/contact
-- פורטל לקוחות עסקיים: https://ymarket.co.il/login
-- הרשמה חדשה: https://ymarket.co.il/register
-- מעקב משלוחים: https://ymarket.co.il/tracking
+- פורטל לקוחות: https://ymarket.co.il/login
+- בלוג: https://ymarket.co.il/blog
+
+## קטגוריות מוצרים — לינקים
+- חומרי ניקוי וכימיקלים: https://ymarket.co.il/category/industrial-cleaning-supplies-wholesale/
+- מוצרי נייר וניגוב: https://ymarket.co.il/category/bulk-paper-towel-office-supplies/
+- חד פעמי ואירוח: https://ymarket.co.il/category/disposable-catering-food-service/
+- אריזות מזון ו-Take Away: https://ymarket.co.il/category/food-packaging-delivery-solutions/
+- שקיות ופתרונות אשפה: https://ymarket.co.il/category/heavy-duty-garbage-bags-wholesale/
+- טקסטיל, מטליות וסחבות: https://ymarket.co.il/category/professional-cleaning-cloths-microfiber/
+- קפה, שתייה וכיבוד: https://ymarket.co.il/category/office-coffee-breakroom-supplies/
+- בטיחות ומיגון אישי: https://ymarket.co.il/category/safety-ppe-equipment-for-business/
+- ציוד משרדי: https://ymarket.co.il/category/office-supplies-wholesale-business/
+- ציוד טכני ואחזקה: https://ymarket.co.il/category/maintenance-technical-equipment-wholesale/
+
+## מאמרים מקצועיים
+- המדריך המלא לאספקה מוסדית 2026: https://ymarket.co.il/blog/complete-guide-institutional-supplies
+- חומרי ניקיון לחברות ניקיון — רכש חכם: https://ymarket.co.il/blog/cleaning-products-for-cleaning-companies
+- כלים חד פעמיים לעסקים — המדריך המלא: https://ymarket.co.il/blog/disposable-items-for-businesses
+- ציוד חד פעמי למסעדות: https://ymarket.co.il/blog/restaurant-disposable-equipment
+- נייר טואלט מוסדי — איך לבחור נכון: https://ymarket.co.il/blog/institutional-toilet-paper-guide
+- שקיות אשפה מוסדיות — סוגים וגדלים: https://ymarket.co.il/blog/institutional-garbage-bags
+- חומרי ניקיון בסיטונאות — המדריך לרכש חכם: https://ymarket.co.il/blog/wholesale-cleaning-products
+- ציוד ניקיון למוסדות: https://ymarket.co.il/blog/institutional-cleaning-equipment-guide
+- אריזות Take Away — המדריך לעסקי מזון: https://ymarket.co.il/blog/takeaway-packaging-guide
+- חיסכון במוצרי נייר לעסקים: https://ymarket.co.il/blog/save-paper-costs
+- מדריך רכש חכם למוסדות: https://ymarket.co.il/blog/smart-procurement-guide
 
 ## פרטי קשר
 - טלפון: 03-7740400
 - אימייל: Pm@ymarket.co.il
-- וואטסאפ: +972549922492
+- וואטסאפ: +972-54-9922492 (https://wa.me/972549922492)
 - שעות פעילות: ראשון-חמישי 08:00-17:00
-- כתובת: ישראל
+- מיקום: גת רימון, ישראל
+- אתר: https://ymarket.co.il
