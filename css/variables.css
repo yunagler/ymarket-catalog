@@ -10,8 +10,8 @@
   --color-primary-light: #2A5080;
   --color-accent: #0A58CA; /* Vibrant tech blue for strong CTAs */
   --color-accent-light: #5A9BE6;
-  --color-accent-gold: #D4AF37; /* Exclusive club gold */
-  --color-accent-gold-hover: #B5952F;
+  --color-accent-gold: #B8860B; /* Darker gold - AA contrast on white */
+  --color-accent-gold-hover: #9A7209;
   --color-club-bg: #FFECDE; /* Brand cream/orange tint */
   --color-whatsapp: #25D366;
   --color-whatsapp-hover: #1EBE5A;

@@ -115,6 +115,18 @@
     .footer__contact-item { color: rgba(255, 255, 255, 0.8); }
     .footer__contact-item a { color: rgba(255, 255, 255, 0.8); }
 
+    /* Accessibility: more contrast fixes for PageSpeed audit */
+    .b2b-price-tease { color: #374151; }
+    .b2b-price-tease a { color: #0A58CA; font-weight: 700; }
+    .badge-delivery { color: #157347; }
+    .blog-preview-link { color: #0A58CA; font-weight: 600; }
+    .blog-preview-card { color: #374151; }
+    .product-card { color: #374151; }
+    .btn--whatsapp { background: #128C7E; color: #fff; }
+
+    /* Swiper pagination bullets - larger touch targets */
+    .swiper-pagination-bullet { width: 12px !important; height: 12px !important; margin: 0 6px !important; }
+
     /* Non-composited animation fix: use opacity instead of color transition */
     .main-nav__link { transition: background-color 0.15s ease, opacity 0.15s ease; }
     .main-nav__link:hover, .main-nav__link.active { opacity: 1; }
@@ -338,7 +350,7 @@
         <button class="header__search-toggle" aria-label="חיפוש"><i class="fas fa-search"></i></button>
         <button class="header__cart-btn" aria-label="עגלת קניות"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></button>
         <a href="/login" class="header__login-btn" aria-label="כניסת לקוחות"><i class="fas fa-user"></i> <span>כניסת לקוחות</span></a>
-        <a href="/register" class="header__register-btn"><i class="fas fa-user-plus"></i> <span>הרשמה</span></a>
+        <a href="/register" class="header__register-btn" aria-label="הרשמה לאתר"><i class="fas fa-user-plus"></i> <span>הרשמה</span></a>
       </div>
       <button class="mobile-menu-btn" aria-label="תפריט" aria-expanded="false"><i class="fas fa-bars"></i></button>
     </div>
@@ -758,7 +770,7 @@
         </div>
 
         <div class="footer__col">
-          <h4>קטגוריות</h4>
+          <h3 class="footer__heading">קטגוריות</h3>
           <nav aria-label="קטגוריות מוצרים - פוטר">
           <div class="footer__links">
             <a href="/category/bulk-paper-towel-office-supplies/" aria-label="מוצרי נייר וניגוב - קטגוריה">מוצרי נייר וניגוב</a>
@@ -776,7 +788,7 @@
         </div>
 
         <div class="footer__col">
-          <h4>קישורים מהירים</h4>
+          <h3 class="footer__heading">קישורים מהירים</h3>
           <div class="footer__links">
             <a href="/catalog" aria-label="קטלוג מוצרים - פוטר">קטלוג מוצרים</a>
             <a href="/about" aria-label="אודות - פוטר">אודות</a>
@@ -788,7 +800,7 @@
         </div>
 
         <div class="footer__col">
-          <h4>צרו קשר</h4>
+          <h3 class="footer__heading">צרו קשר</h3>
           <div class="footer__contact-item">
             <i class="fas fa-phone-alt"></i>
             <a href="tel:037740400">03-7740400</a>
