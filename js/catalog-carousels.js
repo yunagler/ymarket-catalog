@@ -7,8 +7,8 @@
 (function() {
   'use strict';
 
-  var MAX_PRODUCTS_PER_CAROUSEL = 12;
-  var MIN_PRODUCTS_FOR_CATEGORY = 5;
+  var MAX_PRODUCTS_PER_CAROUSEL = 20;
+  var MIN_PRODUCTS_FOR_CATEGORY = 1;
   var salesRanking = {}; // item_id -> rank score (higher = better seller)
 
   // Icon mapping for parent categories (by slug AND seoSlug)
@@ -588,24 +588,38 @@
       }
     }
 
-    // Group products by parent category
+    // Group products by TOP-LEVEL parent category only
     for (var k = 0; k < allProducts.length; k++) {
       var product = allProducts[k];
-      var parentSlug = null;
+      var resolvedSlug = null;
 
-      // Use categorySlugs[1] as parent slug
+      // Try categorySlugs[1] first (usually the parent), then [0]
+      var slugsToTry = [];
       if (product.categorySlugs && product.categorySlugs.length >= 2) {
-        parentSlug = product.categorySlugs[1];
+        slugsToTry.push(product.categorySlugs[1]);
+        slugsToTry.push(product.categorySlugs[0]);
       } else if (product.categorySlugs && product.categorySlugs.length === 1) {
-        // Single slug - could be the parent itself or subcategory
-        var s = product.categorySlugs[0];
-        parentSlug = subToParentSlug[s] || s;
+        slugsToTry.push(product.categorySlugs[0]);
       } else if (product.categorySlug) {
-        parentSlug = subToParentSlug[product.categorySlug] || product.categorySlug;
+        slugsToTry.push(product.categorySlug);
       }
 
-      if (parentSlug && parentCats[parentSlug]) {
-        parentCats[parentSlug].products.push(product);
+      // Resolve to a top-level parent
+      for (var si = 0; si < slugsToTry.length; si++) {
+        var trySlug = slugsToTry[si];
+        if (parentCats[trySlug]) {
+          resolvedSlug = trySlug;
+          break;
+        }
+        // If it's a sub-category slug, map to parent
+        if (subToParentSlug[trySlug] && parentCats[subToParentSlug[trySlug]]) {
+          resolvedSlug = subToParentSlug[trySlug];
+          break;
+        }
+      }
+
+      if (resolvedSlug) {
+        parentCats[resolvedSlug].products.push(product);
       }
     }
 
