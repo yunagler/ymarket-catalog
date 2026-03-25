@@ -356,10 +356,11 @@
     --container-padding: 1rem;
   }
 
-  /* Product Grid - single column on phones */
+  /* Product Grid - 2 columns on phones */
   .products-grid,
   .catalog-layout .products-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
   }
 
   /* Categories */
