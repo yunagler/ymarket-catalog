@@ -1,0 +1,2077 @@
+{
+  "period": "2025-12-26 to 2026-03-26",
+  "items": [
+    {
+      "item_id": 664,
+      "name": "נייר תעשייתי Blinx 28 ס\"מ",
+      "customers": 15,
+      "quantity": 398,
+      "revenue": 17256,
+      "docs": 56
+    },
+    {
+      "item_id": 35,
+      "name": "נטריל שחור (Perfect) - מידה L - (100 יח) - ללא אבקה",
+      "customers": 11,
+      "quantity": 1706,
+      "revenue": 17910,
+      "docs": 66
+    },
+    {
+      "item_id": 34,
+      "name": "נטריל שחור (Perfect) - מידה M - (100 יח) - ללא אבקה",
+      "customers": 10,
+      "quantity": 1140,
+      "revenue": 10782,
+      "docs": 50
+    },
+    {
+      "item_id": 83,
+      "name": "כוסות חד פעמי (100יח) Splash - 180cc - קרטון 3000 יח",
+      "customers": 10,
+      "quantity": 136,
+      "revenue": 8580,
+      "docs": 34
+    },
+    {
+      "item_id": 266,
+      "name": "מקל עץ + הברגה",
+      "customers": 8,
+      "quantity": 1460,
+      "revenue": 5254,
+      "docs": 38
+    },
+    {
+      "item_id": 724,
+      "name": "נילון נצמד מכונה - 6 ק\"ג",
+      "customers": 8,
+      "quantity": 458,
+      "revenue": 26526,
+      "docs": 84
+    },
+    {
+      "item_id": 606,
+      "name": "כוס חם 9 OZ דגם לואי א' 1000 יח'",
+      "customers": 8,
+      "quantity": 64,
+      "revenue": 4392,
+      "docs": 36
+    },
+    {
+      "item_id": 503,
+      "name": "כפפות בלוקים כתומות ציפוי מחוספס - זוגות",
+      "customers": 7,
+      "quantity": 6480,
+      "revenue": 13671,
+      "docs": 24
+    },
+    {
+      "item_id": 183,
+      "name": "6 כריות יפניות יפניות צבעוני - Sshiny",
+      "customers": 7,
+      "quantity": 698,
+      "revenue": 3242,
+      "docs": 34
+    },
+    {
+      "item_id": 98,
+      "name": "מגבון (Delux) ריחני בדלי - 400 יח'",
+      "customers": 7,
+      "quantity": 78,
+      "revenue": 1094,
+      "docs": 26
+    },
+    {
+      "item_id": 320,
+      "name": "נייר טרמי לקופה 80*80",
+      "customers": 6,
+      "quantity": 842,
+      "revenue": 3712,
+      "docs": 16
+    },
+    {
+      "item_id": 954,
+      "name": "נייר תעשייתי 100% תאית - 2.5 ק\"ג",
+      "customers": 6,
+      "quantity": 460,
+      "revenue": 10576,
+      "docs": 42
+    },
+    {
+      "item_id": 232,
+      "name": "מגבון 400 - מילוי לדלי",
+      "customers": 6,
+      "quantity": 260,
+      "revenue": 2556,
+      "docs": 28
+    },
+    {
+      "item_id": 156,
+      "name": "סחבה גרניט 70 סמ פשוט",
+      "customers": 5,
+      "quantity": 1100,
+      "revenue": 1266,
+      "docs": 20
+    },
+    {
+      "item_id": 155,
+      "name": "מטליות מיקרו-פייבר לרצפה (Focus) - א' 3 יח'",
+      "customers": 5,
+      "quantity": 892,
+      "revenue": 8393,
+      "docs": 32
+    },
+    {
+      "item_id": 36,
+      "name": "נטריל שחור (Perfect) - מידה S - (100 יח) - ללא אבקה",
+      "customers": 5,
+      "quantity": 600,
+      "revenue": 6120,
+      "docs": 28
+    },
+    {
+      "item_id": 124,
+      "name": "שקית זבל שחורה - 75*85 - 400 גר' ",
+      "customers": 5,
+      "quantity": 552,
+      "revenue": 1982,
+      "docs": 14
+    },
+    {
+      "item_id": 80,
+      "name": "נטריל כחול (Perfect) - מידה XL - (100 יח) - ללא אבקה",
+      "customers": 5,
+      "quantity": 160,
+      "revenue": 1620,
+      "docs": 16
+    },
+    {
+      "item_id": 95,
+      "name": "כוסות חד פעמי חם 8B oz (50 יח) - WP - בקרטון 1000 יח",
+      "customers": 5,
+      "quantity": 110,
+      "revenue": 6602,
+      "docs": 16
+    },
+    {
+      "item_id": 863,
+      "name": "נוזל כלים 18% - 4 ליטר BLINX",
+      "customers": 5,
+      "quantity": 76,
+      "revenue": 1123,
+      "docs": 18
+    },
+    {
+      "item_id": 673,
+      "name": "נייר טואלט קומפקט 80 - 36 יח'",
+      "customers": 5,
+      "quantity": 56,
+      "revenue": 6100,
+      "docs": 14
+    },
+    {
+      "item_id": 744,
+      "name": "שקיות גופיה לבן נקי - 15 ק\"ג 30*60 (גדול)",
+      "customers": 5,
+      "quantity": 16,
+      "revenue": 2330,
+      "docs": 16
+    },
+    {
+      "item_id": 120,
+      "name": "שקית זבל שחורה - 75*90 - בשקית - 50 יח",
+      "customers": 4,
+      "quantity": 1080,
+      "revenue": 9796,
+      "docs": 22
+    },
+    {
+      "item_id": 37,
+      "name": "נטריל שחור (Perfect) - מידה XL - (100 יח) - ללא אבקה",
+      "customers": 4,
+      "quantity": 560,
+      "revenue": 5480,
+      "docs": 20
+    },
+    {
+      "item_id": 159,
+      "name": "שקית זבל שחורה עבה - 75*90 - 800 גר' (גורילה) - 25 יח",
+      "customers": 4,
+      "quantity": 320,
+      "revenue": 2434,
+      "docs": 20
+    },
+    {
+      "item_id": 857,
+      "name": "אקונומיקה 3.5% ריחנית  - 4 ליטר BLINX",
+      "customers": 4,
+      "quantity": 184,
+      "revenue": 1405,
+      "docs": 16
+    },
+    {
+      "item_id": 79,
+      "name": "נטריל כחול (Perfect) - מידה L - (100 יח) - ללא אבקה",
+      "customers": 4,
+      "quantity": 180,
+      "revenue": 2140,
+      "docs": 10
+    },
+    {
+      "item_id": 164,
+      "name": "מטליות רצפה (Delux) ריחני בדלי - 50 יח'",
+      "customers": 4,
+      "quantity": 178,
+      "revenue": 2032,
+      "docs": 10
+    },
+    {
+      "item_id": 916,
+      "name": "צלופן להפרדה 40*30 5 ק\"ג",
+      "customers": 4,
+      "quantity": 126,
+      "revenue": 6111,
+      "docs": 26
+    },
+    {
+      "item_id": 205,
+      "name": "מטאטא ג'וליה",
+      "customers": 4,
+      "quantity": 114,
+      "revenue": 518,
+      "docs": 16
+    },
+    {
+      "item_id": 238,
+      "name": "אקונומיקה ריחנית 4 ליטר",
+      "customers": 4,
+      "quantity": 104,
+      "revenue": 712,
+      "docs": 18
+    },
+    {
+      "item_id": 277,
+      "name": "קש ארומה 0.8 - 400 יח'",
+      "customers": 4,
+      "quantity": 104,
+      "revenue": 645,
+      "docs": 12
+    },
+    {
+      "item_id": 856,
+      "name": "אקונומיקה 3.5% - 4 ליטר BLINX",
+      "customers": 4,
+      "quantity": 88,
+      "revenue": 373,
+      "docs": 16
+    },
+    {
+      "item_id": 961,
+      "name": "נייר תעשייתי 100% תאית - 1.3 ק\"ג",
+      "customers": 4,
+      "quantity": 52,
+      "revenue": 1018,
+      "docs": 12
+    },
+    {
+      "item_id": 636,
+      "name": "מכסה 101 (מתאים 150, 250, 500 גבוה) - א' 2000 יח'",
+      "customers": 4,
+      "quantity": 14,
+      "revenue": 330,
+      "docs": 14
+    },
+    {
+      "item_id": 78,
+      "name": "נטריל כחול (Perfect) - מידה M - (100 יח) - ללא אבקה",
+      "customers": 3,
+      "quantity": 2160,
+      "revenue": 26320,
+      "docs": 14
+    },
+    {
+      "item_id": 157,
+      "name": "מטליות מיקרו-פייבר למשטחים (Focus) - א' 5 יח'",
+      "customers": 3,
+      "quantity": 1054,
+      "revenue": 5774,
+      "docs": 26
+    },
+    {
+      "item_id": 234,
+      "name": "מזלג שקוף ארוז 50 יח' בחבילה",
+      "customers": 3,
+      "quantity": 560,
+      "revenue": 1560,
+      "docs": 6
+    },
+    {
+      "item_id": 820,
+      "name": "שקיות שקילה נילון 35*25 ל - 1 ק\"ג",
+      "customers": 3,
+      "quantity": 480,
+      "revenue": 5760,
+      "docs": 16
+    },
+    {
+      "item_id": 65,
+      "name": "מגבון (Delux) ריחני בשקית - 72 יח' ",
+      "customers": 3,
+      "quantity": 432,
+      "revenue": 580,
+      "docs": 8
+    },
+    {
+      "item_id": 952,
+      "name": "שקית זבל שחורה - 75*90 - 800 גר' (Blinx) - 25 יח",
+      "customers": 3,
+      "quantity": 202,
+      "revenue": 1359,
+      "docs": 12
+    },
+    {
+      "item_id": 872,
+      "name": "נוזל חלונות - 1 ליטר BLINX",
+      "customers": 3,
+      "quantity": 168,
+      "revenue": 768,
+      "docs": 14
+    },
+    {
+      "item_id": 1047,
+      "name": "נייר תעשייתי תאית 5 ק\"ג דגם - 1200",
+      "customers": 3,
+      "quantity": 158,
+      "revenue": 9018,
+      "docs": 22
+    },
+    {
+      "item_id": 190,
+      "name": "נייר מגבת סופר 6 גלילים",
+      "customers": 3,
+      "quantity": 146,
+      "revenue": 3980,
+      "docs": 16
+    },
+    {
+      "item_id": 413,
+      "name": "את רפת מרובע + ידית",
+      "customers": 3,
+      "quantity": 132,
+      "revenue": 5280,
+      "docs": 12
+    },
+    {
+      "item_id": 883,
+      "name": "נייר מגבת סופר 6 גלילים 1.3 ק\"ג",
+      "customers": 3,
+      "quantity": 106,
+      "revenue": 2096,
+      "docs": 12
+    },
+    {
+      "item_id": 879,
+      "name": "נוזל כלים 24% (משאבה) - 1 ליטר ",
+      "customers": 3,
+      "quantity": 90,
+      "revenue": 912,
+      "docs": 16
+    },
+    {
+      "item_id": 935,
+      "name": "מגש קלקר רגיל לבן - כרעיים 600 יח'",
+      "customers": 3,
+      "quantity": 66,
+      "revenue": 8725,
+      "docs": 30
+    },
+    {
+      "item_id": 726,
+      "name": "מגש קלקר רגיל שחור - כרעיים 600 יח'",
+      "customers": 3,
+      "quantity": 58,
+      "revenue": 7932,
+      "docs": 16
+    },
+    {
+      "item_id": 199,
+      "name": "12 ממרקות ברזל 30 גר'",
+      "customers": 3,
+      "quantity": 54,
+      "revenue": 506,
+      "docs": 16
+    },
+    {
+      "item_id": 116,
+      "name": "שמפו רצפות (לוונדר) 4 ליטר",
+      "customers": 3,
+      "quantity": 32,
+      "revenue": 271,
+      "docs": 14
+    },
+    {
+      "item_id": 203,
+      "name": "מגב פלסטיק (40) BASIC",
+      "customers": 3,
+      "quantity": 28,
+      "revenue": 105,
+      "docs": 12
+    },
+    {
+      "item_id": 295,
+      "name": "כוסות חד פעמי חם 4 oz (50 יח') - WP - בקרטון 2000 יח'",
+      "customers": 3,
+      "quantity": 12,
+      "revenue": 1640,
+      "docs": 8
+    },
+    {
+      "item_id": 354,
+      "name": "שקית דליה חומה 28/29/17 - 500 יח'",
+      "customers": 3,
+      "quantity": 12,
+      "revenue": 1542,
+      "docs": 16
+    },
+    {
+      "item_id": 455,
+      "name": "כוס חם 12 OZ - 1000 יח'",
+      "customers": 3,
+      "quantity": 8,
+      "revenue": 1478,
+      "docs": 8
+    },
+    {
+      "item_id": 635,
+      "name": "גביע 500 PP גבוה - א' 1000 יח'",
+      "customers": 3,
+      "quantity": 6,
+      "revenue": 312,
+      "docs": 6
+    },
+    {
+      "item_id": 637,
+      "name": "מכסה 117 (מתאים 270, 500, 1000) - א' 1000 יח'",
+      "customers": 3,
+      "quantity": 6,
+      "revenue": 171,
+      "docs": 6
+    },
+    {
+      "item_id": 725,
+      "name": "נייר קרן תעשייתי 5 ק\"ג דגם 1200",
+      "customers": 3,
+      "quantity": 4,
+      "revenue": 0,
+      "docs": 8
+    },
+    {
+      "item_id": 803,
+      "name": "קלקר לאנצ בוקס לבן - לא מחולק",
+      "customers": 2,
+      "quantity": 5502,
+      "revenue": 1031,
+      "docs": 10
+    },
+    {
+      "item_id": 355,
+      "name": "מטאטא כביש ניילון 30 ס\"מ",
+      "customers": 2,
+      "quantity": 900,
+      "revenue": 9360,
+      "docs": 6
+    },
+    {
+      "item_id": 3,
+      "name": "מסכה כירוגית (3 שכבות) - שחור - 50 יח'",
+      "customers": 2,
+      "quantity": 400,
+      "revenue": 900,
+      "docs": 6
+    },
+    {
+      "item_id": 233,
+      "name": "כפית שקופה - ארוז 50 יח' בחבילה ",
+      "customers": 2,
+      "quantity": 400,
+      "revenue": 1120,
+      "docs": 6
+    },
+    {
+      "item_id": 477,
+      "name": "מגרפת דשא פלסטיק גדולה + מקל",
+      "customers": 2,
+      "quantity": 300,
+      "revenue": 6600,
+      "docs": 6
+    },
+    {
+      "item_id": 242,
+      "name": "נייר טואלט Only 32 גלילים",
+      "customers": 2,
+      "quantity": 264,
+      "revenue": 4392,
+      "docs": 6
+    },
+    {
+      "item_id": 576,
+      "name": "כוס יהלום 250 מ\"ל - 40 יח'",
+      "customers": 2,
+      "quantity": 250,
+      "revenue": 850,
+      "docs": 6
+    },
+    {
+      "item_id": 674,
+      "name": "מגבון בד לך - לניקוי כללי ",
+      "customers": 2,
+      "quantity": 242,
+      "revenue": 185,
+      "docs": 4
+    },
+    {
+      "item_id": 426,
+      "name": "שקיות גליל עם שרוך 52*65 - 50 יח'",
+      "customers": 2,
+      "quantity": 240,
+      "revenue": 1200,
+      "docs": 6
+    },
+    {
+      "item_id": 680,
+      "name": "מברשת שניים קולגייט דיפ קלין",
+      "customers": 2,
+      "quantity": 226,
+      "revenue": 585,
+      "docs": 4
+    },
+    {
+      "item_id": 249,
+      "name": "מטליות מיקרופייבר לרצפה בתפזורת 12 יח - Shainy",
+      "customers": 2,
+      "quantity": 222,
+      "revenue": 9858,
+      "docs": 10
+    },
+    {
+      "item_id": 766,
+      "name": "שקיות שקילה נילון 30*20 ל - 1 ק\"ג",
+      "customers": 2,
+      "quantity": 180,
+      "revenue": 1920,
+      "docs": 6
+    },
+    {
+      "item_id": 69,
+      "name": "שקית זבל שחורה - 75*85 - 500 גר'",
+      "customers": 2,
+      "quantity": 180,
+      "revenue": 360,
+      "docs": 6
+    },
+    {
+      "item_id": 200,
+      "name": "6 ספוגי הפלא - Shiny",
+      "customers": 2,
+      "quantity": 170,
+      "revenue": 1040,
+      "docs": 8
+    },
+    {
+      "item_id": 824,
+      "name": "דפי הפרדה LD פרגפלסט דק - 25*35 א' ",
+      "customers": 2,
+      "quantity": 144,
+      "revenue": 1628,
+      "docs": 16
+    },
+    {
+      "item_id": 194,
+      "name": "סרט אריזה דגם 132 - הדבקה חזקה במיוחד - שקוף",
+      "customers": 2,
+      "quantity": 144,
+      "revenue": 0,
+      "docs": 4
+    },
+    {
+      "item_id": 340,
+      "name": "סלים רול שישיה למתקן 4 קילו",
+      "customers": 2,
+      "quantity": 128,
+      "revenue": 13708,
+      "docs": 20
+    },
+    {
+      "item_id": 499,
+      "name": "סמארט בומבה צר 1/12 דגם 200 + פרפורציה",
+      "customers": 2,
+      "quantity": 120,
+      "revenue": 12960,
+      "docs": 22
+    },
+    {
+      "item_id": 950,
+      "name": "מגבת צץ רץ - טישו חד שכבתי 4000 יח",
+      "customers": 2,
+      "quantity": 96,
+      "revenue": 4880,
+      "docs": 12
+    },
+    {
+      "item_id": 214,
+      "name": "מטליות מיקרופייבר לרצפה בתפזורת 12 יח",
+      "customers": 2,
+      "quantity": 80,
+      "revenue": 3480,
+      "docs": 8
+    },
+    {
+      "item_id": 821,
+      "name": "שקיות שקילה נילון 40*30 ל - 1 ק\"ג",
+      "customers": 2,
+      "quantity": 72,
+      "revenue": 864,
+      "docs": 10
+    },
+    {
+      "item_id": 107,
+      "name": "נייר סופג לאקי 2 שכבות 6 גלילים ",
+      "customers": 2,
+      "quantity": 52,
+      "revenue": 434,
+      "docs": 6
+    },
+    {
+      "item_id": 240,
+      "name": "סבון כלים 1050 ליטר ",
+      "customers": 2,
+      "quantity": 36,
+      "revenue": 192,
+      "docs": 12
+    },
+    {
+      "item_id": 755,
+      "name": "מפיות 1/8 40*40 ארוז 2000 יח'",
+      "customers": 2,
+      "quantity": 32,
+      "revenue": 4374,
+      "docs": 12
+    },
+    {
+      "item_id": 1093,
+      "name": "מגש קלקר סופג שחור - כרעיים 600 יח'",
+      "customers": 2,
+      "quantity": 24,
+      "revenue": 5536,
+      "docs": 8
+    },
+    {
+      "item_id": 454,
+      "name": "נוזל חלונות 4 ליטר",
+      "customers": 2,
+      "quantity": 24,
+      "revenue": 184,
+      "docs": 6
+    },
+    {
+      "item_id": 913,
+      "name": "מגש קלקר סופג כחול - צלעות 480 יח'",
+      "customers": 2,
+      "quantity": 24,
+      "revenue": 4948,
+      "docs": 14
+    },
+    {
+      "item_id": 975,
+      "name": "סבון ידיים נוזלי + משאבה - 1 ליטר",
+      "customers": 2,
+      "quantity": 20,
+      "revenue": 192,
+      "docs": 6
+    },
+    {
+      "item_id": 102,
+      "name": "סבון ידיים קטיפתי - שלשייה 500 מ\"ל",
+      "customers": 2,
+      "quantity": 18,
+      "revenue": 117,
+      "docs": 4
+    },
+    {
+      "item_id": 858,
+      "name": "נוזל רצפות לוונדר - 4 ליטר BLINX",
+      "customers": 2,
+      "quantity": 16,
+      "revenue": 172,
+      "docs": 8
+    },
+    {
+      "item_id": 632,
+      "name": "גביע 150 PP - א' 2000 יח'",
+      "customers": 2,
+      "quantity": 14,
+      "revenue": 538,
+      "docs": 12
+    },
+    {
+      "item_id": 859,
+      "name": "מסיר שומן קר - 4 ליטר BLINX",
+      "customers": 2,
+      "quantity": 12,
+      "revenue": 224,
+      "docs": 6
+    },
+    {
+      "item_id": 299,
+      "name": "סט סכום 5 פריטים שחור ארוז 500 יח'",
+      "customers": 2,
+      "quantity": 6,
+      "revenue": 576,
+      "docs": 8
+    },
+    {
+      "item_id": 599,
+      "name": "מכסה כיפה לכוס 95 א' 1000 יח'",
+      "customers": 2,
+      "quantity": 6,
+      "revenue": 540,
+      "docs": 6
+    },
+    {
+      "item_id": 565,
+      "name": "כוסות חד פעמי חם 16 oz (1000 יח)",
+      "customers": 2,
+      "quantity": 4,
+      "revenue": 790,
+      "docs": 4
+    },
+    {
+      "item_id": 614,
+      "name": "גביע 150 (125 גר') - א' 2000",
+      "customers": 2,
+      "quantity": 4,
+      "revenue": 0,
+      "docs": 4
+    },
+    {
+      "item_id": 402,
+      "name": "נייר פרגמנט חלק 45*35 ארוז 4 ק\"ג",
+      "customers": 2,
+      "quantity": 4,
+      "revenue": 266,
+      "docs": 8
+    },
+    {
+      "item_id": 818,
+      "name": "שקית גופיה לבן 50*44 (בנוני) נקי מיוחד 15 ק\"ג",
+      "customers": 2,
+      "quantity": 4,
+      "revenue": 620,
+      "docs": 8
+    },
+    {
+      "item_id": 217,
+      "name": "מיקרו כלל תפזורת מגוון צבעים 30*30 ס\"מ",
+      "customers": 1,
+      "quantity": 2160,
+      "revenue": 2160,
+      "docs": 8
+    },
+    {
+      "item_id": 1005,
+      "name": "מגש אלומניום 90 (אופל) ",
+      "customers": 1,
+      "quantity": 1200,
+      "revenue": 684,
+      "docs": 6
+    },
+    {
+      "item_id": 145,
+      "name": "מגש אלומניום מלבני 8B (אופל) ",
+      "customers": 1,
+      "quantity": 1200,
+      "revenue": 360,
+      "docs": 6
+    },
+    {
+      "item_id": 1039,
+      "name": "מכסה לתבנית 90 (אלומניום)",
+      "customers": 1,
+      "quantity": 1200,
+      "revenue": 276,
+      "docs": 6
+    },
+    {
+      "item_id": 77,
+      "name": "נטריל כחול (Perfect) - מידה S - (100 יח) - ללא אבקה",
+      "customers": 1,
+      "quantity": 840,
+      "revenue": 10080,
+      "docs": 6
+    },
+    {
+      "item_id": 582,
+      "name": "מגש אלומניום 105 (אופל) ",
+      "customers": 1,
+      "quantity": 800,
+      "revenue": 464,
+      "docs": 6
+    },
+    {
+      "item_id": 1006,
+      "name": "מכסה לתבנית 105 (אלומניום)",
+      "customers": 1,
+      "quantity": 800,
+      "revenue": 216,
+      "docs": 6
+    },
+    {
+      "item_id": 349,
+      "name": "כפפות חיזוק לעבודה בפחם - מגן ורידים",
+      "customers": 1,
+      "quantity": 720,
+      "revenue": 2376,
+      "docs": 2
+    },
+    {
+      "item_id": 434,
+      "name": "מלח מנות - רגיולר 1000 יח'",
+      "customers": 1,
+      "quantity": 630,
+      "revenue": 15120,
+      "docs": 12
+    },
+    {
+      "item_id": 114,
+      "name": "ווניל שקוף/לבן (IT-TAI) - מידה L - (100 יח) - ללא אבקה",
+      "customers": 1,
+      "quantity": 620,
+      "revenue": 6696,
+      "docs": 6
+    },
+    {
+      "item_id": 360,
+      "name": "מטאטא קש + מקל",
+      "customers": 1,
+      "quantity": 600,
+      "revenue": 18000,
+      "docs": 6
+    },
+    {
+      "item_id": 704,
+      "name": "סט מצעים מלודי מלא מיטת יחיד",
+      "customers": 1,
+      "quantity": 420,
+      "revenue": 16380,
+      "docs": 4
+    },
+    {
+      "item_id": 603,
+      "name": "שיפוד יפני (יקיטורי) 18 ס\"מ א' 100 יח'",
+      "customers": 1,
+      "quantity": 400,
+      "revenue": 1720,
+      "docs": 4
+    },
+    {
+      "item_id": 903,
+      "name": "כפפות ניטריל כחול (סטוק) - ללא חזרות",
+      "customers": 1,
+      "quantity": 400,
+      "revenue": 0,
+      "docs": 4
+    },
+    {
+      "item_id": 799,
+      "name": "שמיכת קורל יחיד 150/200",
+      "customers": 1,
+      "quantity": 400,
+      "revenue": 10400,
+      "docs": 4
+    },
+    {
+      "item_id": 702,
+      "name": "כרית ווקום",
+      "customers": 1,
+      "quantity": 400,
+      "revenue": 7600,
+      "docs": 4
+    },
+    {
+      "item_id": 688,
+      "name": "מגבת 140*70 - כותנה",
+      "customers": 1,
+      "quantity": 400,
+      "revenue": 7000,
+      "docs": 4
+    },
+    {
+      "item_id": 695,
+      "name": "נייר טרמי לקופה 80*40",
+      "customers": 1,
+      "quantity": 400,
+      "revenue": 1600,
+      "docs": 4
+    },
+    {
+      "item_id": 1020,
+      "name": "שקית וואקום שקופה 20/40/70 - 2000 יח",
+      "customers": 1,
+      "quantity": 400,
+      "revenue": 140,
+      "docs": 2
+    },
+    {
+      "item_id": 946,
+      "name": "מדבקות למשקל רציפה לבנה 22 מטר",
+      "customers": 1,
+      "quantity": 400,
+      "revenue": 3160,
+      "docs": 2
+    },
+    {
+      "item_id": 1055,
+      "name": "מזלג שחור ארוז 50 יח' בחבילה",
+      "customers": 1,
+      "quantity": 320,
+      "revenue": 864,
+      "docs": 2
+    },
+    {
+      "item_id": 342,
+      "name": "מטאטא כביש ניילון 40 ס\"מ",
+      "customers": 1,
+      "quantity": 300,
+      "revenue": 3150,
+      "docs": 6
+    },
+    {
+      "item_id": 1130,
+      "name": "כף הגשה נירוסטה",
+      "customers": 1,
+      "quantity": 240,
+      "revenue": 2040,
+      "docs": 6
+    },
+    {
+      "item_id": 1024,
+      "name": "חומצת מלח מרוכזת 33% - 1 ליטר BLINX",
+      "customers": 1,
+      "quantity": 204,
+      "revenue": 2628,
+      "docs": 8
+    },
+    {
+      "item_id": 687,
+      "name": "תיק ספורט (קרדו) - 20*48*26 ס\"מ - ממותג",
+      "customers": 1,
+      "quantity": 200,
+      "revenue": 7200,
+      "docs": 2
+    },
+    {
+      "item_id": 679,
+      "name": "משחת שניים קולגייט טריפל אקשן 75 מ\"ל",
+      "customers": 1,
+      "quantity": 200,
+      "revenue": 1100,
+      "docs": 2
+    },
+    {
+      "item_id": 828,
+      "name": "כף שקופה ארוז 40 יח' בחבילה",
+      "customers": 1,
+      "quantity": 200,
+      "revenue": 0,
+      "docs": 4
+    },
+    {
+      "item_id": 1003,
+      "name": "מגש אלומניום גסטרונום",
+      "customers": 1,
+      "quantity": 200,
+      "revenue": 500,
+      "docs": 6
+    },
+    {
+      "item_id": 898,
+      "name": "נייר מגבת תאית 6 גלילים - 3.5 ק\"ג",
+      "customers": 1,
+      "quantity": 200,
+      "revenue": 8800,
+      "docs": 2
+    },
+    {
+      "item_id": 815,
+      "name": "מטריה שחורה גדולה מאוד 30 אינץ׳  בד כפול זרועות סיליקון עם קפיץ חזק",
+      "customers": 1,
+      "quantity": 200,
+      "revenue": 7800,
+      "docs": 2
+    },
+    {
+      "item_id": 1011,
+      "name": "צלחת עיקרית 10 אינץ 25.5 ס\"מ מזכוכית מחוסמת לבנה",
+      "customers": 1,
+      "quantity": 192,
+      "revenue": 1171,
+      "docs": 6
+    },
+    {
+      "item_id": 868,
+      "name": "מנקה אסלות - 1 ליטר BLINX",
+      "customers": 1,
+      "quantity": 174,
+      "revenue": 546,
+      "docs": 8
+    },
+    {
+      "item_id": 884,
+      "name": "נטריל אפור (Perfect) - מידה S - (100 יח) - ללא אבקה",
+      "customers": 1,
+      "quantity": 160,
+      "revenue": 2400,
+      "docs": 4
+    },
+    {
+      "item_id": 128,
+      "name": "קפסולת מדיח של פריי - פליטינום פלוס - 5 יח'",
+      "customers": 1,
+      "quantity": 160,
+      "revenue": 480,
+      "docs": 4
+    },
+    {
+      "item_id": 97,
+      "name": "מגבון (liteel angels) ריחני בשקית - 64 יח'",
+      "customers": 1,
+      "quantity": 144,
+      "revenue": 230,
+      "docs": 2
+    },
+    {
+      "item_id": 1008,
+      "name": "סט 6 כפות באיכות גבוהה",
+      "customers": 1,
+      "quantity": 120,
+      "revenue": 864,
+      "docs": 6
+    },
+    {
+      "item_id": 1014,
+      "name": "סט 3 כפיות  באיכות גבוהה",
+      "customers": 1,
+      "quantity": 120,
+      "revenue": 864,
+      "docs": 6
+    },
+    {
+      "item_id": 1007,
+      "name": "סט 2 סכינים באיכות גבוהה",
+      "customers": 1,
+      "quantity": 100,
+      "revenue": 720,
+      "docs": 6
+    },
+    {
+      "item_id": 1000,
+      "name": "מיכל 2.5 ליטר + מכסה",
+      "customers": 1,
+      "quantity": 100,
+      "revenue": 315,
+      "docs": 6
+    },
+    {
+      "item_id": 1135,
+      "name": "שקית זבל שחורה עבה 80*100 - 25 קג",
+      "customers": 1,
+      "quantity": 100,
+      "revenue": 22500,
+      "docs": 2
+    },
+    {
+      "item_id": 395,
+      "name": "נטריל שחור L {פרומקס}",
+      "customers": 1,
+      "quantity": 100,
+      "revenue": 2000,
+      "docs": 2
+    },
+    {
+      "item_id": 701,
+      "name": "שקיות אשפה גליל לבן 50*70 - א' 20 יח'",
+      "customers": 1,
+      "quantity": 100,
+      "revenue": 290,
+      "docs": 2
+    },
+    {
+      "item_id": 235,
+      "name": "סכין שקוף ארוז 50 יח' בחבילה",
+      "customers": 1,
+      "quantity": 80,
+      "revenue": 240,
+      "docs": 2
+    },
+    {
+      "item_id": 387,
+      "name": "מגבון בדיספנסר 100 יח' (DLux)",
+      "customers": 1,
+      "quantity": 72,
+      "revenue": 216,
+      "docs": 4
+    },
+    {
+      "item_id": 1009,
+      "name": "סט 6 מזלגות חלק (ללא דוגמא)",
+      "customers": 1,
+      "quantity": 68,
+      "revenue": 490,
+      "docs": 6
+    },
+    {
+      "item_id": 692,
+      "name": "סט שירותים URBAN לבן",
+      "customers": 1,
+      "quantity": 64,
+      "revenue": 640,
+      "docs": 4
+    },
+    {
+      "item_id": 278,
+      "name": "כפית פשוטה 100 יח'",
+      "customers": 1,
+      "quantity": 64,
+      "revenue": 154,
+      "docs": 2
+    },
+    {
+      "item_id": 50,
+      "name": "ויטריל שחור (Perfect) מידה S - (100 יח) - ללא אבקה",
+      "customers": 1,
+      "quantity": 60,
+      "revenue": 420,
+      "docs": 2
+    },
+    {
+      "item_id": 219,
+      "name": "שקיות אשפה גורילה 75*85 בגליל - 25 יח'",
+      "customers": 1,
+      "quantity": 60,
+      "revenue": 210,
+      "docs": 2
+    },
+    {
+      "item_id": 191,
+      "name": "מגבת צץ רץ - רץ אורן 4000 יח",
+      "customers": 1,
+      "quantity": 60,
+      "revenue": 4440,
+      "docs": 6
+    },
+    {
+      "item_id": 115,
+      "name": "ווניל שקוף/לבן (IT-TAI) - מידה XL - (100 יח) - ללא אבקה",
+      "customers": 1,
+      "quantity": 60,
+      "revenue": 648,
+      "docs": 2
+    },
+    {
+      "item_id": 198,
+      "name": "4 כריות מתכת - Shiny",
+      "customers": 1,
+      "quantity": 48,
+      "revenue": 202,
+      "docs": 2
+    },
+    {
+      "item_id": 273,
+      "name": "כף אשפה עומד + מקל",
+      "customers": 1,
+      "quantity": 48,
+      "revenue": 336,
+      "docs": 2
+    },
+    {
+      "item_id": 880,
+      "name": "נזול רצפות פרו 100 - 4 ל'",
+      "customers": 1,
+      "quantity": 48,
+      "revenue": 240,
+      "docs": 6
+    },
+    {
+      "item_id": 246,
+      "name": "מבשם למתקן מיקס - ריח SEXY",
+      "customers": 1,
+      "quantity": 48,
+      "revenue": 0,
+      "docs": 4
+    },
+    {
+      "item_id": 202,
+      "name": "מבשם למתקן מיקס - ריח בתי מלון",
+      "customers": 1,
+      "quantity": 48,
+      "revenue": 0,
+      "docs": 4
+    },
+    {
+      "item_id": 1129,
+      "name": "מטליות מיקרו-פייבר לרצפה (Platinum) - א' 3 יח'",
+      "customers": 1,
+      "quantity": 48,
+      "revenue": 336,
+      "docs": 2
+    },
+    {
+      "item_id": 279,
+      "name": "פח שובך אפור 50 ליטר מרובע",
+      "customers": 1,
+      "quantity": 48,
+      "revenue": 3360,
+      "docs": 8
+    },
+    {
+      "item_id": 181,
+      "name": "מבריק נירוסטה  400 מ\"ל - סנט מוריץ",
+      "customers": 1,
+      "quantity": 48,
+      "revenue": 528,
+      "docs": 4
+    },
+    {
+      "item_id": 722,
+      "name": "מגש קלקר סופג שחור - צלעות 480 יח'",
+      "customers": 1,
+      "quantity": 42,
+      "revenue": 8694,
+      "docs": 16
+    },
+    {
+      "item_id": 460,
+      "name": "נטריל שחור S {פרומקס}",
+      "customers": 1,
+      "quantity": 40,
+      "revenue": -800,
+      "docs": 2
+    },
+    {
+      "item_id": 1131,
+      "name": "סט מצעים מלא מיטת זוגית",
+      "customers": 1,
+      "quantity": 40,
+      "revenue": 2600,
+      "docs": 4
+    },
+    {
+      "item_id": 55,
+      "name": "לטקס ללא אבקה (Perfect) מידה M - (100 יח)",
+      "customers": 1,
+      "quantity": 40,
+      "revenue": 380,
+      "docs": 2
+    },
+    {
+      "item_id": 119,
+      "name": "שקיות גופיה לבן 30*60 (גדול) - 15 קילו - סטנדרט",
+      "customers": 1,
+      "quantity": 40,
+      "revenue": 3840,
+      "docs": 4
+    },
+    {
+      "item_id": 189,
+      "name": "שקיות אשפה גורילה עם ידיות 75*90 בשקית - Shainy",
+      "customers": 1,
+      "quantity": 40,
+      "revenue": 232,
+      "docs": 2
+    },
+    {
+      "item_id": 472,
+      "name": "תה ויצוצקי מוסדי 100 יח' - כשר מהדרין",
+      "customers": 1,
+      "quantity": 38,
+      "revenue": 171,
+      "docs": 2
+    },
+    {
+      "item_id": 612,
+      "name": "שקיות פלפל (פיתה) חום גדול א' 1000 יח'",
+      "customers": 1,
+      "quantity": 36,
+      "revenue": 2744,
+      "docs": 4
+    },
+    {
+      "item_id": 1080,
+      "name": "נוזל רצפות אוקיינוס - 4 ליטר BLINX",
+      "customers": 1,
+      "quantity": 34,
+      "revenue": 368,
+      "docs": 6
+    },
+    {
+      "item_id": 906,
+      "name": "מגש קלקר סופג שחור - שניצל 500 יח'",
+      "customers": 1,
+      "quantity": 32,
+      "revenue": 4192,
+      "docs": 12
+    },
+    {
+      "item_id": 957,
+      "name": "נייר פרגמנט מודפס חום 45*35 ארוז 4 ק\"ג",
+      "customers": 1,
+      "quantity": 28,
+      "revenue": 1792,
+      "docs": 8
+    },
+    {
+      "item_id": 369,
+      "name": "ספריי שחור מבריק",
+      "customers": 1,
+      "quantity": 24,
+      "revenue": 288,
+      "docs": 2
+    },
+    {
+      "item_id": 900,
+      "name": "מטאטא מליציה Melisia",
+      "customers": 1,
+      "quantity": 24,
+      "revenue": 190,
+      "docs": 8
+    },
+    {
+      "item_id": 269,
+      "name": "כף אשפה + גומי ",
+      "customers": 1,
+      "quantity": 24,
+      "revenue": 72,
+      "docs": 2
+    },
+    {
+      "item_id": 398,
+      "name": "מטליות רצפה עשריות Naif",
+      "customers": 1,
+      "quantity": 24,
+      "revenue": 120,
+      "docs": 2
+    },
+    {
+      "item_id": 166,
+      "name": "סטרץ 3 קג 25 מיקרון ליבה דקה",
+      "customers": 1,
+      "quantity": 24,
+      "revenue": 0,
+      "docs": 4
+    },
+    {
+      "item_id": 721,
+      "name": "מגש קלקר סופג שחור - כרעיים 500 יח'",
+      "customers": 1,
+      "quantity": 24,
+      "revenue": 4560,
+      "docs": 8
+    },
+    {
+      "item_id": 1016,
+      "name": "מגש קלקר רגיל כחול - צלעות 480 יח'",
+      "customers": 1,
+      "quantity": 24,
+      "revenue": 3600,
+      "docs": 4
+    },
+    {
+      "item_id": 1030,
+      "name": "מגש קלקר סופג לבן - כרעיים 600 יח'",
+      "customers": 1,
+      "quantity": 24,
+      "revenue": 5032,
+      "docs": 6
+    },
+    {
+      "item_id": 911,
+      "name": "מגש קלקר סופג כחול - כרעיים 600 יח'",
+      "customers": 1,
+      "quantity": 24,
+      "revenue": 5688,
+      "docs": 6
+    },
+    {
+      "item_id": 1102,
+      "name": "נוזל רצפות בזוקה - 4 ליטר BLINX",
+      "customers": 1,
+      "quantity": 24,
+      "revenue": 192,
+      "docs": 6
+    },
+    {
+      "item_id": 877,
+      "name": "אקונומיקה ספריי 3.5% - 750 מ\"ל BLINX",
+      "customers": 1,
+      "quantity": 24,
+      "revenue": 216,
+      "docs": 6
+    },
+    {
+      "item_id": 1027,
+      "name": "רדיד אלומיניום 45/50 ס\"מ 18 מקרון ",
+      "customers": 1,
+      "quantity": 24,
+      "revenue": 960,
+      "docs": 6
+    },
+    {
+      "item_id": 339,
+      "name": "בוחשנים מעץ (1000 יח)",
+      "customers": 1,
+      "quantity": 22,
+      "revenue": 388,
+      "docs": 6
+    },
+    {
+      "item_id": 1049,
+      "name": "צלחת P.P. גדולה 9 (אפור) Happy ארוז 100 יח'",
+      "customers": 1,
+      "quantity": 20,
+      "revenue": 51,
+      "docs": 2
+    },
+    {
+      "item_id": 382,
+      "name": "קיסמי שניים במלחיה פרפר - 300 יח",
+      "customers": 1,
+      "quantity": 20,
+      "revenue": 33,
+      "docs": 2
+    },
+    {
+      "item_id": 461,
+      "name": "נטריל שחור M {פרומקס}",
+      "customers": 1,
+      "quantity": 20,
+      "revenue": 280,
+      "docs": 2
+    },
+    {
+      "item_id": 914,
+      "name": "מגש קלקר סופג לבן - צלעות 480 יח'",
+      "customers": 1,
+      "quantity": 20,
+      "revenue": 4520,
+      "docs": 4
+    },
+    {
+      "item_id": 462,
+      "name": "נטריל שחור XL {פרומקס}",
+      "customers": 1,
+      "quantity": 20,
+      "revenue": 340,
+      "docs": 2
+    },
+    {
+      "item_id": 756,
+      "name": "נייר מגבת צץ רץ (איירפלקס) - 1760 יח'",
+      "customers": 1,
+      "quantity": 16,
+      "revenue": 1152,
+      "docs": 2
+    },
+    {
+      "item_id": 204,
+      "name": "מגב אטלס (60) ATLAS",
+      "customers": 1,
+      "quantity": 16,
+      "revenue": 96,
+      "docs": 8
+    },
+    {
+      "item_id": 770,
+      "name": "מגש פלסטיק שחור (מחוזק) - כרעיים 500 יח'",
+      "customers": 1,
+      "quantity": 12,
+      "revenue": 1896,
+      "docs": 6
+    },
+    {
+      "item_id": 228,
+      "name": "קפה שחור 1 קג מוסדי - עלית",
+      "customers": 1,
+      "quantity": 12,
+      "revenue": 480,
+      "docs": 2
+    },
+    {
+      "item_id": 261,
+      "name": "סוכר חום מנות 1000 יח'",
+      "customers": 1,
+      "quantity": 12,
+      "revenue": 720,
+      "docs": 6
+    },
+    {
+      "item_id": 771,
+      "name": "מגש פלסטיק לבן - קבב 400 יח'",
+      "customers": 1,
+      "quantity": 12,
+      "revenue": 2664,
+      "docs": 8
+    },
+    {
+      "item_id": 94,
+      "name": "נטריל שחור ( DR BOO) - מידה XL - (100 יח' - ללא אבקה",
+      "customers": 1,
+      "quantity": 12,
+      "revenue": 144,
+      "docs": 2
+    },
+    {
+      "item_id": 146,
+      "name": "מכסה למגש אלומניום 8B/TV ארוז 100 יח'",
+      "customers": 1,
+      "quantity": 12,
+      "revenue": 120,
+      "docs": 6
+    },
+    {
+      "item_id": 759,
+      "name": "שקית דליה חומה 32/38/17 - 250 יח'",
+      "customers": 1,
+      "quantity": 12,
+      "revenue": 3600,
+      "docs": 2
+    },
+    {
+      "item_id": 843,
+      "name": "תבנית אלומניום 14A - א' 4 יח'",
+      "customers": 1,
+      "quantity": 10,
+      "revenue": 44,
+      "docs": 2
+    },
+    {
+      "item_id": 1015,
+      "name": "מגש קלקר רגיל לבן - צלעות 480 יח'",
+      "customers": 1,
+      "quantity": 10,
+      "revenue": 1500,
+      "docs": 2
+    },
+    {
+      "item_id": 729,
+      "name": "מגש קלקר רגיל שחור - צלעות 480 יח'",
+      "customers": 1,
+      "quantity": 10,
+      "revenue": 1500,
+      "docs": 2
+    },
+    {
+      "item_id": 773,
+      "name": "מגש קלקר רגיל אדום - כרעיים 600 יח'",
+      "customers": 1,
+      "quantity": 10,
+      "revenue": 1400,
+      "docs": 2
+    },
+    {
+      "item_id": 847,
+      "name": "מבשם למתקן מיקס - ריח ונילה",
+      "customers": 1,
+      "quantity": 10,
+      "revenue": 120,
+      "docs": 2
+    },
+    {
+      "item_id": 772,
+      "name": "מגש פלסטיק שחור - קבב מחזוק 750 יח'",
+      "customers": 1,
+      "quantity": 8,
+      "revenue": 2224,
+      "docs": 6
+    },
+    {
+      "item_id": 613,
+      "name": "שקיות נייר מס' 12 מאפה בינוני - א' 1000 יח'",
+      "customers": 1,
+      "quantity": 8,
+      "revenue": 1040,
+      "docs": 4
+    },
+    {
+      "item_id": 904,
+      "name": "מגש פלסטיק לבן (מחוזק) - כרעיים 480 יח'",
+      "customers": 1,
+      "quantity": 8,
+      "revenue": 1104,
+      "docs": 4
+    },
+    {
+      "item_id": 618,
+      "name": "מיכל לסלט (ס.ל.ר) 1000 מ\"ל - 300 יח'",
+      "customers": 1,
+      "quantity": 8,
+      "revenue": 669,
+      "docs": 8
+    },
+    {
+      "item_id": 934,
+      "name": "מגבון אישי חלק (שחור) 1000 יחידות",
+      "customers": 1,
+      "quantity": 8,
+      "revenue": 360,
+      "docs": 8
+    },
+    {
+      "item_id": 728,
+      "name": "מגש קלקר רגיל אדום - קבב 300 יח'",
+      "customers": 1,
+      "quantity": 8,
+      "revenue": 832,
+      "docs": 2
+    },
+    {
+      "item_id": 860,
+      "name": "סבון ידיים - 4 ליטר BLINX",
+      "customers": 1,
+      "quantity": 8,
+      "revenue": 104,
+      "docs": 2
+    },
+    {
+      "item_id": 981,
+      "name": "מדבקות 32 דף 33/74 לבן",
+      "customers": 1,
+      "quantity": 6,
+      "revenue": 14,
+      "docs": 6
+    },
+    {
+      "item_id": 958,
+      "name": "נייר פרגמנט מודפס לבן 45*35 ארוז 4 ק\"ג",
+      "customers": 1,
+      "quantity": 6,
+      "revenue": 158,
+      "docs": 6
+    },
+    {
+      "item_id": 447,
+      "name": "מרכך כביסה 1 ליטר אקסטרא בישום - בניחוח קריבים",
+      "customers": 1,
+      "quantity": 6,
+      "revenue": 34,
+      "docs": 2
+    },
+    {
+      "item_id": 823,
+      "name": "שקיות ארגזים HD - א' 24 ק\"ג 105/75 שקוף עבה",
+      "customers": 1,
+      "quantity": 4,
+      "revenue": 968,
+      "docs": 4
+    },
+    {
+      "item_id": 564,
+      "name": "שקיות שקילה נילון 25*18 ל - 1 ק\"ג",
+      "customers": 1,
+      "quantity": 4,
+      "revenue": 60,
+      "docs": 2
+    },
+    {
+      "item_id": 262,
+      "name": "סוכרזית מנות 1000 יח'",
+      "customers": 1,
+      "quantity": 4,
+      "revenue": 240,
+      "docs": 2
+    },
+    {
+      "item_id": 750,
+      "name": "מכסה לכוס 10 OZ - א' 1000 יח'",
+      "customers": 1,
+      "quantity": 4,
+      "revenue": 400,
+      "docs": 4
+    },
+    {
+      "item_id": 260,
+      "name": "סוכר מנות 1000 יח'",
+      "customers": 1,
+      "quantity": 4,
+      "revenue": 180,
+      "docs": 4
+    },
+    {
+      "item_id": 1091,
+      "name": "פח שובך לבן 50 ליטר מרובע",
+      "customers": 1,
+      "quantity": 4,
+      "revenue": 280,
+      "docs": 2
+    },
+    {
+      "item_id": 808,
+      "name": "שקיות לארגזים HD - א' 20 ק\"ג",
+      "customers": 1,
+      "quantity": 4,
+      "revenue": 880,
+      "docs": 4
+    },
+    {
+      "item_id": 774,
+      "name": "מגש קלקר רגיל לבן - שניצל 500 יח'",
+      "customers": 1,
+      "quantity": 4,
+      "revenue": 328,
+      "docs": 4
+    },
+    {
+      "item_id": 1134,
+      "name": "מגש קלקר רגיל צהוב - כרעיים 600 יח'",
+      "customers": 1,
+      "quantity": 4,
+      "revenue": 496,
+      "docs": 4
+    },
+    {
+      "item_id": 1063,
+      "name": "גליל בד תעשייתי לדגים",
+      "customers": 1,
+      "quantity": 4,
+      "revenue": 796,
+      "docs": 4
+    },
+    {
+      "item_id": 720,
+      "name": "מגש קלקר סופג לבן - שניצל 500 יח'",
+      "customers": 1,
+      "quantity": 4,
+      "revenue": -524,
+      "docs": 2
+    },
+    {
+      "item_id": 1075,
+      "name": "תנור גינה 2500 וואט",
+      "customers": 1,
+      "quantity": 4,
+      "revenue": -628,
+      "docs": 2
+    },
+    {
+      "item_id": 171,
+      "name": "סינר חד פעמי בשקית -א' 100 יח",
+      "customers": 1,
+      "quantity": 4,
+      "revenue": 64,
+      "docs": 6
+    },
+    {
+      "item_id": 761,
+      "name": "קופסא BIO 1/2 צ'יפס חום א' 450",
+      "customers": 1,
+      "quantity": 4,
+      "revenue": 740,
+      "docs": 4
+    },
+    {
+      "item_id": 910,
+      "name": "מגש קלקר סופג אדום - כרעיים 500 יח'",
+      "customers": 1,
+      "quantity": 4,
+      "revenue": 836,
+      "docs": 2
+    },
+    {
+      "item_id": 566,
+      "name": "שקית פיתה טוסט בתאבון (חום) R-7 א' 1000 יח'",
+      "customers": 1,
+      "quantity": 4,
+      "revenue": 300,
+      "docs": 2
+    },
+    {
+      "item_id": 403,
+      "name": "שקית צ'יפס נייר ציפוי אלומנים  - 4000 יח'",
+      "customers": 1,
+      "quantity": 4,
+      "revenue": 1360,
+      "docs": 2
+    },
+    {
+      "item_id": 855,
+      "name": "מסיר שומן קר 10 ל'",
+      "customers": 1,
+      "quantity": 2,
+      "revenue": 0,
+      "docs": 2
+    },
+    {
+      "item_id": 875,
+      "name": "נוזל רב תכליתי - 750 מ\"ל BLINX",
+      "customers": 1,
+      "quantity": 2,
+      "revenue": 11,
+      "docs": 2
+    },
+    {
+      "item_id": 953,
+      "name": "נייר טואלט (חי) קומפקט 80 - 24 יח'",
+      "customers": 1,
+      "quantity": 2,
+      "revenue": 136,
+      "docs": 2
+    },
+    {
+      "item_id": 1036,
+      "name": "קולגייט מברשת שניים TripleAction - זוג",
+      "customers": 1,
+      "quantity": 2,
+      "revenue": 6,
+      "docs": 2
+    },
+    {
+      "item_id": 589,
+      "name": "סבוניה 500 מ\"ל (F032)",
+      "customers": 1,
+      "quantity": 2,
+      "revenue": 30,
+      "docs": 2
+    },
+    {
+      "item_id": 1045,
+      "name": "שקיות גופיה שחור סטנדרט - 15 ק\"ג 30*70 (ענק)",
+      "customers": 1,
+      "quantity": 2,
+      "revenue": 280,
+      "docs": 2
+    },
+    {
+      "item_id": 1132,
+      "name": "גליל PVC חדרי קירור שקוף - 2*200 גליל 50 מ'",
+      "customers": 1,
+      "quantity": 2,
+      "revenue": 1152,
+      "docs": 2
+    },
+    {
+      "item_id": 1133,
+      "name": "מתלה נירוסטה לוילון 2*200 כולל אביזרי תליה - 1 מטר",
+      "customers": 1,
+      "quantity": 2,
+      "revenue": 420,
+      "docs": 2
+    },
+    {
+      "item_id": 192,
+      "name": "נייר צץ רץ טואלט למתקן שירותים 9000 יח'",
+      "customers": 1,
+      "quantity": 2,
+      "revenue": 160,
+      "docs": 2
+    },
+    {
+      "item_id": 915,
+      "name": "מגש קלקר סופג לבן - כרעיים 500 יח'",
+      "customers": 1,
+      "quantity": 2,
+      "revenue": 418,
+      "docs": 2
+    },
+    {
+      "item_id": 328,
+      "name": "נייר אפיה 40/60 ארוז 1/1000",
+      "customers": 1,
+      "quantity": 2,
+      "revenue": 390,
+      "docs": 2
+    },
+    {
+      "item_id": 112,
+      "name": "כוסות חד פעמי חם 10 oz (50 יח) - WP - בקרטון 1000 יח'",
+      "customers": 1,
+      "quantity": 2,
+      "revenue": 240,
+      "docs": 2
+    },
+    {
+      "item_id": 401,
+      "name": "מגש קלקר אובלי א' 500 יח'",
+      "customers": 1,
+      "quantity": 2,
+      "revenue": 290,
+      "docs": 6
+    },
+    {
+      "item_id": 213,
+      "name": "נייר תעשייתי 100% תאית - 5 קג",
+      "customers": 1,
+      "quantity": 2,
+      "revenue": 118,
+      "docs": 2
+    },
+    {
+      "item_id": 554,
+      "name": "מיקרו בר 30cc - א' 2000 יח'",
+      "customers": 1,
+      "quantity": 2,
+      "revenue": 150,
+      "docs": 2
+    },
+    {
+      "item_id": 173,
+      "name": "כוס טוליפ 330 - ארוז 1000 כוסות בקרטון",
+      "customers": 1,
+      "quantity": 2,
+      "revenue": 420,
+      "docs": 2
+    },
+    {
+      "item_id": 184,
+      "name": "קיסמי שניים בעטיפת נייר אישית (1000 יח')",
+      "customers": 1,
+      "quantity": 2,
+      "revenue": 14,
+      "docs": 2
+    },
+    {
+      "item_id": 149,
+      "name": "שקית גופיה 48*38 (קטן) נקי מיוחד 15 ק\"ג",
+      "customers": 1,
+      "quantity": 2,
+      "revenue": 340,
+      "docs": 2
+    },
+    {
+      "item_id": 597,
+      "name": "כוס 330 cc (ספלאש 97) א' 1000 יח'",
+      "customers": 1,
+      "quantity": 2,
+      "revenue": 316,
+      "docs": 2
+    },
+    {
+      "item_id": 601,
+      "name": "מכסה שטוח שחור לכוס 95 א' 1000 יח'",
+      "customers": 1,
+      "quantity": 2,
+      "revenue": 186,
+      "docs": 2
+    },
+    {
+      "item_id": 605,
+      "name": "מנשא 2 כוסות עם ידית לבן/מודפס א' 250 יח'",
+      "customers": 1,
+      "quantity": 2,
+      "revenue": 230,
+      "docs": 2
+    },
+    {
+      "item_id": 84,
+      "name": "כוסות חד פעמי חם 8 oz (דניאל) - 1000 יח'",
+      "customers": 1,
+      "quantity": 2,
+      "revenue": 250,
+      "docs": 2
+    },
+    {
+      "item_id": 956,
+      "name": "מכסה שחור לכוס 8 OZ - א' 1000 יח'",
+      "customers": 1,
+      "quantity": 2,
+      "revenue": 188,
+      "docs": 2
+    },
+    {
+      "item_id": 300,
+      "name": "מפיות 1/8 23*33 ארוז 2400 יח'",
+      "customers": 1,
+      "quantity": 2,
+      "revenue": 264,
+      "docs": 2
+    },
+    {
+      "item_id": 319,
+      "name": "בוחשן קפה פלסטיק - 1000 יח'",
+      "customers": 1,
+      "quantity": 2,
+      "revenue": 44,
+      "docs": 2
+    },
+    {
+      "item_id": 1018,
+      "name": "מגש קלקר סופג שחור - דגים צר 400 יח'",
+      "customers": 1,
+      "quantity": 2,
+      "revenue": 416,
+      "docs": 2
+    },
+    {
+      "item_id": 343,
+      "name": "גביע רוטוב 2OZ ארוז 2500 - שחור",
+      "customers": 1,
+      "quantity": 2,
+      "revenue": 252,
+      "docs": 2
+    },
+    {
+      "item_id": 641,
+      "name": "גביע רוטב מחובר 30 CC א' 1000 יח'",
+      "customers": 1,
+      "quantity": 2,
+      "revenue": 128,
+      "docs": 2
+    },
+    {
+      "item_id": 344,
+      "name": "מכסה לגביע רוטב 1-2OZ ארוז 2500 יח",
+      "customers": 1,
+      "quantity": 2,
+      "revenue": 200,
+      "docs": 2
+    },
+    {
+      "item_id": 327,
+      "name": "רדיד אלומיניום  45/50 ס\"מ 16 מקרון ",
+      "customers": 1,
+      "quantity": 0,
+      "revenue": 0,
+      "docs": 4
+    },
+    {
+      "item_id": 607,
+      "name": "מגש אלומיניום מלבני 8A א' 1000 יח'",
+      "customers": 1,
+      "quantity": 0,
+      "revenue": 0,
+      "docs": 4
+    },
+    {
+      "item_id": 1026,
+      "name": "שקית אשפה חזקה 80*90 - א' 300 יח'",
+      "customers": 1,
+      "quantity": 0,
+      "revenue": 0,
+      "docs": 4
+    },
+    {
+      "item_id": 723,
+      "name": "מגש קלקר סופג שחור - קבב 300 יח'",
+      "customers": 1,
+      "quantity": -4,
+      "revenue": -472,
+      "docs": 4
+    },
+    {
+      "item_id": 1095,
+      "name": "מגש קלקר רגיל שחור - קבב עמוק 600 יח'",
+      "customers": 1,
+      "quantity": -6,
+      "revenue": -1080,
+      "docs": 2
+    }
+  ]
+}

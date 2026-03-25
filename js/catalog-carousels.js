@@ -9,6 +9,7 @@
 
   var MAX_PRODUCTS_PER_CAROUSEL = 12;
   var MIN_PRODUCTS_FOR_CATEGORY = 5;
+  var salesRanking = {}; // item_id -> rank score (higher = better seller)
 
   // Icon mapping for parent categories (by seoSlug)
   var CATEGORY_ICONS = {
@@ -343,6 +344,20 @@
     var allProducts = data.items || [];
     var categories = data.categories || [];
 
+    // Load sales ranking data
+    try {
+      var salesRes = await fetch('/data/top_selling_items.json');
+      var salesData = await salesRes.json();
+      var salesItems = salesData.items || salesData;
+      for (var si = 0; si < salesItems.length; si++) {
+        var sItem = salesItems[si];
+        // Score = customers * 100 + quantity (weighted by customer reach)
+        salesRanking[sItem.item_id] = (salesItems.length - si) * 1000 + (sItem.customers || 0) * 100 + (sItem.quantity || 0);
+      }
+    } catch(e) {
+      console.warn('Could not load sales ranking', e);
+    }
+
     // Build map of parent categories (parentId is null)
     var parentCats = {};
     var parentMap = {}; // id -> category
@@ -383,6 +398,15 @@
         parentCats[parentSlug].products.push(product);
       }
     }
+
+    // Sort products within each category by sales ranking (best sellers first)
+    Object.values(parentCats).forEach(function(entry) {
+      entry.products.sort(function(a, b) {
+        var scoreA = salesRanking[a.id] || 0;
+        var scoreB = salesRanking[b.id] || 0;
+        return scoreB - scoreA; // Higher score = better seller = first
+      });
+    });
 
     // Sort parent categories by product count descending
     var sortedCats = Object.values(parentCats)
