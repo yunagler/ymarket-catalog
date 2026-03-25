@@ -30,22 +30,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
   <link rel="stylesheet" href="css/style.min.css?v=20260317">
-  <link rel="stylesheet" href="css/pages/catalog.min.css?v=20260317">
-  <style>
-    .category-children{border-right:2px solid #e5e7eb;margin-right:12px}
-    .subcategory-card:hover{background:#eef2ff !important;border-color:#c7d2fe !important}
-    .pagination{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;padding:32px 0 16px;direction:rtl}
-    .pagination__btn{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border:1px solid #e5e7eb;border-radius:8px;background:#fff;cursor:pointer;font-size:0.9rem;font-weight:600;color:#1B3A5C;transition:all 0.2s;font-family:inherit;min-height:44px}
-    .pagination__btn:hover:not(:disabled){background:#f0f4ff;border-color:#1B3A5C}
-    .pagination__btn:disabled{opacity:0.4;cursor:not-allowed}
-    .pagination__pages{display:flex;align-items:center;gap:4px}
-    .pagination__page{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border:1px solid #e5e7eb;border-radius:8px;background:#fff;cursor:pointer;font-size:0.9rem;font-weight:500;color:#374151;transition:all 0.2s;font-family:inherit}
-    .pagination__page:hover{background:#f0f4ff;border-color:#1B3A5C;color:#1B3A5C}
-    .pagination__page.active{background:#1B3A5C;color:#fff;border-color:#1B3A5C}
-    .pagination__dots{padding:0 4px;color:#9ca3af}
-    .pagination__info{width:100%;text-align:center;font-size:0.85rem;color:#6b7280;margin-top:4px}
-    @media(max-width:480px){.pagination__btn{padding:8px 12px;font-size:0.8rem}.pagination__page{width:36px;height:36px;font-size:0.85rem}}
-  </style>
+  <link rel="stylesheet" href="css/pages/catalog-carousels.css?v=20260325">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
 
   <script type="application/ld+json">
   {
@@ -134,84 +121,37 @@
     </nav>
   </div>
 
-  <!-- Catalog Layout -->
+  <!-- Search Hero -->
+  <div class="catalog-search-hero">
+    <div class="container">
+      <h1>קטלוג מוצרים — <span id="totalProductCount">0</span> מוצרים במחירי סיטונאות</h1>
+      <div class="search-box">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="catalogSearchInput" placeholder="חפשו מוצר, קטגוריה או ברקוד..." autocomplete="off">
+        <div class="search-results-dropdown" id="searchResultsDropdown"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Registration Banner -->
   <div class="container">
-    <!-- Registration Banner -->
-    <div class="registration-banner">
+    <div class="catalog-reg-banner">
       <div>
         <strong>רוצים מחירים מותאמים לעסק שלכם?</strong>
         <p>הירשמו לפורטל ההזמנות — מחירים אישיים, הזמנה אונליין 24/7, והיסטוריית הזמנות</p>
       </div>
-      <a href="register" class="btn btn--white btn--lg"><i class="fas fa-user-plus"></i> הרשמה בחינם</a>
+      <a href="/register" class="btn btn--white btn--lg"><i class="fas fa-user-plus"></i> הרשמה בחינם</a>
     </div>
+  </div>
 
-    <button class="mobile-filter-btn" id="mobileFilterBtn">
-      <i class="fas fa-sliders-h"></i> סינון וחיפוש
-    </button>
-
-    <div class="catalog-layout">
-      <!-- Sidebar -->
-      <div class="catalog-overlay" id="catalogOverlay"></div>
-      <aside class="catalog-sidebar" id="catalogSidebar">
-        <button class="catalog-sidebar__close" id="closeSidebar"><i class="fas fa-times"></i> סגור</button>
-        <div class="sidebar-section">
-          <h3>חיפוש</h3>
-          <div class="catalog-search">
-            <i class="fas fa-search catalog-search__icon"></i>
-            <input type="text" class="catalog-search__input" id="searchInput" placeholder="חפשו מוצר...">
-          </div>
-        </div>
-
-        <div class="sidebar-section">
-          <h3>קטגוריות</h3>
-          <div class="category-list" id="categoryList">
-            <button class="category-list__item active" data-category="all">
-              <span>כל המוצרים</span>
-              <span class="category-list__count" id="totalCount">0</span>
-            </button>
-            <!-- Categories populated by JS -->
-          </div>
-        </div>
-
-        <div class="sidebar-section">
-          <h3>טווח מחירים</h3>
-          <div class="price-range">
-            <input type="number" id="priceMin" placeholder="מ-" min="0">
-            <span class="price-range__sep">—</span>
-            <input type="number" id="priceMax" placeholder="עד">
-          </div>
-          <button class="btn btn--sm btn--primary" style="margin-top: var(--space-sm); width: 100%;" id="priceFilterBtn">סנן מחיר</button>
-        </div>
-      </aside>
-
-      <!-- Main Content -->
-      <main>
-        <div class="catalog-header">
-          <div>
-            <h1 class="catalog-header__title" id="catalogTitle">כל המוצרים</h1>
-            <span class="catalog-header__count"><span id="resultCount">0</span> מוצרים</span>
-          </div>
-          <div class="catalog-sort">
-            <label for="sortSelect">מיון:</label>
-            <select id="sortSelect">
-              <option value="name-asc">שם א-ת</option>
-              <option value="name-desc">שם ת-א</option>
-              <option value="price-asc">מחיר: נמוך לגבוה</option>
-              <option value="price-desc">מחיר: גבוה לנמוך</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="products-grid" id="productsGrid">
-          <!-- Products populated by JS -->
-        </div>
-
-        <div class="no-results" id="noResults" style="display:none;">
-          <div class="no-results__icon"><i class="fas fa-search"></i></div>
-          <h3 class="no-results__title">לא נמצאו מוצרים</h3>
-          <p class="no-results__text">נסו לחפש במילים אחרות או לבחור קטגוריה אחרת</p>
-        </div>
-      </main>
+  <!-- Category Carousels -->
+  <div class="container">
+    <div id="carouselSections">
+      <!-- Populated dynamically by catalog-carousels.js -->
+      <div style="text-align:center;padding:3rem;color:#9ca3af;">
+        <i class="fas fa-spinner fa-spin fa-2x"></i>
+        <p>טוען מוצרים...</p>
+      </div>
     </div>
   </div>
 
@@ -297,6 +237,7 @@
   <script src="js/main.min.js?v=20260317" defer></script>
   <script src="js/analytics.min.js" defer></script>
   <script src="js/schema-markup.js" defer></script>
-  <script src="js/catalog.min.js?v=20260317" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="js/catalog-carousels.js?v=20260325" defer></script>
 </body>
 </html>
