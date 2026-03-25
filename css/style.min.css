@@ -12,8 +12,8 @@
   --color-accent-light: #5A9BE6;
   --color-accent-gold: #e8a735;
   --color-accent-gold-hover: #d4952e;
-  --color-whatsapp: #25D366;
-  --color-whatsapp-hover: #1EBE5A;
+  --color-whatsapp: #1a7f37;
+  --color-whatsapp-hover: #157a30;
 
   /* Neutral Colors */
   --color-white: #FFFFFF;
@@ -868,7 +868,7 @@ a:focus-visible {
   right: 24px;
   width: 60px;
   height: 60px;
-  background-color: #25D366;
+  background-color: #1a7f37;
   border-radius: var(--radius-round);
   display: flex;
   align-items: center;
@@ -975,14 +975,14 @@ a:focus-visible {
 }
 
 .btn--whatsapp {
-  background-color: #25D366;
+  background-color: #1a7f37;
   color: var(--color-white);
-  border-color: #25D366;
+  border-color: #1a7f37;
 }
 
 .btn--whatsapp:hover {
-  background-color: #1EBE5A;
-  border-color: #1EBE5A;
+  background-color: #157a30;
+  border-color: #157a30;
   color: var(--color-white);
   transform: translateY(-1px);
 }
