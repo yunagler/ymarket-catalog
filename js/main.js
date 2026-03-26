@@ -302,13 +302,43 @@ function initContactForm() {
 
     if (!valid) return;
 
-    // Send via WhatsApp
-    const lines = [`שלום, שמי ${name}.`, `טלפון: ${phone}`];
-    if (email) lines.push(`מייל: ${email}`);
-    if (message) lines.push(`\n${message}`);
+    const business = form.querySelector('[name="business"]')?.value.trim();
+    const submitBtn = form.querySelector('[type="submit"]');
+    const originalBtnHTML = submitBtn.innerHTML;
 
-    const text = encodeURIComponent(lines.join('\n'));
-    window.open(`https://wa.me/972549922492?text=${text}`, '_blank');
+    // Disable button while submitting
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> שולח...';
+
+    // Send to CRM API
+    fetch('https://app.ymarket.co.il/api/public/leads', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, phone, email, business, message }),
+    })
+      .then(res => {
+        if (!res.ok) throw new Error('API error');
+        return res.json();
+      })
+      .then(() => {
+        // Show success message
+        form.innerHTML = `
+          <div style="text-align:center; padding: var(--space-2xl) 0;">
+            <i class="fas fa-check-circle" style="font-size:3rem; color:var(--color-success); margin-bottom:var(--space-md);"></i>
+            <h3 style="margin-bottom:var(--space-sm);">הפרטים נשלחו בהצלחה!</h3>
+            <p style="color:var(--color-text-secondary);">ניצור אתכם קשר בהקדם.</p>
+          </div>`;
+      })
+      .catch(() => {
+        // Fallback: open WhatsApp if API fails
+        const lines = [`שלום, שמי ${name}.`, `טלפון: ${phone}`];
+        if (email) lines.push(`מייל: ${email}`);
+        if (message) lines.push(`\n${message}`);
+        const text = encodeURIComponent(lines.join('\n'));
+        window.open(`https://wa.me/972549922492?text=${text}`, '_blank');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHTML;
+      });
   });
 
   function showFieldError(input, msg) {
