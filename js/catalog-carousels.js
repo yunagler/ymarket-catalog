@@ -385,11 +385,39 @@
     var wrap = document.createElement('div');
     wrap.className = 'card-qty-wrap in-cart';
     wrap.dataset.productId = product.id;
-    wrap.innerHTML =
-      '<button class="card-qty-btn plus" data-action="increase">+</button>' +
-      '<span class="card-qty-value"><i class="fas fa-check"></i> ' + qty + '</span>' +
-      '<button class="card-qty-btn' + (qty === 1 ? ' remove' : '') + '" data-action="decrease">' + (qty === 1 ? '<i class="fas fa-trash-alt"></i>' : '−') + '</button>';
+
+    var plusBtn = document.createElement('button');
+    plusBtn.className = 'card-qty-btn plus';
+    plusBtn.textContent = '+';
+
+    var valSpan = document.createElement('span');
+    valSpan.className = 'card-qty-value';
+    valSpan.innerHTML = '<i class="fas fa-check"></i> ' + qty;
+
+    var minusBtn = document.createElement('button');
+    minusBtn.className = 'card-qty-btn' + (qty === 1 ? ' remove' : '');
+    minusBtn.innerHTML = qty === 1 ? '<i class="fas fa-trash-alt"></i>' : '−';
+
+    wrap.appendChild(plusBtn);
+    wrap.appendChild(valSpan);
+    wrap.appendChild(minusBtn);
     body.appendChild(wrap);
+
+    // Direct event listeners (bypass Swiper)
+    plusBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+      setCartQty(product, getCartQty(product.id) + 1);
+      showQtyControls(card, product);
+    });
+    minusBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+      setCartQty(product, getCartQty(product.id) - 1);
+      showQtyControls(card, product);
+    });
   }
 
   function addToCart(product, btnElement) {
@@ -746,6 +774,9 @@
           spaceBetween: 12,
           direction: 'horizontal',
           loop: false,
+          preventClicks: false,
+          preventClicksPropagation: false,
+          touchStartPreventDefault: false,
           pagination: {
             el: '#pag' + si.id,
             clickable: true
