@@ -384,10 +384,15 @@ function updateCartBadge() {
 
   badge.textContent = count;
   badge.classList.toggle('has-items', count > 0);
+
+  // Bounce animation
+  badge.classList.remove('bounce');
+  void badge.offsetWidth; // force reflow
+  badge.classList.add('bounce');
 }
 
 /* ---- Toast Notification ---- */
-function showToast(message, duration = 3000) {
+function showToast(message, duration = 3500) {
   let toast = document.querySelector('.toast');
   if (!toast) {
     toast = document.createElement('div');
@@ -395,9 +400,11 @@ function showToast(message, duration = 3000) {
     document.body.appendChild(toast);
   }
 
-  toast.textContent = message;
+  toast.innerHTML = '<i class="fas fa-check-circle"></i> ' + message +
+    ' <a href="/cart" class="toast-cart-link"><i class="fas fa-shopping-cart"></i> לעגלה</a>';
   toast.classList.add('show');
-  setTimeout(() => toast.classList.remove('show'), duration);
+  clearTimeout(toast._timer);
+  toast._timer = setTimeout(() => toast.classList.remove('show'), duration);
 }
 
 /* ---- Format Currency ---- */
