@@ -369,13 +369,11 @@
     var btn = card.querySelector('.card-btn');
     if (btn) btn.remove();
 
-    // Remove existing qty controls if any
     var existingQty = card.querySelector('.card-qty-wrap');
     if (existingQty) existingQty.remove();
 
     var qty = getCartQty(product.id);
     if (qty <= 0) {
-      // Re-add the "add to cart" button
       var newBtn = document.createElement('button');
       newBtn.className = 'card-btn';
       newBtn.dataset.productId = product.id;
@@ -385,24 +383,13 @@
     }
 
     var wrap = document.createElement('div');
-    wrap.className = 'card-qty-wrap';
+    wrap.className = 'card-qty-wrap in-cart';
+    wrap.dataset.productId = product.id;
     wrap.innerHTML =
-      '<button class="card-qty-btn" data-action="increase">+</button>' +
-      '<span class="card-qty-value">' + qty + '</span>' +
+      '<button class="card-qty-btn plus" data-action="increase">+</button>' +
+      '<span class="card-qty-value"><i class="fas fa-check"></i> ' + qty + '</span>' +
       '<button class="card-qty-btn' + (qty === 1 ? ' remove' : '') + '" data-action="decrease">' + (qty === 1 ? '<i class="fas fa-trash-alt"></i>' : '−') + '</button>';
     body.appendChild(wrap);
-
-    wrap.querySelector('[data-action="increase"]').addEventListener('click', function(e) {
-      e.stopPropagation();
-      setCartQty(product, getCartQty(product.id) + 1);
-      showQtyControls(card, product);
-    });
-    wrap.querySelector('[data-action="decrease"]').addEventListener('click', function(e) {
-      e.stopPropagation();
-      var newQty = getCartQty(product.id) - 1;
-      setCartQty(product, newQty);
-      showQtyControls(card, product);
-    });
   }
 
   function addToCart(product, btnElement) {
@@ -434,14 +421,10 @@
       window.YMarketAnalytics.trackAddToCart({ id: product.id, name: product.name, price: product.saleNis || 0, quantity: 1 });
     }
 
-    // Animate button then switch to qty controls
+    // Switch to green qty controls immediately
     if (btnElement) {
-      btnElement.classList.add('added');
-      btnElement.innerHTML = '<i class="fas fa-check"></i> נוסף!';
       var card = btnElement.closest('.carousel-product-card');
-      setTimeout(function() {
-        showQtyControls(card, product);
-      }, 800);
+      showQtyControls(card, product);
     }
   }
 
@@ -472,9 +455,9 @@
           priceHtml +
           (product.saleNis
             ? (getCartQty(product.id) > 0
-              ? '<div class="card-qty-wrap" data-product-id="' + product.id + '">' +
-                  '<button class="card-qty-btn" data-action="increase">+</button>' +
-                  '<span class="card-qty-value">' + getCartQty(product.id) + '</span>' +
+              ? '<div class="card-qty-wrap in-cart" data-product-id="' + product.id + '">' +
+                  '<button class="card-qty-btn plus" data-action="increase">+</button>' +
+                  '<span class="card-qty-value"><i class="fas fa-check"></i> ' + getCartQty(product.id) + '</span>' +
                   '<button class="card-qty-btn' + (getCartQty(product.id) === 1 ? ' remove' : '') + '" data-action="decrease">' + (getCartQty(product.id) === 1 ? '<i class="fas fa-trash-alt"></i>' : '−') + '</button>' +
                 '</div>'
               : '<button class="card-btn" data-product-id="' + product.id + '"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>')
