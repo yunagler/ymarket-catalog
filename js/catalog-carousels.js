@@ -390,20 +390,36 @@
     plusBtn.className = 'card-qty-btn plus';
     plusBtn.textContent = '+';
 
-    var valSpan = document.createElement('span');
-    valSpan.className = 'card-qty-value';
-    valSpan.innerHTML = '<i class="fas fa-check"></i> ' + qty;
+    var check = document.createElement('i');
+    check.className = 'fas fa-check';
+    check.style.cssText = 'font-size:0.75rem;color:#16a34a;background:#f0fdf4;height:42px;display:flex;align-items:center;padding-right:6px;';
+
+    var input = document.createElement('input');
+    input.type = 'number';
+    input.className = 'card-qty-input';
+    input.value = qty;
+    input.min = '0';
+    input.style.cssText = 'width:48px;text-align:center;font-size:1rem;font-weight:700;color:#16a34a;background:#f0fdf4;height:42px;border:none;outline:none;font-family:inherit;-moz-appearance:textfield;';
 
     var minusBtn = document.createElement('button');
     minusBtn.className = 'card-qty-btn' + (qty === 1 ? ' remove' : '');
     minusBtn.innerHTML = qty === 1 ? '<i class="fas fa-trash-alt"></i>' : '−';
 
     wrap.appendChild(plusBtn);
-    wrap.appendChild(valSpan);
+    wrap.appendChild(check);
+    wrap.appendChild(input);
     wrap.appendChild(minusBtn);
     body.appendChild(wrap);
 
     // Direct event listeners (bypass Swiper)
+    input.addEventListener('change', function() {
+      var val = parseInt(this.value) || 0;
+      setCartQty(product, val);
+      if (val <= 0) showQtyControls(card, product);
+      else showQtyControls(card, product);
+    });
+    input.addEventListener('click', function(e) { e.stopPropagation(); e.stopImmediatePropagation(); });
+    input.addEventListener('focus', function() { this.select(); });
     plusBtn.addEventListener('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
@@ -482,13 +498,7 @@
           '<a href="/products/' + safeSlug + '" class="card-name">' + safeName + '</a>' +
           priceHtml +
           (product.saleNis
-            ? (getCartQty(product.id) > 0
-              ? '<div class="card-qty-wrap in-cart" data-product-id="' + product.id + '">' +
-                  '<button class="card-qty-btn plus" data-action="increase">+</button>' +
-                  '<span class="card-qty-value"><i class="fas fa-check"></i> ' + getCartQty(product.id) + '</span>' +
-                  '<button class="card-qty-btn' + (getCartQty(product.id) === 1 ? ' remove' : '') + '" data-action="decrease">' + (getCartQty(product.id) === 1 ? '<i class="fas fa-trash-alt"></i>' : '−') + '</button>' +
-                '</div>'
-              : '<button class="card-btn" data-product-id="' + product.id + '"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>')
+            ? '<button class="card-btn" data-product-id="' + product.id + '"' + (getCartQty(product.id) > 0 ? ' data-init-qty="1"' : '') + '><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>'
             : '') +
         '</div>' +
       '</div>';
@@ -836,6 +846,17 @@
 
     // Setup search
     setupSearch(allProducts);
+
+    // Show qty controls for items already in cart
+    container.querySelectorAll('.card-btn[data-init-qty]').forEach(function(btn) {
+      var pid = parseInt(btn.getAttribute('data-product-id'));
+      var product = allProducts.find(function(p) { return p.id === pid; });
+      if (product && getCartQty(pid) > 0) {
+        var card = btn.closest('.carousel-product-card');
+        btn.remove();
+        showQtyControls(card, product);
+      }
+    });
 
     // Update product count
     var countEl = document.getElementById('totalProductCount');

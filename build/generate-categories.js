@@ -346,14 +346,7 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
     // Add to cart button (ecommerce) or WhatsApp for items without price
     const actionsHtml = p.saleNis
       ? `<div class="product-card__actions">
-          <div class="product-card__qty-row">
-            <div class="product-card__qty-selector">
-              <button class="product-card__qty-btn" data-action="decrease" data-id="${p.id}">-</button>
-              <input type="number" class="product-card__qty-input" id="qty-${p.id}" value="1" min="1" max="999">
-              <button class="product-card__qty-btn" data-action="increase" data-id="${p.id}">+</button>
-            </div>
             <button class="product-card__add-btn" data-id="${p.id}" data-name="${(p.name || '').replace(/"/g, '&quot;')}" data-price="${p.saleNis}" data-unit="${(p.unit || '').replace(/"/g, '&quot;')}" data-img="${imgSrcThumb}" data-slug="${p.slug}"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
-          </div>
         </div>`
       : `<div class="product-card__actions">
           <a href="https://wa.me/972549922492?text=${encodeURIComponent('היי, מתעניין ב' + p.name)}" class="product-card__add-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> בקשו הצעת מחיר</a>

@@ -810,22 +810,36 @@
 .ym-qty-btn.ym-remove:hover {
   background: #dc2626;
 }
-.ym-qty-val {
-  flex: 1;
-  min-width: 48px;
+.ym-qty-input {
+  width: 56px;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 700;
+  color: #16a34a;
+  background: #f0fdf4;
+  height: 44px;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  -moz-appearance: textfield;
+}
+.ym-qty-input::-webkit-inner-spin-button,
+.ym-qty-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.ym-qty-input:focus {
+  background: #fff;
+  color: #111;
+}
+.ym-check-icon {
+  font-size: 0.75rem;
   color: #16a34a;
   background: #f0fdf4;
   height: 44px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 5px;
-}
-.ym-qty-val i {
-  font-size: 0.8rem;
+  padding-right: 8px;
 }
 .product-card__add-btn.added {
   background: #16a34a !important;

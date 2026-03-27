@@ -443,7 +443,6 @@ function showCartQtyControls(btn) {
   var id = parseInt(btn.dataset.id);
   var qty = getCartQty(id);
 
-  // Already has qty wrap? update it
   var parent = btn.parentElement;
   var existingWrap = parent.querySelector('.ym-qty-wrap');
   if (existingWrap) existingWrap.remove();
@@ -455,29 +454,53 @@ function showCartQtyControls(btn) {
     return;
   }
 
-  // Hide original button
   btn.style.display = 'none';
 
-  // Create green qty controls
   var wrap = document.createElement('div');
   wrap.className = 'ym-qty-wrap';
-  wrap.innerHTML =
-    '<button class="ym-qty-btn ym-plus" type="button">+</button>' +
-    '<span class="ym-qty-val"><i class="fas fa-check"></i> ' + qty + '</span>' +
-    '<button class="ym-qty-btn' + (qty === 1 ? ' ym-remove' : '') + '" type="button">' + (qty === 1 ? '<i class="fas fa-trash-alt"></i>' : '−') + '</button>';
 
+  var plusBtn = document.createElement('button');
+  plusBtn.className = 'ym-qty-btn ym-plus';
+  plusBtn.type = 'button';
+  plusBtn.textContent = '+';
+
+  var input = document.createElement('input');
+  input.type = 'number';
+  input.className = 'ym-qty-input';
+  input.value = qty;
+  input.min = '0';
+
+  var minusBtn = document.createElement('button');
+  minusBtn.type = 'button';
+  minusBtn.className = 'ym-qty-btn' + (qty === 1 ? ' ym-remove' : '');
+  minusBtn.innerHTML = qty === 1 ? '<i class="fas fa-trash-alt"></i>' : '−';
+
+  var check = document.createElement('i');
+  check.className = 'fas fa-check ym-check-icon';
+
+  wrap.appendChild(plusBtn);
+  wrap.appendChild(check);
+  wrap.appendChild(input);
+  wrap.appendChild(minusBtn);
   parent.insertBefore(wrap, btn.nextSibling);
 
-  wrap.querySelector('.ym-plus').addEventListener('click', function(e) {
+  plusBtn.addEventListener('click', function(e) {
     e.preventDefault(); e.stopPropagation();
     setCartQty(id, getCartQty(id) + 1);
     showCartQtyControls(btn);
   });
-  wrap.querySelector('.ym-qty-btn:last-child').addEventListener('click', function(e) {
+  minusBtn.addEventListener('click', function(e) {
     e.preventDefault(); e.stopPropagation();
     setCartQty(id, getCartQty(id) - 1);
     showCartQtyControls(btn);
   });
+  input.addEventListener('change', function() {
+    var val = parseInt(this.value) || 0;
+    setCartQty(id, val);
+    if (val <= 0) showCartQtyControls(btn);
+  });
+  input.addEventListener('click', function(e) { e.stopPropagation(); });
+  input.addEventListener('focus', function() { this.select(); });
 }
 
 /* ---- Expose globals ---- */
