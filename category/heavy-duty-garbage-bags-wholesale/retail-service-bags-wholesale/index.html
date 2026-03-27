@@ -95,7 +95,7 @@
   "name": "שקיות שירות וחנות",
   "description": "שקיות שירות וחנות במחירי סיטונאות ישירות מהמפיץ. 24 פריטים באיכות מוסדית. אספקה 24-72 שעות. מינימום 1,600₪. וואי מרקט.",
   "url": "https://ymarket.co.il/category/heavy-duty-garbage-bags-wholesale/retail-service-bags-wholesale/",
-  "dateModified": "2026-03-24",
+  "dateModified": "2026-03-27",
   "inLanguage": "he-IL",
   "isPartOf": {
     "@type": "WebSite",
@@ -619,7 +619,7 @@
           <div class="catalog-header">
             <h1>שקיות שירות וחנות</h1>
             <p>24 מוצרים</p>
-            <p style="font-size:0.8rem;color:#9ca3af;margin-top:4px;">עודכן לאחרונה: 24.3.2026</p>
+            <p style="font-size:0.8rem;color:#9ca3af;margin-top:4px;">עודכן לאחרונה: 28.3.2026</p>
           </div>
           <div class="trust-badges">
             <div class="trust-badges__item">
@@ -1574,12 +1574,10 @@
     // ---- Ecommerce: Add to Cart ----
     function ymAddToCart(btn) {
       var id = parseInt(btn.dataset.id);
-      var input = document.getElementById('qty-' + id);
-      var qty = input ? Math.max(1, parseInt(input.value) || 1) : 1;
       var cart = JSON.parse(localStorage.getItem('ym_cart') || '[]');
       var existing = cart.find(function(item) { return item.id === id; });
       if (existing) {
-        existing.quantity += qty;
+        existing.quantity += 1;
       } else {
         cart.push({
           id: id,
@@ -1588,41 +1586,23 @@
           unit: btn.dataset.unit,
           imageUrl: btn.dataset.img,
           slug: btn.dataset.slug,
-          quantity: qty
+          quantity: 1
         });
       }
       localStorage.setItem('ym_cart', JSON.stringify(cart));
       if (window.YMarket) {
         window.YMarket.updateCartBadge();
         window.YMarket.showToast(btn.dataset.name + ' נוסף לעגלה');
+        window.YMarket.showCartQtyControls(btn);
       }
-      btn.classList.add('added');
-      btn.innerHTML = '<i class="fas fa-check"></i> נוסף!';
-      setTimeout(function() {
-        btn.classList.remove('added');
-        btn.innerHTML = '<i class="fas fa-cart-plus"></i> הוסף לעגלה';
-      }, 1500);
-      if (input) input.value = '1';
       // Analytics
       if (window.YMarketAnalytics && window.YMarketAnalytics.fbAddToCart) {
-        window.YMarketAnalytics.fbAddToCart({ id: id, name: btn.dataset.name, price: parseFloat(btn.dataset.price), quantity: qty });
+        window.YMarketAnalytics.fbAddToCart({ id: id, name: btn.dataset.name, price: parseFloat(btn.dataset.price), quantity: 1 });
       }
       if (window.YMarketAnalytics && window.YMarketAnalytics.trackAddToCart) {
-        window.YMarketAnalytics.trackAddToCart({ id: id, name: btn.dataset.name, price: parseFloat(btn.dataset.price), quantity: qty });
+        window.YMarketAnalytics.trackAddToCart({ id: id, name: btn.dataset.name, price: parseFloat(btn.dataset.price), quantity: 1 });
       }
     }
-
-    // Quantity +/- buttons
-    document.querySelectorAll('.product-card__qty-btn').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var input = document.getElementById('qty-' + btn.dataset.id);
-        if (!input) return;
-        var val = parseInt(input.value) || 1;
-        if (btn.dataset.action === 'increase') val++;
-        else if (val > 1) val--;
-        input.value = val;
-      });
-    });
 
     // Add to cart buttons
     document.querySelectorAll('.product-card__add-btn[data-id]').forEach(function(btn) {
@@ -1630,6 +1610,10 @@
         e.preventDefault();
         ymAddToCart(btn);
       });
+      // Show qty controls for items already in cart
+      if (window.YMarket && window.YMarket.getCartQty(parseInt(btn.dataset.id)) > 0) {
+        window.YMarket.showCartQtyControls(btn);
+      }
     });
   </script>
 </body>

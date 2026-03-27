@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>וואי מרקט | אספקה מוסדית פרימיום</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#1B3A5C;--navy-deep:#0D1F33;--navy-dark:#112A45;--navy-mid:#2A5080;
+  --navy-light:#3A6A9B;--gold:#e8a735;--gold-light:#f0c060;--gold-dark:#c48a20;
+  --surface:#F7F8FB;--surface-2:#EEF1F6;--white:#FFFFFF;
+  --text:#0F1923;--text-secondary:#5A6B7E;--text-light:#8A9BB0;
+  --glass:rgba(255,255,255,0.06);--glass-border:rgba(255,255,255,0.1);
+  --glass-light:rgba(27,58,92,0.04);--glass-light-border:rgba(27,58,92,0.08);
+  --shadow-sm:0 1px 3px rgba(13,31,51,0.06);
+  --shadow-md:0 4px 16px rgba(13,31,51,0.08);
+  --shadow-lg:0 8px 32px rgba(13,31,51,0.12);
+  --shadow-xl:0 16px 48px rgba(13,31,51,0.16);
+  --shadow-gold:0 4px 24px rgba(232,167,53,0.3);
+  --radius-sm:8px;--radius-md:12px;--radius-lg:16px;--radius-xl:20px;--radius-2xl:24px;
+  --font-he:'Heebo',sans-serif;--font-en:'Poppins',sans-serif;
+  --header-h:72px;
+  --ease-out:cubic-bezier(0.16,1,0.3,1);
+  --ease-spring:cubic-bezier(0.34,1.56,0.64,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font-he);color:var(--text);background:var(--surface);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+button{font-family:var(--font-he);cursor:pointer;border:none;background:none}
+ul{list-style:none}
+img{max-width:100%;display:block}
+.container{max-width:1240px;margin:0 auto;padding:0 24px}
+.num{font-family:var(--font-en);direction:ltr;unicode-bidi:embed}
+
+/* ═══════════════ HEADER ═══════════════ */
+.header{position:fixed;top:0;right:0;left:0;z-index:1000;background:rgba(255,255,255,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(27,58,92,0.06);height:var(--header-h);transition:all .35s var(--ease-out)}
+.header.scrolled{background:rgba(255,255,255,0.95);box-shadow:var(--shadow-sm)}
+.header-inner{display:flex;align-items:center;height:100%;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo-mark{width:40px;height:40px;background:linear-gradient(135deg,var(--navy),var(--navy-mid));border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px;letter-spacing:-1px}
+.logo-text{font-size:15px;font-weight:700;color:var(--navy-dark);line-height:1.2}
+.logo-text span{display:block;font-size:10px;font-weight:400;color:var(--text-light);letter-spacing:.5px}
+.nav{display:flex;gap:4px;margin-right:auto}
+.nav a{padding:8px 14px;font-size:13.5px;font-weight:500;color:var(--text-secondary);border-radius:var(--radius-sm);transition:all .2s}
+.nav a:hover,.nav a.active{color:var(--navy);background:var(--glass-light)}
+.header-search{position:relative;flex:0 1 280px}
+.header-search input{width:100%;height:40px;padding:0 16px 0 40px;border:1.5px solid var(--surface-2);border-radius:var(--radius-md);font-size:13px;font-family:var(--font-he);background:var(--surface);transition:all .25s;color:var(--text)}
+.header-search input:focus{outline:none;border-color:var(--navy-mid);background:#fff;box-shadow:0 0 0 3px rgba(42,80,128,0.08)}
+.header-search input::placeholder{color:var(--text-light)}
+.header-search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text-light);pointer-events:none}
+.header-actions{display:flex;align-items:center;gap:8px}
+.header-phone{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-secondary);padding:6px 12px;border-radius:var(--radius-sm);transition:all .2s}
+.header-phone:hover{background:var(--glass-light);color:var(--navy)}
+.header-phone .num{font-weight:600;font-size:14px}
+.icon-btn{width:40px;height:40px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;color:var(--text-secondary);transition:all .2s;position:relative}
+.icon-btn:hover{background:var(--glass-light);color:var(--navy)}
+.cart-badge{position:absolute;top:4px;right:4px;width:18px;height:18px;background:var(--gold);color:#fff;font-size:10px;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-en)}
+.btn-login{height:38px;padding:0 18px;border-radius:var(--radius-md);font-size:13px;font-weight:600;border:1.5px solid var(--navy);color:var(--navy);transition:all .25s}
+.btn-login:hover{background:var(--navy);color:#fff}
+.btn-register{height:38px;padding:0 18px;border-radius:var(--radius-md);font-size:13px;font-weight:700;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy-dark);transition:all .25s;box-shadow:var(--shadow-gold)}
+.btn-register:hover{transform:translateY(-1px);box-shadow:0 6px 28px rgba(232,167,53,0.4)}
+.mobile-toggle{display:none;width:40px;height:40px;border-radius:var(--radius-md);align-items:center;justify-content:center;color:var(--navy)}
+
+/* ═══════════════ HERO ═══════════════ */
+.hero{min-height:calc(100vh - 60px);padding-top:calc(var(--header-h) + 60px);padding-bottom:80px;background:linear-gradient(165deg,var(--navy-deep) 0%,var(--navy) 40%,var(--navy-mid) 100%);position:relative;overflow:hidden;display:flex;align-items:center}
+.hero::before{content:'';position:absolute;inset:0;background:
+  radial-gradient(ellipse 600px 400px at 20% 80%,rgba(232,167,53,0.08),transparent),
+  radial-gradient(ellipse 800px 600px at 80% 20%,rgba(58,107,181,0.15),transparent);
+  pointer-events:none}
+.hero-grid{position:absolute;inset:0;background-image:
+  linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);
+  background-size:60px 60px;mask-image:radial-gradient(ellipse 70% 70% at center,black,transparent);-webkit-mask-image:radial-gradient(ellipse 70% 70% at center,black,transparent)}
+.hero-glow{position:absolute;width:500px;height:500px;border-radius:50%;filter:blur(120px);opacity:.3;pointer-events:none}
+.hero-glow-1{top:-100px;right:-100px;background:var(--navy-mid)}
+.hero-glow-2{bottom:-150px;left:-50px;background:var(--gold);opacity:.1}
+.hero-content{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-text{color:#fff}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px 6px 12px;background:var(--glass);border:1px solid var(--glass-border);border-radius:100px;font-size:12px;font-weight:500;color:rgba(255,255,255,0.8);margin-bottom:28px;backdrop-filter:blur(10px)}
+.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse-dot 2s ease infinite}
+@keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-size:clamp(2.2rem,4.5vw,3.5rem);font-weight:800;line-height:1.15;margin-bottom:20px;letter-spacing:-.02em}
+.hero h1 .highlight{color:var(--gold);position:relative}
+.hero-sub{font-size:clamp(1rem,1.6vw,1.2rem);color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:36px;max-width:480px;font-weight:300}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.btn-hero-primary{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 32px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy-dark);font-size:15px;font-weight:700;border-radius:var(--radius-lg);box-shadow:var(--shadow-gold);transition:all .3s var(--ease-out)}
+.btn-hero-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(232,167,53,0.45)}
+.btn-hero-primary svg{transition:transform .3s}
+.btn-hero-primary:hover svg{transform:translateX(-3px)}
+.btn-hero-secondary{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 28px;background:var(--glass);border:1px solid var(--glass-border);color:#fff;font-size:15px;font-weight:500;border-radius:var(--radius-lg);backdrop-filter:blur(10px);transition:all .3s var(--ease-out)}
+.btn-hero-secondary:hover{background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.2);transform:translateY(-2px)}
+.hero-visual{position:relative;display:flex;justify-content:center}
+.hero-showcase{position:relative;width:100%;max-width:480px}
+.hero-card{background:rgba(255,255,255,0.07);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-2xl);padding:28px;color:#fff}
+.hero-card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.hero-card-title{font-size:14px;font-weight:600;color:rgba(255,255,255,0.9)}
+.hero-card-badge{padding:4px 12px;background:rgba(232,167,53,0.15);border:1px solid rgba(232,167,53,0.3);border-radius:100px;font-size:11px;font-weight:600;color:var(--gold-light)}
+.hero-card-items{display:flex;flex-direction:column;gap:12px}
+.hero-card-item{display:flex;align-items:center;gap:14px;padding:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius-md);transition:all .2s}
+.hero-card-item:hover{background:rgba(255,255,255,0.08)}
+.hci-icon{width:44px;height:44px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.hci-icon.blue{background:rgba(58,123,213,0.15)}
+.hci-icon.green{background:rgba(52,199,89,0.15)}
+.hci-icon.purple{background:rgba(175,82,222,0.15)}
+.hci-info{flex:1}
+.hci-name{font-size:13px;font-weight:500;color:rgba(255,255,255,0.9)}
+.hci-meta{font-size:11px;color:rgba(255,255,255,0.4);margin-top:2px}
+.hci-price{font-family:var(--font-en);font-size:14px;font-weight:600;color:var(--gold-light)}
+.hero-card-footer{display:flex;justify-content:space-between;align-items:center;margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.06)}
+.hero-card-total-label{font-size:12px;color:rgba(255,255,255,0.4)}
+.hero-card-total{font-family:var(--font-en);font-size:22px;font-weight:700;color:#fff}
+.hero-card-total small{font-size:13px;font-weight:400;color:rgba(255,255,255,0.5);margin-right:4px}
+.hero-float{position:absolute;background:rgba(255,255,255,0.1);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-lg);padding:12px 18px;color:#fff;font-size:12px;font-weight:500;display:flex;align-items:center;gap:8px;animation:float 6s ease-in-out infinite}
+.hero-float-1{top:-20px;right:-30px;animation-delay:0s}
+.hero-float-2{bottom:40px;left:-40px;animation-delay:2s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+/* ═══════════════ TRUST BAR ═══════════════ */
+.trust-bar{padding:0;margin-top:-36px;position:relative;z-index:10}
+.trust-bar-inner{background:#fff;border-radius:var(--radius-xl);box-shadow:var(--shadow-lg);display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden}
+.trust-item{display:flex;align-items:center;gap:14px;padding:24px 28px;position:relative;transition:all .25s}
+.trust-item:not(:last-child)::after{content:'';position:absolute;left:0;top:20%;height:60%;width:1px;background:var(--surface-2)}
+.trust-item:hover{background:var(--glass-light)}
+.trust-icon{width:44px;height:44px;border-radius:var(--radius-md);background:linear-gradient(135deg,rgba(27,58,92,0.06),rgba(42,80,128,0.1));display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--navy);font-size:20px}
+.trust-text h4{font-size:14px;font-weight:700;color:var(--navy-dark);margin-bottom:2px}
+.trust-text p{font-size:12px;color:var(--text-light);font-weight:400}
+
+/* ═══════════════ SECTION SHARED ═══════════════ */
+.section{padding:100px 0}
+.section-header{text-align:center;margin-bottom:56px}
+.section-label{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:rgba(27,58,92,0.05);border:1px solid rgba(27,58,92,0.08);border-radius:100px;font-size:12px;font-weight:600;color:var(--navy-mid);margin-bottom:16px;text-transform:uppercase;letter-spacing:.5px}
+.section-label::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.section-title{font-size:clamp(1.7rem,3vw,2.4rem);font-weight:800;color:var(--navy-dark);letter-spacing:-.02em;line-height:1.25}
+.section-desc{font-size:16px;color:var(--text-secondary);margin-top:12px;max-width:520px;margin-inline:auto;line-height:1.7}
+
+/* ═══════════════ CATEGORIES ═══════════════ */
+.categories-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cat-card{position:relative;background:#fff;border:1px solid var(--surface-2);border-radius:var(--radius-xl);padding:32px 28px;display:flex;flex-direction:column;gap:16px;transition:all .35s var(--ease-out);cursor:pointer;overflow:hidden}
+.cat-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(27,58,92,0.02),rgba(42,80,128,0.04));opacity:0;transition:opacity .35s}
+.cat-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:transparent}
+.cat-card:hover::before{opacity:1}
+.cat-card-icon{width:56px;height:56px;border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;font-size:26px;position:relative;z-index:1}
+.cat-card-icon.c1{background:linear-gradient(135deg,#e3f0ff,#c7dfff)}
+.cat-card-icon.c2{background:linear-gradient(135deg,#fef3e2,#fde4b8)}
+.cat-card-icon.c3{background:linear-gradient(135deg,#e8f5e9,#c8e6c9)}
+.cat-card-icon.c4{background:linear-gradient(135deg,#fff3e0,#ffe0b2)}
+.cat-card-icon.c5{background:linear-gradient(135deg,#fce4ec,#f8bbd0)}
+.cat-card-icon.c6{background:linear-gradient(135deg,#e8eaf6,#c5cae9)}
+.cat-card h3{font-size:16px;font-weight:700;color:var(--navy-dark);position:relative;z-index:1}
+.cat-card p{font-size:13px;color:var(--text-light);line-height:1.6;position:relative;z-index:1}
+.cat-card-count{font-size:12px;font-weight:600;color:var(--navy-mid);display:flex;align-items:center;gap:4px;position:relative;z-index:1}
+.cat-card-arrow{position:absolute;bottom:20px;left:20px;width:32px;height:32px;border-radius:50%;background:var(--surface);display:flex;align-items:center;justify-content:center;color:var(--navy-mid);opacity:0;transform:translateX(8px);transition:all .3s var(--ease-out);z-index:1}
+.cat-card:hover .cat-card-arrow{opacity:1;transform:translateX(0)}
+
+/* ═══════════════ PRODUCTS ═══════════════ */
+.section-dark{background:linear-gradient(170deg,var(--navy-deep),var(--navy) 60%,var(--navy-mid));color:#fff}
+.section-dark .section-label{background:var(--glass);border-color:var(--glass-border);color:rgba(255,255,255,0.7)}
+.section-dark .section-title{color:#fff}
+.section-dark .section-desc{color:rgba(255,255,255,0.5)}
+.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.product-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-xl);overflow:hidden;transition:all .35s var(--ease-out);cursor:pointer;position:relative}
+.product-card:hover{transform:translateY(-4px);background:rgba(255,255,255,0.08);box-shadow:0 12px 40px rgba(0,0,0,0.2)}
+.product-img{height:200px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:48px;background:linear-gradient(135deg,rgba(255,255,255,0.03),rgba(255,255,255,0.06))}
+.product-tag{position:absolute;top:12px;right:12px;padding:4px 12px;border-radius:100px;font-size:11px;font-weight:700}
+.tag-sale{background:rgba(255,69,58,0.15);color:#ff6961;border:1px solid rgba(255,69,58,0.2)}
+.tag-new{background:rgba(52,199,89,0.15);color:#34c759;border:1px solid rgba(52,199,89,0.2)}
+.tag-best{background:rgba(232,167,53,0.15);color:var(--gold-light);border:1px solid rgba(232,167,53,0.2)}
+.product-info{padding:20px}
+.product-name{font-size:14px;font-weight:600;color:rgba(255,255,255,0.9);margin-bottom:6px}
+.product-desc{font-size:12px;color:rgba(255,255,255,0.4);margin-bottom:14px}
+.product-bottom{display:flex;align-items:center;justify-content:space-between}
+.product-price{font-family:var(--font-en);font-size:18px;font-weight:700;color:#fff}
+.product-price small{font-size:12px;font-weight:400;color:rgba(255,255,255,0.4);margin-right:2px}
+.btn-add-cart{width:36px;height:36px;border-radius:var(--radius-sm);background:var(--gold);color:var(--navy-dark);display:flex;align-items:center;justify-content:center;transition:all .25s}
+.btn-add-cart:hover{transform:scale(1.1);box-shadow:var(--shadow-gold)}
+.product-quick{position:absolute;inset:0;background:rgba(13,31,51,0.85);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;opacity:0;transition:all .3s;pointer-events:none}
+.product-card:hover .product-quick{opacity:1;pointer-events:auto}
+.btn-quick{padding:10px 24px;border-radius:var(--radius-md);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:13px;font-weight:600;transition:all .2s}
+.btn-quick:hover{background:rgba(255,255,255,0.1)}
+
+/* ═══════════════ STATS ═══════════════ */
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.stat-card{text-align:center;padding:40px 24px;background:#fff;border:1px solid var(--surface-2);border-radius:var(--radius-xl);transition:all .3s var(--ease-out)}
+.stat-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:transparent}
+.stat-number{font-family:var(--font-en);font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:var(--navy);line-height:1;margin-bottom:6px;background:linear-gradient(135deg,var(--navy),var(--navy-mid));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-label{font-size:14px;font-weight:600;color:var(--text);margin-bottom:4px}
+.stat-desc{font-size:12px;color:var(--text-light)}
+
+/* ═══════════════ SEGMENTS ═══════════════ */
+.segments-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.seg-card{background:#fff;border:1px solid var(--surface-2);border-radius:var(--radius-xl);padding:28px;display:flex;align-items:flex-start;gap:16px;transition:all .35s var(--ease-out);cursor:pointer}
+.seg-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:transparent}
+.seg-icon{width:48px;height:48px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;background:linear-gradient(135deg,rgba(27,58,92,0.06),rgba(42,80,128,0.1))}
+.seg-info h4{font-size:15px;font-weight:700;color:var(--navy-dark);margin-bottom:4px}
+.seg-info p{font-size:13px;color:var(--text-light);line-height:1.6}
+
+/* ═══════════════ CTA BANNER ═══════════════ */
+.cta-banner{padding:100px 0;background:linear-gradient(165deg,var(--navy-deep),var(--navy));position:relative;overflow:hidden}
+.cta-banner::before{content:'';position:absolute;inset:0;background:
+  radial-gradient(ellipse 600px 400px at 30% 50%,rgba(232,167,53,0.08),transparent),
+  radial-gradient(ellipse 500px 500px at 70% 60%,rgba(58,123,213,0.1),transparent)}
+.cta-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:center}
+.cta-text h2{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;color:#fff;line-height:1.2;margin-bottom:16px;letter-spacing:-.02em}
+.cta-text p{font-size:16px;color:rgba(255,255,255,0.55);line-height:1.7;margin-bottom:32px}
+.cta-benefits{display:flex;flex-direction:column;gap:14px;margin-bottom:36px}
+.cta-benefit{display:flex;align-items:center;gap:12px;font-size:14px;color:rgba(255,255,255,0.8);font-weight:500}
+.cta-benefit-icon{width:28px;height:28px;border-radius:50%;background:rgba(232,167,53,0.12);border:1px solid rgba(232,167,53,0.2);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:12px;flex-shrink:0}
+.cta-form{background:rgba(255,255,255,0.06);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-2xl);padding:36px}
+.cta-form h3{font-size:18px;font-weight:700;color:#fff;margin-bottom:6px}
+.cta-form-sub{font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:24px}
+.cta-form .field{margin-bottom:14px}
+.cta-form label{font-size:12px;font-weight:600;color:rgba(255,255,255,0.5);display:block;margin-bottom:6px}
+.cta-form input,.cta-form select{width:100%;height:44px;padding:0 16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-md);color:#fff;font-size:14px;font-family:var(--font-he);transition:all .25s}
+.cta-form input:focus,.cta-form select:focus{outline:none;border-color:var(--gold);background:rgba(255,255,255,0.08)}
+.cta-form input::placeholder{color:rgba(255,255,255,0.25)}
+.cta-form select option{background:var(--navy-dark);color:#fff}
+.cta-form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.btn-cta-submit{width:100%;height:50px;margin-top:8px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy-dark);font-size:16px;font-weight:700;border-radius:var(--radius-md);transition:all .3s;box-shadow:var(--shadow-gold)}
+.btn-cta-submit:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(232,167,53,0.4)}
+
+/* ═══════════════ BLOG ═══════════════ */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.blog-card{background:#fff;border:1px solid var(--surface-2);border-radius:var(--radius-xl);overflow:hidden;transition:all .35s var(--ease-out);cursor:pointer}
+.blog-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:transparent}
+.blog-img{height:180px;display:flex;align-items:center;justify-content:center;font-size:40px}
+.blog-img.b1{background:linear-gradient(135deg,#e3f0ff,#c7dfff)}
+.blog-img.b2{background:linear-gradient(135deg,#e8f5e9,#c8e6c9)}
+.blog-img.b3{background:linear-gradient(135deg,#fff3e0,#ffe0b2)}
+.blog-body{padding:24px}
+.blog-tag{display:inline-block;padding:3px 10px;border-radius:100px;font-size:11px;font-weight:600;color:var(--navy-mid);background:rgba(42,80,128,0.06);margin-bottom:10px}
+.blog-body h3{font-size:16px;font-weight:700;color:var(--navy-dark);line-height:1.5;margin-bottom:8px}
+.blog-body p{font-size:13px;color:var(--text-light);line-height:1.7}
+.blog-meta{display:flex;align-items:center;gap:8px;margin-top:14px;padding-top:14px;border-top:1px solid var(--surface-2);font-size:12px;color:var(--text-light)}
+
+/* ═══════════════ FOOTER ═══════════════ */
+.footer{background:var(--navy-deep);color:rgba(255,255,255,0.7);padding:80px 0 0}
+.footer-grid{display:grid;grid-template-columns:1.3fr repeat(3,1fr);gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.footer-brand p{font-size:13px;line-height:1.8;color:rgba(255,255,255,0.4);margin-top:16px;max-width:280px}
+.footer-social{display:flex;gap:10px;margin-top:20px}
+.footer-social a{width:36px;height:36px;border-radius:var(--radius-sm);background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);font-size:14px;transition:all .25s}
+.footer-social a:hover{background:rgba(255,255,255,0.1);color:#fff}
+.footer-col h4{font-size:13px;font-weight:700;color:rgba(255,255,255,0.9);margin-bottom:18px;text-transform:uppercase;letter-spacing:.5px}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{font-size:13px;color:rgba(255,255,255,0.4);transition:color .2s}
+.footer-col ul li a:hover{color:var(--gold-light)}
+.footer-contact-item{display:flex;align-items:center;gap:10px;margin-bottom:12px;font-size:13px}
+.footer-contact-item svg{color:var(--gold);flex-shrink:0}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:24px 0;font-size:12px;color:rgba(255,255,255,0.3)}
+.footer-legal{display:flex;gap:20px}
+.footer-legal a{color:rgba(255,255,255,0.3);transition:color .2s}
+.footer-legal a:hover{color:rgba(255,255,255,0.6)}
+
+/* ═══════════════ WHATSAPP FAB ═══════════════ */
+.whatsapp-fab{position:fixed;bottom:28px;left:28px;z-index:900;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.35);transition:all .3s var(--ease-spring);font-size:26px}
+.whatsapp-fab:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,0.45)}
+
+/* ═══════════════ SCROLL ANIMATIONS ═══════════════ */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.35s}
+
+/* ═══════════════ MOBILE ═══════════════ */
+@media(max-width:1024px){
+  .hero-content{grid-template-columns:1fr;text-align:center}
+  .hero-sub{margin-inline:auto}
+  .hero-ctas{justify-content:center}
+  .hero-visual{display:none}
+  .products-grid{grid-template-columns:repeat(2,1fr)}
+  .cta-inner{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .nav{display:none}
+  .header-search{display:none}
+  .header-phone{display:none}
+  .mobile-toggle{display:flex}
+  .trust-bar-inner{grid-template-columns:repeat(2,1fr)}
+  .trust-item:nth-child(2)::after{display:none}
+  .categories-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .segments-grid{grid-template-columns:1fr}
+  .blog-grid{grid-template-columns:1fr}
+  .cta-form .row{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:12px;text-align:center}
+  .section{padding:64px 0}
+}
+@media(max-width:480px){
+  .trust-bar-inner{grid-template-columns:1fr}
+  .trust-item::after{display:none!important}
+  .categories-grid{grid-template-columns:1fr}
+  .products-grid{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr}
+  .hero-ctas{flex-direction:column;align-items:stretch}
+  .btn-hero-primary,.btn-hero-secondary{justify-content:center}
+}
+
+/* ═══════════════ MOBILE MENU ═══════════════ */
+.mobile-menu{position:fixed;inset:0;z-index:2000;pointer-events:none;opacity:0;transition:opacity .3s}
+.mobile-menu.open{pointer-events:auto;opacity:1}
+.mobile-menu-overlay{position:absolute;inset:0;background:rgba(13,31,51,0.6);backdrop-filter:blur(4px)}
+.mobile-menu-panel{position:absolute;top:0;right:0;width:300px;max-width:85vw;height:100%;background:#fff;padding:24px;transform:translateX(100%);transition:transform .4s var(--ease-out);overflow-y:auto}
+.mobile-menu.open .mobile-menu-panel{transform:translateX(0)}
+.mobile-menu-close{width:40px;height:40px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;margin-bottom:20px;background:var(--surface)}
+.mobile-menu-nav{display:flex;flex-direction:column;gap:4px}
+.mobile-menu-nav a{padding:12px 16px;font-size:15px;font-weight:600;color:var(--navy-dark);border-radius:var(--radius-md);transition:all .2s}
+.mobile-menu-nav a:hover{background:var(--surface)}
+.mobile-menu-actions{margin-top:24px;display:flex;flex-direction:column;gap:10px}
+.mobile-menu-actions .btn-login,.mobile-menu-actions .btn-register{width:100%;height:44px;text-align:center;display:flex;align-items:center;justify-content:center}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="container header-inner">
+    <a href="#" class="logo">
+      <div class="logo-mark">Y</div>
+      <div class="logo-text">וואי מרקט<span>אספקה מוסדית פרימיום</span></div>
+    </a>
+    <nav class="nav">
+      <a href="#" class="active">דף הבית</a>
+      <a href="#categories">קטלוג</a>
+      <a href="#stats">אודות</a>
+      <a href="#blog">בלוג</a>
+      <a href="#footer">צרו קשר</a>
+    </nav>
+    <div class="header-search">
+      <input type="text" placeholder="חיפוש מוצרים...">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    </div>
+    <div class="header-actions">
+      <a href="tel:037740400" class="header-phone">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="num">03-7740400</span>
+      </a>
+      <button class="icon-btn" title="עגלת קניות">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="cart-badge">3</span>
+      </button>
+      <button class="btn-login">התחברות</button>
+      <button class="btn-register">הרשמה חינם</button>
+      <button class="mobile-toggle" id="menuOpen" aria-label="תפריט">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-overlay" id="menuOverlay"></div>
+  <div class="mobile-menu-panel">
+    <button class="mobile-menu-close" id="menuClose">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <nav class="mobile-menu-nav">
+      <a href="#">דף הבית</a>
+      <a href="#categories">קטלוג</a>
+      <a href="#stats">אודות</a>
+      <a href="#blog">בלוג</a>
+      <a href="#footer">צרו קשר</a>
+    </nav>
+    <div class="mobile-menu-actions">
+      <button class="btn-login">התחברות</button>
+      <button class="btn-register">הרשמה חינם</button>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow hero-glow-1"></div>
+  <div class="hero-glow hero-glow-2"></div>
+  <div class="container hero-content">
+    <div class="hero-text">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        פלטפורמת הזמנות B2B חכמה
+      </div>
+      <h1>כל מה שהעסק שלך צריך.<br><span class="highlight">במקום אחד.</span></h1>
+      <p class="hero-sub">מעל 1,000 מוצרים מוסדיים במחירי סיטונאות — ניקיון, נייר, חד פעמיים, אריזות מזון וציוד משרדי. הזמנה דיגיטלית, משלוח תוך 48 שעות.</p>
+      <div class="hero-ctas">
+        <a href="#" class="btn-hero-primary">
+          צפה בקטלוג המלא
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m15 18-6-6 6-6"/></svg>
+        </a>
+        <a href="#register" class="btn-hero-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+          פתיחת חשבון עסקי
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-showcase">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <span class="hero-card-title">הזמנה אחרונה</span>
+            <span class="hero-card-badge">בדרך אליך</span>
+          </div>
+          <div class="hero-card-items">
+            <div class="hero-card-item">
+              <div class="hci-icon blue">🧴</div>
+              <div class="hci-info">
+                <div class="hci-name">סבון כלים מוסדי 18 ליטר</div>
+                <div class="hci-meta">x2 יחידות</div>
+              </div>
+              <div class="hci-price">₪<span class="num">148</span></div>
+            </div>
+            <div class="hero-card-item">
+              <div class="hci-icon green">🧻</div>
+              <div class="hci-info">
+                <div class="hci-name">נייר תעשייתי 6 גלילים</div>
+                <div class="hci-meta">x4 חבילות</div>
+              </div>
+              <div class="hci-price">₪<span class="num">312</span></div>
+            </div>
+            <div class="hero-card-item">
+              <div class="hci-icon purple">🥡</div>
+              <div class="hci-info">
+                <div class="hci-name">מגשי אלומיניום 100 יח׳</div>
+                <div class="hci-meta">x3 קרטונים</div>
+              </div>
+              <div class="hci-price">₪<span class="num">267</span></div>
+            </div>
+          </div>
+          <div class="hero-card-footer">
+            <span class="hero-card-total-label">סה״כ הזמנה</span>
+            <span class="hero-card-total"><small>₪</small><span class="num">1,892</span></span>
+          </div>
+        </div>
+        <div class="hero-float hero-float-1">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          נשלח ב-48 שעות
+        </div>
+        <div class="hero-float hero-float-2">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          מאובטח ומוצפן
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-bar-inner reveal">
+      <div class="trust-item">
+        <div class="trust-icon">🚚</div>
+        <div class="trust-text">
+          <h4>משלוח ארצי</h4>
+          <p>עד הדלת תוך 48 שעות</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">💰</div>
+        <div class="trust-text">
+          <h4>מחירי סיטונאות</h4>
+          <p>הנחות קבועות לעסקים</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">👤</div>
+        <div class="trust-text">
+          <h4>שירות אישי</h4>
+          <p>מנהל לקוח ייעודי</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🔄</div>
+        <div class="trust-text">
+          <h4>הזמנה חוזרת</h4>
+          <p>בלחיצת כפתור אחת</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="section" id="categories">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">קטלוג מוצרים</div>
+      <h2 class="section-title">הקטגוריות המובילות</h2>
+      <p class="section-desc">מגוון רחב של מוצרים מוסדיים באיכות גבוהה — הכל מרוכז בפלטפורמה אחת</p>
+    </div>
+    <div class="categories-grid">
+      <div class="cat-card reveal reveal-delay-1">
+        <div class="cat-card-icon c1">🧹</div>
+        <h3>מוצרי ניקיון</h3>
+        <p>חומרי ניקוי מוסדיים, מטליות, ספוגים, כלי ניקוי מקצועיים</p>
+        <span class="cat-card-count"><span class="num">180+</span> מוצרים</span>
+        <div class="cat-card-arrow">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m15 18-6-6 6-6"/></svg>
+        </div>
+      </div>
+      <div class="cat-card reveal reveal-delay-2">
+        <div class="cat-card-icon c2">🧻</div>
+        <h3>מוצרי נייר</h3>
+        <p>נייר טואלט, מגבות נייר, מפיות, נייר תעשייתי</p>
+        <span class="cat-card-count"><span class="num">120+</span> מוצרים</span>
+        <div class="cat-card-arrow">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m15 18-6-6 6-6"/></svg>
+        </div>
+      </div>
+      <div class="cat-card reveal reveal-delay-3">
+        <div class="cat-card-icon c3">🥤</div>
+        <h3>חד פעמיים</h3>
+        <p>כוסות, צלחות, סכו״ם, קשיות ואביזרי הגשה</p>
+        <span class="cat-card-count"><span class="num">200+</span> מוצרים</span>
+        <div class="cat-card-arrow">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m15 18-6-6 6-6"/></svg>
+        </div>
+      </div>
+      <div class="cat-card reveal reveal-delay-1">
+        <div class="cat-card-icon c4">📦</div>
+        <h3>אריזות מזון</h3>
+        <p>מגשי אלומיניום, קופסאות, שקיות אריזה ועטיפות</p>
+        <span class="cat-card-count"><span class="num">150+</span> מוצרים</span>
+        <div class="cat-card-arrow">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m15 18-6-6 6-6"/></svg>
+        </div>
+      </div>
+      <div class="cat-card reveal reveal-delay-2">
+        <div class="cat-card-icon c5">🦺</div>
+        <h3>ציוד בטיחות</h3>
+        <p>כפפות, מסכות, משקפי מגן, ביגוד עבודה</p>
+        <span class="cat-card-count"><span class="num">90+</span> מוצרים</span>
+        <div class="cat-card-arrow">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m15 18-6-6 6-6"/></svg>
+        </div>
+      </div>
+      <div class="cat-card reveal reveal-delay-3">
+        <div class="cat-card-icon c6">📎</div>
+        <h3>ציוד משרדי</h3>
+        <p>מוצרי צריכה שוטפת למשרד, נייר צילום, טונרים</p>
+        <span class="cat-card-count"><span class="num">110+</span> מוצרים</span>
+        <div class="cat-card-arrow">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m15 18-6-6 6-6"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section section-dark" id="products">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">הנמכרים ביותר</div>
+      <h2 class="section-title">מוצרים מובילים</h2>
+      <p class="section-desc">המוצרים שהלקוחות שלנו מזמינים שוב ושוב</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card reveal reveal-delay-1">
+        <div class="product-img" style="background:linear-gradient(135deg,rgba(58,123,213,0.1),rgba(58,123,213,0.2))">🧴
+          <span class="product-tag tag-best">הכי נמכר</span>
+        </div>
+        <div class="product-info">
+          <div class="product-name">סבון כלים מוסדי 18 ליטר</div>
+          <div class="product-desc">סבון מרוכז לשטיפת כלים — חסכוני במיוחד</div>
+          <div class="product-bottom">
+            <div class="product-price">₪<span class="num">74.90</span><small>+ מע״מ</small></div>
+            <button class="btn-add-cart" title="הוסף לעגלה">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="product-quick"><button class="btn-quick">צפייה מהירה</button></div>
+      </div>
+      <div class="product-card reveal reveal-delay-2">
+        <div class="product-img" style="background:linear-gradient(135deg,rgba(52,199,89,0.08),rgba(52,199,89,0.16))">🧻
+          <span class="product-tag tag-sale">מבצע</span>
+        </div>
+        <div class="product-info">
+          <div class="product-name">נייר תעשייתי 6 גלילים</div>
+          <div class="product-desc">נייר תעשייתי דו-שכבתי 350 מטר לגליל</div>
+          <div class="product-bottom">
+            <div class="product-price">₪<span class="num">89.00</span><small>+ מע״מ</small></div>
+            <button class="btn-add-cart" title="הוסף לעגלה">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="product-quick"><button class="btn-quick">צפייה מהירה</button></div>
+      </div>
+      <div class="product-card reveal reveal-delay-3">
+        <div class="product-img" style="background:linear-gradient(135deg,rgba(175,82,222,0.08),rgba(175,82,222,0.16))">🥡
+          <span class="product-tag tag-new">חדש</span>
+        </div>
+        <div class="product-info">
+          <div class="product-name">מגשי אלומיניום 100 יח׳</div>
+          <div class="product-desc">מגשים עגולים Ø26 ס״מ — מתאים לאפייה והגשה</div>
+          <div class="product-bottom">
+            <div class="product-price">₪<span class="num">62.00</span><small>+ מע״מ</small></div>
+            <button class="btn-add-cart" title="הוסף לעגלה">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="product-quick"><button class="btn-quick">צפייה מהירה</button></div>
+      </div>
+      <div class="product-card reveal reveal-delay-4">
+        <div class="product-img" style="background:linear-gradient(135deg,rgba(255,149,0,0.08),rgba(255,149,0,0.16))">🧤
+          <span class="product-tag tag-best">הכי נמכר</span>
+        </div>
+        <div class="product-info">
+          <div class="product-name">כפפות ניטריל שחורות L</div>
+          <div class="product-desc">100 יח׳ בקופסה — ללא אבקה, מתאים למזון</div>
+          <div class="product-bottom">
+            <div class="product-price">₪<span class="num">34.90</span><small>+ מע״מ</small></div>
+            <button class="btn-add-cart" title="הוסף לעגלה">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="product-quick"><button class="btn-quick">צפייה מהירה</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section" id="stats">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">למה וואי מרקט</div>
+      <h2 class="section-title">המספרים מדברים</h2>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card reveal reveal-delay-1">
+        <div class="stat-number"><span class="num">750</span>+</div>
+        <div class="stat-label">לקוחות עסקיים</div>
+        <div class="stat-desc">ברחבי הארץ</div>
+      </div>
+      <div class="stat-card reveal reveal-delay-2">
+        <div class="stat-number"><span class="num">1,000</span>+</div>
+        <div class="stat-label">מוצרים בקטלוג</div>
+        <div class="stat-desc">מגוון רחב ומתעדכן</div>
+      </div>
+      <div class="stat-card reveal reveal-delay-3">
+        <div class="stat-number"><span class="num">48</span>h</div>
+        <div class="stat-label">זמן אספקה</div>
+        <div class="stat-desc">עד הדלת שלך</div>
+      </div>
+      <div class="stat-card reveal reveal-delay-4">
+        <div class="stat-number"><span class="num">15</span>+</div>
+        <div class="stat-label">שנות ניסיון</div>
+        <div class="stat-desc">אספקה מוסדית</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEGMENTS -->
+<section class="section" style="background:var(--surface-2)" id="segments">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">למי אנחנו מתאימים</div>
+      <h2 class="section-title">מלווים עסקים בכל הגדלים</h2>
+      <p class="section-desc">מחברות ניקיון ארציות ועד מסעדות שכונתיות — פתרון אספקה אחד לכולם</p>
+    </div>
+    <div class="segments-grid">
+      <div class="seg-card reveal reveal-delay-1">
+        <div class="seg-icon">🏢</div>
+        <div class="seg-info">
+          <h4>חברות ניקיון</h4>
+          <p>אספקה שוטפת לאתרים מרובים — ניהול הזמנות מרכזי</p>
+        </div>
+      </div>
+      <div class="seg-card reveal reveal-delay-2">
+        <div class="seg-icon">🍽️</div>
+        <div class="seg-info">
+          <h4>מסעדות ושירותי מזון</h4>
+          <p>חד פעמיים, אריזות ומוצרי ניקיון — הכל בהזמנה אחת</p>
+        </div>
+      </div>
+      <div class="seg-card reveal reveal-delay-3">
+        <div class="seg-icon">🛒</div>
+        <div class="seg-info">
+          <h4>סופרמרקטים ומינימרקטים</h4>
+          <p>מחירי סיטונאות למוצרי צריכה שוטפת</p>
+        </div>
+      </div>
+      <div class="seg-card reveal reveal-delay-1">
+        <div class="seg-icon">💼</div>
+        <div class="seg-info">
+          <h4>משרדים וחברות</h4>
+          <p>ציוד משרדי, מוצרי נייר ומוצרי מטבחון</p>
+        </div>
+      </div>
+      <div class="seg-card reveal reveal-delay-2">
+        <div class="seg-icon">🏋️</div>
+        <div class="seg-info">
+          <h4>מרכזי ספורט ופנאי</h4>
+          <p>מוצרי ניקיון והיגיינה לבריכות, חדרי כושר ומלתחות</p>
+        </div>
+      </div>
+      <div class="seg-card reveal reveal-delay-3">
+        <div class="seg-icon">🏥</div>
+        <div class="seg-info">
+          <h4>מוסדות רפואה</h4>
+          <p>מוצרי היגיינה, כפפות ומתכלים רפואיים</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA REGISTRATION -->
+<section class="cta-banner" id="register">
+  <div class="container cta-inner">
+    <div class="cta-text reveal">
+      <h2>פתח חשבון עסקי<br>וקבל גישה <span style="color:var(--gold)">למחירים הטובים ביותר</span></h2>
+      <p>הצטרף למאות עסקים שכבר מזמינים דרך הפלטפורמה שלנו. חשבון עסקי מאפשר לך ליהנות ממחירים מיוחדים, מעקב הזמנות והזמנה חוזרת אוטומטית.</p>
+      <div class="cta-benefits">
+        <div class="cta-benefit">
+          <div class="cta-benefit-icon">✓</div>
+          פורטל הזמנות דיגיטלי עם היסטוריית רכישות
+        </div>
+        <div class="cta-benefit">
+          <div class="cta-benefit-icon">✓</div>
+          מחירון אישי מותאם לסוג העסק שלך
+        </div>
+        <div class="cta-benefit">
+          <div class="cta-benefit-icon">✓</div>
+          הזמנה חוזרת בלחיצה — בלי להתחיל מאפס
+        </div>
+        <div class="cta-benefit">
+          <div class="cta-benefit-icon">✓</div>
+          מנהל לקוח אישי לכל שאלה או בקשה
+        </div>
+      </div>
+    </div>
+    <div class="cta-form reveal reveal-delay-2">
+      <h3>הרשמה לחשבון עסקי</h3>
+      <p class="cta-form-sub">תוך 2 דקות — ללא התחייבות</p>
+      <div class="field">
+        <label>שם מלא</label>
+        <input type="text" placeholder="שם פרטי ומשפחה">
+      </div>
+      <div class="row">
+        <div class="field">
+          <label>טלפון</label>
+          <input type="tel" placeholder="050-0000000">
+        </div>
+        <div class="field">
+          <label>אימייל</label>
+          <input type="email" placeholder="name@company.co.il">
+        </div>
+      </div>
+      <div class="field">
+        <label>שם העסק</label>
+        <input type="text" placeholder="שם החברה / העסק">
+      </div>
+      <div class="field">
+        <label>סוג עסק</label>
+        <select>
+          <option value="">בחר סוג עסק</option>
+          <option>חברת ניקיון</option>
+          <option>מסעדה / קייטרינג</option>
+          <option>סופרמרקט / מינימרקט</option>
+          <option>משרד / חברה</option>
+          <option>מרכז ספורט</option>
+          <option>מוסד רפואי</option>
+          <option>מפיץ / סיטונאי</option>
+          <option>אחר</option>
+        </select>
+      </div>
+      <button class="btn-cta-submit">פתיחת חשבון עסקי →</button>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="section" id="blog">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">בלוג וואי מרקט</div>
+      <h2 class="section-title">תובנות מעולם האספקה</h2>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card reveal reveal-delay-1">
+        <div class="blog-img b1">🧹</div>
+        <div class="blog-body">
+          <span class="blog-tag">מוצרי ניקיון</span>
+          <h3>איך לבחור חומרי ניקוי מוסדיים — המדריך המלא</h3>
+          <p>כל מה שצריך לדעת על ריכוזים, תקנים ועלות אמיתית ליחידת שימוש</p>
+          <div class="blog-meta">
+            <span class="num">8</span> דק׳ קריאה • <span class="num">12.03.2026</span>
+          </div>
+        </div>
+      </div>
+      <div class="blog-card reveal reveal-delay-2">
+        <div class="blog-img b2">♻️</div>
+        <div class="blog-body">
+          <span class="blog-tag">סביבה</span>
+          <h3>שקיות אשפה מתכלות — האם זה באמת עובד?</h3>
+          <p>סקירת השוק, תקנים בינלאומיים והשוואת מחירים</p>
+          <div class="blog-meta">
+            <span class="num">5</span> דק׳ קריאה • <span class="num">28.02.2026</span>
+          </div>
+        </div>
+      </div>
+      <div class="blog-card reveal reveal-delay-3">
+        <div class="blog-img b3">🍽️</div>
+        <div class="blog-body">
+          <span class="blog-tag">חד פעמיים</span>
+          <h3>ציוד חד פעמי למסעדות — מה חייבים במלאי</h3>
+          <p>רשימה מעודכנת לרכש חכם: כמויות, ספקים ותדירות הזמנה</p>
+          <div class="blog-meta">
+            <span class="num">6</span> דק׳ קריאה • <span class="num">15.02.2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo" style="margin-bottom:4px">
+          <div class="logo-mark" style="background:linear-gradient(135deg,var(--navy-mid),var(--navy-light))">Y</div>
+          <div class="logo-text" style="color:#fff">וואי מרקט<span style="color:rgba(255,255,255,0.4)">נגלר סחר והפצה</span></div>
+        </a>
+        <p>פלטפורמת הזמנות B2B למוצרי צריכה מוסדיים. מעל 1,000 פריטים, משלוח ארצי, מחירי סיטונאות.</p>
+        <div class="footer-social">
+          <a href="#" title="WhatsApp">💬</a>
+          <a href="#" title="פייסבוק">f</a>
+          <a href="#" title="אינסטגרם">📷</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>קטגוריות</h4>
+        <ul>
+          <li><a href="#">מוצרי ניקיון</a></li>
+          <li><a href="#">מוצרי נייר</a></li>
+          <li><a href="#">חד פעמיים</a></li>
+          <li><a href="#">אריזות מזון</a></li>
+          <li><a href="#">ציוד בטיחות</a></li>
+          <li><a href="#">ציוד משרדי</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>קישורים</h4>
+        <ul>
+          <li><a href="#">קטלוג מלא</a></li>
+          <li><a href="#">אודות</a></li>
+          <li><a href="#">בלוג</a></li>
+          <li><a href="#">שאלות נפוצות</a></li>
+          <li><a href="#">צרו קשר</a></li>
+          <li><a href="#">מעקב הזמנה</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>צרו קשר</h4>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span class="num">03-7740400</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Pm@ymarket.co.il
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          א׳-ה׳ 08:00-17:00
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span class="num">2026</span> וואי מרקט — נגלר סחר והפצה. כל הזכויות שמורות.</span>
+      <div class="footer-legal">
+        <a href="#">תנאי שימוש</a>
+        <a href="#">מדיניות פרטיות</a>
+        <a href="#">מדיניות משלוחים</a>
+        <a href="#">נגישות</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FAB -->
+<a href="https://wa.me/97237740400" class="whatsapp-fab" title="שלח הודעה בוואטסאפ" target="_blank" rel="noopener">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// Sticky header
+const header = document.getElementById('header');
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+// Mobile menu
+const mobileMenu = document.getElementById('mobileMenu');
+document.getElementById('menuOpen').addEventListener('click', () => mobileMenu.classList.add('open'));
+document.getElementById('menuClose').addEventListener('click', () => mobileMenu.classList.remove('open'));
+document.getElementById('menuOverlay').addEventListener('click', () => mobileMenu.classList.remove('open'));
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+
+// Smooth scroll for nav
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      mobileMenu.classList.remove('open');
+    }
+  });
+});
+</script>
+</body>
+</html>

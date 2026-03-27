@@ -417,9 +417,75 @@ function formatPrice(price) {
   }).format(price);
 }
 
+/* ---- Global Cart Helpers ---- */
+function getCartQty(productId) {
+  var cart = JSON.parse(localStorage.getItem('ym_cart') || '[]');
+  for (var i = 0; i < cart.length; i++) {
+    if (cart[i].id === productId) return cart[i].quantity;
+  }
+  return 0;
+}
+
+function setCartQty(productId, qty) {
+  var cart = JSON.parse(localStorage.getItem('ym_cart') || '[]');
+  if (qty <= 0) {
+    cart = cart.filter(function(item) { return item.id !== productId; });
+  } else {
+    for (var i = 0; i < cart.length; i++) {
+      if (cart[i].id === productId) { cart[i].quantity = qty; break; }
+    }
+  }
+  localStorage.setItem('ym_cart', JSON.stringify(cart));
+  updateCartBadge();
+}
+
+function showCartQtyControls(btn) {
+  var id = parseInt(btn.dataset.id);
+  var qty = getCartQty(id);
+
+  // Already has qty wrap? update it
+  var parent = btn.parentElement;
+  var existingWrap = parent.querySelector('.ym-qty-wrap');
+  if (existingWrap) existingWrap.remove();
+
+  if (qty <= 0) {
+    btn.style.display = '';
+    btn.classList.remove('added');
+    btn.innerHTML = '<i class="fas fa-cart-plus"></i> הוסף לעגלה';
+    return;
+  }
+
+  // Hide original button
+  btn.style.display = 'none';
+
+  // Create green qty controls
+  var wrap = document.createElement('div');
+  wrap.className = 'ym-qty-wrap';
+  wrap.innerHTML =
+    '<button class="ym-qty-btn ym-plus" type="button">+</button>' +
+    '<span class="ym-qty-val"><i class="fas fa-check"></i> ' + qty + '</span>' +
+    '<button class="ym-qty-btn' + (qty === 1 ? ' ym-remove' : '') + '" type="button">' + (qty === 1 ? '<i class="fas fa-trash-alt"></i>' : '−') + '</button>';
+
+  parent.insertBefore(wrap, btn.nextSibling);
+
+  wrap.querySelector('.ym-plus').addEventListener('click', function(e) {
+    e.preventDefault(); e.stopPropagation();
+    setCartQty(id, getCartQty(id) + 1);
+    showCartQtyControls(btn);
+  });
+  wrap.querySelector('.ym-qty-btn:last-child').addEventListener('click', function(e) {
+    e.preventDefault(); e.stopPropagation();
+    setCartQty(id, getCartQty(id) - 1);
+    showCartQtyControls(btn);
+  });
+}
+
 /* ---- Expose globals ---- */
 window.YMarket = {
   updateCartBadge,
   showToast,
-  formatPrice
+  formatPrice,
+  getCartQty,
+  setCartQty,
+  showCartQtyControls
 };

@@ -773,6 +773,66 @@
   background: rgba(255,255,255,0.4);
 }
 
+/* ---- Global Cart Qty Controls ---- */
+.ym-qty-wrap {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid #16a34a;
+  animation: ymQtyIn 0.25s ease;
+}
+@keyframes ymQtyIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+.ym-qty-btn {
+  width: 42px;
+  height: 44px;
+  border: none;
+  background: #16a34a;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  font-family: inherit;
+}
+.ym-qty-btn:hover {
+  background: #15803d;
+}
+.ym-qty-btn.ym-remove {
+  background: #ef4444;
+}
+.ym-qty-btn.ym-remove:hover {
+  background: #dc2626;
+}
+.ym-qty-val {
+  flex: 1;
+  min-width: 48px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #16a34a;
+  background: #f0fdf4;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.ym-qty-val i {
+  font-size: 0.8rem;
+}
+.product-card__add-btn.added {
+  background: #16a34a !important;
+  border-color: #16a34a !important;
+  color: #fff !important;
+}
+
 /* ---- Cookie Consent ---- */
 .cookie-banner {
   position: fixed;

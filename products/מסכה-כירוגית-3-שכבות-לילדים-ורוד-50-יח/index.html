@@ -400,41 +400,49 @@
 
     // Add to cart
     var addBtn = document.getElementById('addToCartBtn');
-    if (addBtn) addBtn.addEventListener('click', function() {
-      var qty = parseInt(qtyInput ? qtyInput.value : 1);
-      var cart = JSON.parse(localStorage.getItem('ym_cart') || '[]');
-      var existing = null;
-      for (var i = 0; i < cart.length; i++) {
-        if (cart[i].id === PRODUCT.id) { existing = cart[i]; break; }
-      }
+    if (addBtn) {
+      addBtn.dataset.id = PRODUCT.id;
+      addBtn.dataset.name = PRODUCT.name;
+      addBtn.dataset.price = PRODUCT.price;
+      addBtn.dataset.unit = PRODUCT.unit || '';
+      addBtn.dataset.img = PRODUCT.imageUrl;
+      addBtn.dataset.slug = PRODUCT.slug;
 
-      if (existing) {
-        existing.quantity += qty;
-      } else {
-        cart.push({
-          id: PRODUCT.id,
-          name: PRODUCT.name,
-          price: PRODUCT.price,
-          unit: PRODUCT.unit,
-          imageUrl: PRODUCT.imageUrl,
-          slug: PRODUCT.slug,
-          quantity: qty
-        });
-      }
+      addBtn.addEventListener('click', function() {
+        var qty = parseInt(qtyInput ? qtyInput.value : 1);
+        var cart = JSON.parse(localStorage.getItem('ym_cart') || '[]');
+        var existing = null;
+        for (var i = 0; i < cart.length; i++) {
+          if (cart[i].id === PRODUCT.id) { existing = cart[i]; break; }
+        }
+        if (existing) {
+          existing.quantity += qty;
+        } else {
+          cart.push({
+            id: PRODUCT.id, name: PRODUCT.name, price: PRODUCT.price,
+            unit: PRODUCT.unit, imageUrl: PRODUCT.imageUrl, slug: PRODUCT.slug,
+            quantity: qty
+          });
+        }
+        localStorage.setItem('ym_cart', JSON.stringify(cart));
+        if (window.YMarket) {
+          window.YMarket.updateCartBadge();
+          window.YMarket.showToast('המוצר נוסף לעגלה');
+          window.YMarket.showCartQtyControls(addBtn);
+        }
+        if (window.YMarketAnalytics && window.YMarketAnalytics.fbAddToCart) {
+          window.YMarketAnalytics.fbAddToCart({ id: PRODUCT.id, name: PRODUCT.name, price: PRODUCT.price, quantity: qty });
+        }
+        if (window.YMarketAnalytics && window.YMarketAnalytics.trackAddToCart) {
+          window.YMarketAnalytics.trackAddToCart({ id: PRODUCT.id, name: PRODUCT.name, price: PRODUCT.price, quantity: qty });
+        }
+      });
 
-      localStorage.setItem('ym_cart', JSON.stringify(cart));
-      if (window.YMarket) window.YMarket.updateCartBadge();
-      if (window.YMarket) window.YMarket.showToast('המוצר נוסף לעגלה');
-
-      // Facebook Pixel - AddToCart
-      if (window.YMarketAnalytics && window.YMarketAnalytics.fbAddToCart) {
-        window.YMarketAnalytics.fbAddToCart({ id: PRODUCT.id, name: PRODUCT.name, price: PRODUCT.price, quantity: qty });
+      // Show qty if already in cart
+      if (window.YMarket && window.YMarket.getCartQty(PRODUCT.id) > 0) {
+        window.YMarket.showCartQtyControls(addBtn);
       }
-      // GA4 - add_to_cart
-      if (window.YMarketAnalytics && window.YMarketAnalytics.trackAddToCart) {
-        window.YMarketAnalytics.trackAddToCart({ id: PRODUCT.id, name: PRODUCT.name, price: PRODUCT.price, quantity: qty });
-      }
-    });
+    }
   })();
   </script>
 </body>
