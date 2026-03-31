@@ -164,7 +164,7 @@
       var actions = card.querySelector('.product-card__actions');
       if (actions) actions.appendChild(existing);
     }
-    existing.innerHTML = '<strong>' + fmtILS(subtotal) + '</strong><small>' + qty + ' × ' + fmtILS(price) + '</small>';
+    existing.innerHTML = '<strong>' + fmtILS(subtotal) + '</strong>';
   }
 
   // Product page: quantity-selector with #qtyInput
@@ -191,7 +191,7 @@
         else if (actions) actions.appendChild(el);
       }
       if (qty > 1) {
-        el.innerHTML = '<span class="ym-ps__total">' + fmtILS(subtotal) + '</span><span class="ym-ps__detail">' + qty + ' × ' + fmtILS(price) + '</span>';
+        el.innerHTML = '<span class="ym-ps__total">סה"כ: ' + fmtILS(subtotal) + '</span>';
         el.style.display = '';
       } else {
         el.style.display = 'none';

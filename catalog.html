@@ -348,7 +348,7 @@
         var price = prod.saleNis || 0;
         var subtotal = price * qty;
         var subtotalHtml = price > 0
-          ? '<div class="p-card__subtotal">'+fmtPrice(subtotal)+'<small>'+qty+' × '+fmtPrice(price)+'</small></div>'
+          ? '<div class="p-card__subtotal">'+fmtPrice(subtotal)+'</div>'
           : '';
         container.innerHTML =
           '<div class="p-card__qty-row">'+
