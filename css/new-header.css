@@ -292,6 +292,9 @@ input:focus, textarea:focus, select:focus {
   border-color: rgba(10,107,255,0.3) !important;
 }
 
+/* ── Hide category cover images ── */
+.hero-wrapper { display: none !important; }
+
 /* ── Category page cards ── */
 .category-carousel-section {
   padding: 2rem 0 !important;
