@@ -304,10 +304,11 @@
     .hero-carousel {
       position: relative;
       width: 100%;
+      height: 580px; /* Fixed height — no jumping between slides */
       overflow: hidden;
     }
 
-    /* Slides — active one sets height, others overlay */
+    /* All slides absolute — same fixed height */
     .hero-slide {
       position: absolute;
       inset: 0;
@@ -319,7 +320,6 @@
       z-index: 1;
     }
     .hero-slide.active {
-      position: relative; /* Active slide flows in document, sets container height */
       opacity: 1;
       pointer-events: auto;
       z-index: 2;
@@ -396,10 +396,10 @@
     .hero-slide__grid {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
-      gap: var(--sp-3xl);
+      gap: var(--sp-2xl);
       align-items: center;
-      min-height: 480px;
-      padding: var(--sp-3xl) 0;
+      height: 100%;
+      padding: var(--sp-2xl) 0;
     }
 
     /* Text animations within active slide */
@@ -954,7 +954,10 @@
 
     /* ═══ RESPONSIVE ═══ */
     @media (max-width: 1024px) {
-      .hero-slide__grid { grid-template-columns: 1fr; gap: var(--sp-xl); min-height: auto; }
+      .hero-carousel { height: auto; } /* Content-driven on tablet/mobile */
+      .hero-slide { position: absolute; inset: 0; }
+      .hero-slide.active { position: relative; } /* Only active flows on mobile */
+      .hero-slide__grid { grid-template-columns: 1fr; gap: var(--sp-xl); height: auto; }
       .hero-slide__visual { max-width: 520px; margin: 0 auto; }
       .features-grid, .stats-grid, .quick-services__grid, .services-strip__grid, .reg-grid { grid-template-columns: repeat(2, 1fr); }
       .footer__grid { grid-template-columns: repeat(2, 1fr); gap: var(--sp-2xl); }
