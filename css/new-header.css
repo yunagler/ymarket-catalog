@@ -207,8 +207,9 @@ body {
   position: relative !important;
   z-index: 1 !important;
 }
-.about-hero__subtitle, .about-hero p, .contact-hero p, .faq-hero p {
-  color: rgba(255,255,255,0.85) !important;
+.about-hero__subtitle, .about-hero p, .contact-hero p, .faq-hero p,
+.page-hero p, .page-hero__subtitle {
+  color: rgba(255,255,255,0.95) !important;
   font-size: 1.125rem !important;
   position: relative !important;
   z-index: 1 !important;
@@ -231,7 +232,7 @@ body {
   color: white !important;
 }
 .stat-item__label {
-  color: rgba(255,255,255,0.85) !important;
+  color: rgba(255,255,255,0.95) !important;
 }
 
 /* ── Contact form ── */
@@ -294,6 +295,52 @@ input:focus, textarea:focus, select:focus {
 
 /* ── Hide category cover images ── */
 .hero-wrapper { display: none !important; }
+
+/* ═══ CONTRAST FIXES — All inline color overrides ═══ */
+
+/* Consult CTA strip — text opacity too low on navy bg */
+.consult-cta__text p { opacity: 1 !important; color: rgba(255,255,255,0.9) !important; }
+.consult-cta__icon { opacity: 1 !important; }
+.consult-cta { color: #fff !important; }
+
+/* #9ca3af on white = 2.8:1 FAIL → override to #64748B (5.36:1) */
+[style*="color:#9ca3af"],
+[style*="color: #9ca3af"] { color: #64748B !important; }
+
+/* Subcategory count badges */
+.subcategory-card span[style*="#9ca3af"] { color: #64748B !important; }
+
+/* Updated date line */
+p[style*="#9ca3af"] { color: #64748B !important; }
+
+/* Strikethrough old price — acceptable lighter for decoration */
+div[style*="line-through"][style*="#9ca3af"] { color: #94A3B8 !important; }
+
+/* Low opacity text on dark backgrounds */
+[style*="opacity:0.65"],
+[style*="opacity: 0.65"] { opacity: 0.85 !important; }
+[style*="opacity:0.85"] { opacity: 1 !important; }
+
+/* #6b7280 is borderline (4.6:1) — bump to #475569 (7:1) */
+.trust-badges__text span { color: #475569 !important; }
+.why-ym__card span { color: #475569 !important; }
+.stats-bar__label { color: #475569 !important; }
+
+/* Sidebar chevrons/counts */
+.sidebar-category i[style*="#9ca3af"] { color: #64748B !important; }
+
+/* Product card volume text */
+.product-card__unit, .product-card__vol { color: #475569 !important; }
+
+/* Category FAQ answer text */
+.category-faq .faq-answer { color: #475569 !important; }
+.faq-answer a { color: #0A6BFF !important; }
+
+/* SEO content text */
+.category-seo p { color: #475569 !important; line-height: 1.7 !important; }
+.category-seo h2, .category-seo h3 { color: #112A45 !important; }
+.category-seo a { color: #0A6BFF !important; }
+.category-seo li { color: #475569 !important; }
 
 /* ── Category page cards ── */
 .category-carousel-section {
