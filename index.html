@@ -954,10 +954,8 @@
 
     /* ═══ RESPONSIVE ═══ */
     @media (max-width: 1024px) {
-      .hero-carousel { height: auto; } /* Content-driven on tablet/mobile */
-      .hero-slide { position: absolute; inset: 0; }
-      .hero-slide.active { position: relative; } /* Only active flows on mobile */
-      .hero-slide__grid { grid-template-columns: 1fr; gap: var(--sp-xl); height: auto; }
+      .hero-carousel { height: auto; }
+      .hero-slide__grid { grid-template-columns: 1fr; gap: var(--sp-xl); height: auto; padding: var(--sp-xl) 0; }
       .hero-slide__visual { max-width: 520px; margin: 0 auto; }
       .features-grid, .stats-grid, .quick-services__grid, .services-strip__grid, .reg-grid { grid-template-columns: repeat(2, 1fr); }
       .footer__grid { grid-template-columns: repeat(2, 1fr); gap: var(--sp-2xl); }
@@ -1732,6 +1730,32 @@
       }, 50);
       timer = setTimeout(nextSlide, INTERVAL);
     }
+
+    // ── Equalize slide heights — prevent jumping ──
+    function equalizeSlides() {
+      const carouselEl = document.getElementById('heroCarousel');
+      // Reset heights
+      carouselEl.style.height = '';
+      slides.forEach(s => { s.style.position = ''; s.style.height = ''; });
+
+      // Measure each slide by temporarily making it relative
+      let maxH = 0;
+      slides.forEach(s => {
+        s.style.position = 'relative';
+        s.style.opacity = '1';
+        const h = s.scrollHeight;
+        if (h > maxH) maxH = h;
+        s.style.position = '';
+        s.style.opacity = '';
+      });
+
+      // Set fixed height on carousel
+      if (maxH > 0) {
+        carouselEl.style.height = maxH + 'px';
+      }
+    }
+    equalizeSlides();
+    window.addEventListener('resize', equalizeSlides);
 
     dots.forEach(dot => dot.addEventListener('click', () => goToSlide(parseInt(dot.dataset.dot))));
     document.getElementById('prevBtn').addEventListener('click', prevSlide);
