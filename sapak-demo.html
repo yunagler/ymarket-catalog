@@ -37,6 +37,7 @@ body { font-family: 'Heebo', sans-serif; }
 .table-row { transition: background 0.1s; }
 .table-row:hover { background: #f8fafc; }
 </style>
+  <link rel="stylesheet" href="/css/new-header.css">
 </head>
 <body class="bg-gray-50 text-gray-900">
   <div class="top-bar">
@@ -691,5 +692,6 @@ function filterByType(v) {
 renderNav();
 navigate(location.hash.slice(1) || 'dashboard');
 </script>
+  <script src="/js/new-header-inject.js" defer></script>
 </body>
 </html>
