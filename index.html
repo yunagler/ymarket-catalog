@@ -249,13 +249,17 @@
     .nav__item:hover .nav__link i { transform: rotate(180deg); }
 
     .mega-menu {
-      position: absolute; top: calc(100% + 8px); right: 50%; transform: translateX(50%);
+      position: absolute; top: 100%; right: 50%; transform: translateX(50%);
       background: var(--surface-glass-strong); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
       border: 1px solid var(--border); border-radius: var(--r-xl); box-shadow: var(--shadow-xl);
-      padding: var(--sp-xl); min-width: 580px;
+      padding: var(--sp-xl); padding-top: calc(var(--sp-xl) + 10px); min-width: 580px;
       opacity: 0; visibility: hidden; pointer-events: none;
       transition: all 0.3s cubic-bezier(0.22,1,0.36,1);
       transform: translateX(50%) translateY(8px); z-index: 9100;
+    }
+    /* Bridge the gap between nav link and mega menu */
+    .mega-menu::before {
+      content: ''; position: absolute; top: -14px; left: 0; right: 0; height: 14px; background: transparent;
     }
     .nav__item:hover .mega-menu { opacity:1; visibility:visible; pointer-events:auto; transform: translateX(50%) translateY(0); }
     .mega-menu__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
