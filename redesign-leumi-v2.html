@@ -1,0 +1,1959 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>וואי מרקט | עיצוב חדש V2 - באנר מתחלף</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    /* =====================================================
+       YMARKET REDESIGN V2 — Leumi Structure
+       Full-width rotating hero + flowing sections
+       ===================================================== */
+
+    :root {
+      --navy-900: #0A1628;
+      --navy-800: #112A45;
+      --navy-700: #1B3A5C;
+      --navy-600: #2A5080;
+      --navy-500: #3668A0;
+      --navy-400: #4A82BF;
+      --navy-300: #7AAAD6;
+      --navy-200: #A8CCE8;
+      --navy-100: #D4E6F4;
+      --navy-50: #EBF2FA;
+
+      --action: #0A6BFF;
+      --action-hover: #0856D6;
+      --action-light: #3D8AFF;
+      --action-glow: rgba(10, 107, 255, 0.35);
+      --action-bg: rgba(10, 107, 255, 0.06);
+
+      --gold: #E8A735;
+      --gold-hover: #D4952E;
+      --gold-light: #F5C76B;
+      --gold-glow: rgba(232, 167, 53, 0.3);
+
+      --green: #1a7f37;
+      --green-light: #22C55E;
+
+      --surface: #FFFFFF;
+      --surface-alt: #F6F8FB;
+      --surface-glass: rgba(255, 255, 255, 0.65);
+      --surface-glass-strong: rgba(255, 255, 255, 0.82);
+
+      --text-primary: #0F172A;
+      --text-secondary: #475569;
+      --text-muted: #94A3B8;
+      --text-on-dark: #FFFFFF;
+      --text-on-dark-muted: rgba(255, 255, 255, 0.75);
+
+      --border: rgba(27, 58, 92, 0.1);
+      --border-hover: rgba(10, 107, 255, 0.3);
+
+      --shadow-sm: 0 2px 8px rgba(10, 22, 40, 0.06);
+      --shadow-md: 0 4px 16px rgba(10, 22, 40, 0.08);
+      --shadow-lg: 0 8px 32px rgba(10, 22, 40, 0.1);
+      --shadow-xl: 0 15px 60px -12px rgba(10, 22, 40, 0.18);
+      --shadow-glass: 0 8px 32px rgba(10, 22, 40, 0.06), 0 0 0 1px rgba(255,255,255,0.5) inset;
+      --shadow-hover: 0 20px 60px -15px rgba(10, 22, 40, 0.22);
+
+      --font: 'Heebo', Arial, sans-serif;
+      --fs-xs: 0.75rem;
+      --fs-sm: 0.875rem;
+      --fs-base: 1rem;
+      --fs-md: 1.125rem;
+      --fs-lg: clamp(1.15rem, 1.5vw, 1.3rem);
+      --fs-xl: clamp(1.35rem, 2vw, 1.6rem);
+      --fs-2xl: clamp(1.6rem, 2.5vw, 2.1rem);
+      --fs-3xl: clamp(2rem, 3vw, 2.75rem);
+      --fs-4xl: clamp(2.25rem, 4vw, 3.5rem);
+      --fs-hero: clamp(2.5rem, 5vw, 4rem);
+
+      --sp-xs: 0.25rem; --sp-sm: 0.5rem; --sp-md: 1rem; --sp-lg: 1.5rem;
+      --sp-xl: 2rem; --sp-2xl: 3rem; --sp-3xl: 4.5rem; --sp-4xl: 6rem;
+
+      --r-sm: 6px; --r-md: 10px; --r-lg: 16px; --r-xl: 24px; --r-2xl: 32px; --r-pill: 100px;
+
+      --max-w: 1320px;
+      --padding: clamp(1rem, 3vw, 2rem);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; overflow-x: clip; }
+    body {
+      font-family: var(--font); font-size: var(--fs-base); font-weight: 400;
+      line-height: 1.6; color: var(--text-primary); background: var(--surface);
+      direction: rtl; text-align: right; -webkit-font-smoothing: antialiased; overflow-x: clip;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    ul, ol { list-style: none; }
+    button, a, [role="button"] { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+    input, button, textarea, select { font: inherit; }
+    h1,h2,h3,h4,h5,h6 { font-weight: 700; line-height: 1.25; color: var(--navy-800); }
+    ::selection { background: var(--action); color: white; }
+    .container { width: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 var(--padding); }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--navy-50); }
+    ::-webkit-scrollbar-thumb { background: var(--navy-300); border-radius: 99px; }
+
+    /* ── Keyframes ── */
+    @keyframes floatBlob {
+      0%,100% { transform: translate(0,0) scale(1); }
+      33% { transform: translate(20px,-25px) scale(1.04); }
+      66% { transform: translate(-15px,15px) scale(0.97); }
+    }
+    @keyframes floatBlobSlow {
+      0%,100% { transform: translate(0,0); }
+      50% { transform: translate(-25px,-20px); }
+    }
+    @keyframes slideUp {
+      from { opacity:0; transform:translateY(35px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+    @keyframes fadeSlideIn {
+      from { opacity:0; transform:translateX(-30px); }
+      to { opacity:1; transform:translateX(0); }
+    }
+    @keyframes shimmer {
+      0% { background-position: 200% center; }
+      100% { background-position: -200% center; }
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    @keyframes iconBounce {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    @keyframes bannerIn {
+      from { opacity:0; transform:scale(1.03); }
+      to { opacity:1; transform:scale(1); }
+    }
+    @keyframes textSlideUp {
+      from { opacity:0; transform:translateY(24px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+    @keyframes progressBar {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    /* ── Scroll Reveal ── */
+    .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: .08s; }
+    .reveal-d2 { transition-delay: .16s; }
+    .reveal-d3 { transition-delay: .24s; }
+    .reveal-d4 { transition-delay: .32s; }
+    .reveal-d5 { transition-delay: .4s; }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 14px 28px; font-family: var(--font); font-size: var(--fs-base);
+      font-weight: 700; line-height: 1; border: 2px solid transparent;
+      border-radius: var(--r-lg); cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.22,1,0.36,1);
+      white-space: nowrap; text-decoration: none; position: relative; overflow: hidden;
+    }
+    .btn--action { background: var(--action); color: white; box-shadow: 0 4px 20px var(--action-glow); }
+    .btn--action:hover { background: var(--action-hover); transform: translateY(-2px); box-shadow: 0 8px 30px var(--action-glow); color: white; }
+    .btn--action::after {
+      content:''; position:absolute; inset:0;
+      background: linear-gradient(135deg, transparent 30%, rgba(255,255,255,0.15) 50%, transparent 70%);
+      background-size: 200% 100%; animation: shimmer 3s infinite;
+    }
+    .btn--outline { background: var(--surface-glass); color: var(--navy-700); border-color: var(--border); }
+    .btn--outline:hover { border-color: var(--action); color: var(--action); background: var(--action-bg); transform: translateY(-2px); }
+    .btn--navy { background: var(--navy-800); color: white; }
+    .btn--navy:hover { background: var(--navy-700); transform: translateY(-2px); color: white; }
+    .btn--gold { background: linear-gradient(135deg, var(--gold), var(--gold-hover)); color: white; box-shadow: 0 4px 16px var(--gold-glow); }
+    .btn--gold:hover { transform: translateY(-2px); box-shadow: 0 8px 24px var(--gold-glow); color: white; }
+    .btn--whatsapp { background: var(--green); color: white; }
+    .btn--whatsapp:hover { background: #158a32; transform: translateY(-2px); color: white; }
+    .btn--white { background: rgba(255,255,255,0.12); color: white; border-color: rgba(255,255,255,0.25); }
+    .btn--white:hover { background: rgba(255,255,255,0.22); color: white; }
+    .btn--hero { padding: 16px 36px; font-size: var(--fs-md); border-radius: var(--r-xl); }
+    .btn--lg { padding: 16px 36px; font-size: var(--fs-md); }
+
+    /* ═══════════════════════════════
+       TOP BAR + HEADER
+       ═══════════════════════════════ */
+    .announcement {
+      background: linear-gradient(135deg, var(--navy-900), var(--navy-800));
+      text-align: center; font-size: var(--fs-sm); font-weight: 700; position: relative; z-index: 100;
+    }
+    .announcement a {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 11px 16px; color: var(--gold); min-height: 44px; transition: background 0.3s;
+    }
+    .announcement a:hover { background: rgba(232,167,53,0.08); color: var(--gold); }
+    .announcement::after {
+      content:''; position: absolute; bottom:0; left:0; right:0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .info-bar {
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      font-size: 0.82rem; color: var(--text-secondary);
+    }
+    .info-bar .container { display: flex; justify-content: space-between; align-items: center; padding-top: 6px; padding-bottom: 6px; }
+    .info-bar__group { display: flex; align-items: center; gap: var(--sp-lg); }
+    .info-bar__item { display: flex; align-items: center; gap: 6px; }
+    .info-bar__item a { color: var(--text-secondary); transition: color 0.2s; }
+    .info-bar__item a:hover { color: var(--action); }
+    .info-bar__social a {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px; border-radius: 50%;
+      color: var(--text-secondary); transition: all 0.25s;
+    }
+    .info-bar__social a:hover { color: var(--action); background: var(--action-bg); }
+
+    .header {
+      background: var(--surface-glass-strong); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 9000;
+      transition: box-shadow 0.3s;
+    }
+    .header.scrolled { box-shadow: 0 4px 24px rgba(10,22,40,0.08); }
+    .header .container { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .header__logo { flex-shrink: 0; display: flex; align-items: center; gap: 10px; }
+    .header__logo-icon {
+      width: 42px; height: 42px; background: linear-gradient(135deg, var(--navy-700), var(--action));
+      border-radius: var(--r-md); display: flex; align-items: center; justify-content: center;
+      color: white; font-weight: 900; font-size: 1.3rem;
+    }
+    .header__logo-text { font-weight: 800; font-size: 1.35rem; color: var(--navy-800); }
+    .header__logo-text span { color: var(--action); }
+
+    .nav { display: flex; align-items: center; gap: 2px; flex: 1; justify-content: center; }
+    .nav__item { position: relative; }
+    .nav__link {
+      display: flex; align-items: center; gap: 6px; padding: 10px 18px;
+      font-size: var(--fs-sm); font-weight: 500; color: var(--text-secondary);
+      border-radius: var(--r-md); transition: all 0.2s; white-space: nowrap;
+    }
+    .nav__link:hover, .nav__link.active { color: var(--action); background: var(--action-bg); }
+    .nav__link i { font-size: 0.65em; transition: transform 0.3s; }
+    .nav__item:hover .nav__link i { transform: rotate(180deg); }
+
+    .mega-menu {
+      position: absolute; top: calc(100% + 8px); right: 50%; transform: translateX(50%);
+      background: var(--surface-glass-strong); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--border); border-radius: var(--r-xl); box-shadow: var(--shadow-xl);
+      padding: var(--sp-xl); min-width: 580px;
+      opacity: 0; visibility: hidden; pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.22,1,0.36,1);
+      transform: translateX(50%) translateY(8px); z-index: 9100;
+    }
+    .nav__item:hover .mega-menu { opacity:1; visibility:visible; pointer-events:auto; transform: translateX(50%) translateY(0); }
+    .mega-menu__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+    .mega-menu__cat {
+      display: flex; align-items: center; gap: 10px; padding: 10px 14px;
+      border-radius: var(--r-md); font-size: var(--fs-sm); font-weight: 500;
+      color: var(--text-primary); transition: all 0.2s;
+    }
+    .mega-menu__cat:hover { background: var(--action-bg); color: var(--action); }
+    .mega-menu__cat i {
+      width: 28px; height: 28px; display: flex; align-items: center; justify-content: center;
+      border-radius: var(--r-sm); background: var(--navy-50); color: var(--navy-600);
+      font-size: 0.75rem; flex-shrink: 0; transition: all 0.2s;
+    }
+    .mega-menu__cat:hover i { background: var(--action); color: white; }
+
+    .header__actions { display: flex; align-items: center; gap: 8px; }
+    .header__btn {
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+      padding: 8px 14px; background: none; border: none; cursor: pointer;
+      font-size: var(--fs-sm); font-weight: 500; color: var(--text-secondary);
+      border-radius: var(--r-md); transition: all 0.2s; min-height: 40px;
+    }
+    .header__btn:hover { color: var(--action); background: var(--action-bg); }
+    .header__login { background: var(--navy-700); color: white; border-radius: var(--r-pill); padding: 8px 20px; font-weight: 600; }
+    .header__login:hover { background: var(--navy-600); color: white; }
+    .header__register {
+      background: linear-gradient(135deg, var(--gold), var(--gold-hover)); color: white;
+      border-radius: var(--r-pill); padding: 8px 20px; font-weight: 700;
+      box-shadow: 0 2px 10px var(--gold-glow);
+    }
+    .header__register:hover { transform: translateY(-1px); box-shadow: 0 4px 16px var(--gold-glow); color: white; }
+    .mobile-menu-btn {
+      display: none; background: none; border: none; font-size: 1.4rem; color: var(--navy-700);
+      cursor: pointer; padding: 8px; min-width: 44px; min-height: 44px;
+      align-items: center; justify-content: center;
+    }
+
+    /* ═══════════════════════════════
+       HERO CAROUSEL — Leumi Style
+       ═══════════════════════════════ */
+    .hero-carousel {
+      position: relative;
+      width: 100%;
+      min-height: clamp(420px, 55vh, 620px);
+      overflow: hidden;
+    }
+
+    /* Slides */
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1);
+      z-index: 1;
+    }
+    .hero-slide.active {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 2;
+    }
+    .hero-slide .container { position: relative; z-index: 3; }
+
+    /* Slide Backgrounds */
+    .hero-slide--1 {
+      background: linear-gradient(155deg, var(--navy-800) 0%, var(--navy-900) 60%, #060E1A 100%);
+    }
+    .hero-slide--2 {
+      background: linear-gradient(155deg, var(--surface-alt) 0%, var(--surface) 40%, var(--navy-50) 100%);
+    }
+    .hero-slide--3 {
+      background: linear-gradient(155deg, #0C2340 0%, var(--navy-800) 50%, #1A3F6B 100%);
+    }
+    .hero-slide--4 {
+      background: linear-gradient(155deg, var(--navy-50) 0%, var(--surface) 50%, #F0F4FF 100%);
+    }
+
+    /* Floating blobs per slide */
+    .hero-slide__blob {
+      position: absolute; border-radius: 50%; z-index: 1; pointer-events: none;
+    }
+    .hero-slide--1 .hero-slide__blob:nth-child(1) {
+      width: 500px; height: 500px; top: -150px; left: -100px;
+      background: radial-gradient(circle at 40% 40%, rgba(10,107,255,0.18), transparent 70%);
+      animation: floatBlob 14s ease-in-out infinite;
+    }
+    .hero-slide--1 .hero-slide__blob:nth-child(2) {
+      width: 350px; height: 350px; bottom: -80px; right: -50px;
+      background: radial-gradient(circle at 60% 60%, rgba(232,167,53,0.15), transparent 70%);
+      animation: floatBlobSlow 12s ease-in-out infinite;
+    }
+    .hero-slide--1 .hero-slide__blob:nth-child(3) {
+      width: 200px; height: 200px; top: 25%; left: 50%;
+      background: radial-gradient(circle, rgba(10,107,255,0.1), transparent 70%);
+      animation: floatBlob 10s ease-in-out infinite reverse;
+    }
+    .hero-slide--2 .hero-slide__blob:nth-child(1) {
+      width: 400px; height: 400px; top: -80px; right: -60px;
+      background: radial-gradient(circle, rgba(10,107,255,0.08), transparent 70%);
+      animation: floatBlobSlow 16s ease-in-out infinite;
+    }
+    .hero-slide--2 .hero-slide__blob:nth-child(2) {
+      width: 300px; height: 300px; bottom: -50px; left: 10%;
+      background: radial-gradient(circle, rgba(232,167,53,0.06), transparent 70%);
+      animation: floatBlob 13s ease-in-out infinite;
+    }
+    .hero-slide--3 .hero-slide__blob:nth-child(1) {
+      width: 450px; height: 450px; top: -100px; right: -80px;
+      background: radial-gradient(circle, rgba(34,197,94,0.12), transparent 70%);
+      animation: floatBlob 11s ease-in-out infinite;
+    }
+    .hero-slide--4 .hero-slide__blob:nth-child(1) {
+      width: 380px; height: 380px; bottom: -60px; left: -40px;
+      background: radial-gradient(circle, rgba(10,107,255,0.07), transparent 70%);
+      animation: floatBlobSlow 15s ease-in-out infinite;
+    }
+
+    /* Grid pattern on dark slides */
+    .hero-slide--1::before, .hero-slide--3::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px; z-index: 1;
+      mask-image: radial-gradient(ellipse at 30% 50%, black, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse at 30% 50%, black, transparent 80%);
+    }
+
+    /* Slide content layout */
+    .hero-slide__grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: var(--sp-3xl);
+      align-items: center;
+      min-height: clamp(420px, 55vh, 620px);
+    }
+
+    /* Text animations within active slide */
+    .hero-slide.active .hero-slide__badge { animation: textSlideUp 0.6s 0.15s cubic-bezier(0.22,1,0.36,1) both; }
+    .hero-slide.active .hero-slide__title { animation: textSlideUp 0.6s 0.25s cubic-bezier(0.22,1,0.36,1) both; }
+    .hero-slide.active .hero-slide__desc { animation: textSlideUp 0.6s 0.35s cubic-bezier(0.22,1,0.36,1) both; }
+    .hero-slide.active .hero-slide__actions { animation: textSlideUp 0.6s 0.45s cubic-bezier(0.22,1,0.36,1) both; }
+    .hero-slide.active .hero-slide__visual { animation: bannerIn 0.8s 0.3s cubic-bezier(0.22,1,0.36,1) both; }
+
+    .hero-slide__badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 16px; border-radius: var(--r-pill);
+      font-size: var(--fs-sm); font-weight: 600; margin-bottom: var(--sp-lg);
+    }
+    /* dark slide badge */
+    .hero-slide--dark .hero-slide__badge {
+      background: rgba(10,107,255,0.15); color: var(--action-light); border: 1px solid rgba(10,107,255,0.25);
+    }
+    /* light slide badge */
+    .hero-slide--light .hero-slide__badge {
+      background: var(--action-bg); color: var(--action); border: 1px solid rgba(10,107,255,0.15);
+    }
+
+    .hero-slide__title {
+      font-size: var(--fs-hero); font-weight: 900; line-height: 1.12;
+      margin-bottom: var(--sp-lg); letter-spacing: -1px;
+    }
+    .hero-slide--dark .hero-slide__title { color: white; }
+    .hero-slide--light .hero-slide__title { color: var(--navy-800); }
+    .hero-slide__title em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--action-light), var(--action));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero-slide--dark .hero-slide__title em {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      -webkit-background-clip: text; background-clip: text;
+    }
+
+    .hero-slide__desc {
+      font-size: var(--fs-lg); line-height: 1.7; margin-bottom: var(--sp-xl); max-width: 520px;
+    }
+    .hero-slide--dark .hero-slide__desc { color: var(--text-on-dark-muted); }
+    .hero-slide--light .hero-slide__desc { color: var(--text-secondary); }
+
+    .hero-slide__actions { display: flex; gap: var(--sp-md); flex-wrap: wrap; }
+
+    /* Visual panel (glassmorphism card on right side) */
+    .hero-slide__visual {
+      border-radius: var(--r-2xl); padding: var(--sp-2xl); position: relative;
+    }
+    .hero-slide--dark .hero-slide__visual {
+      background: rgba(255,255,255,0.06); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+    }
+    .hero-slide--light .hero-slide__visual {
+      background: var(--surface-glass-strong); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255,255,255,0.5); box-shadow: var(--shadow-xl);
+    }
+
+    /* Visual card internals */
+    .visual-card__badge {
+      position: absolute; top: -14px; right: 28px; padding: 6px 18px;
+      border-radius: var(--r-pill); font-size: var(--fs-sm); font-weight: 700;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .hero-slide--dark .visual-card__badge {
+      background: var(--gold); color: var(--navy-900); box-shadow: 0 4px 16px var(--gold-glow);
+    }
+    .hero-slide--light .visual-card__badge {
+      background: var(--navy-800); color: var(--gold); box-shadow: var(--shadow-md);
+    }
+    .visual-card__title {
+      font-size: var(--fs-2xl); font-weight: 800; margin-top: var(--sp-sm); margin-bottom: var(--sp-md); line-height: 1.3;
+    }
+    .hero-slide--dark .visual-card__title { color: white; }
+    .visual-card__text {
+      font-size: var(--fs-sm); line-height: 1.7; margin-bottom: var(--sp-xl);
+    }
+    .hero-slide--dark .visual-card__text { color: var(--text-on-dark-muted); }
+    .hero-slide--light .visual-card__text { color: var(--text-secondary); }
+    .visual-card__features {
+      display: flex; flex-direction: column; gap: 10px; margin-bottom: var(--sp-xl);
+    }
+    .visual-card__feature {
+      display: flex; align-items: center; gap: 10px; font-size: var(--fs-sm);
+    }
+    .hero-slide--dark .visual-card__feature { color: var(--text-on-dark-muted); }
+    .hero-slide--light .visual-card__feature { color: var(--text-secondary); }
+    .visual-card__feature i { color: var(--action-light); font-size: 0.8rem; width: 20px; text-align: center; }
+    .hero-slide--light .visual-card__feature i { color: var(--action); }
+    .visual-card__btns { display: flex; flex-direction: column; gap: 10px; }
+
+    /* Stats row inside visual */
+    .visual-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-md); margin-bottom: var(--sp-xl);
+    }
+    .visual-stat { text-align: center; }
+    .visual-stat__num {
+      font-size: var(--fs-xl); font-weight: 900; line-height: 1;
+    }
+    .hero-slide--dark .visual-stat__num { color: var(--gold-light); }
+    .hero-slide--light .visual-stat__num { color: var(--action); }
+    .visual-stat__label { font-size: var(--fs-xs); margin-top: 4px; }
+    .hero-slide--dark .visual-stat__label { color: var(--text-on-dark-muted); }
+    .hero-slide--light .visual-stat__label { color: var(--text-muted); }
+
+    /* Carousel Controls */
+    .hero-carousel__dots {
+      position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 10px; z-index: 10;
+    }
+    .hero-carousel__dot {
+      width: 12px; height: 12px; border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.5); background: transparent;
+      cursor: pointer; transition: all 0.3s; padding: 0;
+    }
+    .hero-carousel__dot.active {
+      background: var(--action); border-color: var(--action);
+      box-shadow: 0 0 12px var(--action-glow);
+    }
+    .hero-slide--light ~ .hero-carousel__dots .hero-carousel__dot {
+      border-color: var(--navy-300);
+    }
+
+    /* Progress bar under dots */
+    .hero-carousel__progress {
+      position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+      background: rgba(255,255,255,0.1); z-index: 10;
+    }
+    .hero-carousel__progress-bar {
+      height: 100%; background: var(--action); width: 0;
+      transition: width 0.1s linear;
+    }
+
+    /* Carousel arrows */
+    .hero-carousel__arrow {
+      position: absolute; top: 50%; z-index: 10;
+      width: 48px; height: 48px; border-radius: 50%; border: none;
+      background: rgba(255,255,255,0.1); backdrop-filter: blur(8px);
+      color: white; font-size: 1.1rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.3s; opacity: 0;
+    }
+    .hero-carousel:hover .hero-carousel__arrow { opacity: 1; }
+    .hero-carousel__arrow:hover { background: var(--action); transform: translateY(-50%) scale(1.1); }
+    .hero-carousel__arrow--prev { right: 20px; transform: translateY(-50%); }
+    .hero-carousel__arrow--next { left: 20px; transform: translateY(-50%); }
+
+    /* ═══════════════════════════════
+       QUICK SERVICES — "How can we help?"
+       ═══════════════════════════════ */
+    .quick-services {
+      background: var(--surface); padding: var(--sp-2xl) 0;
+      border-bottom: 1px solid var(--border); position: relative;
+    }
+    .quick-services::before {
+      content: ''; position: absolute; top:0; left:0; right:0; height: 100%;
+      background: linear-gradient(180deg, var(--navy-50) 0%, transparent 100%); opacity: 0.4;
+    }
+    .quick-services .container { position: relative; z-index: 1; }
+    .quick-services__grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-lg);
+    }
+    .qs-card {
+      display: flex; align-items: center; gap: var(--sp-md);
+      background: var(--surface-glass-strong); backdrop-filter: blur(12px);
+      border: 1px solid var(--border); border-radius: var(--r-xl);
+      padding: var(--sp-lg) var(--sp-xl); box-shadow: var(--shadow-glass);
+      transition: all 0.35s cubic-bezier(0.22,1,0.36,1);
+    }
+    .qs-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); border-color: var(--border-hover); }
+    .qs-card__icon {
+      width: 50px; height: 50px; border-radius: var(--r-lg);
+      background: linear-gradient(135deg, var(--navy-700), var(--action));
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 1.15rem; flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(10,107,255,0.2);
+    }
+    .qs-card__text strong { display: block; font-size: var(--fs-sm); font-weight: 700; color: var(--text-primary); margin-bottom: 2px; }
+    .qs-card__text span { font-size: var(--fs-xs); color: var(--text-secondary); }
+
+    /* ═══════════════════════════════
+       SECTIONS COMMON
+       ═══════════════════════════════ */
+    .section { padding: var(--sp-4xl) 0; position: relative; }
+    .section--alt { background: var(--surface-alt); }
+    .section--navy { background: linear-gradient(155deg, var(--navy-900) 0%, var(--navy-800) 50%, var(--navy-700) 100%); color: white; }
+    .section__header { text-align: center; margin-bottom: var(--sp-3xl); }
+    .section__label {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--action-bg); color: var(--action);
+      padding: 5px 14px; border-radius: var(--r-pill);
+      font-size: var(--fs-xs); font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.5px; margin-bottom: var(--sp-md);
+    }
+    .section--navy .section__label { background: rgba(10,107,255,0.15); color: var(--action-light); }
+    .section__title { font-size: var(--fs-3xl); font-weight: 800; margin-bottom: var(--sp-sm); letter-spacing: -0.5px; }
+    .section--navy .section__title { color: white; }
+    .section__subtitle { font-size: var(--fs-md); color: var(--text-secondary); max-width: 560px; margin: 0 auto; }
+    .section--navy .section__subtitle { color: var(--text-on-dark-muted); }
+
+    /* ═══ CATEGORIES ═══ */
+    .categories-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(195px, 1fr)); gap: var(--sp-md);
+    }
+    .cat-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-xl);
+      padding: var(--sp-xl) var(--sp-lg); text-align: center; text-decoration: none;
+      display: flex; flex-direction: column; align-items: center; gap: var(--sp-sm);
+      transition: all 0.35s cubic-bezier(0.22,1,0.36,1); position: relative; overflow: hidden;
+    }
+    .cat-card::after {
+      content:''; position: absolute; bottom:0; left:0; right:0; height: 3px;
+      background: linear-gradient(90deg, var(--action), var(--navy-400));
+      transform: scaleX(0); transition: transform 0.35s cubic-bezier(0.22,1,0.36,1);
+    }
+    .cat-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--border-hover); }
+    .cat-card:hover::after { transform: scaleX(1); }
+    .cat-card__icon {
+      width: 56px; height: 56px; border-radius: var(--r-lg);
+      background: linear-gradient(135deg, var(--navy-50), var(--action-bg));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; color: var(--navy-600); transition: all 0.35s;
+    }
+    .cat-card:hover .cat-card__icon {
+      background: linear-gradient(135deg, var(--action), var(--navy-600)); color: white;
+      transform: scale(1.08); box-shadow: 0 4px 16px var(--action-glow);
+    }
+    .cat-card__name { font-size: var(--fs-sm); font-weight: 700; color: var(--text-primary); }
+    .cat-card__desc { font-size: var(--fs-xs); color: var(--text-muted); }
+
+    /* ═══ SERVICES STRIP ═══ */
+    .services-strip {
+      background: linear-gradient(135deg, var(--navy-800), var(--navy-900));
+      padding: var(--sp-3xl) 0; position: relative; overflow: hidden;
+    }
+    .services-strip::before {
+      content:''; position: absolute; inset:0;
+      background: radial-gradient(circle at 20% 50%, rgba(10,107,255,0.15), transparent 50%),
+                  radial-gradient(circle at 80% 50%, rgba(232,167,53,0.1), transparent 50%);
+    }
+    .services-strip .container { position: relative; z-index: 1; }
+    .services-strip__header { text-align: center; margin-bottom: var(--sp-2xl); }
+    .services-strip__title { font-size: var(--fs-2xl); font-weight: 800; color: white; margin-bottom: var(--sp-sm); }
+    .services-strip__subtitle { font-size: var(--fs-md); color: var(--text-on-dark-muted); }
+    .services-strip__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-lg); }
+    .svc-block {
+      background: rgba(255,255,255,0.06); backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.1); border-radius: var(--r-xl);
+      padding: var(--sp-xl); text-align: center; transition: all 0.4s cubic-bezier(0.22,1,0.36,1);
+    }
+    .svc-block:hover { background: rgba(255,255,255,0.1); transform: translateY(-4px); border-color: rgba(255,255,255,0.2); }
+    .svc-block__icon {
+      width: 64px; height: 64px; margin: 0 auto var(--sp-md); border-radius: var(--r-lg);
+      display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+    }
+    .svc-block:nth-child(1) .svc-block__icon { background: linear-gradient(135deg, rgba(10,107,255,0.2), rgba(10,107,255,0.05)); color: var(--action-light); }
+    .svc-block:nth-child(2) .svc-block__icon { background: linear-gradient(135deg, rgba(232,167,53,0.2), rgba(232,167,53,0.05)); color: var(--gold-light); }
+    .svc-block:nth-child(3) .svc-block__icon { background: linear-gradient(135deg, rgba(74,130,191,0.2), rgba(74,130,191,0.05)); color: var(--navy-300); }
+    .svc-block:nth-child(4) .svc-block__icon { background: linear-gradient(135deg, rgba(34,197,94,0.2), rgba(34,197,94,0.05)); color: var(--green-light); }
+    .svc-block:hover .svc-block__icon { animation: iconBounce 0.5s ease; }
+    .svc-block__title { color: white; font-size: var(--fs-lg); font-weight: 700; margin-bottom: 4px; }
+    .svc-block__desc { color: var(--text-on-dark-muted); font-size: var(--fs-sm); line-height: 1.6; }
+
+    /* ═══ FEATURES ═══ */
+    .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-lg); }
+    .feature-card {
+      background: var(--surface-glass-strong); backdrop-filter: blur(12px);
+      border: 1px solid var(--border); border-radius: var(--r-xl);
+      padding: var(--sp-2xl) var(--sp-xl); text-align: center;
+      transition: all 0.35s cubic-bezier(0.22,1,0.36,1);
+    }
+    .feature-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--border-hover); }
+    .feature-card__icon {
+      width: 64px; height: 64px; margin: 0 auto var(--sp-lg); border-radius: var(--r-xl);
+      background: linear-gradient(135deg, var(--navy-50), var(--action-bg));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; color: var(--action); transition: all 0.35s;
+    }
+    .feature-card:hover .feature-card__icon {
+      background: var(--action); color: white; box-shadow: 0 6px 20px var(--action-glow); transform: scale(1.08);
+    }
+    .feature-card h3 { font-size: var(--fs-md); font-weight: 700; margin-bottom: var(--sp-sm); }
+    .feature-card p { font-size: var(--fs-sm); color: var(--text-secondary); line-height: 1.7; margin: 0; }
+
+    /* ═══ STATS ═══ */
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-xl); }
+    .stat-card {
+      text-align: center; padding: var(--sp-xl);
+      background: rgba(255,255,255,0.06); backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.1); border-radius: var(--r-xl); transition: all 0.3s;
+    }
+    .stat-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-3px); }
+    .stat-card__num { font-size: var(--fs-4xl); font-weight: 900; color: white; line-height: 1; margin-bottom: 6px; }
+    .stat-card__label { font-size: var(--fs-sm); color: var(--text-on-dark-muted); font-weight: 500; }
+
+    /* ═══ ESTIMATOR ═══ */
+    .estimator {
+      background: var(--surface-glass-strong); backdrop-filter: blur(24px);
+      border: 1px solid var(--border); border-radius: var(--r-2xl);
+      padding: var(--sp-3xl); max-width: 720px; margin: 0 auto;
+      box-shadow: var(--shadow-xl); position: relative;
+    }
+    .estimator::before {
+      content:''; position: absolute; top: -2px; left: 10%; right: 10%; height: 4px;
+      background: linear-gradient(90deg, var(--action), var(--gold), var(--action));
+      background-size: 200% 100%; animation: gradientShift 4s ease infinite; border-radius: var(--r-pill);
+    }
+    .estimator__title { font-size: var(--fs-xl); font-weight: 800; text-align: center; margin-bottom: var(--sp-sm); }
+    .estimator__subtitle { text-align: center; color: var(--text-secondary); font-size: var(--fs-sm); margin-bottom: var(--sp-2xl); }
+    .estimator__row { margin-bottom: var(--sp-xl); }
+    .estimator__label { display: flex; justify-content: space-between; margin-bottom: var(--sp-sm); font-size: var(--fs-sm); font-weight: 600; }
+    .estimator__value { background: var(--action-bg); color: var(--action); padding: 3px 12px; border-radius: var(--r-pill); font-weight: 700; font-size: var(--fs-sm); }
+    .estimator__slider {
+      -webkit-appearance: none; appearance: none; width: 100%; height: 8px;
+      border-radius: var(--r-pill); background: var(--navy-100); outline: none; direction: ltr;
+    }
+    .estimator__slider::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 26px; height: 26px; border-radius: 50%;
+      background: var(--action); cursor: pointer; box-shadow: 0 2px 10px var(--action-glow);
+      border: 3px solid white; transition: transform 0.2s;
+    }
+    .estimator__slider::-webkit-slider-thumb:hover { transform: scale(1.15); }
+    .estimator__slider::-moz-range-thumb {
+      width: 26px; height: 26px; border-radius: 50%; background: var(--action);
+      cursor: pointer; box-shadow: 0 2px 10px var(--action-glow); border: 3px solid white;
+    }
+    .estimator__result {
+      background: linear-gradient(135deg, var(--navy-800), var(--navy-900));
+      border-radius: var(--r-xl); padding: var(--sp-xl); text-align: center; margin-top: var(--sp-xl);
+    }
+    .estimator__result-label { color: var(--text-on-dark-muted); font-size: var(--fs-sm); margin-bottom: var(--sp-sm); }
+    .estimator__result-amount { font-size: var(--fs-3xl); font-weight: 900; color: var(--gold); direction: ltr; unicode-bidi: bidi-override; }
+    .estimator__result-note { font-size: var(--fs-xs); color: var(--text-on-dark-muted); margin-top: var(--sp-sm); }
+    .estimator__cta { text-align: center; margin-top: var(--sp-xl); }
+
+    /* ═══ SEGMENTS ═══ */
+    .segments-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-lg); }
+    .seg-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-xl);
+      padding: var(--sp-xl); text-align: center; transition: all 0.35s cubic-bezier(0.22,1,0.36,1);
+      position: relative; overflow: hidden;
+    }
+    .seg-card::before {
+      content:''; position: absolute; top:0; left:0; right:0; height: 4px;
+      background: linear-gradient(90deg, var(--action), var(--navy-400)); opacity:0; transition: opacity 0.3s;
+    }
+    .seg-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+    .seg-card:hover::before { opacity: 1; }
+    .seg-card i { font-size: 2rem; color: var(--navy-600); margin-bottom: var(--sp-md); display: block; transition: color 0.3s; }
+    .seg-card:hover i { color: var(--action); }
+    .seg-card h3 { font-size: var(--fs-md); font-weight: 700; margin-bottom: var(--sp-sm); color: var(--text-primary); }
+    .seg-card p { font-size: var(--fs-sm); color: var(--text-secondary); line-height: 1.7; margin: 0; }
+
+    /* ═══ ISRAEL DELIVERY MAP — Clean UX ═══ */
+    .delivery-map {
+      padding: var(--sp-4xl) 0 var(--sp-3xl);
+      background: linear-gradient(180deg, var(--navy-900) 0%, #0C1E35 50%, var(--navy-800) 100%);
+      position: relative; overflow: hidden; color: white;
+    }
+    .delivery-map::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 30% 70%, rgba(10,107,255,0.06) 0%, transparent 40%),
+        radial-gradient(circle at 70% 30%, rgba(232,167,53,0.04) 0%, transparent 40%);
+    }
+    .delivery-map .container { position: relative; z-index: 2; }
+
+    .israel-map-wrapper {
+      display: flex; justify-content: center; align-items: flex-start;
+      gap: var(--sp-3xl); margin-top: var(--sp-2xl);
+    }
+    .israel-svg-box { width: 420px; flex-shrink: 0; }
+    .israel-svg-box svg { width: 100%; height: auto; display: block; }
+
+    /* Land */
+    .il-land { fill: rgba(255,255,255,0.03); stroke: rgba(255,255,255,0.1); stroke-width: 1.5; stroke-linejoin: round; }
+    .il-water { fill: rgba(10,107,255,0.08); stroke: rgba(10,107,255,0.18); stroke-width: 0.6; }
+    .il-coast { fill: none; stroke: rgba(10,107,255,0.12); stroke-width: 1; stroke-dasharray: 4 5; }
+    .il-mountain { fill: rgba(255,255,255,0.025); stroke: rgba(255,255,255,0.06); stroke-width: 0.7; stroke-linejoin: round; }
+    .il-geo-label { fill: rgba(255,255,255,0.2); font-size: 8px; font-family: 'Heebo'; font-weight: 300; }
+    .il-water-label { fill: rgba(10,107,255,0.3); font-size: 7px; font-family: 'Heebo'; font-weight: 400; }
+
+    /* Route */
+    .rt { fill:none; stroke-linecap:round; stroke-linejoin:round; }
+    .rt-bg { stroke: rgba(255,255,255,0.06); stroke-width: 3; }
+    .rt-glow { stroke: url(#rGrad); stroke-width: 2.5; stroke-dasharray: 2200; stroke-dashoffset: 2200; }
+    .rt-glow.animate { animation: drawRt 3.5s cubic-bezier(0.4,0,0.2,1) forwards; }
+    @keyframes drawRt { to { stroke-dashoffset: 0; } }
+    .rt-dash { stroke: rgba(255,255,255,0.04); stroke-width: 1; stroke-dasharray: 5 8; }
+
+    /* Zoom box for Gush Dan */
+    .zoom-frame { fill: none; stroke: rgba(232,167,53,0.25); stroke-width: 1; stroke-dasharray: 4 3; rx: 6; }
+    .zoom-label { fill: rgba(232,167,53,0.4); font-size: 6px; font-family: 'Heebo'; font-weight: 600; }
+
+    /* Cities */
+    .c-pin { stroke: white; stroke-width: 1.8; transition: all 0.35s; }
+    .c-pin--sm { fill: var(--action); r: 4; }
+    .c-pin--md { fill: var(--action-light); r: 5; }
+    .c-pin--hq { fill: var(--gold); r: 7; stroke-width: 2.2; filter: url(#gGold); }
+    .c-lbl { font-family: 'Heebo'; font-weight: 700; transition: fill 0.3s; pointer-events: none; }
+    .c-lbl--sm { fill: rgba(255,255,255,0.75); font-size: 8.5px; }
+    .c-lbl--md { fill: rgba(255,255,255,0.9); font-size: 9.5px; }
+    .c-lbl--hq { fill: var(--gold); font-size: 11px; }
+    .c-ping { fill: none; stroke-width: 1.2; opacity: 0; }
+    .c-ping.active { animation: cPing 1.8s ease-out infinite; }
+    @keyframes cPing { 0% { r: 5; opacity: 0.5; } 100% { r: 20; opacity: 0; } }
+
+    /* Highlight on arrival */
+    .c-pin.highlight { fill: var(--gold) !important; filter: drop-shadow(0 0 6px rgba(232,167,53,0.5)); }
+    .c-lbl.highlight { fill: var(--gold) !important; }
+
+    /* Truck */
+    .ym-truck { opacity: 0; transition: opacity 0.4s; }
+    .ym-truck.driving { opacity: 1; }
+
+    /* Side panel */
+    .delivery-panel { flex: 1; display: flex; flex-direction: column; gap: var(--sp-lg); padding-top: var(--sp-lg); }
+    .dp-live {
+      background: linear-gradient(135deg, rgba(232,167,53,0.12), rgba(232,167,53,0.05));
+      border: 1px solid rgba(232,167,53,0.25); border-radius: var(--r-xl);
+      padding: var(--sp-lg); text-align: center;
+    }
+    .dp-live__label { font-size: var(--fs-xs); color: var(--text-on-dark-muted); margin-bottom: 4px; display: flex; align-items: center; justify-content: center; gap: 6px; }
+    .dp-live__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); animation: blink 1.2s infinite; }
+    @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .dp-live__city { font-size: var(--fs-xl); font-weight: 800; color: var(--gold); min-height: 30px; transition: all 0.3s; }
+    .dp-card {
+      background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.08); border-radius: var(--r-xl);
+      padding: var(--sp-xl); transition: all 0.3s;
+    }
+    .dp-card:hover { background: rgba(255,255,255,0.08); transform: translateY(-2px); }
+    .dp-card__head { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+    .dp-card__icon { font-size: 1.1rem; }
+    .dp-card:nth-child(2) .dp-card__icon { color: var(--gold-light); }
+    .dp-card:nth-child(3) .dp-card__icon { color: var(--action-light); }
+    .dp-card:nth-child(4) .dp-card__icon { color: var(--green-light); }
+    .dp-card:nth-child(5) .dp-card__icon { color: var(--navy-300); }
+    .dp-card__title { font-size: var(--fs-base); font-weight: 700; color: white; }
+    .dp-card__desc { font-size: var(--fs-sm); color: var(--text-on-dark-muted); line-height: 1.6; margin: 0; }
+
+    @media (max-width: 900px) {
+      .israel-map-wrapper { flex-direction: column; align-items: center; gap: var(--sp-xl); }
+      .israel-svg-box { width: 320px; }
+      .delivery-panel { flex-direction: row; flex-wrap: wrap; }
+      .dp-card { flex: 1; min-width: 200px; }
+    }
+    @media (max-width: 480px) {
+      .israel-svg-box { width: 280px; }
+      .delivery-panel { flex-direction: column; }
+      .dp-card { min-width: auto; }
+    }
+
+    /* ═══ BLOG ═══ */
+    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-lg); }
+    .blog-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-xl);
+      padding: var(--sp-xl); text-decoration: none; display: flex; flex-direction: column;
+      transition: all 0.35s cubic-bezier(0.22,1,0.36,1);
+    }
+    .blog-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--border-hover); }
+    .blog-card h3 { font-size: var(--fs-base); font-weight: 700; color: var(--navy-700); margin-bottom: var(--sp-sm); transition: color 0.2s; }
+    .blog-card:hover h3 { color: var(--action); }
+    .blog-card p { font-size: var(--fs-sm); color: var(--text-secondary); line-height: 1.7; flex: 1; }
+    .blog-card__link { font-size: var(--fs-sm); color: var(--action); font-weight: 700; margin-top: var(--sp-md); display: inline-flex; align-items: center; gap: 6px; }
+
+    /* ═══ REGISTRATION ═══ */
+    .reg-section { background: linear-gradient(135deg, var(--navy-50), var(--surface)); padding: var(--sp-4xl) 0; text-align: center; }
+    .reg-section h2 { font-size: var(--fs-3xl); font-weight: 800; margin-bottom: var(--sp-2xl); }
+    .reg-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-lg); margin-bottom: var(--sp-2xl); }
+    .reg-item {
+      display: flex; flex-direction: column; align-items: center; gap: var(--sp-sm);
+      padding: var(--sp-xl); background: var(--surface-glass-strong); backdrop-filter: blur(12px);
+      border: 1px solid var(--border); border-radius: var(--r-xl); box-shadow: var(--shadow-glass);
+      transition: all 0.3s;
+    }
+    .reg-item:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+    .reg-item__icon {
+      width: 48px; height: 48px; border-radius: var(--r-lg);
+      background: linear-gradient(135deg, var(--action-bg), var(--navy-50));
+      display: flex; align-items: center; justify-content: center; color: var(--action); font-size: 1.2rem;
+    }
+    .reg-item__text { font-size: var(--fs-sm); font-weight: 600; color: var(--text-primary); text-align: center; }
+
+    /* ═══ CTA ═══ */
+    .cta-section {
+      background: linear-gradient(155deg, var(--navy-900), var(--navy-800), var(--navy-700));
+      padding: var(--sp-4xl) 0; text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content:''; position:absolute; inset:0;
+      background: radial-gradient(circle at 20% 50%, rgba(10,107,255,0.12), transparent 50%),
+                  radial-gradient(circle at 80% 30%, rgba(232,167,53,0.08), transparent 50%);
+    }
+    .cta-section .container { position: relative; z-index: 1; }
+    .cta-section h2 { font-size: var(--fs-3xl); font-weight: 900; color: white; margin-bottom: var(--sp-md); }
+    .cta-section p { font-size: var(--fs-md); color: var(--text-on-dark-muted); margin-bottom: var(--sp-2xl); max-width: 500px; margin-inline: auto; }
+    .cta-section__actions { display: flex; gap: var(--sp-md); justify-content: center; flex-wrap: wrap; }
+
+    /* ═══ FOOTER ═══ */
+    .footer {
+      background: linear-gradient(180deg, var(--navy-900), #060E1A); color: var(--text-on-dark-muted);
+      padding: var(--sp-4xl) 0 var(--sp-xl); position: relative;
+    }
+    .footer::before {
+      content:''; position:absolute; top:0; left:0; right:0; height:1px;
+      background: linear-gradient(90deg, transparent 10%, rgba(10,107,255,0.3) 50%, transparent 90%);
+    }
+    .footer__grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: var(--sp-3xl); margin-bottom: var(--sp-3xl); }
+    .footer__brand p { margin-top: var(--sp-md); font-size: var(--fs-sm); line-height: 1.7; }
+    .footer__brand-logo { display: flex; align-items: center; gap: 10px; }
+    .footer__brand-icon {
+      width: 40px; height: 40px; background: linear-gradient(135deg, var(--navy-600), var(--action));
+      border-radius: var(--r-md); display: flex; align-items: center; justify-content: center;
+      color: white; font-weight: 900; font-size: 1.2rem;
+    }
+    .footer__brand-name { font-size: 1.2rem; font-weight: 800; color: white; }
+    .footer__social { display: flex; gap: 10px; margin-top: var(--sp-lg); }
+    .footer__social a {
+      width: 40px; height: 40px; border-radius: var(--r-md);
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      display: flex; align-items: center; justify-content: center; color: var(--text-on-dark-muted); transition: all 0.25s;
+    }
+    .footer__social a:hover { background: var(--action); color: white; border-color: var(--action); }
+    .footer__heading { font-size: var(--fs-sm); font-weight: 700; color: white; margin-bottom: var(--sp-lg); text-transform: uppercase; letter-spacing: 0.5px; }
+    .footer__links { display: flex; flex-direction: column; gap: 10px; }
+    .footer__links a { font-size: var(--fs-sm); color: var(--text-on-dark-muted); transition: all 0.2s; }
+    .footer__links a:hover { color: white; transform: translateX(-4px); }
+    .footer__contact-item { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; font-size: var(--fs-sm); }
+    .footer__contact-item i { width: 20px; text-align: center; color: var(--action-light); }
+    .footer__contact-item a { color: var(--text-on-dark-muted); transition: color 0.2s; }
+    .footer__contact-item a:hover { color: white; }
+    .footer__bottom {
+      border-top: 1px solid rgba(255,255,255,0.08); padding-top: var(--sp-xl);
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--sp-md);
+    }
+    .footer__copyright { font-size: var(--fs-xs); color: rgba(255,255,255,0.45); }
+    .footer__legal { display: flex; gap: var(--sp-lg); flex-wrap: wrap; }
+    .footer__legal a { font-size: var(--fs-xs); color: rgba(255,255,255,0.45); transition: color 0.2s; }
+    .footer__legal a:hover { color: white; }
+
+    /* ═══ WHATSAPP ═══ */
+    .whatsapp-float {
+      position: fixed; bottom: 24px; right: 24px; width: 60px; height: 60px;
+      background: #25D366; border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; color: white; font-size: 28px;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4); z-index: 8000; transition: all 0.3s;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.5); color: white; }
+
+    /* ═══ RESPONSIVE ═══ */
+    @media (max-width: 1024px) {
+      .hero-slide__grid { grid-template-columns: 1fr; gap: var(--sp-2xl); }
+      .hero-slide__visual { max-width: 520px; margin: 0 auto; }
+      .hero-carousel { min-height: auto; }
+      .hero-slide__grid { min-height: auto; padding: var(--sp-3xl) 0; }
+      .features-grid, .stats-grid, .quick-services__grid, .services-strip__grid, .reg-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer__grid { grid-template-columns: repeat(2, 1fr); gap: var(--sp-2xl); }
+    }
+    @media (max-width: 768px) {
+      .nav { display: none; }
+      .mobile-menu-btn { display: flex; }
+      .header .container { height: 60px; }
+      .info-bar { display: none; }
+      .hero-slide__grid { padding: var(--sp-2xl) 0; }
+      .hero-carousel__arrow { display: none; }
+      .mega-menu { display: none; }
+      .segments-grid, .blog-grid { grid-template-columns: 1fr; }
+      .categories-grid { grid-template-columns: repeat(2, 1fr); }
+      .cta-section__actions { flex-direction: column; align-items: center; }
+      .footer__grid { grid-template-columns: 1fr; }
+      .footer__bottom { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .quick-services__grid, .features-grid, .stats-grid, .services-strip__grid, .reg-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: var(--sp-md); }
+      .categories-grid { grid-template-columns: repeat(2, 1fr); gap: var(--sp-sm); }
+      .cat-card { padding: var(--sp-md) var(--sp-sm); }
+      .hero-slide__actions { flex-direction: column; }
+      .hero-slide__actions .btn { width: 100%; justify-content: center; }
+      .hero-slide__visual { padding: var(--sp-xl); }
+      .estimator { padding: var(--sp-xl); }
+      .header__login span, .header__register span { display: none; }
+      .whatsapp-float { width: 52px; height: 52px; font-size: 24px; bottom: 16px; right: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ ANNOUNCEMENT ═══ -->
+  <div class="announcement">
+    <a href="/register">
+      <i class="fas fa-crown"></i>
+      רוכשים בכמויות מסחריות? הצטרפו למועדון הלקוחות וקבלו מחירון סיטונאי ייעודי
+      <i class="fas fa-chevron-left" style="font-size:0.75em;"></i>
+    </a>
+  </div>
+
+  <!-- ═══ INFO BAR ═══ -->
+  <div class="info-bar">
+    <div class="container">
+      <div class="info-bar__group">
+        <div class="info-bar__item"><i class="fas fa-phone-alt"></i> <a href="tel:037740400">03-7740400</a></div>
+        <div class="info-bar__item"><i class="fas fa-envelope"></i> <a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a></div>
+        <div class="info-bar__item"><i class="fas fa-clock"></i> <span>א'-ה' 08:00-17:00</span></div>
+      </div>
+      <div class="info-bar__group info-bar__social">
+        <a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100083110428101" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/ymarket.ai" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="header" id="header">
+    <div class="container">
+      <a href="/" class="header__logo">
+        <div class="header__logo-icon">Y</div>
+        <div class="header__logo-text">וואי <span>מרקט</span></div>
+      </a>
+      <nav class="nav" aria-label="ניווט ראשי">
+        <div class="nav__item"><a href="/" class="nav__link active">דף הבית</a></div>
+        <div class="nav__item">
+          <a href="/catalog" class="nav__link">מוצרים <i class="fas fa-chevron-down"></i></a>
+          <div class="mega-menu">
+            <div class="mega-menu__grid">
+              <a href="/category/industrial-cleaning-supplies-wholesale/" class="mega-menu__cat"><i class="fas fa-spray-can"></i> חומרי ניקוי</a>
+              <a href="/category/bulk-paper-towel-office-supplies/" class="mega-menu__cat"><i class="fas fa-toilet-paper"></i> מוצרי נייר</a>
+              <a href="/category/disposable-catering-food-service/" class="mega-menu__cat"><i class="fas fa-utensils"></i> חד פעמי</a>
+              <a href="/category/food-packaging-delivery-solutions/" class="mega-menu__cat"><i class="fas fa-box-open"></i> אריזות מזון</a>
+              <a href="/category/heavy-duty-garbage-bags-wholesale/" class="mega-menu__cat"><i class="fas fa-trash-alt"></i> שקיות אשפה</a>
+              <a href="/category/professional-cleaning-cloths-microfiber/" class="mega-menu__cat"><i class="fas fa-tshirt"></i> טקסטיל ומטליות</a>
+              <a href="/category/office-coffee-breakroom-supplies/" class="mega-menu__cat"><i class="fas fa-coffee"></i> קפה וכיבוד</a>
+              <a href="/category/safety-ppe-equipment-for-business/" class="mega-menu__cat"><i class="fas fa-hard-hat"></i> בטיחות ומיגון</a>
+              <a href="/category/office-supplies-wholesale-business/" class="mega-menu__cat"><i class="fas fa-pen"></i> ציוד משרדי</a>
+              <a href="/category/maintenance-technical-equipment-wholesale/" class="mega-menu__cat"><i class="fas fa-wrench"></i> ציוד טכני</a>
+              <a href="/category/warehouse-packaging-supplies-wholesale/" class="mega-menu__cat"><i class="fas fa-tape"></i> אריזה ולוגיסטיקה</a>
+              <a href="/category/first-aid-medical-equipment-business/" class="mega-menu__cat"><i class="fas fa-first-aid"></i> עזרה ראשונה</a>
+              <a href="/category/personal-hygiene-products-wholesale/" class="mega-menu__cat"><i class="fas fa-pump-soap"></i> טואלטיקה</a>
+              <a href="/category/institutional-cleaning-tools-equipment/" class="mega-menu__cat"><i class="fas fa-tools"></i> ציוד משקי</a>
+            </div>
+          </div>
+        </div>
+        <div class="nav__item"><a href="/about" class="nav__link">אודות</a></div>
+        <div class="nav__item"><a href="/blog" class="nav__link">בלוג</a></div>
+        <div class="nav__item"><a href="/contact" class="nav__link">צרו קשר</a></div>
+      </nav>
+      <div class="header__actions">
+        <button class="header__btn" aria-label="חיפוש"><i class="fas fa-search"></i></button>
+        <button class="header__btn" aria-label="עגלה"><i class="fas fa-shopping-cart"></i></button>
+        <a href="/login" class="header__btn header__login"><i class="fas fa-user"></i> <span>כניסה</span></a>
+        <a href="/register" class="header__btn header__register"><i class="fas fa-user-plus"></i> <span>הרשמה</span></a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="תפריט"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ═══════════════════════════════════════
+         HERO CAROUSEL — 4 Rotating Slides
+         ═══════════════════════════════════════ -->
+    <section class="hero-carousel" id="heroCarousel">
+
+      <!-- SLIDE 1: Main Value Prop (Dark) -->
+      <div class="hero-slide hero-slide--1 hero-slide--dark active" data-slide="0">
+        <div class="hero-slide__blob"></div>
+        <div class="hero-slide__blob"></div>
+        <div class="hero-slide__blob"></div>
+        <div class="container">
+          <div class="hero-slide__grid">
+            <div>
+              <div class="hero-slide__badge"><i class="fas fa-bolt"></i> מלאי זמין לאספקה ב-72 שעות</div>
+              <h1 class="hero-slide__title">כל המתכלים לעסק.<br><em>הכל בלחיצת כפתור.</em></h1>
+              <p class="hero-slide__desc">מכפפות ואריזות עד חומרי ניקוי ונייר. משלוח ישיר עד הדלת, במחירי סיטונאות וללא כאבי ראש.</p>
+              <div class="hero-slide__actions">
+                <a href="/catalog" class="btn btn--action btn--hero">צפו בקטלוג המלא <i class="fas fa-arrow-left"></i></a>
+                <a href="https://wa.me/972549922492" target="_blank" rel="noopener" class="btn btn--white btn--hero"><i class="fab fa-whatsapp"></i> שלחו הודעה</a>
+              </div>
+            </div>
+            <div class="hero-slide__visual">
+              <div class="visual-card__badge"><i class="fas fa-fire"></i> מעל 900 מוצרים במלאי</div>
+              <div class="visual-stats">
+                <div class="visual-stat"><div class="visual-stat__num">214</div><div class="visual-stat__label">לקוחות פעילים</div></div>
+                <div class="visual-stat"><div class="visual-stat__num">1,000+</div><div class="visual-stat__label">משלוחים בשנה</div></div>
+                <div class="visual-stat"><div class="visual-stat__num">98%</div><div class="visual-stat__label">שביעות רצון</div></div>
+              </div>
+              <div class="visual-card__features">
+                <div class="visual-card__feature"><i class="fas fa-check-circle"></i> משלוח ארצי תוך 24-72 שעות</div>
+                <div class="visual-card__feature"><i class="fas fa-check-circle"></i> מחירי סיטונאות ישירות מהיצרן</div>
+                <div class="visual-card__feature"><i class="fas fa-check-circle"></i> שירות אישי — אדם שמבין עסקים</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 2: B2B Club (Light) -->
+      <div class="hero-slide hero-slide--2 hero-slide--light" data-slide="1">
+        <div class="hero-slide__blob"></div>
+        <div class="hero-slide__blob"></div>
+        <div class="container">
+          <div class="hero-slide__grid">
+            <div>
+              <div class="hero-slide__badge"><i class="fas fa-crown"></i> מועדון לקוחות אקסקלוסיבי</div>
+              <h1 class="hero-slide__title">קונים קבוע?<br><em>מגיע לכם מחירון משלכם.</em></h1>
+              <p class="hero-slide__desc">לקוחות עסקיים קבועים נהנים מפורטל הזמנות אישי סגור, מחירי יבואן סיטונאיים ושליטה מלאה ברכש.</p>
+              <div class="hero-slide__actions">
+                <a href="/register" class="btn btn--gold btn--hero"><i class="fas fa-lock"></i> הגש בקשה למחירון עסקי</a>
+                <a href="/login" class="btn btn--outline btn--hero">כניסה לחברי מועדון</a>
+              </div>
+            </div>
+            <div class="hero-slide__visual">
+              <div class="visual-card__badge"><i class="fas fa-crown"></i> מחירון VIP</div>
+              <div class="visual-card__title">פורטל הזמנות אישי</div>
+              <div class="visual-card__text">אטליזים, קייטרינג, מוסדות — כולם מזמינים דרך הפורטל הייעודי עם מחירים אישיים.</div>
+              <div class="visual-card__features">
+                <div class="visual-card__feature"><i class="fas fa-check-circle"></i> מחירון סיטונאי ייעודי לעסק</div>
+                <div class="visual-card__feature"><i class="fas fa-check-circle"></i> הזמנה חוזרת בקליק אחד</div>
+                <div class="visual-card__feature"><i class="fas fa-check-circle"></i> תנאי תשלום גמישים</div>
+                <div class="visual-card__feature"><i class="fas fa-check-circle"></i> היסטוריית הזמנות מלאה</div>
+              </div>
+              <div class="visual-card__btns">
+                <a href="/register" class="btn btn--navy" style="width:100%;"><i class="fas fa-user-plus" style="color:var(--gold);"></i> פתחו חשבון עסקי</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 3: Services (Dark) -->
+      <div class="hero-slide hero-slide--3 hero-slide--dark" data-slide="2">
+        <div class="hero-slide__blob"></div>
+        <div class="container">
+          <div class="hero-slide__grid">
+            <div>
+              <div class="hero-slide__badge"><i class="fas fa-warehouse"></i> שירותים מלאים</div>
+              <h1 class="hero-slide__title">סחר. שיווק. הפצה.<br><em>ועכשיו גם אחסנה.</em></h1>
+              <p class="hero-slide__desc">מעבר לאספקת מוצרים — אנחנו מציעים שירותי אחסון ולוגיסטיקה מקצועיים. הכל תחת קורת גג אחת.</p>
+              <div class="hero-slide__actions">
+                <a href="/contact" class="btn btn--action btn--hero">צרו קשר לפרטים <i class="fas fa-arrow-left"></i></a>
+                <a href="/about" class="btn btn--white btn--hero">למדו עוד עלינו</a>
+              </div>
+            </div>
+            <div class="hero-slide__visual" style="display:grid; grid-template-columns: 1fr 1fr; gap: var(--sp-md);">
+              <div style="background:rgba(10,107,255,0.1); border-radius:var(--r-xl); padding:var(--sp-xl); text-align:center;">
+                <i class="fas fa-handshake" style="font-size:2rem; color:var(--action-light); margin-bottom:8px; display:block;"></i>
+                <div style="color:white; font-weight:700; font-size:var(--fs-md);">סחר</div>
+                <div style="color:var(--text-on-dark-muted); font-size:var(--fs-xs); margin-top:4px;">קשרים ישירים עם יצרנים</div>
+              </div>
+              <div style="background:rgba(232,167,53,0.1); border-radius:var(--r-xl); padding:var(--sp-xl); text-align:center;">
+                <i class="fas fa-bullhorn" style="font-size:2rem; color:var(--gold-light); margin-bottom:8px; display:block;"></i>
+                <div style="color:white; font-weight:700; font-size:var(--fs-md);">שיווק</div>
+                <div style="color:var(--text-on-dark-muted); font-size:var(--fs-xs); margin-top:4px;">פתרונות לקהלים עסקיים</div>
+              </div>
+              <div style="background:rgba(74,130,191,0.1); border-radius:var(--r-xl); padding:var(--sp-xl); text-align:center;">
+                <i class="fas fa-truck-fast" style="font-size:2rem; color:var(--navy-300); margin-bottom:8px; display:block;"></i>
+                <div style="color:white; font-weight:700; font-size:var(--fs-md);">הפצה</div>
+                <div style="color:var(--text-on-dark-muted); font-size:var(--fs-xs); margin-top:4px;">משלוחים ארציים 24-72 שעות</div>
+              </div>
+              <div style="background:rgba(34,197,94,0.12); border-radius:var(--r-xl); padding:var(--sp-xl); text-align:center; border:1px solid rgba(34,197,94,0.2);">
+                <i class="fas fa-warehouse" style="font-size:2rem; color:var(--green-light); margin-bottom:8px; display:block;"></i>
+                <div style="color:white; font-weight:700; font-size:var(--fs-md);">אחסנה</div>
+                <div style="color:var(--text-on-dark-muted); font-size:var(--fs-xs); margin-top:4px;">שירותי אחסון מקצועיים</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 4: WhatsApp / Quick Order (Light) -->
+      <div class="hero-slide hero-slide--4 hero-slide--light" data-slide="3">
+        <div class="hero-slide__blob"></div>
+        <div class="container">
+          <div class="hero-slide__grid">
+            <div>
+              <div class="hero-slide__badge"><i class="fab fa-whatsapp"></i> הזמנה מהירה</div>
+              <h1 class="hero-slide__title">נגמר לכם משהו?<br><em>מחר זה אצלכם.</em></h1>
+              <p class="hero-slide__desc">שלחו הודעת וואטסאפ עם רשימת הפריטים — ואנחנו נדאג לכל השאר. פשוט, מהיר, ובלי טפסים.</p>
+              <div class="hero-slide__actions">
+                <a href="https://wa.me/972549922492?text=שלום, אשמח להזמין" target="_blank" rel="noopener" class="btn btn--whatsapp btn--hero"><i class="fab fa-whatsapp"></i> שלחו רשימה בוואטסאפ</a>
+                <a href="tel:037740400" class="btn btn--outline btn--hero"><i class="fas fa-phone"></i> 03-7740400</a>
+              </div>
+            </div>
+            <div class="hero-slide__visual">
+              <div class="visual-card__badge"><i class="fas fa-bolt"></i> 3 שלבים פשוטים</div>
+              <div class="visual-card__title">איך זה עובד?</div>
+              <div style="display:flex; flex-direction:column; gap:16px; margin-top:var(--sp-lg);">
+                <div style="display:flex; align-items:center; gap:14px;">
+                  <div style="width:40px;height:40px;border-radius:50%;background:var(--action-bg);color:var(--action);font-weight:900;font-size:1.1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+                  <div><strong style="color:var(--text-primary);font-size:var(--fs-sm);">שלחו רשימה בוואטסאפ</strong><br><span style="font-size:var(--fs-xs);color:var(--text-muted);">מוצרים + כמויות, כמו שנוח לכם</span></div>
+                </div>
+                <div style="display:flex; align-items:center; gap:14px;">
+                  <div style="width:40px;height:40px;border-radius:50%;background:var(--action-bg);color:var(--action);font-weight:900;font-size:1.1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+                  <div><strong style="color:var(--text-primary);font-size:var(--fs-sm);">מקבלים הצעת מחיר תוך דקות</strong><br><span style="font-size:var(--fs-xs);color:var(--text-muted);">מאשרים ומשלמים בנוח</span></div>
+                </div>
+                <div style="display:flex; align-items:center; gap:14px;">
+                  <div style="width:40px;height:40px;border-radius:50%;background:var(--green);background:rgba(34,197,94,0.1);color:var(--green);font-weight:900;font-size:1.1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+                  <div><strong style="color:var(--text-primary);font-size:var(--fs-sm);">ההזמנה מגיעה עד הדלת</strong><br><span style="font-size:var(--fs-xs);color:var(--text-muted);">אספקה תוך 24-72 שעות</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel Controls -->
+      <div class="hero-carousel__dots" id="carouselDots">
+        <button class="hero-carousel__dot active" data-dot="0" aria-label="שקופית 1"></button>
+        <button class="hero-carousel__dot" data-dot="1" aria-label="שקופית 2"></button>
+        <button class="hero-carousel__dot" data-dot="2" aria-label="שקופית 3"></button>
+        <button class="hero-carousel__dot" data-dot="3" aria-label="שקופית 4"></button>
+      </div>
+      <div class="hero-carousel__progress"><div class="hero-carousel__progress-bar" id="progressBar"></div></div>
+      <button class="hero-carousel__arrow hero-carousel__arrow--prev" id="prevBtn" aria-label="הקודם"><i class="fas fa-chevron-right"></i></button>
+      <button class="hero-carousel__arrow hero-carousel__arrow--next" id="nextBtn" aria-label="הבא"><i class="fas fa-chevron-left"></i></button>
+    </section>
+
+    <!-- ═══ QUICK SERVICES (Trust Strip) ═══ -->
+    <section class="quick-services">
+      <div class="container">
+        <div class="quick-services__grid">
+          <div class="qs-card reveal">
+            <div class="qs-card__icon"><i class="fas fa-truck-fast"></i></div>
+            <div class="qs-card__text"><strong>משלוח ארצי</strong><span>אספקה תוך 24-72 שעות</span></div>
+          </div>
+          <div class="qs-card reveal reveal-d1">
+            <div class="qs-card__icon"><i class="fas fa-tags"></i></div>
+            <div class="qs-card__text"><strong>מחירי סיטונאות</strong><span>ישירות מהיצרנים</span></div>
+          </div>
+          <div class="qs-card reveal reveal-d2">
+            <div class="qs-card__icon"><i class="fas fa-headset"></i></div>
+            <div class="qs-card__text"><strong>שירות אישי</strong><span>מענה מהיר, אדם אמיתי</span></div>
+          </div>
+          <div class="qs-card reveal reveal-d3">
+            <div class="qs-card__icon"><i class="fas fa-rotate"></i></div>
+            <div class="qs-card__text"><strong>הזמנה חוזרת</strong><span>אספקה שוטפת בקליק</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CATEGORIES ═══ -->
+    <section class="section">
+      <div class="container">
+        <div class="section__header">
+          <div class="section__label"><i class="fas fa-th-large"></i> קטגוריות</div>
+          <h2 class="section__title">קטגוריות מוצרים</h2>
+          <p class="section__subtitle">כל מה שהעסק שלכם צריך — במקום אחד</p>
+        </div>
+        <div class="categories-grid">
+          <a href="/category/bulk-paper-towel-office-supplies/" class="cat-card reveal"><div class="cat-card__icon"><i class="fas fa-toilet-paper"></i></div><span class="cat-card__name">מוצרי נייר וניגוב</span><span class="cat-card__desc">נייר טואלט, מגבות, מפיות</span></a>
+          <a href="/category/industrial-cleaning-supplies-wholesale/" class="cat-card reveal reveal-d1"><div class="cat-card__icon"><i class="fas fa-spray-can"></i></div><span class="cat-card__name">חומרי ניקוי וכימיקלים</span><span class="cat-card__desc">מנקים, מחטאים, סבונים</span></a>
+          <a href="/category/disposable-catering-food-service/" class="cat-card reveal reveal-d2"><div class="cat-card__icon"><i class="fas fa-utensils"></i></div><span class="cat-card__name">חד פעמי ואירוח</span><span class="cat-card__desc">צלחות, כוסות, סכום</span></a>
+          <a href="/category/food-packaging-delivery-solutions/" class="cat-card reveal reveal-d3"><div class="cat-card__icon"><i class="fas fa-box-open"></i></div><span class="cat-card__name">אריזות מזון ו-Take Away</span><span class="cat-card__desc">קופסאות, שקיות, נייר</span></a>
+          <a href="/category/professional-cleaning-cloths-microfiber/" class="cat-card reveal reveal-d4"><div class="cat-card__icon"><i class="fas fa-tshirt"></i></div><span class="cat-card__name">טקסטיל, מטליות וסחבות</span><span class="cat-card__desc">מטליות, סחבות, מגבים</span></a>
+          <a href="/category/office-coffee-breakroom-supplies/" class="cat-card reveal reveal-d5"><div class="cat-card__icon"><i class="fas fa-coffee"></i></div><span class="cat-card__name">קפה, שתייה וכיבוד</span><span class="cat-card__desc">קפה, סוכר, חטיפים</span></a>
+          <a href="/category/safety-ppe-equipment-for-business/" class="cat-card reveal"><div class="cat-card__icon"><i class="fas fa-hard-hat"></i></div><span class="cat-card__name">בטיחות ומיגון אישי</span><span class="cat-card__desc">כפפות, מסכות, ביגוד</span></a>
+          <a href="/category/office-supplies-wholesale-business/" class="cat-card reveal reveal-d1"><div class="cat-card__icon"><i class="fas fa-pen"></i></div><span class="cat-card__name">ציוד משרדי וכללי</span><span class="cat-card__desc">עטים, נייר, מוצרי משרד</span></a>
+          <a href="/category/heavy-duty-garbage-bags-wholesale/" class="cat-card reveal reveal-d2"><div class="cat-card__icon"><i class="fas fa-trash-alt"></i></div><span class="cat-card__name">שקיות ופתרונות אשפה</span><span class="cat-card__desc">שקיות אשפה, ניילונים</span></a>
+          <a href="/category/maintenance-technical-equipment-wholesale/" class="cat-card reveal reveal-d3"><div class="cat-card__icon"><i class="fas fa-wrench"></i></div><span class="cat-card__name">ציוד טכני ואחזקה</span><span class="cat-card__desc">כלי עבודה, תחזוקה</span></a>
+          <a href="/category/warehouse-packaging-supplies-wholesale/" class="cat-card reveal reveal-d4"><div class="cat-card__icon"><i class="fas fa-tape"></i></div><span class="cat-card__name">עטיפה, אריזה ולוגיסטיקה</span><span class="cat-card__desc">דבקים, סרטים, אריזה</span></a>
+          <a href="/category/first-aid-medical-equipment-business/" class="cat-card reveal reveal-d5"><div class="cat-card__icon"><i class="fas fa-first-aid"></i></div><span class="cat-card__name">עזרה ראשונה - רפואי</span><span class="cat-card__desc">תחבושות, כפפות, AED</span></a>
+          <a href="/category/personal-hygiene-products-wholesale/" class="cat-card reveal"><div class="cat-card__icon"><i class="fas fa-pump-soap"></i></div><span class="cat-card__name">טואלטיקה וטיפוח</span><span class="cat-card__desc">סבונים, שמפו, דאודורנט</span></a>
+          <a href="/category/institutional-cleaning-tools-equipment/" class="cat-card reveal reveal-d1"><div class="cat-card__icon"><i class="fas fa-tools"></i></div><span class="cat-card__name">כלי עבודה וציוד משקי</span><span class="cat-card__desc">מגבים, דליים, עגלות</span></a>
+        </div>
+        <div style="text-align:center; margin-top:var(--sp-2xl);">
+          <a href="/catalog" class="btn btn--outline">לכל הקטגוריות <i class="fas fa-arrow-left"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SERVICES STRIP ═══ -->
+    <section class="services-strip">
+      <div class="container">
+        <div class="services-strip__header">
+          <div class="services-strip__title">מה אנחנו מציעים?</div>
+          <div class="services-strip__subtitle">פתרון אספקה מקצה לקצה לעסקים ומוסדות</div>
+        </div>
+        <div class="services-strip__grid">
+          <div class="svc-block reveal"><div class="svc-block__icon"><i class="fas fa-handshake"></i></div><div class="svc-block__title">סחר</div><div class="svc-block__desc">קשרים ישירים עם יצרנים ויבואנים מובילים</div></div>
+          <div class="svc-block reveal reveal-d1"><div class="svc-block__icon"><i class="fas fa-bullhorn"></i></div><div class="svc-block__title">שיווק</div><div class="svc-block__desc">פתרונות מותאמים לקהלים עסקיים ומוסדיים</div></div>
+          <div class="svc-block reveal reveal-d2"><div class="svc-block__icon"><i class="fas fa-truck-fast"></i></div><div class="svc-block__title">הפצה</div><div class="svc-block__desc">משלוחים ארציים תוך 24-72 שעות לפתח העסק</div></div>
+          <div class="svc-block reveal reveal-d3"><div class="svc-block__icon"><i class="fas fa-warehouse"></i></div><div class="svc-block__title">אחסנה</div><div class="svc-block__desc">שירותי אחסון ולוגיסטיקה מקצועיים</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ WHY CHOOSE US ═══ -->
+    <section class="section">
+      <div class="container">
+        <div class="section__header">
+          <div class="section__label"><i class="fas fa-star"></i> למה אנחנו</div>
+          <h2 class="section__title">למה לבחור בוואי מרקט?</h2>
+          <p class="section__subtitle">אנחנו מבינים את הצרכים של העסק שלכם</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card reveal"><div class="feature-card__icon"><i class="fas fa-check-double"></i></div><h3>מותאם למוסדות</h3><p>כל המוצרים נבחרו במיוחד לצרכים של עסקים ומוסדות — בכמויות גדולות, באיכות מקצועית</p></div>
+          <div class="feature-card reveal reveal-d1"><div class="feature-card__icon"><i class="fas fa-hand-holding-dollar"></i></div><h3>מחירים הוגנים</h3><p>עובדים ישירות עם היצרנים והיבואנים הגדולים ומעבירים את החיסכון אליכם</p></div>
+          <div class="feature-card reveal reveal-d2"><div class="feature-card__icon"><i class="fas fa-bolt"></i></div><h3>אספקה מהירה</h3><p>משלוח תוך 24-48 שעות לכל הארץ. נגמר משהו? מחר זה אצלכם</p></div>
+          <div class="feature-card reveal reveal-d3"><div class="feature-card__icon"><i class="fas fa-user-tie"></i></div><h3>שירות אישי</h3><p>יובל נגלר, בעל העסק, זמין תמיד לייעוץ ומענה מהיר. לא מוקד — אדם שמבין עסקים</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ ESTIMATOR ═══ -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section__header">
+          <div class="section__label"><i class="fas fa-calculator"></i> מחשבון</div>
+          <h2 class="section__title">כמה עולה אספקה חודשית?</h2>
+          <p class="section__subtitle">הזיזו את הסליידר ותקבלו הערכת עלות מיידית</p>
+        </div>
+        <div class="estimator reveal">
+          <div class="estimator__row">
+            <div class="estimator__label"><span>גודל העסק</span><span class="estimator__value" id="sizeLabel">בינוני</span></div>
+            <input type="range" class="estimator__slider" id="sizeSlider" min="1" max="5" value="3" step="1">
+          </div>
+          <div class="estimator__row">
+            <div class="estimator__label"><span>מספר עובדים</span><span class="estimator__value" id="employeesLabel">25</span></div>
+            <input type="range" class="estimator__slider" id="employeesSlider" min="5" max="200" value="25" step="5">
+          </div>
+          <div class="estimator__result">
+            <div class="estimator__result-label">הערכת עלות חודשית (לפני מע"מ)</div>
+            <div class="estimator__result-amount" id="estimateResult">₪ 2,800</div>
+            <div class="estimator__result-note">* הערכה משוערת. לקבלת הצעת מחיר מדויקת צרו קשר</div>
+          </div>
+          <div class="estimator__cta">
+            <a href="https://wa.me/972549922492?text=שלום, אשמח לקבל הצעת מחיר מותאמת" target="_blank" rel="noopener" class="btn btn--action"><i class="fab fa-whatsapp"></i> קבלו הצעת מחיר מדויקת</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ STATS ═══ -->
+    <section class="section section--navy">
+      <div class="container">
+        <div class="section__header">
+          <div class="section__label"><i class="fas fa-chart-line"></i> מספרים</div>
+          <h2 class="section__title">המספרים מדברים</h2>
+          <p class="section__subtitle">שנים של אמינות ושירות ללא פשרות</p>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card reveal"><div class="stat-card__num">214</div><div class="stat-card__label">לקוחות פעילים</div></div>
+          <div class="stat-card reveal reveal-d1"><div class="stat-card__num">5+</div><div class="stat-card__label">שנות ניסיון</div></div>
+          <div class="stat-card reveal reveal-d2"><div class="stat-card__num">1,000+</div><div class="stat-card__label">משלוחים בשנה</div></div>
+          <div class="stat-card reveal reveal-d3"><div class="stat-card__num">98%</div><div class="stat-card__label">שביעות רצון</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SEGMENTS ═══ -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section__header">
+          <div class="section__label"><i class="fas fa-users"></i> לקוחות</div>
+          <h2 class="section__title">למי אנחנו מספקים?</h2>
+          <p class="section__subtitle">מגוון רחב של עסקים ומוסדות בכל הגדלים</p>
+        </div>
+        <div class="segments-grid">
+          <div class="seg-card reveal"><i class="fas fa-broom"></i><h3>חברות ניקיון ואחזקה</h3><p>חומרי ניקוי, מטליות, שקיות אשפה וציוד מקצועי. אספקה שוטפת לעשרות אתרים.</p></div>
+          <div class="seg-card reveal reveal-d1"><i class="fas fa-utensils"></i><h3>מסעדות ושירותי הסעדה</h3><p>כלים חד פעמיים, אריזות Take Away, מוצרי נייר וציוד למטבחים מוסדיים.</p></div>
+          <div class="seg-card reveal reveal-d2"><i class="fas fa-store"></i><h3>סופרמרקטים ומינימרקטים</h3><p>מוצרי צריכה שוטפת במחירי סיטונאות, שקיות, אריזות ומוצרי ניקיון.</p></div>
+          <div class="seg-card reveal reveal-d3"><i class="fas fa-building"></i><h3>משרדים וחללי עבודה</h3><p>ציוד משרדי, נייר, מוצרי ניקיון וטואלטיקה. חבילות אספקה חודשיות.</p></div>
+          <div class="seg-card reveal reveal-d4"><i class="fas fa-dumbbell"></i><h3>מרכזי ספורט ופנאי</h3><p>מוצרי ניקיון, טואלטיקה, מגבות נייר וציוד תחזוקה לחדרי כושר ובריכות.</p></div>
+          <div class="seg-card reveal reveal-d5"><i class="fas fa-hand-holding-medical"></i><h3>רפואה ובריאות</h3><p>כפפות, מסכות, חומרי חיטוי וציוד מיגון למרפאות ומוסדות בריאות.</p></div>
+          <div class="seg-card reveal"><i class="fas fa-drumstick-bite"></i><h3>אטליזים וחנויות מזון</h3><p>שקיות ואקום, אריזות מזון, כפפות, מגשי הגשה ומוצרי אריזה.</p></div>
+          <div class="seg-card reveal reveal-d1"><i class="fas fa-industry"></i><h3>מפעלי ייצור ותעשייה</h3><p>ציוד בטיחות, מוצרי ניקיון תעשייתי, שקיות כבדות ומוצרי אריזה.</p></div>
+          <div class="seg-card reveal reveal-d2"><i class="fas fa-users-cog"></i><h3>חברות כוח אדם ושירותים</h3><p>ציוד ניקיון, מוצרי נייר, טואלטיקה וחומרי חיטוי לאתרים מרובים.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ ISRAEL DELIVERY MAP ═══ -->
+    <section class="delivery-map" id="deliveryMap">
+      <div class="container">
+        <div class="section__header">
+          <div class="section__label" style="background:rgba(10,107,255,0.15);color:var(--action-light);"><i class="fas fa-route"></i> מסלולי הפצה</div>
+          <h2 class="section__title" style="color:white;">מגת רימון לכל רחבי הארץ</h2>
+          <p class="section__subtitle" style="color:var(--text-on-dark-muted);">משלוחים ארציים עם דגש על גוש דן והמרכז. מינימום הזמנה 1,600 ₪ + מע"מ</p>
+        </div>
+
+        <div class="israel-map-wrapper">
+          <div class="israel-svg-box">
+            <!--
+              Coordinate system: viewBox 0 0 300 600
+              Geo mapping: lon 34.2-35.9E → x 30-240, lat 29.5-33.3N → y 580-5
+              Gush Dan cluster SPREAD 2.5x from centroid (97,187) for readability
+            -->
+            <svg viewBox="0 0 300 610" xmlns="http://www.w3.org/2000/svg" id="israelMap">
+              <defs>
+                <linearGradient id="rGrad" x1="0%" y1="0%" x2="50%" y2="100%">
+                  <stop offset="0%" stop-color="#E8A735"/><stop offset="35%" stop-color="#0A6BFF"/>
+                  <stop offset="70%" stop-color="#3D8AFF"/><stop offset="100%" stop-color="#22C55E"/>
+                </linearGradient>
+                <filter id="gGold"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                <filter id="truckShadow"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.35"/></filter>
+              </defs>
+
+              <!-- Israel outline — Natural Earth 50m -->
+              <path class="il-land" d="M262,15 L258.5,22.8 L255,26.8 L254,33 L256,38 L257.4,45 L260,47 L261,51.5 L258.6,56 L259.7,59.5 L262.7,63 L264.7,77 L269,83 L262,93 L261,101 L254,113.5 L247,114 L229,121 L226,123 L223,127 L222.7,130 L220,163 L210.5,162 L198.6,155 L196,148.5 L193,146 L184,146 L168,142.5 L150,153 L142,171 L140,179 L134,197 L136,207 L137,221 L139,232 L137,239 L134,243 L135,245.5 L138,246 L148,243 L159,246 L169,252 L170,256 L163,258 L145,267 L133,278 L130,287 L122,307 L123,311 L127,314 L155,312 L180,303 L200,295 L206,295 L202,317.5 L198,331 L200,334 L204,345.5 L196,367 L187,385 L184,393 L175,412 L166,433.5 L161,448 L162,454 L160,481 L161,489 L150,513 L148,524 L144,540 L137,574 L127,585 L122,573 L110,537 L102,512 L91,482 L72,445 L71,436 L67,423 L54,390 L43,365 L31,335 L46,322 L46,312 L72,289 L72,286 L65,280 L66,279 L94,235 L112,192 L129,131 L141,100 L152,80 L156,63 L173,62 L185,64 L200,64 L212,58 L217,39 L224,36 L228,40 L231,35 L247,27 L254,22 L262,15 Z"/>
+
+              <!-- Coast -->
+              <path class="il-coast" d="M129,131 Q120,160 112,192 Q100,220 94,235 Q80,260 72,289 Q60,310 46,322 L31,335"/>
+              <text class="il-geo-label" x="22" y="250" transform="rotate(-80,22,250)" text-anchor="middle">הים התיכון</text>
+
+              <!-- Water -->
+              <ellipse class="il-water" cx="258" cy="95" rx="7" ry="11"/>
+              <text class="il-water-label" x="258" y="113" text-anchor="middle">כנרת</text>
+              <ellipse class="il-water" cx="208" cy="302" rx="5" ry="20"/>
+              <text class="il-water-label" x="208" y="328" text-anchor="middle">ים המלח</text>
+              <path d="M256,107 Q240,160 225,220 Q218,260 210,290" fill="none" stroke="rgba(10,107,255,0.08)" stroke-width="0.8"/>
+
+              <!-- Mountains -->
+              <polygon class="il-mountain" points="230,50 248,30 265,52 250,62"/>
+              <polygon class="il-mountain" points="220,80 238,60 258,82 240,92"/>
+              <polygon class="il-mountain" points="180,135 198,118 216,138 198,148"/>
+              <polygon class="il-mountain" points="258,38 268,22 278,42 268,50"/>
+              <polygon class="il-mountain" points="170,240 190,222 208,244 190,256"/>
+              <polygon class="il-mountain" points="110,400 128,380 146,402 128,414"/>
+              <polygon class="il-mountain" points="140,500 156,482 170,504 154,514"/>
+
+              <!-- Gush Dan zoom frame -->
+              <rect class="zoom-frame" x="88" y="152" width="140" height="90" rx="8"/>
+              <text class="zoom-label" x="158" y="148" text-anchor="middle">גוש דן</text>
+
+              <!-- Route -->
+              <path class="rt rt-bg" d="M148,185 L172,180 L130,200 L108,192 L115,212 L124,226 L105,258 L93,278 L140,350 L132,580 L140,350 L192,260 L170,108"/>
+              <path class="rt rt-glow" id="routeGlow" d="M148,185 L172,180 L130,200 L108,192 L115,212 L124,226 L105,258 L93,278 L140,350 L132,580 L140,350 L192,260 L170,108"/>
+              <path class="rt rt-dash" d="M148,185 L172,180 L130,200 L108,192 L115,212 L124,226 L105,258 L93,278 L140,350 L132,580 L140,350 L192,260 L170,108"/>
+
+              <!-- Cities -->
+              <g class="city-marker" data-city="גת רימון">
+                <circle class="c-ping" cx="148" cy="185" r="5" stroke="var(--gold)"/>
+                <circle class="c-pin c-pin--hq" cx="148" cy="185"/>
+                <text class="c-lbl c-lbl--hq" x="148" y="173" text-anchor="middle">★ גת רימון</text>
+                <circle cx="148" cy="185" r="15" fill="none" stroke="rgba(232,167,53,0.15)" stroke-width="0.8" stroke-dasharray="3,3"><animateTransform attributeName="transform" type="rotate" from="0 148 185" to="360 148 185" dur="25s" repeatCount="indefinite"/></circle>
+              </g>
+              <g class="city-marker" data-city="פתח תקווה">
+                <circle class="c-ping" cx="172" cy="180" r="4" stroke="var(--action)"/>
+                <circle class="c-pin c-pin--sm" cx="172" cy="180"/>
+                <text class="c-lbl c-lbl--sm" x="184" y="183" text-anchor="start">פתח תקווה</text>
+              </g>
+              <g class="city-marker" data-city="רמת גן">
+                <circle class="c-ping" cx="130" cy="200" r="4" stroke="var(--action)"/>
+                <circle class="c-pin c-pin--sm" cx="130" cy="200"/>
+                <text class="c-lbl c-lbl--sm" x="142" y="203" text-anchor="start">רמת גן</text>
+              </g>
+              <g class="city-marker" data-city="תל אביב">
+                <circle class="c-ping" cx="108" cy="192" r="5" stroke="var(--action)"/>
+                <circle class="c-pin c-pin--md" cx="108" cy="192"/>
+                <text class="c-lbl c-lbl--md" x="95" y="195" text-anchor="end">תל אביב</text>
+              </g>
+              <g class="city-marker" data-city="חולון">
+                <circle class="c-ping" cx="115" cy="212" r="4" stroke="var(--action)"/>
+                <circle class="c-pin c-pin--sm" cx="115" cy="212"/>
+                <text class="c-lbl c-lbl--sm" x="102" y="215" text-anchor="end">חולון</text>
+              </g>
+              <g class="city-marker" data-city="ראשון לציון">
+                <circle class="c-ping" cx="124" cy="226" r="4" stroke="var(--action)"/>
+                <circle class="c-pin c-pin--sm" cx="124" cy="226"/>
+                <text class="c-lbl c-lbl--sm" x="136" y="229" text-anchor="start">ראשל&quot;צ</text>
+              </g>
+              <g class="city-marker" data-city="הרצליה">
+                <circle class="c-ping" cx="114" cy="172" r="4" stroke="var(--action)"/>
+                <circle class="c-pin c-pin--sm" cx="114" cy="172"/>
+                <text class="c-lbl c-lbl--sm" x="101" y="175" text-anchor="end">הרצליה</text>
+              </g>
+              <g class="city-marker" data-city="רעננה">
+                <circle class="c-ping" cx="148" cy="165" r="4" stroke="var(--action)"/>
+                <circle class="c-pin c-pin--sm" cx="148" cy="165"/>
+                <text class="c-lbl c-lbl--sm" x="160" y="168" text-anchor="start">רעננה</text>
+              </g>
+              <g class="city-marker" data-city="כפר סבא">
+                <circle class="c-ping" cx="168" cy="160" r="4" stroke="var(--action)"/>
+                <circle class="c-pin c-pin--sm" cx="168" cy="160"/>
+                <text class="c-lbl c-lbl--sm" x="180" y="163" text-anchor="start">כפר סבא</text>
+              </g>
+              <g class="city-marker" data-city="אשדוד">
+                <circle class="c-ping" cx="105" cy="258" r="4" stroke="var(--action)"/>
+                <circle class="c-pin c-pin--sm" cx="105" cy="258"/>
+                <text class="c-lbl c-lbl--sm" x="91" y="261" text-anchor="end">אשדוד</text>
+              </g>
+              <g class="city-marker" data-city="אשקלון">
+                <circle class="c-ping" cx="93" cy="278" r="4" stroke="var(--action)"/>
+                <circle class="c-pin c-pin--sm" cx="93" cy="278"/>
+                <text class="c-lbl c-lbl--sm" x="79" y="281" text-anchor="end">אשקלון</text>
+              </g>
+              <g class="city-marker" data-city="באר שבע">
+                <circle class="c-ping" cx="140" cy="350" r="5" stroke="var(--action)"/>
+                <circle class="c-pin c-pin--md" cx="140" cy="350"/>
+                <text class="c-lbl c-lbl--md" x="140" y="366" text-anchor="middle">באר שבע</text>
+              </g>
+              <g class="city-marker" data-city="אילת">
+                <circle class="c-ping" cx="132" cy="580" r="5" stroke="var(--action)"/>
+                <circle class="c-pin c-pin--md" cx="132" cy="580"/>
+                <text class="c-lbl c-lbl--md" x="132" y="596" text-anchor="middle">אילת</text>
+              </g>
+              <g class="city-marker" data-city="חיפה">
+                <circle class="c-ping" cx="170" cy="108" r="5" stroke="var(--action)"/>
+                <circle class="c-pin c-pin--md" cx="170" cy="108"/>
+                <text class="c-lbl c-lbl--md" x="156" y="111" text-anchor="end">חיפה</text>
+              </g>
+              <g class="city-marker" data-city="ירושלים">
+                <circle class="c-ping" cx="192" cy="260" r="5" stroke="var(--action)"/>
+                <circle class="c-pin c-pin--md" cx="192" cy="260"/>
+                <text class="c-lbl c-lbl--md" x="205" y="263" text-anchor="start">ירושלים</text>
+              </g>
+
+              <!-- DUCATO MAXI — YMARKET -->
+              <!-- DUCATO MAXI — YMARKET (white logo) -->
+              <g class="ym-truck" id="ymTruck" transform="translate(148,185)" filter="url(#truckShadow)">
+                <!-- Cargo body -->
+                <rect x="-22" y="-16" width="34" height="20" rx="3" fill="var(--navy-700)" stroke="var(--navy-800)" stroke-width="0.5"/>
+                <!-- Gold stripe -->
+                <rect x="-22" y="0" width="34" height="4" fill="var(--gold)" rx="1"/>
+                <!-- YMARKET white text -->
+                <text x="-5" y="-4" text-anchor="middle" fill="white" font-size="5.5" font-weight="900" font-family="Heebo" letter-spacing="0.3">YMARKET</text>
+                <!-- White Y logo on navy circle -->
+                <circle cx="-14" cy="-6" r="5" fill="white" opacity="0.95"/>
+                <text x="-14" y="-3.2" text-anchor="middle" fill="var(--navy-800)" font-size="6" font-weight="900" font-family="Heebo">Y</text>
+                <!-- Cabin -->
+                <rect x="12" y="-14" width="14" height="18" rx="3" fill="#2A5080"/>
+                <!-- Windshield -->
+                <rect x="14" y="-12" width="10" height="8" rx="2" fill="rgba(120,200,255,0.5)"/>
+                <line x1="15" y1="-11" x2="19" y2="-5" stroke="rgba(255,255,255,0.3)" stroke-width="0.8"/>
+                <!-- Headlights -->
+                <rect x="25" y="-8" width="2.5" height="3.5" rx="1" fill="#FFD700" opacity="0.9"/>
+                <rect x="25" y="-2" width="2.5" height="2" rx="0.5" fill="#FF6B35" opacity="0.7"/>
+                <!-- Mirror -->
+                <rect x="25" y="-13" width="3" height="2" rx="0.5" fill="#4A82BF"/>
+                <!-- Wheels (dual rear + front) -->
+                <circle cx="-12" cy="6" r="3.8" fill="#222" stroke="#444" stroke-width="0.8"/>
+                <circle cx="-12" cy="6" r="1.5" fill="#666"/>
+                <circle cx="-4" cy="6" r="3.8" fill="#222" stroke="#444" stroke-width="0.8"/>
+                <circle cx="-4" cy="6" r="1.5" fill="#666"/>
+                <circle cx="20" cy="6" r="3.8" fill="#222" stroke="#444" stroke-width="0.8"/>
+                <circle cx="20" cy="6" r="1.5" fill="#666"/>
+                <!-- Roof line -->
+                <line x1="-20" y1="-16" x2="10" y2="-16" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
+              </g>
+
+              <g id="particlesLayer"></g>
+            </svg>
+          </div>
+
+          <!-- Side Panel -->
+          <div class="delivery-panel">
+            <div class="dp-live">
+              <div class="dp-live__label"><div class="dp-live__dot"></div> המשאית בדרך אל:</div>
+              <div class="dp-live__city" id="currentCityName">גת רימון</div>
+            </div>
+            <div class="dp-card reveal">
+              <div class="dp-card__head"><span class="dp-card__icon"><i class="fas fa-star"></i></span><div class="dp-card__title">גת רימון — המרכז שלנו</div></div>
+              <div class="dp-card__desc">מכאן יוצאים כל המשלוחים. מחסן מרכזי עם 900+ מוצרים מוכנים לשליחה.</div>
+            </div>
+            <div class="dp-card reveal reveal-d1">
+              <div class="dp-card__head"><span class="dp-card__icon"><i class="fas fa-map-marked-alt"></i></span><div class="dp-card__title">גוש דן — אספקה יומית</div></div>
+              <div class="dp-card__desc">ת"א, פ"ת, ר"ג, הרצליה, חולון, ראשל"צ, רעננה, כפ"ס — תוך 24 שעות.</div>
+            </div>
+            <div class="dp-card reveal reveal-d2">
+              <div class="dp-card__head"><span class="dp-card__icon"><i class="fas fa-shipping-fast"></i></span><div class="dp-card__title">צפון ודרום — 48-72 שעות</div></div>
+              <div class="dp-card__desc">חיפה, ירושלים, באר שבע, אשדוד, אשקלון ועד אילת — כיסוי ארצי.</div>
+            </div>
+            <div class="dp-card reveal reveal-d3">
+              <div class="dp-card__head"><span class="dp-card__icon"><i class="fas fa-box-open"></i></span><div class="dp-card__title">900+ מוצרים במלאי</div></div>
+              <div class="dp-card__desc">ניקיון, נייר, חד פעמי, אריזות, ציוד משרדי — הכל מוכן לשליחה מיידית.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ BLOG ═══ -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section__header">
+          <div class="section__label"><i class="fas fa-lightbulb"></i> בלוג</div>
+          <h2 class="section__title">מדריכים וטיפים מקצועיים</h2>
+          <p class="section__subtitle">ידע מקצועי שיעזור לכם לחסוך ולבחור נכון</p>
+        </div>
+        <div class="blog-grid">
+          <a href="/blog/wholesale-cleaning-products" class="blog-card reveal"><h3>חומרי ניקיון בסיטונאות - המדריך המלא</h3><p>איך לבחור חומרי ניקיון מקצועיים, מה ההבדל בין המותגים ואיך לחסוך עד 40%.</p><span class="blog-card__link">קראו עוד <i class="fas fa-arrow-left"></i></span></a>
+          <a href="/blog/institutional-garbage-bags" class="blog-card reveal reveal-d1"><h3>שקיות אשפה למוסדות - מדריך בחירה</h3><p>סוגי שקיות, עוביים, גדלים והתאמה לסוג העסק. כל מה שצריך לדעת.</p><span class="blog-card__link">קראו עוד <i class="fas fa-arrow-left"></i></span></a>
+          <a href="/blog/restaurant-disposable-equipment" class="blog-card reveal reveal-d2"><h3>ציוד חד פעמי למסעדות - המדריך השלם</h3><p>אילו כלים חד פעמיים כל מסעדה צריכה, כמויות מומלצות ובחירת איכות.</p><span class="blog-card__link">קראו עוד <i class="fas fa-arrow-left"></i></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ REGISTRATION ═══ -->
+    <section class="reg-section">
+      <div class="container">
+        <div class="section__label" style="margin:0 auto var(--sp-md);"><i class="fas fa-gift"></i> הטבות</div>
+        <h2>למה להירשם לפורטל ההזמנות?</h2>
+        <div class="reg-grid">
+          <div class="reg-item reveal"><div class="reg-item__icon"><i class="fas fa-tags"></i></div><div class="reg-item__text">מחירים מותאמים אישית לעסק שלכם</div></div>
+          <div class="reg-item reveal reveal-d1"><div class="reg-item__icon"><i class="fas fa-clock"></i></div><div class="reg-item__text">הזמנה אונליין 24/7 בלי להמתין לנציג</div></div>
+          <div class="reg-item reveal reveal-d2"><div class="reg-item__icon"><i class="fas fa-history"></i></div><div class="reg-item__text">היסטוריית הזמנות והזמנה חוזרת בקליק</div></div>
+          <div class="reg-item reveal reveal-d3"><div class="reg-item__icon"><i class="fas fa-truck"></i></div><div class="reg-item__text">מעקב משלוחים ואספקה שוטפת</div></div>
+        </div>
+        <a href="/register" class="btn btn--gold btn--lg"><i class="fas fa-user-plus"></i> פתחו חשבון עסקי בחינם</a>
+      </div>
+    </section>
+
+    <!-- ═══ CTA ═══ -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>מוכנים להזמין?</h2>
+        <p>צרו קשר עכשיו וקבלו הצעת מחיר מותאמת. מינימום הזמנה 1,600 ₪ + מע"מ.</p>
+        <div class="cta-section__actions">
+          <a href="/register" class="btn btn--gold btn--lg"><i class="fas fa-user-plus"></i> הרשמה בחינם</a>
+          <a href="https://wa.me/972549922492?text=שלום, אשמח לקבל הצעת מחיר" target="_blank" rel="noopener" class="btn btn--whatsapp btn--lg"><i class="fab fa-whatsapp"></i> שלחו הודעה בוואטסאפ</a>
+          <a href="tel:037740400" class="btn btn--white btn--lg"><i class="fas fa-phone"></i> 03-7740400</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__brand-logo"><div class="footer__brand-icon">Y</div><div class="footer__brand-name">וואי מרקט</div></div>
+          <p>נגלר סחר והפצה — סחר, שיווק והפצה של מוצרי צריכה שוטפת לעסקים ומוסדות בכל רחבי הארץ.</p>
+          <div class="footer__social">
+            <a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100083110428101" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/ymarket.ai" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__heading">קטגוריות</h3>
+          <div class="footer__links">
+            <a href="/category/bulk-paper-towel-office-supplies/">מוצרי נייר</a>
+            <a href="/category/industrial-cleaning-supplies-wholesale/">חומרי ניקוי</a>
+            <a href="/category/disposable-catering-food-service/">חד פעמי</a>
+            <a href="/category/food-packaging-delivery-solutions/">אריזות מזון</a>
+            <a href="/category/office-coffee-breakroom-supplies/">קפה וכיבוד</a>
+            <a href="/category/safety-ppe-equipment-for-business/">בטיחות ומיגון</a>
+            <a href="/category/heavy-duty-garbage-bags-wholesale/">שקיות אשפה</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__heading">קישורים מהירים</h3>
+          <div class="footer__links">
+            <a href="/catalog">קטלוג מוצרים</a><a href="/about">אודות</a><a href="/blog">בלוג</a>
+            <a href="/faq">שאלות ותשובות</a><a href="/contact">צרו קשר</a><a href="/tracking">מעקב משלוחים</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__heading">צרו קשר</h3>
+          <div class="footer__contact-item"><i class="fas fa-phone-alt"></i><a href="tel:037740400">03-7740400</a></div>
+          <div class="footer__contact-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/972549922492" target="_blank" rel="noopener">WhatsApp</a></div>
+          <div class="footer__contact-item"><i class="fas fa-envelope"></i><a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a></div>
+          <div class="footer__contact-item"><i class="fas fa-clock"></i><span>א'-ה' 08:00-17:00</span></div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span class="footer__copyright">&copy; 2026 וואי מרקט — נגלר סחר והפצה. כל הזכויות שמורות.</span>
+        <div class="footer__legal">
+          <a href="/legal/terms">תקנון</a><a href="/legal/privacy">פרטיות</a>
+          <a href="/legal/shipping">משלוחים</a><a href="/legal/returns">החזרות</a>
+          <a href="/legal/accessibility">נגישות</a><a href="/legal/cookies">עוגיות</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/972549922492?text=שלום, אשמח לשמוע על המוצרים שלכם" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+  <!-- ═══ SCRIPTS ═══ -->
+  <script>
+    // ── Hero Carousel ──
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.hero-carousel__dot');
+    const progressBar = document.getElementById('progressBar');
+    const INTERVAL = 7000;
+    let current = 0;
+    let timer;
+    let progressTimer;
+    let elapsed = 0;
+
+    function goToSlide(idx) {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = idx;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+      // Update dot colors based on slide theme
+      const isDark = slides[current].classList.contains('hero-slide--dark');
+      dots.forEach(d => {
+        d.style.borderColor = isDark ? 'rgba(255,255,255,0.5)' : 'rgba(27,58,92,0.3)';
+      });
+      dots[current].style.borderColor = 'var(--action)';
+      resetProgress();
+    }
+
+    function nextSlide() { goToSlide((current + 1) % slides.length); }
+    function prevSlide() { goToSlide((current - 1 + slides.length) % slides.length); }
+
+    function resetProgress() {
+      elapsed = 0;
+      progressBar.style.width = '0%';
+      clearInterval(progressTimer);
+      clearTimeout(timer);
+      progressTimer = setInterval(() => {
+        elapsed += 50;
+        progressBar.style.width = (elapsed / INTERVAL * 100) + '%';
+      }, 50);
+      timer = setTimeout(nextSlide, INTERVAL);
+    }
+
+    dots.forEach(dot => dot.addEventListener('click', () => goToSlide(parseInt(dot.dataset.dot))));
+    document.getElementById('prevBtn').addEventListener('click', prevSlide);
+    document.getElementById('nextBtn').addEventListener('click', nextSlide);
+
+    // Pause on hover
+    const carousel = document.getElementById('heroCarousel');
+    carousel.addEventListener('mouseenter', () => { clearTimeout(timer); clearInterval(progressTimer); });
+    carousel.addEventListener('mouseleave', () => {
+      progressTimer = setInterval(() => { elapsed += 50; progressBar.style.width = (elapsed / INTERVAL * 100) + '%'; }, 50);
+      timer = setTimeout(nextSlide, INTERVAL - elapsed);
+    });
+
+    resetProgress();
+
+    // ── Scroll Reveal ──
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ── Header scroll shadow ──
+    window.addEventListener('scroll', () => {
+      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    // ── Order Estimator ──
+    const sizeLabels = {1:'קטן מאוד',2:'קטן',3:'בינוני',4:'גדול',5:'רשת / מוסד'};
+    const sizeSlider = document.getElementById('sizeSlider');
+    const employeesSlider = document.getElementById('employeesSlider');
+
+    function updateEstimate() {
+      const size = parseInt(sizeSlider.value);
+      const employees = parseInt(employeesSlider.value);
+      document.getElementById('sizeLabel').textContent = sizeLabels[size];
+      document.getElementById('employeesLabel').textContent = employees;
+      const base = [0,80,95,110,130,160][size];
+      let total = Math.max(Math.round(employees * base / 100) * 100, 1600);
+      document.getElementById('estimateResult').textContent = '₪ ' + total.toLocaleString('he-IL');
+      [sizeSlider, employeesSlider].forEach(s => {
+        const pct = ((s.value - s.min) / (s.max - s.min)) * 100;
+        s.style.background = `linear-gradient(to right, var(--action) ${pct}%, var(--navy-100) ${pct}%)`;
+      });
+    }
+    sizeSlider.addEventListener('input', updateEstimate);
+    employeesSlider.addEventListener('input', updateEstimate);
+    updateEstimate();
+
+    // ── Touch swipe for carousel ──
+    let touchStartX = 0;
+    carousel.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    carousel.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) { diff > 0 ? prevSlide() : nextSlide(); }
+    }, { passive: true });
+
+    // ── Israel Delivery Map — Accurate coordinates ──
+    const mapSection = document.getElementById('deliveryMap');
+    const ymTruck = document.getElementById('ymTruck');
+    const routeGlow = document.getElementById('routeGlow');
+    const statusCity = document.getElementById('currentCityName');
+    const markers = document.querySelectorAll('.city-marker');
+    const particlesLayer = document.getElementById('particlesLayer');
+
+    // Display positions (Natural Earth outline + Gush Dan spread)
+    const cityRoute = [
+      { name: 'גת רימון', x: 148, y: 185 },
+      { name: 'פתח תקווה', x: 172, y: 180 },
+      { name: 'רמת גן', x: 130, y: 200 },
+      { name: 'תל אביב', x: 108, y: 192 },
+      { name: 'חולון', x: 115, y: 212 },
+      { name: 'ראשון לציון', x: 124, y: 226 },
+      { name: 'אשדוד', x: 105, y: 258 },
+      { name: 'אשקלון', x: 93, y: 278 },
+      { name: 'באר שבע', x: 140, y: 350 },
+      { name: 'אילת', x: 132, y: 580 },
+      // Back north
+      { name: 'באר שבע', x: 140, y: 350 },
+      { name: 'ירושלים', x: 192, y: 260 },
+      { name: 'גת רימון', x: 148, y: 185 },
+      { name: 'הרצליה', x: 114, y: 172 },
+      { name: 'רעננה', x: 148, y: 165 },
+      { name: 'כפר סבא', x: 168, y: 160 },
+      { name: 'חיפה', x: 170, y: 108 },
+      // Return HQ
+      { name: 'גת רימון', x: 148, y: 185 },
+    ];
+
+    let mapStarted = false;
+    let routeIdx = 0;
+
+    function highlightCity(name) {
+      markers.forEach(m => {
+        const pin = m.querySelector('.c-pin');
+        const label = m.querySelector('.c-lbl');
+        const ping = m.querySelector('.c-ping');
+        if (m.dataset.city === name) {
+          if (pin) pin.classList.add('highlight');
+          if (label) label.classList.add('highlight');
+          if (ping) ping.classList.add('active');
+        } else {
+          if (pin) pin.classList.remove('highlight');
+          if (label) label.classList.remove('highlight');
+          if (ping) ping.classList.remove('active');
+        }
+      });
+      statusCity.textContent = name;
+    }
+
+    // Spawn floating particles at truck position (boxes + coins)
+    function spawnParticle(x, y) {
+      const svgNS = 'http://www.w3.org/2000/svg';
+      const isBox = Math.random() > 0.4;
+      const g = document.createElementNS(svgNS, 'g');
+      g.setAttribute('transform', `translate(${x},${y})`);
+      g.style.opacity = '1';
+
+      if (isBox) {
+        // Cardboard box 📦
+        const rect = document.createElementNS(svgNS, 'rect');
+        rect.setAttribute('x', '-4'); rect.setAttribute('y', '-4');
+        rect.setAttribute('width', '8'); rect.setAttribute('height', '7');
+        rect.setAttribute('rx', '1');
+        rect.setAttribute('fill', '#C4883C');
+        rect.setAttribute('stroke', '#A06B2C');
+        rect.setAttribute('stroke-width', '0.5');
+        g.appendChild(rect);
+        // Box flap
+        const flap = document.createElementNS(svgNS, 'path');
+        flap.setAttribute('d', 'M-4,-4 L0,-7 L4,-4');
+        flap.setAttribute('fill', '#D4983C');
+        flap.setAttribute('stroke', '#A06B2C');
+        flap.setAttribute('stroke-width', '0.4');
+        g.appendChild(flap);
+        // Y label
+        const txt = document.createElementNS(svgNS, 'text');
+        txt.setAttribute('x', '0'); txt.setAttribute('y', '1');
+        txt.setAttribute('text-anchor', 'middle');
+        txt.setAttribute('fill', '#fff');
+        txt.setAttribute('font-size', '4');
+        txt.setAttribute('font-weight', '900');
+        txt.setAttribute('font-family', 'Heebo');
+        txt.textContent = 'Y';
+        g.appendChild(txt);
+      } else {
+        // Coin ₪
+        const circ = document.createElementNS(svgNS, 'circle');
+        circ.setAttribute('cx', '0'); circ.setAttribute('cy', '0');
+        circ.setAttribute('r', '4');
+        circ.setAttribute('fill', '#E8A735');
+        circ.setAttribute('stroke', '#C4882C');
+        circ.setAttribute('stroke-width', '0.6');
+        g.appendChild(circ);
+        const txt = document.createElementNS(svgNS, 'text');
+        txt.setAttribute('x', '0'); txt.setAttribute('y', '2');
+        txt.setAttribute('text-anchor', 'middle');
+        txt.setAttribute('fill', '#6B3A0A');
+        txt.setAttribute('font-size', '4.5');
+        txt.setAttribute('font-weight', '900');
+        txt.setAttribute('font-family', 'Heebo');
+        txt.textContent = '₪';
+        g.appendChild(txt);
+      }
+
+      particlesLayer.appendChild(g);
+
+      // Float away animation
+      const dx = (Math.random() - 0.5) * 30;
+      const dy = -15 - Math.random() * 20;
+      const dur = 1200 + Math.random() * 600;
+      const start = performance.now();
+      function anim(now) {
+        const t = Math.min((now - start) / dur, 1);
+        const ease = 1 - Math.pow(1 - t, 3);
+        g.setAttribute('transform', `translate(${x + dx * ease},${y + dy * ease}) scale(${1 - t * 0.5})`);
+        g.style.opacity = String(1 - t);
+        if (t < 1) requestAnimationFrame(anim);
+        else particlesLayer.removeChild(g);
+      }
+      requestAnimationFrame(anim);
+    }
+
+    // Animate truck with particle drops along the way
+    function animateTruck(fromX, fromY, toX, toY, duration, callback) {
+      const start = performance.now();
+      let dropped = false;
+      function step(now) {
+        const t = Math.min((now - start) / duration, 1);
+        const ease = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+        const cx = fromX + (toX - fromX) * ease;
+        const cy = fromY + (toY - fromY) * ease;
+        ymTruck.setAttribute('transform', `translate(${cx},${cy})`);
+
+        // One particle mid-journey (subtle)
+        if (!dropped && t > 0.5) {
+          spawnParticle(cx, cy);
+          dropped = true;
+        }
+
+        if (t < 1) {
+          requestAnimationFrame(step);
+        } else {
+          // Drop package on arrival
+          spawnParticle(toX, toY);
+          setTimeout(() => spawnParticle(toX, toY), 150);
+          if (callback) callback();
+        }
+      }
+      requestAnimationFrame(step);
+    }
+
+    function driveRoute() {
+      if (routeIdx >= cityRoute.length) routeIdx = 1; // loop back, skip index 0 (already at HQ)
+      const city = cityRoute[routeIdx];
+      const prev = cityRoute[routeIdx > 0 ? routeIdx - 1 : cityRoute.length - 1];
+      const dist = Math.sqrt(Math.pow(city.x - prev.x, 2) + Math.pow(city.y - prev.y, 2));
+      const duration = Math.max(800, dist * 14);
+
+      highlightCity(city.name);
+      animateTruck(prev.x, prev.y, city.x, city.y, duration, () => {
+        setTimeout(() => { routeIdx++; driveRoute(); }, 700);
+      });
+    }
+
+    // Start on scroll
+    const mapObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !mapStarted) {
+          mapStarted = true;
+          routeGlow.classList.add('animate');
+          setTimeout(() => {
+            ymTruck.classList.add('driving');
+            highlightCity('גת רימון');
+            routeIdx = 1; // start moving from HQ to first city
+            setTimeout(driveRoute, 500);
+          }, 2000);
+          const hqPing = document.querySelector('[data-city="גת רימון"] .city-ping');
+          if (hqPing) hqPing.classList.add('active');
+        }
+      });
+    }, { threshold: 0.15 });
+    mapObserver.observe(mapSection);
+  </script>
+
+</body>
+</html>

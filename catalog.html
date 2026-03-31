@@ -3,241 +3,564 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>קטלוג מוצרים | וואי מרקט - אספקה למוסדות ועסקים</title>
-  <meta name="description" content="קטלוג מוצרי צריכה שוטפת לעסקים - ניקיון, נייר, חד פעמי, אריזות, קפה, ציוד משרדי. מחירי סיטונאות, משלוח ארצי.">
-  <link rel="canonical" href="https://ymarket.co.il/catalog">
-  <link rel="icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta name="theme-color" content="#1B3A5C">
-  <meta property="og:title" content="קטלוג מוצרים | וואי מרקט">
-  <meta property="og:description" content="מוצרי צריכה שוטפת לעסקים ומוסדות - מחירי סיטונאות, משלוח ארצי.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ymarket.co.il/catalog">
-  <meta property="og:locale" content="he_IL">
-  <meta property="og:site_name" content="וואי מרקט">
-  <meta property="og:image" content="https://ymarket.co.il/images/og-image.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="קטלוג מוצרים | וואי מרקט">
-  <meta name="twitter:description" content="מגוון רחב של מוצרי צריכה שוטפת למוסדות ועסקים - ניקיון, נייר, כלים חד פעמיים, מזון ועוד.">
-  <meta name="twitter:image" content="https://ymarket.co.il/images/og-image.jpg">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <link rel="preload" href="css/style.min.css?v=20260328" as="style">
+  <title>קטלוג מוצרים | וואי מרקט — 900+ מוצרים במחירי סיטונאות</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
-  <link rel="stylesheet" href="css/style.min.css?v=20260328">
-  <link rel="stylesheet" href="css/pages/catalog-carousels.css?v=20260328">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <style>
+    :root {
+      --navy-900:#0A1628;--navy-800:#112A45;--navy-700:#1B3A5C;--navy-600:#2A5080;--navy-500:#3668A0;
+      --navy-400:#4A82BF;--navy-300:#7AAAD6;--navy-200:#A8CCE8;--navy-100:#D4E6F4;--navy-50:#EBF2FA;
+      --action:#0A6BFF;--action-hover:#0856D6;--action-light:#3D8AFF;
+      --action-glow:rgba(10,107,255,0.35);--action-bg:rgba(10,107,255,0.06);
+      --gold:#E8A735;--gold-hover:#D4952E;--gold-light:#F5C76B;--gold-glow:rgba(232,167,53,0.3);
+      --green:#1a7f37;--green-light:#22C55E;
+      --surface:#FFFFFF;--surface-alt:#F6F8FB;
+      --surface-glass:rgba(255,255,255,0.65);--surface-glass-strong:rgba(255,255,255,0.82);
+      --text-primary:#0F172A;--text-secondary:#475569;--text-muted:#94A3B8;
+      --text-on-dark:#FFFFFF;--text-on-dark-muted:rgba(255,255,255,0.75);
+      --border:rgba(27,58,92,0.1);--border-hover:rgba(10,107,255,0.3);
+      --shadow-sm:0 2px 8px rgba(10,22,40,0.06);--shadow-md:0 4px 16px rgba(10,22,40,0.08);
+      --shadow-lg:0 8px 32px rgba(10,22,40,0.1);--shadow-xl:0 15px 60px -12px rgba(10,22,40,0.18);
+      --shadow-glass:0 8px 32px rgba(10,22,40,0.06),0 0 0 1px rgba(255,255,255,0.5) inset;
+      --shadow-hover:0 20px 60px -15px rgba(10,22,40,0.22);
+      --font:'Heebo',Arial,sans-serif;
+      --fs-xs:0.75rem;--fs-sm:0.875rem;--fs-base:1rem;--fs-md:1.125rem;
+      --fs-lg:clamp(1.15rem,1.5vw,1.3rem);--fs-xl:clamp(1.35rem,2vw,1.6rem);
+      --fs-2xl:clamp(1.6rem,2.5vw,2.1rem);--fs-3xl:clamp(2rem,3vw,2.75rem);
+      --sp-xs:0.25rem;--sp-sm:0.5rem;--sp-md:1rem;--sp-lg:1.5rem;
+      --sp-xl:2rem;--sp-2xl:3rem;--sp-3xl:4.5rem;--sp-4xl:6rem;
+      --r-sm:6px;--r-md:10px;--r-lg:16px;--r-xl:24px;--r-2xl:32px;--r-pill:100px;
+      --max-w:1320px;--padding:clamp(1rem,3vw,2rem);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:16px;scroll-behavior:smooth;overflow-x:clip}
+    body{font-family:var(--font);font-size:var(--fs-base);font-weight:400;line-height:1.6;color:var(--text-primary);background:var(--surface);direction:rtl;text-align:right;-webkit-font-smoothing:antialiased;overflow-x:clip}
+    img{display:block;max-width:100%;height:auto}
+    a{color:inherit;text-decoration:none}
+    ul,ol{list-style:none}
+    button,a,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+    input,button,textarea,select{font:inherit}
+    h1,h2,h3,h4,h5,h6{font-weight:700;line-height:1.25;color:var(--navy-800)}
+    ::selection{background:var(--action);color:white}
+    .container{width:100%;max-width:var(--max-w);margin:0 auto;padding:0 var(--padding)}
+    ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:var(--navy-50)}::-webkit-scrollbar-thumb{background:var(--navy-300);border-radius:99px}
+    @keyframes shimmer{0%{background-position:200% center}100%{background-position:-200% center}}
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "קטלוג מוצרים - וואי מרקט",
-    "description": "מוצרי צריכה שוטפת לעסקים ומוסדות",
-    "url": "https://ymarket.co.il/catalog"
-  }
-  </script>
+    /* ═══ HEADER ═══ */
+    .announcement{background:linear-gradient(135deg,var(--navy-900),var(--navy-800));text-align:center;font-size:var(--fs-sm);font-weight:700;position:relative;z-index:100}
+    .announcement a{display:flex;align-items:center;justify-content:center;gap:10px;padding:11px 16px;color:var(--gold);min-height:44px;transition:background 0.3s}
+    .announcement a:hover{background:rgba(232,167,53,0.08);color:var(--gold)}
+    .announcement::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+    .info-bar{background:var(--surface);border-bottom:1px solid var(--border);font-size:0.82rem;color:var(--text-secondary)}
+    .info-bar .container{display:flex;justify-content:space-between;align-items:center;padding-top:6px;padding-bottom:6px}
+    .info-bar__group{display:flex;align-items:center;gap:var(--sp-lg)}
+    .info-bar__item{display:flex;align-items:center;gap:6px}
+    .info-bar__item a{color:var(--text-secondary);transition:color 0.2s}.info-bar__item a:hover{color:var(--action)}
+    .info-bar__social a{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;color:var(--text-secondary);transition:all 0.25s}
+    .info-bar__social a:hover{color:var(--action);background:var(--action-bg)}
+    .header{background:var(--surface-glass-strong);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:9000;transition:box-shadow 0.3s}
+    .header.scrolled{box-shadow:0 4px 24px rgba(10,22,40,0.08)}
+    .header .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+    .header__logo{flex-shrink:0;display:flex;align-items:center;gap:10px}
+    .header__logo-icon{width:42px;height:42px;background:linear-gradient(135deg,var(--navy-700),var(--action));border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:1.3rem}
+    .header__logo-text{font-weight:800;font-size:1.35rem;color:var(--navy-800)}.header__logo-text span{color:var(--action)}
+    .nav{display:flex;align-items:center;gap:2px;flex:1;justify-content:center}
+    .nav__link{display:flex;align-items:center;gap:6px;padding:10px 18px;font-size:var(--fs-sm);font-weight:500;color:var(--text-secondary);border-radius:var(--r-md);transition:all 0.2s;white-space:nowrap}
+    .nav__link:hover,.nav__link.active{color:var(--action);background:var(--action-bg)}
+    .header__actions{display:flex;align-items:center;gap:8px}
+    .header__btn{display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 14px;background:none;border:none;cursor:pointer;font-size:var(--fs-sm);font-weight:500;color:var(--text-secondary);border-radius:var(--r-md);transition:all 0.2s;min-height:40px}
+    .header__btn:hover{color:var(--action);background:var(--action-bg)}
+    .header__login{background:var(--navy-700);color:white;border-radius:var(--r-pill);padding:8px 20px;font-weight:600}.header__login:hover{background:var(--navy-600);color:white}
+    .header__register{background:linear-gradient(135deg,var(--gold),var(--gold-hover));color:white;border-radius:var(--r-pill);padding:8px 20px;font-weight:700;box-shadow:0 2px 10px var(--gold-glow)}.header__register:hover{transform:translateY(-1px);box-shadow:0 4px 16px var(--gold-glow);color:white}
+    .mobile-menu-btn{display:none;background:none;border:none;font-size:1.4rem;color:var(--navy-700);cursor:pointer;padding:8px;min-width:44px;min-height:44px;align-items:center;justify-content:center}
+    .cart-badge{background:var(--gold);color:var(--navy-900);font-size:10px;font-weight:800;min-width:18px;height:18px;border-radius:50%;display:none;align-items:center;justify-content:center;margin-right:-4px}
+    .cart-badge.show{display:flex}
+
+    /* ═══ BREADCRUMB ═══ */
+    .breadcrumb{padding:var(--sp-md) 0;font-size:var(--fs-sm);color:var(--text-muted);display:flex;align-items:center;gap:8px}
+    .breadcrumb a{color:var(--text-secondary);transition:color 0.2s}.breadcrumb a:hover{color:var(--action)}
+    .breadcrumb__sep{font-size:0.6em}.breadcrumb__current{color:var(--text-primary);font-weight:600}
+
+    /* ═══ CATALOG HERO ═══ */
+    .catalog-hero{background:linear-gradient(165deg,var(--navy-800) 0%,var(--navy-700) 40%,var(--navy-600) 100%);padding:var(--sp-3xl) 0 var(--sp-2xl);position:relative;overflow:hidden}
+    .catalog-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 80%,rgba(10,107,255,0.12),transparent 50%),radial-gradient(ellipse at 80% 20%,rgba(232,167,53,0.08),transparent 50%)}
+    .catalog-hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse at center,black 30%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at center,black 30%,transparent 70%)}
+    .catalog-hero .container{position:relative;z-index:2}
+    .catalog-hero__title{font-size:var(--fs-3xl);font-weight:900;color:white;text-align:center;margin-bottom:var(--sp-sm)}
+    .catalog-hero__sub{font-size:var(--fs-md);color:var(--text-on-dark-muted);text-align:center;margin-bottom:var(--sp-xl)}
+    .search-box{max-width:680px;margin:0 auto var(--sp-xl);position:relative}
+    .search-box input{width:100%;padding:18px 56px 18px 24px;background:rgba(255,255,255,0.12);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.2);border-radius:var(--r-xl);color:white;font-size:var(--fs-md);font-weight:500;outline:none;transition:all 0.3s}
+    .search-box input::placeholder{color:rgba(255,255,255,0.5)}
+    .search-box input:focus{background:rgba(255,255,255,0.18);border-color:rgba(255,255,255,0.4);box-shadow:0 0 0 4px rgba(10,107,255,0.2)}
+    .search-box__icon{position:absolute;right:20px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,0.5);font-size:1.1rem;pointer-events:none}
+    .search-box__count{position:absolute;left:20px;top:50%;transform:translateY(-50%);font-size:var(--fs-xs);color:rgba(255,255,255,0.4);font-weight:600}
+    .search-dropdown{position:absolute;top:calc(100% + 8px);left:0;right:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--shadow-xl);max-height:360px;overflow-y:auto;z-index:100;display:none}
+    .search-dropdown.active{display:block}
+    .search-dropdown a{display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border);transition:background 0.15s;color:var(--text-primary)}
+    .search-dropdown a:hover{background:var(--action-bg)}
+    .search-dropdown img{width:44px;height:44px;object-fit:contain;border-radius:var(--r-sm);background:var(--surface-alt);flex-shrink:0}
+    .search-dropdown .r-name{font-size:var(--fs-sm);font-weight:600;color:var(--navy-800)}
+    .search-dropdown .r-price{font-size:var(--fs-xs);color:var(--text-muted)}
+    .search-dropdown .no-results{padding:20px;text-align:center;color:var(--text-muted);font-size:var(--fs-sm)}
+    .cat-pills{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+    .cat-pill{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:var(--r-pill);font-size:var(--fs-xs);font-weight:600;color:rgba(255,255,255,0.7);cursor:pointer;transition:all 0.25s;white-space:nowrap}
+    .cat-pill:hover,.cat-pill.active{background:var(--action);color:white;border-color:var(--action);box-shadow:0 2px 12px var(--action-glow)}
+    .cat-pill i{font-size:0.8em}
+
+    /* ═══ REG BANNER ═══ */
+    .reg-banner{background:var(--surface-glass-strong);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:var(--r-xl);padding:var(--sp-lg) var(--sp-xl);margin:var(--sp-xl) 0;display:flex;align-items:center;justify-content:space-between;gap:var(--sp-lg);box-shadow:var(--shadow-glass);position:relative;overflow:hidden}
+    .reg-banner::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--action),var(--gold),var(--action));background-size:200% 100%;animation:shimmer 4s infinite}
+    .reg-banner strong{display:block;font-size:var(--fs-md);color:var(--navy-800);margin-bottom:2px}
+    .reg-banner p{font-size:var(--fs-sm);color:var(--text-secondary);margin:0}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 24px;font-family:var(--font);font-size:var(--fs-sm);font-weight:700;line-height:1;border:none;border-radius:var(--r-lg);cursor:pointer;transition:all 0.3s cubic-bezier(0.22,1,0.36,1);white-space:nowrap;text-decoration:none}
+    .btn--gold{background:linear-gradient(135deg,var(--gold),var(--gold-hover));color:white;box-shadow:0 4px 16px var(--gold-glow)}.btn--gold:hover{transform:translateY(-2px);box-shadow:0 8px 24px var(--gold-glow);color:white}
+
+    /* ═══ CATEGORY SECTIONS (carousel) ═══ */
+    .cat-section{padding:var(--sp-2xl) 0;border-bottom:1px solid var(--border)}
+    .cat-section:nth-child(even){background:var(--surface-alt)}
+    .cat-section__head{display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--sp-lg);flex-wrap:wrap;gap:var(--sp-sm)}
+    .cat-section__title{display:flex;align-items:center;gap:10px;font-size:var(--fs-xl);font-weight:800;color:var(--navy-800)}
+    .cat-section__icon{width:40px;height:40px;border-radius:var(--r-lg);background:linear-gradient(135deg,var(--navy-50),var(--action-bg));display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--navy-600);flex-shrink:0}
+    .cat-section__count{font-size:var(--fs-xs);font-weight:500;color:var(--text-muted);background:var(--navy-50);padding:2px 10px;border-radius:var(--r-pill);margin-right:4px}
+    .cat-section__link{font-size:var(--fs-sm);font-weight:600;color:var(--action);display:flex;align-items:center;gap:6px;transition:gap 0.2s}.cat-section__link:hover{gap:10px}
+    /* FAQ */
+    .cat-faq{margin-bottom:var(--sp-lg);padding:var(--sp-md) var(--sp-lg);background:var(--surface-alt);border-radius:var(--r-lg);border-right:3px solid var(--action)}
+    .cat-faq__q{font-size:var(--fs-sm);font-weight:700;color:var(--navy-700);margin-bottom:4px}
+    .cat-faq__a{font-size:var(--fs-sm);color:var(--text-secondary);line-height:1.6}
+    .cat-faq__a a{color:var(--action);font-weight:600}
+
+    /* Swiper wrapper */
+    .cat-swiper-wrap{position:relative;padding:0 36px}
+    .cat-swiper-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:32px;height:32px;border-radius:50%;background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow-md);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--navy-600);font-size:0.75rem;transition:all 0.2s}
+    .cat-swiper-btn:hover{background:var(--action);color:white;border-color:var(--action)}
+    .cat-swiper-btn.prev{right:0}.cat-swiper-btn.next{left:0}
+    .cat-swiper-btn.swiper-button-disabled{opacity:0.3;pointer-events:none}
+    .swiper-pagination{margin-top:var(--sp-md)!important;position:relative!important}
+    .swiper-pagination-bullet{width:8px!important;height:8px!important;background:var(--navy-200)!important;opacity:1!important}
+    .swiper-pagination-bullet-active{background:var(--action)!important;width:24px!important;border-radius:4px!important}
+
+    /* ═══ PRODUCT CARD ═══ */
+    .p-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-xl);overflow:hidden;transition:all 0.35s cubic-bezier(0.22,1,0.36,1);position:relative;display:flex;flex-direction:column;height:100%}
+    .p-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--action),var(--navy-400));transform:scaleX(0);transition:transform 0.35s}
+    .p-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-hover);border-color:var(--border-hover)}
+    .p-card:hover::after{transform:scaleX(1)}
+    .p-card__img{height:170px;background:var(--surface-alt);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+    .p-card__img img{width:100%;height:100%;object-fit:contain;padding:12px;transition:transform 0.4s}
+    .p-card:hover .p-card__img img{transform:scale(1.06)}
+    .p-card__img .placeholder-icon{font-size:2.5rem;color:var(--navy-200)}
+    .p-card__body{padding:var(--sp-sm) var(--sp-md) var(--sp-md);flex:1;display:flex;flex-direction:column}
+    .p-card__name{font-size:var(--fs-sm);font-weight:700;color:var(--navy-800);line-height:1.4;margin-bottom:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.8em}
+    .p-card__name:hover{color:var(--action)}
+    .p-card__price{font-size:var(--fs-md);font-weight:800;color:var(--navy-800);margin-bottom:var(--sp-sm)}
+    .p-card__price .vat{font-size:var(--fs-xs);font-weight:400;color:var(--text-muted);margin-right:4px}
+    .p-card__price-locked{display:flex;align-items:center;gap:6px;padding:8px 10px;background:var(--navy-50);border-radius:var(--r-md);font-size:11px;color:var(--navy-600);font-weight:600;margin-bottom:var(--sp-sm);border:1px dashed var(--navy-200)}
+    .p-card__price-locked i{color:var(--gold);font-size:0.85rem}
+
+    /* Cart button → Quantity control transition */
+    .p-card__cart-area{margin-top:auto}
+    .p-card__add-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:6px;padding:10px;background:var(--action);color:white;border:none;border-radius:var(--r-md);font-size:var(--fs-xs);font-weight:700;cursor:pointer;transition:all 0.25s;font-family:var(--font)}
+    .p-card__add-btn:hover{background:var(--action-hover)}
+
+    /* In-cart quantity controls (replaces button) */
+    .p-card__qty-wrap{display:flex;align-items:center;border-radius:var(--r-md);overflow:hidden;background:#f0fdf4;border:2px solid var(--green-light)}
+    .p-card__qty-btn{width:38px;height:40px;background:transparent;border:none;cursor:pointer;font-size:var(--fs-md);font-weight:800;color:var(--green);display:flex;align-items:center;justify-content:center;font-family:var(--font);transition:background 0.15s}
+    .p-card__qty-btn:hover{background:rgba(34,197,94,0.15)}
+    .p-card__qty-btn.remove{color:#DC3545}
+    .p-card__qty-btn.remove:hover{background:rgba(220,53,69,0.1)}
+    .p-card__qty-input{width:48px;text-align:center;font-size:var(--fs-base);font-weight:800;color:var(--green);background:transparent;height:40px;border:none;outline:none;font-family:var(--font);-moz-appearance:textfield}
+    .p-card__qty-input::-webkit-inner-spin-button,.p-card__qty-input::-webkit-outer-spin-button{-webkit-appearance:none}
+    .p-card__qty-check{font-size:0.7rem;color:var(--green);padding:0 4px;display:flex;align-items:center}
+    .p-card__wa-row{display:flex;align-items:center;gap:6px;margin-top:6px}
+    .p-card__wa-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:8px;background:var(--green);color:white;border:none;border-radius:var(--r-md);font-size:11px;font-weight:600;cursor:pointer;transition:all 0.2s;font-family:var(--font)}
+    .p-card__wa-btn:hover{background:#158a32}
+
+    /* ═══ FOOTER ═══ */
+    .footer{background:linear-gradient(180deg,var(--navy-900),#060E1A);color:var(--text-on-dark-muted);padding:var(--sp-4xl) 0 var(--sp-xl);position:relative}
+    .footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 10%,rgba(10,107,255,0.3) 50%,transparent 90%)}
+    .footer__grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:var(--sp-3xl);margin-bottom:var(--sp-3xl)}
+    .footer__brand p{margin-top:var(--sp-md);font-size:var(--fs-sm);line-height:1.7}
+    .footer__brand-logo{display:flex;align-items:center;gap:10px}
+    .footer__brand-icon{width:40px;height:40px;background:linear-gradient(135deg,var(--navy-600),var(--action));border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:1.2rem}
+    .footer__brand-name{font-size:1.2rem;font-weight:800;color:white}
+    .footer__social{display:flex;gap:10px;margin-top:var(--sp-lg)}
+    .footer__social a{width:40px;height:40px;border-radius:var(--r-md);background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:var(--text-on-dark-muted);transition:all 0.25s}
+    .footer__social a:hover{background:var(--action);color:white;border-color:var(--action)}
+    .footer__heading{font-size:var(--fs-sm);font-weight:700;color:white;margin-bottom:var(--sp-lg);text-transform:uppercase;letter-spacing:0.5px}
+    .footer__links{display:flex;flex-direction:column;gap:10px}
+    .footer__links a{font-size:var(--fs-sm);color:var(--text-on-dark-muted);transition:all 0.2s}.footer__links a:hover{color:white;transform:translateX(-4px)}
+    .footer__contact-item{display:flex;align-items:center;gap:10px;margin-bottom:12px;font-size:var(--fs-sm)}
+    .footer__contact-item i{width:20px;text-align:center;color:var(--action-light)}
+    .footer__contact-item a{color:var(--text-on-dark-muted);transition:color 0.2s}.footer__contact-item a:hover{color:white}
+    .footer__bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:var(--sp-xl);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--sp-md)}
+    .footer__copyright{font-size:var(--fs-xs);color:rgba(255,255,255,0.45)}
+    .footer__legal{display:flex;gap:var(--sp-lg);flex-wrap:wrap}
+    .footer__legal a{font-size:var(--fs-xs);color:rgba(255,255,255,0.45);transition:color 0.2s}.footer__legal a:hover{color:white}
+    .whatsapp-float{position:fixed;bottom:24px;right:24px;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:28px;box-shadow:0 4px 20px rgba(37,211,102,0.4);z-index:8000;transition:all 0.3s}.whatsapp-float:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,0.5);color:white}
+
+    /* Toast */
+    .toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--navy-800);color:white;padding:12px 24px;border-radius:var(--r-lg);font-size:var(--fs-sm);font-weight:600;box-shadow:var(--shadow-xl);z-index:9999;opacity:0;transition:all 0.3s;pointer-events:none;display:flex;align-items:center;gap:8px}
+    .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+    .toast i{color:var(--green-light)}
+
+    /* Loading spinner */
+    .loading{text-align:center;padding:var(--sp-4xl);color:var(--text-muted)}
+    .loading i{font-size:2rem;margin-bottom:var(--sp-md);display:block;color:var(--action)}
+
+    @media(max-width:768px){
+      .nav{display:none}.mobile-menu-btn{display:flex}
+      .header .container{height:60px}.info-bar{display:none}
+      .reg-banner{flex-direction:column;text-align:center}
+      .cat-pills{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;padding-bottom:8px;-webkit-overflow-scrolling:touch}.cat-pills::-webkit-scrollbar{display:none}
+      .footer__grid{grid-template-columns:1fr}.footer__bottom{flex-direction:column;text-align:center}
+      .cat-swiper-wrap{padding:0 28px}.cat-swiper-btn{width:28px;height:28px;font-size:0.65rem}
+    }
+    @media(max-width:480px){
+      .header__login span,.header__register span{display:none}
+      .whatsapp-float{width:52px;height:52px;font-size:24px;bottom:16px;right:16px}
+      .p-card__img{height:130px}
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Top Bar -->
-  <div class="top-bar">
+  <!-- Header -->
+  <div class="announcement"><a href="/register"><i class="fas fa-crown"></i> רוכשים בכמויות מסחריות? הצטרפו למועדון הלקוחות וקבלו מחירון סיטונאי ייעודי <i class="fas fa-chevron-left" style="font-size:0.75em;"></i></a></div>
+  <div class="info-bar"><div class="container"><div class="info-bar__group"><div class="info-bar__item"><i class="fas fa-phone-alt"></i> <a href="tel:037740400">03-7740400</a></div><div class="info-bar__item"><i class="fas fa-envelope"></i> <a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a></div><div class="info-bar__item"><i class="fas fa-clock"></i> <span>א'-ה' 08:00-17:00</span></div></div><div class="info-bar__group info-bar__social"><a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a><a href="https://www.facebook.com/profile.php?id=100083110428101" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/ymarket.ai" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div></div></div>
+  <header class="header" id="header"><div class="container"><a href="/" class="header__logo"><img src="/images/logo/logo-dark-2x.png" alt="וואי מרקט" height="44" style="height:44px;width:auto;"></a><nav class="nav" aria-label="ניווט ראשי"><div class="nav__item"><a href="/" class="nav__link">דף הבית</a></div><div class="nav__item"><a href="/catalog" class="nav__link active">מוצרים</a></div><div class="nav__item"><a href="/about" class="nav__link">אודות</a></div><div class="nav__item"><a href="/blog" class="nav__link">בלוג</a></div><div class="nav__item"><a href="/contact" class="nav__link">צרו קשר</a></div></nav><div class="header__actions"><button class="header__btn" aria-label="חיפוש"><i class="fas fa-search"></i></button><button class="header__btn" aria-label="עגלה" id="cartBtn"><i class="fas fa-shopping-cart"></i><span class="cart-badge" id="cartBadge">0</span></button><a href="/login" class="header__btn header__login"><i class="fas fa-user"></i> <span>כניסה</span></a><a href="/register" class="header__btn header__register"><i class="fas fa-user-plus"></i> <span>הרשמה</span></a></div><button class="mobile-menu-btn" aria-label="תפריט"><i class="fas fa-bars"></i></button></div></header>
+
+  <main>
+    <div class="container"><nav class="breadcrumb" aria-label="ניווט"><a href="/">דף הבית</a><span class="breadcrumb__sep"><i class="fas fa-chevron-left"></i></span><span class="breadcrumb__current">קטלוג מוצרים</span></nav></div>
+
+    <!-- Catalog Hero -->
+    <section class="catalog-hero">
+      <div class="container">
+        <h1 class="catalog-hero__title">קטלוג מוצרים</h1>
+        <p class="catalog-hero__sub"><span id="totalCount">0</span> מוצרים במחירי סיטונאות — משלוח ארצי תוך 24-72 שעות</p>
+        <div class="search-box">
+          <i class="fas fa-search search-box__icon"></i>
+          <input type="text" id="searchInput" placeholder="חפשו מוצר, קטגוריה או ברקוד..." autocomplete="off">
+          <span class="search-box__count" id="searchCount"></span>
+          <div class="search-dropdown" id="searchDropdown"></div>
+        </div>
+        <div class="cat-pills" id="catPills"><!-- built by JS --></div>
+      </div>
+    </section>
+
+    <!-- Reg Banner -->
     <div class="container">
-      <div class="top-bar__info">
-        <div class="top-bar__item"><i class="fas fa-phone-alt"></i> <a href="tel:037740400">03-7740400</a></div>
-        <div class="top-bar__item"><i class="fas fa-envelope"></i> <a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a></div>
-        <div class="top-bar__item"><i class="fas fa-clock"></i> <span>א'-ה' 08:00-17:00</span></div>
-      </div>
-      <div class="top-bar__social">
-        <a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=100083110428101" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/ymarket.ai" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <div class="reg-banner">
+        <div><strong><i class="fas fa-crown" style="color:var(--gold);margin-left:6px;"></i> רוצים מחירים מותאמים לעסק שלכם?</strong><p>הירשמו לפורטל ההזמנות — מחירון אישי, הזמנה 24/7, היסטוריית הזמנות והזמנה חוזרת בקליק</p></div>
+        <a href="/register" class="btn btn--gold"><i class="fas fa-user-plus"></i> הרשמה בחינם</a>
       </div>
     </div>
-  </div>
 
-  <header class="header">
-    <div class="container">
-      <a href="/" class="header__logo">
-        <img src="/images/logo/logo-dark.png" alt="וואי מרקט" width="98" height="52">
-      </a>
-      <nav class="main-nav" aria-label="ניווט ראשי">
-        <div class="main-nav__item">
-          <a href="/" class="main-nav__link" data-nav="home">דף הבית</a>
-        </div>
-        <div class="main-nav__item">
-          <a href="/catalog" class="main-nav__link" data-nav="catalog">מוצרים <i class="fas fa-chevron-down"></i></a>
-          <div class="mega-menu">
-            <div class="mega-menu__grid">
-              <a href="/category/industrial-cleaning-supplies-wholesale/" class="mega-menu__category"><i class="fas fa-spray-can"></i><span class="mega-menu__cat-name">חומרי ניקוי וכימיקלים</span></a>
-              <a href="/category/bulk-paper-towel-office-supplies/" class="mega-menu__category"><i class="fas fa-toilet-paper"></i><span class="mega-menu__cat-name">מוצרי נייר וניגוב</span></a>
-              <a href="/category/disposable-catering-food-service/" class="mega-menu__category"><i class="fas fa-utensils"></i><span class="mega-menu__cat-name">חד פעמי ואירוח</span></a>
-              <a href="/category/food-packaging-delivery-solutions/" class="mega-menu__category"><i class="fas fa-box-open"></i><span class="mega-menu__cat-name">אריזות מזון ו-Take Away</span></a>
-              <a href="/category/heavy-duty-garbage-bags-wholesale/" class="mega-menu__category"><i class="fas fa-trash-alt"></i><span class="mega-menu__cat-name">שקיות ופתרונות אשפה</span></a>
-              <a href="/category/professional-cleaning-cloths-microfiber/" class="mega-menu__category"><i class="fas fa-tshirt"></i><span class="mega-menu__cat-name">טקסטיל, מטליות וסחבות</span></a>
-              <a href="/category/office-coffee-breakroom-supplies/" class="mega-menu__category"><i class="fas fa-coffee"></i><span class="mega-menu__cat-name">קפה, שתייה וכיבוד</span></a>
-              <a href="/category/safety-ppe-equipment-for-business/" class="mega-menu__category"><i class="fas fa-hard-hat"></i><span class="mega-menu__cat-name">בטיחות ומיגון אישי</span></a>
-              <a href="/category/office-supplies-wholesale-business/" class="mega-menu__category"><i class="fas fa-pen"></i><span class="mega-menu__cat-name">ציוד משרדי וכללי</span></a>
-              <a href="/category/maintenance-technical-equipment-wholesale/" class="mega-menu__category"><i class="fas fa-wrench"></i><span class="mega-menu__cat-name">ציוד טכני ואחזקה</span></a>
-              <a href="/category/warehouse-packaging-supplies-wholesale/" class="mega-menu__category"><i class="fas fa-tape"></i><span class="mega-menu__cat-name">עטיפה, אריזה ולוגיסטיקה</span></a>
-              <a href="/category/first-aid-medical-equipment-business/" class="mega-menu__category"><i class="fas fa-first-aid"></i><span class="mega-menu__cat-name">עזרה ראשונה - רפואי</span></a>
-              <a href="/category/personal-hygiene-products-wholesale/" class="mega-menu__category"><i class="fas fa-pump-soap"></i><span class="mega-menu__cat-name">טואלטיקה וטיפוח</span></a>
-              <a href="/category/institutional-cleaning-tools-equipment/" class="mega-menu__category"><i class="fas fa-tools"></i><span class="mega-menu__cat-name">כלי עבודה וציוד משקי</span></a>
-            </div>
-          </div>
-        </div>
-        <div class="main-nav__item">
-          <a href="/about" class="main-nav__link" data-nav="about">אודות</a>
-        </div>
-        <div class="main-nav__item">
-          <a href="/blog" class="main-nav__link" data-nav="blog">בלוג</a>
-        </div>
-        <div class="main-nav__item">
-          <a href="/contact" class="main-nav__link" data-nav="contact">צרו קשר</a>
-        </div>
-      </nav>
-      <div class="header__actions">
-        <button class="header__search-toggle" aria-label="חיפוש"><i class="fas fa-search"></i></button>
-        <button class="header__cart-btn" aria-label="עגלת קניות"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></button>
-        <a href="/login" class="header__login-btn" aria-label="כניסת לקוחות"><i class="fas fa-user"></i> <span>כניסת לקוחות</span></a>
-        <a href="/register" class="header__register-btn"><i class="fas fa-user-plus"></i> <span>הרשמה</span></a>
-      </div>
-      <button class="mobile-menu-btn" aria-label="תפריט" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    <!-- Dynamic Category Sections -->
+    <div id="catalogSections">
+      <div class="loading"><i class="fas fa-spinner fa-spin"></i><p>טוען מוצרים...</p></div>
     </div>
-  </header>
-  <div class="mobile-overlay"></div>
-  <div class="search-overlay"><div class="search-overlay__inner"><form action="/catalog" method="get"><input type="search" name="search" class="search-overlay__input" placeholder="חפשו מוצר..." aria-label="חיפוש מוצר" autocomplete="off"></form></div></div><!-- Breadcrumb -->
-  <div class="container">
-    <nav class="breadcrumb" aria-label="ניווט פירורי לחם">
-      <a href="index">דף הבית</a>
-      <span class="breadcrumb__separator"><i class="fas fa-chevron-left"></i></span>
-      <span class="breadcrumb__current">קטלוג מוצרים</span>
-    </nav>
-  </div>
-
-  <!-- Search Hero -->
-  <div class="catalog-search-hero">
-    <div class="container">
-      <h1>קטלוג מוצרים — <span id="totalProductCount">0</span> מוצרים במחירי סיטונאות</h1>
-      <div class="search-box">
-        <i class="fas fa-search search-icon"></i>
-        <input type="text" id="catalogSearchInput" placeholder="חפשו מוצר, קטגוריה או ברקוד..." autocomplete="off">
-        <div class="search-results-dropdown" id="searchResultsDropdown"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Registration Banner -->
-  <div class="container">
-    <div class="catalog-reg-banner">
-      <div>
-        <strong>רוצים מחירים מותאמים לעסק שלכם?</strong>
-        <p>הירשמו לפורטל ההזמנות — מחירים אישיים, הזמנה אונליין 24/7, והיסטוריית הזמנות</p>
-      </div>
-      <a href="/register" class="btn btn--white btn--lg"><i class="fas fa-user-plus"></i> הרשמה בחינם</a>
-    </div>
-  </div>
-
-  <!-- Category Carousels -->
-  <div class="container">
-    <div id="carouselSections">
-      <!-- Populated dynamically by catalog-carousels.js -->
-      <div style="text-align:center;padding:3rem;color:#9ca3af;">
-        <i class="fas fa-spinner fa-spin fa-2x"></i>
-        <p>טוען מוצרים...</p>
-      </div>
-    </div>
-  </div>
+  </main>
 
   <!-- Footer -->
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <footer class="footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <img src="/images/logo/logo-white.png" alt="וואי מרקט" width="112" height="60">
-          <p>נגלר סחר והפצה — סחר, שיווק והפצה של מוצרי צריכה שוטפת לעסקים ומוסדות בכל רחבי הארץ.</p>
-          <div class="footer__social">
-            <a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=100083110428101" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/ymarket.ai" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
+  <footer class="footer"><div class="container"><div class="footer__grid"><div class="footer__brand"><div class="footer__brand-logo"><img src="/images/logo/logo-white-2x.png" alt="וואי מרקט" height="50" style="height:50px;width:auto;"></div><p>נגלר סחר והפצה — סחר, שיווק והפצה של מוצרי צריכה שוטפת לעסקים ומוסדות בכל רחבי הארץ.</p><div class="footer__social"><a href="https://wa.me/972549922492" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a><a href="https://www.facebook.com/profile.php?id=100083110428101" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/ymarket.ai" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a></div></div><div><h3 class="footer__heading">קטגוריות</h3><div class="footer__links"><a href="/category/bulk-paper-towel-office-supplies/">מוצרי נייר</a><a href="/category/industrial-cleaning-supplies-wholesale/">חומרי ניקוי</a><a href="/category/disposable-catering-food-service/">חד פעמי</a><a href="/category/food-packaging-delivery-solutions/">אריזות מזון</a><a href="/category/office-coffee-breakroom-supplies/">קפה וכיבוד</a><a href="/category/safety-ppe-equipment-for-business/">בטיחות ומיגון</a><a href="/category/heavy-duty-garbage-bags-wholesale/">שקיות אשפה</a></div></div><div><h3 class="footer__heading">קישורים</h3><div class="footer__links"><a href="/catalog">קטלוג</a><a href="/about">אודות</a><a href="/blog">בלוג</a><a href="/faq">שאלות</a><a href="/contact">צרו קשר</a></div></div><div><h3 class="footer__heading">צרו קשר</h3><div class="footer__contact-item"><i class="fas fa-phone-alt"></i><a href="tel:037740400">03-7740400</a></div><div class="footer__contact-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/972549922492" target="_blank" rel="noopener">WhatsApp</a></div><div class="footer__contact-item"><i class="fas fa-envelope"></i><a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a></div><div class="footer__contact-item"><i class="fas fa-clock"></i><span>א'-ה' 08:00-17:00</span></div></div></div><div class="footer__bottom"><span class="footer__copyright">&copy; 2026 וואי מרקט — נגלר סחר והפצה.</span><div class="footer__legal"><a href="/legal/terms">תקנון</a><a href="/legal/privacy">פרטיות</a><a href="/legal/shipping">משלוחים</a><a href="/legal/accessibility">נגישות</a></div></div></div></footer>
 
-        <div class="footer__col">
-          <h4>קטגוריות</h4>
-          <div class="footer__links">
-            <a href="/category/bulk-paper-towel-office-supplies/">מוצרי נייר וניגוב</a>
-            <a href="/category/industrial-cleaning-supplies-wholesale/">חומרי ניקוי</a>
-            <a href="/category/disposable-catering-food-service/">חד פעמי ואירוח</a>
-            <a href="/category/food-packaging-delivery-solutions/">אריזות Take Away</a>
-            <a href="/category/office-coffee-breakroom-supplies/">קפה, שתייה וכיבוד</a>
-            <a href="/category/safety-ppe-equipment-for-business/">בטיחות ומיגון</a>
-            <a href="/category/heavy-duty-garbage-bags-wholesale/">שקיות אשפה</a>
-            <a href="/category/professional-cleaning-cloths-microfiber/">טקסטיל ומטליות</a>
-            <a href="/category/office-supplies-wholesale-business/">ציוד משרדי</a>
-            <a href="/category/maintenance-technical-equipment-wholesale/">ציוד טכני</a>
-          </div>
-        </div>
+  <a href="https://wa.me/972549922492" class="whatsapp-float" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+  <div class="toast" id="toast"><i class="fas fa-check-circle"></i><span id="toastText"></span></div>
 
-        <div class="footer__col">
-          <h4>קישורים מהירים</h4>
-          <div class="footer__links">
-            <a href="/catalog">קטלוג מוצרים</a>
-            <a href="/about">אודות</a>
-            <a href="/blog">בלוג</a>
-            <a href="/faq">שאלות ותשובות</a>
-            <a href="/contact">צרו קשר</a>
-            <a href="/tracking">מעקב משלוחים</a>
-          </div>
-        </div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+  (function(){
+    'use strict';
 
-        <div class="footer__col">
-          <h4>צרו קשר</h4>
-          <div class="footer__contact-item">
-            <i class="fas fa-phone-alt"></i>
-            <a href="tel:037740400">03-7740400</a>
-          </div>
-          <div class="footer__contact-item">
-            <i class="fab fa-whatsapp"></i>
-            <a href="https://wa.me/972549922492" target="_blank" rel="noopener">WhatsApp</a>
-          </div>
-          <div class="footer__contact-item">
-            <i class="fas fa-envelope"></i>
-            <a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a>
-          </div>
-          <div class="footer__contact-item">
-            <i class="fas fa-clock"></i>
-            <span>א'-ה' 08:00-17:00</span>
-          </div>
-        </div>
-      </div>
+    // ── Icon map ──
+    var ICONS = {
+      'חומרי-ניקוי-וכימיקלים':'fa-spray-can','מוצרי-נייר-וניגוב':'fa-toilet-paper',
+      'חד-פעמי-ואירוח':'fa-utensils','אריזות-מזון-ו-Take-Away':'fa-box-open',
+      'שקיות-ופתרונות-אשפה':'fa-trash-alt','טקסטיל-מטליות-וסחבות':'fa-tshirt',
+      'קפה-שתייה-וכיבוד':'fa-coffee','בטיחות-ומיגון-אישי-PPE':'fa-hard-hat',
+      'ציוד-משרדי-וכללי':'fa-pen','ציוד-טכני-ואחזקה':'fa-wrench',
+      'עטיפה-אריזה-ולוגיסטיקה':'fa-tape','כלי-עבודה-וציוד-משקי':'fa-tools',
+      'עזרה-ראשונה-רפואי':'fa-first-aid','טואלטיקה-וטיפוח-אישי':'fa-pump-soap',
+      'סטוק-עד-הבית':'fa-home','industrial-cleaning-supplies-wholesale':'fa-spray-can',
+      'bulk-paper-towel-office-supplies':'fa-toilet-paper','disposable-catering-food-service':'fa-utensils',
+      'food-packaging-delivery-solutions':'fa-box-open','heavy-duty-garbage-bags-wholesale':'fa-trash-alt',
+      'professional-cleaning-cloths-microfiber':'fa-tshirt','office-coffee-breakroom-supplies':'fa-coffee',
+      'safety-ppe-equipment-for-business':'fa-hard-hat','office-supplies-wholesale-business':'fa-pen',
+      'maintenance-technical-equipment-wholesale':'fa-wrench','warehouse-packaging-supplies-wholesale':'fa-tape',
+      'institutional-cleaning-tools-equipment':'fa-tools','first-aid-medical-equipment-business':'fa-first-aid',
+      'personal-hygiene-products-wholesale':'fa-pump-soap','home-delivery-stock-deals':'fa-home',
+      'textiles-clothing-living-supplies':'fa-bed','reusable-serving-tools':'fa-wine-glass-alt'
+    };
 
-      <div class="footer__bottom">
-        <span class="footer__copyright">&copy; 2026 וואי מרקט — נגלר סחר והפצה. כל הזכויות שמורות.</span>
-        <div class="footer__legal">
-          <a href="/legal/terms">תקנון האתר</a>
-          <a href="/legal/privacy">מדיניות פרטיות</a>
-          <a href="/legal/shipping">מדיניות משלוחים</a>
-          <a href="/legal/returns">החזרות וביטולים</a>
-          <a href="/legal/accessibility">נגישות</a>
-          <a href="/legal/cookies">עוגיות</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+    // ── Cart helpers ──
+    function getCart(){ return JSON.parse(localStorage.getItem('ym_cart')||'[]'); }
+    function saveCart(cart){ localStorage.setItem('ym_cart',JSON.stringify(cart)); updateBadge(); }
+    function getQty(id){ var c=getCart(); for(var i=0;i<c.length;i++) if(c[i].id===id) return c[i].quantity; return 0; }
+    function setQty(prod,qty){
+      var cart=getCart();
+      if(qty<=0){ cart=cart.filter(function(x){return x.id!==prod.id}); }
+      else {
+        var found=false;
+        for(var i=0;i<cart.length;i++) if(cart[i].id===prod.id){cart[i].quantity=qty;found=true;break;}
+        if(!found) cart.push({id:prod.id,name:prod.name,price:prod.saleNis||0,quantity:qty});
+      }
+      saveCart(cart);
+    }
+    function updateBadge(){
+      var cart=getCart(),total=0;
+      for(var i=0;i<cart.length;i++) total+=cart[i].quantity;
+      var badge=document.getElementById('cartBadge');
+      if(badge){badge.textContent=total;badge.classList.toggle('show',total>0);}
+    }
+    function showToast(msg){
+      var t=document.getElementById('toast'),txt=document.getElementById('toastText');
+      txt.textContent=msg; t.classList.add('show');
+      setTimeout(function(){t.classList.remove('show');},2500);
+    }
 
-  <a href="https://wa.me/972549922492" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    // ── Render card controls (add btn OR qty controls) ──
+    function renderCartArea(container, prod){
+      var qty = getQty(prod.id);
+      if(qty <= 0){
+        // Show "Add to cart" button
+        container.innerHTML = '<button class="p-card__add-btn" data-pid="'+prod.id+'"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>';
+      } else {
+        // Show quantity controls (green, prominent)
+        container.innerHTML =
+          '<div class="p-card__qty-wrap" data-pid="'+prod.id+'">'+
+            '<button class="p-card__qty-btn plus" data-action="up">+</button>'+
+            '<span class="p-card__qty-check"><i class="fas fa-check"></i></span>'+
+            '<input type="number" class="p-card__qty-input" value="'+qty+'" min="0">'+
+            '<button class="p-card__qty-btn '+(qty===1?'remove':'')+'" data-action="down">'+(qty===1?'<i class="fas fa-trash-alt"></i>':'−')+'</button>'+
+          '</div>';
+      }
+      // WhatsApp row
+      if(!container.querySelector('.p-card__wa-row')){
+        var waRow = document.createElement('div');
+        waRow.className = 'p-card__wa-row';
+        waRow.innerHTML = '<a href="https://wa.me/972549922492?text=אשמח להזמין: '+encodeURIComponent(prod.name)+'" target="_blank" rel="noopener" class="p-card__wa-btn"><i class="fab fa-whatsapp"></i> הזמנה בוואטסאפ</a>';
+        container.appendChild(waRow);
+      }
+    }
 
-  <script src="js/main.min.js?v=20260328" defer></script>
-  <script src="js/analytics.min.js" defer></script>
-  <script src="js/schema-markup.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-  <script src="js/catalog-carousels.js?v=20260328" defer></script>
+    // ── Format price ──
+    function fmtPrice(p){ return new Intl.NumberFormat('he-IL',{style:'currency',currency:'ILS',minimumFractionDigits:0,maximumFractionDigits:2}).format(p); }
+    function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+    // ── Build product card HTML ──
+    function buildCard(prod){
+      var imgSrc = (prod.imageUrl||'/items/'+prod.id+'.jpg').replace(/\.jpg$/i,'-thumb.webp');
+      var fallback = 'https://placehold.co/300x300/f0f2f5/94a3b8?text='+encodeURIComponent((prod.name||'').substring(0,12));
+      var priceHtml = prod.saleNis
+        ? '<div class="p-card__price">'+fmtPrice(prod.saleNis)+'<span class="vat">+ מע"מ</span></div>'
+        : '<div class="p-card__price-locked"><i class="fas fa-lock"></i> הירשמו לצפייה במחיר</div>';
+      return '<div class="p-card" data-product-id="'+prod.id+'">'+
+        '<a href="/products/'+encodeURIComponent(prod.slug||'')+'" class="p-card__img">'+
+          '<img src="'+imgSrc+'" alt="'+esc(prod.name)+'" loading="lazy" width="200" height="200" onerror="this.onerror=null;this.src=\''+fallback+'\'">'+
+        '</a>'+
+        '<div class="p-card__body">'+
+          '<a href="/products/'+encodeURIComponent(prod.slug||'')+'" class="p-card__name">'+esc(prod.name)+'</a>'+
+          priceHtml+
+          '<div class="p-card__cart-area" data-pid="'+prod.id+'"></div>'+
+        '</div></div>';
+    }
+
+    // ── Main init ──
+    async function init(){
+      var container = document.getElementById('catalogSections');
+      var res, data;
+      try { res = await fetch('/data/products.json'); data = await res.json(); } catch(e){ container.innerHTML='<p style="text-align:center;padding:3rem;color:#94a3b8;">שגיאה בטעינה</p>'; return; }
+
+      var allProducts = data.items||[];
+      var categories = data.categories||[];
+
+      // Load sales ranking
+      var salesRank = {};
+      try {
+        var sr = await fetch('/data/top_selling_items.json');
+        var sd = await sr.json(); var si = sd.items||sd;
+        for(var i=0;i<si.length;i++) salesRank[si[i].item_id] = (si.length-i)*1000 + (si[i].customers||0)*100;
+      } catch(e){}
+
+      // Build parent categories map
+      var parentMap={}, parentCats={}, subToParent={};
+      categories.forEach(function(c){
+        if(c.parentId===null||c.parentId===undefined){ parentMap[c.id]=c; parentCats[c.slug]={cat:c,products:[],score:0}; }
+      });
+      categories.forEach(function(c){ if(c.parentId && parentMap[c.parentId]) subToParent[c.slug]=parentMap[c.parentId].slug; });
+
+      // Group products
+      allProducts.forEach(function(p){
+        var slugs = (p.categorySlugs&&p.categorySlugs.length>=2) ? [p.categorySlugs[1],p.categorySlugs[0]] : (p.categorySlugs||[p.categorySlug]);
+        for(var i=0;i<slugs.length;i++){
+          if(parentCats[slugs[i]]){parentCats[slugs[i]].products.push(p);return;}
+          if(subToParent[slugs[i]]&&parentCats[subToParent[slugs[i]]]){parentCats[subToParent[slugs[i]]].products.push(p);return;}
+        }
+      });
+
+      // Sort products by sales, sort categories by revenue
+      Object.values(parentCats).forEach(function(e){
+        e.products.sort(function(a,b){return (salesRank[b.id]||0)-(salesRank[a.id]||0);});
+        e.products.forEach(function(p){e.score+=(salesRank[p.id]||0);});
+      });
+      var sorted = Object.values(parentCats).filter(function(e){return e.products.length>=1;}).sort(function(a,b){return b.score-a.score;});
+
+      // Update total count
+      document.getElementById('totalCount').textContent = allProducts.length;
+      document.getElementById('searchCount').textContent = allProducts.length+' מוצרים';
+
+      // Build category pills
+      var pillsHtml = '<button class="cat-pill active"><i class="fas fa-th-large"></i> הכל</button>';
+      sorted.forEach(function(e,idx){
+        var icon = ICONS[e.cat.seoSlug]||ICONS[e.cat.slug]||'fa-box';
+        pillsHtml += '<button class="cat-pill" data-target="catSec'+idx+'"><i class="fas '+icon+'"></i> '+esc(e.cat.name)+'</button>';
+      });
+      document.getElementById('catPills').innerHTML = pillsHtml;
+
+      // Build sections
+      var html = '';
+      var swiperInits = [];
+      sorted.forEach(function(entry,idx){
+        var icon = ICONS[entry.cat.seoSlug]||ICONS[entry.cat.slug]||'fa-box';
+        var catUrl = '/category/'+(entry.cat.seoSlug||entry.cat.slug)+'/';
+        var prods = entry.products.slice(0,20);
+        var slides = '';
+        prods.forEach(function(p){ slides += '<div class="swiper-slide">'+buildCard(p)+'</div>'; });
+
+        html += '<section class="cat-section" id="catSec'+idx+'"><div class="container">'+
+          '<div class="cat-section__head">'+
+            '<div class="cat-section__title"><div class="cat-section__icon"><i class="fas '+icon+'"></i></div>'+esc(entry.cat.name)+'<span class="cat-section__count">'+entry.products.length+' מוצרים</span></div>'+
+            '<a href="'+catUrl+'" class="cat-section__link">לכל הקטגוריה <i class="fas fa-arrow-left"></i></a>'+
+          '</div>'+
+          '<div class="cat-swiper-wrap">'+
+            '<button class="cat-swiper-btn prev" id="prev'+idx+'" aria-label="הקודם"><i class="fas fa-chevron-right"></i></button>'+
+            '<button class="cat-swiper-btn next" id="next'+idx+'" aria-label="הבא"><i class="fas fa-chevron-left"></i></button>'+
+            '<div class="swiper" id="swiper'+idx+'"><div class="swiper-wrapper">'+slides+'</div><div class="swiper-pagination" id="pag'+idx+'"></div></div>'+
+          '</div>'+
+        '</div></section>';
+        swiperInits.push({id:'swiper'+idx,idx:idx});
+      });
+
+      container.innerHTML = html;
+
+      // Init Swipers
+      swiperInits.forEach(function(si){
+        new Swiper('#'+si.id,{
+          slidesPerView:2, spaceBetween:12, loop:false,
+          preventClicks:false, preventClicksPropagation:false, touchStartPreventDefault:false,
+          pagination:{el:'#pag'+si.idx,clickable:true},
+          navigation:{prevEl:'#prev'+si.idx,nextEl:'#next'+si.idx},
+          breakpoints:{480:{slidesPerView:2,spaceBetween:12},640:{slidesPerView:3,spaceBetween:14},768:{slidesPerView:4,spaceBetween:16},1024:{slidesPerView:5,spaceBetween:18},1280:{slidesPerView:6,spaceBetween:20}}
+        });
+      });
+
+      // Render cart areas for all cards
+      document.querySelectorAll('.p-card__cart-area').forEach(function(area){
+        var pid = parseInt(area.dataset.pid);
+        var prod = allProducts.find(function(p){return p.id===pid;});
+        if(prod) renderCartArea(area, prod);
+      });
+
+      // ── Delegated click handler for add/qty ──
+      container.addEventListener('click', function(e){
+        // Add to cart
+        var addBtn = e.target.closest('.p-card__add-btn');
+        if(addBtn){
+          e.preventDefault();
+          var pid = parseInt(addBtn.dataset.pid);
+          var prod = allProducts.find(function(p){return p.id===pid;});
+          if(!prod) return;
+          setQty(prod, 1);
+          showToast('✓ '+prod.name.substring(0,30)+' נוסף לעגלה');
+          var area = addBtn.closest('.p-card__cart-area');
+          renderCartArea(area, prod);
+          return;
+        }
+
+        // Qty buttons
+        var qtyBtn = e.target.closest('.p-card__qty-btn');
+        if(qtyBtn){
+          e.preventDefault(); e.stopPropagation();
+          var wrap = qtyBtn.closest('.p-card__qty-wrap');
+          var pid = parseInt(wrap.dataset.pid);
+          var prod = allProducts.find(function(p){return p.id===pid;});
+          if(!prod) return;
+          var cur = getQty(prod.id);
+          if(qtyBtn.dataset.action==='up') setQty(prod, cur+1);
+          else setQty(prod, cur-1);
+          var area = wrap.closest('.p-card__cart-area');
+          renderCartArea(area, prod);
+          return;
+        }
+      });
+
+      // Qty input change
+      container.addEventListener('change', function(e){
+        if(e.target.classList.contains('p-card__qty-input')){
+          var wrap = e.target.closest('.p-card__qty-wrap');
+          var pid = parseInt(wrap.dataset.pid);
+          var prod = allProducts.find(function(p){return p.id===pid;});
+          if(!prod) return;
+          var val = parseInt(e.target.value)||0;
+          setQty(prod, val);
+          var area = wrap.closest('.p-card__cart-area');
+          renderCartArea(area, prod);
+        }
+      });
+      container.addEventListener('click', function(e){
+        if(e.target.classList.contains('p-card__qty-input')){e.stopPropagation();e.target.select();}
+      });
+
+      // ── Pills scroll to section ──
+      document.querySelectorAll('.cat-pill[data-target]').forEach(function(pill){
+        pill.addEventListener('click',function(){
+          document.querySelectorAll('.cat-pill').forEach(function(p){p.classList.remove('active');});
+          pill.classList.add('active');
+          var t=document.getElementById(pill.dataset.target);
+          if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+        });
+      });
+      document.querySelector('.cat-pill:not([data-target])').addEventListener('click',function(){
+        document.querySelectorAll('.cat-pill').forEach(function(p){p.classList.remove('active');});
+        this.classList.add('active');
+        window.scrollTo({top:0,behavior:'smooth'});
+      });
+
+      // ── Search ──
+      var searchInput = document.getElementById('searchInput');
+      var searchDropdown = document.getElementById('searchDropdown');
+      var debounce;
+      searchInput.addEventListener('input',function(){
+        clearTimeout(debounce);
+        var q = searchInput.value.trim().toLowerCase();
+        if(q.length<2){searchDropdown.classList.remove('active');return;}
+        debounce = setTimeout(function(){
+          var results=[];
+          for(var i=0;i<allProducts.length&&results.length<8;i++){
+            var p=allProducts[i];
+            if((p.name||'').toLowerCase().indexOf(q)!==-1||(p.searchTags||'').toLowerCase().indexOf(q)!==-1) results.push(p);
+          }
+          if(!results.length){searchDropdown.innerHTML='<div class="no-results">לא נמצאו מוצרים</div>';searchDropdown.classList.add('active');return;}
+          var h='';
+          results.forEach(function(p){
+            var img=(p.imageUrl||'/items/'+p.id+'.jpg').replace(/\.jpg$/i,'-thumb.webp');
+            h+='<a href="/products/'+encodeURIComponent(p.slug||'')+'"><img src="'+img+'" alt="" onerror="this.src=\'https://placehold.co/44x44/f0f2f5/94a3b8?text=img\'"><div><div class="r-name">'+esc(p.name)+'</div><div class="r-price">'+(p.saleNis?fmtPrice(p.saleNis):'צרו קשר')+'</div></div></a>';
+          });
+          searchDropdown.innerHTML=h;searchDropdown.classList.add('active');
+        },200);
+      });
+      document.addEventListener('click',function(e){if(!searchInput.contains(e.target)&&!searchDropdown.contains(e.target))searchDropdown.classList.remove('active');});
+
+      updateBadge();
+    }
+
+    // Header scroll
+    window.addEventListener('scroll',function(){document.getElementById('header').classList.toggle('scrolled',window.scrollY>10);},{passive:true});
+
+    init();
+  })();
+  </script>
 </body>
 </html>
