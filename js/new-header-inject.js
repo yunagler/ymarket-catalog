@@ -124,4 +124,126 @@
   } else {
     inject();
   }
+
+  // ═══ GLOBAL: Subtotal display for ALL page types ═══
+  // Works on: category pages, product pages, catalog page
+  function fmtILS(n) { return new Intl.NumberFormat('he-IL',{style:'currency',currency:'ILS',minimumFractionDigits:0,maximumFractionDigits:2}).format(n); }
+
+  // Category pages: .product-card__add-btn with data-price
+  // After add-to-cart or qty change, inject subtotal
+  function addSubtotalToCard(card) {
+    if (!card) return;
+    var btn = card.querySelector('.product-card__add-btn');
+    var qtyWrap = card.querySelector('.card-qty-wrap');
+    var existing = card.querySelector('.ym-subtotal');
+
+    // Get price from button data or from price display
+    var price = 0;
+    if (btn) price = parseFloat(btn.dataset.price) || 0;
+    if (!price && qtyWrap) {
+      var pid = qtyWrap.dataset.productId || (btn && btn.dataset.id);
+      var cart = JSON.parse(localStorage.getItem('ym_cart') || '[]');
+      for (var i = 0; i < cart.length; i++) {
+        if (String(cart[i].id) === String(pid)) { price = cart[i].price || 0; break; }
+      }
+    }
+
+    // Get current qty
+    var qtyInput = card.querySelector('.card-qty-input, input[type="number"]');
+    var qty = qtyInput ? parseInt(qtyInput.value) || 0 : 0;
+
+    if (qty <= 0 || price <= 0) {
+      if (existing) existing.remove();
+      return;
+    }
+
+    var subtotal = price * qty;
+    if (!existing) {
+      existing = document.createElement('div');
+      existing.className = 'ym-subtotal';
+      var actions = card.querySelector('.product-card__actions');
+      if (actions) actions.appendChild(existing);
+    }
+    existing.innerHTML = '<strong>' + fmtILS(subtotal) + '</strong><small>' + qty + ' × ' + fmtILS(price) + '</small>';
+  }
+
+  // Product page: quantity-selector with #qtyInput
+  function addSubtotalToProductPage() {
+    var qtyInput = document.getElementById('qtyInput');
+    var priceEl = document.querySelector('.product-pricing__price');
+    if (!qtyInput || !priceEl) return;
+
+    var priceText = priceEl.textContent.replace(/[^\d.]/g, '');
+    var price = parseFloat(priceText) || 0;
+    if (price <= 0) return;
+
+    function updateProductSubtotal() {
+      var qty = parseInt(qtyInput.value) || 1;
+      var subtotal = price * qty;
+      var el = document.getElementById('ym-product-subtotal');
+      if (!el) {
+        el = document.createElement('div');
+        el.id = 'ym-product-subtotal';
+        el.className = 'ym-product-subtotal';
+        var actions = document.querySelector('.product-actions');
+        var addBtn = document.getElementById('addToCartBtn');
+        if (addBtn) addBtn.parentNode.insertBefore(el, addBtn);
+        else if (actions) actions.appendChild(el);
+      }
+      if (qty > 1) {
+        el.innerHTML = '<span class="ym-ps__total">' + fmtILS(subtotal) + '</span><span class="ym-ps__detail">' + qty + ' × ' + fmtILS(price) + '</span>';
+        el.style.display = '';
+      } else {
+        el.style.display = 'none';
+      }
+    }
+
+    qtyInput.addEventListener('input', updateProductSubtotal);
+    qtyInput.addEventListener('change', updateProductSubtotal);
+    // Also listen for button clicks
+    var dec = document.getElementById('qtyDecrease');
+    var inc = document.getElementById('qtyIncrease');
+    if (dec) dec.addEventListener('click', function() { setTimeout(updateProductSubtotal, 50); });
+    if (inc) inc.addEventListener('click', function() { setTimeout(updateProductSubtotal, 50); });
+    updateProductSubtotal();
+  }
+
+  // Category pages: observe DOM changes for qty controls
+  function observeCategoryCards() {
+    var observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(m) {
+        if (m.type === 'childList') {
+          var card = m.target.closest('.product-card');
+          if (card) addSubtotalToCard(card);
+        }
+      });
+    });
+    document.querySelectorAll('.product-card__actions').forEach(function(el) {
+      observer.observe(el, { childList: true, subtree: true });
+    });
+    // Also handle clicks on qty buttons
+    document.addEventListener('click', function(e) {
+      var qtyBtn = e.target.closest('.card-qty-btn');
+      if (qtyBtn) {
+        setTimeout(function() {
+          var card = qtyBtn.closest('.product-card');
+          if (card) addSubtotalToCard(card);
+        }, 100);
+      }
+    });
+  }
+
+  // Init after DOM ready
+  function initSubtotals() {
+    addSubtotalToProductPage();
+    observeCategoryCards();
+    // Initial scan for cards already showing qty
+    document.querySelectorAll('.product-card').forEach(addSubtotalToCard);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSubtotals);
+  } else {
+    setTimeout(initSubtotals, 500); // Wait for page JS to render cards
+  }
 })();
