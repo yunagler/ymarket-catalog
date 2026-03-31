@@ -190,12 +190,8 @@
         if (addBtn) addBtn.parentNode.insertBefore(el, addBtn);
         else if (actions) actions.appendChild(el);
       }
-      if (qty > 1) {
-        el.innerHTML = '<span class="ym-ps__total">סה"כ: ' + fmtILS(subtotal) + '</span>';
-        el.style.display = '';
-      } else {
-        el.style.display = 'none';
-      }
+      el.innerHTML = '<span class="ym-ps__total">סה"כ: ' + fmtILS(subtotal) + '</span>';
+      el.style.display = '';
     }
 
     qtyInput.addEventListener('input', updateProductSubtotal);
@@ -241,9 +237,15 @@
     document.querySelectorAll('.product-card').forEach(addSubtotalToCard);
   }
 
+  // Run after page JS has initialized qty buttons
+  function safeInitSubtotals() {
+    initSubtotals();
+    // Retry once more after 1s in case page JS was slow
+    setTimeout(initSubtotals, 1000);
+  }
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initSubtotals);
+    document.addEventListener('DOMContentLoaded', function() { setTimeout(safeInitSubtotals, 300); });
   } else {
-    setTimeout(initSubtotals, 500); // Wait for page JS to render cards
+    setTimeout(safeInitSubtotals, 300);
   }
 })();
