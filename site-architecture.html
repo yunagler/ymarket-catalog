@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>מבנה האתר | וואי מרקט</title>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --navy-900: #0A1628;
+      --navy-800: #112A45;
+      --navy-700: #1B3A5C;
+      --navy-600: #2A5080;
+      --blue: #0A6BFF;
+      --blue-light: rgba(10,107,255,0.06);
+      --gold: #E8A735;
+      --green: #22C55E;
+      --red: #EF4444;
+      --surface: #F6F8FB;
+      --text: #0F172A;
+      --text-2: #475569;
+      --text-3: #64748B;
+      --border: rgba(27,58,92,0.1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Heebo', Arial, sans-serif; background: var(--surface); color: var(--text); line-height: 1.6; }
+
+    /* Header */
+    .doc-header {
+      background: linear-gradient(165deg, var(--navy-900), var(--navy-800), var(--navy-700));
+      padding: 3rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .doc-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 80%, rgba(10,107,255,0.12), transparent 50%),
+                  radial-gradient(ellipse at 70% 20%, rgba(232,167,53,0.08), transparent 50%);
+    }
+    .doc-header * { position: relative; z-index: 1; }
+    .doc-header h1 { font-size: 2.2rem; font-weight: 900; color: #fff; margin-bottom: 0.5rem; }
+    .doc-header p { color: rgba(255,255,255,0.8); font-size: 1.05rem; }
+    .doc-header__meta {
+      display: flex; gap: 1.5rem; justify-content: center; margin-top: 1.25rem; flex-wrap: wrap;
+    }
+    .doc-header__tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 100px; font-size: 0.82rem; font-weight: 600; color: var(--gold);
+    }
+
+    /* Layout */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* TOC */
+    .toc {
+      background: #fff; border: 1px solid var(--border); border-radius: 20px;
+      padding: 2rem; margin: 2rem auto; max-width: 700px;
+      box-shadow: 0 4px 16px rgba(10,22,40,0.06);
+    }
+    .toc h2 { font-size: 1.1rem; font-weight: 800; color: var(--navy-800); margin-bottom: 1rem; }
+    .toc ol { padding-right: 1.25rem; }
+    .toc li { margin-bottom: 0.5rem; }
+    .toc a { color: var(--blue); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+    .toc a:hover { text-decoration: underline; }
+
+    /* Sections */
+    .section { padding: 3rem 0; }
+    .section:nth-child(even) { background: #fff; }
+    .section-title {
+      font-size: 1.5rem; font-weight: 800; color: var(--navy-800);
+      margin-bottom: 0.5rem; display: flex; align-items: center; gap: 12px;
+    }
+    .section-title i {
+      width: 40px; height: 40px; border-radius: 12px; background: var(--blue-light);
+      display: flex; align-items: center; justify-content: center; font-size: 1rem; color: var(--blue);
+    }
+    .section-subtitle { color: var(--text-2); font-size: 0.95rem; margin-bottom: 2rem; }
+
+    /* Stats Row */
+    .stats-row {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem; margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: #fff; border: 1px solid var(--border); border-radius: 16px;
+      padding: 1.25rem; text-align: center;
+    }
+    .section:nth-child(even) .stat-card { background: var(--surface); }
+    .stat-card__num { font-size: 1.75rem; font-weight: 900; color: var(--navy-700); }
+    .stat-card__label { font-size: 0.78rem; color: var(--text-3); margin-top: 2px; }
+
+    /* File Tree */
+    .tree {
+      background: var(--navy-900); border-radius: 16px; padding: 1.5rem 2rem;
+      font-family: 'Courier New', monospace; font-size: 0.85rem; line-height: 1.8;
+      color: rgba(255,255,255,0.85); overflow-x: auto; direction: ltr; text-align: left;
+    }
+    .tree .folder { color: var(--gold); font-weight: 700; }
+    .tree .file { color: #7AAAD6; }
+    .tree .comment { color: #64748B; }
+    .tree .size { color: var(--green); font-size: 0.75rem; }
+
+    /* Info Cards */
+    .info-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+    .info-card {
+      background: #fff; border: 1px solid var(--border); border-radius: 20px;
+      padding: 1.75rem; transition: all 0.3s; position: relative; overflow: hidden;
+    }
+    .section:nth-child(even) .info-card { background: var(--surface); }
+    .info-card:hover {
+      transform: translateY(-3px); box-shadow: 0 12px 36px rgba(10,22,40,0.1);
+      border-color: rgba(10,107,255,0.2);
+    }
+    .info-card__icon {
+      width: 48px; height: 48px; border-radius: 14px;
+      background: linear-gradient(135deg, #EBF2FA, var(--blue-light));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; color: var(--navy-600); margin-bottom: 1rem;
+    }
+    .info-card h3 { font-size: 1rem; font-weight: 700; color: var(--navy-800); margin-bottom: 0.4rem; }
+    .info-card p { font-size: 0.85rem; color: var(--text-2); line-height: 1.6; }
+    .info-card .badge {
+      display: inline-block; padding: 3px 10px; border-radius: 8px;
+      font-size: 0.72rem; font-weight: 700; margin-top: 0.75rem;
+    }
+    .badge--blue { background: rgba(10,107,255,0.08); color: var(--blue); }
+    .badge--green { background: rgba(34,197,94,0.08); color: #15803d; }
+    .badge--gold { background: rgba(232,167,53,0.08); color: #b45309; }
+
+    /* Table */
+    .data-table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      background: #fff; border: 1px solid var(--border); border-radius: 16px;
+      overflow: hidden; font-size: 0.88rem;
+    }
+    .section:nth-child(even) .data-table { background: var(--surface); }
+    .data-table th {
+      background: var(--navy-800); color: #fff; padding: 12px 16px;
+      text-align: right; font-weight: 700; font-size: 0.82rem;
+    }
+    .data-table td {
+      padding: 10px 16px; border-bottom: 1px solid var(--border); color: var(--text-2);
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:hover td { background: rgba(10,107,255,0.02); }
+    .data-table code {
+      background: rgba(10,107,255,0.06); padding: 2px 8px; border-radius: 6px;
+      font-size: 0.8rem; color: var(--navy-700); font-family: 'Courier New', monospace;
+    }
+
+    /* Flow Diagram */
+    .flow { display: flex; align-items: center; gap: 0; flex-wrap: wrap; justify-content: center; margin: 2rem 0; }
+    .flow__step {
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      padding: 1rem 1.25rem; background: #fff; border: 1px solid var(--border);
+      border-radius: 16px; min-width: 130px; text-align: center;
+    }
+    .flow__step i { font-size: 1.3rem; color: var(--blue); }
+    .flow__step strong { font-size: 0.82rem; color: var(--navy-800); }
+    .flow__step span { font-size: 0.72rem; color: var(--text-3); }
+    .flow__arrow { font-size: 1.2rem; color: var(--text-3); padding: 0 0.5rem; transform: scaleX(-1); }
+
+    /* Callout */
+    .callout {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 1.25rem 1.5rem; border-radius: 14px; margin: 1.5rem 0;
+    }
+    .callout--info { background: rgba(10,107,255,0.06); border-right: 4px solid var(--blue); }
+    .callout--warn { background: rgba(232,167,53,0.06); border-right: 4px solid var(--gold); }
+    .callout i { font-size: 1.1rem; margin-top: 2px; flex-shrink: 0; }
+    .callout--info i { color: var(--blue); }
+    .callout--warn i { color: var(--gold); }
+    .callout p { font-size: 0.88rem; color: var(--text-2); }
+
+    /* Footer */
+    .doc-footer {
+      text-align: center; padding: 2rem; font-size: 0.8rem; color: var(--text-3);
+      border-top: 1px solid var(--border);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .doc-header h1 { font-size: 1.6rem; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .info-grid { grid-template-columns: 1fr; }
+      .flow { flex-direction: column; }
+      .flow__arrow { transform: rotate(-90deg); }
+      .tree { font-size: 0.75rem; padding: 1rem; }
+      .data-table { font-size: 0.78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="doc-header">
+  <h1><i class="fas fa-sitemap"></i> מבנה אתר וואי מרקט</h1>
+  <p>תיעוד טכני מלא של ymarket.co.il</p>
+  <div class="doc-header__meta">
+    <span class="doc-header__tag"><i class="fas fa-server"></i> GitHub Pages</span>
+    <span class="doc-header__tag"><i class="fas fa-globe"></i> ymarket.co.il</span>
+    <span class="doc-header__tag"><i class="fas fa-code-branch"></i> yunagler/ymarket-catalog</span>
+    <span class="doc-header__tag"><i class="fas fa-calendar"></i> עודכן: אפריל 2026</span>
+  </div>
+</header>
+
+<div class="container">
+
+<!-- TOC -->
+<nav class="toc">
+  <h2><i class="fas fa-list"></i> תוכן עניינים</h2>
+  <ol>
+    <li><a href="#overview">סקירה כללית ומספרים</a></li>
+    <li><a href="#architecture">ארכיטקטורה וטכנולוגיות</a></li>
+    <li><a href="#structure">מבנה תיקיות</a></li>
+    <li><a href="#pages">דפי האתר</a></li>
+    <li><a href="#css">קבצי CSS</a></li>
+    <li><a href="#js">קבצי JavaScript</a></li>
+    <li><a href="#categories">קטגוריות מוצרים</a></li>
+    <li><a href="#products">דפי מוצר</a></li>
+    <li><a href="#images">תמונות ומדיה</a></li>
+    <li><a href="#blog">בלוג</a></li>
+    <li><a href="#seo">SEO ונתונים מובנים</a></li>
+    <li><a href="#build">מערכת Build</a></li>
+    <li><a href="#flow">זרימת משתמש</a></li>
+  </ol>
+</nav>
+
+<!-- 1. Overview -->
+<section class="section" id="overview">
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-chart-bar"></i> סקירה כללית</h2>
+    <p class="section-subtitle">אתר סטטי לסחר B2B, מאוחסן ב-GitHub Pages עם CDN של Cloudflare</p>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-card__num">1,057</div>
+        <div class="stat-card__label">דפי HTML</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__num">825</div>
+        <div class="stat-card__label">דפי מוצר</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__num">14</div>
+        <div class="stat-card__label">קטגוריות ראשיות</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__num">133</div>
+        <div class="stat-card__label">תתי-קטגוריות</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__num">31</div>
+        <div class="stat-card__label">פוסטים בבלוג</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__num">3,345</div>
+        <div class="stat-card__label">תמונות מוצרים</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. Architecture -->
+<section class="section" id="architecture">
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-layer-group"></i> ארכיטקטורה וטכנולוגיות</h2>
+    <p class="section-subtitle">אתר סטטי (Static Site) שנבנה עם HTML/CSS/JS טהורים ומיוצר ע"י סקריפטי Node.js</p>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-card__icon"><i class="fab fa-github"></i></div>
+        <h3>אחסון: GitHub Pages</h3>
+        <p>הקוד ב-repo <code>yunagler/ymarket-catalog</code>, branch <code>master</code>. כל push מפעיל deploy אוטומטי.</p>
+        <span class="badge badge--blue">Static Hosting</span>
+      </div>
+      <div class="info-card">
+        <div class="info-card__icon"><i class="fas fa-shield-alt"></i></div>
+        <h3>CDN: Cloudflare</h3>
+        <p>DNS + SSL + Cache + Security headers. הדומיין ymarket.co.il מנותב דרך Cloudflare.</p>
+        <span class="badge badge--green">CDN + SSL</span>
+      </div>
+      <div class="info-card">
+        <div class="info-card__icon"><i class="fas fa-code"></i></div>
+        <h3>Frontend: Vanilla</h3>
+        <p>ללא frameworks. HTML סטטי + CSS מותאם אישית + Vanilla JavaScript. פונט Heebo + Font Awesome.</p>
+        <span class="badge badge--gold">No Framework</span>
+      </div>
+      <div class="info-card">
+        <div class="info-card__icon"><i class="fas fa-cogs"></i></div>
+        <h3>Build: Node.js Scripts</h3>
+        <p>סקריפטים שמייצרים אוטומטית 825 דפי מוצר ו-167 דפי קטגוריה מתוך קובץ <code>products.json</code>.</p>
+        <span class="badge badge--blue">Code Generation</span>
+      </div>
+      <div class="info-card">
+        <div class="info-card__icon"><i class="fas fa-language"></i></div>
+        <h3>שפה: עברית RTL</h3>
+        <p><code>lang="he" dir="rtl"</code> בכל הדפים. URLs באנגלית (SEO friendly), תוכן בעברית.</p>
+        <span class="badge badge--green">Bilingual</span>
+      </div>
+      <div class="info-card">
+        <div class="info-card__icon"><i class="fas fa-paint-brush"></i></div>
+        <h3>עיצוב: Glassmorphism V2</h3>
+        <p>עיצוב Navy + Blue gradient, כרטיסים עם backdrop-filter, hover effects ו-micro animations.</p>
+        <span class="badge badge--gold">Custom Design</span>
+      </div>
+    </div>
+
+    <div class="callout callout--info">
+      <i class="fas fa-info-circle"></i>
+      <p><strong>Header/Footer דינמיים:</strong> הקובץ <code>new-header-inject.js</code> מחליף את ה-header וה-footer הישנים בגרסה חדשה (glassmorphism) בכל הדפים בזמן טעינה. הדפים שומרים את ה-HTML הישן לצורך תאימות.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3. File Structure -->
+<section class="section" id="structure">
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-folder-tree"></i> מבנה תיקיות</h2>
+    <p class="section-subtitle">מבנה הקבצים הראשי של הפרויקט</p>
+
+    <div class="tree">
+<span class="folder">ymarket.co.il/</span>
+├── <span class="file">index.html</span>              <span class="comment">← דף הבית (122 KB)</span>
+├── <span class="file">catalog.html</span>             <span class="comment">← קטלוג מוצרים (48 KB)</span>
+├── <span class="file">about.html</span>               <span class="comment">← אודות (36 KB)</span>
+├── <span class="file">contact.html</span>             <span class="comment">← צרו קשר (18 KB)</span>
+├── <span class="file">blog.html</span>                <span class="comment">← אינדקס בלוג (43 KB)</span>
+├── <span class="file">cart.html</span>                <span class="comment">← עגלת קניות (18 KB)</span>
+├── <span class="file">checkout.html</span>            <span class="comment">← תשלום (18 KB)</span>
+├── <span class="file">login.html</span>               <span class="comment">← כניסה (17 KB)</span>
+├── <span class="file">register.html</span>            <span class="comment">← הרשמה (20 KB)</span>
+├── <span class="file">faq.html</span>                 <span class="comment">← שאלות נפוצות (60 KB)</span>
+├── <span class="file">tracking.html</span>            <span class="comment">← מעקב משלוחים (16 KB)</span>
+├── <span class="file">404.html</span>                 <span class="comment">← שגיאה (15 KB)</span>
+├── <span class="file">sitemap.xml</span>              <span class="comment">← מפת אתר (280 KB)</span>
+├── <span class="file">robots.txt</span>               <span class="comment">← הנחיות לגוגל</span>
+├── <span class="file">CNAME</span>                    <span class="comment">← ymarket.co.il</span>
+│
+├── <span class="folder">css/</span>                      <span class="size">25 קבצים, 304 KB</span>
+│   ├── <span class="file">style.min.css</span>          <span class="comment">← עיצוב ראשי (48 KB)</span>
+│   ├── <span class="file">new-header.css</span>         <span class="comment">← עיצוב V2 override (26 KB)</span>
+│   └── <span class="folder">pages/</span>                <span class="comment">← CSS לפי דף (catalog, blog, product...)</span>
+│
+├── <span class="folder">js/</span>                       <span class="size">15 קבצים, 296 KB</span>
+│   ├── <span class="file">main.min.js</span>            <span class="comment">← לוגיקה ראשית (11 KB)</span>
+│   ├── <span class="file">catalog.min.js</span>         <span class="comment">← חיפוש + סינון (15 KB)</span>
+│   ├── <span class="file">cart.min.js</span>            <span class="comment">← עגלת קניות (3.5 KB)</span>
+│   ├── <span class="file">checkout.min.js</span>        <span class="comment">← תהליך תשלום (4.8 KB)</span>
+│   ├── <span class="file">new-header-inject.js</span>   <span class="comment">← החלפת header/footer (8.8 KB)</span>
+│   ├── <span class="file">schema-markup.js</span>       <span class="comment">← Structured Data (34 KB)</span>
+│   └── <span class="file">analytics.min.js</span>       <span class="comment">← GA4 + Facebook Pixel (2.7 KB)</span>
+│
+├── <span class="folder">category/</span>                 <span class="size">167 דפים (14 ראשיות + 133 תת)</span>
+│   ├── <span class="folder">industrial-cleaning.../</span>
+│   │   ├── <span class="file">index.html</span>          <span class="comment">← דף קטגוריה (200 KB, 86 מוצרים)</span>
+│   │   ├── <span class="folder">bleach-disinfectants/</span>
+│   │   │   └── <span class="file">index.html</span>      <span class="comment">← תת-קטגוריה</span>
+│   │   └── ...
+│   └── ...
+│
+├── <span class="folder">products/</span>                 <span class="size">825 דפי מוצר, 23 MB</span>
+│   ├── <span class="folder">אקונומיקה-3-5-.../</span>
+│   │   └── <span class="file">index.html</span>          <span class="comment">← דף מוצר בודד</span>
+│   └── ...
+│
+├── <span class="folder">items/</span>                    <span class="size">3,345 תמונות, 1.1 GB</span>
+│   ├── <span class="file">857.jpg</span>                <span class="comment">← תמונה מקורית</span>
+│   ├── <span class="file">857.webp</span>               <span class="comment">← WebP (~15 KB)</span>
+│   └── <span class="file">857-thumb.webp</span>         <span class="comment">← תמונה ממוזערת</span>
+│
+├── <span class="folder">images/</span>                   <span class="size">8.1 MB</span>
+│   ├── <span class="folder">logo/</span>                 <span class="comment">← 8 וריאנטים (dark/white/2x)</span>
+│   └── <span class="folder">blog/</span>                 <span class="comment">← 11 SVG אייקונים</span>
+│
+├── <span class="folder">blog/</span>                     <span class="size">31 פוסטים</span>
+│   ├── <span class="file">cleaning-products-for-cleaning-companies.html</span>
+│   └── ...
+│
+├── <span class="folder">legal/</span>                    <span class="size">7 דפים</span>
+│   ├── <span class="file">terms.html</span>, <span class="file">privacy.html</span>, <span class="file">shipping.html</span>
+│   ├── <span class="file">returns.html</span>, <span class="file">cookies.html</span>, <span class="file">accessibility.html</span>
+│   └── <span class="file">cancellation.html</span>
+│
+├── <span class="folder">data/</span>                     <span class="size">1.5 MB</span>
+│   ├── <span class="file">products.json</span>           <span class="comment">← מסד מוצרים מלא (1.4 MB)</span>
+│   ├── <span class="file">site-config.json</span>        <span class="comment">← הגדרות אתר</span>
+│   └── <span class="file">top_selling_items.json</span>  <span class="comment">← מוצרים מובילים</span>
+│
+└── <span class="folder">build/</span>                    <span class="size">סקריפטי בנייה</span>
+    ├── <span class="file">generate-categories.js</span>  <span class="comment">← מייצר דפי קטגוריה</span>
+    ├── <span class="file">generate-products.js</span>    <span class="comment">← מייצר דפי מוצר</span>
+    └── <span class="file">generate-sitemap.js</span>     <span class="comment">← מייצר sitemap</span>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Pages -->
+<section class="section" id="pages">
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-file-alt"></i> דפי האתר</h2>
+    <p class="section-subtitle">28 דפים ראשיים + 825 מוצרים + 167 קטגוריות + 31 בלוג + 7 משפטי</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>דף</th><th>נתיב</th><th>גודל</th><th>תפקיד</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>דף הבית</strong></td><td><code>/</code></td><td>122 KB</td><td>Hero קרוסלה, קטגוריות, מוצרים מובילים, סגמנטים</td></tr>
+        <tr><td><strong>קטלוג</strong></td><td><code>/catalog</code></td><td>48 KB</td><td>חיפוש, סינון, כל המוצרים עם קרוסלות לפי קטגוריה</td></tr>
+        <tr><td><strong>אודות</strong></td><td><code>/about</code></td><td>36 KB</td><td>סיפור, ערכים, סטטיסטיקות, סוגי לקוחות, אזורי שירות</td></tr>
+        <tr><td><strong>צרו קשר</strong></td><td><code>/contact</code></td><td>18 KB</td><td>טופס יצירת קשר (שולח ל-CRM API), טלפון, וואטסאפ</td></tr>
+        <tr><td><strong>בלוג</strong></td><td><code>/blog</code></td><td>43 KB</td><td>אינדקס פוסטים, סינון לפי קטגוריה</td></tr>
+        <tr><td><strong>עגלה</strong></td><td><code>/cart</code></td><td>18 KB</td><td>ניהול עגלת קניות (localStorage), עדכון כמויות</td></tr>
+        <tr><td><strong>Checkout</strong></td><td><code>/checkout</code></td><td>18 KB</td><td>שליחת הזמנה בוואטסאפ עם פירוט סל</td></tr>
+        <tr><td><strong>כניסה</strong></td><td><code>/login</code></td><td>17 KB</td><td>טופס כניסה (מפנה ל-CRM)</td></tr>
+        <tr><td><strong>הרשמה</strong></td><td><code>/register</code></td><td>20 KB</td><td>טופס הרשמה + יתרונות מועדון</td></tr>
+        <tr><td><strong>FAQ</strong></td><td><code>/faq</code></td><td>60 KB</td><td>שאלות נפוצות באקורדיון + Schema FAQ</td></tr>
+        <tr><td><strong>מעקב</strong></td><td><code>/tracking</code></td><td>16 KB</td><td>מעקב הזמנות (placeholder)</td></tr>
+        <tr><td><strong>404</strong></td><td><code>/404.html</code></td><td>15 KB</td><td>דף שגיאה מעוצב</td></tr>
+        <tr><td><strong>משפטי</strong></td><td><code>/legal/*</code></td><td>7 דפים</td><td>תקנון, פרטיות, משלוחים, החזרות, נגישות, עוגיות</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 5. CSS -->
+<section class="section" id="css">
+  <div class="container">
+    <h2 class="section-title"><i class="fab fa-css3-alt"></i> קבצי CSS</h2>
+    <p class="section-subtitle">שכבתי: variables &#8594; base &#8594; layout &#8594; components &#8594; pages &#8594; new-header override</p>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-card__icon"><i class="fas fa-palette"></i></div>
+        <h3>style.min.css <span class="badge badge--blue">48 KB</span></h3>
+        <p>הסטייל הראשי. כולל variables, base, layout, components מאוחדים. נטען בכל דף.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card__icon"><i class="fas fa-magic"></i></div>
+        <h3>new-header.css <span class="badge badge--gold">26 KB</span></h3>
+        <p>ה-override של העיצוב V2. מחליף צבעים, border-radius, shadows, header/footer styles. <strong>נטען אחרון ודורס הכל.</strong></p>
+      </div>
+      <div class="info-card">
+        <div class="info-card__icon"><i class="fas fa-file-code"></i></div>
+        <h3>css/pages/*.css</h3>
+        <p>CSS ייעודי לכל סוג דף: <code>catalog.min.css</code>, <code>product-detail.min.css</code>, <code>blog.min.css</code>, <code>contact.min.css</code>, <code>checkout.min.css</code>, <code>legal.min.css</code>.</p>
+      </div>
+    </div>
+
+    <div class="callout callout--warn">
+      <i class="fas fa-exclamation-triangle"></i>
+      <p><strong>סדר טעינה חשוב:</strong> <code>style.min.css</code> &#8594; <code>pages/*.min.css</code> &#8594; <code>new-header.css</code> (אחרון, דורס הכל עם <code>!important</code>). שינויים ב-style.min.css לא ישפיעו אם new-header.css דורס אותם.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6. JavaScript -->
+<section class="section" id="js">
+  <div class="container">
+    <h2 class="section-title"><i class="fab fa-js-square"></i> קבצי JavaScript</h2>
+    <p class="section-subtitle">כל ה-JS טהור (Vanilla) ללא ספריות חיצוניות</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>קובץ</th><th>גודל</th><th>נטען</th><th>תפקיד</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>main.min.js</code></td><td>11 KB</td><td>כל הדפים</td>
+          <td>ניווט, sticky header, אנימציות scroll, עגלה (localStorage), toast, חיפוש, טופס קשר, cookie consent</td>
+        </tr>
+        <tr>
+          <td><code>new-header-inject.js</code></td><td>8.8 KB</td><td>כל הדפים</td>
+          <td>מחליף header/footer ישנים ב-V2 glassmorphism. מוסיף announcement bar, mobile menu, cart badge</td>
+        </tr>
+        <tr>
+          <td><code>catalog.min.js</code></td><td>15 KB</td><td>catalog.html</td>
+          <td>חיפוש מוצרים, סינון, מיון, lazy loading, תצוגת grid/list</td>
+        </tr>
+        <tr>
+          <td><code>cart.min.js</code></td><td>3.5 KB</td><td>cart.html</td>
+          <td>ניהול עגלת קניות: הצגה, עדכון כמויות, מחיקה, סיכום מחירים</td>
+        </tr>
+        <tr>
+          <td><code>checkout.min.js</code></td><td>4.8 KB</td><td>checkout.html</td>
+          <td>טופס checkout, ולידציה, שליחת הזמנה כהודעת WhatsApp</td>
+        </tr>
+        <tr>
+          <td><code>schema-markup.js</code></td><td>34 KB</td><td>כל הדפים</td>
+          <td>מייצר JSON-LD Schema.org (Organization, Product, BreadcrumbList, FAQ)</td>
+        </tr>
+        <tr>
+          <td><code>analytics.min.js</code></td><td>2.7 KB</td><td>כל הדפים</td>
+          <td>Google Analytics 4 (G-MKVGJ3XRK5), Facebook Pixel, אירועי ecommerce</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout--info">
+      <i class="fas fa-shopping-cart"></i>
+      <p><strong>עגלת הקניות</strong> מבוססת על <code>localStorage</code> (מפתח: <code>ym_cart</code>). אין שרת backend לעגלה. ההזמנה הסופית נשלחת כהודעת WhatsApp מפורטת עם כל הפריטים.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 7. Categories -->
+<section class="section" id="categories">
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-th-large"></i> קטגוריות מוצרים</h2>
+    <p class="section-subtitle">14 קטגוריות ראשיות + 133 תתי-קטגוריות, נוצרות אוטומטית מ-products.json</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>#</th><th>קטגוריה</th><th>URL Slug</th><th>תתי-קטגוריות</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>חומרי ניקוי וכימיקלים</td><td><code>industrial-cleaning-supplies-wholesale</code></td><td>8 (אקונומיקה, רצפות, כלים, ידיים...)</td></tr>
+        <tr><td>2</td><td>מוצרי נייר וניגוב</td><td><code>bulk-paper-towel-office-supplies</code></td><td>5 (טואלט, מגבות, מפיות, תעשייתי...)</td></tr>
+        <tr><td>3</td><td>חד פעמי ואירוח</td><td><code>disposable-catering-food-service</code></td><td>6 (כוסות, צלחות, סכום, קשיות...)</td></tr>
+        <tr><td>4</td><td>אריזות מזון ו-Take Away</td><td><code>food-packaging-delivery-solutions</code></td><td>10 (מגשים, קופסאות, שקיות...)</td></tr>
+        <tr><td>5</td><td>שקיות ופתרונות אשפה</td><td><code>heavy-duty-garbage-bags-wholesale</code></td><td>4</td></tr>
+        <tr><td>6</td><td>טקסטיל, מטליות וסחבות</td><td><code>professional-cleaning-cloths-microfiber</code></td><td>5</td></tr>
+        <tr><td>7</td><td>קפה, שתייה וכיבוד</td><td><code>office-coffee-breakroom-supplies</code></td><td>1</td></tr>
+        <tr><td>8</td><td>בטיחות ומיגון אישי</td><td><code>safety-ppe-equipment-for-business</code></td><td>5</td></tr>
+        <tr><td>9</td><td>ציוד משרדי וכללי</td><td><code>office-supplies-wholesale-business</code></td><td>8</td></tr>
+        <tr><td>10</td><td>ציוד טכני ואחזקה</td><td><code>maintenance-technical-equipment-wholesale</code></td><td>6</td></tr>
+        <tr><td>11</td><td>עטיפה, אריזה ולוגיסטיקה</td><td><code>warehouse-packaging-supplies-wholesale</code></td><td>1</td></tr>
+        <tr><td>12</td><td>עזרה ראשונה - רפואי</td><td><code>first-aid-medical-equipment-business</code></td><td>6</td></tr>
+        <tr><td>13</td><td>טואלטיקה וטיפוח</td><td><code>personal-hygiene-products-wholesale</code></td><td>5</td></tr>
+        <tr><td>14</td><td>כלי עבודה וציוד משקי</td><td><code>institutional-cleaning-tools-equipment</code></td><td>5</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout--info">
+      <i class="fas fa-folder"></i>
+      <p><strong>מבנה דף קטגוריה:</strong> Hero עם שם + תיאור &#8594; Trust badges &#8594; תתי-קטגוריות &#8594; גריד מוצרים (כרטיסים עם תמונה, מחיר, "הוסף לעגלה") &#8594; FAQ &#8594; SEO content. כל מוצר מוצג עם תמונת thumb.webp.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 8. Products -->
+<section class="section" id="products">
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-box-open"></i> דפי מוצר</h2>
+    <p class="section-subtitle">825 דפי מוצר, כל אחד בתיקייה נפרדת עם index.html</p>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-card__icon"><i class="fas fa-route"></i></div>
+        <h3>URL Pattern</h3>
+        <p><code>/products/{slug}/</code><br>לדוגמה: <code>/products/אקונומיקה-3-5-ריחנית-4-ליטר-BLINX/</code></p>
+      </div>
+      <div class="info-card">
+        <div class="info-card__icon"><i class="fas fa-image"></i></div>
+        <h3>תמונות</h3>
+        <p>כל מוצר עם תמונה ב-<code>/items/{id}.webp</code> + thumbnail ב-<code>/items/{id}-thumb.webp</code>. Fallback ל-JPG.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card__icon"><i class="fas fa-file-code"></i></div>
+        <h3>מבנה דף מוצר</h3>
+        <p>Breadcrumb &#8594; תמונה + גלריה &#8594; שם + מחיר + יחידה &#8594; תיאור + מפרט &#8594; כפתור הוסף לעגלה &#8594; מוצרים קשורים</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card__icon"><i class="fas fa-database"></i></div>
+        <h3>מקור הנתונים</h3>
+        <p>כל המוצרים מיוצרים מ-<code>data/products.json</code> (1.4 MB) ע"י <code>build/generate-products.js</code></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. Images -->
+<section class="section" id="images">
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-images"></i> תמונות ומדיה</h2>
+    <p class="section-subtitle">3,345 תמונות מוצרים ב-3 פורמטים + לוגואים + אייקונים</p>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-card__num">1,115</div>
+        <div class="stat-card__label">JPG מקורי</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__num">1,115</div>
+        <div class="stat-card__label">WebP דחוס</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__num">1,115</div>
+        <div class="stat-card__label">Thumb WebP</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__num">98.6%</div>
+        <div class="stat-card__label">חיסכון WebP</div>
+      </div>
+    </div>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>תיקייה</th><th>תוכן</th><th>פורמט</th><th>גודל טיפוסי</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>/items/</code></td><td>תמונות מוצרים (1,115 מוצרים x 3)</td><td>JPG + WebP + Thumb</td><td>JPG: 300KB-1.7MB, WebP: 11-21KB</td></tr>
+        <tr><td><code>/images/logo/</code></td><td>8 וריאנטים של הלוגו</td><td>PNG</td><td>dark, white, hebrew, 2x</td></tr>
+        <tr><td><code>/images/blog/</code></td><td>11 אייקונים תמטיים</td><td>SVG</td><td>~2-5 KB</td></tr>
+        <tr><td><code>/assets/products/</code></td><td>15 תמונות לדף הבית</td><td>JPG</td><td>~100 KB</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 10. Blog -->
+<section class="section" id="blog">
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-blog"></i> בלוג</h2>
+    <p class="section-subtitle">31 פוסטים (20 באנגלית + 11 בעברית), ממוקדי SEO ותוכן מקצועי</p>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-card__icon"><i class="fas fa-broom"></i></div>
+        <h3>חומרי ניקוי</h3>
+        <p>מדריכים לחברות ניקיון, סיטונאות, ציוד מוסדי</p>
+        <span class="badge badge--blue">8 פוסטים</span>
+      </div>
+      <div class="info-card">
+        <div class="info-card__icon"><i class="fas fa-utensils"></i></div>
+        <h3>מסעדות ואירוח</h3>
+        <p>ציוד חד פעמי, אריזות Take Away, ציוד למסעדות</p>
+        <span class="badge badge--green">5 פוסטים</span>
+      </div>
+      <div class="info-card">
+        <div class="info-card__icon"><i class="fas fa-building"></i></div>
+        <h3>מדריכי רכש</h3>
+        <p>איך לבחור ספק, רכש חכם, חיסכון בנייר, לפי סוג עסק</p>
+        <span class="badge badge--gold">7 פוסטים</span>
+      </div>
+      <div class="info-card">
+        <div class="info-card__icon"><i class="fas fa-landmark"></i></div>
+        <h3>סגמנטים</h3>
+        <p>מוסדות ציבוריים, משרדים, סופרים, מרכזי ספורט</p>
+        <span class="badge badge--blue">6 פוסטים</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11. SEO -->
+<section class="section" id="seo">
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-search"></i> SEO ונתונים מובנים</h2>
+    <p class="section-subtitle">אופטימיזציה מלאה לגוגל עם Schema.org, sitemaps ו-meta tags</p>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-card__icon"><i class="fas fa-code"></i></div>
+        <h3>Schema.org (JSON-LD)</h3>
+        <p><strong>Organization</strong> - פרטי חברה<br><strong>Product</strong> - כל מוצר עם מחיר וזמינות<br><strong>BreadcrumbList</strong> - ניווט<br><strong>FAQPage</strong> - שאלות ותשובות<br><strong>CollectionPage</strong> - קטגוריות</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card__icon"><i class="fas fa-sitemap"></i></div>
+        <h3>Sitemaps</h3>
+        <p><code>sitemap.xml</code> (280 KB) - ראשי<br><code>sitemap-products.xml</code> (171 KB) - מוצרים<br><code>sitemap-blog.xml</code> (3.5 KB) - בלוג</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card__icon"><i class="fas fa-tags"></i></div>
+        <h3>Meta Tags</h3>
+        <p>כל דף כולל: <code>title</code>, <code>description</code>, <code>canonical</code>, <code>og:*</code>, <code>twitter:card</code>, <code>hreflang</code>, <code>robots</code></p>
+      </div>
+      <div class="info-card">
+        <div class="info-card__icon"><i class="fas fa-chart-line"></i></div>
+        <h3>Analytics</h3>
+        <p>Google Analytics 4 (<code>G-MKVGJ3XRK5</code>)<br>Facebook Pixel<br>אירועי ecommerce: AddToCart, ViewContent</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. Build -->
+<section class="section" id="build">
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-hammer"></i> מערכת Build</h2>
+    <p class="section-subtitle">סקריפטי Node.js שמייצרים את האתר מתוך קובץ JSON אחד</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>סקריפט</th><th>פקודה</th><th>מה עושה</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>generate-products.js</code></td>
+          <td><code>node build/generate-products.js</code></td>
+          <td>קורא <code>data/products.json</code> &#8594; מייצר 825 דפי HTML בתיקיית <code>products/</code></td>
+        </tr>
+        <tr>
+          <td><code>generate-categories.js</code></td>
+          <td><code>node build/generate-categories.js</code></td>
+          <td>קורא products.json &#8594; מחלק לקטגוריות &#8594; מייצר 167 דפי קטגוריה</td>
+        </tr>
+        <tr>
+          <td><code>generate-sitemap.js</code></td>
+          <td><code>node build/generate-sitemap.js</code></td>
+          <td>סורק את כל הדפים &#8594; מייצר 3 קבצי sitemap</td>
+        </tr>
+        <tr>
+          <td><code>optimize-images.js</code></td>
+          <td><code>node build/optimize-images.js</code></td>
+          <td>ממיר JPG &#8594; WebP, יוצר thumbnails</td>
+        </tr>
+        <tr>
+          <td><code>sync-header.js</code></td>
+          <td><code>node build/sync-header.js</code></td>
+          <td>מעדכן את ה-header בכל הדפים (1,057 קבצים)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout--info">
+      <i class="fas fa-sync-alt"></i>
+      <p><strong>תהליך עדכון קטלוג:</strong> מעדכנים את <code>data/products.json</code> &#8594; מריצים <code>generate-products.js</code> + <code>generate-categories.js</code> &#8594; <code>git push</code> &#8594; GitHub Pages מפרסם אוטומטית.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 13. User Flow -->
+<section class="section" id="flow">
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-route"></i> זרימת משתמש</h2>
+    <p class="section-subtitle">מהכניסה לאתר ועד להזמנה</p>
+
+    <div class="flow">
+      <div class="flow__step">
+        <i class="fas fa-home"></i>
+        <strong>דף הבית</strong>
+        <span>קטגוריות + מוצרים מובילים</span>
+      </div>
+      <div class="flow__arrow"><i class="fas fa-arrow-left"></i></div>
+      <div class="flow__step">
+        <i class="fas fa-th-large"></i>
+        <strong>קטגוריה</strong>
+        <span>סינון + גריד מוצרים</span>
+      </div>
+      <div class="flow__arrow"><i class="fas fa-arrow-left"></i></div>
+      <div class="flow__step">
+        <i class="fas fa-box-open"></i>
+        <strong>דף מוצר</strong>
+        <span>פירוט + הוסף לעגלה</span>
+      </div>
+      <div class="flow__arrow"><i class="fas fa-arrow-left"></i></div>
+      <div class="flow__step">
+        <i class="fas fa-shopping-cart"></i>
+        <strong>עגלה</strong>
+        <span>כמויות + סה"כ</span>
+      </div>
+      <div class="flow__arrow"><i class="fas fa-arrow-left"></i></div>
+      <div class="flow__step">
+        <i class="fas fa-cash-register"></i>
+        <strong>Checkout</strong>
+        <span>פרטים + אישור</span>
+      </div>
+      <div class="flow__arrow"><i class="fas fa-arrow-left"></i></div>
+      <div class="flow__step" style="border-color: #22C55E; background: #f0fdf4;">
+        <i class="fab fa-whatsapp" style="color: #22C55E;"></i>
+        <strong>WhatsApp</strong>
+        <span>הזמנה נשלחת</span>
+      </div>
+    </div>
+
+    <div class="callout callout--warn">
+      <i class="fas fa-lightbulb"></i>
+      <p><strong>חשוב:</strong> אין backend לתשלומים. ההזמנה נשלחת כהודעת WhatsApp מפורטת ליובל, שמטפל בה ידנית דרך מערכת רווחית (Rivhit). הלקוח מקבל אישור ואז חשבונית.</p>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<footer class="doc-footer">
+  <p>וואי מרקט — תיעוד מבנה אתר | עודכן אפריל 2026</p>
+</footer>
+
+<script src="js/main.min.js?v=20260401" defer></script>
+</body>
+</html>
