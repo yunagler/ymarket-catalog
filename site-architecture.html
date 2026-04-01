@@ -493,7 +493,7 @@
         </tr>
         <tr>
           <td><code>checkout.min.js</code></td><td>4.8 KB</td><td>checkout.html</td>
-          <td>טופס checkout, ולידציה, שליחת הזמנה כהודעת WhatsApp</td>
+          <td>טופס checkout, ולידציה, שליחת הזמנה ל-CRM API (<code>/api/b2c/orders</code>). Fallback לוואטסאפ אם השרת לא זמין</td>
         </tr>
         <tr>
           <td><code>schema-markup.js</code></td><td>34 KB</td><td>כל הדפים</td>
@@ -508,7 +508,7 @@
 
     <div class="callout callout--info">
       <i class="fas fa-shopping-cart"></i>
-      <p><strong>עגלת הקניות</strong> מבוססת על <code>localStorage</code> (מפתח: <code>ym_cart</code>). אין שרת backend לעגלה. ההזמנה הסופית נשלחת כהודעת WhatsApp מפורטת עם כל הפריטים.</p>
+      <p><strong>עגלת הקניות</strong> מבוססת על <code>localStorage</code> (מפתח: <code>ym_cart</code>). בעת checkout, ההזמנה נשלחת ל-CRM API (<code>app.ymarket.co.il/api/b2c/orders</code>), נוצר לקוח (אם חדש), נוצרת הזמנה בסטטוס "חדשה", ונשלחת הודעת WhatsApp ליובל. ניהול ואישור ההזמנה מתבצע בממשק ה-CRM.</p>
     </div>
   </div>
 </section>
@@ -767,16 +767,27 @@
         <span>פרטים + אישור</span>
       </div>
       <div class="flow__arrow"><i class="fas fa-arrow-left"></i></div>
+      <div class="flow__step" style="border-color: #6366f1; background: #f5f3ff;">
+        <i class="fas fa-headset" style="color: #6366f1;"></i>
+        <strong>CRM</strong>
+        <span>הזמנה חדשה נוצרת</span>
+      </div>
+      <div class="flow__arrow"><i class="fas fa-arrow-left"></i></div>
       <div class="flow__step" style="border-color: #22C55E; background: #f0fdf4;">
-        <i class="fab fa-whatsapp" style="color: #22C55E;"></i>
-        <strong>WhatsApp</strong>
-        <span>הזמנה נשלחת</span>
+        <i class="fas fa-file-invoice" style="color: #22C55E;"></i>
+        <strong>רווחית</strong>
+        <span>חשבונית / ת. משלוח</span>
       </div>
     </div>
 
+    <div class="callout callout--info">
+      <i class="fas fa-cogs"></i>
+      <p><strong>זרימת הזמנה מלאה:</strong> הלקוח ממלא checkout באתר &#8594; <code>POST /api/b2c/orders</code> &#8594; ולידציית מחירים server-side &#8594; יצירת לקוח (אם חדש) &#8594; הזמנה בסטטוס "חדשה" ב-CRM &#8594; התראת WhatsApp ליובל &#8594; אישור ועדכון סטטוס ב-CRM &#8594; שליחה לרווחית (תעודת משלוח/חשבונית) &#8594; משלוח ללקוח.</p>
+    </div>
+
     <div class="callout callout--warn">
-      <i class="fas fa-lightbulb"></i>
-      <p><strong>חשוב:</strong> אין backend לתשלומים. ההזמנה נשלחת כהודעת WhatsApp מפורטת ליובל, שמטפל בה ידנית דרך מערכת רווחית (Rivhit). הלקוח מקבל אישור ואז חשבונית.</p>
+      <i class="fas fa-server"></i>
+      <p><strong>CRM Backend:</strong> ממשק ניהול ב-<code>app.ymarket.co.il</code> (Next.js + PostgreSQL). כולל: רשימת הזמנות עם סינון לפי מקור/סטטוס, דף פירוט הזמנה עם עריכה, שינוי סטטוסים (חדשה &#8594; אושרה &#8594; בהכנה &#8594; נשלחה &#8594; נמסרה), שליחה לרווחית, ויצירת הזמנות ידנית.</p>
     </div>
   </div>
 </section>
