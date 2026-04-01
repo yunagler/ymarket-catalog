@@ -7,7 +7,10 @@
   'use strict';
 
   var API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
-  var MIN_ORDER = 200;
+  // Read config from CRM sync (injected by apply-config), fallback to defaults
+  var CONFIG = window.YM_CHECKOUT_CONFIG || {};
+  var MIN_ORDER = CONFIG.minOrderAmount || 200;
+  var DELIVERY_ZONES = CONFIG.deliveryZones || [];
   var WHATSAPP_NUMBER = '972549922492';
 
   document.addEventListener('DOMContentLoaded', function() {
@@ -19,6 +22,7 @@
     renderSummary(cart);
     setupForm(cart);
     setupDateMin();
+    setupDeliveryZones();
   });
 
   function getCart() {
@@ -116,7 +120,7 @@
           return { id: item.id, quantity: item.quantity, price: item.price || 0 };
         }),
         deliveryDate: deliveryDate || undefined,
-        notes: notes || undefined
+        notes: [notes, window._ymDeliveryZone ? 'אזור: ' + window._ymDeliveryZone : '', window._ymDeliveryCost ? 'משלוח: ' + window._ymDeliveryCost + '₪' : ''].filter(Boolean).join(' | ') || undefined
       };
 
       var headers = { 'Content-Type': 'application/json' };
@@ -277,6 +281,73 @@
     localStorage.removeItem('ym_cart');
     if (window.YMarket) window.YMarket.updateCartBadge();
     window.location.href = 'order-success';
+  }
+
+  function setupDeliveryZones() {
+    if (!DELIVERY_ZONES.length) return;
+
+    var cityInput = document.getElementById('co-city');
+    if (!cityInput) return;
+
+    // Create delivery cost display
+    var deliveryRow = document.createElement('div');
+    deliveryRow.id = 'deliveryCostRow';
+    deliveryRow.className = 'checkout-summary__item';
+    deliveryRow.style.display = 'none';
+    deliveryRow.style.borderTop = '1px solid #e5e7eb';
+    deliveryRow.style.paddingTop = '8px';
+    deliveryRow.style.marginTop = '8px';
+    deliveryRow.innerHTML = '<div class="checkout-summary__item-info"><div class="checkout-summary__item-name">משלוח</div>' +
+      '<div class="checkout-summary__item-qty" id="deliveryZoneName" style="font-size:0.75rem;color:#64748B"></div></div>' +
+      '<div class="checkout-summary__item-price" id="deliveryCost"></div>';
+
+    var totalEl = document.getElementById('checkoutTotal');
+    if (totalEl && totalEl.parentNode) {
+      totalEl.parentNode.insertBefore(deliveryRow, totalEl);
+    }
+
+    function updateDelivery() {
+      var city = (cityInput.value || '').trim();
+      if (!city) { deliveryRow.style.display = 'none'; return; }
+
+      var zone = null;
+      for (var i = 0; i < DELIVERY_ZONES.length; i++) {
+        var z = DELIVERY_ZONES[i];
+        for (var j = 0; j < z.cities.length; j++) {
+          if (city.indexOf(z.cities[j]) !== -1 || z.cities[j].indexOf(city) !== -1) {
+            zone = z; break;
+          }
+        }
+        if (zone) break;
+      }
+
+      var cart = getCart();
+      var subtotal = cart.reduce(function(s, item) { return s + ((item.price || 0) * item.quantity); }, 0);
+
+      var deliveryCost = 0;
+      var zoneName = '';
+      if (zone) {
+        deliveryCost = (zone.freeAbove && subtotal >= zone.freeAbove) ? 0 : zone.price;
+        zoneName = zone.name + (deliveryCost === 0 && zone.price > 0 ? ' (חינם!)' : '');
+      } else {
+        zoneName = 'אזור לא מזוהה — ייתכן חיוב נוסף';
+      }
+
+      document.getElementById('deliveryZoneName').textContent = zoneName;
+      document.getElementById('deliveryCost').textContent = deliveryCost > 0 ? formatPrice(deliveryCost) : 'חינם';
+      document.getElementById('deliveryCost').style.color = deliveryCost > 0 ? '' : '#22C55E';
+      deliveryRow.style.display = '';
+
+      // Update total with delivery
+      if (totalEl) totalEl.textContent = formatPrice(subtotal + deliveryCost);
+
+      // Store delivery cost for order submission
+      window._ymDeliveryCost = deliveryCost;
+      window._ymDeliveryZone = zone ? zone.name : '';
+    }
+
+    cityInput.addEventListener('input', updateDelivery);
+    cityInput.addEventListener('change', updateDelivery);
   }
 
   function escapeHtml(str) {
