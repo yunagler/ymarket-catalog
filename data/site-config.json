@@ -24,9 +24,9 @@
     "ogImage": ""
   },
   "stats": {
-    "activeCustomers": "214",
-    "productsInCatalog": "180",
-    "yearsExperience": "5",
+    "activeCustomers": "200",
+    "productsInCatalog": "825",
+    "yearsExperience": "6",
     "deliveriesPerYear": "1000",
     "satisfactionRate": "98",
     "deliveryHours": "72"
@@ -42,7 +42,7 @@
   "cta": {
     "title": "מוכנים להזמין?",
     "subtitle": "צרו קשר עכשיו וקבלו הצעת מחיר מותאמת לעסק שלכם.",
-    "minOrder": "500 ש\"ח פלוס מע\"מ"
+    "minOrder": "200 ₪ + מע\"מ (בתוספת משלוח לפי אזור)"
   },
   "features": [
     {
