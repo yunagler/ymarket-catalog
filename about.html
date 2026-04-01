@@ -26,11 +26,11 @@
   <link rel="alternate" hreflang="x-default" href="https://ymarket.co.il/about">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
-  <link rel="stylesheet" href="css/style.min.css?v=20260317">
-  <link rel="stylesheet" href="css/pages/contact.min.css?v=20260317">
+  <link rel="stylesheet" href="css/style.min.css?v=20260401">
+  <link rel="stylesheet" href="/css/new-header.css?v=20260401">
 
   <script type="application/ld+json">
   {
@@ -38,6 +38,7 @@
     "@type": "Organization",
     "name": "וואי מרקט",
     "alternateName": "Y Market",
+    "legalName": "נגלר סחר והפצה",
     "url": "https://ymarket.co.il",
     "telephone": "+972-3-7740400",
     "email": "Pm@ymarket.co.il",
@@ -45,17 +46,490 @@
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "IL",
-      "addressLocality": "גת רימון"
+      "addressRegion": "מחוז תל אביב"
     },
     "foundingDate": "2020",
-    "sameAs": ["https://www.facebook.com/profile.php?id=100083110428101", "https://www.instagram.com/ymarket.ai"]
+    "founder": {"@type": "Person", "name": "יובל נגלר"},
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+972-3-7740400",
+      "email": "Pm@ymarket.co.il",
+      "contactType": "sales",
+      "availableLanguage": ["Hebrew", "English"],
+      "areaServed": {"@type": "Country", "name": "Israel"}
+    },
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=100083110428101",
+      "https://www.instagram.com/ymarket.ai",
+      "https://wa.me/972549922492"
+    ]
   }
   </script>
-  <link rel="stylesheet" href="/css/new-header.css">
+
+  <style>
+    /* ── About Page Styles (V2 Design) ── */
+    .about-hero {
+      background: linear-gradient(165deg, #0A1628 0%, #112A45 35%, #1B3A5C 70%, #2A5080 100%);
+      padding: 5rem 0 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 80%, rgba(10,107,255,0.15), transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(232,167,53,0.1), transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(255,255,255,0.02), transparent 70%);
+    }
+    .about-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background: linear-gradient(to top, #F6F8FB, transparent);
+    }
+    .about-hero .container { position: relative; z-index: 1; }
+    .about-hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #E8A735;
+      margin-bottom: 1.5rem;
+    }
+    .about-hero h1 {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 1rem;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+    .about-hero__subtitle {
+      font-size: clamp(1rem, 1.5vw, 1.25rem);
+      color: rgba(255,255,255,0.9);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* Stats Bar (dark) */
+    .about-stats-section {
+      background: linear-gradient(155deg, #0A1628, #112A45, #1B3A5C);
+      padding: 4rem 0;
+      position: relative;
+    }
+    .about-stats-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 100%, rgba(10,107,255,0.08), transparent 60%);
+    }
+    .about-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .about-stat {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      transition: all 0.3s;
+    }
+    .about-stat:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.15);
+      transform: translateY(-4px);
+    }
+    .about-stat__icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: rgba(10,107,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 1.2rem;
+      color: #3D8AFF;
+    }
+    .about-stat__number {
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .about-stat__label {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.7);
+      font-weight: 500;
+    }
+
+    /* Story Section */
+    .about-story {
+      padding: 5rem 0;
+      background: #F6F8FB;
+    }
+    .about-story__content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .about-story__label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #0A6BFF;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+    .about-story h2 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 800;
+      color: #112A45;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.3px;
+    }
+    .about-story p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: #475569;
+      margin-bottom: 1.25rem;
+    }
+    .about-story__highlight {
+      background: white;
+      border-right: 4px solid #0A6BFF;
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 16px 16px 0;
+      margin: 2rem 0;
+      box-shadow: 0 4px 16px rgba(10,22,40,0.06);
+    }
+    .about-story__highlight p {
+      font-weight: 600;
+      color: #1B3A5C;
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    /* Values Grid */
+    .about-values-section {
+      padding: 5rem 0;
+      background: #fff;
+    }
+    .about-values-section .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .about-values-section .section-header h2 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 800;
+      color: #112A45;
+      margin-bottom: 0.75rem;
+    }
+    .about-values-section .section-header p {
+      font-size: 1.05rem;
+      color: #475569;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .value-card {
+      background: #fff;
+      border: 1px solid rgba(27,58,92,0.1);
+      border-radius: 24px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.22,1,0.36,1);
+    }
+    .value-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 60px -15px rgba(10,22,40,0.18);
+      border-color: rgba(10,107,255,0.25);
+    }
+    .value-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #0A6BFF, #4A82BF);
+      transform: scaleX(0);
+      transition: transform 0.35s;
+    }
+    .value-card:hover::after { transform: scaleX(1); }
+    .value-card__icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #EBF2FA, rgba(10,107,255,0.06));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: #2A5080;
+      margin-bottom: 1.25rem;
+      transition: all 0.35s;
+    }
+    .value-card:hover .value-card__icon {
+      background: #0A6BFF;
+      color: white;
+      box-shadow: 0 4px 16px rgba(10,107,255,0.35);
+      transform: scale(1.08);
+    }
+    .value-card h3 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #112A45;
+      margin-bottom: 0.5rem;
+    }
+    .value-card p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: #475569;
+      margin: 0;
+    }
+
+    /* Clients Section */
+    .about-clients {
+      padding: 5rem 0;
+      background: #F6F8FB;
+    }
+    .about-clients .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .about-clients .section-header h2 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 800;
+      color: #112A45;
+      margin-bottom: 0.75rem;
+    }
+    .about-clients .section-header p {
+      font-size: 1.05rem;
+      color: #475569;
+    }
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .client-type {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 1.25rem 1.5rem;
+      background: #fff;
+      border: 1px solid rgba(27,58,92,0.08);
+      border-radius: 16px;
+      transition: all 0.25s;
+    }
+    .client-type:hover {
+      border-color: rgba(10,107,255,0.2);
+      box-shadow: 0 4px 16px rgba(10,22,40,0.06);
+      transform: translateY(-2px);
+    }
+    .client-type__icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #EBF2FA, rgba(10,107,255,0.06));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: #2A5080;
+      flex-shrink: 0;
+    }
+    .client-type span {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #1f2937;
+    }
+
+    /* Service Areas */
+    .about-areas {
+      padding: 5rem 0;
+      background: #fff;
+    }
+    .about-areas .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .about-areas .section-header h2 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 800;
+      color: #112A45;
+      margin-bottom: 0.75rem;
+    }
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .area-card {
+      text-align: center;
+      padding: 2rem 1.25rem;
+      background: #F6F8FB;
+      border: 1px solid rgba(27,58,92,0.06);
+      border-radius: 20px;
+      transition: all 0.3s;
+    }
+    .area-card:hover {
+      background: #fff;
+      border-color: rgba(10,107,255,0.2);
+      box-shadow: 0 8px 24px rgba(10,22,40,0.08);
+      transform: translateY(-3px);
+    }
+    .area-card__icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #EBF2FA, rgba(10,107,255,0.08));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 1.1rem;
+      color: #0A6BFF;
+    }
+    .area-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #112A45;
+      margin-bottom: 0.4rem;
+    }
+    .area-card p {
+      font-size: 0.82rem;
+      color: #64748B;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* CTA Section */
+    .about-cta {
+      padding: 5rem 0;
+      background: linear-gradient(155deg, #0A1628, #112A45, #1B3A5C);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 50%, rgba(10,107,255,0.12), transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(232,167,53,0.08), transparent 50%);
+    }
+    .about-cta .container { position: relative; z-index: 1; }
+    .about-cta h2 {
+      font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+    .about-cta p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 2rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .about-cta__buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .about-cta__buttons .btn {
+      padding: 14px 32px;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .btn--wa {
+      background: #1a7f37;
+      color: #fff;
+      border: none;
+    }
+    .btn--wa:hover {
+      background: #158a32;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(26,127,55,0.35);
+      color: #fff;
+    }
+    .btn--light {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(8px);
+    }
+    .btn--light:hover {
+      background: rgba(255,255,255,0.18);
+      transform: translateY(-2px);
+      color: #fff;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      .values-grid { grid-template-columns: repeat(2, 1fr); }
+      .clients-grid { grid-template-columns: repeat(2, 1fr); }
+      .areas-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .about-stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-hero { padding: 3.5rem 0 3rem; }
+    }
+    @media (max-width: 640px) {
+      .values-grid { grid-template-columns: 1fr; }
+      .clients-grid { grid-template-columns: 1fr; }
+      .areas-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .about-stats-grid { grid-template-columns: 1fr; }
+      .about-hero { padding: 2.5rem 0 2rem; }
+      .value-card, .client-type, .area-card { padding: 1.25rem; border-radius: 16px; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Top Bar -->
+  <!-- Old header/footer kept for injector compatibility -->
   <div class="top-bar">
     <div class="container">
       <div class="top-bar__info">
@@ -77,39 +551,29 @@
         <img src="/images/logo/logo-dark.png" alt="וואי מרקט" width="98" height="52">
       </a>
       <nav class="main-nav" aria-label="ניווט ראשי">
-        <div class="main-nav__item">
-          <a href="/" class="main-nav__link" data-nav="home">דף הבית</a>
-        </div>
+        <div class="main-nav__item"><a href="/" class="main-nav__link" data-nav="home">דף הבית</a></div>
         <div class="main-nav__item">
           <a href="/catalog" class="main-nav__link" data-nav="catalog">מוצרים <i class="fas fa-chevron-down"></i></a>
-          <div class="mega-menu">
-            <div class="mega-menu__grid">
-              <a href="/category/industrial-cleaning-supplies-wholesale/" class="mega-menu__category"><i class="fas fa-spray-can"></i><span class="mega-menu__cat-name">חומרי ניקוי וכימיקלים</span></a>
-              <a href="/category/bulk-paper-towel-office-supplies/" class="mega-menu__category"><i class="fas fa-toilet-paper"></i><span class="mega-menu__cat-name">מוצרי נייר וניגוב</span></a>
-              <a href="/category/disposable-catering-food-service/" class="mega-menu__category"><i class="fas fa-utensils"></i><span class="mega-menu__cat-name">חד פעמי ואירוח</span></a>
-              <a href="/category/food-packaging-delivery-solutions/" class="mega-menu__category"><i class="fas fa-box-open"></i><span class="mega-menu__cat-name">אריזות מזון ו-Take Away</span></a>
-              <a href="/category/heavy-duty-garbage-bags-wholesale/" class="mega-menu__category"><i class="fas fa-trash-alt"></i><span class="mega-menu__cat-name">שקיות ופתרונות אשפה</span></a>
-              <a href="/category/professional-cleaning-cloths-microfiber/" class="mega-menu__category"><i class="fas fa-tshirt"></i><span class="mega-menu__cat-name">טקסטיל, מטליות וסחבות</span></a>
-              <a href="/category/office-coffee-breakroom-supplies/" class="mega-menu__category"><i class="fas fa-coffee"></i><span class="mega-menu__cat-name">קפה, שתייה וכיבוד</span></a>
-              <a href="/category/safety-ppe-equipment-for-business/" class="mega-menu__category"><i class="fas fa-hard-hat"></i><span class="mega-menu__cat-name">בטיחות ומיגון אישי</span></a>
-              <a href="/category/office-supplies-wholesale-business/" class="mega-menu__category"><i class="fas fa-pen"></i><span class="mega-menu__cat-name">ציוד משרדי וכללי</span></a>
-              <a href="/category/maintenance-technical-equipment-wholesale/" class="mega-menu__category"><i class="fas fa-wrench"></i><span class="mega-menu__cat-name">ציוד טכני ואחזקה</span></a>
-              <a href="/category/warehouse-packaging-supplies-wholesale/" class="mega-menu__category"><i class="fas fa-tape"></i><span class="mega-menu__cat-name">עטיפה, אריזה ולוגיסטיקה</span></a>
-              <a href="/category/first-aid-medical-equipment-business/" class="mega-menu__category"><i class="fas fa-first-aid"></i><span class="mega-menu__cat-name">עזרה ראשונה - רפואי</span></a>
-              <a href="/category/personal-hygiene-products-wholesale/" class="mega-menu__category"><i class="fas fa-pump-soap"></i><span class="mega-menu__cat-name">טואלטיקה וטיפוח</span></a>
-              <a href="/category/institutional-cleaning-tools-equipment/" class="mega-menu__category"><i class="fas fa-tools"></i><span class="mega-menu__cat-name">כלי עבודה וציוד משקי</span></a>
-            </div>
-          </div>
+          <div class="mega-menu"><div class="mega-menu__grid">
+            <a href="/category/industrial-cleaning-supplies-wholesale/" class="mega-menu__category"><i class="fas fa-spray-can"></i><span class="mega-menu__cat-name">חומרי ניקוי וכימיקלים</span></a>
+            <a href="/category/bulk-paper-towel-office-supplies/" class="mega-menu__category"><i class="fas fa-toilet-paper"></i><span class="mega-menu__cat-name">מוצרי נייר וניגוב</span></a>
+            <a href="/category/disposable-catering-food-service/" class="mega-menu__category"><i class="fas fa-utensils"></i><span class="mega-menu__cat-name">חד פעמי ואירוח</span></a>
+            <a href="/category/food-packaging-delivery-solutions/" class="mega-menu__category"><i class="fas fa-box-open"></i><span class="mega-menu__cat-name">אריזות מזון ו-Take Away</span></a>
+            <a href="/category/heavy-duty-garbage-bags-wholesale/" class="mega-menu__category"><i class="fas fa-trash-alt"></i><span class="mega-menu__cat-name">שקיות ופתרונות אשפה</span></a>
+            <a href="/category/professional-cleaning-cloths-microfiber/" class="mega-menu__category"><i class="fas fa-tshirt"></i><span class="mega-menu__cat-name">טקסטיל, מטליות וסחבות</span></a>
+            <a href="/category/office-coffee-breakroom-supplies/" class="mega-menu__category"><i class="fas fa-coffee"></i><span class="mega-menu__cat-name">קפה, שתייה וכיבוד</span></a>
+            <a href="/category/safety-ppe-equipment-for-business/" class="mega-menu__category"><i class="fas fa-hard-hat"></i><span class="mega-menu__cat-name">בטיחות ומיגון אישי</span></a>
+            <a href="/category/office-supplies-wholesale-business/" class="mega-menu__category"><i class="fas fa-pen"></i><span class="mega-menu__cat-name">ציוד משרדי וכללי</span></a>
+            <a href="/category/maintenance-technical-equipment-wholesale/" class="mega-menu__category"><i class="fas fa-wrench"></i><span class="mega-menu__cat-name">ציוד טכני ואחזקה</span></a>
+            <a href="/category/warehouse-packaging-supplies-wholesale/" class="mega-menu__category"><i class="fas fa-tape"></i><span class="mega-menu__cat-name">עטיפה, אריזה ולוגיסטיקה</span></a>
+            <a href="/category/first-aid-medical-equipment-business/" class="mega-menu__category"><i class="fas fa-first-aid"></i><span class="mega-menu__cat-name">עזרה ראשונה - רפואי</span></a>
+            <a href="/category/personal-hygiene-products-wholesale/" class="mega-menu__category"><i class="fas fa-pump-soap"></i><span class="mega-menu__cat-name">טואלטיקה וטיפוח</span></a>
+            <a href="/category/institutional-cleaning-tools-equipment/" class="mega-menu__category"><i class="fas fa-tools"></i><span class="mega-menu__cat-name">כלי עבודה וציוד משקי</span></a>
+          </div></div>
         </div>
-        <div class="main-nav__item">
-          <a href="/about" class="main-nav__link" data-nav="about">אודות</a>
-        </div>
-        <div class="main-nav__item">
-          <a href="/blog" class="main-nav__link" data-nav="blog">בלוג</a>
-        </div>
-        <div class="main-nav__item">
-          <a href="/contact" class="main-nav__link" data-nav="contact">צרו קשר</a>
-        </div>
+        <div class="main-nav__item"><a href="/about" class="main-nav__link" data-nav="about">אודות</a></div>
+        <div class="main-nav__item"><a href="/blog" class="main-nav__link" data-nav="blog">בלוג</a></div>
+        <div class="main-nav__item"><a href="/contact" class="main-nav__link" data-nav="contact">צרו קשר</a></div>
       </nav>
       <div class="header__actions">
         <button class="header__search-toggle" aria-label="חיפוש"><i class="fas fa-search"></i></button>
@@ -121,134 +585,215 @@
     </div>
   </header>
   <div class="mobile-overlay"></div>
-  <div class="search-overlay"><div class="search-overlay__inner"><form action="/catalog" method="get"><input type="search" name="search" class="search-overlay__input" placeholder="חפשו מוצר..." aria-label="חיפוש מוצר" autocomplete="off"></form></div></div><!-- Breadcrumb -->
+  <div class="search-overlay"><div class="search-overlay__inner"><form action="/catalog" method="get"><input type="search" name="search" class="search-overlay__input" placeholder="חפשו מוצר..." aria-label="חיפוש מוצר" autocomplete="off"></form></div></div>
+
+  <!-- Breadcrumb -->
   <div class="container">
     <nav class="breadcrumb" aria-label="ניווט פירורי לחם">
-      <a href="index">דף הבית</a>
+      <a href="/">דף הבית</a>
       <span class="breadcrumb__separator"><i class="fas fa-chevron-left"></i></span>
       <span class="breadcrumb__current">אודות</span>
     </nav>
   </div>
 
-  <!-- About -->
   <main id="main-content">
+
+  <!-- Hero -->
   <section class="about-hero">
     <div class="container">
+      <div class="about-hero__badge"><i class="fas fa-building"></i> מאז 2020</div>
       <h1>נגלר סחר והפצה</h1>
       <p class="about-hero__subtitle">אספקה חכמה ומדויקת של מוצרי צריכה שוטפת לעסקים ומוסדות בכל הארץ</p>
     </div>
   </section>
 
-  <!-- About Content -->
-  <section class="section">
+  <!-- Stats -->
+  <section class="about-stats-section">
     <div class="container">
-      <div class="about-content" style="max-width: 900px; margin: 0 auto;">
-
-        <div class="about-block" style="margin-bottom: var(--space-2xl);">
-          <h2 style="font-size: var(--fs-xl); margin-bottom: var(--space-md); color: var(--color-primary-dark);">הסיפור שלנו</h2>
-          <p style="font-size: var(--fs-base); line-height: var(--lh-relaxed); color: var(--color-text-secondary); margin-bottom: var(--space-md);">
-            וואי מרקט הוקמה בשנת 2020 על ידי יובל נגלר מתוך הבנה שעסקים ומוסדות בישראל זקוקים לספק אמין, זמין ומקצועי למוצרי צריכה שוטפת. מה שהתחיל כרעיון פשוט — לספק שירות אישי ומחירי סיטונאות לכל עסק — הפך למערכת הפצה שמשרתת למעלה מ-200 לקוחות פעילים ב-120 ערים ברחבי ישראל.
-          </p>
-          <p style="font-size: var(--fs-base); line-height: var(--lh-relaxed); color: var(--color-text-secondary); margin-bottom: var(--space-md);">
-            אנחנו מתמחים באספקת חומרי ניקוי מוסדיים, מוצרי נייר, כלים חד פעמיים, אריזות מזון ו-Take Away, כפפות ומיגון אישי, שקיות אשפה תעשייתיות, ציוד ניקיון, מוצרי קפה ושתייה למשרד, וציוד משרדי — כל מה שעסק צורך על בסיס שוטף, במקום אחד. הלקוחות שלנו כוללים חברות ניקיון ואחזקה, מפיצים וסיטונאים, סופרמרקטים ומינימרקטים, מסעדות ובתי קפה, מרכזי ספורט ופנאי, מוסדות רפואיים, מפעלי תעשייה, מוסדות חינוך וגופים ציבוריים.
-          </p>
-          <p style="font-size: var(--fs-base); line-height: var(--lh-relaxed); color: var(--color-text-secondary); margin-bottom: var(--space-md);">
-            מה מייחד אותנו? שירות אישי ישירות מול הבעלים (לא מוקד טלפוני), מינימום הזמנה נגיש של 1,600 ₪, הזמנה פשוטה בוואטסאפ, ומשלוח תוך 1-2 ימי עסקים בגוש דן. אנחנו מציעים מחירי סיטונאות תחרותיים בזכות עבודה ישירה מול יצרנים ויבואנים, עם תנאי תשלום גמישים כולל שוטף +30.
-          </p>
+      <div class="about-stats-grid">
+        <div class="about-stat">
+          <div class="about-stat__icon"><i class="fas fa-users"></i></div>
+          <div class="about-stat__number" data-count="200" data-suffix="+">200+</div>
+          <div class="about-stat__label">לקוחות פעילים</div>
         </div>
-
-        <!-- Values -->
-        <div class="about-values">
-          <div class="about-values__item">
-            <div class="about-values__icon"><i class="fas fa-handshake"></i></div>
-            <h3>שירות אישי</h3>
-            <p>כל לקוח מקבל מענה אישי, הצעת מחיר מותאמת ותנאים שמתאימים בדיוק לעסק שלו. אנחנו לא מערכת אוטומטית — אנחנו בני אדם.</p>
-          </div>
-          <div class="about-values__item">
-            <div class="about-values__icon"><i class="fas fa-truck-fast"></i></div>
-            <h3>משלוח ארצי מהיר</h3>
-            <p>רשת הפצה שמכסה את כל הארץ — מהצפון ועד הדרום. הזמנה היום, אצלכם מחר. משלוח ישיר עד הדלת.</p>
-          </div>
-          <div class="about-values__item">
-            <div class="about-values__icon"><i class="fas fa-tags"></i></div>
-            <h3>מחירי סיטונאות</h3>
-            <p>בזכות עבודה ישירה מול יצרנים ויבואנים, אנחנו מציעים מחירים תחרותיים שחוסכים לעסק שלכם אלפי שקלים בשנה.</p>
-          </div>
-          <div class="about-values__item">
-            <div class="about-values__icon"><i class="fas fa-boxes-stacked"></i></div>
-            <h3>מגוון רחב</h3>
-            <p>מעל 180 מוצרים ב-12 קטגוריות — מחומרי ניקוי ומוצרי נייר, דרך כלים חד פעמיים ואריזות, ועד ציוד משרדי ומוצרי קפה.</p>
-          </div>
+        <div class="about-stat">
+          <div class="about-stat__icon"><i class="fas fa-boxes-stacked"></i></div>
+          <div class="about-stat__number" data-count="825" data-suffix="+">825+</div>
+          <div class="about-stat__label">מוצרים בקטלוג</div>
         </div>
-
-        <!-- Stats -->
-        <div class="about-stats" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-lg); margin: var(--space-3xl) 0; text-align: center;">
-          <div>
-            <div style="font-size: var(--fs-3xl); font-weight: var(--fw-bold); color: var(--color-primary);" data-count="214" data-suffix="+">214+</div>
-            <div style="font-size: var(--fs-sm); color: var(--color-text-light);">לקוחות פעילים</div>
-          </div>
-          <div>
-            <div style="font-size: var(--fs-3xl); font-weight: var(--fw-bold); color: var(--color-primary);" data-count="180" data-suffix="+">900+</div>
-            <div style="font-size: var(--fs-sm); color: var(--color-text-light);">מוצרים בקטלוג</div>
-          </div>
-          <div>
-            <div style="font-size: var(--fs-3xl); font-weight: var(--fw-bold); color: var(--color-primary);" data-count="12">14</div>
-            <div style="font-size: var(--fs-sm); color: var(--color-text-light);">קטגוריות מוצרים</div>
-          </div>
-          <div>
-            <div style="font-size: var(--fs-3xl); font-weight: var(--fw-bold); color: var(--color-primary);" data-count="5" data-suffix="+">5+</div>
-            <div style="font-size: var(--fs-sm); color: var(--color-text-light);">שנות ניסיון</div>
-          </div>
+        <div class="about-stat">
+          <div class="about-stat__icon"><i class="fas fa-layer-group"></i></div>
+          <div class="about-stat__number" data-count="14">14</div>
+          <div class="about-stat__label">קטגוריות מוצרים</div>
         </div>
-
-        <!-- Service Areas -->
-        <div class="about-block" style="margin-bottom: var(--space-2xl);">
-          <h2 style="font-size: var(--fs-xl); margin-bottom: var(--space-md); color: var(--color-primary-dark);">אזורי שירות</h2>
-          <p style="font-size: var(--fs-base); line-height: var(--lh-relaxed); color: var(--color-text-secondary); margin-bottom: var(--space-md);">
-            אנחנו מספקים שירות לעסקים בכל רחבי הארץ, עם ריכוז עיקרי באזורים הבאים:
-          </p>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-md);">
-            <div style="background: var(--color-bg); padding: var(--space-md); border-radius: var(--radius-md); text-align: center;">
-              <i class="fas fa-map-marker-alt" style="color: var(--color-accent); font-size: var(--fs-lg); margin-bottom: var(--space-xs);"></i>
-              <div style="font-weight: var(--fw-semibold);">מרכז הארץ</div>
-              <div style="font-size: var(--fs-sm); color: var(--color-text-light);">תל אביב, רמת גן, פתח תקווה, ראשון לציון</div>
-            </div>
-            <div style="background: var(--color-bg); padding: var(--space-md); border-radius: var(--radius-md); text-align: center;">
-              <i class="fas fa-map-marker-alt" style="color: var(--color-accent); font-size: var(--fs-lg); margin-bottom: var(--space-xs);"></i>
-              <div style="font-weight: var(--fw-semibold);">השרון והשפלה</div>
-              <div style="font-size: var(--fs-sm); color: var(--color-text-light);">נתניה, הרצליה, רחובות, אשדוד</div>
-            </div>
-            <div style="background: var(--color-bg); padding: var(--space-md); border-radius: var(--radius-md); text-align: center;">
-              <i class="fas fa-map-marker-alt" style="color: var(--color-accent); font-size: var(--fs-lg); margin-bottom: var(--space-xs);"></i>
-              <div style="font-weight: var(--fw-semibold);">ירושלים והסביבה</div>
-              <div style="font-size: var(--fs-sm); color: var(--color-text-light);">ירושלים, בית שמש, מודיעין</div>
-            </div>
-            <div style="background: var(--color-bg); padding: var(--space-md); border-radius: var(--radius-md); text-align: center;">
-              <i class="fas fa-map-marker-alt" style="color: var(--color-accent); font-size: var(--fs-lg); margin-bottom: var(--space-xs);"></i>
-              <div style="font-weight: var(--fw-semibold);">צפון ודרום</div>
-              <div style="font-size: var(--fs-sm); color: var(--color-text-light);">חיפה, באר שבע, ומשלוחים ארציים</div>
-            </div>
-          </div>
+        <div class="about-stat">
+          <div class="about-stat__icon"><i class="fas fa-truck-fast"></i></div>
+          <div class="about-stat__number">24-72</div>
+          <div class="about-stat__label">שעות עד המשלוח</div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- CTA -->
-        <div style="text-align: center; margin-top: var(--space-3xl); padding: var(--space-2xl); background: var(--color-bg); border-radius: var(--radius-lg);">
-          <h2 style="font-size: var(--fs-xl); margin-bottom: var(--space-sm);">רוצים להתחיל?</h2>
-          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">פנו אלינו היום ונתאים לכם הצעת מחיר מותאמת לעסק שלכם</p>
-          <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
-            <a href="https://wa.me/972549922492?text=היי, אשמח לשמוע על מוצרים ומחירים לעסק שלי" class="btn btn--whatsapp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> שלחו הודעה בוואטסאפ</a>
-            <a href="contact" class="btn btn--primary"><i class="fas fa-envelope"></i> צרו קשר</a>
-          </div>
+  <!-- Story -->
+  <section class="about-story">
+    <div class="container">
+      <div class="about-story__content">
+        <div class="about-story__label"><i class="fas fa-bookmark"></i> הסיפור שלנו</div>
+        <h2>מה שהתחיל כרעיון פשוט, הפך למערכת הפצה ארצית</h2>
+        <p>
+          וואי מרקט הוקמה בשנת 2020 על ידי יובל נגלר מתוך הבנה שעסקים ומוסדות בישראל זקוקים לספק אמין, זמין ומקצועי למוצרי צריכה שוטפת. הרעיון היה פשוט: לספק שירות אישי ומחירי סיטונאות לכל עסק, קטן כגדול.
+        </p>
+        <p>
+          אנחנו מתמחים באספקת חומרי ניקוי מוסדיים, מוצרי נייר, כלים חד פעמיים, אריזות מזון ו-Take Away, כפפות ומיגון אישי, שקיות אשפה תעשייתיות, ציוד ניקיון, מוצרי קפה ושתייה למשרד, וציוד משרדי — כל מה שעסק צורך על בסיס שוטף, במקום אחד.
+        </p>
+        <div class="about-story__highlight">
+          <p>שירות אישי ישירות מול הבעלים, לא מוקד טלפוני. כל לקוח מקבל מענה אישי, הצעת מחיר מותאמת ותנאים שמתאימים בדיוק לעסק שלו.</p>
         </div>
+        <p>
+          מחירי סיטונאות תחרותיים בזכות עבודה ישירה מול יצרנים ויבואנים, תנאי תשלום גמישים כולל שוטף +30, מינימום הזמנה 1,600 ₪, הזמנה פשוטה דרך וואטסאפ, ומשלוח תוך 24-72 שעות לכל הארץ.
+        </p>
+      </div>
+    </div>
+  </section>
 
+  <!-- Values -->
+  <section class="about-values-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>למה בוחרים בנו</h2>
+        <p>ההתחייבות שלנו לכל לקוח</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-card__icon"><i class="fas fa-handshake"></i></div>
+          <h3>שירות אישי</h3>
+          <p>מענה אישי ישירות מול הבעלים. הצעת מחיר מותאמת ותנאים שמתאימים בדיוק לעסק שלכם.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon"><i class="fas fa-truck-fast"></i></div>
+          <h3>משלוח ארצי מהיר</h3>
+          <p>רשת הפצה שמכסה את כל הארץ — מהצפון ועד הדרום. הזמנה היום, אצלכם תוך 24-72 שעות.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon"><i class="fas fa-tags"></i></div>
+          <h3>מחירי סיטונאות</h3>
+          <p>עבודה ישירה מול יצרנים ויבואנים. מחירים תחרותיים שחוסכים לעסק שלכם אלפי שקלים בשנה.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon"><i class="fas fa-boxes-stacked"></i></div>
+          <h3>מגוון רחב</h3>
+          <p>מעל 825 מוצרים ב-14 קטגוריות — מחומרי ניקוי ומוצרי נייר, דרך כלים חד פעמיים, ועד ציוד משרדי.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon"><i class="fab fa-whatsapp"></i></div>
+          <h3>הזמנה בוואטסאפ</h3>
+          <p>שולחים הודעה, מקבלים הצעת מחיר, מאשרים — וההזמנה בדרך. פשוט ומהיר.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon"><i class="fas fa-file-invoice-dollar"></i></div>
+          <h3>תנאי תשלום גמישים</h3>
+          <p>שוטף +30, העברה בנקאית, צ'קים או אשראי. מתאימים את תנאי התשלום לעסק שלכם.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients -->
+  <section class="about-clients">
+    <div class="container">
+      <div class="section-header">
+        <h2>הלקוחות שלנו</h2>
+        <p>משרתים מגוון רחב של עסקים ומוסדות בכל הארץ</p>
+      </div>
+      <div class="clients-grid">
+        <div class="client-type">
+          <div class="client-type__icon"><i class="fas fa-broom"></i></div>
+          <span>חברות ניקיון ואחזקה</span>
+        </div>
+        <div class="client-type">
+          <div class="client-type__icon"><i class="fas fa-store"></i></div>
+          <span>סופרמרקטים ומינימרקטים</span>
+        </div>
+        <div class="client-type">
+          <div class="client-type__icon"><i class="fas fa-truck-loading"></i></div>
+          <span>מפיצים וסיטונאים</span>
+        </div>
+        <div class="client-type">
+          <div class="client-type__icon"><i class="fas fa-utensils"></i></div>
+          <span>מסעדות ובתי קפה</span>
+        </div>
+        <div class="client-type">
+          <div class="client-type__icon"><i class="fas fa-dumbbell"></i></div>
+          <span>מרכזי ספורט ופנאי</span>
+        </div>
+        <div class="client-type">
+          <div class="client-type__icon"><i class="fas fa-hospital"></i></div>
+          <span>מוסדות רפואיים</span>
+        </div>
+        <div class="client-type">
+          <div class="client-type__icon"><i class="fas fa-industry"></i></div>
+          <span>מפעלי תעשייה</span>
+        </div>
+        <div class="client-type">
+          <div class="client-type__icon"><i class="fas fa-landmark"></i></div>
+          <span>גופים ציבוריים ומוסדות</span>
+        </div>
+        <div class="client-type">
+          <div class="client-type__icon"><i class="fas fa-drumstick-bite"></i></div>
+          <span>אטליזים וחנויות מזון</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="about-areas">
+    <div class="container">
+      <div class="section-header">
+        <h2>אזורי שירות</h2>
+      </div>
+      <div class="areas-grid">
+        <div class="area-card">
+          <div class="area-card__icon"><i class="fas fa-city"></i></div>
+          <h3>גוש דן</h3>
+          <p>תל אביב, רמת גן, פתח תקווה, ראשון לציון, חולון, בני ברק</p>
+        </div>
+        <div class="area-card">
+          <div class="area-card__icon"><i class="fas fa-sun"></i></div>
+          <h3>השרון והשפלה</h3>
+          <p>נתניה, הרצליה, כפר סבא, רחובות, אשדוד</p>
+        </div>
+        <div class="area-card">
+          <div class="area-card__icon"><i class="fas fa-mountain"></i></div>
+          <h3>ירושלים והסביבה</h3>
+          <p>ירושלים, בית שמש, מודיעין</p>
+        </div>
+        <div class="area-card">
+          <div class="area-card__icon"><i class="fas fa-map-marked-alt"></i></div>
+          <h3>צפון ודרום</h3>
+          <p>חיפה, באר שבע, אילת — משלוחים ארציים</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="about-cta">
+    <div class="container">
+      <h2>רוצים להתחיל?</h2>
+      <p>פנו אלינו היום ונתאים לכם הצעת מחיר מותאמת לעסק שלכם</p>
+      <div class="about-cta__buttons">
+        <a href="https://wa.me/972549922492?text=היי, אשמח לשמוע על מוצרים ומחירים לעסק שלי" class="btn btn--wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> שלחו הודעה בוואטסאפ</a>
+        <a href="/contact" class="btn btn--light"><i class="fas fa-envelope"></i> צרו קשר</a>
       </div>
     </div>
   </section>
 
   </main>
 
-  <!-- Footer -->
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <footer class="footer">
+  <!-- Footer (replaced by injector) -->
+  <footer class="footer">
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
@@ -260,7 +805,6 @@
             <a href="https://www.instagram.com/ymarket.ai" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
-
         <div class="footer__col">
           <h4>קטגוריות</h4>
           <div class="footer__links">
@@ -276,7 +820,6 @@
             <a href="/category/maintenance-technical-equipment-wholesale/">ציוד טכני</a>
           </div>
         </div>
-
         <div class="footer__col">
           <h4>קישורים מהירים</h4>
           <div class="footer__links">
@@ -288,28 +831,14 @@
             <a href="/tracking">מעקב משלוחים</a>
           </div>
         </div>
-
         <div class="footer__col">
           <h4>צרו קשר</h4>
-          <div class="footer__contact-item">
-            <i class="fas fa-phone-alt"></i>
-            <a href="tel:037740400">03-7740400</a>
-          </div>
-          <div class="footer__contact-item">
-            <i class="fab fa-whatsapp"></i>
-            <a href="https://wa.me/972549922492" target="_blank" rel="noopener">WhatsApp</a>
-          </div>
-          <div class="footer__contact-item">
-            <i class="fas fa-envelope"></i>
-            <a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a>
-          </div>
-          <div class="footer__contact-item">
-            <i class="fas fa-clock"></i>
-            <span>א'-ה' 08:00-17:00</span>
-          </div>
+          <div class="footer__contact-item"><i class="fas fa-phone-alt"></i><a href="tel:037740400">03-7740400</a></div>
+          <div class="footer__contact-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/972549922492" target="_blank" rel="noopener">WhatsApp</a></div>
+          <div class="footer__contact-item"><i class="fas fa-envelope"></i><a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a></div>
+          <div class="footer__contact-item"><i class="fas fa-clock"></i><span>א'-ה' 08:00-17:00</span></div>
         </div>
       </div>
-
       <div class="footer__bottom">
         <span class="footer__copyright">&copy; 2026 וואי מרקט — נגלר סחר והפצה. כל הזכויות שמורות.</span>
         <div class="footer__legal">
@@ -329,7 +858,7 @@
     <span class="whatsapp-float__tooltip">צריכים עזרה? דברו איתנו</span>
   </a>
 
-  <script src="js/main.min.js?v=20260317" defer></script>
+  <script src="js/main.min.js?v=20260401" defer></script>
   <script src="js/analytics.min.js" defer></script>
   <script src="js/schema-markup.js" defer></script>
   <script src="/js/new-header-inject.js" defer></script>
