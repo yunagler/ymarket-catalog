@@ -126,45 +126,50 @@
   }
 
   // ═══ GLOBAL: Subtotal display for ALL page types ═══
-  // Works on: category pages, product pages, catalog page
+  var _subtotalInited = false;
   function fmtILS(n) { return new Intl.NumberFormat('he-IL',{style:'currency',currency:'ILS',minimumFractionDigits:0,maximumFractionDigits:2}).format(n); }
 
-  // Category pages: .product-card__add-btn with data-price
-  // After add-to-cart or qty change, inject subtotal
+  var _updatingSubtotal = false;
   function addSubtotalToCard(card) {
-    if (!card) return;
-    var btn = card.querySelector('.product-card__add-btn');
-    var qtyWrap = card.querySelector('.card-qty-wrap');
-    var existing = card.querySelector('.ym-subtotal');
+    if (!card || _updatingSubtotal) return;
+    _updatingSubtotal = true;
+    try {
+      var btn = card.querySelector('.product-card__add-btn');
+      var existing = card.querySelector('.ym-subtotal');
 
-    // Get price from button data or from price display
-    var price = 0;
-    if (btn) price = parseFloat(btn.dataset.price) || 0;
-    if (!price && qtyWrap) {
-      var pid = qtyWrap.dataset.productId || (btn && btn.dataset.id);
-      var cart = JSON.parse(localStorage.getItem('ym_cart') || '[]');
-      for (var i = 0; i < cart.length; i++) {
-        if (String(cart[i].id) === String(pid)) { price = cart[i].price || 0; break; }
+      var price = 0;
+      if (btn) price = parseFloat(btn.dataset.price) || 0;
+      if (!price) {
+        var pid = btn && btn.dataset.id;
+        if (pid) {
+          var cart = JSON.parse(localStorage.getItem('ym_cart') || '[]');
+          for (var i = 0; i < cart.length; i++) {
+            if (String(cart[i].id) === String(pid)) { price = cart[i].price || 0; break; }
+          }
+        }
       }
-    }
 
-    // Get current qty
-    var qtyInput = card.querySelector('.card-qty-input, input[type="number"]');
-    var qty = qtyInput ? parseInt(qtyInput.value) || 0 : 0;
+      var qtyInput = card.querySelector('.card-qty-input, input[type="number"]');
+      var qty = qtyInput ? parseInt(qtyInput.value) || 0 : 0;
 
-    if (qty <= 0 || price <= 0) {
-      if (existing) existing.remove();
-      return;
-    }
+      if (qty <= 0 || price <= 0) {
+        if (existing) existing.remove();
+        return;
+      }
 
-    var subtotal = price * qty;
-    if (!existing) {
-      existing = document.createElement('div');
-      existing.className = 'ym-subtotal';
-      var actions = card.querySelector('.product-card__actions');
-      if (actions) actions.appendChild(existing);
+      var html = '<strong>' + fmtILS(price * qty) + '</strong>';
+      if (existing) {
+        if (existing.innerHTML !== html) existing.innerHTML = html;
+      } else {
+        existing = document.createElement('div');
+        existing.className = 'ym-subtotal';
+        existing.innerHTML = html;
+        var actions = card.querySelector('.product-card__actions');
+        if (actions) actions.appendChild(existing);
+      }
+    } finally {
+      _updatingSubtotal = false;
     }
-    existing.innerHTML = '<strong>' + fmtILS(subtotal) + '</strong>';
   }
 
   // Product page: quantity-selector with #qtyInput
@@ -185,10 +190,8 @@
         el = document.createElement('div');
         el.id = 'ym-product-subtotal';
         el.className = 'ym-product-subtotal';
-        var actions = document.querySelector('.product-actions');
         var addBtn = document.getElementById('addToCartBtn');
         if (addBtn) addBtn.parentNode.insertBefore(el, addBtn);
-        else if (actions) actions.appendChild(el);
       }
       el.innerHTML = '<span class="ym-ps__total">סה"כ: ' + fmtILS(subtotal) + '</span>';
       el.style.display = '';
@@ -196,7 +199,6 @@
 
     qtyInput.addEventListener('input', updateProductSubtotal);
     qtyInput.addEventListener('change', updateProductSubtotal);
-    // Also listen for button clicks
     var dec = document.getElementById('qtyDecrease');
     var inc = document.getElementById('qtyIncrease');
     if (dec) dec.addEventListener('click', function() { setTimeout(updateProductSubtotal, 50); });
@@ -204,48 +206,29 @@
     updateProductSubtotal();
   }
 
-  // Category pages: observe DOM changes for qty controls
+  // Category pages: listen for clicks on qty buttons (no MutationObserver!)
   function observeCategoryCards() {
-    var observer = new MutationObserver(function(mutations) {
-      mutations.forEach(function(m) {
-        if (m.type === 'childList') {
-          var card = m.target.closest('.product-card');
-          if (card) addSubtotalToCard(card);
-        }
-      });
-    });
-    document.querySelectorAll('.product-card__actions').forEach(function(el) {
-      observer.observe(el, { childList: true, subtree: true });
-    });
-    // Also handle clicks on qty buttons
     document.addEventListener('click', function(e) {
-      var qtyBtn = e.target.closest('.card-qty-btn');
-      if (qtyBtn) {
-        setTimeout(function() {
-          var card = qtyBtn.closest('.product-card');
-          if (card) addSubtotalToCard(card);
-        }, 100);
+      var qtyBtn = e.target.closest('.card-qty-btn, .ym-qty-btn');
+      var addBtn = e.target.closest('.product-card__add-btn');
+      if (qtyBtn || addBtn) {
+        var card = (qtyBtn || addBtn).closest('.product-card');
+        if (card) setTimeout(function() { addSubtotalToCard(card); }, 150);
       }
     });
   }
 
-  // Init after DOM ready
   function initSubtotals() {
+    if (_subtotalInited) return;
+    _subtotalInited = true;
     addSubtotalToProductPage();
     observeCategoryCards();
-    // Initial scan for cards already showing qty
     document.querySelectorAll('.product-card').forEach(addSubtotalToCard);
   }
 
-  // Run after page JS has initialized qty buttons
-  function safeInitSubtotals() {
-    initSubtotals();
-    // Retry once more after 1s in case page JS was slow
-    setTimeout(initSubtotals, 1000);
-  }
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() { setTimeout(safeInitSubtotals, 300); });
+    document.addEventListener('DOMContentLoaded', function() { setTimeout(initSubtotals, 300); });
   } else {
-    setTimeout(safeInitSubtotals, 300);
+    setTimeout(initSubtotals, 300);
   }
 })();
