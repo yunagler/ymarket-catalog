@@ -7,7 +7,7 @@
   'use strict';
 
   var API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
-  var MIN_ORDER = 1600;
+  var MIN_ORDER = 200;
   var WHATSAPP_NUMBER = '972549922492';
 
   document.addEventListener('DOMContentLoaded', function() {

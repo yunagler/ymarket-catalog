@@ -4,6 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>וואי מרקט | אספקה חכמה ומדויקת של מוצרי צריכה למוסדות ועסקים</title>
+  <meta name="description" content="וואי מרקט - נגלר סחר והפצה. 825+ מוצרי צריכה שוטפת במחירי סיטונאות לעסקים ומוסדות. חומרי ניקוי, מוצרי נייר, חד פעמי, אריזות. משלוח ארצי 24-72 שעות.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="https://ymarket.co.il/">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#1B3A5C">
+  <meta property="og:title" content="וואי מרקט | אספקה חכמה ומדויקת למוסדות ועסקים">
+  <meta property="og:description" content="825+ מוצרי צריכה שוטפת במחירי סיטונאות. חומרי ניקוי, מוצרי נייר, חד פעמי, אריזות. משלוח ארצי.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ymarket.co.il/">
+  <meta property="og:image" content="https://ymarket.co.il/images/og-image.jpg">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:site_name" content="וואי מרקט">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="וואי מרקט | אספקה חכמה למוסדות ועסקים">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -1066,7 +1081,7 @@
       </nav>
       <div class="header__actions">
         <button class="header__btn" aria-label="חיפוש"><i class="fas fa-search"></i></button>
-        <a href="/cart" class="header__btn" aria-label="עגלה"><i class="fas fa-shopping-cart"></i></a>
+        <a href="/cart" class="header__btn" aria-label="עגלה"><i class="fas fa-shopping-cart"></i><span class="cart-badge" id="cartBadge" style="display:none;background:#E8A735;color:#0A1628;font-size:10px;font-weight:800;min-width:18px;height:18px;border-radius:50%;align-items:center;justify-content:center;position:absolute;top:-4px;right:-4px;">0</span></a>
         <a href="/login" class="header__btn header__login"><i class="fas fa-user"></i> <span>כניסה</span></a>
         <a href="/register" class="header__btn header__register"><i class="fas fa-user-plus"></i> <span>הרשמה</span></a>
       </div>
@@ -1396,7 +1411,7 @@
         <div class="section__header">
           <div class="section__label" style="background:rgba(10,107,255,0.15);color:var(--action-light);"><i class="fas fa-route"></i> מסלולי הפצה</div>
           <h2 class="section__title" style="color:white;">מגת רימון לכל רחבי הארץ</h2>
-          <p class="section__subtitle" style="color:var(--text-on-dark-muted);">משלוחים ארציים עם דגש על גוש דן והמרכז. מינימום הזמנה 1,600 ₪ + מע"מ</p>
+          <p class="section__subtitle" style="color:var(--text-on-dark-muted);">משלוחים ארציים עם דגש על גוש דן והמרכז. מינימום הזמנה 200 ₪ + מע"מ</p>
         </div>
 
         <div class="israel-map-wrapper">
@@ -1625,7 +1640,7 @@
     <section class="cta-section">
       <div class="container">
         <h2>מוכנים להזמין?</h2>
-        <p>צרו קשר עכשיו וקבלו הצעת מחיר מותאמת. מינימום הזמנה 1,600 ₪ + מע"מ.</p>
+        <p>צרו קשר עכשיו וקבלו הצעת מחיר מותאמת. מינימום הזמנה 200 ₪ + מע"מ.</p>
         <div class="cta-section__actions">
           <a href="/register" class="btn btn--gold btn--lg"><i class="fas fa-user-plus"></i> הרשמה בחינם</a>
           <a href="https://wa.me/972549922492?text=שלום, אשמח לקבל הצעת מחיר" target="_blank" rel="noopener" class="btn btn--whatsapp btn--lg"><i class="fab fa-whatsapp"></i> שלחו הודעה בוואטסאפ</a>
@@ -1793,7 +1808,7 @@
       document.getElementById('sizeLabel').textContent = sizeLabels[size];
       document.getElementById('employeesLabel').textContent = employees;
       const base = [0,80,95,110,130,160][size];
-      let total = Math.max(Math.round(employees * base / 100) * 100, 1600);
+      let total = Math.max(Math.round(employees * base / 100) * 100, 200);
       document.getElementById('estimateResult').textContent = '₪ ' + total.toLocaleString('he-IL');
       [sizeSlider, employeesSlider].forEach(s => {
         const pct = ((s.value - s.min) / (s.max - s.min)) * 100;
@@ -1998,6 +2013,19 @@
       });
     }, { threshold: 0.15 });
     mapObserver.observe(mapSection);
+  </script>
+  <script>
+    // Cart badge sync
+    (function(){
+      function syncCartBadge(){
+        var cart=JSON.parse(localStorage.getItem('ym_cart')||'[]');
+        var total=0;for(var i=0;i<cart.length;i++)total+=(cart[i].quantity||1);
+        var b=document.getElementById('cartBadge');
+        if(b){b.textContent=total;b.style.display=total>0?'flex':'none';}
+      }
+      syncCartBadge();
+      window.addEventListener('storage',syncCartBadge);
+    })();
   </script>
 
 </body>
