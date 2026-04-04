@@ -29,413 +29,422 @@
   <link rel="stylesheet" href="css/pages/legal.min.css?v=20260310">
   <link rel="stylesheet" href="/css/new-header.css">
   <style>
-    /* ===== REGISTER SPLIT-SCREEN ===== */
-    .reg-split {
-      display: flex;
-      min-height: calc(100vh - 140px);
-      direction: rtl;
+    /* ═══════════════════════════════════
+       REGISTER PAGE — V2 UPGRADED
+       Built on existing YMarket design system
+       ═══════════════════════════════════ */
+
+    .reg-page {
+      min-height: calc(100vh - 160px);
+      background: var(--color-bg, #F6F8FB);
+      padding: 32px 0 64px;
+      position: relative;
     }
 
-    /* LEFT SIDE - Benefits */
-    .reg-benefits {
-      flex: 0 0 58%;
-      background: linear-gradient(145deg, #0d2137 0%, #1B3A5C 40%, #1e4d7a 100%);
-      color: #fff;
-      padding: 56px 52px 40px;
+    /* Subtle background texture */
+    .reg-page::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 15% 30%, rgba(10,107,255,0.025), transparent 40%),
+        radial-gradient(circle at 85% 70%, rgba(232,167,53,0.02), transparent 40%);
+      pointer-events: none;
+    }
+
+    .reg-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 clamp(16px, 3vw, 32px);
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 40px;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .reg-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+
+    /* ═══ LEFT — Why Register ═══ */
+    .reg-info {
+      padding-top: 8px;
+    }
+
+    .reg-info h1 {
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      font-weight: 800;
+      color: var(--color-primary, #1B3A5C);
+      line-height: 1.3;
+      margin-bottom: 8px;
+      letter-spacing: -0.3px;
+    }
+
+    /* Highlight underline on key phrase */
+    .reg-info h1 .hl {
+      position: relative;
+      display: inline;
+    }
+    .reg-info h1 .hl::after {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      right: 0;
+      left: 0;
+      height: 8px;
+      background: rgba(10,107,255,0.1);
+      border-radius: 3px;
+      z-index: -1;
+    }
+
+    .reg-info .lead {
+      font-size: 1rem;
+      color: var(--color-text-secondary, #475569);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 520px;
+    }
+
+    .reg-info .lead strong {
+      color: var(--color-text, #0F172A);
+    }
+
+    /* Benefits grid */
+    .benefits {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+
+    @media (max-width: 600px) {
+      .benefits { grid-template-columns: 1fr; }
+    }
+
+    .ben {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 18px 16px;
+      background: var(--color-white, #fff);
+      border: 1px solid var(--color-border-light, rgba(27,58,92,0.06));
+      border-radius: 14px;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
       overflow: hidden;
     }
 
-    .reg-benefits::before {
+    .ben::before {
       content: '';
       position: absolute;
-      top: -120px;
-      left: -120px;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(79,195,247,0.08) 0%, transparent 60%);
-      pointer-events: none;
-      animation: meshFloat 12s ease-in-out infinite alternate;
+      top: 0; right: 0; left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #0A6BFF, transparent);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .reg-benefits::after {
-      content: '';
-      position: absolute;
-      bottom: -80px;
-      right: -80px;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(255,107,53,0.06) 0%, transparent 60%);
-      pointer-events: none;
-      animation: meshFloat 15s ease-in-out 3s infinite alternate;
+    .ben:hover::before { transform: scaleX(1); }
+
+    .ben:hover {
+      border-color: rgba(10,107,255,0.12);
+      box-shadow:
+        0 1px 3px rgba(10,22,40,0.03),
+        0 6px 20px rgba(10,22,40,0.07);
+      transform: translateY(-3px);
     }
 
-    @keyframes meshFloat {
-      0% { transform: translate(0,0) scale(1); }
-      100% { transform: translate(-20px, 15px) scale(1.1); }
-    }
-
-    /* Noise texture on left side */
-    .reg-benefits .reg-benefits__inner::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-      opacity: 0.02;
-      z-index: 0;
-    }
-
-    .reg-benefits__inner {
-      position: relative;
-      z-index: 1;
-      max-width: 540px;
-    }
-
-    .reg-benefits__badge {
-      display: inline-flex;
+    .ben-icon {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      border-radius: 10px;
+      display: flex;
       align-items: center;
-      gap: 8px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 100px;
-      padding: 8px 20px;
-      font-size: 13px;
-      font-weight: 500;
-      color: rgba(255,255,255,0.85);
-      margin-bottom: 28px;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      animation: regFadeUp 0.6s ease-out both;
+      justify-content: center;
+      font-size: 15px;
+      transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
-    .reg-benefits__badge i {
-      color: #5cb85c;
-      font-size: 11px;
+    .ben:hover .ben-icon {
+      transform: scale(1.08) rotate(-3deg);
     }
 
-    .reg-benefits h1 {
-      font-family: 'Heebo', sans-serif;
-      font-size: clamp(28px, 4vw, 44px);
-      font-weight: 900;
+    .ben:nth-child(1) .ben-icon { background: rgba(10,107,255,0.08); color: #0A6BFF; }
+    .ben:nth-child(2) .ben-icon { background: rgba(34,197,94,0.08); color: #22c55e; }
+    .ben:nth-child(3) .ben-icon { background: rgba(232,167,53,0.08); color: #E8A735; }
+    .ben:nth-child(4) .ben-icon { background: rgba(10,107,255,0.08); color: #0A6BFF; }
+
+    .ben:nth-child(1):hover .ben-icon { background: #0A6BFF; color: #fff; box-shadow: 0 6px 16px rgba(10,107,255,0.2); }
+    .ben:nth-child(2):hover .ben-icon { background: #22c55e; color: #fff; box-shadow: 0 6px 16px rgba(34,197,94,0.2); }
+    .ben:nth-child(3):hover .ben-icon { background: #E8A735; color: #fff; box-shadow: 0 6px 16px rgba(232,167,53,0.2); }
+    .ben:nth-child(4):hover .ben-icon { background: #0A6BFF; color: #fff; box-shadow: 0 6px 16px rgba(10,107,255,0.2); }
+
+    .ben-text strong {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--color-text, #0F172A);
+      margin-bottom: 2px;
+    }
+
+    .ben-text span {
+      font-size: 0.78rem;
+      color: var(--color-text-secondary, #475569);
+      line-height: 1.45;
+    }
+
+    /* Stats */
+    .reg-stats {
+      display: flex;
+      gap: 24px;
+      padding: 20px 0;
+      margin-bottom: 24px;
+      border-top: 1px solid var(--color-border-light, rgba(27,58,92,0.06));
+      border-bottom: 1px solid var(--color-border-light, rgba(27,58,92,0.06));
+    }
+
+    .rs {
+      text-align: center;
+      flex: 1;
+    }
+
+    .rs-num {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--color-primary, #1B3A5C);
       line-height: 1.2;
-      margin: 0 0 16px;
-      color: #fff;
-      letter-spacing: -0.5px;
-      animation: regFadeUp 0.6s 0.1s ease-out both;
-      background: linear-gradient(135deg, #fff 40%, #4FC3F7);
+      background: linear-gradient(135deg, #1B3A5C 40%, #0A6BFF);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
-    .reg-benefits__sub {
-      font-size: 17px;
-      line-height: 1.65;
-      color: rgba(255,255,255,0.72);
-      margin-bottom: 40px;
-      font-weight: 300;
-      animation: regFadeUp 0.6s 0.2s ease-out both;
+    .rs-lbl {
+      font-size: 0.72rem;
+      color: var(--color-text-light, #64748B);
+      margin-top: 2px;
     }
 
-    /* Benefit Items — 2x2 Glass Grid */
-    .reg-benefit-list {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 36px;
+    /* Testimonials */
+    .reg-quotes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 600px) {
+      .reg-quotes { grid-template-columns: 1fr; }
+    }
+
+    .rq {
+      padding: 20px 18px;
+      background: var(--color-white, #fff);
+      border: 1px solid var(--color-border-light, rgba(27,58,92,0.06));
+      border-radius: 14px;
+      position: relative;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .rq:hover {
+      box-shadow: 0 4px 16px rgba(10,22,40,0.05);
+      transform: translateY(-2px);
+    }
+
+    .rq-stars {
+      color: #FBBF24;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .rq-mark {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      font-size: 2rem;
+      font-weight: 900;
+      color: rgba(10,107,255,0.06);
+      line-height: 1;
+      font-family: Georgia, serif;
+    }
+
+    .rq-text {
+      font-size: 0.82rem;
+      color: var(--color-text-secondary, #475569);
+      line-height: 1.6;
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+
+    .rq-author {
+      font-size: 0.72rem;
+      color: var(--color-text-light, #64748B);
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    /* Trust */
+    .reg-trust {
+      display: flex;
+      gap: 20px;
+    }
+
+    .rt-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      color: var(--color-text-light, #64748B);
+    }
+
+    .rt-item i {
+      font-size: 13px;
+      color: rgba(10,107,255,0.35);
+    }
+
+    /* ═══ RIGHT — Form Card ═══ */
+    .reg-form-wrap {
+      position: sticky;
+      top: 100px;
+    }
+
+    .reg-card {
+      background: var(--color-white, #fff);
+      border-radius: 20px;
+      padding: 36px 32px 32px;
+      border: 1px solid rgba(27,58,92,0.05);
+      box-shadow:
+        0 0 0 1px rgba(27,58,92,0.03),
+        0 1px 2px rgba(10,22,40,0.02),
+        0 6px 16px rgba(10,22,40,0.04),
+        0 20px 48px rgba(10,22,40,0.06);
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reg-card:hover {
+      box-shadow:
+        0 0 0 1px rgba(27,58,92,0.04),
+        0 2px 4px rgba(10,22,40,0.02),
+        0 8px 24px rgba(10,22,40,0.06),
+        0 28px 56px rgba(10,22,40,0.08);
+    }
+
+    .reg-card::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #0A6BFF, #1B3A5C, #22c55e);
+    }
+
+    .reg-card::after {
+      content: '';
+      position: absolute;
+      top: 3px; right: 0; left: 0;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(10,107,255,0.02), transparent);
+      pointer-events: none;
+    }
+
+    .rc-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--color-primary, #1B3A5C);
+      text-align: center;
+      margin-bottom: 4px;
+    }
+
+    .rc-sub {
+      font-size: 0.8rem;
+      color: var(--color-text-light, #64748B);
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    /* Fields */
+    .fld {
+      margin-bottom: 14px;
+    }
+
+    .fld-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--color-text-secondary, #475569);
+      margin-bottom: 5px;
+    }
+
+    .fld-input, .fld-select {
+      width: 100%;
+      padding: 12px 14px;
+      background: var(--color-bg, #F6F8FB);
+      border: 1.5px solid var(--color-border, rgba(27,58,92,0.1));
+      border-radius: 10px;
+      font-family: 'Heebo', sans-serif;
+      font-size: 0.88rem;
+      color: var(--color-text, #0F172A);
+      outline: none;
+      transition: all 0.25s;
+      direction: rtl;
+      box-sizing: border-box;
+    }
+
+    .fld-input::placeholder {
+      color: #b0b8c4;
+      font-weight: 300;
+    }
+
+    .fld-input:focus, .fld-select:focus {
+      border-color: #0A6BFF;
+      background: #fff;
+      box-shadow:
+        0 0 0 3px rgba(10,107,255,0.08),
+        0 1px 3px rgba(10,22,40,0.04);
+    }
+
+    .fld-input:hover:not(:focus), .fld-select:hover:not(:focus) {
+      border-color: rgba(27,58,92,0.18);
+    }
+
+    .fld-select {
+      appearance: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='%2394A3B8'%3E%3Cpath d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: left 12px center;
+      padding-left: 32px;
+    }
+
+    /* Two-col fields */
+    .fld-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
     }
 
-    .reg-benefit-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 16px;
-      font-size: 14px;
-      font-weight: 400;
-      color: rgba(255,255,255,0.92);
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 14px;
-      backdrop-filter: blur(8px);
-      animation: regFadeUp 0.5s ease-out both;
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    @media (max-width: 480px) {
+      .fld-row { grid-template-columns: 1fr; }
     }
 
-    .reg-benefit-list li:hover {
-      background: rgba(255,255,255,0.08);
-      border-color: rgba(79,195,247,0.2);
-      transform: translateY(-2px);
-    }
-
-    .reg-benefit-list li:nth-child(1) { animation-delay: 0.3s; }
-    .reg-benefit-list li:nth-child(2) { animation-delay: 0.36s; }
-    .reg-benefit-list li:nth-child(3) { animation-delay: 0.42s; }
-    .reg-benefit-list li:nth-child(4) { animation-delay: 0.48s; }
-
-    .reg-benefit-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      min-width: 36px;
-      border-radius: 10px;
-      font-size: 14px;
-      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-
-    .reg-benefit-list li:nth-child(1) .reg-benefit-icon { background: rgba(79,195,247,0.15); color: #4FC3F7; }
-    .reg-benefit-list li:nth-child(2) .reg-benefit-icon { background: rgba(34,197,94,0.15); color: #22c55e; }
-    .reg-benefit-list li:nth-child(3) .reg-benefit-icon { background: rgba(255,107,53,0.15); color: #FF6B35; }
-    .reg-benefit-list li:nth-child(4) .reg-benefit-icon { background: rgba(79,195,247,0.15); color: #4FC3F7; }
-
-    .reg-benefit-list li:hover .reg-benefit-icon {
-      transform: scale(1.1) rotate(-5deg);
-    }
-
-    .reg-benefit-text strong {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 1px;
-    }
-
-    .reg-benefit-text span {
-      font-size: 13.5px;
-      color: rgba(255,255,255,0.55);
-      font-weight: 300;
-    }
-
-    /* Stats Row */
-    .reg-stats {
-      display: flex;
-      gap: 0;
-      margin-bottom: 40px;
-      animation: regFadeUp 0.5s 0.6s ease-out both;
-    }
-
-    .reg-stat {
-      flex: 1;
-      text-align: center;
-      padding: 20px 12px;
-      border-left: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .reg-stat:last-child {
-      border-left: none;
-    }
-
-    .reg-stat__number {
-      display: block;
-      font-size: 28px;
-      font-weight: 800;
-      background: linear-gradient(135deg, #fff 30%, rgba(92,184,92,0.8));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1.2;
-    }
-
-    .reg-stat__label {
-      font-size: 12.5px;
-      color: rgba(255,255,255,0.5);
-      margin-top: 4px;
-      font-weight: 400;
-    }
-
-    /* Testimonials */
-    .reg-testimonials {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-bottom: 36px;
-      animation: regFadeUp 0.5s 0.7s ease-out both;
-    }
-
-    .reg-testimonial {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 14px;
-      padding: 18px 22px;
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      transition: background 0.3s ease, border-color 0.3s ease;
-    }
-
-    .reg-testimonial:hover {
-      background: rgba(255,255,255,0.08);
-      border-color: rgba(255,255,255,0.14);
-    }
-
-    .reg-testimonial__text {
-      font-size: 14.5px;
-      line-height: 1.6;
-      color: rgba(255,255,255,0.85);
-      margin-bottom: 10px;
-      font-style: italic;
-    }
-
-    .reg-testimonial__text::before {
-      content: '\201F';
-      font-size: 22px;
-      color: rgba(92,184,92,0.6);
-      margin-left: 4px;
-    }
-
-    .reg-testimonial__author {
-      font-size: 12.5px;
-      color: rgba(255,255,255,0.45);
-      font-weight: 500;
-    }
-
-    /* Trust Row */
-    .reg-trust {
-      display: flex;
-      gap: 28px;
-      animation: regFadeUp 0.5s 0.8s ease-out both;
-    }
-
-    .reg-trust__item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12.5px;
-      color: rgba(255,255,255,0.45);
-    }
-
-    .reg-trust__item i {
-      font-size: 14px;
-      color: rgba(255,255,255,0.3);
-    }
-
-    /* RIGHT SIDE - Form */
-    .reg-form-side {
-      flex: 0 0 42%;
-      background: #f7f8fa;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 32px;
+    /* Password */
+    .pw-wrap {
       position: relative;
     }
 
-    .reg-form-card {
-      width: 100%;
-      max-width: 440px;
-      background: #fff;
-      border-radius: 20px;
-      padding: 40px 36px 36px;
-      box-shadow:
-        0 0 0 1px rgba(27,58,92,0.04),
-        0 1px 3px rgba(0,0,0,0.03),
-        0 8px 24px rgba(0,0,0,0.05),
-        0 24px 48px rgba(0,0,0,0.04);
-      border: none;
-      position: relative;
-      overflow: hidden;
-      animation: regCardIn 0.7s 0.2s ease-out both;
-    }
-    .reg-form-card::before {
-      content: '';
-      position: absolute;
-      top: 0; right: 0; left: 0;
-      height: 3px;
-      background: linear-gradient(90deg, #4FC3F7, #1B3A5C, #22c55e);
-      border-radius: 20px 20px 0 0;
+    .pw-wrap .fld-input {
+      padding-left: 44px;
     }
 
-    .reg-form-card__title {
-      font-family: 'Heebo', sans-serif;
-      font-size: 22px;
-      font-weight: 700;
-      color: #1B3A5C;
-      margin: 0 0 4px;
-      text-align: center;
-    }
-
-    .reg-form-card__subtitle {
-      font-size: 13.5px;
-      color: #8e99a4;
-      text-align: center;
-      margin-bottom: 28px;
-      font-weight: 400;
-    }
-
-    /* Form Fields */
-    .reg-form .reg-field {
-      margin-bottom: 16px;
-    }
-
-    .reg-form .reg-field:last-of-type {
-      margin-bottom: 12px;
-    }
-
-    .reg-form .reg-label {
-      display: block;
-      font-size: 13px;
-      font-weight: 600;
-      color: #3a4a5c;
-      margin-bottom: 6px;
-    }
-
-    .reg-form .reg-input,
-    .reg-form .reg-select {
-      width: 100%;
-      padding: 12px 16px;
-      font-family: 'Heebo', sans-serif;
-      font-size: 14.5px;
-      color: #1a2a3a;
-      background: #f8f9fb;
-      border: 1.5px solid #e2e6ec;
-      border-radius: 12px;
-      outline: none;
-      transition:
-        border-color 0.25s ease,
-        box-shadow 0.25s ease,
-        background 0.25s ease;
-      box-sizing: border-box;
-      direction: rtl;
-    }
-
-    .reg-form .reg-input::placeholder {
-      color: #b0b8c4;
-      font-weight: 300;
-    }
-
-    .reg-form .reg-input:focus,
-    .reg-form .reg-select:focus {
-      border-color: #4a90d9;
-      background: #fff;
-      box-shadow:
-        0 0 0 3px rgba(74,144,217,0.12),
-        0 1px 2px rgba(0,0,0,0.04);
-    }
-
-    .reg-form .reg-select {
-      appearance: none;
-      -webkit-appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='%238e99a4'%3E%3Cpath d='M6 8L0 0h12z'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: left 14px center;
-      padding-left: 36px;
-      cursor: pointer;
-    }
-
-    /* Password wrapper */
-    .reg-password-wrap {
-      position: relative;
-    }
-
-    .reg-password-wrap .reg-input {
-      padding-left: 48px;
-    }
-
-    .reg-password-toggle {
+    .pw-btn {
       position: absolute;
       left: 4px;
       top: 50%;
@@ -444,51 +453,44 @@
       border: none;
       cursor: pointer;
       color: #b0b8c4;
-      font-size: 15px;
-      min-width: 40px;
-      min-height: 40px;
+      font-size: 14px;
+      width: 36px;
+      height: 36px;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: color 0.2s ease;
       border-radius: 8px;
+      transition: color 0.2s;
     }
 
-    .reg-password-toggle:hover {
-      color: #4a90d9;
-    }
+    .pw-btn:hover { color: #0A6BFF; }
 
     /* Checkbox */
-    .reg-terms-label {
+    .terms {
       display: flex;
       align-items: flex-start;
-      gap: 10px;
+      gap: 8px;
       cursor: pointer;
-      font-size: 13px;
-      color: #6b7a8d;
+      font-size: 0.76rem;
+      color: var(--color-text-secondary, #475569);
       line-height: 1.5;
-      margin: 4px 0 4px;
+      margin: 8px 0;
     }
 
-    .reg-terms-label input[type="checkbox"] {
-      margin-top: 3px;
-      min-width: 18px;
-      min-height: 18px;
+    .terms input {
+      margin-top: 2px;
+      min-width: 16px;
+      min-height: 16px;
       accent-color: #1B3A5C;
-      cursor: pointer;
     }
 
-    .reg-terms-label a {
-      color: #4a90d9;
+    .terms a {
+      color: #0A6BFF;
       text-decoration: none;
       font-weight: 500;
-      transition: color 0.2s ease;
     }
 
-    .reg-terms-label a:hover {
-      color: #1B3A5C;
-      text-decoration: underline;
-    }
+    .terms a:hover { text-decoration: underline; }
 
     /* Error */
     .reg-error {
@@ -502,258 +504,236 @@
       margin-bottom: 14px;
     }
 
-    /* Submit Button */
-    .reg-submit-btn {
+    /* Submit */
+    .reg-submit {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 8px;
       width: 100%;
-      padding: 14px 24px;
+      padding: 14px;
       font-family: 'Heebo', sans-serif;
-      font-size: 16px;
+      font-size: 0.95rem;
       font-weight: 700;
       color: #fff;
-      background: linear-gradient(135deg, #2d8f4e 0%, #22a252 50%, #28b558 100%);
+      background: linear-gradient(135deg, #22c55e, #16a34a);
       border: none;
-      border-radius: 14px;
+      border-radius: 12px;
       cursor: pointer;
-      transition:
-        transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
-        box-shadow 0.25s ease,
-        filter 0.25s ease;
+      margin-top: 8px;
       box-shadow:
-        0 2px 8px rgba(40,181,88,0.25),
-        0 8px 24px rgba(40,181,88,0.15);
-      margin-top: 6px;
+        0 2px 6px rgba(34,197,94,0.2),
+        0 8px 20px rgba(34,197,94,0.15);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
     }
 
-    .reg-submit-btn:hover {
-      transform: translateY(-2px) scale(1.01);
+    .reg-submit::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.12), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .reg-submit:hover {
+      transform: translateY(-2px);
       box-shadow:
-        0 4px 12px rgba(40,181,88,0.3),
-        0 12px 32px rgba(40,181,88,0.2);
-      filter: brightness(1.06);
+        0 4px 10px rgba(34,197,94,0.25),
+        0 12px 28px rgba(34,197,94,0.2);
     }
 
-    .reg-submit-btn:active {
-      transform: translateY(0) scale(0.99);
+    .reg-submit:hover::before { opacity: 1; }
+
+    .reg-submit:active {
+      transform: translateY(0) scale(0.98);
     }
 
-    .reg-submit-btn:disabled {
+    .reg-submit:disabled {
       opacity: 0.7;
       cursor: not-allowed;
       transform: none;
     }
 
-    .reg-submit-btn i {
-      font-size: 14px;
-    }
+    .reg-submit i { font-size: 13px; position: relative; z-index: 1; }
 
-    /* Footer link */
-    .reg-form-footer {
+    /* Badge under button */
+    .reg-free-tag {
       text-align: center;
-      margin-top: 22px;
-      font-size: 14px;
-      color: #8e99a4;
+      margin-top: 10px;
+      font-size: 0.72rem;
+      color: #16a34a;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
     }
 
-    .reg-form-footer a {
-      color: #1B3A5C;
+    .reg-free-tag i { font-size: 10px; }
+
+    /* Footer links */
+    .rc-footer {
+      text-align: center;
+      margin-top: 18px;
+      font-size: 0.82rem;
+      color: var(--color-text-light, #64748B);
+    }
+
+    .rc-footer a {
+      color: var(--color-primary, #1B3A5C);
       font-weight: 600;
       text-decoration: none;
-      transition: color 0.2s ease;
     }
 
-    .reg-form-footer a:hover {
-      color: #4a90d9;
-      text-decoration: underline;
+    .rc-footer a:hover { text-decoration: underline; }
+
+    .rc-help {
+      text-align: center;
+      margin-top: 8px;
+      font-size: 0.72rem;
+      color: #b0b8c4;
+    }
+
+    /* ═══ HOW IT WORKS STRIP ═══ */
+    .how-strip {
+      max-width: 1100px;
+      margin: 0 auto 32px;
+      padding: 0 clamp(16px, 3vw, 32px);
+    }
+
+    .how-cards {
+      display: flex;
+      gap: 14px;
+      position: relative;
+    }
+
+    @media (max-width: 600px) {
+      .how-cards { flex-direction: column; }
+    }
+
+    .how-card {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 18px;
+      background: var(--color-white, #fff);
+      border: 1px solid var(--color-border-light, rgba(27,58,92,0.06));
+      border-radius: 12px;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .how-card:hover {
+      box-shadow: 0 4px 16px rgba(10,22,40,0.06);
+      transform: translateY(-2px);
+    }
+
+    /* Connecting line between steps */
+    .how-cards::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: calc(33% + 10px);
+      left: calc(33% + 10px);
+      height: 1px;
+      background: linear-gradient(90deg, rgba(10,107,255,0.15), rgba(10,107,255,0.15));
+      z-index: 0;
+    }
+
+    @media (max-width: 600px) {
+      .how-cards::before { display: none; }
+    }
+
+    .hc-num {
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      border-radius: 50%;
+      background: var(--color-bg, #F6F8FB);
+      border: 2px solid #0A6BFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #0A6BFF;
+    }
+
+    .hc-text strong {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--color-text, #0F172A);
+    }
+
+    .hc-text span {
+      font-size: 0.72rem;
+      color: var(--color-text-light, #64748B);
+    }
+
+    /* ═══ MOBILE STICKY BAR ═══ */
+    .mobile-reg-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 90;
+      background: #fff;
+      border-top: 1px solid rgba(27,58,92,0.08);
+      padding: 10px 16px;
+      box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+    }
+
+    .mobile-reg-bar a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 13px;
+      font-family: 'Heebo', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      border: none;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(34,197,94,0.2);
+    }
+
+    @media (max-width: 900px) {
+      .mobile-reg-bar {
+        display: block;
+      }
+      .reg-form-wrap {
+        position: static;
+      }
     }
 
     /* Animations */
     @keyframes regFadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(18px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes regCardIn {
-      from {
-        opacity: 0;
-        transform: translateY(24px) scale(0.97);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
+      from { opacity: 0; transform: translateY(24px) scale(0.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
     }
 
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 1080px) {
-      .reg-benefits {
-        padding: 40px 36px 32px;
-      }
-      .reg-benefits h1 {
-        font-size: 34px;
-      }
+    .reg-info h1, .reg-info .lead, .benefits, .reg-stats, .reg-quotes, .reg-trust {
+      animation: regFadeUp 0.6s ease-out both;
     }
-
-    @media (max-width: 860px) {
-      .reg-split {
-        flex-direction: column;
-        min-height: auto;
-      }
-
-      .reg-benefits {
-        flex: none;
-        padding: 40px 28px 32px;
-      }
-
-      .reg-benefits h1 {
-        font-size: 28px;
-      }
-
-      .reg-benefits__sub {
-        font-size: 15px;
-        margin-bottom: 28px;
-      }
-
-      .reg-benefit-list {
-        gap: 14px;
-        margin-bottom: 28px;
-      }
-
-      .reg-stats {
-        margin-bottom: 28px;
-      }
-
-      .reg-stat__number {
-        font-size: 22px;
-      }
-
-      .reg-testimonials {
-        flex-direction: row;
-        gap: 12px;
-        margin-bottom: 24px;
-      }
-
-      .reg-testimonial {
-        flex: 1;
-        padding: 14px 16px;
-      }
-
-      .reg-form-side {
-        flex: none;
-        padding: 32px 20px 40px;
-      }
-
-      .reg-form-card {
-        max-width: 100%;
-        padding: 32px 24px 28px;
-      }
-    }
-
-    @media (max-width: 540px) {
-      .reg-benefits {
-        padding: 32px 20px 24px;
-      }
-
-      .reg-benefits h1 {
-        font-size: 24px;
-      }
-
-      .reg-benefits__sub {
-        font-size: 14px;
-        margin-bottom: 22px;
-      }
-
-      .reg-benefit-list li {
-        font-size: 14.5px;
-      }
-
-      .reg-benefit-icon {
-        width: 32px;
-        height: 32px;
-        min-width: 32px;
-        font-size: 13px;
-        border-radius: 8px;
-      }
-
-      .reg-stats {
-        margin-bottom: 22px;
-      }
-
-      .reg-stat {
-        padding: 14px 8px;
-      }
-
-      .reg-stat__number {
-        font-size: 20px;
-      }
-
-      .reg-stat__label {
-        font-size: 11px;
-      }
-
-      .reg-testimonials {
-        flex-direction: column;
-        gap: 10px;
-        margin-bottom: 20px;
-      }
-
-      .reg-trust {
-        flex-wrap: wrap;
-        gap: 16px;
-      }
-
-      .reg-form-side {
-        padding: 24px 16px 36px;
-      }
-
-      .reg-form-card {
-        padding: 28px 20px 24px;
-        border-radius: 16px;
-      }
-
-      .reg-form-card__title {
-        font-size: 20px;
-      }
-
-      .reg-form .reg-input,
-      .reg-form .reg-select {
-        padding: 11px 14px;
-        font-size: 14px;
-      }
-
-      .reg-submit-btn {
-        padding: 13px 20px;
-        font-size: 15px;
-        border-radius: 12px;
-      }
-    }
-
-    @media (max-width: 374px) {
-      .reg-benefits {
-        padding: 24px 16px 20px;
-      }
-
-      .reg-benefits h1 {
-        font-size: 22px;
-      }
-
-      .reg-stat {
-        padding: 12px 6px;
-      }
-
-      .reg-form-card {
-        padding: 24px 16px 20px;
-      }
-    }
+    .reg-info .lead { animation-delay: 0.1s; }
+    .benefits { animation-delay: 0.2s; }
+    .reg-stats { animation-delay: 0.3s; }
+    .reg-quotes { animation-delay: 0.4s; }
+    .reg-trust { animation-delay: 0.5s; }
+    .reg-card { animation: regCardIn 0.7s 0.2s ease-out both; }
   </style>
 </head>
 <body>
@@ -826,175 +806,173 @@
   <div class="mobile-overlay"></div>
   <div class="search-overlay"><div class="search-overlay__inner"><form action="/catalog" method="get"><input type="search" name="search" class="search-overlay__input" placeholder="חפשו מוצר..." aria-label="חיפוש מוצר" autocomplete="off"></form></div></div>
 
-  <!-- ===== SPLIT-SCREEN REGISTER ===== -->
-  <div class="reg-split">
+  <!-- How It Works Strip -->
+  <div class="how-strip">
+    <div class="how-cards">
+      <div class="how-card">
+        <div class="hc-num">1</div>
+        <div class="hc-text"><strong>נרשמים</strong><span>30 שניות, חינם</span></div>
+      </div>
+      <div class="how-card">
+        <div class="hc-num">2</div>
+        <div class="hc-text"><strong>מקבלים מחירון</strong><span>מותאם אישית לעסק</span></div>
+      </div>
+      <div class="how-card">
+        <div class="hc-num">3</div>
+        <div class="hc-text"><strong>מזמינים</strong><span>825+ מוצרים בקליק</span></div>
+      </div>
+    </div>
+  </div>
 
-    <!-- LEFT: Benefits & Social Proof -->
-    <div class="reg-benefits">
-      <div class="reg-benefits__inner">
+  <!-- Main Content -->
+  <div class="reg-page">
+    <div class="reg-container">
 
-        <div class="reg-benefits__badge">
-          <i class="fas fa-circle"></i>
-          הרשמה חינמית -- ללא התחייבות
+      <!-- LEFT — Info -->
+      <div class="reg-info">
+        <h1>פתחו חשבון עסקי <span class="hl">בפורטל ההזמנות</span></h1>
+        <p class="lead">הצטרפו ל-<strong>200+ עסקים</strong> שכבר מזמינים אספקה מוסדית ישירות מהפורטל. מחירים אישיים, משלוח ארצי, <strong>בלי טלפונים</strong>.</p>
+
+        <div class="benefits">
+          <div class="ben">
+            <div class="ben-icon"><i class="fas fa-tag"></i></div>
+            <div class="ben-text"><strong>מחירון אישי</strong><span>המחירים שלכם בלבד. לא משתנים בלי אישור.</span></div>
+          </div>
+          <div class="ben">
+            <div class="ben-icon"><i class="fas fa-bolt"></i></div>
+            <div class="ben-text"><strong>הזמנה ב-3 דקות</strong><span>בלי טלפונים, בלי המתנה. 24/7.</span></div>
+          </div>
+          <div class="ben">
+            <div class="ben-icon"><i class="fas fa-boxes-stacked"></i></div>
+            <div class="ben-text"><strong>825+ מוצרים</strong><span>ניקיון, נייר, חד״פ, אריזות — הכל במקום אחד.</span></div>
+          </div>
+          <div class="ben">
+            <div class="ben-icon"><i class="fas fa-truck-fast"></i></div>
+            <div class="ben-text"><strong>משלוח 24-72 שעות</strong><span>משלוח ארצי ישירות עד פתח העסק.</span></div>
+          </div>
         </div>
 
-        <h1>הזמינו אספקה<br>מוסדית בקליק</h1>
-        <p class="reg-benefits__sub">הצטרפו ל-200+ עסקים שכבר מזמינים 825+ מוצרים במחירים אישיים, ישירות מהפורטל. חינם, ב-30 שניות.</p>
-
-        <ul class="reg-benefit-list">
-          <li>
-            <div class="reg-benefit-icon"><i class="fas fa-tag"></i></div>
-            <div class="reg-benefit-text">
-              <strong>מחירון אישי</strong>
-              <span>המחירים שלכם בלבד -- ללא הפתעות</span>
-            </div>
-          </li>
-          <li>
-            <div class="reg-benefit-icon"><i class="fas fa-bolt"></i></div>
-            <div class="reg-benefit-text">
-              <strong>הזמנה ב-3 דקות</strong>
-              <span>בלי טלפונים, בלי המתנה</span>
-            </div>
-          </li>
-          <li>
-            <div class="reg-benefit-icon"><i class="fas fa-boxes-stacked"></i></div>
-            <div class="reg-benefit-text">
-              <strong>825+ מוצרים</strong>
-              <span>הכל במקום אחד -- ניקיון, נייר, חד"פ, מזון</span>
-            </div>
-          </li>
-          <li>
-            <div class="reg-benefit-icon"><i class="fas fa-truck-fast"></i></div>
-            <div class="reg-benefit-text">
-              <strong>משלוח 24-72 שעות</strong>
-              <span>ישירות עד הדלת -- ארצי</span>
-            </div>
-          </li>
-        </ul>
-
-        <!-- Stats -->
         <div class="reg-stats">
-          <div class="reg-stat">
-            <span class="reg-stat__number">200+</span>
-            <span class="reg-stat__label">עסקים פעילים</span>
+          <div class="rs"><div class="rs-num">200+</div><div class="rs-lbl">עסקים פעילים</div></div>
+          <div class="rs"><div class="rs-num">825+</div><div class="rs-lbl">מוצרים בקטלוג</div></div>
+          <div class="rs"><div class="rs-num">98%</div><div class="rs-lbl">שביעות רצון</div></div>
+          <div class="rs"><div class="rs-num">24/7</div><div class="rs-lbl">פורטל פתוח</div></div>
+        </div>
+
+        <div class="reg-quotes">
+          <div class="rq">
+            <div class="rq-mark">"</div>
+            <div class="rq-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="rq-text">הפורטל חוסך לנו שעות בשבוע. נכנס, מזמין, מקבל. פשוט עובד.</div>
+            <div class="rq-author">חברת ניקיון — 34 אתרים</div>
           </div>
-          <div class="reg-stat">
-            <span class="reg-stat__number">825+</span>
-            <span class="reg-stat__label">מוצרים בקטלוג</span>
-          </div>
-          <div class="reg-stat">
-            <span class="reg-stat__number">24/7</span>
-            <span class="reg-stat__label">פורטל פתוח</span>
+          <div class="rq">
+            <div class="rq-mark">"</div>
+            <div class="rq-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="rq-text">המחירים תחרותיים והשירות אישי. מרגישים שיש מישהו מאחורה.</div>
+            <div class="rq-author">רשת מסעדות — גוש דן</div>
           </div>
         </div>
 
-        <!-- Testimonials -->
-        <div class="reg-testimonials">
-          <div class="reg-testimonial">
-            <div class="reg-testimonial__text">הפורטל חוסך לנו שעות בשבוע. הכל מסודר, מהיר ומדויק.</div>
-            <div class="reg-testimonial__author">-- חברת ניקיון, גוש דן</div>
-          </div>
-          <div class="reg-testimonial">
-            <div class="reg-testimonial__text">המחירים תחרותיים והשירות אישי. מרגישים שיש מישהו מאחורה.</div>
-            <div class="reg-testimonial__author">-- רשת מסעדות, מרכז</div>
-          </div>
-        </div>
-
-        <!-- Trust -->
         <div class="reg-trust">
-          <div class="reg-trust__item">
-            <i class="fas fa-lock"></i>
-            <span>SSL מאובטח</span>
-          </div>
-          <div class="reg-trust__item">
-            <i class="fas fa-file-invoice"></i>
-            <span>חשבונית מס</span>
-          </div>
-          <div class="reg-trust__item">
-            <i class="fas fa-handshake"></i>
-            <span>ללא התחייבות</span>
-          </div>
+          <div class="rt-item"><i class="fas fa-lock"></i> SSL מאובטח</div>
+          <div class="rt-item"><i class="fas fa-file-invoice"></i> חשבונית מס</div>
+          <div class="rt-item"><i class="fas fa-handshake"></i> ללא התחייבות</div>
         </div>
-
       </div>
-    </div>
 
-    <!-- RIGHT: Registration Form -->
-    <div class="reg-form-side">
-      <div class="reg-form-card">
-        <div class="reg-form-card__title">הרשמה לפורטל</div>
-        <div class="reg-form-card__subtitle">30 שניות -- ותתחילו להזמין</div>
+      <!-- RIGHT — Form -->
+      <div class="reg-form-wrap">
+        <div class="reg-card">
+          <div class="rc-title">הרשמה לפורטל</div>
+          <div class="rc-sub">30 שניות — ותתחילו להזמין</div>
 
-        <form id="registerForm" class="reg-form">
-          <div class="reg-field">
-            <label class="reg-label" for="reg-business">שם העסק *</label>
-            <input type="text" class="reg-input" id="reg-business" name="businessName" placeholder="שם החברה / העסק" required>
-          </div>
-          <div class="reg-field">
-            <label class="reg-label" for="reg-id">מספר ע.מ / ח.פ *</label>
-            <input type="text" class="reg-input" id="reg-id" name="vatNumber" placeholder="מספר עוסק מורשה או חברה פרטית" required>
-          </div>
-          <div class="reg-field">
-            <label class="reg-label" for="reg-contact">שם איש קשר *</label>
-            <input type="text" class="reg-input" id="reg-contact" name="contactName" placeholder="שם מלא" required>
-          </div>
-          <div class="reg-field">
-            <label class="reg-label" for="reg-phone">טלפון *</label>
-            <input type="tel" class="reg-input" id="reg-phone" name="phone" placeholder="03-7740400" required>
-          </div>
-          <div class="reg-field">
-            <label class="reg-label" for="reg-email">מייל</label>
-            <input type="email" class="reg-input" id="reg-email" name="email" placeholder="Pm@ymarket.co.il">
-          </div>
-          <div class="reg-field">
-            <label class="reg-label" for="reg-city">עיר</label>
-            <input type="text" class="reg-input" id="reg-city" name="city" placeholder="עיר / ישוב">
-          </div>
-          <div class="reg-field">
-            <label class="reg-label" for="reg-type">סוג העסק</label>
-            <select class="reg-select" id="reg-type" name="businessType">
-              <option value="">בחרו סוג</option>
-              <option value="cleaning">חברת ניקיון</option>
-              <option value="restaurant">מסעדה / בית קפה</option>
-              <option value="supermarket">סופרמרקט / מכולת</option>
-              <option value="distributor">מפיץ / סיטונאי</option>
-              <option value="office">משרד / חברת הייטק</option>
-              <option value="medical">מוסד רפואי</option>
-              <option value="education">מוסד חינוכי</option>
-              <option value="sports">מרכז ספורט</option>
-              <option value="industrial">מפעל / תעשייה</option>
-              <option value="government">גוף ממשלתי / רשות</option>
-              <option value="other">אחר</option>
-            </select>
-          </div>
-          <div class="reg-field">
-            <label class="reg-label" for="reg-password">סיסמה לפורטל *</label>
-            <div class="reg-password-wrap">
-              <input type="password" class="reg-input" id="reg-password" name="password" placeholder="לפחות 8 תווים" minlength="8" required>
-              <button type="button" id="togglePassword" class="reg-password-toggle" aria-label="הצג סיסמה">
-                <i class="fas fa-eye"></i>
-              </button>
+          <form id="registerForm">
+            <div class="fld">
+              <label class="fld-label" for="reg-business">שם העסק *</label>
+              <input type="text" class="fld-input" id="reg-business" name="businessName" placeholder="שם החברה / העסק" required>
             </div>
-          </div>
-          <div class="reg-field">
-            <label class="reg-terms-label">
-              <input type="checkbox" id="reg-terms" required>
-              <span>קראתי ואני מאשר/ת את <a href="legal/terms" target="_blank">תקנון האתר</a> ו<a href="legal/privacy" target="_blank">מדיניות הפרטיות</a></span>
-            </label>
-          </div>
-          <div id="registerError" class="reg-error"></div>
-          <button type="submit" class="reg-submit-btn" id="registerBtn">
-            <i class="fas fa-paper-plane"></i>
-            התחילו להזמין — חינם
-          </button>
-        </form>
+            <div class="fld-row">
+              <div class="fld">
+                <label class="fld-label" for="reg-id">ע.מ / ח.פ *</label>
+                <input type="text" class="fld-input" id="reg-id" name="vatNumber" placeholder="מספר עוסק" required>
+              </div>
+              <div class="fld">
+                <label class="fld-label" for="reg-contact">איש קשר *</label>
+                <input type="text" class="fld-input" id="reg-contact" name="contactName" placeholder="שם מלא" required>
+              </div>
+            </div>
+            <div class="fld-row">
+              <div class="fld">
+                <label class="fld-label" for="reg-phone">טלפון *</label>
+                <input type="tel" class="fld-input" id="reg-phone" name="phone" placeholder="050-0000000" required>
+              </div>
+              <div class="fld">
+                <label class="fld-label" for="reg-email">מייל</label>
+                <input type="email" class="fld-input" id="reg-email" name="email" placeholder="email@company.co.il">
+              </div>
+            </div>
+            <div class="fld">
+              <label class="fld-label" for="reg-address">כתובת (רחוב ומספר) *</label>
+              <input type="text" class="fld-input" id="reg-address" name="address" placeholder="רחוב ומספר בית" required>
+            </div>
+            <div class="fld-row">
+              <div class="fld">
+                <label class="fld-label" for="reg-city">עיר *</label>
+                <input type="text" class="fld-input" id="reg-city" name="city" placeholder="עיר / ישוב" required>
+              </div>
+              <div class="fld">
+                <label class="fld-label" for="reg-type">סוג עסק *</label>
+                <select class="fld-select" id="reg-type" name="businessType" required>
+                  <option value="">בחרו סוג</option>
+                  <option value="cleaning">חברת ניקיון</option>
+                  <option value="restaurant">מסעדה / בית קפה</option>
+                  <option value="supermarket">סופרמרקט / מכולת</option>
+                  <option value="distributor">מפיץ / סיטונאי</option>
+                  <option value="office">משרד / חברת הייטק</option>
+                  <option value="medical">מוסד רפואי</option>
+                  <option value="education">מוסד חינוכי</option>
+                  <option value="sports">מרכז ספורט</option>
+                  <option value="industrial">מפעל / תעשייה</option>
+                  <option value="government">גוף ממשלתי / רשות</option>
+                  <option value="other">אחר</option>
+                </select>
+              </div>
+            </div>
+            <div class="fld">
+              <label class="fld-label" for="reg-password">סיסמה *</label>
+              <div class="pw-wrap">
+                <input type="password" class="fld-input" id="reg-password" name="password" placeholder="לפחות 8 תווים" minlength="8" required>
+                <button type="button" id="togglePassword" class="pw-btn" aria-label="הצג סיסמה">
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+            </div>
+            <div class="fld">
+              <label class="terms">
+                <input type="checkbox" id="reg-terms" required>
+                <span>קראתי ואני מאשר/ת את <a href="legal/terms" target="_blank">תקנון האתר</a> ו<a href="legal/privacy" target="_blank">מדיניות הפרטיות</a></span>
+              </label>
+            </div>
+            <div id="registerError" class="reg-error"></div>
+            <button type="submit" class="reg-submit" id="registerBtn">
+              הרשמה לפורטל ההזמנות
+              <i class="fas fa-arrow-left"></i>
+            </button>
+          </form>
 
-        <div class="reg-form-footer">
-          כבר רשומים? <a href="login">כניסה</a>
+          <div class="reg-free-tag"><i class="fas fa-check-circle"></i> הרשמה חינמית, ללא התחייבות</div>
+          <div class="rc-footer">כבר רשומים? <a href="login">כניסה לפורטל</a></div>
+          <div class="rc-help">צריכים עזרה? 03-7740400</div>
         </div>
       </div>
-    </div>
 
+    </div>
+  </div>
+
+  <!-- Mobile Sticky Registration Bar -->
+  <div class="mobile-reg-bar">
+    <a href="#registerForm">הרשמה לפורטל ההזמנות <i class="fas fa-arrow-left"></i></a>
   </div>
 
   <!-- Footer -->
@@ -1100,15 +1078,17 @@
       errorEl.style.display = 'none';
 
       const data = new FormData(form);
-      const businessName = data.get('businessName').trim();
-      const vatNumber = data.get('vatNumber').trim();
-      const contactName = data.get('contactName').trim();
-      const phone = data.get('phone').trim();
+      const businessName = data.get('businessName')?.trim() || '';
+      const vatNumber = data.get('vatNumber')?.trim() || '';
+      const contactName = data.get('contactName')?.trim() || '';
+      const phone = data.get('phone')?.trim() || '';
       const password = data.get('password');
-      const email = data.get('email').trim();
-      const city = data.get('city').trim();
+      const email = data.get('email')?.trim() || '';
+      const city = data.get('city')?.trim() || '';
+      const address = data.get('address')?.trim() || '';
+      const businessType = data.get('businessType')?.trim() || '';
 
-      if (!businessName || !vatNumber || !contactName || !phone || !password) {
+      if (!businessName || !vatNumber || !contactName || !phone || !password || !address || !city || !businessType) {
         errorEl.textContent = 'נא למלא את כל שדות החובה';
         errorEl.style.display = 'block';
         return;
@@ -1136,6 +1116,8 @@
             phone,
             email: email || undefined,
             city: city || undefined,
+            address: address || undefined,
+            businessType: businessType || undefined,
             password,
           }),
         });
@@ -1146,7 +1128,7 @@
           errorEl.textContent = result.error || 'שגיאה בשליחת הטופס';
           errorEl.style.display = 'block';
           submitBtn.disabled = false;
-          submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> התחילו להזמין — חינם';
+          submitBtn.innerHTML = 'הרשמה לפורטל ההזמנות <i class="fas fa-arrow-left"></i>';
           return;
         }
 
@@ -1163,7 +1145,7 @@
         errorEl.textContent = 'שגיאת תקשורת. ודאו שהפורטל פעיל ונסו שוב.';
         errorEl.style.display = 'block';
         submitBtn.disabled = false;
-        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> התחילו להזמין — חינם';
+        submitBtn.innerHTML = 'הרשמה לפורטל ההזמנות <i class="fas fa-arrow-left"></i>';
       }
     });
   })();
