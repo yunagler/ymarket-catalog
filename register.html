@@ -56,8 +56,9 @@
       left: -120px;
       width: 400px;
       height: 400px;
-      background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(79,195,247,0.08) 0%, transparent 60%);
       pointer-events: none;
+      animation: meshFloat 12s ease-in-out infinite alternate;
     }
 
     .reg-benefits::after {
@@ -67,8 +68,25 @@
       right: -80px;
       width: 300px;
       height: 300px;
-      background: radial-gradient(circle, rgba(42,80,128,0.3) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(255,107,53,0.06) 0%, transparent 60%);
       pointer-events: none;
+      animation: meshFloat 15s ease-in-out 3s infinite alternate;
+    }
+
+    @keyframes meshFloat {
+      0% { transform: translate(0,0) scale(1); }
+      100% { transform: translate(-20px, 15px) scale(1.1); }
+    }
+
+    /* Noise texture on left side */
+    .reg-benefits .reg-benefits__inner::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.02;
+      z-index: 0;
     }
 
     .reg-benefits__inner {
@@ -101,13 +119,17 @@
 
     .reg-benefits h1 {
       font-family: 'Heebo', sans-serif;
-      font-size: 40px;
-      font-weight: 800;
-      line-height: 1.25;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 900;
+      line-height: 1.2;
       margin: 0 0 16px;
       color: #fff;
       letter-spacing: -0.5px;
       animation: regFadeUp 0.6s 0.1s ease-out both;
+      background: linear-gradient(135deg, #fff 40%, #4FC3F7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .reg-benefits__sub {
@@ -119,30 +141,42 @@
       animation: regFadeUp 0.6s 0.2s ease-out both;
     }
 
-    /* Benefit Items */
+    /* Benefit Items — 2x2 Glass Grid */
     .reg-benefit-list {
       list-style: none;
       padding: 0;
-      margin: 0 0 40px;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
+      margin: 0 0 36px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
     }
 
     .reg-benefit-list li {
       display: flex;
-      align-items: center;
-      gap: 16px;
-      font-size: 16px;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 16px;
+      font-size: 14px;
       font-weight: 400;
       color: rgba(255,255,255,0.92);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      backdrop-filter: blur(8px);
       animation: regFadeUp 0.5s ease-out both;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reg-benefit-list li:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(79,195,247,0.2);
+      transform: translateY(-2px);
     }
 
     .reg-benefit-list li:nth-child(1) { animation-delay: 0.3s; }
-    .reg-benefit-list li:nth-child(2) { animation-delay: 0.38s; }
-    .reg-benefit-list li:nth-child(3) { animation-delay: 0.46s; }
-    .reg-benefit-list li:nth-child(4) { animation-delay: 0.54s; }
+    .reg-benefit-list li:nth-child(2) { animation-delay: 0.36s; }
+    .reg-benefit-list li:nth-child(3) { animation-delay: 0.42s; }
+    .reg-benefit-list li:nth-child(4) { animation-delay: 0.48s; }
 
     .reg-benefit-icon {
       display: flex;
@@ -152,9 +186,17 @@
       height: 36px;
       min-width: 36px;
       border-radius: 10px;
-      background: rgba(92,184,92,0.15);
-      color: #5cb85c;
       font-size: 14px;
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .reg-benefit-list li:nth-child(1) .reg-benefit-icon { background: rgba(79,195,247,0.15); color: #4FC3F7; }
+    .reg-benefit-list li:nth-child(2) .reg-benefit-icon { background: rgba(34,197,94,0.15); color: #22c55e; }
+    .reg-benefit-list li:nth-child(3) .reg-benefit-icon { background: rgba(255,107,53,0.15); color: #FF6B35; }
+    .reg-benefit-list li:nth-child(4) .reg-benefit-icon { background: rgba(79,195,247,0.15); color: #4FC3F7; }
+
+    .reg-benefit-list li:hover .reg-benefit-icon {
+      transform: scale(1.1) rotate(-5deg);
     }
 
     .reg-benefit-text strong {
@@ -289,13 +331,22 @@
       border-radius: 20px;
       padding: 40px 36px 36px;
       box-shadow:
-        0 1px 3px rgba(0,0,0,0.04),
-        0 8px 24px rgba(0,0,0,0.06),
+        0 0 0 1px rgba(27,58,92,0.04),
+        0 1px 3px rgba(0,0,0,0.03),
+        0 8px 24px rgba(0,0,0,0.05),
         0 24px 48px rgba(0,0,0,0.04);
-      border: 1px solid rgba(0,0,0,0.04);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      border: none;
+      position: relative;
+      overflow: hidden;
       animation: regCardIn 0.7s 0.2s ease-out both;
+    }
+    .reg-form-card::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #4FC3F7, #1B3A5C, #22c55e);
+      border-radius: 20px 20px 0 0;
     }
 
     .reg-form-card__title {
@@ -787,8 +838,8 @@
           הרשמה חינמית -- ללא התחייבות
         </div>
 
-        <h1>פתחו חשבון עסקי בחינם</h1>
-        <p class="reg-benefits__sub">הצטרפו ל-200+ עסקים שכבר מזמינים אספקה מוסדית בקליק אחד דרך הפורטל.</p>
+        <h1>הזמינו אספקה<br>מוסדית בקליק</h1>
+        <p class="reg-benefits__sub">הצטרפו ל-200+ עסקים שכבר מזמינים 825+ מוצרים במחירים אישיים, ישירות מהפורטל. חינם, ב-30 שניות.</p>
 
         <ul class="reg-benefit-list">
           <li>
@@ -934,7 +985,7 @@
           <div id="registerError" class="reg-error"></div>
           <button type="submit" class="reg-submit-btn" id="registerBtn">
             <i class="fas fa-paper-plane"></i>
-            שלחו בקשת הרשמה -- חינם
+            התחילו להזמין — חינם
           </button>
         </form>
 
@@ -1095,7 +1146,7 @@
           errorEl.textContent = result.error || 'שגיאה בשליחת הטופס';
           errorEl.style.display = 'block';
           submitBtn.disabled = false;
-          submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> שלחו בקשת הרשמה -- חינם';
+          submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> התחילו להזמין — חינם';
           return;
         }
 
@@ -1112,7 +1163,7 @@
         errorEl.textContent = 'שגיאת תקשורת. ודאו שהפורטל פעיל ונסו שוב.';
         errorEl.style.display = 'block';
         submitBtn.disabled = false;
-        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> שלחו בקשת הרשמה -- חינם';
+        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> התחילו להזמין — חינם';
       }
     });
   })();
