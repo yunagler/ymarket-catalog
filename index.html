@@ -19,6 +19,50 @@
   <meta property="og:site_name" content="וואי מרקט">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="וואי מרקט | אספקה חכמה למוסדות ועסקים">
+
+  <!-- Schema.org - Organization + WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "וואי מרקט",
+    "alternateName": "נגלר סחר והפצה",
+    "url": "https://ymarket.co.il",
+    "logo": "https://ymarket.co.il/images/logo/logo-dark-2x.png",
+    "description": "אספקה חכמה ומדויקת למוסדות - מוצרי ניקיון, נייר, חד פעמי ומזון",
+    "telephone": "03-7740400",
+    "email": "Pm@ymarket.co.il",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "גת רימון",
+      "addressCountry": "IL"
+    },
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=100083110428101",
+      "https://www.instagram.com/ymarket.ai"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+972-3-7740400",
+      "contactType": "sales",
+      "availableLanguage": "Hebrew"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "וואי מרקט",
+    "url": "https://ymarket.co.il",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://ymarket.co.il/catalog?search={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -975,8 +1019,24 @@
       .features-grid, .stats-grid, .quick-services__grid, .services-strip__grid, .reg-grid { grid-template-columns: repeat(2, 1fr); }
       .footer__grid { grid-template-columns: repeat(2, 1fr); gap: var(--sp-2xl); }
     }
+    /* Mobile nav open state */
+    .nav.open { display: flex !important; }
+    .mobile-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 8999; opacity: 0; transition: opacity 0.3s; }
+    .mobile-overlay.active { display: block; opacity: 1; }
+
     @media (max-width: 768px) {
-      .nav { display: none; }
+      .nav {
+        display: none;
+        position: fixed; top: 0; right: 0; width: 85%; max-width: 360px; height: 100vh; height: 100dvh;
+        background: var(--surface, #fff); flex-direction: column; align-items: stretch; justify-content: flex-start;
+        padding: 24px; padding-top: max(24px, env(safe-area-inset-top)); gap: 0; z-index: 9001;
+        box-shadow: var(--shadow-xl); overflow-y: auto; -webkit-overflow-scrolling: touch;
+        transform: translateX(100%); transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .nav.open { transform: translateX(0); }
+      .nav__link, .nav .nav__item > .nav__link { padding: 14px 16px; font-size: 1rem; border-bottom: 1px solid var(--border); border-radius: 0; min-height: 48px; width: 100%; }
+      .nav .mega-menu { position: static; min-width: auto; box-shadow: none; border: none; padding: 0 16px; opacity: 1; visibility: visible; transform: none; display: none; }
+      .nav .nav__item.open .mega-menu { display: block; }
       .mobile-menu-btn { display: flex; }
       .header .container { height: 60px; }
       .info-bar { display: none; }
@@ -2027,6 +2087,58 @@
       window.addEventListener('storage',syncCartBadge);
     })();
   </script>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <script>
+  (function(){
+    var btn = document.querySelector('.mobile-menu-btn');
+    var nav = document.querySelector('.nav');
+    var overlay = document.getElementById('mobileOverlay');
+    if (!btn || !nav) return;
+
+    function open() {
+      nav.classList.add('open');
+      if (overlay) overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      btn.setAttribute('aria-expanded', 'true');
+      var icon = btn.querySelector('i');
+      if (icon) icon.className = 'fas fa-times';
+    }
+    function close() {
+      nav.classList.remove('open');
+      if (overlay) overlay.classList.remove('active');
+      document.body.style.overflow = '';
+      btn.setAttribute('aria-expanded', 'false');
+      var icon = btn.querySelector('i');
+      if (icon) icon.className = 'fas fa-bars';
+      // Close any open mega-menus
+      nav.querySelectorAll('.nav__item.open').forEach(function(it){ it.classList.remove('open'); });
+    }
+
+    btn.addEventListener('click', function(){ nav.classList.contains('open') ? close() : open(); });
+    if (overlay) overlay.addEventListener('click', close);
+
+    // Close on nav link click
+    nav.querySelectorAll('a.nav__link').forEach(function(link){
+      link.addEventListener('click', function(e){
+        // If mega-menu parent on mobile, toggle submenu instead
+        var item = link.closest('.nav__item');
+        if (item && item.querySelector('.mega-menu') && window.innerWidth <= 768) {
+          e.preventDefault();
+          item.classList.toggle('open');
+          return;
+        }
+        close();
+      });
+    });
+    // Close on mega-menu link click
+    nav.querySelectorAll('.mega-menu a').forEach(function(a){ a.addEventListener('click', close); });
+  })();
+  </script>
+
+  <!-- Analytics -->
+  <script src="/js/analytics.min.js" defer></script>
 
 </body>
 </html>

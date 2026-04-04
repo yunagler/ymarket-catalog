@@ -16,6 +16,35 @@
   <meta property="og:image" content="https://ymarket.co.il/images/og-image.jpg">
   <meta property="og:locale" content="he_IL">
   <meta property="og:site_name" content="וואי מרקט">
+
+  <!-- Schema.org - ItemList (Product Categories) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "קטלוג מוצרים - וואי מרקט",
+    "description": "825+ מוצרי צריכה שוטפת ב-14 קטגוריות במחירי סיטונאות",
+    "url": "https://ymarket.co.il/catalog",
+    "numberOfItems": 14,
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "חומרי ניקוי", "url": "https://ymarket.co.il/category/industrial-cleaning-supplies-wholesale/"},
+      {"@type": "ListItem", "position": 2, "name": "מוצרי נייר", "url": "https://ymarket.co.il/category/bulk-paper-towel-office-supplies/"},
+      {"@type": "ListItem", "position": 3, "name": "חד פעמי", "url": "https://ymarket.co.il/category/disposable-catering-food-service/"},
+      {"@type": "ListItem", "position": 4, "name": "אריזות מזון", "url": "https://ymarket.co.il/category/food-packaging-delivery-solutions/"},
+      {"@type": "ListItem", "position": 5, "name": "שקיות אשפה", "url": "https://ymarket.co.il/category/heavy-duty-garbage-bags-wholesale/"},
+      {"@type": "ListItem", "position": 6, "name": "טקסטיל ומטליות", "url": "https://ymarket.co.il/category/professional-cleaning-cloths-microfiber/"},
+      {"@type": "ListItem", "position": 7, "name": "קפה וכיבוד", "url": "https://ymarket.co.il/category/office-coffee-breakroom-supplies/"},
+      {"@type": "ListItem", "position": 8, "name": "בטיחות ומיגון", "url": "https://ymarket.co.il/category/safety-ppe-equipment-for-business/"},
+      {"@type": "ListItem", "position": 9, "name": "ציוד משרדי", "url": "https://ymarket.co.il/category/office-supplies-wholesale-business/"},
+      {"@type": "ListItem", "position": 10, "name": "ציוד טכני", "url": "https://ymarket.co.il/category/maintenance-technical-equipment-wholesale/"},
+      {"@type": "ListItem", "position": 11, "name": "אריזה ולוגיסטיקה", "url": "https://ymarket.co.il/category/warehouse-packaging-supplies-wholesale/"},
+      {"@type": "ListItem", "position": 12, "name": "עזרה ראשונה", "url": "https://ymarket.co.il/category/first-aid-medical-equipment-business/"},
+      {"@type": "ListItem", "position": 13, "name": "טואלטיקה", "url": "https://ymarket.co.il/category/personal-hygiene-products-wholesale/"},
+      {"@type": "ListItem", "position": 14, "name": "ציוד משקי", "url": "https://ymarket.co.il/category/institutional-cleaning-tools-equipment/"}
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -227,8 +256,12 @@
     .loading{text-align:center;padding:var(--sp-4xl);color:var(--text-muted)}
     .loading i{font-size:2rem;margin-bottom:var(--sp-md);display:block;color:var(--action)}
 
+    /* Mobile nav open state */
+    .nav.open{display:flex!important}
+    .mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:8999;opacity:0;transition:opacity .3s}
+    .mobile-overlay.active{display:block;opacity:1}
     @media(max-width:768px){
-      .nav{display:none}.mobile-menu-btn{display:flex}
+      .nav{display:none;position:fixed;top:0;right:0;width:85%;max-width:360px;height:100vh;height:100dvh;background:var(--surface,#fff);flex-direction:column;align-items:stretch;justify-content:flex-start;padding:24px;padding-top:max(24px,env(safe-area-inset-top));gap:0;z-index:9001;box-shadow:var(--shadow-xl);overflow-y:auto;-webkit-overflow-scrolling:touch;transform:translateX(100%);transition:transform .35s cubic-bezier(.22,1,.36,1)}.nav.open{transform:translateX(0)}.nav__link{padding:14px 16px;font-size:1rem;border-bottom:1px solid var(--border);border-radius:0;min-height:48px;width:100%;display:block}.mobile-menu-btn{display:flex}
       .header .container{height:60px}.info-bar{display:none}
       .reg-banner{flex-direction:column;text-align:center}
       .cat-pills{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;padding-bottom:8px;-webkit-overflow-scrolling:touch}.cat-pills::-webkit-scrollbar{display:none}
@@ -599,5 +632,25 @@
     init();
   })();
   </script>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <script>
+  (function(){
+    var btn = document.querySelector('.mobile-menu-btn');
+    var nav = document.querySelector('.nav');
+    var overlay = document.getElementById('mobileOverlay');
+    if (!btn || !nav) return;
+    function open(){ nav.classList.add('open'); if(overlay) overlay.classList.add('active'); document.body.style.overflow='hidden'; btn.setAttribute('aria-expanded','true'); var i=btn.querySelector('i'); if(i) i.className='fas fa-times'; }
+    function close(){ nav.classList.remove('open'); if(overlay) overlay.classList.remove('active'); document.body.style.overflow=''; btn.setAttribute('aria-expanded','false'); var i=btn.querySelector('i'); if(i) i.className='fas fa-bars'; }
+    btn.addEventListener('click', function(){ nav.classList.contains('open') ? close() : open(); });
+    if(overlay) overlay.addEventListener('click', close);
+    nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
+  })();
+  </script>
+
+  <!-- Analytics -->
+  <script src="/js/analytics.min.js" defer></script>
+
 </body>
 </html>

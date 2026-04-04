@@ -9,6 +9,54 @@
   <link rel="icon" href="/favicon.ico">
   <meta name="theme-color" content="#1B3A5C">
   <meta property="og:title" content="בלוג | וואי מרקט"><meta property="og:description" content="מדריכים מקצועיים, טיפים וחדשות מעולם האספקה לעסקים."><meta property="og:type" content="website"><meta property="og:url" content="https://ymarket.co.il/blog"><meta property="og:locale" content="he_IL"><meta property="og:site_name" content="וואי מרקט"><meta property="og:image" content="https://ymarket.co.il/images/og-image.jpg">
+
+  <!-- Schema.org - Blog -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "בלוג וואי מרקט",
+    "description": "מדריכים מקצועיים, טיפים לחיסכון וחדשות מעולם האספקה לעסקים",
+    "url": "https://ymarket.co.il/blog",
+    "publisher": {
+      "@type": "Organization",
+      "name": "וואי מרקט",
+      "url": "https://ymarket.co.il",
+      "logo": "https://ymarket.co.il/images/logo/logo-dark-2x.png"
+    },
+    "blogPost": [
+      {
+        "@type": "BlogPosting",
+        "headline": "המדריך המלא לאספקה מוסדית — כל מה שעסקים צריכים לדעת ב-2026",
+        "url": "https://ymarket.co.il/blog/complete-guide-institutional-supplies",
+        "datePublished": "2026-03-09",
+        "description": "מהי אספקה מוסדית? איך לבחור ספק? קטגוריות מוצרים, טבלאות השוואה, וטיפים לחיסכון."
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "איך לבחור ספק מוצרי צריכה שוטפת לעסק — המדריך המלא",
+        "url": "https://ymarket.co.il/blog/how-to-choose-supplier",
+        "datePublished": "2026-03-24",
+        "description": "6 קריטריונים לבחירת ספק, טבלת השוואה בין ספק ישיר לסיטונאי, 5 טעויות נפוצות ברכש."
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "מה להזמין מספק מוצרי צריכה — רשימות לפי סוג עסק",
+        "url": "https://ymarket.co.il/blog/what-to-order-by-business-type",
+        "datePublished": "2026-03-24",
+        "description": "רשימות מוצרים מלאות למסעדה, חברת ניקיון, משרד, סופרמרקט ומרכז ספורט."
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "חומרי ניקיון סיטונאי — מחירים, ספקים וטיפים",
+        "url": "https://ymarket.co.il/blog/wholesale-cleaning-products",
+        "datePublished": "2026-02-27",
+        "description": "יתרונות רכישה בסיטונאות, השוואת מחירים, סוגי חומרים ובחירת ספק."
+      }
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -95,7 +143,11 @@
     .whatsapp-float{position:fixed;bottom:24px;right:24px;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:28px;box-shadow:0 4px 20px rgba(37,211,102,.4);z-index:8000;transition:all .3s}.whatsapp-float:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,.5);color:white}
 
     @media(max-width:1024px){.blog-grid{grid-template-columns:repeat(2,1fr)}.featured__card{grid-template-columns:1fr}.footer__grid{grid-template-columns:repeat(2,1fr);gap:var(--sp-2xl)}}
-    @media(max-width:768px){.nav{display:none}.mobile-menu-btn{display:flex}.header .container{height:60px}.info-bar{display:none}.blog-grid{grid-template-columns:1fr}.blog-pills{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;padding-bottom:8px;-webkit-overflow-scrolling:touch}.blog-pills::-webkit-scrollbar{display:none}.footer__grid{grid-template-columns:1fr}.footer__bottom{flex-direction:column;text-align:center}}
+    /* Mobile nav open state */
+    .nav.open{display:flex!important}
+    .mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:8999;opacity:0;transition:opacity .3s}
+    .mobile-overlay.active{display:block;opacity:1}
+    @media(max-width:768px){.nav{display:none;position:fixed;top:0;right:0;width:85%;max-width:360px;height:100vh;height:100dvh;background:var(--surface,#fff);flex-direction:column;align-items:stretch;justify-content:flex-start;padding:24px;padding-top:max(24px,env(safe-area-inset-top));gap:0;z-index:9001;box-shadow:var(--shadow-xl);overflow-y:auto;-webkit-overflow-scrolling:touch;transform:translateX(100%);transition:transform .35s cubic-bezier(.22,1,.36,1)}.nav.open{transform:translateX(0)}.nav__link{padding:14px 16px;font-size:1rem;border-bottom:1px solid var(--border);border-radius:0;min-height:48px;width:100%;display:block}.mobile-menu-btn{display:flex}.header .container{height:60px}.info-bar{display:none}.blog-grid{grid-template-columns:1fr}.blog-pills{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;padding-bottom:8px;-webkit-overflow-scrolling:touch}.blog-pills::-webkit-scrollbar{display:none}.footer__grid{grid-template-columns:1fr}.footer__bottom{flex-direction:column;text-align:center}}
     @media(max-width:480px){.header__login span,.header__register span{display:none}.whatsapp-float{width:52px;height:52px;font-size:24px;bottom:16px;right:16px}.featured__body{padding:var(--sp-lg)}.b-card__img{height:160px}}
   </style>
 </head>
@@ -299,5 +351,25 @@
       window.addEventListener('storage',syncCartBadge);
     })();
   </script>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <script>
+  (function(){
+    var btn = document.querySelector('.mobile-menu-btn');
+    var nav = document.querySelector('.nav');
+    var overlay = document.getElementById('mobileOverlay');
+    if (!btn || !nav) return;
+    function open(){ nav.classList.add('open'); if(overlay) overlay.classList.add('active'); document.body.style.overflow='hidden'; btn.setAttribute('aria-expanded','true'); var i=btn.querySelector('i'); if(i) i.className='fas fa-times'; }
+    function close(){ nav.classList.remove('open'); if(overlay) overlay.classList.remove('active'); document.body.style.overflow=''; btn.setAttribute('aria-expanded','false'); var i=btn.querySelector('i'); if(i) i.className='fas fa-bars'; }
+    btn.addEventListener('click', function(){ nav.classList.contains('open') ? close() : open(); });
+    if(overlay) overlay.addEventListener('click', close);
+    nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
+  })();
+  </script>
+
+  <!-- Analytics -->
+  <script src="/js/analytics.min.js" defer></script>
+
 </body>
 </html>
