@@ -28,6 +28,682 @@
   <link rel="stylesheet" href="css/style.min.css?v=20260310">
   <link rel="stylesheet" href="css/pages/legal.min.css?v=20260310">
   <link rel="stylesheet" href="/css/new-header.css">
+  <style>
+    /* ===== REGISTER SPLIT-SCREEN ===== */
+    .reg-split {
+      display: flex;
+      min-height: calc(100vh - 140px);
+      direction: rtl;
+    }
+
+    /* LEFT SIDE - Benefits */
+    .reg-benefits {
+      flex: 0 0 58%;
+      background: linear-gradient(145deg, #0d2137 0%, #1B3A5C 40%, #1e4d7a 100%);
+      color: #fff;
+      padding: 56px 52px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .reg-benefits::before {
+      content: '';
+      position: absolute;
+      top: -120px;
+      left: -120px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .reg-benefits::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      right: -80px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(42,80,128,0.3) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .reg-benefits__inner {
+      position: relative;
+      z-index: 1;
+      max-width: 540px;
+    }
+
+    .reg-benefits__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 100px;
+      padding: 8px 20px;
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 28px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      animation: regFadeUp 0.6s ease-out both;
+    }
+
+    .reg-benefits__badge i {
+      color: #5cb85c;
+      font-size: 11px;
+    }
+
+    .reg-benefits h1 {
+      font-family: 'Heebo', sans-serif;
+      font-size: 40px;
+      font-weight: 800;
+      line-height: 1.25;
+      margin: 0 0 16px;
+      color: #fff;
+      letter-spacing: -0.5px;
+      animation: regFadeUp 0.6s 0.1s ease-out both;
+    }
+
+    .reg-benefits__sub {
+      font-size: 17px;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.72);
+      margin-bottom: 40px;
+      font-weight: 300;
+      animation: regFadeUp 0.6s 0.2s ease-out both;
+    }
+
+    /* Benefit Items */
+    .reg-benefit-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .reg-benefit-list li {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.92);
+      animation: regFadeUp 0.5s ease-out both;
+    }
+
+    .reg-benefit-list li:nth-child(1) { animation-delay: 0.3s; }
+    .reg-benefit-list li:nth-child(2) { animation-delay: 0.38s; }
+    .reg-benefit-list li:nth-child(3) { animation-delay: 0.46s; }
+    .reg-benefit-list li:nth-child(4) { animation-delay: 0.54s; }
+
+    .reg-benefit-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      border-radius: 10px;
+      background: rgba(92,184,92,0.15);
+      color: #5cb85c;
+      font-size: 14px;
+    }
+
+    .reg-benefit-text strong {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 1px;
+    }
+
+    .reg-benefit-text span {
+      font-size: 13.5px;
+      color: rgba(255,255,255,0.55);
+      font-weight: 300;
+    }
+
+    /* Stats Row */
+    .reg-stats {
+      display: flex;
+      gap: 0;
+      margin-bottom: 40px;
+      animation: regFadeUp 0.5s 0.6s ease-out both;
+    }
+
+    .reg-stat {
+      flex: 1;
+      text-align: center;
+      padding: 20px 12px;
+      border-left: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .reg-stat:last-child {
+      border-left: none;
+    }
+
+    .reg-stat__number {
+      display: block;
+      font-size: 28px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #fff 30%, rgba(92,184,92,0.8));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2;
+    }
+
+    .reg-stat__label {
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.5);
+      margin-top: 4px;
+      font-weight: 400;
+    }
+
+    /* Testimonials */
+    .reg-testimonials {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 36px;
+      animation: regFadeUp 0.5s 0.7s ease-out both;
+    }
+
+    .reg-testimonial {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 18px 22px;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .reg-testimonial:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.14);
+    }
+
+    .reg-testimonial__text {
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+
+    .reg-testimonial__text::before {
+      content: '\201F';
+      font-size: 22px;
+      color: rgba(92,184,92,0.6);
+      margin-left: 4px;
+    }
+
+    .reg-testimonial__author {
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.45);
+      font-weight: 500;
+    }
+
+    /* Trust Row */
+    .reg-trust {
+      display: flex;
+      gap: 28px;
+      animation: regFadeUp 0.5s 0.8s ease-out both;
+    }
+
+    .reg-trust__item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .reg-trust__item i {
+      font-size: 14px;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* RIGHT SIDE - Form */
+    .reg-form-side {
+      flex: 0 0 42%;
+      background: #f7f8fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 32px;
+      position: relative;
+    }
+
+    .reg-form-card {
+      width: 100%;
+      max-width: 440px;
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px 36px 36px;
+      box-shadow:
+        0 1px 3px rgba(0,0,0,0.04),
+        0 8px 24px rgba(0,0,0,0.06),
+        0 24px 48px rgba(0,0,0,0.04);
+      border: 1px solid rgba(0,0,0,0.04);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      animation: regCardIn 0.7s 0.2s ease-out both;
+    }
+
+    .reg-form-card__title {
+      font-family: 'Heebo', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #1B3A5C;
+      margin: 0 0 4px;
+      text-align: center;
+    }
+
+    .reg-form-card__subtitle {
+      font-size: 13.5px;
+      color: #8e99a4;
+      text-align: center;
+      margin-bottom: 28px;
+      font-weight: 400;
+    }
+
+    /* Form Fields */
+    .reg-form .reg-field {
+      margin-bottom: 16px;
+    }
+
+    .reg-form .reg-field:last-of-type {
+      margin-bottom: 12px;
+    }
+
+    .reg-form .reg-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #3a4a5c;
+      margin-bottom: 6px;
+    }
+
+    .reg-form .reg-input,
+    .reg-form .reg-select {
+      width: 100%;
+      padding: 12px 16px;
+      font-family: 'Heebo', sans-serif;
+      font-size: 14.5px;
+      color: #1a2a3a;
+      background: #f8f9fb;
+      border: 1.5px solid #e2e6ec;
+      border-radius: 12px;
+      outline: none;
+      transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+      box-sizing: border-box;
+      direction: rtl;
+    }
+
+    .reg-form .reg-input::placeholder {
+      color: #b0b8c4;
+      font-weight: 300;
+    }
+
+    .reg-form .reg-input:focus,
+    .reg-form .reg-select:focus {
+      border-color: #4a90d9;
+      background: #fff;
+      box-shadow:
+        0 0 0 3px rgba(74,144,217,0.12),
+        0 1px 2px rgba(0,0,0,0.04);
+    }
+
+    .reg-form .reg-select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='%238e99a4'%3E%3Cpath d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: left 14px center;
+      padding-left: 36px;
+      cursor: pointer;
+    }
+
+    /* Password wrapper */
+    .reg-password-wrap {
+      position: relative;
+    }
+
+    .reg-password-wrap .reg-input {
+      padding-left: 48px;
+    }
+
+    .reg-password-toggle {
+      position: absolute;
+      left: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #b0b8c4;
+      font-size: 15px;
+      min-width: 40px;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.2s ease;
+      border-radius: 8px;
+    }
+
+    .reg-password-toggle:hover {
+      color: #4a90d9;
+    }
+
+    /* Checkbox */
+    .reg-terms-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      cursor: pointer;
+      font-size: 13px;
+      color: #6b7a8d;
+      line-height: 1.5;
+      margin: 4px 0 4px;
+    }
+
+    .reg-terms-label input[type="checkbox"] {
+      margin-top: 3px;
+      min-width: 18px;
+      min-height: 18px;
+      accent-color: #1B3A5C;
+      cursor: pointer;
+    }
+
+    .reg-terms-label a {
+      color: #4a90d9;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .reg-terms-label a:hover {
+      color: #1B3A5C;
+      text-decoration: underline;
+    }
+
+    /* Error */
+    .reg-error {
+      display: none;
+      color: #dc3545;
+      font-size: 13px;
+      background: #fdf0f0;
+      border: 1px solid #f5c6cb;
+      border-radius: 10px;
+      padding: 10px 14px;
+      margin-bottom: 14px;
+    }
+
+    /* Submit Button */
+    .reg-submit-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 14px 24px;
+      font-family: 'Heebo', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      background: linear-gradient(135deg, #2d8f4e 0%, #22a252 50%, #28b558 100%);
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      transition:
+        transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+      box-shadow:
+        0 2px 8px rgba(40,181,88,0.25),
+        0 8px 24px rgba(40,181,88,0.15);
+      margin-top: 6px;
+    }
+
+    .reg-submit-btn:hover {
+      transform: translateY(-2px) scale(1.01);
+      box-shadow:
+        0 4px 12px rgba(40,181,88,0.3),
+        0 12px 32px rgba(40,181,88,0.2);
+      filter: brightness(1.06);
+    }
+
+    .reg-submit-btn:active {
+      transform: translateY(0) scale(0.99);
+    }
+
+    .reg-submit-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .reg-submit-btn i {
+      font-size: 14px;
+    }
+
+    /* Footer link */
+    .reg-form-footer {
+      text-align: center;
+      margin-top: 22px;
+      font-size: 14px;
+      color: #8e99a4;
+    }
+
+    .reg-form-footer a {
+      color: #1B3A5C;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .reg-form-footer a:hover {
+      color: #4a90d9;
+      text-decoration: underline;
+    }
+
+    /* Animations */
+    @keyframes regFadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes regCardIn {
+      from {
+        opacity: 0;
+        transform: translateY(24px) scale(0.97);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1080px) {
+      .reg-benefits {
+        padding: 40px 36px 32px;
+      }
+      .reg-benefits h1 {
+        font-size: 34px;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .reg-split {
+        flex-direction: column;
+        min-height: auto;
+      }
+
+      .reg-benefits {
+        flex: none;
+        padding: 40px 28px 32px;
+      }
+
+      .reg-benefits h1 {
+        font-size: 28px;
+      }
+
+      .reg-benefits__sub {
+        font-size: 15px;
+        margin-bottom: 28px;
+      }
+
+      .reg-benefit-list {
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+
+      .reg-stats {
+        margin-bottom: 28px;
+      }
+
+      .reg-stat__number {
+        font-size: 22px;
+      }
+
+      .reg-testimonials {
+        flex-direction: row;
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+
+      .reg-testimonial {
+        flex: 1;
+        padding: 14px 16px;
+      }
+
+      .reg-form-side {
+        flex: none;
+        padding: 32px 20px 40px;
+      }
+
+      .reg-form-card {
+        max-width: 100%;
+        padding: 32px 24px 28px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .reg-benefits {
+        padding: 32px 20px 24px;
+      }
+
+      .reg-benefits h1 {
+        font-size: 24px;
+      }
+
+      .reg-benefits__sub {
+        font-size: 14px;
+        margin-bottom: 22px;
+      }
+
+      .reg-benefit-list li {
+        font-size: 14.5px;
+      }
+
+      .reg-benefit-icon {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        font-size: 13px;
+        border-radius: 8px;
+      }
+
+      .reg-stats {
+        margin-bottom: 22px;
+      }
+
+      .reg-stat {
+        padding: 14px 8px;
+      }
+
+      .reg-stat__number {
+        font-size: 20px;
+      }
+
+      .reg-stat__label {
+        font-size: 11px;
+      }
+
+      .reg-testimonials {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .reg-trust {
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .reg-form-side {
+        padding: 24px 16px 36px;
+      }
+
+      .reg-form-card {
+        padding: 28px 20px 24px;
+        border-radius: 16px;
+      }
+
+      .reg-form-card__title {
+        font-size: 20px;
+      }
+
+      .reg-form .reg-input,
+      .reg-form .reg-select {
+        padding: 11px 14px;
+        font-size: 14px;
+      }
+
+      .reg-submit-btn {
+        padding: 13px 20px;
+        font-size: 15px;
+        border-radius: 12px;
+      }
+    }
+
+    @media (max-width: 374px) {
+      .reg-benefits {
+        padding: 24px 16px 20px;
+      }
+
+      .reg-benefits h1 {
+        font-size: 22px;
+      }
+
+      .reg-stat {
+        padding: 12px 6px;
+      }
+
+      .reg-form-card {
+        padding: 24px 16px 20px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -97,43 +773,135 @@
     </div>
   </header>
   <div class="mobile-overlay"></div>
-  <div class="search-overlay"><div class="search-overlay__inner"><form action="/catalog" method="get"><input type="search" name="search" class="search-overlay__input" placeholder="חפשו מוצר..." aria-label="חיפוש מוצר" autocomplete="off"></form></div></div><!-- Register Form -->
-  <div class="container">
-    <div class="auth-page">
-      <div class="auth-card">
-        <div class="auth-card__logo">
-          <img src="images/logo/logo-hebrew-dark.png" alt="וואי מרקט" height="48">
-        </div>
-        <h1>הרשמת עסק חדש</h1>
+  <div class="search-overlay"><div class="search-overlay__inner"><form action="/catalog" method="get"><input type="search" name="search" class="search-overlay__input" placeholder="חפשו מוצר..." aria-label="חיפוש מוצר" autocomplete="off"></form></div></div>
 
-        <form id="registerForm">
-          <div class="form-group">
-            <label class="form-label" for="reg-business">שם העסק *</label>
-            <input type="text" class="form-input" id="reg-business" name="businessName" placeholder="שם החברה / העסק" required>
+  <!-- ===== SPLIT-SCREEN REGISTER ===== -->
+  <div class="reg-split">
+
+    <!-- LEFT: Benefits & Social Proof -->
+    <div class="reg-benefits">
+      <div class="reg-benefits__inner">
+
+        <div class="reg-benefits__badge">
+          <i class="fas fa-circle"></i>
+          הרשמה חינמית -- ללא התחייבות
+        </div>
+
+        <h1>פתחו חשבון עסקי בחינם</h1>
+        <p class="reg-benefits__sub">הצטרפו ל-200+ עסקים שכבר מזמינים אספקה מוסדית בקליק אחד דרך הפורטל.</p>
+
+        <ul class="reg-benefit-list">
+          <li>
+            <div class="reg-benefit-icon"><i class="fas fa-tag"></i></div>
+            <div class="reg-benefit-text">
+              <strong>מחירון אישי</strong>
+              <span>המחירים שלכם בלבד -- ללא הפתעות</span>
+            </div>
+          </li>
+          <li>
+            <div class="reg-benefit-icon"><i class="fas fa-bolt"></i></div>
+            <div class="reg-benefit-text">
+              <strong>הזמנה ב-3 דקות</strong>
+              <span>בלי טלפונים, בלי המתנה</span>
+            </div>
+          </li>
+          <li>
+            <div class="reg-benefit-icon"><i class="fas fa-boxes-stacked"></i></div>
+            <div class="reg-benefit-text">
+              <strong>825+ מוצרים</strong>
+              <span>הכל במקום אחד -- ניקיון, נייר, חד"פ, מזון</span>
+            </div>
+          </li>
+          <li>
+            <div class="reg-benefit-icon"><i class="fas fa-truck-fast"></i></div>
+            <div class="reg-benefit-text">
+              <strong>משלוח 24-72 שעות</strong>
+              <span>ישירות עד הדלת -- ארצי</span>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Stats -->
+        <div class="reg-stats">
+          <div class="reg-stat">
+            <span class="reg-stat__number">200+</span>
+            <span class="reg-stat__label">עסקים פעילים</span>
           </div>
-          <div class="form-group">
-            <label class="form-label" for="reg-id">מספר ע.מ / ח.פ *</label>
-            <input type="text" class="form-input" id="reg-id" name="vatNumber" placeholder="מספר עוסק מורשה או חברה פרטית" required>
+          <div class="reg-stat">
+            <span class="reg-stat__number">825+</span>
+            <span class="reg-stat__label">מוצרים בקטלוג</span>
           </div>
-          <div class="form-group">
-            <label class="form-label" for="reg-contact">שם איש קשר *</label>
-            <input type="text" class="form-input" id="reg-contact" name="contactName" placeholder="שם מלא" required>
+          <div class="reg-stat">
+            <span class="reg-stat__number">24/7</span>
+            <span class="reg-stat__label">פורטל פתוח</span>
           </div>
-          <div class="form-group">
-            <label class="form-label" for="reg-phone">טלפון *</label>
-            <input type="tel" class="form-input" id="reg-phone" name="phone" placeholder="03-7740400" required>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="reg-testimonials">
+          <div class="reg-testimonial">
+            <div class="reg-testimonial__text">הפורטל חוסך לנו שעות בשבוע. הכל מסודר, מהיר ומדויק.</div>
+            <div class="reg-testimonial__author">-- חברת ניקיון, גוש דן</div>
           </div>
-          <div class="form-group">
-            <label class="form-label" for="reg-email">מייל</label>
-            <input type="email" class="form-input" id="reg-email" name="email" placeholder="Pm@ymarket.co.il">
+          <div class="reg-testimonial">
+            <div class="reg-testimonial__text">המחירים תחרותיים והשירות אישי. מרגישים שיש מישהו מאחורה.</div>
+            <div class="reg-testimonial__author">-- רשת מסעדות, מרכז</div>
           </div>
-          <div class="form-group">
-            <label class="form-label" for="reg-city">עיר</label>
-            <input type="text" class="form-input" id="reg-city" name="city" placeholder="עיר / ישוב">
+        </div>
+
+        <!-- Trust -->
+        <div class="reg-trust">
+          <div class="reg-trust__item">
+            <i class="fas fa-lock"></i>
+            <span>SSL מאובטח</span>
           </div>
-          <div class="form-group">
-            <label class="form-label" for="reg-type">סוג העסק</label>
-            <select class="form-select" id="reg-type" name="businessType">
+          <div class="reg-trust__item">
+            <i class="fas fa-file-invoice"></i>
+            <span>חשבונית מס</span>
+          </div>
+          <div class="reg-trust__item">
+            <i class="fas fa-handshake"></i>
+            <span>ללא התחייבות</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT: Registration Form -->
+    <div class="reg-form-side">
+      <div class="reg-form-card">
+        <div class="reg-form-card__title">הרשמה לפורטל</div>
+        <div class="reg-form-card__subtitle">30 שניות -- ותתחילו להזמין</div>
+
+        <form id="registerForm" class="reg-form">
+          <div class="reg-field">
+            <label class="reg-label" for="reg-business">שם העסק *</label>
+            <input type="text" class="reg-input" id="reg-business" name="businessName" placeholder="שם החברה / העסק" required>
+          </div>
+          <div class="reg-field">
+            <label class="reg-label" for="reg-id">מספר ע.מ / ח.פ *</label>
+            <input type="text" class="reg-input" id="reg-id" name="vatNumber" placeholder="מספר עוסק מורשה או חברה פרטית" required>
+          </div>
+          <div class="reg-field">
+            <label class="reg-label" for="reg-contact">שם איש קשר *</label>
+            <input type="text" class="reg-input" id="reg-contact" name="contactName" placeholder="שם מלא" required>
+          </div>
+          <div class="reg-field">
+            <label class="reg-label" for="reg-phone">טלפון *</label>
+            <input type="tel" class="reg-input" id="reg-phone" name="phone" placeholder="03-7740400" required>
+          </div>
+          <div class="reg-field">
+            <label class="reg-label" for="reg-email">מייל</label>
+            <input type="email" class="reg-input" id="reg-email" name="email" placeholder="Pm@ymarket.co.il">
+          </div>
+          <div class="reg-field">
+            <label class="reg-label" for="reg-city">עיר</label>
+            <input type="text" class="reg-input" id="reg-city" name="city" placeholder="עיר / ישוב">
+          </div>
+          <div class="reg-field">
+            <label class="reg-label" for="reg-type">סוג העסק</label>
+            <select class="reg-select" id="reg-type" name="businessType">
               <option value="">בחרו סוג</option>
               <option value="cleaning">חברת ניקיון</option>
               <option value="restaurant">מסעדה / בית קפה</option>
@@ -148,30 +916,34 @@
               <option value="other">אחר</option>
             </select>
           </div>
-          <div class="form-group">
-            <label class="form-label" for="reg-password">סיסמה לפורטל *</label>
-            <div style="position: relative;">
-              <input type="password" class="form-input" id="reg-password" name="password" placeholder="לפחות 8 תווים" minlength="8" required>
-              <button type="button" id="togglePassword" style="position: absolute; left: 4px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: var(--color-text-light); font-size: var(--fs-base); min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center;" aria-label="הצג סיסמה">
+          <div class="reg-field">
+            <label class="reg-label" for="reg-password">סיסמה לפורטל *</label>
+            <div class="reg-password-wrap">
+              <input type="password" class="reg-input" id="reg-password" name="password" placeholder="לפחות 8 תווים" minlength="8" required>
+              <button type="button" id="togglePassword" class="reg-password-toggle" aria-label="הצג סיסמה">
                 <i class="fas fa-eye"></i>
               </button>
             </div>
           </div>
-          <div class="form-group" style="margin-top: var(--space-sm);">
-            <label style="display: flex; align-items: flex-start; gap: var(--space-sm); cursor: pointer; font-size: var(--fs-sm); color: var(--color-text-secondary);">
-              <input type="checkbox" id="reg-terms" required style="margin-top: 3px; min-width: 18px; min-height: 18px;">
-              <span>קראתי ואני מאשר/ת את <a href="legal/terms" target="_blank" style="color: var(--color-accent);">תקנון האתר</a> ו<a href="legal/privacy" target="_blank" style="color: var(--color-accent);">מדיניות הפרטיות</a></span>
+          <div class="reg-field">
+            <label class="reg-terms-label">
+              <input type="checkbox" id="reg-terms" required>
+              <span>קראתי ואני מאשר/ת את <a href="legal/terms" target="_blank">תקנון האתר</a> ו<a href="legal/privacy" target="_blank">מדיניות הפרטיות</a></span>
             </label>
           </div>
-          <div id="registerError" style="display: none; color: var(--color-danger); font-size: var(--fs-sm); margin-bottom: var(--space-md);"></div>
-          <button type="submit" class="btn btn--primary btn--block btn--lg" id="registerBtn">שלחו בקשת הרשמה</button>
+          <div id="registerError" class="reg-error"></div>
+          <button type="submit" class="reg-submit-btn" id="registerBtn">
+            <i class="fas fa-paper-plane"></i>
+            שלחו בקשת הרשמה -- חינם
+          </button>
         </form>
 
-        <div class="auth-card__footer">
-          <p>כבר רשומים? <a href="login">כניסה</a></p>
+        <div class="reg-form-footer">
+          כבר רשומים? <a href="login">כניסה</a>
         </div>
       </div>
     </div>
+
   </div>
 
   <!-- Footer -->
@@ -298,7 +1070,7 @@
       }
 
       submitBtn.disabled = true;
-      submitBtn.textContent = 'שולח...';
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> שולח...';
 
       try {
         const res = await fetch(PORTAL_URL + '/api/portal/auth/register', {
@@ -323,24 +1095,24 @@
           errorEl.textContent = result.error || 'שגיאה בשליחת הטופס';
           errorEl.style.display = 'block';
           submitBtn.disabled = false;
-          submitBtn.textContent = 'שלחו בקשת הרשמה';
+          submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> שלחו בקשת הרשמה -- חינם';
           return;
         }
 
         form.innerHTML = `
-          <div style="text-align: center; padding: var(--space-xl) 0;">
-            <div style="font-size: 48px; color: var(--color-success); margin-bottom: var(--space-md);"><i class="fas fa-check-circle"></i></div>
-            <h2 style="margin-bottom: var(--space-sm);">הבקשה נשלחה בהצלחה!</h2>
-            <p style="color: var(--color-text-secondary); margin-bottom: var(--space-sm);">ההרשמה שלכם התקבלה וממתינה לאישור.</p>
-            <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">לאחר האישור תוכלו להתחבר עם מספר ע.מ/ח.פ והסיסמה שבחרתם.</p>
-            <a href="index" class="btn btn--primary">חזרה לדף הבית</a>
+          <div style="text-align: center; padding: 40px 0;">
+            <div style="font-size: 48px; color: #28b558; margin-bottom: 16px;"><i class="fas fa-check-circle"></i></div>
+            <h2 style="margin-bottom: 8px; color: #1B3A5C; font-family: Heebo, sans-serif;">הבקשה נשלחה בהצלחה!</h2>
+            <p style="color: #8e99a4; margin-bottom: 8px;">ההרשמה שלכם התקבלה וממתינה לאישור.</p>
+            <p style="color: #8e99a4; margin-bottom: 24px;">לאחר האישור תוכלו להתחבר עם מספר ע.מ/ח.פ והסיסמה שבחרתם.</p>
+            <a href="index" class="btn btn--primary" style="display: inline-block; padding: 12px 32px; background: #1B3A5C; color: #fff; border-radius: 12px; text-decoration: none; font-weight: 600;">חזרה לדף הבית</a>
           </div>
         `;
       } catch (err) {
         errorEl.textContent = 'שגיאת תקשורת. ודאו שהפורטל פעיל ונסו שוב.';
         errorEl.style.display = 'block';
         submitBtn.disabled = false;
-        submitBtn.textContent = 'שלחו בקשת הרשמה';
+        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> שלחו בקשת הרשמה -- חינם';
       }
     });
   })();
