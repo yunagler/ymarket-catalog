@@ -4,8 +4,21 @@ Disallow: /build/
 Disallow: /data/
 Disallow: /cdn-cgi/
 Disallow: /cart.html
+Disallow: /cart
 Disallow: /checkout.html
+Disallow: /checkout
 Disallow: /order-success.html
+Disallow: /order-success
+Disallow: /login.html
+Disallow: /login
+Disallow: /register.html
+Disallow: /register
+Disallow: /tracking.html
+Disallow: /tracking
+Disallow: /site-architecture.html
+Disallow: /site-architecture
+Disallow: /__pycache__/
+Disallow: /*.py$
 
 # Traditional Search Engines
 User-agent: Googlebot
