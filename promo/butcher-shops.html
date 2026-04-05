@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>אספקה לאטליזים וחנויות בשר | מחירי סיטונאות | וואי מרקט</title>
+<meta name="description" content="שקיות ואקום, מגשי אלומיניום, כפפות, נייר פרגמנט, סכינים. אספקה שוטפת לאטליזים במחירי סיטונאות.">
+<meta property="og:title" content="אטליז? הנה המחירים שלנו | וואי מרקט">
+<meta property="og:description" content="שקיות ואקום, מגשי אלומיניום, כפפות, נייר פרגמנט, סכינים. אספקה שוטפת לאטליזים במחירי סיטונאות.">
+<meta property="og:image" content="https://ymarket.co.il/images/og-image.jpg">
+<meta property="og:url" content="https://ymarket.co.il/promo/butcher-shops">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ymarket.co.il/promo/butcher-shops">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Heebo',sans-serif;direction:rtl;background:#fff;color:#1a2332;-webkit-font-smoothing:antialiased}
+
+/* Hero */
+.hero{padding:40px 20px 28px;background:linear-gradient(160deg,#1B3A5C 0%,#2A5080 100%);color:#fff;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-60px;left:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(79,195,247,.12),transparent 70%);pointer-events:none}
+.hero-brand{display:inline-flex;align-items:center;gap:6px;margin-bottom:16px;font-size:.72rem;color:rgba(255,255,255,.6)}
+.hero-brand .dot{width:22px;height:22px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.6rem}
+.hero-tag{display:inline-block;padding:5px 14px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:100px;font-size:.7rem;font-weight:600;margin-bottom:14px}
+.hero h1{font-size:clamp(1.4rem,5vw,1.9rem);font-weight:900;line-height:1.3;margin-bottom:10px}
+.hero h1 em{font-style:normal;color:#4FC3F7}
+.hero p{font-size:.88rem;color:rgba(255,255,255,.7);line-height:1.6;max-width:420px;margin:0 auto}
+
+/* Pain Points */
+.pain{padding:24px 20px;background:#f8faff}
+.pain-title{font-size:.88rem;font-weight:700;color:#1B3A5C;text-align:center;margin-bottom:14px}
+.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:500px;margin:0 auto}
+.pain-item{display:flex;align-items:center;gap:8px;padding:10px 12px;background:#fff;border-radius:10px;border:1px solid #f0f2f5;font-size:.75rem;color:#4a5568}
+.pain-check{width:20px;height:20px;min-width:20px;border-radius:6px;background:rgba(34,197,94,.08);color:#22c55e;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:900}
+
+/* Products by Category */
+.products{padding:24px 16px 8px}
+.cat-section{margin-bottom:24px}
+.cat-title{font-size:.85rem;font-weight:700;color:#1B3A5C;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid #f0f2f5;display:flex;align-items:center;gap:6px}
+.cat-title .cat-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(max-width:400px){.pgrid{grid-template-columns:1fr 1fr}}
+
+.pc{background:#fff;border-radius:14px;border:1px solid #f0f2f5;overflow:hidden;transition:transform .15s}
+.pc:active{transform:scale(.97)}
+.pc-img{height:105px;background:#f8f9fb;display:flex;align-items:center;justify-content:center;padding:8px}
+.pc-img img{max-height:90%;max-width:90%;object-fit:contain}
+.pc-body{padding:8px 10px 10px}
+.pc-name{font-size:.68rem;color:#4a5568;font-weight:500;height:2em;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;line-height:1.35;margin-bottom:4px}
+.pc-price{font-size:1.2rem;font-weight:900;color:#FF6B35}
+.pc-price small{font-size:.55rem;font-weight:400;color:#c0c8d0}
+.pc-vat{font-size:.5rem;color:#d0d8e0}
+
+/* More */
+.more-bar{text-align:center;padding:12px 16px;font-size:.82rem;color:#1B3A5C;font-weight:700}
+.more-bar span{color:#FF6B35}
+
+/* Why Us */
+.why{padding:20px;background:#f8faff}
+.why-title{font-size:.92rem;font-weight:800;color:#1B3A5C;text-align:center;margin-bottom:14px}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:460px;margin:0 auto}
+.why-item{padding:14px 12px;background:#fff;border-radius:12px;border:1px solid #f0f2f5;text-align:center}
+.why-item .wi-title{font-size:.78rem;font-weight:700;color:#1B3A5C;margin-bottom:3px}
+.why-item .wi-desc{font-size:.65rem;color:#64748b;line-height:1.4}
+
+/* Proof */
+.proof{padding:20px;text-align:center}
+.proof-head{font-size:.88rem;font-weight:800;color:#1B3A5C;margin-bottom:4px}
+.proof-stars{color:#FBBF24;font-size:.8rem;letter-spacing:2px;margin-bottom:12px}
+.proof-quote{max-width:400px;margin:0 auto;padding:14px 16px;background:#f8faff;border-radius:12px;border-right:3px solid #4FC3F7;text-align:right;font-size:.8rem;color:#4a5568;line-height:1.6;font-style:italic}
+.proof-author{font-size:.7rem;color:#94a3b8;margin-top:6px;font-style:normal;font-weight:600}
+
+/* CTA */
+.cta{padding:28px 20px 20px;text-align:center;background:linear-gradient(180deg,#fff,#f8faff)}
+.cta-title{font-size:1.1rem;font-weight:800;color:#1B3A5C;margin-bottom:4px}
+.cta-sub{font-size:.8rem;color:#64748b;margin-bottom:16px}
+.cta-btn{display:block;width:100%;max-width:380px;margin:0 auto 10px;padding:16px;background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff;border:none;border-radius:14px;font-family:'Heebo';font-size:1rem;font-weight:700;cursor:pointer;text-decoration:none;text-align:center;box-shadow:0 4px 16px rgba(34,197,94,.2)}
+.cta-btn:active{transform:scale(.97)}
+.cta-or{font-size:.72rem;color:#94a3b8;margin:8px 0}
+.cta-wa{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;max-width:380px;margin:0 auto;padding:13px;background:#25D366;color:#fff;border-radius:12px;font-size:.85rem;font-weight:600;text-decoration:none}
+.cta-wa svg{width:18px;height:18px;fill:#fff}
+.cta-phone{display:block;text-align:center;margin-top:10px;font-size:.82rem;color:#1B3A5C;font-weight:600;text-decoration:none}
+.cta-free{font-size:.68rem;color:#22c55e;font-weight:600;margin-top:8px}
+
+/* Footer */
+.foot{padding:20px;text-align:center;border-top:1px solid #f0f2f5;margin-top:12px}
+.foot-brand{font-size:.78rem;font-weight:700;color:#1B3A5C;margin-bottom:4px}
+.foot-items{font-size:.65rem;color:#94a3b8;display:flex;justify-content:center;gap:10px}
+.foot-copy{font-size:.55rem;color:#d0d8e0;margin-top:8px}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-brand"><span class="dot">Y</span> וואי מרקט</div>
+  <div class="hero-tag">לאטליזים וחנויות בשר</div>
+  <h1>עדיין קונים שקיות ואקום<br>מהספק <em>הכי יקר?</em></h1>
+  <p>בואו על קפה קטן — כבר נרוויח. מקסימום נרוויח קשרים עסקיים. אספקה מקצועית לאטליז שלכם — שקיות ואקום, מגשים, כפפות, נייר ואריזות.</p>
+</section>
+
+<!-- PAIN POINTS -->
+<section class="pain">
+  <div class="pain-title">הבעיה שכל אטליז מכיר</div>
+  <div class="pain-grid">
+    <div class="pain-item"><span class="pain-check" style="background:rgba(239,68,68,.08);color:#ef4444">&#10007;</span>נגמרו השקיות ואקום באמצע יום עבודה</div>
+    <div class="pain-item"><span class="pain-check" style="background:rgba(239,68,68,.08);color:#ef4444">&#10007;</span>מזמינים ממספר ספקים — כל פעם מחיר אחר</div>
+    <div class="pain-item"><span class="pain-check" style="background:rgba(239,68,68,.08);color:#ef4444">&#10007;</span>כפפות שנקרעות אחרי 5 דקות</div>
+    <div class="pain-item"><span class="pain-check" style="background:rgba(239,68,68,.08);color:#ef4444">&#10007;</span>אין זמן לחפש ספק — הלקוחות מחכים</div>
+  </div>
+  <div style="text-align:center;margin-top:14px;padding:12px;background:#fff;border-radius:10px;border:1px solid #dcfce7;">
+    <div style="font-size:.82rem;font-weight:700;color:#16a34a;margin-bottom:4px;">הפתרון שלנו</div>
+    <div style="font-size:.75rem;color:#4a5568;line-height:1.5;">ספק אחד שמכיר את האטליז שלכם. הזמנה חוזרת בקליק, מחיר קבוע, משלוח עד הדלת. לא צריך לחשוב על זה.</div>
+  </div>
+</section>
+
+<!-- PRODUCTS: שקיות ואקום ואריזה -->
+<section class="products">
+  <div class="cat-section">
+    <div class="cat-title"><span class="cat-dot" style="background:#FF6B35"></span>שקיות ואקום ואריזה</div>
+    <div class="pgrid">
+      <div class="pc"><div class="pc-img"><img src="/items/1020.jpg" alt="שקית ואקום" loading="lazy"></div><div class="pc-body"><div class="pc-name">שקית ואקום 20x40 — 2000 יח'</div><div class="pc-price">0.75 <small>&#8362; ליח'</small></div><div class="pc-vat">+ מע"מ</div></div></div>
+      <div class="pc"><div class="pc-img"><img src="/items/824.jpg" alt="דפי הפרדה" loading="lazy"></div><div class="pc-body"><div class="pc-name">דפי הפרדה פרגפלסט</div><div class="pc-price">18 <small>&#8362;</small></div><div class="pc-vat">+ מע"מ</div></div></div>
+      <div class="pc"><div class="pc-img"><img src="/items/724.jpg" alt="ניילון נצמד" loading="lazy"></div><div class="pc-body"><div class="pc-name">ניילון נצמד 6 ק"ג</div><div class="pc-price">75 <small>&#8362;</small></div><div class="pc-vat">+ מע"מ</div></div></div>
+    </div>
+  </div>
+
+  <!-- מגשים וכלים -->
+  <div class="cat-section">
+    <div class="cat-title"><span class="cat-dot" style="background:#E8A735"></span>מגשים וכלים</div>
+    <div class="pgrid">
+      <div class="pc"><div class="pc-img"><img src="/items/143.jpg" alt="מגש אלומיניום" loading="lazy"></div><div class="pc-body"><div class="pc-name">מגש אלומיניום מרובע</div><div class="pc-price">0.45 <small>&#8362; ליח'</small></div><div class="pc-vat">+ מע"מ</div></div></div>
+      <div class="pc"><div class="pc-img"><img src="/items/614.jpg" alt="גביע" loading="lazy"></div><div class="pc-body"><div class="pc-name">גביע 150 גר' — 2000 יח'</div><div class="pc-price">185 <small>&#8362;</small></div><div class="pc-vat">+ מע"מ</div></div></div>
+      <div class="pc"><div class="pc-img"><img src="/items/277.jpg" alt="קש ארומה" loading="lazy"></div><div class="pc-body"><div class="pc-name">קש ארומה 400 יח'</div><div class="pc-price">10 <small>&#8362;</small></div><div class="pc-vat">+ מע"מ</div></div></div>
+    </div>
+  </div>
+
+  <!-- כפפות ומיגון -->
+  <div class="cat-section">
+    <div class="cat-title"><span class="cat-dot" style="background:#4FC3F7"></span>כפפות ומיגון</div>
+    <div class="pgrid">
+      <div class="pc"><div class="pc-img"><img src="/items/50.jpg" alt="כפפות ויטריל" loading="lazy"></div><div class="pc-body"><div class="pc-name">כפפות ויטריל שחור 100 יח'</div><div class="pc-price">14 <small>&#8362;</small></div><div class="pc-vat">+ מע"מ</div></div></div>
+      <div class="pc"><div class="pc-img"><img src="/items/464.jpg" alt="לטקס" loading="lazy"></div><div class="pc-body"><div class="pc-name">לטקס ללא אבקה 50 יח'</div><div class="pc-price">10 <small>&#8362;</small></div><div class="pc-vat">+ מע"מ</div></div></div>
+      <div class="pc"><div class="pc-img"><img src="/items/903.jpg" alt="כפפות ניטריל" loading="lazy"></div><div class="pc-body"><div class="pc-name">כפפות ניטריל כחול</div><div class="pc-price">11 <small>&#8362;</small></div><div class="pc-vat">+ מע"מ</div></div></div>
+    </div>
+  </div>
+
+  <!-- נייר וניקיון -->
+  <div class="cat-section">
+    <div class="cat-title"><span class="cat-dot" style="background:#22c55e"></span>נייר וניקיון</div>
+    <div class="pgrid">
+      <div class="pc"><div class="pc-img"><img src="/items/107.jpg" alt="נייר סופג" loading="lazy"></div><div class="pc-body"><div class="pc-name">נייר סופג 6 גלילים</div><div class="pc-price">10 <small>&#8362;</small></div><div class="pc-vat">+ מע"מ</div></div></div>
+      <div class="pc"><div class="pc-img"><img src="/items/857.jpg" alt="אקונומיקה" loading="lazy"></div><div class="pc-body"><div class="pc-name">אקונומיקה ריחנית 4L</div><div class="pc-price">10 <small>&#8362;</small></div><div class="pc-vat">+ מע"מ</div></div></div>
+      <div class="pc"><div class="pc-img"><img src="/items/482.jpg" alt="מרסס" loading="lazy"></div><div class="pc-body"><div class="pc-name">בקבוק מרסס 1 ליטר</div><div class="pc-price">7 <small>&#8362;</small></div><div class="pc-vat">+ מע"מ</div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="more-bar">ועוד <span>500+ מוצרים</span> לאטליזים וחנויות בשר...</div>
+
+<!-- WHY US -->
+<section class="why">
+  <div class="why-title">למה אטליזים בוחרים בנו?</div>
+  <div class="why-grid">
+    <div class="why-item"><div class="wi-title">מכירים את הסחורה</div><div class="wi-desc">מתמחים באספקה לאטליזים כבר שנים</div></div>
+    <div class="why-item"><div class="wi-title">הזמנה חוזרת בקליק</div><div class="wi-desc">אותם מוצרים, אותם כמויות — שניות</div></div>
+    <div class="why-item"><div class="wi-title">מחיר קבוע</div><div class="wi-desc">לא מפתיעים אתכם עם מחירים חדשים</div></div>
+    <div class="why-item"><div class="wi-title">משלוח עד הדלת</div><div class="wi-desc">24-72 שעות, ישירות לאטליז</div></div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="proof">
+  <div class="proof-head">אטליזים שכבר מזמינים</div>
+  <div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+  <div class="proof-quote">
+    מאז שעברנו לוואי מרקט לא חסרים לנו שקיות ואקום באמצע יום עבודה. הכל מגיע בזמן, המחירים קבועים, ואני לא צריך לרדוף אחרי ספקים.
+    <div class="proof-author">— אטליז, מרכז הארץ</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-title">רוצים לראות את כל המחירים?</div>
+  <div class="cta-sub">הרשמה חינמית — מחירון אישי לאטליז שלכם</div>
+  <a href="https://ymarket.co.il/register" class="cta-btn">הרשמה לפורטל המחירים</a>
+  <div class="cta-or">או</div>
+  <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%90%D7%98%D7%9C%D7%99%D7%96%20%D7%95%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%20%D7%91%D7%9E%D7%97%D7%99%D7%A8%D7%99%D7%9D" class="cta-wa" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.553 4.103 1.517 5.832L0 24l6.335-1.49C8.005 23.467 9.959 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75c-1.855 0-3.607-.487-5.122-1.382l-.368-.218-3.81.896.942-3.685-.24-.38A9.688 9.688 0 012.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75z"/></svg>
+    אטליז? שלחו הודעה
+  </a>
+  <a href="tel:037740400" class="cta-phone">03-7740400</a>
+  <div class="cta-free">בואו על קפה קטן — הרשמה חינמית</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="foot-brand">וואי מרקט — נגלר סחר והפצה</div>
+  <div class="foot-items"><span>משלוח ארצי</span><span>מחירי סיטונאות</span><span>חשבונית מס</span></div>
+  <div class="foot-copy">&copy; 2026 וואי מרקט. כל הזכויות שמורות.</div>
+</footer>
+
+<script src="/js/analytics.min.js" defer></script>
+</body>
+</html>
