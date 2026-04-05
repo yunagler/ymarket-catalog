@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>קטלוג מתכלים לאטליזים | הכל במקום אחד | וואי מרקט</title>
+<meta name="description" content="207 מוצרים לאטליזים. קלקר, מגשים, כפפות, ניילון, שקיות, נייר. הכל במקום אחד, מהר ובזול. משלוח ארצי.">
+<meta property="og:title" content="207 מוצרים לאטליז — הכל במקום אחד | וואי מרקט">
+<meta property="og:description" content="קלקר מ-120₪, כפפות מ-3₪, ניילון נצמד 75₪. 36 אטליזים כבר מזמינים. הכל מהר ובזול.">
+<meta property="og:image" content="https://ymarket.co.il/images/promo/butcher-cover.jpg">
+<meta property="og:url" content="https://ymarket.co.il/promo/butcher-catalog">
+<meta property="og:locale" content="he_IL">
+<link rel="canonical" href="https://ymarket.co.il/promo/butcher-catalog">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Heebo',sans-serif;direction:rtl;background:#fff;color:#1a2332}
+
+/* Hero — fast, impactful */
+.hero{background:linear-gradient(rgba(27,58,92,.8),rgba(139,37,0,.65)),url('/images/promo/butcher-cover.jpg') center/cover;padding:36px 20px 28px;text-align:center;color:#fff}
+.hero-logo{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;color:rgba(255,255,255,.6);margin-bottom:12px}
+.hero-logo span{width:22px;height:22px;background:rgba(255,255,255,.15);border-radius:5px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.6rem}
+.hero h1{font-size:clamp(1.4rem,5vw,1.8rem);font-weight:900;line-height:1.25;margin-bottom:6px}
+.hero h1 em{font-style:normal;color:#4FC3F7}
+.hero-sub{font-size:.85rem;color:rgba(255,255,255,.75);margin-bottom:4px}
+.hero-nums{display:flex;justify-content:center;gap:20px;margin:14px 0;font-size:.72rem;color:rgba(255,255,255,.6)}
+.hero-nums b{display:block;font-size:1.3rem;color:#fff}
+.hero-cta{display:inline-block;padding:12px 28px;background:#22c55e;color:#fff;border-radius:10px;font-size:.9rem;font-weight:700;text-decoration:none;margin-top:6px}
+
+/* Speed strip */
+.speed{display:flex;justify-content:center;gap:16px;padding:10px;background:#f8f9fb;font-size:.68rem;color:#64748b;border-bottom:1px solid #eef1f5;flex-wrap:wrap}
+.speed b{color:#1B3A5C}
+
+/* Categories */
+.cats{padding:20px 16px 10px}
+.cats-title{font-size:.88rem;font-weight:800;color:#1B3A5C;text-align:center;margin-bottom:14px}
+.cats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:500px;margin:0 auto}
+@media(min-width:600px){.cats-grid{grid-template-columns:repeat(5,1fr);max-width:700px}}
+.cat-card{background:#f8f9fb;border:1px solid #eef1f5;border-radius:12px;padding:12px 8px;text-align:center;cursor:pointer;transition:all .2s;text-decoration:none;color:#1a2332}
+.cat-card:active{transform:scale(.96)}
+.cat-card:hover{border-color:#4FC3F7;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+.cat-icon{font-size:1.4rem;margin-bottom:4px;display:block}
+.cat-name{font-size:.65rem;font-weight:600;line-height:1.3}
+.cat-count{font-size:.55rem;color:#94a3b8;margin-top:2px}
+.cat-price{font-size:.6rem;color:#FF6B35;font-weight:700;margin-top:2px}
+
+/* Best sellers */
+.best{padding:16px}
+.best-title{font-size:.88rem;font-weight:800;color:#1B3A5C;text-align:center;margin-bottom:12px}
+.best-scroll{display:flex;gap:10px;overflow-x:auto;padding-bottom:8px;scrollbar-width:none}
+.best-scroll::-webkit-scrollbar{display:none}
+.bp{min-width:145px;max-width:145px;background:#fff;border:1px solid #eef1f5;border-radius:12px;overflow:hidden;flex-shrink:0}
+.bp-img{height:100px;background:#f8f9fb;display:flex;align-items:center;justify-content:center;padding:8px}
+.bp-img img{max-height:85px;max-width:85px;object-fit:contain}
+.bp-body{padding:8px}
+.bp-name{font-size:.62rem;color:#4a5568;height:2.4em;overflow:hidden;line-height:1.35;margin-bottom:3px}
+.bp-price{font-size:1rem;font-weight:900;color:#FF6B35}
+.bp-price small{font-size:.5rem;font-weight:400;color:#c0c8d0}
+.bp-sold{font-size:.5rem;color:#94a3b8}
+
+/* What they buy — real data */
+.real{padding:16px;background:#f8f9fb}
+.real-title{font-size:.88rem;font-weight:800;color:#1B3A5C;text-align:center;margin-bottom:4px}
+.real-sub{font-size:.72rem;color:#94a3b8;text-align:center;margin-bottom:14px}
+.real-list{max-width:500px;margin:0 auto}
+.rl{display:flex;align-items:center;gap:10px;padding:10px;background:#fff;border:1px solid #eef1f5;border-radius:10px;margin-bottom:6px}
+.rl-img{width:50px;height:50px;border-radius:8px;background:#f8f9fb;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.rl-img img{max-width:40px;max-height:40px;object-fit:contain}
+.rl-info{flex:1;min-width:0}
+.rl-name{font-size:.72rem;font-weight:600;color:#1a2332;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rl-meta{font-size:.58rem;color:#94a3b8}
+.rl-price{font-size:.88rem;font-weight:800;color:#FF6B35;flex-shrink:0}
+
+/* Benefits */
+.bens{padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:500px;margin:0 auto}
+.ben{padding:12px;background:#fff;border:1px solid #eef1f5;border-radius:10px;text-align:center}
+.ben-title{font-size:.75rem;font-weight:700;color:#1B3A5C;margin-bottom:2px}
+.ben-desc{font-size:.6rem;color:#64748b;line-height:1.4}
+
+/* CTA */
+.cta{padding:24px 20px;text-align:center;background:linear-gradient(180deg,#f8f9fb,#fff)}
+.cta h2{font-size:1.1rem;font-weight:800;color:#1B3A5C;margin-bottom:3px}
+.cta-sub{font-size:.78rem;color:#64748b;margin-bottom:14px}
+.cta-btn{display:block;max-width:380px;margin:0 auto 8px;padding:15px;background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff;border-radius:12px;font-size:.95rem;font-weight:700;text-decoration:none;text-align:center;box-shadow:0 4px 14px rgba(34,197,94,.2)}
+.cta-wa{display:flex;align-items:center;justify-content:center;gap:8px;max-width:380px;margin:0 auto;padding:12px;background:#25D366;color:#fff;border-radius:10px;font-size:.82rem;font-weight:600;text-decoration:none}
+.cta-wa svg{width:18px;height:18px;fill:#fff}
+.cta-phone{display:block;text-align:center;margin-top:8px;font-size:.8rem;color:#1B3A5C;font-weight:600;text-decoration:none}
+.cta-note{font-size:.65rem;color:#22c55e;margin-top:8px;font-weight:500}
+
+.foot{padding:14px;text-align:center;border-top:1px solid #eef1f5;font-size:.6rem;color:#c0c8d0}
+
+.mob{display:none;position:fixed;bottom:0;left:0;right:0;z-index:100;background:#fff;border-top:1px solid #eef1f5;padding:8px 12px}
+.mob a{display:block;width:100%;padding:12px;background:#22c55e;color:#fff;border-radius:10px;text-align:center;font-weight:700;font-size:.88rem;text-decoration:none}
+@media(max-width:768px){.mob{display:block}body{padding-bottom:60px}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-logo"><span>Y</span> וואי מרקט</div>
+  <h1>207 מוצרים לאטליז<br><em>הכל. מהר. בזול.</em></h1>
+  <div class="hero-sub">ספק אחד, הזמנה אחת, חשבונית אחת</div>
+  <div class="hero-nums">
+    <div><b>207</b>מוצרים</div>
+    <div><b>9</b>קטגוריות</div>
+    <div><b>36</b>אטליזים</div>
+    <div><b>24h</b>אספקה</div>
+  </div>
+  <a href="/register" class="hero-cta">תראו לי מחירים</a>
+</div>
+
+<div class="speed">
+  <span><b>הזמנה:</b> 3 דקות</span>
+  <span><b>משלוח:</b> 24-72 שעות</span>
+  <span><b>תשלום:</b> שוטף+30</span>
+  <span><b>מינימום:</b> 1,600₪</span>
+</div>
+
+<!-- Categories -->
+<div class="cats">
+  <div class="cats-title">מה צריכים? הכל פה.</div>
+  <div class="cats-grid">
+    <a class="cat-card" href="#best"><div class="cat-icon">&#9632;</div><div class="cat-name">קלקר</div><div class="cat-count">46 מוצרים</div><div class="cat-price">מ-120₪</div></a>
+    <a class="cat-card" href="#best"><div class="cat-icon">&#9644;</div><div class="cat-name">אלומיניום</div><div class="cat-count">19 מוצרים</div><div class="cat-price">מ-0.45₪</div></a>
+    <a class="cat-card" href="#best"><div class="cat-icon">&#9633;</div><div class="cat-name">פלסטיק</div><div class="cat-count">8 מוצרים</div><div class="cat-price">מ-240₪</div></a>
+    <a class="cat-card" href="#best"><div class="cat-icon">&#8854;</div><div class="cat-name">ניילון</div><div class="cat-count">14 מוצרים</div><div class="cat-price">מ-8₪</div></a>
+    <a class="cat-card" href="#best"><div class="cat-icon">&#9878;</div><div class="cat-name">שקיות</div><div class="cat-count">58 מוצרים</div><div class="cat-price">מ-8₪</div></a>
+    <a class="cat-card" href="#best"><div class="cat-icon">&#9757;</div><div class="cat-name">כפפות</div><div class="cat-count">17 מוצרים</div><div class="cat-price">מ-3₪</div></a>
+    <a class="cat-card" href="#best"><div class="cat-icon">&#9998;</div><div class="cat-name">סכינים</div><div class="cat-count">13 מוצרים</div><div class="cat-price">מ-2₪</div></a>
+    <a class="cat-card" href="#best"><div class="cat-icon">&#9000;</div><div class="cat-name">נייר</div><div class="cat-count">15 מוצרים</div><div class="cat-price">מ-10₪</div></a>
+    <a class="cat-card" href="#best"><div class="cat-icon">&#10047;</div><div class="cat-name">ניקיון</div><div class="cat-count">17 מוצרים</div><div class="cat-price">מ-7₪</div></a>
+  </div>
+</div>
+
+<!-- Best sellers from REAL data -->
+<div class="best" id="best">
+  <div class="best-title">הנמכרים ביותר לאטליזים</div>
+  <div class="best-scroll">
+    <div class="bp"><div class="bp-img"><img src="/items/722.jpg" alt="" loading="lazy"></div><div class="bp-body"><div class="bp-name">קלקר סופג שחור צלעות 480</div><div class="bp-price">290<small>₪</small></div><div class="bp-sold">11 הזמנות</div></div></div>
+    <div class="bp"><div class="bp-img"><img src="/items/50.jpg" alt="" loading="lazy"></div><div class="bp-body"><div class="bp-name">כפפות ניטריל שחור L 100 יח'</div><div class="bp-price">14<small>₪</small></div><div class="bp-sold">12 הזמנות</div></div></div>
+    <div class="bp"><div class="bp-img"><img src="/items/724.jpg" alt="" loading="lazy"></div><div class="bp-body"><div class="bp-name">ניילון נצמד מכונה 6 ק"ג</div><div class="bp-price">75<small>₪</small></div><div class="bp-sold">10 הזמנות</div></div></div>
+    <div class="bp"><div class="bp-img"><img src="/items/906.jpg" alt="" loading="lazy"></div><div class="bp-body"><div class="bp-name">קלקר סופג שחור שניצל 500</div><div class="bp-price">200<small>₪</small></div><div class="bp-sold">10 הזמנות</div></div></div>
+    <div class="bp"><div class="bp-img"><img src="/items/721.jpg" alt="" loading="lazy"></div><div class="bp-body"><div class="bp-name">קלקר סופג שחור כרעיים 500</div><div class="bp-price">290<small>₪</small></div><div class="bp-sold">5 הזמנות</div></div></div>
+    <div class="bp"><div class="bp-img"><img src="/items/729.jpg" alt="" loading="lazy"></div><div class="bp-body"><div class="bp-name">קלקר רגיל שחור צלעות 480</div><div class="bp-price">211<small>₪</small></div><div class="bp-sold">7 הזמנות</div></div></div>
+    <div class="bp"><div class="bp-img"><img src="/items/770.jpg" alt="" loading="lazy"></div><div class="bp-body"><div class="bp-name">פלסטיק שחור כרעיים 500</div><div class="bp-price">260<small>₪</small></div><div class="bp-sold">4 הזמנות</div></div></div>
+    <div class="bp"><div class="bp-img"><img src="/items/857.jpg" alt="" loading="lazy"></div><div class="bp-body"><div class="bp-name">אקונומיקה ריחנית 4L</div><div class="bp-price">10<small>₪</small></div><div class="bp-sold">5 הזמנות</div></div></div>
+  </div>
+</div>
+
+<!-- Real orders — what butchers actually buy -->
+<div class="real">
+  <div class="real-title">מה אטליזים באמת מזמינים?</div>
+  <div class="real-sub">על בסיס הזמנות אמיתיות מ-36 אטליזים</div>
+  <div class="real-list">
+    <div class="rl"><div class="rl-img"><img src="/items/722.jpg" alt=""></div><div class="rl-info"><div class="rl-name">מגש קלקר סופג שחור — צלעות 480 יח'</div><div class="rl-meta">הנמכר ביותר | 11 הזמנות חוזרות</div></div><div class="rl-price">290₪</div></div>
+    <div class="rl"><div class="rl-img"><img src="/items/724.jpg" alt=""></div><div class="rl-info"><div class="rl-name">ניילון נצמד מכונה — 6 ק"ג</div><div class="rl-meta">כל אטליז מזמין | 10 הזמנות</div></div><div class="rl-price">75₪</div></div>
+    <div class="rl"><div class="rl-img"><img src="/items/50.jpg" alt=""></div><div class="rl-info"><div class="rl-name">כפפות ניטריל שחור L — 100 יח'</div><div class="rl-meta">חובה | 12 הזמנות חוזרות</div></div><div class="rl-price">14₪</div></div>
+    <div class="rl"><div class="rl-img"><img src="/items/906.jpg" alt=""></div><div class="rl-info"><div class="rl-name">מגש קלקר סופג שחור — שניצל 500 יח'</div><div class="rl-meta">פופולרי | 10 הזמנות</div></div><div class="rl-price">200₪</div></div>
+    <div class="rl"><div class="rl-img"><img src="/items/824.jpg" alt=""></div><div class="rl-info"><div class="rl-name">דפי הפרדה פרגפלסט דק — 25x35</div><div class="rl-meta">בסיס | 6 הזמנות</div></div><div class="rl-price">18₪</div></div>
+    <div class="rl"><div class="rl-img"><img src="/items/107.jpg" alt=""></div><div class="rl-info"><div class="rl-name">נייר סופג לאקי — 6 גלילים</div><div class="rl-meta">שוטף | 4 הזמנות</div></div><div class="rl-price">10₪</div></div>
+  </div>
+</div>
+
+<!-- Benefits -->
+<div class="bens">
+  <div class="ben"><div class="ben-title">הכל במקום אחד</div><div class="ben-desc">207 מוצרים. ספק אחד. חשבונית אחת.</div></div>
+  <div class="ben"><div class="ben-title">מהר</div><div class="ben-desc">הזמנה ב-3 דקות. משלוח 24-72 שעות.</div></div>
+  <div class="ben"><div class="ben-title">בזול</div><div class="ben-desc">מחירי סיטונאות. מחירון קבוע שלא משתנה.</div></div>
+  <div class="ben"><div class="ben-title">בלי כאב ראש</div><div class="ben-desc">הזמנה חוזרת בקליק. המערכת זוכרת מה צריך.</div></div>
+</div>
+
+<!-- CTA -->
+<div class="cta">
+  <h2>רוצים לראות את כל 207 המוצרים?</h2>
+  <div class="cta-sub">הרשמה חינמית — מחירון אישי לאטליז שלכם</div>
+  <a href="/register" class="cta-btn">הרשמה לפורטל המחירים</a>
+  <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%90%D7%98%D7%9C%D7%99%D7%96%20%D7%95%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A8%D7%90%D7%95%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%D7%99%D7%9D" class="cta-wa" target="_blank">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.553 4.103 1.517 5.832L0 24l6.335-1.49C8.005 23.467 9.959 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75c-1.855 0-3.607-.487-5.122-1.382l-.368-.218-3.81.896.942-3.685-.24-.38A9.688 9.688 0 012.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75z"/></svg>
+    יש לי אטליז — שלחו מחירים
+  </a>
+  <a href="tel:037740400" class="cta-phone">03-7740400</a>
+  <div class="cta-note">בואו על קפה קטן — כבר נרוויח</div>
+</div>
+
+<div class="foot">&copy; 2026 וואי מרקט — נגלר סחר והפצה. משלוח ארצי | מחירי סיטונאות | חשבונית מס</div>
+<div class="mob"><a href="/register">תראו לי מחירים</a></div>
+
+<script src="/js/analytics.min.js" defer></script>
+</body>
+</html>
