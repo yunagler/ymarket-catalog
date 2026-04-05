@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>מתכלים לאטליזים במחירי סיטונאות | וואי מרקט</title>
+<meta name="description" content="מגשים מ-0.45 ש״ח, כפפות מ-3 ש״ח, ניילון נצמד, שקיות ואקום. 36 אטליזים כבר מזמינים. משלוח ארצי.">
+<meta property="og:title" content="מתכלים לאטליזים במחירי סיטונאות | וואי מרקט">
+<meta property="og:description" content="מגשים מ-0.45 ש״ח, כפפות מ-3 ש״ח, ניילון נצמד, שקיות ואקום. 36 אטליזים כבר מזמינים. משלוח ארצי.">
+<meta property="og:image" content="https://ymarket.co.il/images/og-image.jpg">
+<meta property="og:url" content="https://ymarket.co.il/promo/butcher-ecommerce">
+<meta property="og:type" content="website"><meta property="og:locale" content="he_IL">
+<link rel="canonical" href="https://ymarket.co.il/promo/butcher-ecommerce">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1B3A5C;--green:#22c55e;--orange:#FF6B35;--red:#8B2500;--bg:#f8f9fb;--white:#fff;--txt:#1a2332;--txt2:#5a6b7d;--txt3:#94a3b8;--brd:#eef1f5}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Heebo',sans-serif;direction:rtl;background:var(--bg);color:var(--txt);-webkit-font-smoothing:antialiased}
+
+.hdr{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--brd);padding:10px 16px;display:flex;align-items:center;gap:10px}
+.hdr-logo{display:flex;align-items:center;gap:6px;text-decoration:none;color:var(--navy);font-weight:700;font-size:.88rem}
+.hdr-m{width:26px;height:26px;background:var(--navy);border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:.7rem}
+.hdr-sp{flex:1}
+.hdr-phone{font-size:.75rem;color:var(--txt2);text-decoration:none}
+.hdr-btn{padding:7px 16px;background:var(--green);color:#fff;border:none;border-radius:8px;font-family:'Heebo';font-size:.75rem;font-weight:600;cursor:pointer;text-decoration:none}
+
+.hero{background:linear-gradient(135deg,var(--red) 0%,var(--navy) 60%,#0F2240 100%);color:#fff;padding:32px 20px 24px;text-align:center;position:relative}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 70%,rgba(139,37,0,.2),transparent 60%)}
+.hero-badge{display:inline-block;padding:4px 14px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:100px;font-size:.65rem;font-weight:600;margin-bottom:12px;position:relative;z-index:1}
+.hero h1{font-size:clamp(1.3rem,4.5vw,1.7rem);font-weight:900;line-height:1.3;margin-bottom:8px;position:relative;z-index:1}
+.hero p{font-size:.82rem;color:rgba(255,255,255,.7);margin-bottom:16px;position:relative;z-index:1;max-width:420px;margin-left:auto;margin-right:auto;line-height:1.5}
+.hero-btns{display:flex;gap:8px;justify-content:center;position:relative;z-index:1;flex-wrap:wrap}
+.hero-btns a{padding:10px 22px;border-radius:10px;font-size:.82rem;font-weight:600;text-decoration:none;font-family:'Heebo'}
+.hero-btns .gb{background:var(--green);color:#fff}
+.hero-btns .ob{background:transparent;border:1px solid rgba(255,255,255,.3);color:#fff}
+.trust{display:flex;justify-content:center;gap:14px;padding:10px 16px;background:var(--white);border-bottom:1px solid var(--brd);font-size:.68rem;color:var(--txt3);flex-wrap:wrap}
+
+/* Tabs */
+.tabs{position:sticky;top:46px;z-index:90;background:var(--white);border-bottom:1px solid var(--brd);padding:8px 12px;overflow-x:auto;display:flex;gap:6px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{padding:7px 14px;border-radius:100px;font-size:.72rem;font-weight:600;white-space:nowrap;border:1px solid var(--brd);background:var(--white);color:var(--txt2);cursor:pointer;font-family:'Heebo';transition:all .2s}
+.tab.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.tab:hover:not(.on){background:var(--bg)}
+.tab .cnt{font-weight:400;opacity:.6;margin-right:2px}
+
+/* Product Grid */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:12px;max-width:900px;margin:0 auto}
+@media(min-width:600px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:900px){.grid{grid-template-columns:repeat(4,1fr)}}
+
+.card{background:var(--white);border-radius:12px;border:1px solid var(--brd);overflow:hidden;transition:all .2s;display:flex;flex-direction:column}
+.card:hover{box-shadow:0 4px 16px rgba(0,0,0,.06);transform:translateY(-2px)}
+.card.hidden{display:none}
+.card-img{height:130px;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:10px;position:relative}
+.card-img img{max-height:100%;max-width:100%;object-fit:contain}
+.card-tag{position:absolute;top:6px;right:6px;padding:2px 8px;border-radius:100px;font-size:.55rem;font-weight:600;color:#fff}
+.card-body{padding:10px 12px 12px;flex:1;display:flex;flex-direction:column}
+.card-name{font-size:.72rem;color:var(--txt);font-weight:500;line-height:1.4;height:2.8em;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;margin-bottom:6px}
+.card-price{font-size:1.15rem;font-weight:900;color:var(--orange);margin-bottom:2px}
+.card-price small{font-size:.58rem;font-weight:400;color:var(--txt3)}
+.card-unit{font-size:.58rem;color:var(--txt3);margin-bottom:8px}
+.card-btn{width:100%;padding:7px;border:1.5px solid var(--green);background:transparent;color:var(--green);border-radius:8px;font-family:'Heebo';font-size:.7rem;font-weight:600;cursor:pointer;transition:all .2s;margin-top:auto}
+.card-btn:hover{background:var(--green);color:#fff}
+.card-btn.added{background:var(--green);color:#fff}
+
+/* Why */
+.why{padding:24px 16px;max-width:700px;margin:0 auto}
+.why-title{font-size:.92rem;font-weight:800;color:var(--navy);text-align:center;margin-bottom:14px}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(max-width:500px){.why-grid{grid-template-columns:1fr}}
+.why-card{padding:16px 12px;background:var(--white);border-radius:12px;border:1px solid var(--brd);text-align:center}
+.why-card h3{font-size:.78rem;font-weight:700;color:var(--navy);margin-bottom:3px}
+.why-card p{font-size:.65rem;color:var(--txt2);line-height:1.4}
+
+/* Quote */
+.quote{max-width:500px;margin:0 auto;padding:20px 16px}
+.quote-box{padding:18px;background:var(--white);border-radius:12px;border:1px solid var(--brd);border-right:3px solid var(--orange);text-align:right}
+.quote-txt{font-size:.8rem;color:var(--txt2);line-height:1.6;font-style:italic;margin-bottom:8px}
+.quote-author{font-size:.68rem;color:var(--txt3);font-weight:600;font-style:normal}
+
+/* CTA */
+.cta{padding:28px 20px;text-align:center;background:linear-gradient(180deg,var(--bg),var(--white))}
+.cta h2{font-size:1.1rem;font-weight:800;color:var(--navy);margin-bottom:4px}
+.cta p{font-size:.78rem;color:var(--txt2);margin-bottom:14px}
+.cta-btn{display:block;width:100%;max-width:380px;margin:0 auto 10px;padding:15px;background:linear-gradient(135deg,var(--green),#16a34a);color:#fff;border:none;border-radius:12px;font-family:'Heebo';font-size:.95rem;font-weight:700;cursor:pointer;text-decoration:none;text-align:center;box-shadow:0 4px 14px rgba(34,197,94,.2)}
+.cta-wa{display:flex;align-items:center;justify-content:center;gap:8px;max-width:380px;margin:0 auto;padding:12px;background:#25D366;color:#fff;border-radius:10px;font-size:.82rem;font-weight:600;text-decoration:none}
+.cta-wa svg{width:18px;height:18px;fill:#fff}
+.cta-phone{display:block;text-align:center;margin-top:8px;font-size:.8rem;color:var(--navy);font-weight:600;text-decoration:none}
+.cta-free{font-size:.68rem;color:var(--green);font-weight:500;margin-top:8px}
+
+.foot{padding:16px;text-align:center;border-top:1px solid var(--brd);font-size:.65rem;color:var(--txt3)}
+
+/* Mobile bar */
+.mob-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:100;background:var(--white);border-top:1px solid var(--brd);padding:8px 12px}
+.mob-bar a{display:block;width:100%;padding:12px;background:var(--green);color:#fff;border-radius:10px;text-align:center;font-weight:700;font-size:.88rem;text-decoration:none}
+@media(max-width:768px){.mob-bar{display:block}body{padding-bottom:62px}}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <a href="/" class="hdr-logo"><div class="hdr-m">Y</div>וואי מרקט</a>
+  <div class="hdr-sp"></div>
+  <a href="tel:037740400" class="hdr-phone">03-7740400</a>
+  <a href="/register" class="hdr-btn">הרשמה</a>
+</div>
+
+<div class="hero">
+  <div class="hero-badge">המומחים לאספקת אטליזים</div>
+  <h1>כל המתכלים לאטליז שלכם — במקום אחד</h1>
+  <p>מגשים, שקיות ואקום, כפפות, ניילון נצמד, נייר ועוד. 36 אטליזים כבר מזמינים.</p>
+  <div class="hero-btns">
+    <a href="/register" class="gb">הרשמה לפורטל</a>
+    <a href="tel:037740400" class="ob">03-7740400</a>
+  </div>
+</div>
+
+<div class="trust">
+  <span>משלוח 24-72 שעות</span>
+  <span>מחירי סיטונאות</span>
+  <span>חשבונית מס</span>
+  <span>מחירון קבוע</span>
+</div>
+
+<div class="tabs" id="tabs">
+  <button class="tab on" data-cat="all">הכל <span class="cnt">28</span></button>
+  <button class="tab" data-cat="trays">מגשים וקלקר <span class="cnt">6</span></button>
+  <button class="tab" data-cat="bags">שקיות ואריזה <span class="cnt">5</span></button>
+  <button class="tab" data-cat="gloves">כפפות <span class="cnt">5</span></button>
+  <button class="tab" data-cat="knives">סכינים <span class="cnt">3</span></button>
+  <button class="tab" data-cat="clean">ניקיון <span class="cnt">3</span></button>
+  <button class="tab" data-cat="paper">נייר <span class="cnt">3</span></button>
+  <button class="tab" data-cat="labels">מדבקות <span class="cnt">2</span></button>
+</div>
+
+<div class="grid" id="grid">
+  <!-- מגשים -->
+  <div class="card" data-cat="trays"><div class="card-img"><img src="/items/143.jpg" alt="" loading="lazy"><span class="card-tag" style="background:#E8A735">מגשים</span></div><div class="card-body"><div class="card-name">מגש אלומיניום מרובע 5</div><div class="card-price">0.45 <small>&#8362;</small></div><div class="card-unit">ליחידה | מארז 1000</div><button class="card-btn" onclick="this.classList.toggle('added');this.textContent=this.classList.contains('added')?'ברשימה':'הוסף לרשימה'">הוסף לרשימה</button></div></div>
+  <div class="card" data-cat="trays"><div class="card-img"><img src="/items/363.jpg" alt="" loading="lazy"><span class="card-tag" style="background:#E8A735">מגשים</span></div><div class="card-body"><div class="card-name">מגש אלומיניום מלבני TV</div><div class="card-price">0.50 <small>&#8362;</small></div><div class="card-unit">ליחידה</div><button class="card-btn" onclick="this.classList.toggle('added');this.textContent=this.classList.contains('added')?'ברשימה':'הוסף לרשימה'">הוסף לרשימה</button></div></div>
+  <div class="card" data-cat="trays"><div class="card-img"><img src="/items/582.jpg" alt="" loading="lazy"><span class="card-tag" style="background:#E8A735">מגשים</span></div><div class="card-body"><div class="card-name">מגש אלומיניום 105</div><div class="card-price">0.95 <small>&#8362;</small></div><div class="card-unit">ליחידה</div><button class="card-btn" onclick="this.classList.toggle('added');this.textContent=this.classList.contains('added')?'ברשימה':'הוסף לרשימה'">הוסף לרשימה</button></div></div>
+  <div class="card" data-cat="trays"><div class="card-img"><img src="/items/607.jpg" alt="" loading="lazy"><span class="card-tag" style="background:#E8A735">מגשים</span></div><div class="card-body"><div class="card-name">מגש אלומיניום 8A - 1000 יח'</div><div class="card-price">0.96 <small>&#8362;</small></div><div class="card-unit">ליחידה</div><button class="card-btn" onclick="this.classList.toggle('added');this.textContent=this.classList.contains('added')?'ברשימה':'הוסף לרשימה'">הוסף לרשימה</button></div></div>
+  <div class="card" data-cat="trays"><div class="card-img"><img src="/items/913.jpg" alt="" loading="lazy"><span class="card-tag" style="background:#E8A735">מגשים</span></div><div class="card-body"><div class="card-name">מגש קלקר סופג כחול 480 יח'</div><div class="card-price">290 <small>&#8362;</small></div><div class="card-unit">+ מע"מ</div><button class="card-btn" onclick="this.classList.toggle('added');this.textContent=this.classList.contains('added')?'ברשימה':'הוסף לרשימה'">הוסף לרשימה</button></div></div>
+  <div class="card" data-cat="trays"><div class="card-img"><img src="/items/406.jpg" alt="" loading="lazy"><span class="card-tag" style="background:#E8A735">מגשים</span></div><div class="card-body"><div class="card-name">שקית נייר בגט חום 1000 יח'</div><div class="card-price">70 <small>&#8362;</small></div><div class="card-unit">+ מע"מ</div><button class="card-btn" onclick="this.classList.toggle('added');this.textContent=this.classList.contains('added')?'ברשימה':'הוסף לרשימה'">הוסף לרשימה</button></div></div>
+
+  <!-- שקיות -->
+  <div class="card" data-cat="bags"><div class="card-img"><img src="/items/824.jpg" alt="" loading="lazy"><span class="card-tag" style="background:#a78bfa">אריזה</span></div><div class="card-body"><div class="card-name">דפי הפרדה פרגפלסט דק 25x35</div><div class="card-price">18 <small>&#8362;</small></div><div class="card-unit">+ מע"מ</div><button class="card-btn" onclick="this.classList.toggle('added');this.textContent=this.classList.contains('added')?'ברשימה':'הוסף לרשימה'">הוסף לרשימה</button></div></div>
+  <div class="card" data-cat="bags"><div class="card-img"><img src="/items/748.jpg" alt="" loading="lazy"><span class="card-tag" style="background:#a78bfa">אריזה</span></div><div class="card-body"><div class="card-name">דפי הפרדה פרגפלסט עבה 1 ק"ג</div><div class="card-price">20 <small>&#8362;</small></div><div class="card-unit">+ מע"מ</div><button class="card-btn" onclick="this.classList.toggle('added');this.textContent=this.classList.contains('added')?'ברשימה':'הוסף לרשימה'">הוסף לרשימה</button></div></div>
+  <div class="card" data-cat="bags"><div class="card-img"><img src="/items/724.jpg" alt="" loading="lazy"><span class="card-tag" style="background:#a78bfa">אריזה</span></div><div class="card-body"><div class="card-name">ניילון נצמד מכונה 6 ק"ג</div><div class="card-price">75 <small>&#8362;</small></div><div class="card-unit">+ מע"מ</div><button class="card-btn" onclick="this.classList.toggle('added');this.textContent=this.classList.contains('added')?'ברשימה':'הוסף לרשימה'">הוסף לרשימה</button></div></div>
+  <div class="card" data-cat="bags"><div class="card-img"><img src="/items/587.jpg" alt="" loading="lazy"><span class="card-tag" style="background:#a78bfa">אריזה</span></div><div class="card-body"><div class="card-name">150 שקיות סנדוויץ HD</div><div class="card-price">8 <small>&#8362;</small></div><div class="card-unit">+ מע"מ</div><button class="card-btn" onclick="this.classList.toggle('added');this.textContent=this.classList.contains('added')?'ברשימה':'הוסף לרשימה'">הוסף לרשימה</button></div></div>
+  <div class="card" data-cat="bags"><div class="card-img"><img src="/items/159.jpg" alt="" loading="lazy"><span class="card-tag" style="background:#a78bfa">אריזה</span></div><div class="card-body"><div class="card-name">שקית אשפה שחורה 75x90 עבה</div><div class="card-price">10 <small>&#8362;</small></div><div class="card-unit">+ מע"מ</div><button class="card-btn" onclick="this.classList.toggle('added');this.textContent=this.classList.contains('added')?'ברשימה':'הוסף לרשימה'">הוסף לרשימה</button></div></div>
+
+  <!-- כפפות -->
+  <div class="card" data-cat="gloves"><div class="card-img"><img src="/items/332.jpg" alt="" loading="lazy"><span class="card-tag" style="background:#4FC3F7">כפפות</span></div><div class="card-body"><div class="card-name">כפפות בית גומי L</div><div class="card-price">3 <small>&#8362;</small></div><div class="card-unit">+ מע"מ</div><button class="card-btn" onclick="this.classList.toggle('added');this.textContent=this.classList.contains('added')?'ברשימה':'הוסף לרשימה'">הוסף לרשימה</button></div></div>
+  <div class="card" data-cat="gloves"><div class="card-img"><img src="/items/75.jpg" alt="" loading="lazy"><span class="card-tag" style="background:#4FC3F7">כפפות</span></div><div class="card-body"><div class="card-name">כפפה נילון שקופה L - 100 יח'</div><div class="card-price">4 <small>&#8362;</small></div><div class="card-unit">+ מע"מ</div><button class="card-btn" onclick="this.classList.toggle('added');this.textContent=this.classList.contains('added')?'ברשימה':'הוסף לרשימה'">הוסף לרשימה</button></div></div>
+  <div class="card" data-cat="gloves"><div class="card-img"><img src="/items/464.jpg" alt="" loading="lazy"><span class="card-tag" style="background:#4FC3F7">כפפות</span></div><div class="card-body"><div class="card-name">לטקס ללא אבקה 50 יח'</div><div class="card-price">10 <small>&#8362;</small></div><div class="card-unit">+ מע"מ</div><button class="card-btn" onclick="this.classList.toggle('added');this.textContent=this.classList.contains('added')?'ברשימה':'הוסף לרשימה'">הוסף לרשימה</button></div></div>
+  <div class="card" data-cat="gloves"><div class="card-img"><img src="/items/903.jpg" alt="" loading="lazy"><span class="card-tag" style="background:#4FC3F7">כפפות</span></div><div class="card-body"><div class="card-name">כפפות ניטריל כחול</div><div class="card-price">11 <small>&#8362;</small></div><div class="card-unit">+ מע"מ</div><button class="card-btn" onclick="this.classList.toggle('added');this.textContent=this.classList.contains('added')?'ברשימה':'הוסף לרשימה'">הוסף לרשימה</button></div></div>
+  <div class="card" data-cat="gloves"><div class="card-img"><img src="/items/50.jpg" alt="" loading="lazy"><span class="card-tag" style="background:#4FC3F7">כפפות</span></div><div class="card-body"><div class="card-name">כפפות ויטריל שחור 100 יח'</div><div class="card-price">14 <small>&#8362;</small></div><div class="card-unit">+ מע"מ</div><button class="card-btn" onclick="this.classList.toggle('added');this.textContent=this.classList.contains('added')?'ברשימה':'הוסף לרשימה'">הוסף לרשימה</button></div></div>
+
+  <!-- סכינים -->
+  <div class="card" data-cat="knives"><div class="card-img"><img src="/items/382.jpg" alt="" loading="lazy"><span class="card-tag" style="background:#FF6B35">סכינים</span></div><div class="card-body"><div class="card-name">קיסמי שניים במלחיה 300 יח'</div><div class="card-price">2 <small>&#8362;</small></div><div class="card-unit">+ מע"מ</div><button class="card-btn" onclick="this.classList.toggle('added');this.textContent=this.classList.contains('added')?'ברשימה':'הוסף לרשימה'">הוסף לרשימה</button></div></div>
+  <div class="card" data-cat="knives"><div class="card-img"><img src="/items/602.jpg" alt="" loading="lazy"><span class="card-tag" style="background:#FF6B35">סכינים</span></div><div class="card-body"><div class="card-name">שיפוד יפני 15 ס"מ 100 יח'</div><div class="card-price">4 <small>&#8362;</small></div><div class="card-unit">+ מע"מ</div><button class="card-btn" onclick="this.classList.toggle('added');this.textContent=this.classList.contains('added')?'ברשימה':'הוסף לרשימה'">הוסף לרשימה</button></div></div>
+  <div class="card" data-cat="knives"><div class="card-img"><img src="/items/621.jpg" alt="" loading="lazy"><span class="card-tag" style="background:#FF6B35">סכינים</span></div><div class="card-body"><div class="card-name">סכין יפני רחב מתכת</div><div class="card-price">10 <small>&#8362;</small></div><div class="card-unit">+ מע"מ</div><button class="card-btn" onclick="this.classList.toggle('added');this.textContent=this.classList.contains('added')?'ברשימה':'הוסף לרשימה'">הוסף לרשימה</button></div></div>
+
+  <!-- ניקיון -->
+  <div class="card" data-cat="clean"><div class="card-img"><img src="/items/482.jpg" alt="" loading="lazy"><span class="card-tag" style="background:#22c55e">ניקיון</span></div><div class="card-body"><div class="card-name">בקבוק מרסס 1 ליטר</div><div class="card-price">7 <small>&#8362;</small></div><div class="card-unit">+ מע"מ</div><button class="card-btn" onclick="this.classList.toggle('added');this.textContent=this.classList.contains('added')?'ברשימה':'הוסף לרשימה'">הוסף לרשימה</button></div></div>
+  <div class="card" data-cat="clean"><div class="card-img"><img src="/items/857.jpg" alt="" loading="lazy"><span class="card-tag" style="background:#22c55e">ניקיון</span></div><div class="card-body"><div class="card-name">אקונומיקה ריחנית 4 ליטר</div><div class="card-price">10 <small>&#8362;</small></div><div class="card-unit">+ מע"מ</div><button class="card-btn" onclick="this.classList.toggle('added');this.textContent=this.classList.contains('added')?'ברשימה':'הוסף לרשימה'">הוסף לרשימה</button></div></div>
+  <div class="card" data-cat="clean"><div class="card-img"><img src="/items/877.jpg" alt="" loading="lazy"><span class="card-tag" style="background:#22c55e">ניקיון</span></div><div class="card-body"><div class="card-name">אקונומיקה ספריי 750 מ"ל</div><div class="card-price">12 <small>&#8362;</small></div><div class="card-unit">+ מע"מ</div><button class="card-btn" onclick="this.classList.toggle('added');this.textContent=this.classList.contains('added')?'ברשימה':'הוסף לרשימה'">הוסף לרשימה</button></div></div>
+
+  <!-- נייר -->
+  <div class="card" data-cat="paper"><div class="card-img"><img src="/items/107.jpg" alt="" loading="lazy"><span class="card-tag" style="background:#E8A735">נייר</span></div><div class="card-body"><div class="card-name">נייר סופג 6 גלילים</div><div class="card-price">10 <small>&#8362;</small></div><div class="card-unit">+ מע"מ</div><button class="card-btn" onclick="this.classList.toggle('added');this.textContent=this.classList.contains('added')?'ברשימה':'הוסף לרשימה'">הוסף לרשימה</button></div></div>
+  <div class="card" data-cat="paper"><div class="card-img"><img src="/items/1125.jpg" alt="" loading="lazy"><span class="card-tag" style="background:#E8A735">נייר</span></div><div class="card-body"><div class="card-name">המטלית הסופגת 90 דף</div><div class="card-price">18 <small>&#8362;</small></div><div class="card-unit">+ מע"מ</div><button class="card-btn" onclick="this.classList.toggle('added');this.textContent=this.classList.contains('added')?'ברשימה':'הוסף לרשימה'">הוסף לרשימה</button></div></div>
+  <div class="card" data-cat="paper"><div class="card-img"><img src="/items/1063.jpg" alt="" loading="lazy"><span class="card-tag" style="background:#E8A735">נייר</span></div><div class="card-body"><div class="card-name">גליל בד תעשייתי לדגים</div><div class="card-price">220 <small>&#8362;</small></div><div class="card-unit">+ מע"מ</div><button class="card-btn" onclick="this.classList.toggle('added');this.textContent=this.classList.contains('added')?'ברשימה':'הוסף לרשימה'">הוסף לרשימה</button></div></div>
+
+  <!-- מדבקות -->
+  <div class="card" data-cat="labels"><div class="card-img"><img src="/items/168.jpg" alt="" loading="lazy"><span class="card-tag" style="background:#94a3b8">מדבקות</span></div><div class="card-body"><div class="card-name">סרט אריזה שקוף אקרילי</div><div class="card-price">5.2 <small>&#8362;</small></div><div class="card-unit">+ מע"מ</div><button class="card-btn" onclick="this.classList.toggle('added');this.textContent=this.classList.contains('added')?'ברשימה':'הוסף לרשימה'">הוסף לרשימה</button></div></div>
+  <div class="card" data-cat="labels"><div class="card-img"><img src="/items/979.jpg" alt="" loading="lazy"><span class="card-tag" style="background:#94a3b8">מדבקות</span></div><div class="card-body"><div class="card-name">מדבקות 32 דף 13x50 לבן</div><div class="card-price">7 <small>&#8362;</small></div><div class="card-unit">+ מע"מ</div><button class="card-btn" onclick="this.classList.toggle('added');this.textContent=this.classList.contains('added')?'ברשימה':'הוסף לרשימה'">הוסף לרשימה</button></div></div>
+</div>
+
+<section class="why">
+  <div class="why-title">למה אטליזים בוחרים בנו?</div>
+  <div class="why-grid">
+    <div class="why-card"><h3>36 אטליזים</h3><p>כבר מזמינים. מכירים את הסחורה ואת הצרכים.</p></div>
+    <div class="why-card"><h3>הזמנה חוזרת בקליק</h3><p>אותם מוצרים, אותם כמויות. שניות ומוכן.</p></div>
+    <div class="why-card"><h3>משלוח עד הדלת</h3><p>24-72 שעות. ישירות לאטליז.</p></div>
+  </div>
+</section>
+
+<div class="quote">
+  <div class="quote-box">
+    <div class="quote-txt">מאז שעברנו לוואי מרקט לא חסרים מגשים או שקיות ואקום באמצע יום. הכל מגיע בזמן, המחיר קבוע, ואני לא צריך לרדוף אחרי ספקים.</div>
+    <div class="quote-author">-- אטליז, קריית אונו</div>
+  </div>
+</div>
+
+<section class="cta">
+  <h2>בואו על קפה — נדבר על האספקה שלכם</h2>
+  <p>הרשמה חינמית, ללא התחייבות. מחירון אישי לאטליז שלכם.</p>
+  <a href="/register" class="cta-btn">הרשמה לפורטל המחירים</a>
+  <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%90%D7%98%D7%9C%D7%99%D7%96%20%D7%95%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%20%D7%91%D7%9E%D7%97%D7%99%D7%A8%D7%99%D7%9D" class="cta-wa" target="_blank">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.553 4.103 1.517 5.832L0 24l6.335-1.49C8.005 23.467 9.959 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75c-1.855 0-3.607-.487-5.122-1.382l-.368-.218-3.81.896.942-3.685-.24-.38A9.688 9.688 0 012.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75z"/></svg>
+    אטליז? שלחו הודעה
+  </a>
+  <a href="tel:037740400" class="cta-phone">03-7740400</a>
+  <div class="cta-free">בואו על קפה קטן — כבר נרוויח</div>
+</section>
+
+<div class="foot">&copy; 2026 וואי מרקט — נגלר סחר והפצה. משלוח ארצי | מחירי סיטונאות | חשבונית מס</div>
+
+<div class="mob-bar"><a href="/register">הרשמה לפורטל המחירים</a></div>
+
+<script>
+// Tab filtering
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
+    t.classList.add('on');
+    const cat=t.dataset.cat;
+    document.querySelectorAll('.card').forEach(c=>{
+      c.classList.toggle('hidden',cat!=='all'&&c.dataset.cat!==cat);
+    });
+  });
+});
+</script>
+<script src="/js/analytics.min.js" defer></script>
+</body>
+</html>
