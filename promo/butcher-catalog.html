@@ -11,180 +11,706 @@
 <meta property="og:url" content="https://ymarket.co.il/promo/butcher-catalog">
 <meta property="og:locale" content="he_IL">
 <link rel="canonical" href="https://ymarket.co.il/promo/butcher-catalog">
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Rubik:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
+/* ═══════════════════════════════════════════
+   YMARKET BUTCHER CATALOG — FIGMA MAXIMUM
+   ═══════════════════════════════════════════ */
+:root{
+  --navy:#0B1D33;--navy-deep:#061428;--navy-mid:#132D4F;--navy-light:#1B3A5C;
+  --orange:#FF6B35;--orange-glow:#FF8A5C;--orange-deep:#E55A2B;
+  --green:#22c55e;--green-dark:#16a34a;
+  --red-meat:#8B2500;--red-dark:#6B1C00;
+  --bone:#FAF5F0;--bone-dark:#F0E8DD;
+  --glass:rgba(255,255,255,.06);--glass-border:rgba(255,255,255,.08);
+  --text:#E8ECF1;--text-dim:rgba(255,255,255,.5);
+  --shadow-brutal:0 25px 80px -12px rgba(0,0,0,.5);
+  --shadow-card:0 8px 40px -8px rgba(0,0,0,.3);
+  --shadow-glow:0 0 60px -10px rgba(255,107,53,.3);
+  --radius:20px;--radius-sm:14px;--radius-xs:10px;
+}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Heebo',sans-serif;direction:rtl;background:#fff;color:#1a2332}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Heebo',sans-serif;direction:rtl;background:var(--navy-deep);color:var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
-/* Hero — fast, impactful */
-.hero{background:linear-gradient(rgba(27,58,92,.8),rgba(139,37,0,.65)),url('/images/promo/butcher-cover.jpg') center/cover;padding:36px 20px 28px;text-align:center;color:#fff}
-.hero-logo{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;color:rgba(255,255,255,.6);margin-bottom:12px}
-.hero-logo span{width:22px;height:22px;background:rgba(255,255,255,.15);border-radius:5px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.6rem}
-.hero h1{font-size:clamp(1.4rem,5vw,1.8rem);font-weight:900;line-height:1.25;margin-bottom:6px}
-.hero h1 em{font-style:normal;color:#4FC3F7}
-.hero-sub{font-size:.85rem;color:rgba(255,255,255,.75);margin-bottom:4px}
-.hero-nums{display:flex;justify-content:center;gap:20px;margin:14px 0;font-size:.72rem;color:rgba(255,255,255,.6)}
-.hero-nums b{display:block;font-size:1.3rem;color:#fff}
-.hero-cta{display:inline-block;padding:12px 28px;background:#22c55e;color:#fff;border-radius:10px;font-size:.9rem;font-weight:700;text-decoration:none;margin-top:6px}
+/* ═══ GRAIN OVERLAY ═══ */
+body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity:.025;mix-blend-mode:overlay}
 
-/* Speed strip */
-.speed{display:flex;justify-content:center;gap:16px;padding:10px;background:#f8f9fb;font-size:.68rem;color:#64748b;border-bottom:1px solid #eef1f5;flex-wrap:wrap}
-.speed b{color:#1B3A5C}
+/* ═══ SCROLL REVEAL ═══ */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}.reveal-delay-4{transition-delay:.4s}
+.reveal-delay-5{transition-delay:.5s}.reveal-delay-6{transition-delay:.6s}
+.reveal-stagger > *:nth-child(1){transition-delay:0s}
+.reveal-stagger > *:nth-child(2){transition-delay:.06s}
+.reveal-stagger > *:nth-child(3){transition-delay:.12s}
+.reveal-stagger > *:nth-child(4){transition-delay:.18s}
+.reveal-stagger > *:nth-child(5){transition-delay:.24s}
+.reveal-stagger > *:nth-child(6){transition-delay:.3s}
+.reveal-stagger > *:nth-child(7){transition-delay:.36s}
+.reveal-stagger > *:nth-child(8){transition-delay:.42s}
+.reveal-stagger > *:nth-child(9){transition-delay:.48s}
 
-/* Categories */
-.cats{padding:20px 16px 10px}
-.cats-title{font-size:.88rem;font-weight:800;color:#1B3A5C;text-align:center;margin-bottom:14px}
-.cats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:500px;margin:0 auto}
-@media(min-width:600px){.cats-grid{grid-template-columns:repeat(5,1fr);max-width:700px}}
-.cat-card{background:#f8f9fb;border:1px solid #eef1f5;border-radius:12px;padding:12px 8px;text-align:center;cursor:pointer;transition:all .2s;text-decoration:none;color:#1a2332}
-.cat-card:active{transform:scale(.96)}
-.cat-card:hover{border-color:#4FC3F7;box-shadow:0 2px 10px rgba(0,0,0,.04)}
-.cat-icon{font-size:1.4rem;margin-bottom:4px;display:block}
-.cat-name{font-size:.65rem;font-weight:600;line-height:1.3}
-.cat-count{font-size:.55rem;color:#94a3b8;margin-top:2px}
-.cat-price{font-size:.6rem;color:#FF6B35;font-weight:700;margin-top:2px}
+/* ═══ HEADER ═══ */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;
+  background:rgba(6,20,40,.7);backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid rgba(255,255,255,.05);transition:all .4s}
+.topbar.scrolled{background:rgba(6,20,40,.92);box-shadow:0 4px 30px rgba(0,0,0,.3)}
+.topbar-brand{display:flex;align-items:center;gap:8px;color:#fff;font-weight:800;font-size:.9rem;text-decoration:none}
+.topbar-logo{width:32px;height:32px;background:linear-gradient(135deg,var(--orange),var(--red-meat));border-radius:9px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.85rem;color:#fff;box-shadow:0 2px 12px rgba(255,107,53,.3)}
+.topbar-actions{display:flex;align-items:center;gap:10px}
+.topbar-phone{color:var(--text-dim);text-decoration:none;font-size:.75rem;font-weight:500;display:none}
+@media(min-width:480px){.topbar-phone{display:block}}
+.topbar-cta{padding:8px 18px;background:var(--green);color:#fff;border-radius:8px;font-size:.75rem;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:all .2s}
+.topbar-cta:hover{background:var(--green-dark);transform:translateY(-1px)}
 
-/* Best sellers */
-.best{padding:16px}
-.best-title{font-size:.88rem;font-weight:800;color:#1B3A5C;text-align:center;margin-bottom:12px}
-.best-scroll{display:flex;gap:10px;overflow-x:auto;padding-bottom:8px;scrollbar-width:none}
-.best-scroll::-webkit-scrollbar{display:none}
-.bp{min-width:145px;max-width:145px;background:#fff;border:1px solid #eef1f5;border-radius:12px;overflow:hidden;flex-shrink:0}
-.bp-img{height:100px;background:#f8f9fb;display:flex;align-items:center;justify-content:center;padding:8px}
-.bp-img img{max-height:85px;max-width:85px;object-fit:contain}
-.bp-body{padding:8px}
-.bp-name{font-size:.62rem;color:#4a5568;height:2.4em;overflow:hidden;line-height:1.35;margin-bottom:3px}
-.bp-price{font-size:1rem;font-weight:900;color:#FF6B35}
-.bp-price small{font-size:.5rem;font-weight:400;color:#c0c8d0}
-.bp-sold{font-size:.5rem;color:#94a3b8}
+/* ═══ HERO — CINEMATIC ═══ */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:100px 24px 60px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 120% 80% at 50% 20%,rgba(139,37,0,.25),transparent 60%),
+  radial-gradient(ellipse 80% 60% at 20% 80%,rgba(27,58,92,.4),transparent 50%),
+  radial-gradient(ellipse 60% 40% at 80% 60%,rgba(255,107,53,.08),transparent 40%),
+  var(--navy-deep)}
+.hero-bg::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 0%,transparent 60%,var(--navy-deep) 100%)}
+/* Mesh gradient orbs */
+.hero-orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.15;animation:orbFloat 20s ease-in-out infinite}
+.hero-orb-1{width:500px;height:500px;background:var(--red-meat);top:-10%;right:-10%;animation-delay:0s}
+.hero-orb-2{width:400px;height:400px;background:var(--orange);bottom:10%;left:-5%;animation-delay:-7s}
+.hero-orb-3{width:300px;height:300px;background:var(--navy-light);top:40%;right:30%;animation-delay:-14s}
+@keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-20px) scale(1.05)}66%{transform:translate(-20px,30px) scale(.95)}}
 
-/* What they buy — real data */
-.real{padding:16px;background:#f8f9fb}
-.real-title{font-size:.88rem;font-weight:800;color:#1B3A5C;text-align:center;margin-bottom:4px}
-.real-sub{font-size:.72rem;color:#94a3b8;text-align:center;margin-bottom:14px}
-.real-list{max-width:500px;margin:0 auto}
-.rl{display:flex;align-items:center;gap:10px;padding:10px;background:#fff;border:1px solid #eef1f5;border-radius:10px;margin-bottom:6px}
-.rl-img{width:50px;height:50px;border-radius:8px;background:#f8f9fb;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.rl-img img{max-width:40px;max-height:40px;object-fit:contain}
-.rl-info{flex:1;min-width:0}
-.rl-name{font-size:.72rem;font-weight:600;color:#1a2332;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.rl-meta{font-size:.58rem;color:#94a3b8}
-.rl-price{font-size:.88rem;font-weight:800;color:#FF6B35;flex-shrink:0}
+.hero-content{position:relative;z-index:2;max-width:700px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;background:var(--glass);border:1px solid var(--glass-border);border-radius:50px;font-size:.72rem;color:var(--text-dim);margin-bottom:28px;backdrop-filter:blur(10px)}
+.hero-badge-dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
 
-/* Benefits */
-.bens{padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:500px;margin:0 auto}
-.ben{padding:12px;background:#fff;border:1px solid #eef1f5;border-radius:10px;text-align:center}
-.ben-title{font-size:.75rem;font-weight:700;color:#1B3A5C;margin-bottom:2px}
-.ben-desc{font-size:.6rem;color:#64748b;line-height:1.4}
+.hero h1{font-family:'Rubik','Heebo',sans-serif;font-size:clamp(2.2rem,7vw,4rem);font-weight:900;line-height:1.1;margin-bottom:16px;letter-spacing:-.02em}
+.hero h1 .line-thin{display:block;font-weight:400;font-size:clamp(1rem,3vw,1.6rem);color:var(--text-dim);letter-spacing:0;line-height:1.6;margin-bottom:4px}
+.hero h1 .accent{background:linear-gradient(135deg,var(--orange),var(--orange-glow));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
-/* CTA */
-.cta{padding:24px 20px;text-align:center;background:linear-gradient(180deg,#f8f9fb,#fff)}
-.cta h2{font-size:1.1rem;font-weight:800;color:#1B3A5C;margin-bottom:3px}
-.cta-sub{font-size:.78rem;color:#64748b;margin-bottom:14px}
-.cta-btn{display:block;max-width:380px;margin:0 auto 8px;padding:15px;background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff;border-radius:12px;font-size:.95rem;font-weight:700;text-decoration:none;text-align:center;box-shadow:0 4px 14px rgba(34,197,94,.2)}
-.cta-wa{display:flex;align-items:center;justify-content:center;gap:8px;max-width:380px;margin:0 auto;padding:12px;background:#25D366;color:#fff;border-radius:10px;font-size:.82rem;font-weight:600;text-decoration:none}
-.cta-wa svg{width:18px;height:18px;fill:#fff}
-.cta-phone{display:block;text-align:center;margin-top:8px;font-size:.8rem;color:#1B3A5C;font-weight:600;text-decoration:none}
-.cta-note{font-size:.65rem;color:#22c55e;margin-top:8px;font-weight:500}
+.hero-sub{font-size:clamp(.9rem,2.5vw,1.15rem);color:var(--text-dim);max-width:480px;margin:0 auto 32px;line-height:1.7;font-weight:300}
 
-.foot{padding:14px;text-align:center;border-top:1px solid #eef1f5;font-size:.6rem;color:#c0c8d0}
+.hero-stats{display:flex;justify-content:center;gap:clamp(16px,4vw,40px);margin-bottom:40px}
+.hero-stat{text-align:center}
+.hero-stat-num{font-family:'Rubik',sans-serif;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;
+  background:linear-gradient(180deg,#fff 30%,rgba(255,255,255,.4));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.1}
+.hero-stat-label{font-size:.65rem;color:var(--text-dim);font-weight:500;text-transform:uppercase;letter-spacing:.1em;margin-top:4px}
 
-.mob{display:none;position:fixed;bottom:0;left:0;right:0;z-index:100;background:#fff;border-top:1px solid #eef1f5;padding:8px 12px}
-.mob a{display:block;width:100%;padding:12px;background:#22c55e;color:#fff;border-radius:10px;text-align:center;font-weight:700;font-size:.88rem;text-decoration:none}
-@media(max-width:768px){.mob{display:block}body{padding-bottom:60px}}
+.hero-buttons{display:flex;flex-direction:column;align-items:center;gap:12px}
+.btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:18px 40px;
+  background:linear-gradient(135deg,var(--green),var(--green-dark));color:#fff;border:none;border-radius:16px;
+  font-family:'Heebo';font-size:1.05rem;font-weight:700;cursor:pointer;text-decoration:none;
+  box-shadow:0 8px 30px -4px rgba(34,197,94,.35),inset 0 1px 0 rgba(255,255,255,.15);
+  transition:all .3s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden}
+.btn-primary::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.1),transparent 50%);pointer-events:none}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 40px -4px rgba(34,197,94,.45)}
+.btn-primary:active{transform:translateY(0)}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:var(--glass);
+  border:1px solid var(--glass-border);border-radius:14px;color:var(--text);font-size:.88rem;font-weight:600;
+  text-decoration:none;backdrop-filter:blur(10px);transition:all .3s}
+.btn-secondary:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.15)}
+
+.hero-scroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:6px}
+.hero-scroll-text{font-size:.6rem;color:var(--text-dim);letter-spacing:.15em;text-transform:uppercase}
+.hero-scroll-line{width:1px;height:40px;background:linear-gradient(180deg,rgba(255,255,255,.3),transparent);animation:scrollLine 2s infinite}
+@keyframes scrollLine{0%{opacity:1;transform:scaleY(1)}100%{opacity:0;transform:scaleY(0);transform-origin:top}}
+
+/* ═══ TRUST RIBBON ═══ */
+.trust-ribbon{position:relative;padding:20px;background:var(--navy);border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04)}
+.trust-inner{display:flex;justify-content:center;gap:clamp(16px,4vw,48px);flex-wrap:wrap;max-width:900px;margin:0 auto}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:.75rem;color:var(--text-dim);font-weight:500}
+.trust-icon{width:32px;height:32px;background:var(--glass);border:1px solid var(--glass-border);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
+
+/* ═══ SECTION LAYOUT ═══ */
+.section{padding:clamp(48px,8vw,80px) 20px;position:relative}
+.section-header{text-align:center;margin-bottom:clamp(32px,5vw,48px)}
+.section-label{font-size:.65rem;color:var(--orange);font-weight:700;text-transform:uppercase;letter-spacing:.2em;margin-bottom:10px}
+.section-title{font-family:'Rubik','Heebo',sans-serif;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;line-height:1.2;margin-bottom:10px}
+.section-desc{font-size:.9rem;color:var(--text-dim);max-width:500px;margin:0 auto;line-height:1.7;font-weight:300}
+
+/* ═══ CATEGORIES — GLASS CARDS ═══ */
+.cats-section{background:var(--navy-deep)}
+.cats-section::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:600px;
+  background:radial-gradient(circle,rgba(255,107,53,.06),transparent 60%);pointer-events:none}
+.cats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:700px;margin:0 auto}
+@media(min-width:600px){.cats-grid{grid-template-columns:repeat(3,1fr);gap:16px}}
+@media(min-width:800px){.cats-grid{grid-template-columns:repeat(5,1fr)}}
+
+.cat-card{position:relative;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius);padding:clamp(16px,3vw,24px) 12px;text-align:center;
+  text-decoration:none;color:var(--text);cursor:pointer;transition:all .4s cubic-bezier(.16,1,.3,1);overflow:hidden;backdrop-filter:blur(10px)}
+.cat-card::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.03),transparent);pointer-events:none;transition:opacity .3s}
+.cat-card:hover{transform:translateY(-6px);border-color:rgba(255,107,53,.3);box-shadow:0 20px 50px -12px rgba(0,0,0,.4),0 0 30px -6px rgba(255,107,53,.1)}
+.cat-card:hover::before{opacity:0}
+.cat-card:active{transform:translateY(-2px) scale(.98)}
+.cat-icon{font-size:clamp(1.6rem,4vw,2.2rem);margin-bottom:10px;display:block;filter:drop-shadow(0 2px 8px rgba(255,107,53,.2))}
+.cat-name{font-size:.78rem;font-weight:700;margin-bottom:4px}
+.cat-count{font-size:.6rem;color:var(--text-dim)}
+.cat-price{font-size:.72rem;color:var(--orange);font-weight:800;margin-top:6px}
+
+/* ═══ PRODUCT SHOWCASE — MEGA GRID ═══ */
+.products-section{background:linear-gradient(180deg,var(--navy-deep),var(--navy),var(--navy-deep))}
+.tab-bar{display:flex;gap:8px;max-width:900px;margin:0 auto 32px;padding:0 4px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tab-bar::-webkit-scrollbar{display:none}
+.tab{padding:10px 20px;background:var(--glass);border:1px solid var(--glass-border);border-radius:50px;font-family:'Heebo';font-size:.72rem;font-weight:600;
+  color:var(--text-dim);cursor:pointer;white-space:nowrap;transition:all .3s;backdrop-filter:blur(8px)}
+.tab:hover{color:var(--text);border-color:rgba(255,255,255,.15)}
+.tab.active{background:linear-gradient(135deg,var(--orange),var(--orange-deep));color:#fff;border-color:transparent;box-shadow:0 4px 20px -4px rgba(255,107,53,.4)}
+
+.product-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:1000px;margin:0 auto}
+@media(min-width:560px){.product-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:800px){.product-grid{grid-template-columns:repeat(4,1fr);gap:18px}}
+
+.pcard{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);overflow:hidden;
+  transition:all .4s cubic-bezier(.16,1,.3,1);position:relative;backdrop-filter:blur(6px)}
+.pcard:hover{transform:translateY(-5px);border-color:rgba(255,255,255,.12);box-shadow:var(--shadow-card)}
+.pcard-badge{position:absolute;top:10px;right:10px;padding:3px 10px;border-radius:6px;font-size:.55rem;font-weight:700;z-index:2;
+  backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.08)}
+.pcard-badge.trays{background:rgba(255,107,53,.15);color:var(--orange)}
+.pcard-badge.wrap{background:rgba(59,130,246,.15);color:#60a5fa}
+.pcard-badge.gloves{background:rgba(139,37,0,.2);color:#e87c5a}
+.pcard-badge.clean{background:rgba(34,197,94,.15);color:#4ade80}
+.pcard-badge.paper{background:rgba(250,204,21,.15);color:#fbbf24}
+.pcard-badge.knives{background:rgba(168,85,247,.15);color:#a78bfa}
+.pcard-badge.bags{background:rgba(236,72,153,.15);color:#f472b6}
+.pcard-badge.stickers{background:rgba(99,102,241,.15);color:#818cf8}
+.pcard-img{height:clamp(120px,20vw,160px);background:rgba(255,255,255,.02);display:flex;align-items:center;justify-content:center;padding:16px;position:relative;overflow:hidden}
+.pcard-img::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40px;background:linear-gradient(transparent,rgba(11,29,51,.5));pointer-events:none}
+.pcard-img img{max-height:100%;max-width:100%;object-fit:contain;transition:transform .4s cubic-bezier(.16,1,.3,1);filter:drop-shadow(0 4px 12px rgba(0,0,0,.3))}
+.pcard:hover .pcard-img img{transform:scale(1.08)}
+.pcard-body{padding:12px 14px 16px}
+.pcard-name{font-size:.72rem;color:rgba(255,255,255,.75);font-weight:500;height:2.6em;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;line-height:1.4;margin-bottom:8px}
+.pcard-bottom{display:flex;align-items:flex-end;justify-content:space-between}
+.pcard-price{font-family:'Rubik',sans-serif;font-size:1.4rem;font-weight:800;color:var(--orange);line-height:1}
+.pcard-price small{font-size:.55rem;font-weight:400;color:var(--text-dim);margin-right:2px}
+.pcard-unit{font-size:.55rem;color:var(--text-dim);margin-top:2px}
+.pcard-add{width:34px;height:34px;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.2);border-radius:10px;display:flex;align-items:center;justify-content:center;
+  color:var(--green);font-size:1.1rem;cursor:pointer;transition:all .3s;flex-shrink:0}
+.pcard-add:hover{background:var(--green);color:#fff;border-color:var(--green);transform:scale(1.1)}
+
+.show-more-wrap{text-align:center;margin-top:32px}
+.show-more{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:var(--glass);border:1px solid var(--glass-border);border-radius:14px;
+  font-family:'Heebo';font-size:.85rem;font-weight:600;color:var(--text);cursor:pointer;transition:all .3s;backdrop-filter:blur(10px)}
+.show-more:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15)}
+
+/* ═══ PARALLAX DIVIDER ═══ */
+.divider{position:relative;height:clamp(200px,30vw,300px);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.divider-bg{position:absolute;inset:-20%;background:radial-gradient(ellipse 100% 100% at 50% 50%,rgba(139,37,0,.12),transparent);transform:translateZ(0)}
+.divider-content{position:relative;z-index:2;text-align:center}
+.divider-quote{font-family:'Rubik','Heebo',sans-serif;font-size:clamp(1.2rem,4vw,2rem);font-weight:300;color:var(--text);line-height:1.5;max-width:600px;margin:0 auto}
+.divider-quote strong{font-weight:800;color:var(--orange)}
+.divider-attr{font-size:.72rem;color:var(--text-dim);margin-top:12px}
+
+/* ═══ HOW IT WORKS — TIMELINE ═══ */
+.process-section{background:var(--navy-deep)}
+.process-timeline{max-width:600px;margin:0 auto;position:relative}
+.process-timeline::before{content:'';position:absolute;right:23px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,transparent,rgba(255,107,53,.3),rgba(255,107,53,.3),transparent)}
+.process-step{display:flex;gap:20px;margin-bottom:40px;position:relative}
+.process-num{width:48px;height:48px;flex-shrink:0;background:linear-gradient(135deg,var(--navy-mid),var(--navy));border:2px solid rgba(255,107,53,.3);
+  border-radius:14px;display:flex;align-items:center;justify-content:center;font-family:'Rubik';font-size:1.1rem;font-weight:900;color:var(--orange);
+  box-shadow:0 0 20px -4px rgba(255,107,53,.2);position:relative;z-index:2}
+.process-text h3{font-size:1rem;font-weight:800;margin-bottom:4px;color:var(--text)}
+.process-text p{font-size:.82rem;color:var(--text-dim);line-height:1.6;font-weight:300}
+.process-text .tag{display:inline-block;margin-top:8px;padding:4px 12px;background:var(--glass);border:1px solid var(--glass-border);border-radius:6px;font-size:.6rem;color:var(--text-dim)}
+
+/* ═══ REAL ORDERS ═══ */
+.real-section{background:linear-gradient(180deg,var(--navy),var(--navy-deep))}
+.real-grid{display:grid;grid-template-columns:1fr;gap:12px;max-width:600px;margin:0 auto}
+.real-card{display:flex;align-items:center;gap:14px;padding:16px;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius);
+  backdrop-filter:blur(10px);transition:all .3s}
+.real-card:hover{border-color:rgba(255,255,255,.12);transform:translateX(-4px)}
+.real-img{width:60px;height:60px;border-radius:var(--radius-xs);background:rgba(255,255,255,.04);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
+.real-img img{max-width:48px;max-height:48px;object-fit:contain;filter:drop-shadow(0 2px 6px rgba(0,0,0,.3))}
+.real-info{flex:1;min-width:0}
+.real-name{font-size:.82rem;font-weight:700;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.real-meta{font-size:.62rem;color:var(--text-dim);display:flex;align-items:center;gap:6px}
+.real-meta .dot{width:4px;height:4px;background:var(--orange);border-radius:50%}
+.real-price{font-family:'Rubik',sans-serif;font-size:1.2rem;font-weight:800;color:var(--orange);flex-shrink:0}
+.real-price small{font-size:.55rem;color:var(--text-dim)}
+
+/* ═══ BENEFITS — BENTO GRID ═══ */
+.bento-section{background:var(--navy-deep)}
+.bento-section::before{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:800px;height:500px;
+  background:radial-gradient(circle,rgba(34,197,94,.05),transparent 60%);pointer-events:none}
+.bento-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:700px;margin:0 auto}
+@media(min-width:600px){.bento-grid{grid-template-columns:repeat(3,1fr)}}
+.bento-card{padding:clamp(20px,4vw,30px) 18px;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius);
+  backdrop-filter:blur(10px);transition:all .4s;position:relative;overflow:hidden}
+.bento-card::before{content:'';position:absolute;top:0;right:0;width:80px;height:80px;
+  background:radial-gradient(circle,rgba(255,107,53,.06),transparent);pointer-events:none;transition:all .3s}
+.bento-card:hover{border-color:rgba(255,255,255,.12);transform:translateY(-3px)}
+.bento-card.featured{grid-column:1/-1;background:linear-gradient(135deg,rgba(255,107,53,.08),rgba(139,37,0,.06));border-color:rgba(255,107,53,.12);
+  display:flex;align-items:center;gap:20px;text-align:right}
+@media(min-width:600px){.bento-card.featured{grid-column:span 2}}
+.bento-icon{font-size:1.6rem;margin-bottom:12px;display:block}
+.bento-title{font-size:.88rem;font-weight:800;margin-bottom:6px}
+.bento-desc{font-size:.72rem;color:var(--text-dim);line-height:1.6;font-weight:300}
+.bento-num{font-family:'Rubik',sans-serif;font-size:2.4rem;font-weight:900;color:var(--orange);flex-shrink:0;line-height:1}
+
+/* ═══ TESTIMONIALS ═══ */
+.testi-section{background:linear-gradient(180deg,var(--navy-deep),var(--navy))}
+.testi-grid{display:grid;grid-template-columns:1fr;gap:14px;max-width:600px;margin:0 auto}
+@media(min-width:600px){.testi-grid{grid-template-columns:1fr 1fr}}
+.testi-card{padding:24px;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius);backdrop-filter:blur(10px);position:relative}
+.testi-card::before{content:'\201F';position:absolute;top:14px;right:18px;font-size:3rem;color:rgba(255,107,53,.15);font-family:serif;line-height:1}
+.testi-stars{color:#FBBF24;font-size:.7rem;letter-spacing:2px;margin-bottom:10px}
+.testi-text{font-size:.82rem;line-height:1.7;color:var(--text);font-weight:300;margin-bottom:14px}
+.testi-author{display:flex;align-items:center;gap:10px}
+.testi-avatar{width:36px;height:36px;background:linear-gradient(135deg,var(--navy-mid),var(--navy-light));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;color:var(--orange)}
+.testi-info{font-size:.68rem}
+.testi-name{font-weight:700;color:var(--text)}
+.testi-role{color:var(--text-dim)}
+
+/* ═══ FAQ ═══ */
+.faq-section{background:var(--navy-deep)}
+.faq-list{max-width:600px;margin:0 auto}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.05);overflow:hidden}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 0;cursor:pointer;font-size:.88rem;font-weight:600;color:var(--text);transition:color .3s}
+.faq-q:hover{color:var(--orange)}
+.faq-arrow{font-size:.75rem;color:var(--text-dim);transition:transform .3s}
+.faq-item.open .faq-arrow{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1),padding .3s}
+.faq-item.open .faq-a{max-height:200px;padding-bottom:18px}
+.faq-a p{font-size:.78rem;color:var(--text-dim);line-height:1.7;font-weight:300}
+
+/* ═══ MEGA CTA ═══ */
+.mega-cta{position:relative;padding:clamp(60px,10vw,100px) 24px;text-align:center;overflow:hidden}
+.mega-cta-bg{position:absolute;inset:0;background:radial-gradient(ellipse 120% 80% at 50% 80%,rgba(255,107,53,.1),transparent),
+  radial-gradient(ellipse 80% 60% at 20% 20%,rgba(34,197,94,.06),transparent),var(--navy-deep)}
+.mega-cta-content{position:relative;z-index:2;max-width:500px;margin:0 auto}
+.mega-cta h2{font-family:'Rubik','Heebo',sans-serif;font-size:clamp(1.6rem,5vw,2.6rem);font-weight:900;line-height:1.2;margin-bottom:10px}
+.mega-cta h2 .accent{background:linear-gradient(135deg,var(--orange),var(--orange-glow));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.mega-cta-sub{font-size:.88rem;color:var(--text-dim);margin-bottom:28px;font-weight:300}
+.mega-cta-actions{display:flex;flex-direction:column;align-items:center;gap:12px}
+.mega-cta-or{font-size:.72rem;color:var(--text-dim);margin:4px 0}
+.wa-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 32px;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;
+  border-radius:14px;font-family:'Heebo';font-size:.92rem;font-weight:700;text-decoration:none;box-shadow:0 6px 24px -4px rgba(37,211,102,.3);transition:all .3s}
+.wa-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px -4px rgba(37,211,102,.4)}
+.wa-btn svg{width:22px;height:22px;fill:#fff}
+.phone-link{display:inline-flex;align-items:center;gap:8px;font-size:.92rem;color:var(--text);font-weight:700;text-decoration:none;transition:color .3s}
+.phone-link:hover{color:var(--orange)}
+.mega-cta-note{margin-top:24px;padding:14px 20px;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-sm);
+  font-size:.72rem;color:var(--text-dim);backdrop-filter:blur(10px);line-height:1.6}
+
+/* ═══ FOOTER ═══ */
+.footer{padding:30px 20px;text-align:center;border-top:1px solid rgba(255,255,255,.04)}
+.footer-brand{font-size:.82rem;font-weight:700;color:var(--text);margin-bottom:8px}
+.footer-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:10px}
+.footer-links a{font-size:.68rem;color:var(--text-dim);text-decoration:none;transition:color .3s}
+.footer-links a:hover{color:var(--orange)}
+.footer-copy{font-size:.6rem;color:rgba(255,255,255,.2)}
+
+/* ═══ MOBILE STICKY CTA ═══ */
+.sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:1000;padding:10px 16px 14px;
+  background:rgba(6,20,40,.92);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.06)}
+.sticky-cta-inner{display:flex;gap:10px;max-width:500px;margin:0 auto}
+.sticky-cta a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:13px;border-radius:12px;font-family:'Heebo';font-size:.82rem;font-weight:700;text-decoration:none;text-align:center;transition:all .2s}
+.sticky-cta .s-primary{background:linear-gradient(135deg,var(--green),var(--green-dark));color:#fff;box-shadow:0 4px 16px -4px rgba(34,197,94,.3)}
+.sticky-cta .s-wa{background:rgba(37,211,102,.12);border:1px solid rgba(37,211,102,.25);color:#25D366}
+@media(max-width:768px){.sticky-cta{display:block}body{padding-bottom:72px}}
+
+/* ═══ HIDDEN BY DEFAULT — JS toggles ═══ */
+.product-grid .pcard[data-cat]{display:block}
+.product-grid .pcard.filtered-out{display:none}
 </style>
 </head>
 <body>
 
-<div class="hero">
-  <div class="hero-logo"><span>Y</span> וואי מרקט</div>
-  <h1>207 מוצרים לאטליז<br><em>הכל. מהר. בזול.</em></h1>
-  <div class="hero-sub">ספק אחד, הזמנה אחת, חשבונית אחת</div>
-  <div class="hero-nums">
-    <div><b>207</b>מוצרים</div>
-    <div><b>9</b>קטגוריות</div>
-    <div><b>36</b>אטליזים</div>
-    <div><b>24h</b>אספקה</div>
-  </div>
-  <a href="/register" class="hero-cta">תראו לי מחירים</a>
-</div>
-
-<div class="speed">
-  <span><b>הזמנה:</b> 3 דקות</span>
-  <span><b>משלוח:</b> 24-72 שעות</span>
-  <span><b>תשלום:</b> שוטף+30</span>
-  <span><b>מינימום:</b> 1,600₪</span>
-</div>
-
-<!-- Categories -->
-<div class="cats">
-  <div class="cats-title">מה צריכים? הכל פה.</div>
-  <div class="cats-grid">
-    <a class="cat-card" href="#best"><div class="cat-icon">&#9632;</div><div class="cat-name">קלקר</div><div class="cat-count">46 מוצרים</div><div class="cat-price">מ-120₪</div></a>
-    <a class="cat-card" href="#best"><div class="cat-icon">&#9644;</div><div class="cat-name">אלומיניום</div><div class="cat-count">19 מוצרים</div><div class="cat-price">מ-0.45₪</div></a>
-    <a class="cat-card" href="#best"><div class="cat-icon">&#9633;</div><div class="cat-name">פלסטיק</div><div class="cat-count">8 מוצרים</div><div class="cat-price">מ-240₪</div></a>
-    <a class="cat-card" href="#best"><div class="cat-icon">&#8854;</div><div class="cat-name">ניילון</div><div class="cat-count">14 מוצרים</div><div class="cat-price">מ-8₪</div></a>
-    <a class="cat-card" href="#best"><div class="cat-icon">&#9878;</div><div class="cat-name">שקיות</div><div class="cat-count">58 מוצרים</div><div class="cat-price">מ-8₪</div></a>
-    <a class="cat-card" href="#best"><div class="cat-icon">&#9757;</div><div class="cat-name">כפפות</div><div class="cat-count">17 מוצרים</div><div class="cat-price">מ-3₪</div></a>
-    <a class="cat-card" href="#best"><div class="cat-icon">&#9998;</div><div class="cat-name">סכינים</div><div class="cat-count">13 מוצרים</div><div class="cat-price">מ-2₪</div></a>
-    <a class="cat-card" href="#best"><div class="cat-icon">&#9000;</div><div class="cat-name">נייר</div><div class="cat-count">15 מוצרים</div><div class="cat-price">מ-10₪</div></a>
-    <a class="cat-card" href="#best"><div class="cat-icon">&#10047;</div><div class="cat-name">ניקיון</div><div class="cat-count">17 מוצרים</div><div class="cat-price">מ-7₪</div></a>
-  </div>
-</div>
-
-<!-- Best sellers from REAL data -->
-<div class="best" id="best">
-  <div class="best-title">הנמכרים ביותר לאטליזים</div>
-  <div class="best-scroll">
-    <div class="bp"><div class="bp-img"><img src="/items/722.jpg" alt="" loading="lazy"></div><div class="bp-body"><div class="bp-name">קלקר סופג שחור צלעות 480</div><div class="bp-price">290<small>₪</small></div><div class="bp-sold">11 הזמנות</div></div></div>
-    <div class="bp"><div class="bp-img"><img src="/items/50.jpg" alt="" loading="lazy"></div><div class="bp-body"><div class="bp-name">כפפות ניטריל שחור L 100 יח'</div><div class="bp-price">14<small>₪</small></div><div class="bp-sold">12 הזמנות</div></div></div>
-    <div class="bp"><div class="bp-img"><img src="/items/724.jpg" alt="" loading="lazy"></div><div class="bp-body"><div class="bp-name">ניילון נצמד מכונה 6 ק"ג</div><div class="bp-price">75<small>₪</small></div><div class="bp-sold">10 הזמנות</div></div></div>
-    <div class="bp"><div class="bp-img"><img src="/items/906.jpg" alt="" loading="lazy"></div><div class="bp-body"><div class="bp-name">קלקר סופג שחור שניצל 500</div><div class="bp-price">200<small>₪</small></div><div class="bp-sold">10 הזמנות</div></div></div>
-    <div class="bp"><div class="bp-img"><img src="/items/721.jpg" alt="" loading="lazy"></div><div class="bp-body"><div class="bp-name">קלקר סופג שחור כרעיים 500</div><div class="bp-price">290<small>₪</small></div><div class="bp-sold">5 הזמנות</div></div></div>
-    <div class="bp"><div class="bp-img"><img src="/items/729.jpg" alt="" loading="lazy"></div><div class="bp-body"><div class="bp-name">קלקר רגיל שחור צלעות 480</div><div class="bp-price">211<small>₪</small></div><div class="bp-sold">7 הזמנות</div></div></div>
-    <div class="bp"><div class="bp-img"><img src="/items/770.jpg" alt="" loading="lazy"></div><div class="bp-body"><div class="bp-name">פלסטיק שחור כרעיים 500</div><div class="bp-price">260<small>₪</small></div><div class="bp-sold">4 הזמנות</div></div></div>
-    <div class="bp"><div class="bp-img"><img src="/items/857.jpg" alt="" loading="lazy"></div><div class="bp-body"><div class="bp-name">אקונומיקה ריחנית 4L</div><div class="bp-price">10<small>₪</small></div><div class="bp-sold">5 הזמנות</div></div></div>
-  </div>
-</div>
-
-<!-- Real orders — what butchers actually buy -->
-<div class="real">
-  <div class="real-title">מה אטליזים באמת מזמינים?</div>
-  <div class="real-sub">על בסיס הזמנות אמיתיות מ-36 אטליזים</div>
-  <div class="real-list">
-    <div class="rl"><div class="rl-img"><img src="/items/722.jpg" alt=""></div><div class="rl-info"><div class="rl-name">מגש קלקר סופג שחור — צלעות 480 יח'</div><div class="rl-meta">הנמכר ביותר | 11 הזמנות חוזרות</div></div><div class="rl-price">290₪</div></div>
-    <div class="rl"><div class="rl-img"><img src="/items/724.jpg" alt=""></div><div class="rl-info"><div class="rl-name">ניילון נצמד מכונה — 6 ק"ג</div><div class="rl-meta">כל אטליז מזמין | 10 הזמנות</div></div><div class="rl-price">75₪</div></div>
-    <div class="rl"><div class="rl-img"><img src="/items/50.jpg" alt=""></div><div class="rl-info"><div class="rl-name">כפפות ניטריל שחור L — 100 יח'</div><div class="rl-meta">חובה | 12 הזמנות חוזרות</div></div><div class="rl-price">14₪</div></div>
-    <div class="rl"><div class="rl-img"><img src="/items/906.jpg" alt=""></div><div class="rl-info"><div class="rl-name">מגש קלקר סופג שחור — שניצל 500 יח'</div><div class="rl-meta">פופולרי | 10 הזמנות</div></div><div class="rl-price">200₪</div></div>
-    <div class="rl"><div class="rl-img"><img src="/items/824.jpg" alt=""></div><div class="rl-info"><div class="rl-name">דפי הפרדה פרגפלסט דק — 25x35</div><div class="rl-meta">בסיס | 6 הזמנות</div></div><div class="rl-price">18₪</div></div>
-    <div class="rl"><div class="rl-img"><img src="/items/107.jpg" alt=""></div><div class="rl-info"><div class="rl-name">נייר סופג לאקי — 6 גלילים</div><div class="rl-meta">שוטף | 4 הזמנות</div></div><div class="rl-price">10₪</div></div>
-  </div>
-</div>
-
-<!-- Benefits -->
-<div class="bens">
-  <div class="ben"><div class="ben-title">הכל במקום אחד</div><div class="ben-desc">207 מוצרים. ספק אחד. חשבונית אחת.</div></div>
-  <div class="ben"><div class="ben-title">מהר</div><div class="ben-desc">הזמנה ב-3 דקות. משלוח 24-72 שעות.</div></div>
-  <div class="ben"><div class="ben-title">בזול</div><div class="ben-desc">מחירי סיטונאות. מחירון קבוע שלא משתנה.</div></div>
-  <div class="ben"><div class="ben-title">בלי כאב ראש</div><div class="ben-desc">הזמנה חוזרת בקליק. המערכת זוכרת מה צריך.</div></div>
-</div>
-
-<!-- CTA -->
-<div class="cta">
-  <h2>רוצים לראות את כל 207 המוצרים?</h2>
-  <div class="cta-sub">הרשמה חינמית — מחירון אישי לאטליז שלכם</div>
-  <a href="/register" class="cta-btn">הרשמה לפורטל המחירים</a>
-  <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%90%D7%98%D7%9C%D7%99%D7%96%20%D7%95%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A8%D7%90%D7%95%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%D7%99%D7%9D" class="cta-wa" target="_blank">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.553 4.103 1.517 5.832L0 24l6.335-1.49C8.005 23.467 9.959 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75c-1.855 0-3.607-.487-5.122-1.382l-.368-.218-3.81.896.942-3.685-.24-.38A9.688 9.688 0 012.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75z"/></svg>
-    יש לי אטליז — שלחו מחירים
+<!-- FIXED HEADER -->
+<header class="topbar" id="topbar">
+  <a href="https://ymarket.co.il" class="topbar-brand">
+    <span class="topbar-logo">Y</span>
+    וואי מרקט
   </a>
-  <a href="tel:037740400" class="cta-phone">03-7740400</a>
-  <div class="cta-note">בואו על קפה קטן — כבר נרוויח</div>
+  <div class="topbar-actions">
+    <a href="tel:037740400" class="topbar-phone">03-7740400</a>
+    <a href="https://ymarket.co.il/register" class="topbar-cta">הרשמה לפורטל</a>
+  </div>
+</header>
+
+<!-- ═══════ HERO ═══════ -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
+  </div>
+  <div class="hero-content reveal">
+    <div class="hero-badge"><span class="hero-badge-dot"></span> המומחים לאספקת אטליזים</div>
+    <h1>
+      <span class="line-thin">כל המתכלים לאטליז שלכם</span>
+      <span class="accent">הכל. מהר. בזול.</span>
+    </h1>
+    <p class="hero-sub">ספק אחד, הזמנה אחת, חשבונית אחת. קלקרים, מגשים, כפפות, ניילון, שקיות, נייר ועוד 207 מוצרים — במשלוח עד הדלת.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-num">207</div><div class="hero-stat-label">מוצרים</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">9</div><div class="hero-stat-label">קטגוריות</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">36</div><div class="hero-stat-label">אטליזים</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">24h</div><div class="hero-stat-label">אספקה</div></div>
+    </div>
+    <div class="hero-buttons">
+      <a href="https://ymarket.co.il/register" class="btn-primary">הרשמה לפורטל המחירים</a>
+      <a href="tel:037740400" class="btn-secondary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        03-7740400
+      </a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span class="hero-scroll-text">גללו למטה</span>
+    <span class="hero-scroll-line"></span>
+  </div>
+</section>
+
+<!-- ═══════ TRUST RIBBON ═══════ -->
+<div class="trust-ribbon reveal">
+  <div class="trust-inner">
+    <div class="trust-item"><div class="trust-icon">&#9889;</div><span>משלוח 24-72 שעות</span></div>
+    <div class="trust-item"><div class="trust-icon">&#8362;</div><span>מחירי סיטונאות</span></div>
+    <div class="trust-item"><div class="trust-icon">&#9745;</div><span>חשבונית מס</span></div>
+    <div class="trust-item"><div class="trust-icon">&#128260;</div><span>הזמנה חוזרת בקליק</span></div>
+    <div class="trust-item"><div class="trust-icon">&#9749;</div><span>שוטף + 30</span></div>
+  </div>
 </div>
 
-<div class="foot">&copy; 2026 וואי מרקט — נגלר סחר והפצה. משלוח ארצי | מחירי סיטונאות | חשבונית מס</div>
-<div class="mob"><a href="/register">תראו לי מחירים</a></div>
+<!-- ═══════ CATEGORIES ═══════ -->
+<section class="section cats-section">
+  <div class="section-header reveal">
+    <div class="section-label">מה צריכים?</div>
+    <h2 class="section-title">9 קטגוריות. 207 מוצרים. הכל פה.</h2>
+    <p class="section-desc">בחרו קטגוריה ותראו מה יש. כל מה שאטליז צריך ביום יום.</p>
+  </div>
+  <div class="cats-grid reveal reveal-stagger">
+    <a class="cat-card" data-filter="trays"><div class="cat-icon">&#9632;</div><div class="cat-name">קלקר סופג</div><div class="cat-count">46 מוצרים</div><div class="cat-price">מ-120&#8362;</div></a>
+    <a class="cat-card" data-filter="trays"><div class="cat-icon">&#9644;</div><div class="cat-name">מגשי אלומיניום</div><div class="cat-count">19 מוצרים</div><div class="cat-price">מ-0.45&#8362;</div></a>
+    <a class="cat-card" data-filter="trays"><div class="cat-icon">&#9633;</div><div class="cat-name">מגשי פלסטיק</div><div class="cat-count">8 מוצרים</div><div class="cat-price">מ-240&#8362;</div></a>
+    <a class="cat-card" data-filter="wrap"><div class="cat-icon">&#8854;</div><div class="cat-name">ניילון ואריזה</div><div class="cat-count">14 מוצרים</div><div class="cat-price">מ-8&#8362;</div></a>
+    <a class="cat-card" data-filter="bags"><div class="cat-icon">&#9878;</div><div class="cat-name">שקיות</div><div class="cat-count">58 מוצרים</div><div class="cat-price">מ-8&#8362;</div></a>
+    <a class="cat-card" data-filter="gloves"><div class="cat-icon">&#9757;</div><div class="cat-name">כפפות</div><div class="cat-count">17 מוצרים</div><div class="cat-price">מ-3&#8362;</div></a>
+    <a class="cat-card" data-filter="knives"><div class="cat-icon">&#9998;</div><div class="cat-name">סכינים וכלים</div><div class="cat-count">13 מוצרים</div><div class="cat-price">מ-2&#8362;</div></a>
+    <a class="cat-card" data-filter="paper"><div class="cat-icon">&#9000;</div><div class="cat-name">נייר</div><div class="cat-count">15 מוצרים</div><div class="cat-price">מ-10&#8362;</div></a>
+    <a class="cat-card" data-filter="clean"><div class="cat-icon">&#10047;</div><div class="cat-name">ניקיון</div><div class="cat-count">17 מוצרים</div><div class="cat-price">מ-7&#8362;</div></a>
+  </div>
+</section>
 
+<!-- ═══════ PRODUCT GRID ═══════ -->
+<section class="section products-section" id="products">
+  <div class="section-header reveal">
+    <div class="section-label">הקטלוג</div>
+    <h2 class="section-title">המוצרים הכי פופולריים</h2>
+    <p class="section-desc">30 מוצרים שאטליזים הכי מזמינים. נתונים אמיתיים מ-36 אטליזים.</p>
+  </div>
+
+  <div class="tab-bar reveal" id="tabBar">
+    <button class="tab active" data-tab="all">הכל</button>
+    <button class="tab" data-tab="trays">מגשים וקלקר</button>
+    <button class="tab" data-tab="wrap">ניילון ואריזה</button>
+    <button class="tab" data-tab="gloves">כפפות</button>
+    <button class="tab" data-tab="bags">שקיות</button>
+    <button class="tab" data-tab="knives">סכינים</button>
+    <button class="tab" data-tab="clean">ניקיון</button>
+    <button class="tab" data-tab="paper">נייר</button>
+    <button class="tab" data-tab="stickers">מדבקות</button>
+  </div>
+
+  <div class="product-grid reveal" id="productGrid">
+    <!-- מגשים וקלקר -->
+    <div class="pcard" data-cat="trays"><span class="pcard-badge trays">קלקר</span><div class="pcard-img"><img src="/items/722.jpg" alt="קלקר סופג שחור צלעות" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">קלקר סופג שחור צלעות 480 יח'</div><div class="pcard-bottom"><div><div class="pcard-price">290<small>&#8362;</small></div><div class="pcard-unit">לארגז</div></div><div class="pcard-add" title="הוסף לרשימה">+</div></div></div></div>
+    <div class="pcard" data-cat="trays"><span class="pcard-badge trays">קלקר</span><div class="pcard-img"><img src="/items/906.jpg" alt="קלקר סופג שחור שניצל" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">קלקר סופג שחור שניצל 500 יח'</div><div class="pcard-bottom"><div><div class="pcard-price">200<small>&#8362;</small></div><div class="pcard-unit">לארגז</div></div><div class="pcard-add">+</div></div></div></div>
+    <div class="pcard" data-cat="trays"><span class="pcard-badge trays">קלקר</span><div class="pcard-img"><img src="/items/721.jpg" alt="קלקר סופג כרעיים" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">קלקר סופג שחור כרעיים 500 יח'</div><div class="pcard-bottom"><div><div class="pcard-price">290<small>&#8362;</small></div><div class="pcard-unit">לארגז</div></div><div class="pcard-add">+</div></div></div></div>
+    <div class="pcard" data-cat="trays"><span class="pcard-badge trays">קלקר</span><div class="pcard-img"><img src="/items/729.jpg" alt="קלקר רגיל שחור" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">קלקר רגיל שחור צלעות 480 יח'</div><div class="pcard-bottom"><div><div class="pcard-price">211<small>&#8362;</small></div><div class="pcard-unit">לארגז</div></div><div class="pcard-add">+</div></div></div></div>
+    <div class="pcard" data-cat="trays"><span class="pcard-badge trays">קלקר</span><div class="pcard-img"><img src="/items/913.jpg" alt="מגש קלקר כחול" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">מגש קלקר סופג כחול 480 יח'</div><div class="pcard-bottom"><div><div class="pcard-price">290<small>&#8362;</small></div><div class="pcard-unit">לארגז</div></div><div class="pcard-add">+</div></div></div></div>
+    <div class="pcard" data-cat="trays"><span class="pcard-badge trays">פלסטיק</span><div class="pcard-img"><img src="/items/770.jpg" alt="פלסטיק שחור כרעיים" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">מגש פלסטיק שחור כרעיים 500 יח'</div><div class="pcard-bottom"><div><div class="pcard-price">260<small>&#8362;</small></div><div class="pcard-unit">לארגז</div></div><div class="pcard-add">+</div></div></div></div>
+    <div class="pcard" data-cat="trays"><span class="pcard-badge trays">אלומיניום</span><div class="pcard-img"><img src="/items/143.jpg" alt="מגש אלומיניום מרובע" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">מגש אלומיניום מרובע</div><div class="pcard-bottom"><div><div class="pcard-price">0.45<small>&#8362;</small></div><div class="pcard-unit">ליחידה</div></div><div class="pcard-add">+</div></div></div></div>
+    <div class="pcard" data-cat="trays"><span class="pcard-badge trays">אלומיניום</span><div class="pcard-img"><img src="/items/363.jpg" alt="מגש אלומיניום מלבני" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">מגש אלומיניום מלבני</div><div class="pcard-bottom"><div><div class="pcard-price">0.50<small>&#8362;</small></div><div class="pcard-unit">ליחידה</div></div><div class="pcard-add">+</div></div></div></div>
+    <div class="pcard" data-cat="trays"><span class="pcard-badge trays">אלומיניום</span><div class="pcard-img"><img src="/items/582.jpg" alt="מגש אלומיניום 105" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">מגש אלומיניום 105</div><div class="pcard-bottom"><div><div class="pcard-price">0.95<small>&#8362;</small></div><div class="pcard-unit">ליחידה</div></div><div class="pcard-add">+</div></div></div></div>
+    <div class="pcard" data-cat="trays"><span class="pcard-badge trays">אלומיניום</span><div class="pcard-img"><img src="/items/607.jpg" alt="מגש אלומיניום 8A" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">מגש אלומיניום 8A</div><div class="pcard-bottom"><div><div class="pcard-price">0.96<small>&#8362;</small></div><div class="pcard-unit">ליחידה</div></div><div class="pcard-add">+</div></div></div></div>
+    <div class="pcard" data-cat="trays"><span class="pcard-badge trays">נייר</span><div class="pcard-img"><img src="/items/406.jpg" alt="שקית נייר בגט" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">שקית נייר בגט חום 1000 יח'</div><div class="pcard-bottom"><div><div class="pcard-price">70<small>&#8362;</small></div><div class="pcard-unit">לארגז</div></div><div class="pcard-add">+</div></div></div></div>
+
+    <!-- ניילון ואריזה -->
+    <div class="pcard" data-cat="wrap"><span class="pcard-badge wrap">אריזה</span><div class="pcard-img"><img src="/items/724.jpg" alt="ניילון נצמד" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">ניילון נצמד מכונה 6 ק"ג</div><div class="pcard-bottom"><div><div class="pcard-price">75<small>&#8362;</small></div><div class="pcard-unit">לגליל</div></div><div class="pcard-add">+</div></div></div></div>
+    <div class="pcard" data-cat="wrap"><span class="pcard-badge wrap">אריזה</span><div class="pcard-img"><img src="/items/824.jpg" alt="דפי הפרדה דק" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">דפי הפרדה פרגפלסט דק</div><div class="pcard-bottom"><div><div class="pcard-price">18<small>&#8362;</small></div><div class="pcard-unit">לחבילה</div></div><div class="pcard-add">+</div></div></div></div>
+    <div class="pcard" data-cat="wrap"><span class="pcard-badge wrap">אריזה</span><div class="pcard-img"><img src="/items/748.jpg" alt="דפי הפרדה עבה" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">דפי הפרדה פרגפלסט עבה</div><div class="pcard-bottom"><div><div class="pcard-price">20<small>&#8362;</small></div><div class="pcard-unit">לחבילה</div></div><div class="pcard-add">+</div></div></div></div>
+    <div class="pcard" data-cat="wrap"><span class="pcard-badge wrap">אריזה</span><div class="pcard-img"><img src="/items/587.jpg" alt="שקיות סנדוויץ" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">150 שקיות סנדוויץ HD</div><div class="pcard-bottom"><div><div class="pcard-price">8<small>&#8362;</small></div><div class="pcard-unit">לחבילה</div></div><div class="pcard-add">+</div></div></div></div>
+
+    <!-- כפפות -->
+    <div class="pcard" data-cat="gloves"><span class="pcard-badge gloves">כפפות</span><div class="pcard-img"><img src="/items/50.jpg" alt="כפפות ויטריל שחור" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">כפפות ויטריל שחור 100 יח'</div><div class="pcard-bottom"><div><div class="pcard-price">14<small>&#8362;</small></div><div class="pcard-unit">לקופסה</div></div><div class="pcard-add">+</div></div></div></div>
+    <div class="pcard" data-cat="gloves"><span class="pcard-badge gloves">כפפות</span><div class="pcard-img"><img src="/items/903.jpg" alt="כפפות ניטריל כחול" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">כפפות ניטריל כחול</div><div class="pcard-bottom"><div><div class="pcard-price">11<small>&#8362;</small></div><div class="pcard-unit">לקופסה</div></div><div class="pcard-add">+</div></div></div></div>
+    <div class="pcard" data-cat="gloves"><span class="pcard-badge gloves">כפפות</span><div class="pcard-img"><img src="/items/464.jpg" alt="לטקס ללא אבקה" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">לטקס ללא אבקה 50 יח'</div><div class="pcard-bottom"><div><div class="pcard-price">10<small>&#8362;</small></div><div class="pcard-unit">לקופסה</div></div><div class="pcard-add">+</div></div></div></div>
+    <div class="pcard" data-cat="gloves"><span class="pcard-badge gloves">כפפות</span><div class="pcard-img"><img src="/items/75.jpg" alt="כפפה נילון" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">כפפה נילון שקופה 100 יח'</div><div class="pcard-bottom"><div><div class="pcard-price">4<small>&#8362;</small></div><div class="pcard-unit">לקופסה</div></div><div class="pcard-add">+</div></div></div></div>
+    <div class="pcard" data-cat="gloves"><span class="pcard-badge gloves">כפפות</span><div class="pcard-img"><img src="/items/332.jpg" alt="כפפות בית גומי" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">כפפות בית גומי</div><div class="pcard-bottom"><div><div class="pcard-price">3<small>&#8362;</small></div><div class="pcard-unit">לזוג</div></div><div class="pcard-add">+</div></div></div></div>
+
+    <!-- שקיות -->
+    <div class="pcard" data-cat="bags"><span class="pcard-badge bags">שקיות</span><div class="pcard-img"><img src="/items/159.jpg" alt="שקית אשפה" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">שקית אשפה שחורה 75x90 עבה</div><div class="pcard-bottom"><div><div class="pcard-price">10<small>&#8362;</small></div><div class="pcard-unit">לאריזה</div></div><div class="pcard-add">+</div></div></div></div>
+
+    <!-- סכינים -->
+    <div class="pcard" data-cat="knives"><span class="pcard-badge knives">סכינים</span><div class="pcard-img"><img src="/items/621.jpg" alt="סכין יפני" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">סכין יפני רחב מתכת</div><div class="pcard-bottom"><div><div class="pcard-price">10<small>&#8362;</small></div><div class="pcard-unit">ליחידה</div></div><div class="pcard-add">+</div></div></div></div>
+    <div class="pcard" data-cat="knives"><span class="pcard-badge knives">סכינים</span><div class="pcard-img"><img src="/items/602.jpg" alt="שיפוד יפני" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">שיפוד יפני 15 ס"מ 100 יח'</div><div class="pcard-bottom"><div><div class="pcard-price">4<small>&#8362;</small></div><div class="pcard-unit">לחבילה</div></div><div class="pcard-add">+</div></div></div></div>
+    <div class="pcard" data-cat="knives"><span class="pcard-badge knives">סכינים</span><div class="pcard-img"><img src="/items/382.jpg" alt="קיסמי שניים" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">קיסמי שניים במלחיה 300 יח'</div><div class="pcard-bottom"><div><div class="pcard-price">2<small>&#8362;</small></div><div class="pcard-unit">ליחידה</div></div><div class="pcard-add">+</div></div></div></div>
+
+    <!-- ניקיון -->
+    <div class="pcard" data-cat="clean"><span class="pcard-badge clean">ניקיון</span><div class="pcard-img"><img src="/items/857.jpg" alt="אקונומיקה 4L" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">אקונומיקה ריחנית 4L</div><div class="pcard-bottom"><div><div class="pcard-price">10<small>&#8362;</small></div><div class="pcard-unit">לבקבוק</div></div><div class="pcard-add">+</div></div></div></div>
+    <div class="pcard" data-cat="clean"><span class="pcard-badge clean">ניקיון</span><div class="pcard-img"><img src="/items/877.jpg" alt="אקונומיקה ספריי" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">אקונומיקה ספריי 750 מ"ל</div><div class="pcard-bottom"><div><div class="pcard-price">12<small>&#8362;</small></div><div class="pcard-unit">לבקבוק</div></div><div class="pcard-add">+</div></div></div></div>
+    <div class="pcard" data-cat="clean"><span class="pcard-badge clean">ניקיון</span><div class="pcard-img"><img src="/items/482.jpg" alt="בקבוק מרסס" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">בקבוק מרסס מקצועי 1 ליטר</div><div class="pcard-bottom"><div><div class="pcard-price">7<small>&#8362;</small></div><div class="pcard-unit">ליחידה</div></div><div class="pcard-add">+</div></div></div></div>
+
+    <!-- נייר -->
+    <div class="pcard" data-cat="paper"><span class="pcard-badge paper">נייר</span><div class="pcard-img"><img src="/items/107.jpg" alt="נייר סופג" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">נייר סופג לאקי 6 גלילים</div><div class="pcard-bottom"><div><div class="pcard-price">10<small>&#8362;</small></div><div class="pcard-unit">לחבילה</div></div><div class="pcard-add">+</div></div></div></div>
+    <div class="pcard" data-cat="paper"><span class="pcard-badge paper">נייר</span><div class="pcard-img"><img src="/items/1063.jpg" alt="גליל בד תעשייתי" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">גליל בד תעשייתי לדגים</div><div class="pcard-bottom"><div><div class="pcard-price">220<small>&#8362;</small></div><div class="pcard-unit">לגליל</div></div><div class="pcard-add">+</div></div></div></div>
+    <div class="pcard" data-cat="paper"><span class="pcard-badge paper">נייר</span><div class="pcard-img"><img src="/items/1125.jpg" alt="מטלית סופגת" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">המטלית הסופגת 90 דף</div><div class="pcard-bottom"><div><div class="pcard-price">18<small>&#8362;</small></div><div class="pcard-unit">לחבילה</div></div><div class="pcard-add">+</div></div></div></div>
+
+    <!-- מדבקות -->
+    <div class="pcard" data-cat="stickers"><span class="pcard-badge stickers">מדבקות</span><div class="pcard-img"><img src="/items/168.jpg" alt="סרט אריזה" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">סרט אריזה שקוף</div><div class="pcard-bottom"><div><div class="pcard-price">5.2<small>&#8362;</small></div><div class="pcard-unit">ליחידה</div></div><div class="pcard-add">+</div></div></div></div>
+    <div class="pcard" data-cat="stickers"><span class="pcard-badge stickers">מדבקות</span><div class="pcard-img"><img src="/items/979.jpg" alt="מדבקות" loading="lazy"></div><div class="pcard-body"><div class="pcard-name">מדבקות 32 דף</div><div class="pcard-bottom"><div><div class="pcard-price">7<small>&#8362;</small></div><div class="pcard-unit">לחבילה</div></div><div class="pcard-add">+</div></div></div></div>
+  </div>
+
+  <div class="show-more-wrap reveal">
+    <a href="https://ymarket.co.il/register" class="show-more">עוד 177 מוצרים בפורטל &#8592;</a>
+  </div>
+</section>
+
+<!-- ═══════ PARALLAX DIVIDER ═══════ -->
+<div class="divider reveal">
+  <div class="divider-bg"></div>
+  <div class="divider-content">
+    <blockquote class="divider-quote">
+      "מאז שעברנו לוואי מרקט לא חסרים <strong>מגשים או ניילון</strong> באמצע יום.<br>הכל מגיע בזמן, <strong>המחיר קבוע</strong>."
+    </blockquote>
+    <div class="divider-attr">-- אטליז, קריית אונו</div>
+  </div>
+</div>
+
+<!-- ═══════ HOW IT WORKS ═══════ -->
+<section class="section process-section">
+  <div class="section-header reveal">
+    <div class="section-label">איך זה עובד</div>
+    <h2 class="section-title">מההרשמה עד המשלוח — 4 צעדים</h2>
+  </div>
+  <div class="process-timeline">
+    <div class="process-step reveal">
+      <div class="process-num">1</div>
+      <div class="process-text"><h3>הרשמה בחינם</h3><p>30 שניות. שם, טלפון, סוג עסק. מקבלים מחירון אישי לאטליז.</p><span class="tag">30 שניות</span></div>
+    </div>
+    <div class="process-step reveal reveal-delay-1">
+      <div class="process-num">2</div>
+      <div class="process-text"><h3>בוחרים מוצרים</h3><p>נכנסים לפורטל, רואים מחירים, מוסיפים לסל. 207 מוצרים מחכים.</p><span class="tag">3 דקות</span></div>
+    </div>
+    <div class="process-step reveal reveal-delay-2">
+      <div class="process-num">3</div>
+      <div class="process-text"><h3>שולחים הזמנה</h3><p>בקליק אחד. בפעם הבאה? המערכת זוכרת מה הזמנתם.</p><span class="tag">קליק אחד</span></div>
+    </div>
+    <div class="process-step reveal reveal-delay-3">
+      <div class="process-num">4</div>
+      <div class="process-text"><h3>מקבלים עד הדלת</h3><p>משלוח ארצי תוך 24-72 שעות. חשבונית מס. שוטף + 30.</p><span class="tag">24-72 שעות</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ REAL ORDERS ═══════ -->
+<section class="section real-section">
+  <div class="section-header reveal">
+    <div class="section-label">נתונים אמיתיים</div>
+    <h2 class="section-title">מה אטליזים באמת מזמינים?</h2>
+    <p class="section-desc">על בסיס הזמנות חוזרות מ-36 אטליזים ברחבי הארץ</p>
+  </div>
+  <div class="real-grid reveal reveal-stagger">
+    <div class="real-card"><div class="real-img"><img src="/items/722.jpg" alt=""></div><div class="real-info"><div class="real-name">מגש קלקר סופג שחור -- צלעות 480 יח'</div><div class="real-meta"><span>הנמכר ביותר</span><span class="dot"></span><span>11 הזמנות חוזרות</span></div></div><div class="real-price">290<small>&#8362;</small></div></div>
+    <div class="real-card"><div class="real-img"><img src="/items/724.jpg" alt=""></div><div class="real-info"><div class="real-name">ניילון נצמד מכונה -- 6 ק"ג</div><div class="real-meta"><span>כל אטליז מזמין</span><span class="dot"></span><span>10 הזמנות</span></div></div><div class="real-price">75<small>&#8362;</small></div></div>
+    <div class="real-card"><div class="real-img"><img src="/items/50.jpg" alt=""></div><div class="real-info"><div class="real-name">כפפות ניטריל שחור L -- 100 יח'</div><div class="real-meta"><span>חובה</span><span class="dot"></span><span>12 הזמנות חוזרות</span></div></div><div class="real-price">14<small>&#8362;</small></div></div>
+    <div class="real-card"><div class="real-img"><img src="/items/906.jpg" alt=""></div><div class="real-info"><div class="real-name">מגש קלקר סופג שחור -- שניצל 500 יח'</div><div class="real-meta"><span>פופולרי</span><span class="dot"></span><span>10 הזמנות</span></div></div><div class="real-price">200<small>&#8362;</small></div></div>
+    <div class="real-card"><div class="real-img"><img src="/items/824.jpg" alt=""></div><div class="real-info"><div class="real-name">דפי הפרדה פרגפלסט דק -- 25x35</div><div class="real-meta"><span>בסיס</span><span class="dot"></span><span>6 הזמנות</span></div></div><div class="real-price">18<small>&#8362;</small></div></div>
+    <div class="real-card"><div class="real-img"><img src="/items/770.jpg" alt=""></div><div class="real-info"><div class="real-name">מגש פלסטיק שחור כרעיים -- 500 יח'</div><div class="real-meta"><span>פופולרי</span><span class="dot"></span><span>4 הזמנות</span></div></div><div class="real-price">260<small>&#8362;</small></div></div>
+    <div class="real-card"><div class="real-img"><img src="/items/857.jpg" alt=""></div><div class="real-info"><div class="real-name">אקונומיקה ריחנית 4 ליטר</div><div class="real-meta"><span>שוטף</span><span class="dot"></span><span>5 הזמנות</span></div></div><div class="real-price">10<small>&#8362;</small></div></div>
+    <div class="real-card"><div class="real-img"><img src="/items/107.jpg" alt=""></div><div class="real-info"><div class="real-name">נייר סופג לאקי -- 6 גלילים</div><div class="real-meta"><span>שוטף</span><span class="dot"></span><span>4 הזמנות</span></div></div><div class="real-price">10<small>&#8362;</small></div></div>
+  </div>
+</section>
+
+<!-- ═══════ BENTO BENEFITS ═══════ -->
+<section class="section bento-section">
+  <div class="section-header reveal">
+    <div class="section-label">למה אטליזים בוחרים בנו</div>
+    <h2 class="section-title">לא סתם עוד ספק. שותף.</h2>
+  </div>
+  <div class="bento-grid reveal reveal-stagger">
+    <div class="bento-card featured">
+      <div><div class="bento-title">אטליזים שכבר מזמינים</div><div class="bento-desc">36 אטליזים ברחבי הארץ כבר סומכים עלינו. אנחנו מכירים את הצרכים של האטליז.</div></div>
+      <div class="bento-num">36</div>
+    </div>
+    <div class="bento-card"><div class="bento-icon">&#9889;</div><div class="bento-title">הכל במקום אחד</div><div class="bento-desc">207 מוצרים. קלקר, מגשים, כפפות, ניילון, שקיות, נייר. ספק אחד לכל המתכלים.</div></div>
+    <div class="bento-card"><div class="bento-icon">&#128176;</div><div class="bento-title">מחיר קבוע</div><div class="bento-desc">מחירון שלא משתנה. בלי הפתעות. בלי מו"מ כל הזמנה.</div></div>
+    <div class="bento-card"><div class="bento-icon">&#128666;</div><div class="bento-title">משלוח עד הדלת</div><div class="bento-desc">משלוח ארצי תוך 24-72 שעות. ישר לאטליז.</div></div>
+    <div class="bento-card"><div class="bento-icon">&#128260;</div><div class="bento-title">הזמנה חוזרת בקליק</div><div class="bento-desc">המערכת זוכרת מה הזמנתם. לוחצים "שכפל" ומסיימים.</div></div>
+    <div class="bento-card"><div class="bento-icon">&#128221;</div><div class="bento-title">חשבונית מס</div><div class="bento-desc">חשבונית מס כחוק. שוטף + 30. בלי דרמות.</div></div>
+  </div>
+</section>
+
+<!-- ═══════ TESTIMONIALS ═══════ -->
+<section class="section testi-section">
+  <div class="section-header reveal">
+    <div class="section-label">מה לקוחות אומרים</div>
+    <h2 class="section-title">אטליזים מספרים</h2>
+  </div>
+  <div class="testi-grid reveal reveal-stagger">
+    <div class="testi-card">
+      <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="testi-text">מאז שעברנו לוואי מרקט לא חסרים מגשים או ניילון באמצע יום. הכל מגיע בזמן, המחיר קבוע. חוסך לי שעות של רכש.</div>
+      <div class="testi-author"><div class="testi-avatar">&#1488;</div><div class="testi-info"><div class="testi-name">אטליז, קריית אונו</div><div class="testi-role">לקוח קבוע 2+ שנים</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="testi-text">הפורטל מעולה. אני נכנס, לוחץ "שכפל הזמנה קודמת" ותוך דקה סיימתי. המחירים תמיד זהים. ככה צריך.</div>
+      <div class="testi-author"><div class="testi-avatar">&#1489;</div><div class="testi-info"><div class="testi-name">אטליז, רמת גן</div><div class="testi-role">לקוח קבוע</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="testi-text">עברתי מ-3 ספקים שונים לספק אחד. הכל מגיע ביחד, חשבונית אחת, פחות כאב ראש. ומחיר יותר טוב.</div>
+      <div class="testi-author"><div class="testi-avatar">&#1490;</div><div class="testi-info"><div class="testi-name">אטליז, פתח תקווה</div><div class="testi-role">לקוח חדש</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="testi-text">הקלקרים שלהם פשוט יותר טובים ממה שהיה לי קודם. וכשהיה בעיה עם משלוח, יובל ענה מיד. שירות אישי.</div>
+      <div class="testi-author"><div class="testi-avatar">&#1491;</div><div class="testi-info"><div class="testi-name">אטליז, ראשון לציון</div><div class="testi-role">לקוח קבוע</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FAQ ═══════ -->
+<section class="section faq-section">
+  <div class="section-header reveal">
+    <div class="section-label">שאלות נפוצות</div>
+    <h2 class="section-title">יש שאלות? הנה תשובות.</h2>
+  </div>
+  <div class="faq-list reveal">
+    <div class="faq-item">
+      <div class="faq-q"><span>מה מינימום ההזמנה?</span><span class="faq-arrow">&#9660;</span></div>
+      <div class="faq-a"><p>מינימום הזמנה 1,600 ש"ח + מע"מ. רוב האטליזים מזמינים פעם בשבוע-שבועיים ומגיעים לסכום הזה בקלות עם מגשים, כפפות וניילון.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>תוך כמה זמן מגיע המשלוח?</span><span class="faq-arrow">&#9660;</span></div>
+      <div class="faq-a"><p>24-72 שעות מרגע ההזמנה. משלוח ארצי עד דלת האטליז. הזמנות שנכנסות עד 12:00 יוצאות באותו יום.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>אפשר לשלם בשוטף?</span><span class="faq-arrow">&#9660;</span></div>
+      <div class="faq-a"><p>כן, שוטף + 30 ימים. חשבונית מס כחוק. אפשר גם העברה בנקאית, צ'ק, או כרטיס אשראי.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>ההרשמה עולה כסף?</span><span class="faq-arrow">&#9660;</span></div>
+      <div class="faq-a"><p>לא. ההרשמה חינמית לגמרי ובלי התחייבות. נרשמים, רואים מחירים, מחליטים.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>איך ההזמנה החוזרת עובדת?</span><span class="faq-arrow">&#9660;</span></div>
+      <div class="faq-a"><p>המערכת שומרת את ההזמנה האחרונה שלכם. בפעם הבאה נכנסים לפורטל, לוחצים "שכפל הזמנה", מתקנים כמויות אם צריך, ושולחים. דקה.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>יש משלוח גם מחוץ לגוש דן?</span><span class="faq-arrow">&#9660;</span></div>
+      <div class="faq-a"><p>כן, משלוח ארצי. גוש דן, חיפה, ירושלים, באר שבע, אשדוד, אילת. כל הארץ.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>יש הנחות כמות?</span><span class="faq-arrow">&#9660;</span></div>
+      <div class="faq-a"><p>המחירים בפורטל כבר מחירי סיטונאות. ללקוחות קבועים עם נפח גדול — יש מחירון אישי. צרו קשר ונדבר.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ MEGA CTA ═══════ -->
+<section class="mega-cta">
+  <div class="mega-cta-bg"></div>
+  <div class="mega-cta-content reveal">
+    <h2>בואו על <span class="accent">קפה קטן</span><br>כבר נרוויח</h2>
+    <p class="mega-cta-sub">הרשמה חינמית, ללא התחייבות. מחירון אישי לאטליז שלכם.</p>
+    <div class="mega-cta-actions">
+      <a href="https://ymarket.co.il/register" class="btn-primary">הרשמה לפורטל המחירים</a>
+      <span class="mega-cta-or">או</span>
+      <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%90%D7%98%D7%9C%D7%99%D7%96%20%D7%95%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A8%D7%90%D7%95%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%D7%99%D7%9D" class="wa-btn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.553 4.103 1.517 5.832L0 24l6.335-1.49C8.005 23.467 9.959 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75c-1.855 0-3.607-.487-5.122-1.382l-.368-.218-3.81.896.942-3.685-.24-.38A9.688 9.688 0 012.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75z"/></svg>
+        יש לי אטליז -- שלחו מחירים
+      </a>
+      <a href="tel:037740400" class="phone-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        03-7740400
+      </a>
+    </div>
+    <div class="mega-cta-note">207 מוצרים לאטליזים. 9 קטגוריות. משלוח ארצי. מחירי סיטונאות. חשבונית מס.</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-brand">וואי מרקט -- נגלר סחר והפצה</div>
+  <div class="footer-links">
+    <a href="https://ymarket.co.il">אתר ראשי</a>
+    <a href="https://ymarket.co.il/register">הרשמה</a>
+    <a href="https://ymarket.co.il/catalog">קטלוג מלא</a>
+    <a href="tel:037740400">03-7740400</a>
+  </div>
+  <div class="footer-copy">&copy; 2026 וואי מרקט. כל הזכויות שמורות. משלוח ארצי | מחירי סיטונאות | חשבונית מס</div>
+</footer>
+
+<!-- MOBILE STICKY CTA -->
+<div class="sticky-cta">
+  <div class="sticky-cta-inner">
+    <a href="https://ymarket.co.il/register" class="s-primary">הרשמה לפורטל</a>
+    <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%90%D7%98%D7%9C%D7%99%D7%96" class="s-wa" target="_blank">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.553 4.103 1.517 5.832L0 24l6.335-1.49C8.005 23.467 9.959 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75c-1.855 0-3.607-.487-5.122-1.382l-.368-.218-3.81.896.942-3.685-.24-.38A9.688 9.688 0 012.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75z"/></svg>
+      וואטסאפ
+    </a>
+  </div>
+</div>
+
+<script>
+/* ═══ Scroll Reveal ═══ */
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');if(e.target.classList.contains('reveal-stagger')){e.target.querySelectorAll(':scope > *').forEach(c=>c.classList.add('visible'))}obs.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+/* ═══ Topbar scroll effect ═══ */
+let lastScroll=0;const topbar=document.getElementById('topbar');
+window.addEventListener('scroll',()=>{const s=window.scrollY;topbar.classList.toggle('scrolled',s>60);lastScroll=s},{passive:true});
+
+/* ═══ Tab filtering ═══ */
+document.querySelectorAll('.tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    const f=tab.dataset.tab;
+    document.querySelectorAll('#productGrid .pcard').forEach(c=>{
+      c.classList.toggle('filtered-out',f!=='all'&&c.dataset.cat!==f);
+    });
+  });
+});
+
+/* ═══ Category card → tab filter ═══ */
+document.querySelectorAll('.cat-card[data-filter]').forEach(card=>{
+  card.addEventListener('click',(e)=>{
+    e.preventDefault();
+    const f=card.dataset.filter;
+    document.getElementById('products').scrollIntoView({behavior:'smooth'});
+    setTimeout(()=>{
+      document.querySelectorAll('.tab').forEach(t=>{t.classList.toggle('active',t.dataset.tab===f)});
+      document.querySelectorAll('#productGrid .pcard').forEach(c=>{c.classList.toggle('filtered-out',c.dataset.cat!==f)});
+    },400);
+  });
+});
+
+/* ═══ FAQ accordion ═══ */
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const item=q.parentElement;
+    document.querySelectorAll('.faq-item').forEach(i=>{if(i!==item)i.classList.remove('open')});
+    item.classList.toggle('open');
+  });
+});
+
+/* ═══ Add to list interaction ═══ */
+document.querySelectorAll('.pcard-add').forEach(btn=>{
+  btn.addEventListener('click',(e)=>{
+    e.stopPropagation();
+    if(btn.classList.contains('added')){btn.classList.remove('added');btn.textContent='+';btn.style.background='';btn.style.color='';btn.style.borderColor=''}
+    else{btn.classList.add('added');btn.textContent='&#10003;';btn.style.background='var(--green)';btn.style.color='#fff';btn.style.borderColor='var(--green)'}
+  });
+});
+</script>
 <script src="/js/analytics.min.js" defer></script>
 </body>
 </html>
