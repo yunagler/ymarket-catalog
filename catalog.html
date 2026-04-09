@@ -732,6 +732,51 @@
       });
       document.addEventListener('click',function(e){if(!searchInput.contains(e.target)&&!searchDropdown.contains(e.target))searchDropdown.classList.remove('active');});
 
+      // ── Apply ?search= from URL ──
+      var urlParams = new URLSearchParams(window.location.search);
+      var urlSearch = urlParams.get('search');
+      if (urlSearch && urlSearch.trim()) {
+        var sq = urlSearch.trim();
+        searchInput.value = sq;
+        var ql = sq.toLowerCase();
+        var searchResults = allProducts.filter(function(p){
+          return (p.name||'').toLowerCase().indexOf(ql)!==-1 ||
+            (p.searchTags||'').toLowerCase().indexOf(ql)!==-1 ||
+            (p.description||'').toLowerCase().indexOf(ql)!==-1 ||
+            (p.categoryName||'').toLowerCase().indexOf(ql)!==-1;
+        });
+        // Hide all category sections and show search results grid
+        var catSections = document.getElementById('catSections');
+        var pills = document.getElementById('catPills');
+        if (pills) pills.style.display = 'none';
+        var heroTitle = document.querySelector('.catalog-hero__title');
+        if (heroTitle) heroTitle.textContent = 'תוצאות חיפוש: "' + sq + '"';
+        var heroPar = document.querySelector('.catalog-hero__sub');
+        if (heroPar) heroPar.textContent = searchResults.length + ' מוצרים נמצאו';
+        document.getElementById('totalCount').textContent = searchResults.length;
+        if (catSections) {
+          var gridHtml = '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;padding:20px 0;">';
+          if (!searchResults.length) {
+            gridHtml += '<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:#94a3b8;font-size:1.1rem;">לא נמצאו מוצרים עבור "' + esc(sq) + '"</div>';
+          }
+          searchResults.forEach(function(p){
+            var img = (p.imageUrl||'/items/'+p.id+'.jpg');
+            var price = p.saleNis ? fmtPrice(p.saleNis) : 'צרו קשר';
+            gridHtml += '<a href="/products/'+encodeURIComponent(p.slug||'')+'" style="background:#fff;border-radius:16px;border:1px solid #e5e9ef;overflow:hidden;text-decoration:none;color:inherit;transition:box-shadow .2s;display:flex;flex-direction:column;" onmouseover="this.style.boxShadow=\'0 8px 24px rgba(0,0,0,.08)\'" onmouseout="this.style.boxShadow=\'none\'">' +
+              '<div style="aspect-ratio:1;background:#f8fafc;display:flex;align-items:center;justify-content:center;padding:16px;"><img src="'+img+'" alt="" style="max-width:100%;max-height:100%;object-fit:contain;" onerror="this.src=\'https://placehold.co/200x200/f0f2f5/94a3b8?text=img\'"></div>' +
+              '<div style="padding:12px 16px;"><div style="font-weight:600;font-size:.9rem;color:#112A45;margin-bottom:4px;line-height:1.4;">'+esc(p.name)+'</div>' +
+              '<div style="font-size:.85rem;color:#1B3A5C;font-weight:700;">'+price+'</div>' +
+              (p.categoryName?'<div style="font-size:.75rem;color:#94a3b8;margin-top:4px;">'+esc(p.categoryName)+'</div>':'') +
+              '</div></a>';
+          });
+          gridHtml += '</div>';
+          catSections.innerHTML = gridHtml;
+        }
+        // Hide search box since we're already showing results
+        var searchBox = document.querySelector('.search-box');
+        if (searchBox) searchBox.style.display = 'none';
+      }
+
       updateBadge();
     }
 
