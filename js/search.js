@@ -8,9 +8,9 @@
     overlay.className = 'gsearch-overlay';
     overlay.innerHTML =
       '<div class="gsearch-box">' +
-        '<form action="/catalog" method="get" class="gsearch-form">' +
+        '<form action="/search" method="get" class="gsearch-form">' +
           '<i class="fas fa-search gsearch-icon"></i>' +
-          '<input type="search" name="search" class="gsearch-input" placeholder="חפשו מוצר, קטגוריה או ברקוד..." autocomplete="off" autofocus>' +
+          '<input type="search" name="q" class="gsearch-input" placeholder="חפשו מוצר, קטגוריה או ברקוד..." autocomplete="off" autofocus>' +
           '<button type="button" class="gsearch-close" aria-label="סגור"><i class="fas fa-times"></i></button>' +
         '</form>' +
         '<div class="gsearch-results" id="gsearchResults"></div>' +
@@ -107,7 +107,7 @@
   if (form) form.addEventListener('submit', function(e){
     e.preventDefault();
     var q = overlay.querySelector('.gsearch-input').value.trim();
-    if (q) window.location.href = '/catalog?search=' + encodeURIComponent(q);
+    if (q) window.location.href = '/search?q=' + encodeURIComponent(q);
   });
 
   // Live search

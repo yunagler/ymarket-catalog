@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>חיפוש מוצרים | וואי מרקט</title>
+  <meta name="description" content="חיפוש מוצרים בקטלוג וואי מרקט. 825+ מוצרי צריכה שוטפת במחירי סיטונאות.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#1B3A5C">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root{--navy-900:#0A1628;--navy-800:#112A45;--navy-700:#1B3A5C;--navy-600:#2A5080;--navy-300:#7AAAD6;--navy-100:#D4E6F4;--navy-50:#EBF2FA;--action:#0A6BFF;--action-hover:#0856D6;--action-light:#3D8AFF;--action-glow:rgba(10,107,255,0.35);--action-bg:rgba(10,107,255,0.06);--gold:#E8A735;--gold-hover:#D4952E;--gold-glow:rgba(232,167,53,0.3);--green:#1a7f37;--surface:#FFFFFF;--surface-alt:#F6F8FB;--surface-glass:rgba(255,255,255,0.65);--surface-glass-strong:rgba(255,255,255,0.82);--text-primary:#0F172A;--text-secondary:#475569;--text-muted:#64748B;--text-on-dark:#FFF;--border:rgba(27,58,92,0.1);--border-hover:rgba(10,107,255,0.3);--shadow-sm:0 2px 8px rgba(10,22,40,0.06);--shadow-md:0 4px 16px rgba(10,22,40,0.08);--shadow-lg:0 8px 32px rgba(10,22,40,0.1);--font:'Heebo',Arial,sans-serif;--fs-xs:0.75rem;--fs-sm:0.875rem;--fs-base:1rem;--fs-md:1.125rem;--fs-lg:clamp(1.15rem,1.5vw,1.3rem);--fs-xl:clamp(1.35rem,2vw,1.6rem);--fs-2xl:clamp(1.6rem,2.5vw,2.1rem);--fs-3xl:clamp(2rem,3vw,2.75rem);--r-sm:6px;--r-md:10px;--r-lg:16px;--r-xl:24px;--r-2xl:32px;--r-pill:100px;--max-w:1320px;--padding:clamp(1rem,3vw,2rem)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font);font-size:var(--fs-base);color:var(--text-primary);background:var(--surface);direction:rtl;text-align:right;-webkit-font-smoothing:antialiased}img{display:block;max-width:100%;height:auto}a{color:inherit;text-decoration:none}button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}.container{width:100%;max-width:var(--max-w);margin:0 auto;padding:0 var(--padding)}
+
+    /* Announcement */
+    .announcement{background:linear-gradient(135deg,var(--navy-900),var(--navy-800));text-align:center;font-size:var(--fs-sm);font-weight:700;position:relative;z-index:100}.announcement a{display:flex;align-items:center;justify-content:center;gap:10px;padding:11px 16px;color:var(--gold);min-height:44px;transition:background .3s}.announcement a:hover{background:rgba(232,167,53,.08)}.announcement::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+
+    /* Info Bar */
+    .info-bar{background:var(--surface);border-bottom:1px solid var(--border);font-size:.82rem;color:var(--text-secondary)}.info-bar .container{display:flex;justify-content:space-between;align-items:center;padding-top:6px;padding-bottom:6px}.info-bar__group{display:flex;align-items:center;gap:var(--padding)}.info-bar__item{display:flex;align-items:center;gap:6px}.info-bar__item a{color:var(--text-secondary);transition:color .2s}.info-bar__item a:hover{color:var(--action)}.info-bar__social a{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;color:var(--text-secondary);transition:all .25s}.info-bar__social a:hover{color:var(--action);background:var(--action-bg)}
+
+    /* Header */
+    .header{background:var(--surface-glass-strong);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:9000;transition:box-shadow .3s}.header.scrolled{box-shadow:0 4px 24px rgba(10,22,40,.08)}.header .container{display:flex;align-items:center;justify-content:space-between;height:72px}.header__logo{flex-shrink:0}.header__logo img{height:44px;width:auto}
+    .nav{display:flex;align-items:center;gap:2px;flex:1;justify-content:center}.nav__item{position:relative}.nav__link{display:flex;align-items:center;gap:6px;padding:10px 18px;font-size:var(--fs-sm);font-weight:500;color:var(--text-secondary);border-radius:var(--r-md);transition:all .2s;white-space:nowrap}.nav__link:hover,.nav__link.active{color:var(--action);background:var(--action-bg)}
+    .header__actions{display:flex;align-items:center;gap:4px}.header__btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:var(--r-md);font-size:var(--fs-sm);font-weight:500;color:var(--text-secondary);background:none;border:none;cursor:pointer;transition:all .2s;position:relative;white-space:nowrap}.header__btn:hover{color:var(--action);background:var(--action-bg)}.header__login{color:var(--navy-700)}.header__register{background:var(--gold);color:var(--navy-900);border-radius:var(--r-pill);padding:8px 20px;font-weight:700}.header__register:hover{background:var(--gold-hover);color:var(--navy-900)}
+    .cart-badge{display:none;background:var(--gold);color:var(--navy-900);font-size:10px;font-weight:800;min-width:18px;height:18px;border-radius:50%;align-items:center;justify-content:center;position:absolute;top:-4px;right:-4px}
+    .mobile-menu-btn{display:none;background:none;border:none;font-size:1.4rem;color:var(--navy-700);cursor:pointer;padding:8px;min-width:44px;min-height:44px;align-items:center;justify-content:center}
+
+    /* Search Hero */
+    .search-hero{background:linear-gradient(135deg,var(--navy-900) 0%,var(--navy-700) 100%);padding:clamp(2rem,5vw,3.5rem) 0;color:white;text-align:center;position:relative;overflow:hidden}
+    .search-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(10,107,255,.15),transparent 70%)}
+    .search-hero h1{font-size:var(--fs-2xl);font-weight:800;color:white;margin-bottom:8px}
+    .search-hero p{color:rgba(255,255,255,.7);font-size:var(--fs-md)}
+    .search-bar{max-width:640px;margin:24px auto 0;position:relative}
+    .search-bar input{width:100%;padding:16px 52px 16px 16px;background:rgba(255,255,255,.12);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.2);border-radius:var(--r-xl);color:white;font-size:var(--fs-md);font-weight:500;outline:none;transition:all .3s;font-family:var(--font)}
+    .search-bar input::placeholder{color:rgba(255,255,255,.5)}
+    .search-bar input:focus{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.4);box-shadow:0 0 0 4px rgba(10,107,255,.2)}
+    .search-bar i{position:absolute;right:18px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.5);font-size:1.1rem;pointer-events:none}
+
+    /* Results */
+    .results-section{padding:var(--padding) 0 4rem}
+    .results-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px}
+    .results-count{font-size:var(--fs-sm);color:var(--text-muted);font-weight:500}
+    .results-count strong{color:var(--navy-700)}
+    .results-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px}
+    .p-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;transition:all .25s;display:flex;flex-direction:column}
+    .p-card:hover{box-shadow:var(--shadow-lg);border-color:var(--border-hover);transform:translateY(-2px)}
+    .p-card__img{aspect-ratio:1;background:var(--surface-alt);display:flex;align-items:center;justify-content:center;padding:20px;overflow:hidden}
+    .p-card__img img{max-width:100%;max-height:100%;object-fit:contain;transition:transform .3s}
+    .p-card:hover .p-card__img img{transform:scale(1.05)}
+    .p-card__body{padding:14px 16px;flex:1;display:flex;flex-direction:column}
+    .p-card__cat{font-size:var(--fs-xs);color:var(--text-muted);margin-bottom:4px;text-transform:uppercase;letter-spacing:.3px}
+    .p-card__name{font-weight:600;font-size:var(--fs-sm);color:var(--navy-800);line-height:1.4;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    .p-card__price{font-size:var(--fs-md);font-weight:700;color:var(--navy-700)}
+    .p-card__unit{font-size:var(--fs-xs);color:var(--text-muted);margin-top:2px}
+
+    /* No results */
+    .no-results{grid-column:1/-1;text-align:center;padding:5rem 2rem}
+    .no-results i{font-size:3rem;color:var(--navy-100);margin-bottom:16px}
+    .no-results h2{font-size:var(--fs-xl);color:var(--navy-700);margin-bottom:8px}
+    .no-results p{color:var(--text-muted);font-size:var(--fs-sm);margin-bottom:24px}
+    .no-results a{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:var(--action);color:white;border-radius:var(--r-pill);font-weight:600;font-size:var(--fs-sm);transition:all .2s}
+    .no-results a:hover{background:var(--action-hover)}
+
+    /* Loading */
+    .loading{grid-column:1/-1;text-align:center;padding:4rem}
+    .loading i{font-size:2rem;color:var(--navy-300);animation:spin 1s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    /* Footer */
+    .footer{background:var(--navy-900);color:var(--text-on-dark);padding:4rem 0 0;margin-top:auto}.footer__grid{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:3rem;padding-bottom:3rem}.footer__brand p{color:rgba(255,255,255,.6);font-size:var(--fs-sm);margin-top:12px;line-height:1.7}.footer__social{display:flex;gap:8px;margin-top:16px}.footer__social a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.06);color:rgba(255,255,255,.7);transition:all .25s}.footer__social a:hover{background:var(--action);color:white}
+    .footer__col h4{font-size:var(--fs-sm);font-weight:700;margin-bottom:16px;color:white}.footer__links{display:flex;flex-direction:column;gap:10px}.footer__links a{font-size:var(--fs-sm);color:rgba(255,255,255,.6);transition:color .2s}.footer__links a:hover{color:var(--gold)}
+    .footer__contact-item{display:flex;align-items:center;gap:10px;font-size:var(--fs-sm);color:rgba(255,255,255,.6);margin-bottom:12px}.footer__contact-item i{color:var(--gold);width:16px;text-align:center}.footer__contact-item a{color:rgba(255,255,255,.6);transition:color .2s}.footer__contact-item a:hover{color:white}
+    .footer__bottom{border-top:1px solid rgba(255,255,255,.08);padding:20px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}.footer__copyright{font-size:var(--fs-xs);color:rgba(255,255,255,.4)}.footer__legal{display:flex;gap:20px;flex-wrap:wrap}.footer__legal a{font-size:var(--fs-xs);color:rgba(255,255,255,.4);transition:color .2s}.footer__legal a:hover{color:white}
+    .whatsapp-float{position:fixed;bottom:24px;right:24px;width:60px;height:60px;background:#25D366;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 4px 16px rgba(37,211,102,.4);z-index:8000;transition:transform .2s}.whatsapp-float:hover{transform:scale(1.1)}
+
+    /* Mobile */
+    @media(max-width:768px){
+      .info-bar{display:none}
+      .nav{position:fixed;top:0;right:0;width:280px;height:100vh;background:white;flex-direction:column;padding:80px 24px 24px;transform:translateX(100%);transition:transform .3s;z-index:9500;box-shadow:-4px 0 24px rgba(0,0,0,.1);justify-content:flex-start;align-items:stretch;gap:4px}
+      .nav.open{transform:translateX(0)}
+      .nav__link{padding:12px 16px;font-size:var(--fs-base)}
+      .mobile-menu-btn{display:flex}
+      .header__login span,.header__register span{display:none}
+      .footer__grid{grid-template-columns:1fr}
+      .results-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+      .p-card__body{padding:10px 12px}
+      .search-hero{padding:2rem 0}
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement"><a href="/register"><i class="fas fa-crown"></i> רוכשים בכמויות מסחריות? הצטרפו למועדון הלקוחות וקבלו מחירון סיטונאי ייעודי <i class="fas fa-chevron-left" style="font-size:0.75em;"></i></a></div>
+  <div class="info-bar"><div class="container"><div class="info-bar__group"><div class="info-bar__item"><i class="fas fa-phone-alt"></i> <a href="tel:037740400">03-7740400</a></div><div class="info-bar__item"><i class="fas fa-envelope"></i> <a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a></div><div class="info-bar__item"><i class="fas fa-clock"></i> <span>א'-ה' 08:00-17:00</span></div></div><div class="info-bar__group info-bar__social"><a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a><a href="https://www.facebook.com/profile.php?id=100083110428101" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/ymarket.ai" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div></div></div>
+  <header class="header" id="header"><div class="container"><a href="/" class="header__logo"><img src="/images/logo/logo-dark-2x.png" alt="וואי מרקט" height="44" style="height:44px;width:auto;"></a><nav class="nav" aria-label="ניווט ראשי"><div class="nav__item"><a href="/" class="nav__link">דף הבית</a></div><div class="nav__item"><a href="/catalog" class="nav__link">מוצרים</a></div><div class="nav__item"><a href="/about" class="nav__link">אודות</a></div><div class="nav__item"><a href="/blog" class="nav__link">בלוג</a></div><div class="nav__item"><a href="/contact" class="nav__link">צרו קשר</a></div></nav><div class="header__actions"><button class="header__btn" aria-label="חיפוש"><i class="fas fa-search"></i></button><a href="/cart" class="header__btn" aria-label="עגלה" id="cartBtn"><i class="fas fa-shopping-cart"></i><span class="cart-badge" id="cartBadge">0</span></a><a href="/login" class="header__btn header__login"><i class="fas fa-user"></i> <span>כניסה</span></a><a href="/register" class="header__btn header__register"><i class="fas fa-user-plus"></i> <span>הרשמה</span></a></div><button class="mobile-menu-btn" aria-label="תפריט"><i class="fas fa-bars"></i></button></div></header>
+
+  <!-- Search Hero -->
+  <section class="search-hero">
+    <div class="container">
+      <h1 id="searchTitle">חיפוש מוצרים</h1>
+      <p id="searchSubtitle">825+ מוצרים במחירי סיטונאות</p>
+      <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchInput" placeholder="חפשו מוצר, קטגוריה או ברקוד..." autocomplete="off">
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="results-section">
+    <div class="container">
+      <div class="results-meta">
+        <div class="results-count" id="resultsCount"></div>
+      </div>
+      <div class="results-grid" id="resultsGrid">
+        <div class="loading"><i class="fas fa-spinner"></i><p style="margin-top:12px;color:#94a3b8;">טוען מוצרים...</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="/images/logo/logo-white.png" alt="וואי מרקט" width="112" height="60">
+          <p>נגלר סחר והפצה — סחר, שיווק והפצה של מוצרי צריכה שוטפת לעסקים ומוסדות בכל רחבי הארץ.</p>
+          <div class="footer__social">
+            <a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100083110428101" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/ymarket.ai" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer__col"><h4>קטגוריות</h4><div class="footer__links"><a href="/category/bulk-paper-towel-office-supplies/">מוצרי נייר</a><a href="/category/industrial-cleaning-supplies-wholesale/">חומרי ניקוי</a><a href="/category/disposable-catering-food-service/">חד פעמי</a><a href="/category/food-packaging-delivery-solutions/">אריזות מזון</a><a href="/category/heavy-duty-garbage-bags-wholesale/">שקיות אשפה</a></div></div>
+        <div class="footer__col"><h4>קישורים</h4><div class="footer__links"><a href="/catalog">קטלוג מוצרים</a><a href="/about">אודות</a><a href="/blog">בלוג</a><a href="/contact">צרו קשר</a></div></div>
+        <div class="footer__col"><h4>צרו קשר</h4><div class="footer__contact-item"><i class="fas fa-phone-alt"></i><a href="tel:037740400">03-7740400</a></div><div class="footer__contact-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/972549922492" target="_blank" rel="noopener">WhatsApp</a></div><div class="footer__contact-item"><i class="fas fa-envelope"></i><a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a></div><div class="footer__contact-item"><i class="fas fa-clock"></i><span>א'-ה' 08:00-17:00</span></div></div>
+      </div>
+      <div class="footer__bottom">
+        <span class="footer__copyright">&copy; 2026 וואי מרקט — נגלר סחר והפצה. כל הזכויות שמורות.</span>
+        <div class="footer__legal"><a href="/legal/terms">תקנון</a><a href="/legal/privacy">פרטיות</a><a href="/legal/shipping">משלוחים</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/972549922492" class="whatsapp-float" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+
+  <script>
+  (function(){
+    var allProducts = [];
+    var searchInput = document.getElementById('searchInput');
+    var resultsGrid = document.getElementById('resultsGrid');
+    var resultsCount = document.getElementById('resultsCount');
+    var searchTitle = document.getElementById('searchTitle');
+    var searchSubtitle = document.getElementById('searchSubtitle');
+    var debounce;
+
+    function esc(s){ return String(s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]}); }
+    function fmtPrice(n){ return Number(n).toLocaleString('he-IL',{minimumFractionDigits:2,maximumFractionDigits:2})+' \u20AA'; }
+
+    function renderResults(query){
+      var q = (query||'').trim().toLowerCase();
+      if(!q){
+        resultsCount.innerHTML = '';
+        resultsGrid.innerHTML = '<div class="no-results"><i class="fas fa-search"></i><h2>הקלידו מילת חיפוש</h2><p>חפשו מוצר לפי שם, קטגוריה או תיאור</p></div>';
+        searchTitle.textContent = 'חיפוש מוצרים';
+        searchSubtitle.textContent = allProducts.length + ' מוצרים במחירי סיטונאות';
+        return;
+      }
+
+      var results = allProducts.filter(function(p){
+        return (p.name||'').toLowerCase().indexOf(q)!==-1 ||
+          (p.searchTags||'').toLowerCase().indexOf(q)!==-1 ||
+          (p.description||'').toLowerCase().indexOf(q)!==-1 ||
+          (p.categoryName||'').toLowerCase().indexOf(q)!==-1;
+      });
+
+      searchTitle.textContent = 'תוצאות חיפוש: "' + query.trim() + '"';
+      searchSubtitle.textContent = results.length + ' מוצרים נמצאו';
+      resultsCount.innerHTML = 'נמצאו <strong>' + results.length + '</strong> תוצאות עבור "<strong>' + esc(query.trim()) + '</strong>"';
+
+      if(!results.length){
+        resultsGrid.innerHTML = '<div class="no-results"><i class="fas fa-box-open"></i><h2>לא נמצאו מוצרים</h2><p>נסו מילות חיפוש אחרות או עברו לקטלוג המלא</p><a href="/catalog"><i class="fas fa-th-large"></i> לקטלוג המלא</a></div>';
+        return;
+      }
+
+      var html = '';
+      results.forEach(function(p){
+        var img = p.imageUrl || '/items/'+p.id+'.jpg';
+        var price = p.saleNis ? fmtPrice(p.saleNis) : 'צרו קשר';
+        html += '<a href="/products/'+encodeURIComponent(p.slug||'')+'/" class="p-card">' +
+          '<div class="p-card__img"><img src="'+img+'" alt="'+esc(p.name)+'" loading="lazy" onerror="this.src=\'https://placehold.co/200x200/f0f2f5/94a3b8?text=img\'"></div>' +
+          '<div class="p-card__body">' +
+            (p.categoryName ? '<div class="p-card__cat">'+esc(p.categoryName)+'</div>' : '') +
+            '<div class="p-card__name">'+esc(p.name)+'</div>' +
+            '<div class="p-card__price">'+price+'</div>' +
+            (p.unit ? '<div class="p-card__unit">'+esc(p.unit)+'</div>' : '') +
+          '</div></a>';
+      });
+      resultsGrid.innerHTML = html;
+    }
+
+    // Load products
+    fetch('/data/products.json')
+      .then(function(r){return r.json();})
+      .then(function(data){
+        allProducts = data.items || data.products || [];
+        // Check URL param
+        var params = new URLSearchParams(window.location.search);
+        var q = params.get('q') || params.get('search') || '';
+        if(q){
+          searchInput.value = q;
+          renderResults(q);
+        } else {
+          renderResults('');
+        }
+      })
+      .catch(function(){
+        resultsGrid.innerHTML = '<div class="no-results"><i class="fas fa-exclamation-triangle"></i><h2>שגיאה בטעינה</h2><p>לא ניתן לטעון את המוצרים</p></div>';
+      });
+
+    // Live search
+    searchInput.addEventListener('input', function(){
+      clearTimeout(debounce);
+      debounce = setTimeout(function(){ renderResults(searchInput.value); }, 250);
+    });
+
+    // Enter = update URL
+    searchInput.addEventListener('keydown', function(e){
+      if(e.key==='Enter'){
+        e.preventDefault();
+        var q = searchInput.value.trim();
+        if(q) history.replaceState(null,'','?q='+encodeURIComponent(q));
+        renderResults(q);
+      }
+    });
+
+    // Header scroll
+    window.addEventListener('scroll',function(){document.getElementById('header').classList.toggle('scrolled',window.scrollY>10);},{passive:true});
+
+    // Mobile menu
+    var btn=document.querySelector('.mobile-menu-btn'),nav=document.querySelector('.nav');
+    if(btn&&nav){
+      btn.addEventListener('click',function(){
+        var open=nav.classList.toggle('open');
+        btn.querySelector('i').className=open?'fas fa-times':'fas fa-bars';
+      });
+      nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');btn.querySelector('i').className='fas fa-bars';});});
+    }
+  })();
+  </script>
+  <script src="/js/search.js" defer></script>
+</body>
+</html>
