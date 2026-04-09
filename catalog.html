@@ -143,7 +143,7 @@
     .breadcrumb__sep{font-size:0.6em}.breadcrumb__current{color:var(--text-primary);font-weight:600}
 
     /* ═══ CATALOG HERO ═══ */
-    .catalog-hero{background:linear-gradient(165deg,var(--navy-800) 0%,var(--navy-700) 40%,var(--navy-600) 100%);padding:var(--sp-3xl) 0 var(--sp-2xl);position:relative;overflow:hidden}
+    .catalog-hero{background:linear-gradient(165deg,var(--navy-800) 0%,var(--navy-700) 40%,var(--navy-600) 100%);padding:var(--sp-3xl) 0 var(--sp-2xl);position:relative;overflow:visible}
     .catalog-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 80%,rgba(10,107,255,0.12),transparent 50%),radial-gradient(ellipse at 80% 20%,rgba(232,167,53,0.08),transparent 50%)}
     .catalog-hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse at center,black 30%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at center,black 30%,transparent 70%)}
     .catalog-hero .container{position:relative;z-index:2}
@@ -155,7 +155,7 @@
     .search-box input:focus{background:rgba(255,255,255,0.18);border-color:rgba(255,255,255,0.4);box-shadow:0 0 0 4px rgba(10,107,255,0.2)}
     .search-box__icon{position:absolute;right:20px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,0.5);font-size:1.1rem;pointer-events:none}
     .search-box__count{position:absolute;left:20px;top:50%;transform:translateY(-50%);font-size:var(--fs-xs);color:rgba(255,255,255,0.4);font-weight:600}
-    .search-dropdown{position:absolute;top:calc(100% + 8px);left:0;right:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--shadow-xl);max-height:360px;overflow-y:auto;z-index:100;display:none}
+    .search-dropdown{position:absolute;top:calc(100% + 8px);left:0;right:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--shadow-xl);max-height:360px;overflow-y:auto;z-index:9500;display:none}
     .search-dropdown.active{display:block}
     .search-dropdown a{display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border);transition:background 0.15s;color:var(--text-primary)}
     .search-dropdown a:hover{background:var(--action-bg)}
