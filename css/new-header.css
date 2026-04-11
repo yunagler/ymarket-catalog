@@ -30,12 +30,13 @@
   --radius-xl: 24px !important;
 }
 
-/* ── Hide old header/footer (injector replaces them) ── */
-body > .top-bar,
-body > header.header,
-body > .mobile-overlay,
-body > .search-overlay,
-body > footer.footer {
+/* ── Hide legacy top-bar only (injector replaces them) ──
+   As of 2026-04-11: header.header is the UNIFIED static header (see
+   includes/site-header.html + build_header.py). It must NOT be hidden.
+   The new-header-inject.js self-skips when .announcement is present,
+   so the old injected ym2-header is no longer created on these pages.
+   Legacy top-bar stays hidden; footer is left alone so pages render. */
+body > .top-bar {
   display: none !important;
 }
 
