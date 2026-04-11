@@ -1,0 +1,7 @@
+# Backups created by build_header.py (local only, never deploy)
+backups/
+*.bak
+
+# Python
+__pycache__/
+*.pyc
