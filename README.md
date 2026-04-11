@@ -5,39 +5,45 @@
 
 ## ⚠️ חוקים קריטיים
 
-### 1. ההדר (בר עליון) — מקור אמת יחיד
+### 1. ההדר והפוטר — מקור אמת יחיד
 
-**אל תערוך את ההדר ידנית באף עמוד HTML.** יש מקור אמת אחד, ושני סקריפטים שדואגים לעקביות על כל 977 העמודים באתר.
+**אל תערוך את ההדר או הפוטר ידנית באף עמוד HTML.** יש מקור אמת אחד לכל אחד מהם, וסקריפטים שדואגים לעקביות על 975-977 העמודים באתר.
 
 #### מקורות האמת
-| מה | איפה |
-|---|---|
-| **HTML של ההדר** (אנונסמנט + info-bar + header עם mega-menu) | `includes/site-header.html` |
-| **CSS של ההדר** (מחולץ אוטומטית מה-`<style>` ב-`index.html`) | `index.html` inline `<style>` → `css/site-header.css` |
+| מה | איפה | סקריפט הפצה |
+|---|---|---|
+| **HTML של ההדר** (announcement + info-bar + header עם mega-menu) | `includes/site-header.html` | `build_header.py` |
+| **CSS של ההדר** (מחולץ מה-`<style>` ב-`index.html`) | `index.html` inline `<style>` → `css/site-header.css` | `build_header_css.py` |
+| **HTML של הפוטר** (brand + קטגוריות + קישורים + contact + copyright) | `includes/site-footer.html` | `build_footer.py` |
 
-#### איך לשנות את ההדר
+#### איך לשנות את ההדר או הפוטר
 
 ```bash
 cd C:\Users\DELL\ymarket\website
 
-# (א) שינוי ב-HTML של ההדר (לוגו, קישורי ניווט, קטגוריות mega-menu, וכו')
+# (א) שינוי ב-HTML של ההדר (לוגו, קישורי ניווט, קטגוריות mega-menu)
 #     ערוך את includes/site-header.html ואז:
 python build_header.py
 
-# (ב) שינוי ב-CSS של ההדר (צבעים, רווחים, פונטים, היידעות responsive)
+# (ב) שינוי ב-CSS של ההדר (צבעים, רווחים, פונטים, responsive)
 #     ערוך את ה-<style> הפנימי ב-index.html ואז:
 python build_header_css.py
 
-# שניהם בוצעו? commit + push
+# (ג) שינוי ב-HTML של הפוטר (קטגוריות, קישורים, contact info, copyright)
+#     ערוך את includes/site-footer.html ואז:
+python build_footer.py
+
+# בסיום - commit + push
 git add -u
-git commit -m "Update header: <מה שינית>"
+git commit -m "Update header/footer: <מה שינית>"
 git push origin master
 ```
 
 #### מה הסקריפטים עושים
 - **`build_header.py`** — קורא `includes/site-header.html` ומחליף את בלוק ההדר (announcement + info-bar + `<header class="header">...</header>`) בכל קובץ HTML באתר.
 - **`build_header_css.py`** — מחלץ את ה-`<style>` הפנימי מ-`index.html` ל-`css/site-header.css`, ומכניס `<link rel="stylesheet" href="/css/site-header.css?v=...">` ב-`<head>` של כל עמוד (עם busting גרסה אוטומטי בכל ריצה).
-- שניהם יוצרים גיבוי אוטומטי ב-`backups/headers_<timestamp>/` לפני השינוי (`backups/` לא נדחף ל-git).
+- **`build_footer.py`** — קורא `includes/site-footer.html` ומחליף את בלוק `<footer class="footer">...</footer>` בכל קובץ HTML באתר.
+- כל הסקריפטים יוצרים גיבוי אוטומטי ב-`backups/headers_<timestamp>/` או `backups/footers_<timestamp>/` לפני השינוי (`backups/` לא נדחף ל-git).
 
 #### למה שני סקריפטים?
 ה-HTML וה-CSS הם שני דברים נפרדים:
@@ -61,7 +67,8 @@ git push origin master
 ```
 website/
 ├── includes/
-│   └── site-header.html           ← מקור אמת HTML של ההדר
+│   ├── site-header.html           ← מקור אמת HTML של ההדר
+│   └── site-footer.html           ← מקור אמת HTML של הפוטר
 ├── css/
 │   ├── site-header.css            ← נוצר אוטומטית מ-build_header_css.py
 │   ├── style.min.css              ← CSS כללי של האתר
@@ -78,7 +85,9 @@ website/
 ├── index.html                     ← דף הבית + מקור אמת CSS inline
 ├── build_header.py                ← הפצת HTML הדר
 ├── build_header_css.py            ← הפצת CSS הדר
-├── _audit_headers.py              ← בדיקת עקביות
+├── build_footer.py                ← הפצת HTML פוטר
+├── _audit_headers.py              ← בדיקת עקביות הדר
+├── _audit_footers.py              ← בדיקת עקביות פוטר
 └── replace_headers.py.deprecated  ← הסקריפט הישן (מושבת)
 ```
 
