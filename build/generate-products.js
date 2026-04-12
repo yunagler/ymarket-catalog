@@ -279,6 +279,7 @@ function generateProductPage(product, categories, allProducts) {
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="/css/style.min.css">
+  <link rel="stylesheet" href="/css/site-header.css">
   <link rel="stylesheet" href="/css/pages/product-detail.min.css?v=20260310">
   <script type="application/ld+json">${jsonLd}</script>
   <script type="application/ld+json">${JSON.stringify({
