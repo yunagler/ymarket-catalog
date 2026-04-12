@@ -11,80 +11,17 @@ const path = require('path');
 const ROOT_DIR = path.join(__dirname, '..');
 
 // ============================================================
-// CANONICAL HEADER — single source of truth for entire site
-// All paths are absolute (/) so they work from any directory depth
-// Active state is set dynamically by main.js (initActiveNav)
+// CANONICAL HEADER — loaded from single source of truth
 // ============================================================
-const CANONICAL_HEADER = `  <div class="top-bar">
-    <div class="container">
-      <div class="top-bar__info">
-        <div class="top-bar__item"><i class="fas fa-phone-alt"></i> <a href="tel:037740400">03-7740400</a></div>
-        <div class="top-bar__item"><i class="fas fa-envelope"></i> <a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a></div>
-        <div class="top-bar__item"><i class="fas fa-clock"></i> <span>א'-ה' 08:00-17:00</span></div>
-      </div>
-      <div class="top-bar__social">
-        <a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=100083110428101" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/ymarket.ai" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-  </div>
-
-  <header class="header">
-    <div class="container">
-      <a href="/" class="header__logo">
-        <img src="/images/logo/logo-dark.png" alt="וואי מרקט" width="98" height="52">
-      </a>
-      <nav class="main-nav" aria-label="ניווט ראשי">
-        <div class="main-nav__item">
-          <a href="/" class="main-nav__link" data-nav="home">דף הבית</a>
-        </div>
-        <div class="main-nav__item">
-          <a href="/catalog" class="main-nav__link" data-nav="catalog">מוצרים <i class="fas fa-chevron-down"></i></a>
-          <div class="mega-menu">
-            <div class="mega-menu__grid">
-              <a href="/category/industrial-cleaning-supplies-wholesale/" class="mega-menu__category"><i class="fas fa-spray-can"></i><span class="mega-menu__cat-name">חומרי ניקוי וכימיקלים</span></a>
-              <a href="/category/bulk-paper-towel-office-supplies/" class="mega-menu__category"><i class="fas fa-toilet-paper"></i><span class="mega-menu__cat-name">מוצרי נייר וניגוב</span></a>
-              <a href="/category/disposable-catering-food-service/" class="mega-menu__category"><i class="fas fa-utensils"></i><span class="mega-menu__cat-name">חד פעמי ואירוח</span></a>
-              <a href="/category/food-packaging-delivery-solutions/" class="mega-menu__category"><i class="fas fa-box-open"></i><span class="mega-menu__cat-name">אריזות מזון ו-Take Away</span></a>
-              <a href="/category/heavy-duty-garbage-bags-wholesale/" class="mega-menu__category"><i class="fas fa-trash-alt"></i><span class="mega-menu__cat-name">שקיות ופתרונות אשפה</span></a>
-              <a href="/category/professional-cleaning-cloths-microfiber/" class="mega-menu__category"><i class="fas fa-tshirt"></i><span class="mega-menu__cat-name">טקסטיל, מטליות וסחבות</span></a>
-              <a href="/category/office-coffee-breakroom-supplies/" class="mega-menu__category"><i class="fas fa-coffee"></i><span class="mega-menu__cat-name">קפה, שתייה וכיבוד</span></a>
-              <a href="/category/safety-ppe-equipment-for-business/" class="mega-menu__category"><i class="fas fa-hard-hat"></i><span class="mega-menu__cat-name">בטיחות ומיגון אישי</span></a>
-              <a href="/category/office-supplies-wholesale-business/" class="mega-menu__category"><i class="fas fa-pen"></i><span class="mega-menu__cat-name">ציוד משרדי וכללי</span></a>
-              <a href="/category/maintenance-technical-equipment-wholesale/" class="mega-menu__category"><i class="fas fa-wrench"></i><span class="mega-menu__cat-name">ציוד טכני ואחזקה</span></a>
-              <a href="/category/warehouse-packaging-supplies-wholesale/" class="mega-menu__category"><i class="fas fa-tape"></i><span class="mega-menu__cat-name">עטיפה, אריזה ולוגיסטיקה</span></a>
-              <a href="/category/first-aid-medical-equipment-business/" class="mega-menu__category"><i class="fas fa-first-aid"></i><span class="mega-menu__cat-name">עזרה ראשונה - רפואי</span></a>
-              <a href="/category/personal-hygiene-products-wholesale/" class="mega-menu__category"><i class="fas fa-pump-soap"></i><span class="mega-menu__cat-name">טואלטיקה וטיפוח</span></a>
-              <a href="/category/institutional-cleaning-tools-equipment/" class="mega-menu__category"><i class="fas fa-tools"></i><span class="mega-menu__cat-name">כלי עבודה וציוד משקי</span></a>
-            </div>
-          </div>
-        </div>
-        <div class="main-nav__item">
-          <a href="/about" class="main-nav__link" data-nav="about">אודות</a>
-        </div>
-        <div class="main-nav__item">
-          <a href="/blog" class="main-nav__link" data-nav="blog">בלוג</a>
-        </div>
-        <div class="main-nav__item">
-          <a href="/contact" class="main-nav__link" data-nav="contact">צרו קשר</a>
-        </div>
-      </nav>
-      <div class="header__actions">
-        <button class="header__search-toggle" aria-label="חיפוש"><i class="fas fa-search"></i></button>
-        <button class="header__cart-btn" aria-label="עגלת קניות"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></button>
-        <a href="/login" class="header__login-btn" aria-label="כניסת לקוחות"><i class="fas fa-user"></i> <span>כניסת לקוחות</span></a>
-        <a href="/register" class="header__register-btn"><i class="fas fa-user-plus"></i> <span>הרשמה</span></a>
-      </div>
-      <button class="mobile-menu-btn" aria-label="תפריט" aria-expanded="false"><i class="fas fa-bars"></i></button>
-    </div>
-  </header>
-  <div class="mobile-overlay"></div>
-  <div class="search-overlay"><div class="search-overlay__inner"><form action="/catalog" method="get"><input type="search" name="search" class="search-overlay__input" placeholder="חפשו מוצר..." aria-label="חיפוש מוצר" autocomplete="off"></form></div></div>`;
+const CANONICAL_HEADER = fs.readFileSync(
+  path.join(ROOT_DIR, 'includes', 'site-header.html'), 'utf-8'
+).trim() + '\n  <div class="mobile-overlay"></div>\n  <div class="search-overlay"><div class="search-overlay__inner"><form action="/catalog" method="get"><input type="search" name="search" class="search-overlay__input" placeholder="\u05D7\u05E4\u05E9\u05D5 \u05DE\u05D5\u05E6\u05E8..." aria-label="\u05D7\u05D9\u05E4\u05D5\u05E9 \u05DE\u05D5\u05E6\u05E8" autocomplete="off"></form></div></div>';
 
 // Match existing header block using a function (more robust than regex for varying whitespace)
 function findAndReplaceHeader(content) {
-  const topBarStart = content.indexOf('<div class="top-bar">');
+  // Support both old (top-bar) and new (announcement) header formats
+  let topBarStart = content.indexOf('<div class="announcement"');
+  if (topBarStart === -1) topBarStart = content.indexOf('<div class="top-bar">');
   if (topBarStart === -1) return null;
 
   // Find the end of the mobile-overlay div
@@ -154,7 +91,7 @@ function main() {
     if (content.includes('http-equiv="refresh"')) continue;
 
     // Handle pages that have no header - inject after <body>
-    if (!content.includes('class="top-bar"')) {
+    if (!content.includes('class="top-bar"') && !content.includes('class="announcement"')) {
       if (content.includes('<body')) {
         const bodyMatch = content.match(/<body[^>]*>/);
         if (bodyMatch) {

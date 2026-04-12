@@ -13,6 +13,9 @@ const CATEGORY_DIR = path.join(ROOT_DIR, 'category');
 const DATA_PATH = path.join(ROOT_DIR, 'data', 'products.json');
 const SITE_URL = 'https://ymarket.co.il';
 
+// Load header from single source of truth
+const SITE_HEADER = fs.readFileSync(path.join(ROOT_DIR, 'includes', 'site-header.html'), 'utf-8').trim();
+
 // SEO data per category
 const CATEGORY_SEO = {
   'חומרי-ניקוי-וכימיקלים': {
@@ -616,23 +619,7 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
   })}</script>
 </head>
 <body>
-  <div class="top-bar"><div class="container"><div class="top-bar__info"><div class="top-bar__item"><i class="fas fa-phone-alt"></i> <a href="tel:037740400">03-7740400</a></div><div class="top-bar__item"><i class="fas fa-envelope"></i> <a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a></div><div class="top-bar__item"><i class="fas fa-clock"></i> <span>א'-ה' 08:00-17:00</span></div></div><div class="top-bar__social"><a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div></div></div>
-
-  <header class="header"><div class="container">
-    <a href="/" class="header__logo"><img src="/images/logo/logo-dark.png" alt="וואי מרקט" width="98" height="52"></a>
-    <nav class="main-nav" aria-label="ניווט ראשי">
-      <div class="main-nav__item"><a href="/" class="main-nav__link">דף הבית</a></div>
-      <div class="main-nav__item"><a href="/catalog" class="main-nav__link">מוצרים</a></div>
-      <div class="main-nav__item"><a href="/about" class="main-nav__link">אודות</a></div>
-      <div class="main-nav__item"><a href="/blog" class="main-nav__link">בלוג</a></div>
-      <div class="main-nav__item"><a href="/contact" class="main-nav__link">צרו קשר</a></div>
-    </nav>
-    <div class="header__actions">
-      <button class="header__cart-btn" aria-label="עגלת קניות"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></button>
-      <a href="/login" class="header__login-btn"><i class="fas fa-user"></i> <span>כניסה</span></a>
-    </div>
-    <button class="mobile-menu-btn" aria-label="תפריט" aria-expanded="false"><i class="fas fa-bars"></i></button>
-  </div></header>
+  ${SITE_HEADER}
   <div class="mobile-overlay"></div>
 
   <div class="container">
