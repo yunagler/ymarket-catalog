@@ -2,9 +2,9 @@
 """
 build_header.py - Single source of truth for the site header.
 
-Reads includes/site-header.html and replaces the header block
-(announcement + info-bar + <header class="header">...</header>)
-in every HTML file across the site.
+Reads includes/site-header.html and replaces the header block in every
+HTML file across the site. Handles both the NEW format (announcement +
+info-bar + header) and the OLD/legacy format (top-bar + header).
 
 Usage:
     python build_header.py --dry-run        # show what would change (no writes)
@@ -34,35 +34,27 @@ BACKUP_DIR = os.path.join(
 SKIP_DIRS = {"node_modules", "build", "__pycache__", "saleor-ref", "backups", "includes", ".claude"}
 
 
-def build_pattern():
-    """
-    Pattern matches the header block:
-    - Optional ANNOUNCEMENT comment
-    - <div class="announcement">...</div>
-    - (whitespace, optional INFO BAR comment)
-    - <div class="info-bar">...</div>...  (this anchor not needed; we rely on non-greedy to </header>)
-    - (whitespace, optional HEADER comment)
-    - <header class="header" ...>...</header>
+# --- NEW format: announcement + info-bar + header ---
+NEW_HEADER_PATTERN = re.compile(
+    r'(?:[ \t]*<!--[^\n]*?(?:ANNOUNCEMENT|Top Bar)[^\n]*?-->[ \t]*\n)?'
+    r'[ \t]*<div\s+class="announcement"'
+    r'.*?'
+    r'<header\s+class="header"[^>]*>'
+    r'.*?'
+    r'</header>',
+    re.DOTALL,
+)
 
-    We match from <div class="announcement"... to the FIRST </header>
-    that appears after <header class="header". Non-greedy .*? ensures we
-    stop at the first </header>, and there are no nested <header> tags inside.
-
-    An optional decorative comment (ANNOUNCEMENT / INFO / HEADER banner) right
-    before the announcement div is consumed too, so the replacement is clean.
-    """
-    return re.compile(
-        r'(?:[ \t]*<!--[^\n]*?ANNOUNCEMENT[^\n]*?-->[ \t]*\n)?'
-        r'[ \t]*<div\s+class="announcement"'
-        r'.*?'
-        r'<header\s+class="header"[^>]*>'
-        r'.*?'
-        r'</header>',
-        re.DOTALL,
-    )
-
-
-HEADER_PATTERN = build_pattern()
+# --- OLD/legacy format: top-bar + header (no announcement div) ---
+OLD_HEADER_PATTERN = re.compile(
+    r'(?:[ \t]*<!--[^\n]*?Top Bar[^\n]*?-->[ \t]*\n)?'
+    r'[ \t]*<div\s+class="top-bar"'
+    r'.*?'
+    r'<header\s+class="header"[^>]*>'
+    r'.*?'
+    r'</header>',
+    re.DOTALL,
+)
 
 
 def load_template():
@@ -85,6 +77,11 @@ def process_file(path, template, dry_run=False, backup_root=None):
     """
     Returns (status, details).
     status in: 'replaced', 'no_header', 'no_change', 'error'
+
+    Handles three cases:
+    1. OLD only (top-bar + header)         -> replace with template
+    2. NEW only (announcement + header)    -> replace with template
+    3. BOTH (duplicate: old + new)         -> remove old, replace new with template
     """
     try:
         with open(path, encoding="utf-8") as f:
@@ -92,21 +89,54 @@ def process_file(path, template, dry_run=False, backup_root=None):
     except Exception as e:
         return ("error", f"read failed: {e}")
 
+    has_top_bar = 'class="top-bar"' in content
     has_announcement = 'class="announcement"' in content
     has_header = 'class="header"' in content
 
-    if not (has_announcement and has_header):
+    if not has_header:
+        return ("no_header", None)
+    if not has_top_bar and not has_announcement:
         return ("no_header", None)
 
-    new_content, n = HEADER_PATTERN.subn(template, content, count=1)
-    if n == 0:
+    work = content
+    detail_parts = []
+
+    # Step 1: If BOTH old and new exist (duplicate), strip the old block first
+    if has_top_bar and has_announcement:
+        stripped, n = OLD_HEADER_PATTERN.subn('', work, count=1)
+        if n > 0:
+            # Clean up leftover blank lines from removal
+            stripped = re.sub(r'\n{3,}', '\n\n', stripped)
+            work = stripped
+            detail_parts.append("removed old top-bar header")
+
+    # Step 2: Replace the new-format header (or remaining old-format) with template
+    replaced = False
+
+    if 'class="announcement"' in work:
+        new_content, n = NEW_HEADER_PATTERN.subn(template, work, count=1)
+        if n > 0:
+            work = new_content
+            replaced = True
+            detail_parts.append("replaced new-format header")
+
+    if not replaced and 'class="top-bar"' in work:
+        new_content, n = OLD_HEADER_PATTERN.subn(template, work, count=1)
+        if n > 0:
+            work = new_content
+            replaced = True
+            detail_parts.append("replaced old-format header")
+
+    if not replaced:
         return ("error", "pattern did not match (file has header markers but regex failed)")
 
-    if new_content == content:
+    if work == content:
         return ("no_change", "already matches template")
 
+    detail = "; ".join(detail_parts)
+
     if dry_run:
-        return ("replaced", "(dry-run) would write")
+        return ("replaced", f"(dry-run) {detail}")
 
     # Backup
     if backup_root:
@@ -116,8 +146,8 @@ def process_file(path, template, dry_run=False, backup_root=None):
         shutil.copy2(path, backup_path)
 
     with open(path, "w", encoding="utf-8") as f:
-        f.write(new_content)
-    return ("replaced", "wrote")
+        f.write(work)
+    return ("replaced", detail)
 
 
 def main():
