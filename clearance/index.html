@@ -6,30 +6,29 @@
     <title>חיסול מחסן - מוצרי ניקיון וחד פעמי במחירי רצפה</title>
     <meta name="description" content="חיסול מחסן! מוצרי ניקיון, נייר, חד פעמי, כפפות ועוד - במחירי עלות. משלוח תוך 48 שעות. כמות מוגבלת!">
     <link rel="icon" href="/favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/clearance/items.json" as="fetch" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
         *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
         :root{--acc:#FF6B35;--ok:#27AE60;--bg:#F5F5F5;--card:#FFF;--txt:#2D3436;--dim:#636E72;--brd:#DFE6E9}
         body{font-family:'Heebo',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;padding-bottom:80px}
-
         .hero{background:linear-gradient(135deg,#2D3436,#636E72);color:#fff;padding:28px 20px;text-align:center}
         .hero h1{font-size:24px;font-weight:800;margin-bottom:6px}
         .hero p{font-size:14px;opacity:.85;margin-bottom:12px}
         .hero .stats{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
         .hero .stat{background:rgba(255,255,255,.12);padding:6px 16px;border-radius:20px;font-size:13px;font-weight:600}
-
         .toolbar{position:sticky;top:0;z-index:50;background:var(--card);padding:10px 16px;box-shadow:0 2px 8px rgba(0,0,0,.08);display:flex;gap:8px;align-items:center}
         .toolbar input{flex:1;padding:10px 14px;border:2px solid var(--brd);border-radius:10px;font-size:14px;direction:rtl}
         .toolbar input:focus{outline:none;border-color:var(--acc)}
         .toolbar select{padding:10px;border:2px solid var(--brd);border-radius:10px;font-size:13px;direction:rtl}
         .fcount{font-size:11px;color:var(--dim);white-space:nowrap}
-
-        .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:12px 16px}
+        .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:12px 16px;contain:layout}
         @media(min-width:600px){.grid{grid-template-columns:repeat(3,1fr)}}
         @media(min-width:900px){.grid{grid-template-columns:repeat(4,1fr);max-width:1100px;margin:0 auto}}
-
-        .card{background:var(--card);border-radius:12px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.06);position:relative}
-        .card-img{width:100%;aspect-ratio:1;object-fit:cover;background:#F0F0F0}
+        .card{background:var(--card);border-radius:12px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.06);position:relative;contain:content}
+        .card-img{width:100%;aspect-ratio:1;object-fit:cover;background:#F0F0F0;content-visibility:auto}
         .card-body{padding:8px 10px 10px}
         .card-name{font-size:12px;font-weight:600;line-height:1.3;height:2.6em;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
         .card-price{font-size:18px;font-weight:800;color:var(--acc);margin-top:4px}
@@ -42,16 +41,16 @@
         .cbtn-wa{background:#DCF8C6;color:#128C7E}
         .cbtn-add{background:var(--acc);color:#fff}
         .badge{position:absolute;top:6px;right:6px;background:var(--acc);color:#fff;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700}
-
         .bot{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-top:1px solid var(--brd);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 -4px 12px rgba(0,0,0,.08);z-index:100}
         .bot-info{font-size:12px;color:var(--dim)}
         .bot-info strong{display:block;font-size:17px;color:var(--txt)}
         .bot-btn{padding:11px 22px;background:var(--ok);color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer}
         .bot-btn:disabled{opacity:.4}
-
         .load{display:flex;align-items:center;justify-content:center;min-height:60vh;flex-direction:column;gap:16px}
         .sp{width:28px;height:28px;border:3px solid var(--brd);border-top-color:var(--acc);border-radius:50%;animation:spin .6s linear infinite}
         @keyframes spin{to{transform:rotate(360deg)}}
+        .load-more{display:block;margin:16px auto;padding:12px 32px;background:var(--card);border:2px solid var(--brd);border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;color:var(--txt)}
+        .load-more:hover{border-color:var(--acc)}
     </style>
 </head>
 <body>
@@ -68,10 +67,9 @@
             <div class="stat">&#x1F69A; משלוח 48 שעות</div>
         </div>
     </div>
-
     <div class="toolbar">
-        <input type="text" id="q" placeholder="&#x1F50D; חפש מוצר..." oninput="draw()">
-        <select id="srt" onchange="draw()">
+        <input type="text" id="q" placeholder="&#x1F50D; חפש מוצר..." oninput="onSearch()">
+        <select id="srt" onchange="resetAndDraw()">
             <option value="pop">פופולרי</option>
             <option value="pa">מחיר &#x2191;</option>
             <option value="pd">מחיר &#x2193;</option>
@@ -79,8 +77,8 @@
         </select>
         <span class="fcount" id="fc"></span>
     </div>
-
     <div class="grid" id="g"></div>
+    <button class="load-more" id="lm" onclick="loadMore()" style="display:none">טען עוד מוצרים</button>
 </div>
 
 <div class="bot" id="bot" style="display:none">
@@ -89,71 +87,98 @@
 </div>
 
 <script>
-let D=[],C={};
-const PH='972544567610';
+let D=[],C={},filtered=[],shown=0;
+const PH='972544567610',PAGE=24,PLACEHOLDER='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1 1%22><rect fill=%22%23eee%22 width=%221%22 height=%221%22/></svg>';
+let searchTimer=null,DMap={};
 
 async function init(){
     const r=await fetch('/clearance/items.json');
     D=await r.json();
+    D.forEach(x=>{DMap[x.i]=x});
     document.getElementById('ld').style.display='none';
     document.getElementById('app').style.display='block';
     document.getElementById('bot').style.display='flex';
     document.getElementById('sI').textContent=D.length+' \u05DE\u05D5\u05E6\u05E8\u05D9\u05DD';
     document.getElementById('sQ').textContent=D.reduce((s,x)=>s+x.q,0).toLocaleString()+' \u05D9\u05D7\u05D9\u05D3\u05D5\u05EA';
-    draw();
+    resetAndDraw();
 }
 init();
 
-function draw(){
-    const q=document.getElementById('q').value.trim().toLowerCase();
-    const s=document.getElementById('srt').value;
-    let f=D.filter(x=>!q||x.n.toLowerCase().includes(q)||String(x.i).includes(q));
-    f.sort((a,b)=>s==='pa'?a.p-b.p:s==='pd'?b.p-a.p:s==='qd'?b.q-a.q:b.q*b.p-a.q*a.p);
-    document.getElementById('fc').textContent=q?f.length+'/'+D.length:'';
-    document.getElementById('g').innerHTML=f.length?f.map(x=>{
-        const ic=C[x.i]||0;
-        return `<div class="card">
-            ${x.q>500?'<div class="badge">\u05DE\u05DC\u05D0\u05D9!</div>':''}
-            <img class="card-img" src="/items/${x.i}.jpg" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1 1%22><rect fill=%22%23eee%22 width=%221%22 height=%221%22/></svg>'" loading="lazy">
-            <div class="card-body">
-                <div class="card-name">${x.n}</div>
-                <div class="card-price">${x.p.toFixed(2)} \u20AA <small>/\u05D9\u05D7\u05D9\u05D3\u05D4</small></div>
-                ${x.q?`<div class="card-qty">\u05D1\u05DE\u05DC\u05D0\u05D9: <strong>${x.q.toLocaleString()}</strong></div>`:''}
-                <div class="card-btns">
-                    <button class="cbtn cbtn-wa" onclick="wa(${x.i})">WhatsApp</button>
-                    <button class="cbtn cbtn-add" onclick="add(${x.i})">${ic?'\u2714 '+ic:'\u05D4\u05D5\u05E1\u05E3'}</button>
-                </div>
-            </div>
-        </div>`;
-    }).join(''):'<div style="grid-column:1/-1;text-align:center;padding:40px;color:#999">\u05DC\u05D0 \u05E0\u05DE\u05E6\u05D0\u05D5 \u05DE\u05D5\u05E6\u05E8\u05D9\u05DD</div>';
+function onSearch(){
+    clearTimeout(searchTimer);
+    searchTimer=setTimeout(resetAndDraw,200);
 }
 
-function add(id){C[id]=(C[id]||0)+1;upd();draw();if(navigator.vibrate)navigator.vibrate(15)}
+function resetAndDraw(){
+    const q=document.getElementById('q').value.trim().toLowerCase();
+    const s=document.getElementById('srt').value;
+    filtered=D.filter(x=>!q||x.n.toLowerCase().includes(q)||String(x.i).includes(q));
+    filtered.sort((a,b)=>s==='pa'?a.p-b.p:s==='pd'?b.p-a.p:s==='qd'?b.q-a.q:b.q*b.p-a.q*a.p);
+    document.getElementById('fc').textContent=q?filtered.length+'/'+D.length:'';
+    shown=0;
+    document.getElementById('g').innerHTML='';
+    loadMore();
+}
+
+function loadMore(){
+    const grid=document.getElementById('g');
+    const end=Math.min(shown+PAGE,filtered.length);
+    let html='';
+    for(let i=shown;i<end;i++){
+        const x=filtered[i];
+        const ic=C[x.i]||0;
+        html+=`<div class="card">${x.q>500?'<div class="badge">\u05DE\u05DC\u05D0\u05D9!</div>':''}<img class="card-img" src="/items/${x.i}.jpg" onerror="this.src='${PLACEHOLDER}'" loading="lazy" decoding="async" width="200" height="200"><div class="card-body"><div class="card-name">${x.n}</div><div class="card-price">${x.p.toFixed(2)} \u20AA <small>/\u05D9\u05D7\u05D9\u05D3\u05D4</small></div>${x.q?`<div class="card-qty">\u05D1\u05DE\u05DC\u05D0\u05D9: <strong>${x.q.toLocaleString()}</strong></div>`:''}<div class="card-btns"><button class="cbtn cbtn-wa" onclick="wa(${x.i})">WhatsApp</button><button class="cbtn cbtn-add" onclick="add(${x.i})">${ic?'\u2714 '+ic:'\u05D4\u05D5\u05E1\u05E3'}</button></div></div></div>`;
+    }
+    grid.insertAdjacentHTML('beforeend',html);
+    shown=end;
+    document.getElementById('lm').style.display=shown<filtered.length?'block':'none';
+}
+
+function add(id){C[id]=(C[id]||0)+1;upd();
+    // Update just the button text instead of full redraw
+    const btns=document.querySelectorAll('.cbtn-add');
+    btns.forEach(b=>{
+        const oid=parseInt(b.getAttribute('onclick').match(/\d+/)[0]);
+        if(oid===id)b.textContent='\u2714 '+C[id];
+    });
+    if(navigator.vibrate)navigator.vibrate(15);
+}
 
 function upd(){
     let t=0,n=0;
-    Object.keys(C).forEach(id=>{const x=D.find(d=>d.i===+id);if(x){t+=C[id]*x.p;n+=C[id]}});
+    for(const id in C){const x=DMap[+id];if(x){t+=C[id]*x.p;n+=C[id]}}
     document.getElementById('cCnt').textContent=n+' \u05E4\u05E8\u05D9\u05D8\u05D9\u05DD';
     document.getElementById('cTot').textContent=t.toFixed(2)+' \u20AA';
     document.getElementById('cBtn').disabled=n===0;
 }
 
 function wa(id){
-    const x=D.find(d=>d.i===id);if(!x)return;
+    const x=DMap[id];if(!x)return;
     window.open(`https://wa.me/${PH}?text=${encodeURIComponent(`\u05D4\u05D9\u05D9, \u05DE\u05E2\u05D5\u05E0\u05D9\u05D9\u05DF \u05D1:\n${x.n}\n\u05DE\u05D7\u05D9\u05E8: ${x.p}\u20AA`)}`,'_blank');
 }
 
 function order(){
     if(!Object.keys(C).length)return;
     let m='\u05D4\u05D6\u05DE\u05E0\u05D4 \u05D7\u05D3\u05E9\u05D4:\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n',t=0;
-    Object.keys(C).forEach(id=>{
-        const x=D.find(d=>d.i===+id);if(!x)return;
+    for(const id in C){
+        const x=DMap[+id];if(!x)continue;
         const l=C[id]*x.p;t+=l;
         m+=`${x.n}\n${C[id]} x ${x.p}\u20AA = ${l.toFixed(2)}\u20AA\n\n`;
-    });
+    }
     m+=`\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\u05E1\u05D4"\u05DB: ${t.toFixed(2)}\u20AA (\u05DC\u05E4\u05E0\u05D9 \u05DE\u05E2"\u05DE)`;
     window.open(`https://wa.me/${PH}?text=${encodeURIComponent(m)}`,'_blank');
 }
+
+// Infinite scroll
+let scrollTimer;
+window.addEventListener('scroll',()=>{
+    clearTimeout(scrollTimer);
+    scrollTimer=setTimeout(()=>{
+        if(shown<filtered.length && window.innerHeight+window.scrollY>=document.body.offsetHeight-600){
+            loadMore();
+        }
+    },100);
+},{passive:true});
 </script>
 </body>
 </html>
