@@ -294,8 +294,9 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
   const hebrewDate = new Date().toLocaleDateString('he-IL');
 
   // LCP: first product image for preload (use WebP thumbnail)
+  // GitHub Pages does not serve Hebrew filenames reliably, so always use numeric IDs.
   const firstProductImgJpg = categoryProducts.length > 0
-    ? (categoryProducts[0].imageUrl || `/items/${categoryProducts[0].id}.jpg`)
+    ? `/items/${categoryProducts[0].id}.jpg`
     : null;
   const firstProductImg = firstProductImgJpg ? firstProductImgJpg.replace(/\.jpg$/i, '-thumb.webp') : null;
 
@@ -326,7 +327,7 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
   breadcrumbItems.push({ "@type": "ListItem", "position": 3 + parentChain.length, "name": category.name });
 
   const productsHtml = categoryProducts.map((p, idx) => {
-    const imgSrcJpg = p.imageUrl || `/items/${p.id}.jpg`;
+    const imgSrcJpg = `/items/${p.id}.jpg`;
     const imgSrcThumb = imgSrcJpg.replace(/\.jpg$/i, '-thumb.webp');
     const hasPromo = p.productStatus === 'on_sale' && p.originalPrice;
     // First 4 images: eager load with high priority for LCP; rest: lazy load
@@ -431,7 +432,7 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
             "@type": "Product",
             "name": p.name,
             "url": `${SITE_URL}/products/${p.slug}/`,
-            "image": p.imageUrl ? `${SITE_URL}${p.imageUrl}` : `${SITE_URL}/items/${p.id}.jpg`,
+            "image": `${SITE_URL}/items/${p.id}.jpg`,
           }
         };
         if (p.saleNis) {
