@@ -99,8 +99,7 @@ function generateProductPage(product, categories, allProducts) {
   const primaryCat = categories.find(c => c.slug === primaryCatSlug);
   const categoryUrl = primaryCat ? getFullCategoryUrl(primaryCat, categories) : getCategoryUrl(product, categories);
   const parentChain = primaryCat ? getParentChain(primaryCat, categories) : [];
-  // GitHub Pages does not serve Hebrew filenames reliably, so always use numeric IDs.
-  const imgSrcJpg = `/items/${product.id}.jpg`;
+  const imgSrcJpg = product.imageUrl || `/items/${product.id}.jpg`;
   const imgSrc = imgSrcJpg.replace(/\.jpg$/i, '.webp');
   const imgSrcThumb = imgSrcJpg.replace(/\.jpg$/i, '-thumb.webp');
   const canonicalSlug = product.seoSlug || product.slug;
@@ -154,7 +153,7 @@ function generateProductPage(product, categories, allProducts) {
     .slice(0, 4);
 
   const relatedHtml = related.map(p => {
-    const rJpg = `/items/${p.id}.jpg`;
+    const rJpg = p.imageUrl || `/items/${p.id}.jpg`;
     const rThumb = rJpg.replace(/\.jpg$/i, '-thumb.webp');
     return `
     <div class="product-card" style="min-width: 220px;">
@@ -183,7 +182,7 @@ function generateProductPage(product, categories, allProducts) {
     "@type": "Product",
     "name": product.name,
     "description": schemaDescription,
-    "image": `${SITE_URL}/items/${product.id}.jpg`,
+    "image": `${SITE_URL}${product.imageUrl || '/items/' + product.id + '.jpg'}`,
     "url": productUrl,
     "brand": { "@type": "Brand", "name": "וואי מרקט" },
     "category": categoryName,
@@ -265,7 +264,7 @@ function generateProductPage(product, categories, allProducts) {
   <meta property="og:title" content="${pageTitle}">
   <meta property="og:description" content="${ogDesc}">
   <meta property="og:type" content="product">
-  <meta property="og:image" content="${SITE_URL}/items/${product.id}.jpg">
+  <meta property="og:image" content="${SITE_URL}${product.imageUrl || '/items/' + product.id + '.jpg'}">
   <meta property="og:url" content="${productUrl}">
   <meta property="og:locale" content="he_IL">
   <meta property="og:site_name" content="וואי מרקט">
@@ -274,7 +273,7 @@ function generateProductPage(product, categories, allProducts) {
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${pageTitle}">
   <meta name="twitter:description" content="${ogDesc}">
-  <meta name="twitter:image" content="${SITE_URL}/items/${product.id}.jpg">
+  <meta name="twitter:image" content="${SITE_URL}${product.imageUrl || '/items/' + product.id + '.jpg'}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
