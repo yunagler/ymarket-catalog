@@ -1,0 +1,2129 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>וואי מרקט | תצוגה מקדימה V2 — Store-Front</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Inter:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    /* ═══════════════════════════════════════════════
+       YMARKET V2 — Store-Front, Search-First
+       9 sections only · Brand palette only
+       ═══════════════════════════════════════════════ */
+    :root {
+      --navy-900: #0A1628;
+      --navy-800: #112A45;
+      --navy-700: #1B3A5C;
+      --navy-600: #2A5080;
+      --navy-500: #3668A0;
+      --navy-300: #7AAAD6;
+      --navy-100: #D4E6F4;
+      --navy-50:  #EBF2FA;
+
+      --action: #0A6BFF;
+      --action-hover: #0856D6;
+      --action-light: #3D8AFF;
+      --action-bg: rgba(10,107,255,0.08);
+      --action-glow: rgba(10,107,255,0.4);
+
+      --gold: #E8A735;
+      --gold-hover: #D4952E;
+      --gold-light: #F5C76B;
+      --gold-soft: rgba(232,167,53,0.12);
+      --gold-glow: rgba(232,167,53,0.45);
+
+      --green-light: #22C55E;
+      --whatsapp: #25D366;
+
+      --surface: #FFFFFF;
+      --surface-alt: #F6F8FB;
+      --text-primary: #0F172A;
+      --text-secondary: #475569;
+      --text-muted: #94A3B8;
+      --text-on-dark: #FFFFFF;
+      --text-on-dark-muted: rgba(255,255,255,0.78);
+      --border: rgba(27,58,92,0.1);
+
+      --shadow-sm: 0 2px 8px rgba(10,22,40,0.06);
+      --shadow-md: 0 6px 20px rgba(10,22,40,0.08);
+      --shadow-lg: 0 16px 40px -12px rgba(10,22,40,0.18);
+      --shadow-hover: 0 24px 60px -18px rgba(10,22,40,0.25);
+
+      --r-md: 12px;
+      --r-lg: 16px;
+      --r-xl: 24px;
+
+      --easing: cubic-bezier(0.16, 1, 0.3, 1);
+      --easing-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    *,*::before,*::after { box-sizing: border-box; margin:0; padding:0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Heebo', 'Inter', Arial, sans-serif;
+      color: var(--text-primary);
+      background: var(--surface);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+    .num-en { font-family: 'Inter', sans-serif; font-feature-settings: 'tnum'; }
+
+    /* Scroll progress */
+    .scroll-progress {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      z-index: 9999;
+      pointer-events: none;
+    }
+    .scroll-progress__bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold), var(--action));
+      width: 0;
+      transition: width .1s linear;
+    }
+
+    /* Preview banner */
+    .preview-banner {
+      background: linear-gradient(90deg, var(--gold), var(--gold-hover));
+      color: #1a1308;
+      text-align: center;
+      padding: 8px 16px;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    /* Announcement */
+    .announcement {
+      background: var(--navy-900);
+      color: white;
+      text-align: center;
+      padding: 9px 16px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .announcement a {
+      color: white;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .announcement i { color: var(--gold-light); }
+
+    /* Info bar — compact */
+    .info-bar {
+      background: var(--navy-800);
+      color: var(--text-on-dark-muted);
+      font-size: 12px;
+      padding: 7px 0;
+    }
+    .info-bar__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .info-bar a { color: inherit; text-decoration: none; transition: color .2s; }
+    .info-bar a:hover { color: var(--gold-light); }
+    .info-bar__items { display: flex; gap: 16px; align-items: center; }
+    .live-indicator {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--green-light); font-weight: 600;
+    }
+    .live-indicator::before {
+      content: '';
+      width: 7px; height: 7px;
+      background: var(--green-light);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.6); transform: scale(1); }
+      50% { box-shadow: 0 0 0 8px rgba(34,197,94,0); transform: scale(1.1); }
+    }
+
+    /* ═══ HEADER — Sticky, search prominent ═══ */
+    .header {
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0;
+      z-index: 100;
+      transition: all .3s var(--easing);
+    }
+    .header.scrolled { box-shadow: var(--shadow-sm); }
+    .header__inner {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 24px;
+      padding: 14px 0;
+    }
+    .header__logo {
+      font-weight: 900;
+      font-size: 22px;
+      color: var(--navy-700);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    .header__logo .dot { color: var(--gold); }
+
+    /* Header search — prominent, not hidden */
+    .header-search {
+      max-width: 520px;
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+    }
+    .header-search input {
+      width: 100%;
+      padding: 11px 44px 11px 16px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 14px;
+      font-family: inherit;
+      background: var(--surface-alt);
+      transition: all .2s;
+      color: var(--text-primary);
+    }
+    .header-search input:focus {
+      outline: none;
+      background: white;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 4px var(--gold-soft);
+    }
+    .header-search i {
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .header__actions { display: flex; gap: 10px; align-items: center; }
+    .header__btn-icon {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--surface-alt);
+      color: var(--navy-700);
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      transition: all .2s;
+      position: relative;
+    }
+    .header__btn-icon:hover { background: var(--navy-100); }
+    .header__cart-badge {
+      position: absolute;
+      top: -2px; left: -2px;
+      background: var(--gold);
+      color: #1a1308;
+      font-size: 11px; font-weight: 800;
+      padding: 1px 6px;
+      border-radius: 999px;
+      min-width: 18px; text-align: center;
+    }
+    .header__cta {
+      background: linear-gradient(135deg, var(--navy-700), var(--navy-600));
+      color: white;
+      padding: 10px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all .2s;
+      white-space: nowrap;
+    }
+    .header__cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(27,58,92,0.35); }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 24px;
+      border-radius: 999px;
+      font-weight: 700; font-size: 15px;
+      text-decoration: none;
+      transition: all .2s var(--easing);
+      border: none; cursor: pointer;
+      font-family: inherit;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn--lg { padding: 16px 32px; font-size: 16px; }
+    .btn--gold {
+      background: linear-gradient(135deg, var(--gold), var(--gold-hover));
+      color: #1a1308;
+      box-shadow: 0 8px 24px -8px var(--gold-glow);
+    }
+    .btn--gold:hover { transform: translateY(-2px); box-shadow: 0 14px 32px -8px var(--gold-glow); }
+    .btn--ghost-white {
+      background: rgba(255,255,255,0.08);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+    }
+    .btn--ghost-white:hover {
+      background: rgba(255,255,255,0.16);
+      border-color: rgba(255,255,255,0.4);
+    }
+    .btn--whatsapp { background: var(--whatsapp); color: white; }
+    .btn--whatsapp:hover { background: #1bb858; transform: translateY(-2px); }
+
+    /* ═══ HERO — Search-first ═══ */
+    .hero {
+      position: relative;
+      padding: 80px 0 100px;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(232,167,53,0.12), transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(10,107,255,0.12), transparent 50%),
+        linear-gradient(180deg, #0a1628 0%, #1B3A5C 100%);
+      color: white;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    /* Subtle dot pattern */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+      -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+      pointer-events: none;
+      z-index: -1;
+    }
+    /* Aurora glow at bottom */
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -40%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 60%;
+      background: radial-gradient(ellipse at top, rgba(232,167,53,0.18), transparent 60%);
+      pointer-events: none;
+      z-index: -1;
+      animation: auroraShift 12s ease-in-out infinite;
+    }
+    @keyframes auroraShift {
+      0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.7; }
+      50% { transform: translateX(-50%) scale(1.15); opacity: 1; }
+    }
+    .hero__inner {
+      text-align: center;
+      max-width: 960px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .hero__live-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(34,197,94,0.15);
+      color: var(--green-light);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px; font-weight: 700;
+      border: 1px solid rgba(34,197,94,0.3);
+      margin-bottom: 24px;
+    }
+    .hero__live-pill::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--green-light);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .hero__title {
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      margin-bottom: 14px;
+      text-shadow: 0 2px 30px rgba(0,0,0,0.3);
+    }
+    .hero__title em {
+      color: var(--gold-light);
+      font-style: normal;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero__subtitle {
+      font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+      color: rgba(255,255,255,0.78);
+      margin-bottom: 36px;
+      line-height: 1.5;
+    }
+
+    /* Big search box */
+    .hero-search {
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .hero-search__inner {
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 999px;
+      padding: 6px 6px 6px 8px;
+      box-shadow:
+        0 20px 60px -20px rgba(0,0,0,0.5),
+        0 0 0 1px rgba(255,255,255,0.05);
+      transition: all .25s;
+    }
+    .hero-search__inner:focus-within {
+      box-shadow:
+        0 20px 60px -20px rgba(0,0,0,0.6),
+        0 0 0 4px var(--gold-glow);
+    }
+    .hero-search__icon {
+      flex-shrink: 0;
+      width: 48px; height: 48px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-muted);
+      font-size: 18px;
+    }
+    .hero-search__inner input {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 16px 0;
+      font-size: 17px;
+      font-family: inherit;
+      color: var(--text-primary);
+      background: transparent;
+      min-width: 0;
+    }
+    .hero-search__inner input::placeholder { color: var(--text-muted); }
+    .hero-search__btn {
+      flex-shrink: 0;
+      background: linear-gradient(135deg, var(--gold), var(--gold-hover));
+      color: #1a1308;
+      border: none;
+      padding: 14px 26px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 15px;
+      cursor: pointer;
+      transition: all .2s;
+      font-family: inherit;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .hero-search__btn:hover { transform: translateY(-1px); box-shadow: 0 8px 20px -4px var(--gold-glow); }
+
+    /* Tags below search */
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
+    }
+    .hero-tags__label {
+      color: rgba(255,255,255,0.55);
+      font-size: 13px;
+      font-weight: 500;
+      align-self: center;
+      margin-left: 4px;
+    }
+    .hero-tag {
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.85);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all .2s;
+      backdrop-filter: blur(10px);
+    }
+    .hero-tag:hover {
+      background: var(--gold);
+      color: #1a1308;
+      border-color: var(--gold);
+      transform: translateY(-1px);
+    }
+
+    /* 3 path cards */
+    .hero-paths {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 720px;
+      margin: 48px auto 32px;
+    }
+    .path-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--r-lg);
+      padding: 24px 18px;
+      text-decoration: none;
+      color: white;
+      backdrop-filter: blur(12px);
+      transition: all .3s var(--easing);
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .path-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 50%, var(--gold-soft) 100%);
+      opacity: 0;
+      transition: opacity .3s;
+      z-index: -1;
+    }
+    .path-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold);
+      background: rgba(255,255,255,0.1);
+    }
+    .path-card:hover::before { opacity: 1; }
+    .path-card__icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      background: var(--gold-soft);
+      color: var(--gold-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      margin-bottom: 14px;
+      transition: all .3s var(--easing-spring);
+    }
+    .path-card:hover .path-card__icon {
+      background: var(--gold);
+      color: #1a1308;
+      transform: rotate(-8deg) scale(1.05);
+    }
+    .path-card__title {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .path-card__desc {
+      font-size: 12px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.4;
+    }
+    .path-card__arrow {
+      position: absolute;
+      bottom: 16px; left: 16px;
+      color: var(--gold-light);
+      transition: transform .25s;
+    }
+    .path-card:hover .path-card__arrow { transform: translateX(-4px); }
+
+    /* Hero trust microline */
+    .hero-trust {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+    }
+    .hero-trust__item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hero-trust__item strong { color: white; font-weight: 800; font-family: 'Inter', sans-serif; }
+    .hero-trust__item i { color: var(--gold-light); }
+
+    /* ═══ Section base ═══ */
+    .section { padding: 90px 0; position: relative; }
+    .section--alt { background: var(--surface-alt); }
+    .section--navy {
+      background:
+        radial-gradient(circle at 30% 50%, rgba(10,107,255,0.12), transparent 50%),
+        linear-gradient(180deg, var(--navy-900) 0%, var(--navy-800) 100%);
+      color: white;
+    }
+    .section__header { text-align: center; max-width: 720px; margin: 0 auto 56px; }
+    .section--navy .section__title { color: white; }
+    .section--navy .section__subtitle { color: var(--text-on-dark-muted); }
+    .section__label {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold-soft);
+      color: var(--gold-hover);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 13px; font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .section--navy .section__label {
+      background: rgba(232,167,53,0.18);
+      color: var(--gold-light);
+    }
+    .section__title {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 900;
+      color: var(--navy-700);
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .section__subtitle {
+      font-size: clamp(1rem, 1.3vw, 1.15rem);
+      color: var(--text-secondary);
+    }
+
+    /* ═══ CATEGORIES — Bento with custom SVG art ═══ */
+    .cats-bento {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: minmax(160px, auto);
+      gap: 16px;
+    }
+    .cat {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 22px;
+      border-radius: var(--r-lg);
+      text-decoration: none;
+      transition: all .35s var(--easing);
+      overflow: hidden;
+      isolation: isolate;
+      background:
+        radial-gradient(circle at var(--bx, 100%) var(--by, 0%), rgba(232,167,53,0.25) 0%, transparent 55%),
+        linear-gradient(135deg, var(--navy-700) 0%, var(--navy-800) 100%);
+      min-height: 220px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .cat::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 18px 18px;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .cat::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(232,167,53,0.35) 0%, transparent 45%);
+      opacity: 0;
+      transition: opacity .35s;
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+    .cat:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(232,167,53,0.4);
+    }
+    .cat:hover::after { opacity: 1; }
+    .cat__art {
+      position: absolute;
+      top: 0; right: 0;
+      width: 65%; height: 65%;
+      pointer-events: none;
+      transition: transform .5s var(--easing);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cat:hover .cat__art { transform: scale(1.08) rotate(-2deg); }
+    .cat__art svg {
+      width: 100%; height: 100%;
+      max-width: 220px;
+      filter: drop-shadow(0 8px 20px rgba(0,0,0,0.25));
+    }
+    .cat__icon {
+      position: absolute;
+      top: 16px; right: 16px;
+      width: 40px; height: 40px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: var(--gold-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+      transition: all .3s var(--easing-spring);
+      z-index: 3;
+    }
+    .cat:hover .cat__icon {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #1a1308;
+      transform: rotate(-8deg) scale(1.1);
+    }
+    .cat__content { position: relative; z-index: 2; }
+    .cat__name {
+      font-size: 17px; font-weight: 800;
+      color: white;
+      line-height: 1.3;
+      margin-bottom: 4px;
+      letter-spacing: -0.01em;
+    }
+    .cat__desc {
+      font-size: 13px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.4;
+    }
+    .cat__badge {
+      position: absolute;
+      top: 16px; left: 16px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-hover));
+      color: #1a1308;
+      font-size: 10px; font-weight: 800;
+      padding: 5px 11px;
+      border-radius: 999px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 16px var(--gold-glow);
+      z-index: 3;
+    }
+    .cat--featured {
+      grid-column: span 6;
+      grid-row: span 2;
+      padding: 36px;
+      min-height: 400px;
+      --bx: 90%; --by: 10%;
+    }
+    .cat--featured .cat__art { width: 75%; height: 75%; top: 5%; right: 5%; }
+    .cat--featured .cat__art svg { max-width: 320px; }
+    .cat--featured .cat__icon { width: 52px; height: 52px; font-size: 22px; }
+    .cat--featured .cat__name { font-size: 26px; margin-bottom: 8px; max-width: 80%; }
+    .cat--featured .cat__desc { font-size: 14px; max-width: 70%; }
+    .cat--med { grid-column: span 4; min-height: 240px; }
+    .cat--med .cat__name { font-size: 18px; }
+    .cat--small { grid-column: span 3; padding: 18px; min-height: 200px; --bx: 100%; --by: 100%; }
+    .cat--small .cat__art { width: 70%; height: 60%; top: 8%; }
+    .cat--small .cat__art svg { max-width: 130px; }
+    .cat--small .cat__icon { width: 36px; height: 36px; font-size: 14px; top: 12px; right: 12px; }
+    .cat--small .cat__name { font-size: 14px; }
+    .cat--small .cat__desc { font-size: 11px; line-height: 1.3; margin-top: 2px; }
+    .cat-all {
+      grid-column: span 3;
+      background: linear-gradient(135deg, var(--navy-800), var(--navy-900));
+      color: white;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 8px;
+      text-decoration: none;
+      border-radius: var(--r-lg);
+      transition: all .3s;
+      padding: 20px;
+      font-weight: 700;
+      border: 1px solid rgba(232,167,53,0.3);
+    }
+    .cat-all:hover { transform: translateY(-4px); border-color: var(--gold); }
+    .cat-all i { font-size: 28px; color: var(--gold); }
+
+    /* SVG art shared styles */
+    .art-line { stroke: rgba(255,255,255,0.85); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .art-fill { fill: rgba(255,255,255,0.08); stroke: rgba(255,255,255,0.4); stroke-width: 1.5; }
+    .art-gold { fill: var(--gold); stroke: var(--gold-hover); stroke-width: 1; }
+    .art-gold-line { stroke: var(--gold-light); stroke-width: 2.5; stroke-linecap: round; fill: none; }
+    .art-glass { fill: rgba(255,255,255,0.12); stroke: rgba(255,255,255,0.5); stroke-width: 1.5; }
+    .art-shadow { fill: rgba(0,0,0,0.25); }
+
+    /* ═══ BEST SELLERS ═══ */
+    .best-sellers {
+      padding: 90px 0;
+      background:
+        radial-gradient(circle at 0% 100%, rgba(232,167,53,0.08), transparent 40%),
+        radial-gradient(circle at 100% 0%, rgba(10,107,255,0.06), transparent 40%),
+        linear-gradient(180deg, #FAFBFE 0%, #F1F4F9 100%);
+    }
+    .bs-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+    .bs-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px 18px 22px;
+      text-align: center;
+      text-decoration: none;
+      position: relative;
+      transition: all .35s var(--easing);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .bs-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 55%, var(--gold-soft) 100%);
+      opacity: 0;
+      transition: opacity .35s;
+      z-index: -1;
+    }
+    .bs-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--gold);
+    }
+    .bs-card:hover::before { opacity: 1; }
+    .bs-card__rank {
+      position: absolute;
+      top: -14px; right: 18px;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-hover));
+      color: #1a1308;
+      font-size: 18px; font-weight: 900;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Inter', sans-serif;
+      box-shadow: 0 6px 18px var(--gold-glow);
+      z-index: 3;
+      border: 3px solid white;
+    }
+    .bs-card__badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold), var(--gold-hover));
+      color: #1a1308;
+      font-size: 9px; font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 999px;
+      letter-spacing: 1.2px;
+      align-self: center;
+      box-shadow: 0 3px 10px var(--gold-glow);
+    }
+    .bs-card__art { height: 130px; display: flex; align-items: center; justify-content: center; margin-top: 4px; }
+    .bs-card__art svg { width: 100%; max-width: 130px; height: auto; transition: transform .5s var(--easing-spring); filter: drop-shadow(0 6px 14px rgba(27,58,92,0.18)); }
+    .bs-card:hover .bs-card__art svg { transform: scale(1.1) rotate(-3deg) translateY(-4px); }
+    .bs-card__name { font-size: 15px; font-weight: 800; color: var(--navy-700); line-height: 1.3; min-height: 38px; }
+    .bs-card__sub { font-size: 12px; color: var(--text-muted); line-height: 1.4; min-height: 32px; }
+    .bs-card__cta {
+      font-size: 13px; color: var(--action); font-weight: 700;
+      display: inline-flex; align-items: center; justify-content: center; gap: 4px;
+      margin-top: auto; padding-top: 8px;
+      border-top: 1px dashed var(--border);
+      transition: gap .25s;
+    }
+    .bs-card:hover .bs-card__cta { gap: 8px; }
+
+    /* ═══ SERVICES (compact, after best sellers) ═══ */
+    .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .svc-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 28px 24px;
+      text-align: center;
+      transition: all .3s var(--easing);
+    }
+    .svc-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--action);
+    }
+    .svc-card__icon {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--action-bg), var(--gold-soft));
+      color: var(--action);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      margin: 0 auto 16px;
+      transition: all .3s var(--easing-spring);
+    }
+    .svc-card:hover .svc-card__icon {
+      transform: scale(1.1) rotate(-8deg);
+      color: var(--gold-hover);
+    }
+    .svc-card__title { font-size: 17px; font-weight: 800; color: var(--navy-700); margin-bottom: 6px; }
+    .svc-card__desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+
+    /* ═══ WHY US — 3 cards ═══ */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .why-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 36px 28px;
+      transition: all .3s var(--easing);
+      position: relative;
+      overflow: hidden;
+    }
+    .why-card::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 100px; height: 100px;
+      background: radial-gradient(circle, var(--gold-soft) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .why-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--gold);
+    }
+    .why-card__icon {
+      width: 60px; height: 60px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--navy-700), var(--navy-800));
+      color: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+    .why-card__title { font-size: 20px; font-weight: 800; color: var(--navy-700); margin-bottom: 10px; }
+    .why-card__text { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+    /* ═══ DELIVERY MAP (compact) ═══ */
+    .delivery-map {
+      background:
+        radial-gradient(circle at 30% 50%, rgba(10,107,255,0.12), transparent 50%),
+        linear-gradient(180deg, var(--navy-900) 0%, var(--navy-800) 100%);
+      color: white;
+      padding: 90px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .delivery-map .section__title { color: white; }
+    .delivery-map .section__subtitle { color: var(--text-on-dark-muted); }
+    .delivery-map .section__label { background: var(--action-bg); color: var(--action-light); }
+    .israel-map-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 48px;
+      margin-top: 32px;
+    }
+    .israel-svg-box { width: 360px; flex-shrink: 0; }
+    .israel-svg-box svg { width: 100%; height: auto; display: block; }
+    .il-land { fill: rgba(255,255,255,0.03); stroke: rgba(255,255,255,0.1); stroke-width: 1.5; stroke-linejoin: round; }
+    .il-water { fill: rgba(10,107,255,0.08); stroke: rgba(10,107,255,0.18); stroke-width: 0.6; }
+    .il-coast { fill: none; stroke: rgba(10,107,255,0.12); stroke-width: 1; stroke-dasharray: 4 5; }
+    .il-mountain { fill: rgba(255,255,255,0.025); stroke: rgba(255,255,255,0.06); stroke-width: 0.7; stroke-linejoin: round; }
+    .il-geo-label { fill: rgba(255,255,255,0.2); font-size: 8px; font-family: 'Heebo'; font-weight: 300; }
+    .il-water-label { fill: rgba(10,107,255,0.3); font-size: 7px; font-family: 'Heebo'; font-weight: 400; }
+    .rt { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .rt-bg { stroke: rgba(255,255,255,0.06); stroke-width: 3; }
+    .rt-glow { stroke: url(#rGrad); stroke-width: 2.5; stroke-dasharray: 2200; stroke-dashoffset: 2200; }
+    .rt-glow.animate { animation: drawRt 3.5s cubic-bezier(0.4,0,0.2,1) forwards; }
+    @keyframes drawRt { to { stroke-dashoffset: 0; } }
+    .rt-dash { stroke: rgba(255,255,255,0.04); stroke-width: 1; stroke-dasharray: 5 8; }
+    .zoom-frame { fill: none; stroke: rgba(232,167,53,0.25); stroke-width: 1; stroke-dasharray: 4 3; rx: 6; }
+    .zoom-label { fill: rgba(232,167,53,0.4); font-size: 6px; font-family: 'Heebo'; font-weight: 600; }
+    .c-pin { stroke: white; stroke-width: 1.8; transition: all .35s; }
+    .c-pin--sm { fill: var(--action); r: 4; }
+    .c-pin--md { fill: var(--action-light); r: 5; }
+    .c-pin--hq { fill: var(--gold); r: 7; stroke-width: 2.2; filter: url(#gGold); }
+    .c-lbl { font-family: 'Heebo'; font-weight: 700; transition: fill .3s; pointer-events: none; }
+    .c-lbl--sm { fill: rgba(255,255,255,0.75); font-size: 8.5px; }
+    .c-lbl--md { fill: rgba(255,255,255,0.9); font-size: 9.5px; }
+    .c-lbl--hq { fill: var(--gold); font-size: 11px; }
+    .c-ping { fill: none; stroke-width: 1.2; opacity: 0; }
+    .c-ping.active { animation: cPing 1.8s ease-out infinite; }
+    @keyframes cPing { 0% { r: 5; opacity: 0.5; } 100% { r: 20; opacity: 0; } }
+    .c-pin.highlight { fill: var(--gold) !important; filter: drop-shadow(0 0 6px rgba(232,167,53,0.5)); }
+    .c-lbl.highlight { fill: var(--gold) !important; }
+    .ym-truck { opacity: 0; transition: opacity .4s; }
+    .ym-truck.driving { opacity: 1; }
+    .delivery-panel { flex: 1; display: flex; flex-direction: column; gap: 14px; padding-top: 12px; }
+    .dp-live {
+      background: linear-gradient(135deg, rgba(232,167,53,0.12), rgba(232,167,53,0.05));
+      border: 1px solid rgba(232,167,53,0.25);
+      border-radius: var(--r-xl);
+      padding: 18px;
+      text-align: center;
+    }
+    .dp-live__label {
+      font-size: 12px;
+      color: var(--text-on-dark-muted);
+      margin-bottom: 4px;
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+    }
+    .dp-live__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); animation: blink 1.2s infinite; }
+    @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .dp-live__city { font-size: 22px; font-weight: 800; color: var(--gold); min-height: 30px; transition: all .3s; }
+    .dp-card {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--r-xl);
+      padding: 18px 20px;
+      transition: all .3s var(--easing);
+    }
+    .dp-card:hover { background: rgba(255,255,255,0.08); transform: translateY(-2px); border-color: var(--gold); }
+    .dp-card__head { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
+    .dp-card__icon { font-size: 1rem; }
+    .dp-card:nth-child(1) .dp-card__icon { color: var(--gold-light); }
+    .dp-card:nth-child(2) .dp-card__icon { color: var(--action-light); }
+    .dp-card:nth-child(3) .dp-card__icon { color: var(--green-light); }
+    .dp-card__title { font-size: 15px; font-weight: 700; color: white; }
+    .dp-card__desc { font-size: 12px; color: var(--text-on-dark-muted); line-height: 1.5; }
+
+    /* ═══ Final CTA ═══ */
+    .cta-section {
+      background:
+        radial-gradient(circle at 30% 50%, var(--gold-soft), transparent 50%),
+        radial-gradient(circle at 70% 50%, var(--action-bg), transparent 50%),
+        linear-gradient(180deg, var(--navy-800), var(--navy-900));
+      color: white;
+      padding: 90px 0;
+      text-align: center;
+    }
+    .cta-section h2 {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 900;
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+    .cta-section p {
+      font-size: 17px;
+      color: var(--text-on-dark-muted);
+      margin-bottom: 32px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-section__actions {
+      display: flex; gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ═══ Footer with FAQ accordion ═══ */
+    .footer {
+      background: var(--navy-900);
+      color: var(--text-on-dark-muted);
+    }
+    .footer__faq {
+      padding: 60px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer__faq-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: white;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .footer__faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--r-md);
+      transition: all .25s;
+    }
+    .faq-item:hover { border-color: var(--gold); }
+    .faq-item[open] { border-color: var(--gold); background: rgba(255,255,255,0.06); }
+    .faq-item__q {
+      padding: 16px 20px;
+      font-weight: 700;
+      color: white;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+      font-size: 14px;
+    }
+    .faq-item__q::-webkit-details-marker { display: none; }
+    .faq-item__icon { transition: transform .2s; color: var(--gold); }
+    .faq-item[open] .faq-item__icon { transform: rotate(180deg); }
+    .faq-item__a {
+      padding: 0 20px 16px;
+      color: var(--text-on-dark-muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .footer__main { padding: 48px 0 28px; }
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 36px;
+      margin-bottom: 32px;
+    }
+    .footer__brand .footer__logo {
+      font-size: 22px; font-weight: 900;
+      color: white;
+      margin-bottom: 12px;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .footer__brand .footer__logo .dot { color: var(--gold); }
+    .footer__brand p {
+      font-size: 13px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      max-width: 320px;
+    }
+    .footer__social { display: flex; gap: 8px; }
+    .footer__social a {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      color: white;
+      display: flex; align-items: center; justify-content: center;
+      transition: all .25s var(--easing-spring);
+      text-decoration: none;
+    }
+    .footer__social a:hover { background: var(--gold); color: #1a1308; transform: translateY(-2px); }
+    .footer__col h4 { color: white; font-size: 15px; font-weight: 800; margin-bottom: 12px; }
+    .footer__col a {
+      display: block;
+      color: var(--text-on-dark-muted);
+      text-decoration: none;
+      font-size: 13px;
+      padding: 3px 0;
+      transition: color .2s;
+    }
+    .footer__col a:hover { color: var(--gold-light); }
+    .footer__bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 18px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12px;
+    }
+    .footer__bottom-links { display: flex; gap: 14px; flex-wrap: wrap; }
+    .footer__bottom-links a {
+      color: var(--text-on-dark-muted);
+      text-decoration: none;
+    }
+    .footer__bottom-links a:hover { color: var(--gold-light); }
+
+    /* Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .7s var(--easing), transform .7s var(--easing);
+    }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+
+    /* ═══ RESPONSIVE ═══ */
+    @media (max-width: 1024px) {
+      .header__inner { grid-template-columns: auto 1fr auto; gap: 12px; }
+      .header-search { max-width: 360px; }
+      .header__cta span { display: none; }
+    }
+    @media (max-width: 800px) {
+      .header__inner { grid-template-columns: auto auto; }
+      .header-search { display: none; }
+      .hero-paths { grid-template-columns: 1fr; }
+      .cats-bento { grid-template-columns: repeat(6, 1fr); }
+      .cat--featured { grid-column: span 6; grid-row: span 1; }
+      .cat--med { grid-column: span 3; }
+      .cat--small { grid-column: span 3; }
+      .cat-all { grid-column: span 6; padding: 24px; }
+      .bs-grid { grid-template-columns: repeat(2, 1fr); }
+      .bs-grid > .bs-card:nth-child(5) { grid-column: span 2; max-width: 50%; margin: 0 auto; }
+      .svc-grid { grid-template-columns: repeat(2, 1fr); }
+      .why-grid { grid-template-columns: 1fr; }
+      .israel-map-wrapper { flex-direction: column; align-items: center; }
+      .israel-svg-box { width: 280px; }
+      .footer__grid { grid-template-columns: 1fr 1fr; }
+      .footer__faq-grid { grid-template-columns: 1fr; }
+      .info-bar__items > :not(.live-indicator) { display: none; }
+    }
+    @media (max-width: 540px) {
+      .cats-bento { grid-template-columns: repeat(2, 1fr); }
+      .cat--featured, .cat--med, .cat--small, .cat-all { grid-column: span 2; }
+      .bs-grid { grid-template-columns: 1fr; }
+      .bs-grid > .bs-card:nth-child(5) { grid-column: span 1; max-width: 100%; }
+      .svc-grid { grid-template-columns: 1fr; }
+      .footer__grid { grid-template-columns: 1fr; }
+      .hero { padding: 56px 0 80px; }
+      .hero-search__btn span { display: none; }
+      .hero-trust { gap: 16px; font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress"><div class="scroll-progress__bar" id="scrollBar"></div></div>
+
+  <div class="preview-banner">
+    <i class="fas fa-eye"></i> תצוגה מקדימה V2 — Store-Front Mental Model · 9 סקשנים בלבד · ממוקד בחיפוש ומציאת מוצר
+  </div>
+
+  <!-- ═══ ANNOUNCEMENT ═══ -->
+  <div class="announcement">
+    <a href="#"><i class="fas fa-crown"></i> רוכשים בכמויות מסחריות? הצטרפו למועדון הלקוחות וקבלו מחירון סיטונאי ייעודי <i class="fas fa-chevron-left" style="font-size:0.75em;"></i></a>
+  </div>
+
+  <!-- ═══ INFO BAR ═══ -->
+  <div class="info-bar">
+    <div class="container">
+      <div class="info-bar__inner">
+        <div class="info-bar__items">
+          <span><i class="fas fa-phone-alt"></i> <a href="tel:037740400">03-7740400</a></span>
+          <span><i class="fas fa-clock"></i> א'-ה' 08:00-17:00</span>
+          <span class="live-indicator">פעיל עכשיו · 12 הזמנות בשעה האחרונה</span>
+        </div>
+        <div class="info-bar__items">
+          <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ HEADER with prominent search ═══ -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header__inner">
+        <a href="#" class="header__logo">וואי מרקט<span class="dot">.</span></a>
+
+        <form class="header-search" action="#" method="get" role="search">
+          <input type="search" name="q" placeholder="חפש מוצר, קטגוריה או שירות..." aria-label="חיפוש">
+          <i class="fas fa-search"></i>
+        </form>
+
+        <div class="header__actions">
+          <a href="#" class="header__btn-icon" aria-label="עגלה">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="header__cart-badge">0</span>
+          </a>
+          <a href="#" class="header__btn-icon" aria-label="התחברות"><i class="fas fa-user"></i></a>
+          <a href="#" class="header__cta"><i class="fas fa-user-plus"></i> <span>פתחו חשבון</span></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ HERO — Search-first ═══ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__inner">
+        <div class="hero__live-pill">פעיל עכשיו · משלוחים יוצאים</div>
+        <h1 class="hero__title">מה אתה <em>מחפש היום?</em></h1>
+        <p class="hero__subtitle">נייר, ניקיון, חד פעמי, אריזות — 900+ מוצרים מוסדיים, אספקה תוך 24-72 שעות.</p>
+
+        <!-- Big search box -->
+        <form class="hero-search" action="#" method="get" role="search">
+          <div class="hero-search__inner">
+            <span class="hero-search__icon"><i class="fas fa-search"></i></span>
+            <input type="search" name="q" placeholder="הקלד שם מוצר, קטגוריה או שירות..." aria-label="חיפוש">
+            <button type="submit" class="hero-search__btn">
+              חפש <i class="fas fa-arrow-left"></i>
+            </button>
+          </div>
+        </form>
+
+        <!-- Popular tags -->
+        <div class="hero-tags">
+          <span class="hero-tags__label">פופולרי:</span>
+          <a href="#" class="hero-tag">נייר טואלט</a>
+          <a href="#" class="hero-tag">אקונומיקה</a>
+          <a href="#" class="hero-tag">כפפות ניטריל</a>
+          <a href="#" class="hero-tag">שקיות זבל</a>
+          <a href="#" class="hero-tag">מטליות</a>
+          <a href="#" class="hero-tag">קפה תעשייתי</a>
+        </div>
+
+        <!-- 3 path cards -->
+        <div class="hero-paths">
+          <a href="#best-sellers" class="path-card">
+            <div class="path-card__icon"><i class="fas fa-fire"></i></div>
+            <div class="path-card__title">מוצר ספציפי</div>
+            <div class="path-card__desc">5 הכי נמכרים — ראו ישר מה כולם מזמינים</div>
+            <i class="fas fa-arrow-left path-card__arrow"></i>
+          </a>
+          <a href="#categories" class="path-card">
+            <div class="path-card__icon"><i class="fas fa-th-large"></i></div>
+            <div class="path-card__title">קטגוריה לעסק</div>
+            <div class="path-card__desc">12 קטגוריות — נייר, ניקיון, חד פעמי ועוד</div>
+            <i class="fas fa-arrow-left path-card__arrow"></i>
+          </a>
+          <a href="#services" class="path-card">
+            <div class="path-card__icon"><i class="fas fa-warehouse"></i></div>
+            <div class="path-card__title">שירות מיוחד</div>
+            <div class="path-card__desc">סחר · שיווק · הפצה · אחסנה</div>
+            <i class="fas fa-arrow-left path-card__arrow"></i>
+          </a>
+        </div>
+
+        <!-- Trust microline -->
+        <div class="hero-trust">
+          <div class="hero-trust__item"><i class="fas fa-users"></i> <strong>214+</strong> עסקים</div>
+          <div class="hero-trust__item"><i class="fas fa-bolt"></i> <strong>24-72</strong> שעות אספקה</div>
+          <div class="hero-trust__item"><i class="fas fa-box-open"></i> <strong>900+</strong> מוצרים במלאי</div>
+          <div class="hero-trust__item"><i class="fas fa-star"></i> <strong>4.9</strong> דירוג</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CATEGORIES ═══ -->
+  <section class="section" id="categories">
+    <div class="container">
+      <div class="section__header reveal">
+        <div class="section__label"><i class="fas fa-th-large"></i> קטגוריות</div>
+        <h2 class="section__title">נתיב הקטגוריה</h2>
+        <p class="section__subtitle">12 קטגוריות מוצרים — לכל סוג עסק. בחרו את התחום ונכנסים פנימה.</p>
+      </div>
+
+      <div class="cats-bento">
+        <!-- Featured 1: Paper -->
+        <a href="#" class="cat cat--featured tilt reveal">
+          <div class="cat__art">
+            <svg viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="120" cy="180" rx="80" ry="6" class="art-shadow"/>
+              <g transform="translate(70,30)">
+                <ellipse cx="0" cy="0" rx="32" ry="10" class="art-glass"/>
+                <rect x="-32" y="0" width="64" height="80" class="art-fill"/>
+                <ellipse cx="0" cy="80" rx="32" ry="10" class="art-fill"/>
+                <rect x="-32" y="35" width="64" height="6" class="art-gold"/>
+                <ellipse cx="0" cy="0" rx="18" ry="5" fill="rgba(255,255,255,0.15)"/>
+                <ellipse cx="0" cy="0" rx="6" ry="2" fill="rgba(0,0,0,0.3)"/>
+              </g>
+              <g transform="translate(40,80)">
+                <ellipse cx="0" cy="0" rx="28" ry="9" class="art-glass"/>
+                <rect x="-28" y="0" width="56" height="70" class="art-fill"/>
+                <ellipse cx="0" cy="70" rx="28" ry="9" class="art-fill"/>
+                <rect x="-28" y="32" width="56" height="5" class="art-gold"/>
+                <ellipse cx="0" cy="0" rx="15" ry="4" fill="rgba(255,255,255,0.15)"/>
+              </g>
+              <g transform="translate(165,90)">
+                <ellipse cx="0" cy="0" rx="26" ry="8" class="art-glass"/>
+                <rect x="-26" y="0" width="52" height="60" class="art-fill"/>
+                <ellipse cx="0" cy="60" rx="26" ry="8" class="art-fill"/>
+                <rect x="-26" y="28" width="52" height="5" class="art-gold"/>
+                <ellipse cx="0" cy="0" rx="14" ry="4" fill="rgba(255,255,255,0.15)"/>
+              </g>
+            </svg>
+          </div>
+          <span class="cat__badge">הכי מבוקש</span>
+          <div class="cat__icon"><i class="fas fa-toilet-paper"></i></div>
+          <div class="cat__content">
+            <div class="cat__name">מוצרי נייר וניגוב</div>
+            <div class="cat__desc">נייר טואלט, מגבות, מפיות — מבחר רחב מהיצרנים המובילים</div>
+          </div>
+        </a>
+
+        <!-- Featured 2: Cleaning -->
+        <a href="#" class="cat cat--featured tilt reveal">
+          <div class="cat__art">
+            <svg viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="140" cy="180" rx="60" ry="5" class="art-shadow"/>
+              <g transform="translate(140,30)">
+                <rect x="-8" y="0" width="16" height="14" rx="2" class="art-fill"/>
+                <path d="M-22,14 L-14,14 L-14,8 L-22,8 Z" class="art-glass"/>
+                <path d="M-22,14 L22,14 L26,28 L-26,28 Z" class="art-fill"/>
+                <rect x="-26" y="28" width="52" height="100" rx="4" class="art-fill"/>
+                <rect x="-22" y="55" width="44" height="32" rx="2" fill="rgba(232,167,53,0.25)" stroke="var(--gold)" stroke-width="1.5"/>
+                <text x="0" y="76" text-anchor="middle" fill="var(--gold-light)" font-size="11" font-weight="900" font-family="Heebo">YM</text>
+                <rect x="-20" y="35" width="6" height="80" rx="2" fill="rgba(255,255,255,0.18)"/>
+              </g>
+              <circle cx="60" cy="60" r="14" class="art-glass"/>
+              <circle cx="56" cy="56" r="3" fill="rgba(255,255,255,0.4)"/>
+              <circle cx="35" cy="100" r="9" class="art-glass"/>
+              <circle cx="80" cy="130" r="7" class="art-glass"/>
+              <circle cx="50" cy="40" r="4" fill="rgba(232,167,53,0.5)"/>
+            </svg>
+          </div>
+          <span class="cat__badge">הכי נמכר</span>
+          <div class="cat__icon"><i class="fas fa-spray-can"></i></div>
+          <div class="cat__content">
+            <div class="cat__name">חומרי ניקוי וכימיקלים</div>
+            <div class="cat__desc">מנקים תעשייתיים, חומרי חיטוי, סבונים — לחברות ניקיון ומוסדות</div>
+          </div>
+        </a>
+
+        <!-- Med 1: Disposables -->
+        <a href="#" class="cat cat--med tilt reveal">
+          <div class="cat__art">
+            <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="100" cy="140" rx="70" ry="5" class="art-shadow"/>
+              <g transform="translate(70,50)">
+                <ellipse cx="0" cy="55" rx="55" ry="10" class="art-fill"/>
+                <ellipse cx="0" cy="48" rx="55" ry="10" class="art-fill"/>
+                <ellipse cx="0" cy="41" rx="55" ry="10" class="art-fill"/>
+                <ellipse cx="0" cy="34" rx="55" ry="10" class="art-fill"/>
+                <ellipse cx="0" cy="34" rx="22" ry="4" fill="rgba(232,167,53,0.3)" stroke="var(--gold)" stroke-width="0.8"/>
+              </g>
+              <g transform="translate(155,65)">
+                <ellipse cx="0" cy="0" rx="14" ry="4" class="art-glass"/>
+                <path d="M-14,0 L-12,40 L12,40 L14,0 Z" class="art-fill"/>
+                <rect x="-12" y="14" width="24" height="3" class="art-gold"/>
+              </g>
+            </svg>
+          </div>
+          <div class="cat__icon"><i class="fas fa-utensils"></i></div>
+          <div class="cat__content">
+            <div class="cat__name">חד פעמי ואירוח</div>
+            <div class="cat__desc">צלחות, כוסות, סכום — לאירועים ומסעדות</div>
+          </div>
+        </a>
+
+        <!-- Med 2: Take Away -->
+        <a href="#" class="cat cat--med tilt reveal">
+          <div class="cat__art">
+            <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="100" cy="140" rx="60" ry="5" class="art-shadow"/>
+              <g transform="translate(100,40)">
+                <path d="M-50,15 L-35,0 L35,0 L50,15 Z" class="art-glass"/>
+                <path d="M-50,15 L50,15 L45,90 L-45,90 Z" class="art-fill"/>
+                <path d="M50,15 L65,8 L60,82 L45,90 Z" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+                <path d="M-35,0 L35,0 L40,8 L-40,8 Z" fill="rgba(0,0,0,0.3)"/>
+                <path d="M-15,0 Q-15,-18 0,-18 Q15,-18 15,0" class="art-line"/>
+                <rect x="-32" y="40" width="64" height="14" class="art-gold"/>
+                <text x="0" y="51" text-anchor="middle" fill="#1a1308" font-size="9" font-weight="900" font-family="Heebo">Y MARKET</text>
+              </g>
+            </svg>
+          </div>
+          <div class="cat__icon"><i class="fas fa-box-open"></i></div>
+          <div class="cat__content">
+            <div class="cat__name">אריזות ו-Take Away</div>
+            <div class="cat__desc">קופסאות, שקיות, נייר עטיפה</div>
+          </div>
+        </a>
+
+        <!-- Med 3: Textile -->
+        <a href="#" class="cat cat--med tilt reveal">
+          <div class="cat__art">
+            <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="100" cy="140" rx="65" ry="5" class="art-shadow"/>
+              <g transform="translate(100,30)">
+                <path d="M-55,90 L55,90 L60,100 L-60,100 Z" class="art-fill"/>
+                <path d="M-50,75 L50,75 L55,90 L-55,90 Z" class="art-fill"/>
+                <path d="M-45,60 L45,60 L50,75 L-50,75 Z" class="art-fill"/>
+                <path d="M-40,45 L40,45 L45,60 L-45,60 Z" class="art-fill"/>
+                <line x1="-40" y1="52" x2="40" y2="52" class="art-gold-line" stroke-width="1.5"/>
+                <line x1="-45" y1="67" x2="45" y2="67" class="art-gold-line" stroke-width="1.5" opacity="0.7"/>
+                <line x1="-50" y1="82" x2="50" y2="82" class="art-gold-line" stroke-width="1.5" opacity="0.5"/>
+                <circle cx="-20" cy="51" r="1.5" fill="var(--gold)"/>
+                <circle cx="20" cy="51" r="1.5" fill="var(--gold)"/>
+                <circle cx="0" cy="51" r="1.5" fill="var(--gold)"/>
+              </g>
+            </svg>
+          </div>
+          <div class="cat__icon"><i class="fas fa-hand-sparkles"></i></div>
+          <div class="cat__content">
+            <div class="cat__name">טקסטיל ומטליות</div>
+            <div class="cat__desc">מטליות מקצועיות, סחבות, מגבים</div>
+          </div>
+        </a>
+
+        <!-- Small cards -->
+        <a href="#" class="cat cat--small tilt reveal">
+          <div class="cat__art">
+            <svg viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50,30 Q45,20 50,10 Q55,5 50,-5" class="art-line" stroke-width="2" opacity="0.6"/>
+              <path d="M65,30 Q60,20 65,10" class="art-line" stroke-width="2" opacity="0.5"/>
+              <path d="M80,30 Q75,20 80,10 Q85,5 80,-5" class="art-line" stroke-width="2" opacity="0.6"/>
+              <g transform="translate(65,55)">
+                <ellipse cx="0" cy="0" rx="28" ry="6" class="art-fill"/>
+                <path d="M-28,0 L-23,55 L23,55 L28,0 Z" class="art-fill"/>
+                <ellipse cx="0" cy="0" rx="22" ry="4" class="art-gold" opacity="0.5"/>
+                <path d="M28,12 Q42,18 42,30 Q42,40 28,42" class="art-line" stroke-width="3"/>
+                <rect x="-26" y="35" width="52" height="3" class="art-gold"/>
+              </g>
+            </svg>
+          </div>
+          <div class="cat__icon"><i class="fas fa-coffee"></i></div>
+          <div class="cat__content">
+            <div class="cat__name">קפה וכיבוד</div>
+            <div class="cat__desc">קפה, סוכר, חטיפים</div>
+          </div>
+        </a>
+
+        <a href="#" class="cat cat--small tilt reveal">
+          <div class="cat__art">
+            <svg viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg">
+              <g transform="translate(65,30)">
+                <rect x="-22" y="0" width="9" height="35" rx="4" class="art-fill"/>
+                <rect x="-11" y="-4" width="9" height="40" rx="4" class="art-fill"/>
+                <rect x="0" y="-4" width="9" height="40" rx="4" class="art-fill"/>
+                <rect x="11" y="0" width="9" height="35" rx="4" class="art-fill"/>
+                <rect x="20" y="20" width="8" height="22" rx="4" class="art-fill" transform="rotate(25 24 31)"/>
+                <path d="M-22,30 L28,30 L30,70 L-25,70 Z" class="art-fill"/>
+                <rect x="-25" y="65" width="55" height="10" class="art-gold"/>
+              </g>
+            </svg>
+          </div>
+          <div class="cat__icon"><i class="fas fa-hard-hat"></i></div>
+          <div class="cat__content">
+            <div class="cat__name">בטיחות ומיגון</div>
+            <div class="cat__desc">כפפות, מסכות, ביגוד</div>
+          </div>
+        </a>
+
+        <a href="#" class="cat cat--small tilt reveal">
+          <div class="cat__art">
+            <svg viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg">
+              <g transform="translate(40,40)">
+                <rect x="0" y="0" width="55" height="70" rx="3" class="art-fill"/>
+                <rect x="0" y="0" width="6" height="70" class="art-gold"/>
+                <line x1="14" y1="15" x2="48" y2="15" class="art-line" stroke-width="1.5" opacity="0.6"/>
+                <line x1="14" y1="25" x2="48" y2="25" class="art-line" stroke-width="1.5" opacity="0.6"/>
+                <line x1="14" y1="35" x2="40" y2="35" class="art-line" stroke-width="1.5" opacity="0.6"/>
+              </g>
+              <g transform="translate(75,35) rotate(35)">
+                <rect x="0" y="0" width="50" height="6" rx="1" class="art-fill"/>
+                <rect x="0" y="0" width="20" height="6" class="art-gold"/>
+                <path d="M50,0 L58,3 L50,6 Z" fill="rgba(255,255,255,0.85)"/>
+              </g>
+            </svg>
+          </div>
+          <div class="cat__icon"><i class="fas fa-pen"></i></div>
+          <div class="cat__content">
+            <div class="cat__name">ציוד משרדי</div>
+            <div class="cat__desc">עטים, נייר, מוצרי משרד</div>
+          </div>
+        </a>
+
+        <a href="#" class="cat cat--small tilt reveal">
+          <div class="cat__art">
+            <svg viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg">
+              <g transform="translate(65,30)">
+                <ellipse cx="-8" cy="0" rx="6" ry="4" class="art-fill"/>
+                <ellipse cx="8" cy="0" rx="6" ry="4" class="art-fill"/>
+                <path d="M-30,8 Q-32,18 -34,30 Q-36,55 -30,80 L30,80 Q36,55 34,30 Q32,18 30,8 Q22,4 -22,4 Q-26,4 -30,8 Z" class="art-fill"/>
+                <path d="M-32,40 Q-30,45 30,45 Q34,40 32,38 Q-32,38 -32,40 Z" class="art-gold"/>
+                <circle cx="0" cy="60" r="4" fill="var(--gold)"/>
+                <text x="0" y="63" text-anchor="middle" fill="#1a1308" font-size="6" font-weight="900">Y</text>
+              </g>
+            </svg>
+          </div>
+          <div class="cat__icon"><i class="fas fa-trash-alt"></i></div>
+          <div class="cat__content">
+            <div class="cat__name">שקיות אשפה</div>
+            <div class="cat__desc">שקיות אשפה, ניילונים</div>
+          </div>
+        </a>
+
+        <a href="#" class="cat cat--small tilt reveal">
+          <div class="cat__art">
+            <svg viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg">
+              <g transform="translate(65,65) rotate(-30)">
+                <rect x="-30" y="-3" width="60" height="6" rx="2" class="art-fill"/>
+                <circle cx="-30" cy="0" r="10" class="art-fill"/>
+                <circle cx="-30" cy="0" r="4" fill="rgba(0,0,0,0.4)"/>
+                <path d="M30,-3 L38,-7 L42,-2 L42,2 L38,7 L30,3 Z" class="art-fill"/>
+              </g>
+              <g transform="translate(65,65) rotate(30)">
+                <rect x="-32" y="-2.5" width="20" height="5" class="art-gold"/>
+                <rect x="-12" y="-2" width="6" height="4" class="art-fill"/>
+                <rect x="-6" y="-2" width="38" height="4" class="art-fill"/>
+                <path d="M32,-2 L38,0 L32,2 Z" fill="rgba(255,255,255,0.85)"/>
+              </g>
+              <circle cx="65" cy="65" r="5" class="art-gold"/>
+            </svg>
+          </div>
+          <div class="cat__icon"><i class="fas fa-wrench"></i></div>
+          <div class="cat__content">
+            <div class="cat__name">ציוד טכני</div>
+            <div class="cat__desc">כלי עבודה, תחזוקה</div>
+          </div>
+        </a>
+
+        <a href="#" class="cat cat--small tilt reveal">
+          <div class="cat__art">
+            <svg viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg">
+              <g transform="translate(40,55)">
+                <path d="M0,0 L40,0 L48,8 L48,42 L8,42 L8,8 Z" class="art-fill"/>
+                <path d="M0,0 L8,8 L48,8" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none"/>
+                <line x1="28" y1="0" x2="28" y2="42" stroke="rgba(232,167,53,0.7)" stroke-width="2"/>
+                <line x1="8" y1="22" x2="48" y2="22" stroke="rgba(232,167,53,0.7)" stroke-width="2"/>
+              </g>
+              <g transform="translate(90,50)">
+                <ellipse cx="0" cy="0" rx="20" ry="8" class="art-fill"/>
+                <ellipse cx="0" cy="20" rx="20" ry="8" class="art-fill"/>
+                <rect x="-20" y="0" width="40" height="20" class="art-fill"/>
+                <ellipse cx="0" cy="0" rx="20" ry="8" class="art-glass"/>
+                <ellipse cx="0" cy="0" rx="10" ry="4" fill="rgba(0,0,0,0.4)"/>
+                <ellipse cx="0" cy="0" rx="14" ry="6" fill="none" stroke="var(--gold)" stroke-width="1.5"/>
+              </g>
+            </svg>
+          </div>
+          <div class="cat__icon"><i class="fas fa-tape"></i></div>
+          <div class="cat__content">
+            <div class="cat__name">לוגיסטיקה ואריזה</div>
+            <div class="cat__desc">דבקים, סרטים, אריזה</div>
+          </div>
+        </a>
+
+        <a href="#" class="cat cat--small tilt reveal">
+          <div class="cat__art">
+            <svg viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg">
+              <path d="M48,30 Q48,18 65,18 Q82,18 82,30" class="art-line" stroke-width="3" fill="none"/>
+              <g transform="translate(30,30)">
+                <rect x="0" y="0" width="70" height="55" rx="5" class="art-fill"/>
+                <rect x="0" y="0" width="70" height="14" rx="5" fill="rgba(232,167,53,0.4)"/>
+                <rect x="28" y="22" width="14" height="30" class="art-gold"/>
+                <rect x="20" y="30" width="30" height="14" class="art-gold"/>
+              </g>
+            </svg>
+          </div>
+          <div class="cat__icon"><i class="fas fa-first-aid"></i></div>
+          <div class="cat__content">
+            <div class="cat__name">עזרה ראשונה</div>
+            <div class="cat__desc">תחבושות, AED, ערכות</div>
+          </div>
+        </a>
+
+        <a href="#" class="cat-all reveal"><i class="fas fa-th"></i>לכל הקטגוריות</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ BEST SELLERS ═══ -->
+  <section class="best-sellers" id="best-sellers">
+    <div class="container">
+      <div class="section__header reveal">
+        <div class="section__label"><i class="fas fa-fire"></i> BEST SELLERS</div>
+        <h2 class="section__title">5 הכי נמכרים אצלנו</h2>
+        <p class="section__subtitle">המוצרים שעסקים מזמינים שוב ושוב — תמיד במלאי, תמיד עם המחיר הכי טוב</p>
+      </div>
+
+      <div class="bs-grid">
+
+        <a href="#" class="bs-card reveal">
+          <div class="bs-card__rank">1</div>
+          <span class="bs-card__badge">BEST SELLER</span>
+          <div class="bs-card__art">
+            <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="75" cy="130" rx="55" ry="6" fill="rgba(27,58,92,0.12)"/>
+              <ellipse cx="75" cy="38" rx="50" ry="14" fill="#FCFAF5" stroke="#1B3A5C" stroke-width="2"/>
+              <rect x="25" y="38" width="100" height="80" fill="#FCFAF5" stroke="#1B3A5C" stroke-width="2"/>
+              <ellipse cx="75" cy="118" rx="50" ry="14" fill="#FCFAF5" stroke="#1B3A5C" stroke-width="2"/>
+              <rect x="25" y="76" width="100" height="6" fill="#E8A735"/>
+              <text x="75" y="81" text-anchor="middle" fill="#1B3A5C" font-size="5.5" font-weight="900">YMARKET</text>
+              <ellipse cx="75" cy="38" rx="20" ry="6" fill="#1B3A5C" opacity="0.25"/>
+              <ellipse cx="75" cy="38" rx="9" ry="2.5" fill="#1B3A5C" opacity="0.55"/>
+            </svg>
+          </div>
+          <div class="bs-card__name">נייר טואלט תעשייתי</div>
+          <div class="bs-card__sub">גליל גדול 1,000 מטר<br>מארז 6 גלילים</div>
+          <div class="bs-card__cta">צפו במוצר <i class="fas fa-arrow-left"></i></div>
+        </a>
+
+        <a href="#" class="bs-card reveal">
+          <div class="bs-card__rank">2</div>
+          <span class="bs-card__badge">BEST SELLER</span>
+          <div class="bs-card__art">
+            <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="75" cy="135" rx="42" ry="5" fill="rgba(27,58,92,0.12)"/>
+              <rect x="60" y="10" width="30" height="14" rx="2" fill="#1B3A5C"/>
+              <rect x="60" y="10" width="30" height="3" fill="#E8A735"/>
+              <path d="M55,24 L95,24 L100,32 L50,32 Z" fill="#FCFAF5" stroke="#1B3A5C" stroke-width="2"/>
+              <rect x="40" y="32" width="70" height="98" rx="6" fill="#FCFAF5" stroke="#1B3A5C" stroke-width="2"/>
+              <path d="M105,55 Q122,55 122,75 Q122,95 105,95" fill="none" stroke="#1B3A5C" stroke-width="2.5"/>
+              <rect x="46" y="58" width="58" height="46" fill="#E8A735" stroke="#D4952E" stroke-width="1"/>
+              <text x="75" y="76" text-anchor="middle" fill="#1B3A5C" font-size="11" font-weight="900" font-family="Heebo">YM</text>
+              <text x="75" y="89" text-anchor="middle" fill="#1B3A5C" font-size="7" font-weight="700" font-family="Heebo">אקונומיקה</text>
+              <text x="75" y="99" text-anchor="middle" fill="#1B3A5C" font-size="7" font-weight="900" font-family="Heebo">4 ליטר</text>
+              <rect x="44" y="38" width="4" height="80" rx="2" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="58" cy="44" r="3.5" fill="#F5C76B"/>
+            </svg>
+          </div>
+          <div class="bs-card__name">אקונומיקה ריחנית</div>
+          <div class="bs-card__sub">4 ליטר · ריח לימון/לבנדר<br>חומר פעיל 3.5%</div>
+          <div class="bs-card__cta">צפו במוצר <i class="fas fa-arrow-left"></i></div>
+        </a>
+
+        <a href="#" class="bs-card reveal">
+          <div class="bs-card__rank">3</div>
+          <span class="bs-card__badge">BEST SELLER</span>
+          <div class="bs-card__art">
+            <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="75" cy="125" rx="55" ry="5" fill="rgba(27,58,92,0.12)"/>
+              <rect x="20" y="32" width="110" height="88" rx="3" fill="#FCFAF5" stroke="#1B3A5C" stroke-width="2"/>
+              <line x1="20" y1="50" x2="130" y2="50" stroke="#1B3A5C" stroke-width="1" opacity="0.3"/>
+              <line x1="20" y1="68" x2="130" y2="68" stroke="#1B3A5C" stroke-width="1" opacity="0.3"/>
+              <line x1="20" y1="86" x2="130" y2="86" stroke="#1B3A5C" stroke-width="1" opacity="0.3"/>
+              <line x1="20" y1="104" x2="130" y2="104" stroke="#1B3A5C" stroke-width="1" opacity="0.3"/>
+              <rect x="30" y="71" width="90" height="12" fill="#E8A735" stroke="#D4952E" stroke-width="0.5"/>
+              <text x="75" y="80" text-anchor="middle" fill="#1B3A5C" font-size="8" font-weight="900" font-family="Heebo">Y MARKET</text>
+              <path d="M65,32 L65,22 L85,22 L85,32" fill="#FCFAF5" stroke="#1B3A5C" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div class="bs-card__name">מגבות נייר מקצועיות</div>
+          <div class="bs-card__sub">סופגות, V-Fold<br>מארז 200 יחידות</div>
+          <div class="bs-card__cta">צפו במוצר <i class="fas fa-arrow-left"></i></div>
+        </a>
+
+        <a href="#" class="bs-card reveal">
+          <div class="bs-card__rank">4</div>
+          <span class="bs-card__badge">BEST SELLER</span>
+          <div class="bs-card__art">
+            <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="75" cy="130" rx="50" ry="5" fill="rgba(27,58,92,0.12)"/>
+              <rect x="25" y="50" width="100" height="72" rx="3" fill="#1B3A5C" stroke="#0A1628" stroke-width="1"/>
+              <ellipse cx="75" cy="50" rx="50" ry="9" fill="#0A1628" stroke="#1B3A5C" stroke-width="1.5"/>
+              <ellipse cx="75" cy="50" rx="32" ry="5" fill="#000"/>
+              <path d="M62,50 L60,28 L66,26 L68,46 L73,26 L79,28 L77,46 L82,30 L88,32 L86,48 L92,34 L97,36 L94,50 Z" fill="#1A1A1A" stroke="#0A1628" stroke-width="1"/>
+              <rect x="25" y="78" width="100" height="14" fill="#E8A735"/>
+              <text x="75" y="89" text-anchor="middle" fill="#1B3A5C" font-size="10" font-weight="900" font-family="Heebo">YMARKET</text>
+              <rect x="40" y="100" width="70" height="14" rx="2" fill="rgba(255,255,255,0.1)"/>
+              <text x="75" y="110" text-anchor="middle" fill="white" font-size="9" font-weight="800" font-family="Heebo">100 יחידות</text>
+            </svg>
+          </div>
+          <div class="bs-card__name">כפפות ניטריל שחור</div>
+          <div class="bs-card__sub">ללא אבק · M / L / XL<br>קופסה 100 יחידות</div>
+          <div class="bs-card__cta">צפו במוצר <i class="fas fa-arrow-left"></i></div>
+        </a>
+
+        <a href="#" class="bs-card reveal">
+          <div class="bs-card__rank">5</div>
+          <span class="bs-card__badge">BEST SELLER</span>
+          <div class="bs-card__art">
+            <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="75" cy="130" rx="55" ry="5" fill="rgba(27,58,92,0.12)"/>
+              <ellipse cx="75" cy="42" rx="50" ry="10" fill="#1A1A1A" stroke="#1B3A5C" stroke-width="2"/>
+              <rect x="25" y="42" width="100" height="68" fill="#1A1A1A" stroke="#1B3A5C" stroke-width="2"/>
+              <ellipse cx="75" cy="110" rx="50" ry="10" fill="#1A1A1A" stroke="#1B3A5C" stroke-width="2"/>
+              <ellipse cx="75" cy="42" rx="22" ry="4.5" fill="#0A1628"/>
+              <rect x="25" y="68" width="100" height="16" fill="#E8A735"/>
+              <text x="75" y="77" text-anchor="middle" fill="#1B3A5C" font-size="9" font-weight="900" font-family="Heebo">Y MARKET</text>
+              <text x="75" y="83" text-anchor="middle" fill="#1B3A5C" font-size="6" font-weight="700" font-family="Heebo">800 גרם · עבה</text>
+              <path d="M125,80 L138,98 L142,86 L130,72 Z" fill="#1A1A1A" stroke="#1B3A5C" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div class="bs-card__name">שקיות זבל עבות</div>
+          <div class="bs-card__sub">75×90, 800 גר׳ — גורילה<br>גליל 25 יחידות</div>
+          <div class="bs-card__cta">צפו במוצר <i class="fas fa-arrow-left"></i></div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SERVICES (compact) ═══ -->
+  <section class="section section--alt" id="services">
+    <div class="container">
+      <div class="section__header reveal">
+        <div class="section__label"><i class="fas fa-cubes"></i> שירותים</div>
+        <h2 class="section__title">שירותים מיוחדים</h2>
+        <p class="section__subtitle">לא רק מוצרים — פתרון מקצה לקצה</p>
+      </div>
+      <div class="svc-grid">
+        <div class="svc-card reveal">
+          <div class="svc-card__icon"><i class="fas fa-handshake"></i></div>
+          <div class="svc-card__title">סחר</div>
+          <div class="svc-card__desc">קשרים ישירים עם יצרנים ויבואנים</div>
+        </div>
+        <div class="svc-card reveal">
+          <div class="svc-card__icon"><i class="fas fa-bullhorn"></i></div>
+          <div class="svc-card__title">שיווק</div>
+          <div class="svc-card__desc">פתרונות לקהלים עסקיים ומוסדיים</div>
+        </div>
+        <div class="svc-card reveal">
+          <div class="svc-card__icon"><i class="fas fa-truck-fast"></i></div>
+          <div class="svc-card__title">הפצה</div>
+          <div class="svc-card__desc">משלוחים ארציים תוך 24-72 שעות</div>
+        </div>
+        <div class="svc-card reveal">
+          <div class="svc-card__icon"><i class="fas fa-warehouse"></i></div>
+          <div class="svc-card__title">אחסנה</div>
+          <div class="svc-card__desc">שירותי אחסון ולוגיסטיקה מקצועיים</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WHY US — 3 cards ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="section__header reveal">
+        <div class="section__label"><i class="fas fa-star"></i> למה אנחנו</div>
+        <h2 class="section__title">למה לבחור בוואי מרקט?</h2>
+        <p class="section__subtitle">3 סיבות שעושות את ההבדל</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="why-card__icon"><i class="fas fa-bullseye"></i></div>
+          <div class="why-card__title">דיוק בלי פשרות</div>
+          <div class="why-card__text">פער בין מה שסופק לחשבונית = רוצח האמון. אנחנו מקפידים אובססיבית — מק"ט אחר מק"ט. אם משהו לא מדויק, מתקנים מיד.</div>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-card__icon"><i class="fas fa-bolt"></i></div>
+          <div class="why-card__title">מהירות 24-72 שעות</div>
+          <div class="why-card__text">אטליז שגמרו לו כפפות לפני שבת? הזמינו עד 12:00 — מחר זה אצלכם. גוש דן ביום, פריפריה תוך 72 שעות.</div>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-card__icon"><i class="fas fa-user-tie"></i></div>
+          <div class="why-card__title">יחסים אישיים</div>
+          <div class="why-card__text">יובל נגלר, בעל העסק, זמין לכל לקוח. לא מוקד, לא בוט, לא נציג שירות — אדם אחד שמכיר אותכם ואת ההזמנות.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ DELIVERY MAP ═══ -->
+  <section class="delivery-map" id="deliveryMap">
+    <div class="container">
+      <div class="section__header reveal">
+        <div class="section__label"><i class="fas fa-route"></i> משלוחים</div>
+        <h2 class="section__title">מגיעים אליך — בכל הארץ</h2>
+        <p class="section__subtitle">מינימום הזמנה 1,600 ₪ + מע"מ</p>
+      </div>
+
+      <div class="israel-map-wrapper">
+        <div class="israel-svg-box">
+          <svg viewBox="0 0 300 610" xmlns="http://www.w3.org/2000/svg" id="israelMap">
+            <defs>
+              <linearGradient id="rGrad" x1="0%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" stop-color="#E8A735"/>
+                <stop offset="35%" stop-color="#0A6BFF"/>
+                <stop offset="70%" stop-color="#3D8AFF"/>
+                <stop offset="100%" stop-color="#22C55E"/>
+              </linearGradient>
+              <filter id="gGold"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <filter id="truckShadow"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.35"/></filter>
+            </defs>
+            <path class="il-land" d="M262,15 L258.5,22.8 L255,26.8 L254,33 L256,38 L257.4,45 L260,47 L261,51.5 L258.6,56 L259.7,59.5 L262.7,63 L264.7,77 L269,83 L262,93 L261,101 L254,113.5 L247,114 L229,121 L226,123 L223,127 L222.7,130 L220,163 L210.5,162 L198.6,155 L196,148.5 L193,146 L184,146 L168,142.5 L150,153 L142,171 L140,179 L134,197 L136,207 L137,221 L139,232 L137,239 L134,243 L135,245.5 L138,246 L148,243 L159,246 L169,252 L170,256 L163,258 L145,267 L133,278 L130,287 L122,307 L123,311 L127,314 L155,312 L180,303 L200,295 L206,295 L202,317.5 L198,331 L200,334 L204,345.5 L196,367 L187,385 L184,393 L175,412 L166,433.5 L161,448 L162,454 L160,481 L161,489 L150,513 L148,524 L144,540 L137,574 L127,585 L122,573 L110,537 L102,512 L91,482 L72,445 L71,436 L67,423 L54,390 L43,365 L31,335 L46,322 L46,312 L72,289 L72,286 L65,280 L66,279 L94,235 L112,192 L129,131 L141,100 L152,80 L156,63 L173,62 L185,64 L200,64 L212,58 L217,39 L224,36 L228,40 L231,35 L247,27 L254,22 L262,15 Z"/>
+            <path class="il-coast" d="M129,131 Q120,160 112,192 Q100,220 94,235 Q80,260 72,289 Q60,310 46,322 L31,335"/>
+            <text class="il-geo-label" x="22" y="250" transform="rotate(-80,22,250)" text-anchor="middle">הים התיכון</text>
+            <ellipse class="il-water" cx="258" cy="95" rx="7" ry="11"/><text class="il-water-label" x="258" y="113" text-anchor="middle">כנרת</text>
+            <ellipse class="il-water" cx="208" cy="302" rx="5" ry="20"/><text class="il-water-label" x="208" y="328" text-anchor="middle">ים המלח</text>
+            <polygon class="il-mountain" points="230,50 248,30 265,52 250,62"/>
+            <polygon class="il-mountain" points="180,135 198,118 216,138 198,148"/>
+            <polygon class="il-mountain" points="170,240 190,222 208,244 190,256"/>
+            <polygon class="il-mountain" points="110,400 128,380 146,402 128,414"/>
+            <rect class="zoom-frame" x="88" y="152" width="140" height="90" rx="8"/>
+            <text class="zoom-label" x="158" y="148" text-anchor="middle">גוש דן</text>
+            <path class="rt rt-bg" d="M148,185 L172,180 L130,200 L108,192 L115,212 L124,226 L105,258 L93,278 L140,350 L132,580 L140,350 L192,260 L170,108"/>
+            <path class="rt rt-glow" id="routeGlow" d="M148,185 L172,180 L130,200 L108,192 L115,212 L124,226 L105,258 L93,278 L140,350 L132,580 L140,350 L192,260 L170,108"/>
+            <path class="rt rt-dash" d="M148,185 L172,180 L130,200 L108,192 L115,212 L124,226 L105,258 L93,278 L140,350 L132,580 L140,350 L192,260 L170,108"/>
+            <g class="city-marker" data-city="גת רימון"><circle class="c-ping" cx="148" cy="185" r="5" stroke="#E8A735"/><circle class="c-pin c-pin--hq" cx="148" cy="185"/><text class="c-lbl c-lbl--hq" x="148" y="173" text-anchor="middle">★ גת רימון</text></g>
+            <g class="city-marker" data-city="פתח תקווה"><circle class="c-ping" cx="172" cy="180" r="4" stroke="#0A6BFF"/><circle class="c-pin c-pin--sm" cx="172" cy="180"/><text class="c-lbl c-lbl--sm" x="184" y="183" text-anchor="start">פתח תקווה</text></g>
+            <g class="city-marker" data-city="רמת גן"><circle class="c-ping" cx="130" cy="200" r="4" stroke="#0A6BFF"/><circle class="c-pin c-pin--sm" cx="130" cy="200"/><text class="c-lbl c-lbl--sm" x="142" y="203" text-anchor="start">רמת גן</text></g>
+            <g class="city-marker" data-city="תל אביב"><circle class="c-ping" cx="108" cy="192" r="5" stroke="#0A6BFF"/><circle class="c-pin c-pin--md" cx="108" cy="192"/><text class="c-lbl c-lbl--md" x="95" y="195" text-anchor="end">תל אביב</text></g>
+            <g class="city-marker" data-city="חולון"><circle class="c-ping" cx="115" cy="212" r="4" stroke="#0A6BFF"/><circle class="c-pin c-pin--sm" cx="115" cy="212"/><text class="c-lbl c-lbl--sm" x="102" y="215" text-anchor="end">חולון</text></g>
+            <g class="city-marker" data-city="ראשון לציון"><circle class="c-ping" cx="124" cy="226" r="4" stroke="#0A6BFF"/><circle class="c-pin c-pin--sm" cx="124" cy="226"/><text class="c-lbl c-lbl--sm" x="136" y="229" text-anchor="start">ראשל&quot;צ</text></g>
+            <g class="city-marker" data-city="הרצליה"><circle class="c-ping" cx="114" cy="172" r="4" stroke="#0A6BFF"/><circle class="c-pin c-pin--sm" cx="114" cy="172"/><text class="c-lbl c-lbl--sm" x="101" y="175" text-anchor="end">הרצליה</text></g>
+            <g class="city-marker" data-city="כפר סבא"><circle class="c-ping" cx="168" cy="160" r="4" stroke="#0A6BFF"/><circle class="c-pin c-pin--sm" cx="168" cy="160"/><text class="c-lbl c-lbl--sm" x="180" y="163" text-anchor="start">כפר סבא</text></g>
+            <g class="city-marker" data-city="אשדוד"><circle class="c-ping" cx="105" cy="258" r="4" stroke="#0A6BFF"/><circle class="c-pin c-pin--sm" cx="105" cy="258"/><text class="c-lbl c-lbl--sm" x="91" y="261" text-anchor="end">אשדוד</text></g>
+            <g class="city-marker" data-city="באר שבע"><circle class="c-ping" cx="140" cy="350" r="5" stroke="#0A6BFF"/><circle class="c-pin c-pin--md" cx="140" cy="350"/><text class="c-lbl c-lbl--md" x="140" y="366" text-anchor="middle">באר שבע</text></g>
+            <g class="city-marker" data-city="אילת"><circle class="c-ping" cx="132" cy="580" r="5" stroke="#0A6BFF"/><circle class="c-pin c-pin--md" cx="132" cy="580"/><text class="c-lbl c-lbl--md" x="132" y="596" text-anchor="middle">אילת</text></g>
+            <g class="city-marker" data-city="חיפה"><circle class="c-ping" cx="170" cy="108" r="5" stroke="#0A6BFF"/><circle class="c-pin c-pin--md" cx="170" cy="108"/><text class="c-lbl c-lbl--md" x="156" y="111" text-anchor="end">חיפה</text></g>
+            <g class="city-marker" data-city="ירושלים"><circle class="c-ping" cx="192" cy="260" r="5" stroke="#0A6BFF"/><circle class="c-pin c-pin--md" cx="192" cy="260"/><text class="c-lbl c-lbl--md" x="205" y="263" text-anchor="start">ירושלים</text></g>
+            <g class="ym-truck" id="ymTruck" transform="translate(148,185)" filter="url(#truckShadow)">
+              <rect x="-22" y="-16" width="34" height="20" rx="3" fill="#1B3A5C" stroke="#112A45" stroke-width="0.5"/>
+              <rect x="-22" y="0" width="34" height="4" fill="#E8A735" rx="1"/>
+              <text x="-5" y="-4" text-anchor="middle" fill="white" font-size="5.5" font-weight="900" font-family="Heebo" letter-spacing="0.3">YMARKET</text>
+              <circle cx="-14" cy="-6" r="5" fill="white" opacity="0.95"/>
+              <text x="-14" y="-3.2" text-anchor="middle" fill="#112A45" font-size="6" font-weight="900" font-family="Heebo">Y</text>
+              <rect x="12" y="-14" width="14" height="18" rx="3" fill="#2A5080"/>
+              <rect x="14" y="-12" width="10" height="8" rx="2" fill="rgba(120,200,255,0.5)"/>
+              <rect x="25" y="-8" width="2.5" height="3.5" rx="1" fill="#FFD700" opacity="0.9"/>
+              <circle cx="-12" cy="6" r="3.8" fill="#222" stroke="#444" stroke-width="0.8"/><circle cx="-12" cy="6" r="1.5" fill="#666"/>
+              <circle cx="-4" cy="6" r="3.8" fill="#222" stroke="#444" stroke-width="0.8"/><circle cx="-4" cy="6" r="1.5" fill="#666"/>
+              <circle cx="20" cy="6" r="3.8" fill="#222" stroke="#444" stroke-width="0.8"/><circle cx="20" cy="6" r="1.5" fill="#666"/>
+            </g>
+            <g id="particlesLayer"></g>
+          </svg>
+        </div>
+
+        <div class="delivery-panel">
+          <div class="dp-live">
+            <div class="dp-live__label"><div class="dp-live__dot"></div> המשאית בדרך אל:</div>
+            <div class="dp-live__city" id="currentCityName">גת רימון</div>
+          </div>
+          <div class="dp-card reveal">
+            <div class="dp-card__head"><span class="dp-card__icon"><i class="fas fa-star"></i></span><div class="dp-card__title">גוש דן — תוך 24 שעות</div></div>
+            <div class="dp-card__desc">ת"א, פ"ת, ר"ג, הרצליה, חולון, ראשל"צ, רעננה, כפר סבא</div>
+          </div>
+          <div class="dp-card reveal">
+            <div class="dp-card__head"><span class="dp-card__icon"><i class="fas fa-shipping-fast"></i></span><div class="dp-card__title">צפון ודרום — 48-72 שעות</div></div>
+            <div class="dp-card__desc">חיפה, ירושלים, באר שבע, אשדוד, אשקלון ועד אילת</div>
+          </div>
+          <div class="dp-card reveal">
+            <div class="dp-card__head"><span class="dp-card__icon"><i class="fas fa-box-open"></i></span><div class="dp-card__title">900+ מוצרים מוכנים</div></div>
+            <div class="dp-card__desc">המחסן בגת רימון — הכל מוכן לשליחה מיידית</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FINAL CTA ═══ -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>מוכנים להזמין?</h2>
+      <p>פתחו חשבון עסקי בחינם וקבלו מחירון מותאם, פורטל הזמנות אישי, והזמנה חוזרת בקליק.</p>
+      <div class="cta-section__actions">
+        <a href="#" class="btn btn--gold btn--lg"><i class="fas fa-user-plus"></i> פתחו חשבון בחינם</a>
+        <a href="#" class="btn btn--whatsapp btn--lg"><i class="fab fa-whatsapp"></i> שלחו רשימה ב-WhatsApp</a>
+        <a href="tel:037740400" class="btn btn--ghost-white btn--lg"><i class="fas fa-phone"></i> 03-7740400</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER + FAQ ═══ -->
+    <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="/images/logo/logo-white.png" alt="וואי מרקט" width="112" height="60">
+          <p>נגלר סחר והפצה — סחר, שיווק והפצה של מוצרי צריכה שוטפת לעסקים ומוסדות בכל רחבי הארץ.</p>
+          <div class="footer__social">
+            <a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100083110428101" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/ymarket.ai" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h4>קטגוריות</h4>
+          <div class="footer__links">
+            <a href="/category/bulk-paper-towel-office-supplies/">מוצרי נייר וניגוב</a>
+            <a href="/category/industrial-cleaning-supplies-wholesale/">חומרי ניקוי</a>
+            <a href="/category/disposable-catering-food-service/">חד פעמי ואירוח</a>
+            <a href="/category/food-packaging-delivery-solutions/">אריזות Take Away</a>
+            <a href="/category/office-coffee-breakroom-supplies/">קפה, שתייה וכיבוד</a>
+            <a href="/category/safety-ppe-equipment-for-business/">בטיחות ומיגון</a>
+            <a href="/category/heavy-duty-garbage-bags-wholesale/">שקיות אשפה</a>
+            <a href="/category/professional-cleaning-cloths-microfiber/">טקסטיל ומטליות</a>
+            <a href="/category/office-supplies-wholesale-business/">ציוד משרדי</a>
+            <a href="/category/maintenance-technical-equipment-wholesale/">ציוד טכני</a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h4>קישורים מהירים</h4>
+          <div class="footer__links">
+            <a href="/catalog">קטלוג מוצרים</a>
+            <a href="/about">אודות</a>
+            <a href="/blog">בלוג</a>
+            <a href="/faq">שאלות ותשובות</a>
+            <a href="/contact">צרו קשר</a>
+            <a href="/tracking">מעקב משלוחים</a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h4>צרו קשר</h4>
+          <div class="footer__contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <a href="tel:037740400">03-7740400</a>
+          </div>
+          <div class="footer__contact-item">
+            <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/972549922492" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+          <div class="footer__contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a>
+          </div>
+          <div class="footer__contact-item">
+            <i class="fas fa-clock"></i>
+            <span>א'-ה' 08:00-17:00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span class="footer__copyright">&copy; 2026 וואי מרקט — נגלר סחר והפצה. כל הזכויות שמורות.</span>
+        <div class="footer__legal">
+          <a href="/legal/terms">תקנון האתר</a>
+          <a href="/legal/privacy">מדיניות פרטיות</a>
+          <a href="/legal/shipping">מדיניות משלוחים</a>
+          <a href="/legal/returns">החזרות וביטולים</a>
+          <a href="/legal/accessibility">נגישות</a>
+          <a href="/legal/cookies">עוגיות</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll progress
+    (function() {
+      const bar = document.getElementById('scrollBar');
+      window.addEventListener('scroll', () => {
+        const h = document.documentElement;
+        bar.style.width = ((h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100) + '%';
+      });
+    })();
+
+    // Header scroll
+    (function() {
+      const header = document.getElementById('header');
+      window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 20);
+      });
+    })();
+
+    // Reveal on scroll
+    (function() {
+      const reveals = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((e, i) => {
+          if (e.isIntersecting) {
+            setTimeout(() => e.target.classList.add('in-view'), i * 40);
+            observer.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+      reveals.forEach(r => observer.observe(r));
+    })();
+
+    // 3D tilt + spotlight on cards
+    (function() {
+      const tilts = document.querySelectorAll('.tilt');
+      tilts.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          card.style.setProperty('--mx', (x / rect.width * 100) + '%');
+          card.style.setProperty('--my', (y / rect.height * 100) + '%');
+        });
+      });
+    })();
+
+    // Israel map truck
+    (function() {
+      const mapSection = document.getElementById('deliveryMap');
+      const ymTruck = document.getElementById('ymTruck');
+      const routeGlow = document.getElementById('routeGlow');
+      const statusCity = document.getElementById('currentCityName');
+      const markers = document.querySelectorAll('.city-marker');
+      const particlesLayer = document.getElementById('particlesLayer');
+      if (!mapSection || !ymTruck) return;
+
+      const cityRoute = [
+        { name: 'גת רימון', x: 148, y: 185 },
+        { name: 'פתח תקווה', x: 172, y: 180 },
+        { name: 'רמת גן', x: 130, y: 200 },
+        { name: 'תל אביב', x: 108, y: 192 },
+        { name: 'חולון', x: 115, y: 212 },
+        { name: 'ראשון לציון', x: 124, y: 226 },
+        { name: 'אשדוד', x: 105, y: 258 },
+        { name: 'באר שבע', x: 140, y: 350 },
+        { name: 'אילת', x: 132, y: 580 },
+        { name: 'באר שבע', x: 140, y: 350 },
+        { name: 'ירושלים', x: 192, y: 260 },
+        { name: 'גת רימון', x: 148, y: 185 },
+        { name: 'הרצליה', x: 114, y: 172 },
+        { name: 'כפר סבא', x: 168, y: 160 },
+        { name: 'חיפה', x: 170, y: 108 },
+        { name: 'גת רימון', x: 148, y: 185 },
+      ];
+      let mapStarted = false, routeIdx = 0;
+
+      function highlightCity(name) {
+        markers.forEach(m => {
+          const pin = m.querySelector('.c-pin'), label = m.querySelector('.c-lbl'), ping = m.querySelector('.c-ping');
+          const on = m.dataset.city === name;
+          if (pin) pin.classList.toggle('highlight', on);
+          if (label) label.classList.toggle('highlight', on);
+          if (ping) ping.classList.toggle('active', on);
+        });
+        statusCity.textContent = name;
+      }
+
+      function spawnParticle(x, y) {
+        const svgNS = 'http://www.w3.org/2000/svg';
+        const g = document.createElementNS(svgNS, 'g');
+        g.setAttribute('transform', `translate(${x},${y})`);
+        const isBox = Math.random() > 0.4;
+        if (isBox) {
+          const r = document.createElementNS(svgNS, 'rect');
+          r.setAttribute('x','-4'); r.setAttribute('y','-4'); r.setAttribute('width','8'); r.setAttribute('height','7'); r.setAttribute('rx','1');
+          r.setAttribute('fill','#C4883C'); r.setAttribute('stroke','#A06B2C'); r.setAttribute('stroke-width','0.5');
+          g.appendChild(r);
+        } else {
+          const c = document.createElementNS(svgNS, 'circle');
+          c.setAttribute('cx','0'); c.setAttribute('cy','0'); c.setAttribute('r','4');
+          c.setAttribute('fill','#E8A735'); c.setAttribute('stroke','#C4882C'); c.setAttribute('stroke-width','0.6');
+          g.appendChild(c);
+        }
+        particlesLayer.appendChild(g);
+        const dx = (Math.random() - 0.5) * 30, dy = -15 - Math.random() * 20, dur = 1200 + Math.random() * 600;
+        const start = performance.now();
+        function anim(now) {
+          const t = Math.min((now - start) / dur, 1), e = 1 - Math.pow(1 - t, 3);
+          g.setAttribute('transform', `translate(${x + dx * e},${y + dy * e}) scale(${1 - t * 0.5})`);
+          g.style.opacity = String(1 - t);
+          if (t < 1) requestAnimationFrame(anim);
+          else if (g.parentNode) g.parentNode.removeChild(g);
+        }
+        requestAnimationFrame(anim);
+      }
+
+      function animateTruck(fromX, fromY, toX, toY, duration, callback) {
+        const start = performance.now();
+        let dropped = false;
+        function step(now) {
+          const t = Math.min((now - start) / duration, 1);
+          const e = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+          const cx = fromX + (toX - fromX) * e, cy = fromY + (toY - fromY) * e;
+          ymTruck.setAttribute('transform', `translate(${cx},${cy})`);
+          if (!dropped && t > 0.5) { spawnParticle(cx, cy); dropped = true; }
+          if (t < 1) requestAnimationFrame(step);
+          else { spawnParticle(toX, toY); if (callback) callback(); }
+        }
+        requestAnimationFrame(step);
+      }
+
+      function driveRoute() {
+        if (routeIdx >= cityRoute.length) routeIdx = 1;
+        const city = cityRoute[routeIdx];
+        const prev = cityRoute[routeIdx > 0 ? routeIdx - 1 : cityRoute.length - 1];
+        const dist = Math.sqrt(Math.pow(city.x - prev.x, 2) + Math.pow(city.y - prev.y, 2));
+        const duration = Math.max(800, dist * 14);
+        highlightCity(city.name);
+        animateTruck(prev.x, prev.y, city.x, city.y, duration, () => {
+          setTimeout(() => { routeIdx++; driveRoute(); }, 700);
+        });
+      }
+
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting && !mapStarted) {
+            mapStarted = true;
+            routeGlow.classList.add('animate');
+            setTimeout(() => {
+              ymTruck.classList.add('driving');
+              highlightCity('גת רימון');
+              routeIdx = 1;
+              setTimeout(driveRoute, 500);
+            }, 2000);
+          }
+        });
+      }, { threshold: 0.15 });
+      obs.observe(mapSection);
+    })();
+  </script>
+</body>
+</html>
