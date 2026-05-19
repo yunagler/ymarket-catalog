@@ -3036,7 +3036,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 11,
-      "itemCount": 19,
+      "itemCount": 20,
       "metaTitle": "קפה, שתייה וכיבוד בסיטונאות למוסדות ועסקים | וואי מרקט",
       "metaDescription": "קפה, שתייה וכיבוד במחירי סיטונאות ישירות מהמפיץ. 20 פריטים באיכות מוסדית. אספקה 24-72 שעות. מינימום 1,600₪. וואי מרקט.",
       "seoSlug": "office-coffee-breakroom-supplies",
@@ -3071,7 +3071,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 12,
-      "itemCount": 111,
+      "itemCount": 112,
       "metaTitle": "ציוד משרדי וכללי בסיטונאות למוסדות ועסקים | וואי מרקט",
       "metaDescription": "ציוד משרדי וכללי במחירי סיטונאות ישירות מהמפיץ. 111 פריטים באיכות מוסדית. אספקה 24-72 שעות. מינימום 1,600₪. וואי מרקט.",
       "seoSlug": "office-supplies-wholesale-business",
@@ -13868,6 +13868,46 @@
             "answer": "מינימום הזמנה באתר: 1,600 ₪ + מע\"מ (לפני משלוח). ניתן לשלב מוצרים מכל הקטגוריות כדי להגיע למינימום."
           }
         ]
+      }
+    },
+    {
+      "id": 255,
+      "name": "מארז שלשות קפה טורקי עלית85 גר",
+      "slug": "מארז-שלשות-קפה-טורקי-עלית85-גר",
+      "saleNis": 25,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "ציוד-משרדי-וכללי",
+      "categoryName": "ציוד משרדי וכללי",
+      "categorySlugs": [
+        "ציוד-משרדי-וכללי",
+        "קפה-שתייה-וכיבוד"
+      ],
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/271.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "7290104721762",
+      "barcode": "",
+      "searchTags": "",
+      "technicalDesc": "",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": [],
+      "seoSlug": null,
+      "seo": {
+        "title": null,
+        "metaDesc": null,
+        "imageAltText": null,
+        "geoContent": null,
+        "gtin": null,
+        "mpn": null,
+        "isB2BBulk": false,
+        "faqs": []
       }
     },
     {
@@ -47382,6 +47422,6 @@
       }
     }
   ],
-  "exportedAt": "2026-05-19T11:35:43.837Z",
-  "totalItems": 829
+  "exportedAt": "2026-05-19T11:36:52.254Z",
+  "totalItems": 830
 }
