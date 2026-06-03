@@ -175,10 +175,11 @@ function generateProductPage(product, categories, allProducts) {
   const relatedHtml = related.map(p => {
     const rJpg = p.imageUrl || `/items/${p.id}.jpg`;
     const rThumb = rJpg.replace(/\.jpg$/i, '-thumb.webp');
+    const rSlug = p.seoSlug || p.slug;  // English link when available, Hebrew name preserved as text
     return `
     <div class="product-card" style="min-width: 220px;">
       <div class="product-card__image">
-        <a href="/products/${p.slug}/" aria-label="${p.name}">
+        <a href="/products/${rSlug}/" aria-label="${p.name}">
           <picture>
             <source srcset="${rThumb}" type="image/webp">
             <img src="${rJpg}" alt="${p.name}" loading="lazy" width="258" height="258"
@@ -187,7 +188,7 @@ function generateProductPage(product, categories, allProducts) {
         </a>
       </div>
       <div class="product-card__body">
-        <h3 class="product-card__name"><a href="/products/${p.slug}/">${p.name}</a></h3>
+        <h3 class="product-card__name"><a href="/products/${rSlug}/">${p.name}</a></h3>
         ${p.saleNis ? `<div class="product-card__price">${formatPrice(p.saleNis)}</div>` : ''}
       </div>
     </div>`;
@@ -596,6 +597,27 @@ function cleanDir(dir) {
   }
 }
 
+// Static "301-equivalent" redirect page left at an old Hebrew product URL after it
+// migrates to an English seoSlug. Keeps the already-indexed Hebrew URL alive and
+// consolidates signals to the new URL via canonical + meta-refresh.
+function buildRedirectStub(targetPath, name) {
+  const safeName = (name || '').replace(/"/g, '&quot;');
+  return `<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>${safeName} | וואי מרקט</title>
+  <link rel="canonical" href="${SITE_URL}${targetPath}">
+  <meta http-equiv="refresh" content="0; url=${targetPath}">
+  <meta name="robots" content="noindex, follow">
+  <script>location.replace('${targetPath}');</script>
+</head>
+<body>
+  <p>הדף עבר לכתובת חדשה. <a href="${targetPath}">המשך לעמוד המוצר ←</a></p>
+</body>
+</html>`;
+}
+
 function main() {
   if (!fs.existsSync(DATA_PATH)) {
     console.error(`Error: ${DATA_PATH} not found.`);
@@ -617,7 +639,7 @@ function main() {
   const allProducts = products;
   if (slugArg) {
     const wanted = decodeURIComponent(slugArg.slice('--slug='.length));
-    products = products.filter(p => p.slug === wanted);
+    products = products.filter(p => p.slug === wanted || p.seoSlug === wanted);
     if (products.length === 0) {
       console.error(`No product found with slug "${wanted}"`);
       process.exit(1);
@@ -639,11 +661,22 @@ function main() {
       continue;
     }
 
+    // URL/directory = English seoSlug when present (Hebrew product NAME is preserved
+    // in the page content regardless). Falls back to the Hebrew slug.
+    const dirSlug = product.seoSlug || product.slug;
     const html = generateProductPage(product, categories, allProducts);
-    const slugDir = path.join(PRODUCTS_DIR, product.slug);
+    const slugDir = path.join(PRODUCTS_DIR, dirSlug);
     fs.mkdirSync(slugDir, { recursive: true });
     fs.writeFileSync(path.join(slugDir, 'index.html'), html, 'utf-8');
     count++;
+
+    // Migrated to an English URL? leave a redirect stub at the old Hebrew URL.
+    if (product.seoSlug && product.seoSlug !== product.slug) {
+      const oldDir = path.join(PRODUCTS_DIR, product.slug);
+      fs.mkdirSync(oldDir, { recursive: true });
+      fs.writeFileSync(path.join(oldDir, 'index.html'),
+        buildRedirectStub(`/products/${product.seoSlug}/`, product.name), 'utf-8');
+    }
   }
 
   console.log(`Generated ${count} product pages in ${PRODUCTS_DIR}`);
