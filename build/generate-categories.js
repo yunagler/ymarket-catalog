@@ -958,6 +958,24 @@ function main() {
       'utf-8');
     redirectCount++;
   }
+  // Redirect pages for a PREVIOUS English seoSlug that was renamed (oldSeoSlug).
+  // Keeps the already-indexed old English URL alive after a slug correction.
+  for (const category of categories) {
+    if (!category.oldSeoSlug) continue;
+    const treeCategory = catMap.get(category.id);
+    const chain = getParentChain(treeCategory || category, catMap);
+    const oldSlugs = chain.map(c => getEffectiveSlug(c));
+    oldSlugs.push(category.oldSeoSlug);
+    const oldDir = path.join(CATEGORY_DIR, ...oldSlugs);
+    const newUrl = getCategoryUrlPath(treeCategory || category, catMap);
+    const oldUrl = '/category/' + oldSlugs.join('/') + '/';
+    if (oldUrl === newUrl) continue;
+    fs.mkdirSync(oldDir, { recursive: true });
+    fs.writeFileSync(path.join(oldDir, 'index.html'),
+      `<!DOCTYPE html><html lang="he"><head><meta charset="UTF-8"><meta http-equiv="refresh" content="0;url=${newUrl}"><link rel="canonical" href="https://ymarket.co.il${newUrl}"><meta name="robots" content="noindex, follow"><title>הפניה...</title></head><body><p>הדף עבר: <a href="${newUrl}">${category.name}</a></p></body></html>`,
+      'utf-8');
+    redirectCount++;
+  }
   if (redirectCount > 0) console.log(`Created ${redirectCount} redirect pages for old URLs`);
 
   // Update all static HTML files with correct seoSlug-based links
@@ -990,6 +1008,19 @@ function updateStaticLinks(categories, catMap) {
     if (oldPath !== newPath) {
       urlReplacements.set(oldPath, newPath);
     }
+  }
+
+  // Also map a renamed English seoSlug (oldSeoSlug) → current path, so existing
+  // links in static HTML get updated to the corrected slug.
+  for (const cat of categories) {
+    if (!cat.oldSeoSlug) continue;
+    const treeCat = catMap.get(cat.id) || cat;
+    const chain = getParentChain(treeCat, catMap);
+    const oldSlugs = chain.map(c => getEffectiveSlug(c));
+    oldSlugs.push(cat.oldSeoSlug);
+    const oldPath = '/category/' + oldSlugs.join('/') + '/';
+    const newPath = getCategoryUrlPath(treeCat, catMap);
+    if (oldPath !== newPath) urlReplacements.set(oldPath, newPath);
   }
 
   if (urlReplacements.size === 0) {
