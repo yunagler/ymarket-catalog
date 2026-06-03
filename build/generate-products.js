@@ -16,6 +16,26 @@ const SITE_URL = 'https://ymarket.co.il';
 // Load header from single source of truth
 const SITE_HEADER = fs.readFileSync(path.join(ROOT_DIR, 'includes', 'site-header.html'), 'utf-8').trim();
 
+// Render the legacy `technicalDesc` field. It is stored as a JSON string like
+// [{"label":"...","value":"..."}]. Older code printed it raw, leaking JSON onto
+// the page. Parse it into a real spec table; fall back to plain text if not JSON.
+function renderTechSpecs(technicalDesc) {
+  const wrapOpen = '<div class="product-description" style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:16px 20px;margin-top:1rem;"><h3 style="font-size:1rem;margin-bottom:0.5rem;"><i class="fas fa-clipboard-list" style="color:var(--color-primary,#1B3A5C);margin-left:6px;"></i>מפרט טכני</h3>';
+  const wrapClose = '</div>';
+  let specs = null;
+  try {
+    const parsed = JSON.parse(technicalDesc);
+    if (Array.isArray(parsed) && parsed.length && parsed[0] && 'label' in parsed[0]) specs = parsed;
+  } catch (e) { /* not JSON, treat as text */ }
+  if (specs) {
+    const rows = specs.map(s =>
+      `<tr><td style="font-weight:600;padding:8px 12px;border-bottom:1px solid #e2e8f0;color:#1B3A5C;white-space:nowrap">${s.label}</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;color:#4b5563">${s.value}</td></tr>`
+    ).join('');
+    return `${wrapOpen}<table style="width:100%;border-collapse:collapse;font-size:0.9rem;line-height:1.7">${rows}</table>${wrapClose}`;
+  }
+  return `${wrapOpen}<p style="white-space:pre-line;color:var(--color-text-secondary,#4b5563);font-size:0.9rem;line-height:1.7">${technicalDesc}</p>${wrapClose}`;
+}
+
 function formatPrice(price) {
   return new Intl.NumberFormat('he-IL', {
     style: 'currency', currency: 'ILS',
@@ -189,19 +209,18 @@ function generateProductPage(product, categories, allProducts) {
     ...(product.partNumber ? { "sku": product.partNumber } : {}),
     ...(seo.gtin ? { "gtin": seo.gtin } : {}),
     ...(seo.mpn ? { "mpn": seo.mpn } : {}),
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "reviewCount": "127",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
-    "review": {
-      "@type": "Review",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "author": { "@type": "Organization", "name": "וואי מרקט - צוות מקצועי" },
-      "reviewBody": "מוצר איכותי ומתאים לשימוש מוסדי ועסקי. עומד בסטנדרטים הגבוהים ביותר."
-    },
+    // NOTE: aggregateRating/review are ONLY emitted when real review data exists
+    // in seo.rating. Fabricated ratings violate Google's structured-data policy
+    // and risk a manual action. Do not hardcode fake reviews here.
+    ...(seo.rating && seo.rating.count ? {
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": String(seo.rating.value),
+        "reviewCount": String(seo.rating.count),
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    } : {}),
     ...(product.saleNis ? {
       "offers": {
         "@type": "Offer",
@@ -210,6 +229,8 @@ function generateProductPage(product, categories, allProducts) {
         "availability": "https://schema.org/InStock",
         "priceValidUntil": priceValidUntil,
         "url": productUrl,
+        "areaServed": { "@type": "Country", "name": "ישראל" },
+        "availableAtOrFrom": { "@type": "Place", "name": "וואי מרקט - גת רימון", "address": { "@type": "PostalAddress", "addressLocality": "גת רימון", "addressCountry": "IL" } },
         "seller": { "@type": "Organization", "name": "וואי מרקט - נגלר סחר והפצה" },
         "shippingDetails": {
           "@type": "OfferShippingDetails",
@@ -258,6 +279,8 @@ function generateProductPage(product, categories, allProducts) {
   <title>${pageTitle}</title>
   <meta name="description" content="${metaDesc}">
   <link rel="canonical" href="${productUrl}">
+  <link rel="alternate" hreflang="he" href="${productUrl}">
+  <link rel="alternate" hreflang="x-default" href="${productUrl}">
   <link rel="icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta name="theme-color" content="#1B3A5C">
@@ -378,13 +401,13 @@ function generateProductPage(product, categories, allProducts) {
           <div class="product-highlights">
             <div class="product-highlights__item"><i class="fas fa-check-circle"></i> <span>במלאי - מוכן למשלוח</span></div>
             <div class="product-highlights__item"><i class="fas fa-shipping-fast"></i> <span>${product.leadTimeDays ? product.leadTimeDays + ' ימי עסקים' : '1-2 ימי עסקים'}</span></div>
-            <div class="product-highlights__item"><i class="fas fa-shield-alt"></i> <span>הזמנה מינימלית: 500₪</span></div>
+            <div class="product-highlights__item"><i class="fas fa-shield-alt"></i> <span>הזמנה מינימלית: 200₪ + מע״מ</span></div>
             ${product.barcode ? `<div class="product-highlights__item"><i class="fas fa-barcode"></i> <span>ברקוד: ${product.barcode}</span></div>` : ''}
             ${product.maxOrderQty ? `<div class="product-highlights__item"><i class="fas fa-cubes"></i> <span>מקס' להזמנה: ${product.maxOrderQty} יח'</span></div>` : ''}
           </div>
 
           ${product.description ? `<div class="product-description"><h3>תיאור</h3><p>${product.description}</p></div>` : ''}
-          ${product.technicalDesc ? `<div class="product-description" style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:16px 20px;margin-top:1rem;"><h3 style="font-size:1rem;margin-bottom:0.5rem;"><i class="fas fa-clipboard-list" style="color:var(--color-primary,#1B3A5C);margin-left:6px;"></i>מפרט טכני</h3><p style="white-space:pre-line;color:var(--color-text-secondary,#4b5563);font-size:0.9rem;line-height:1.7">${product.technicalDesc}</p></div>` : ''}
+          ${(!(seo.specs && seo.specs.length) && product.technicalDesc) ? renderTechSpecs(product.technicalDesc) : ''}
           ${product.videoUrl ? `<div style="margin-top:1rem;"><a href="${product.videoUrl}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#dc2626;color:#fff;padding:10px 20px;border-radius:8px;font-weight:600;text-decoration:none;font-size:0.95rem;"><i class="fas fa-play-circle"></i> צפו בסרטון מוצר</a></div>` : ''}
           ${specsHtml}
           ${bulkCtaHtml}
@@ -580,7 +603,7 @@ function main() {
   }
 
   const data = JSON.parse(fs.readFileSync(DATA_PATH, 'utf-8'));
-  const products = data.items || [];
+  let products = data.items || [];
   const categories = data.categories || [];
 
   if (products.length === 0) {
@@ -588,10 +611,24 @@ function main() {
     return;
   }
 
-  // Clean products directory completely
-  if (fs.existsSync(PRODUCTS_DIR)) {
-    cleanDir(PRODUCTS_DIR);
-    console.log('Cleaned old product pages');
+  // Optional single-page mode: `--slug=<slug>` regenerates ONE product page
+  // without wiping the products directory. Used to safely pilot one page.
+  const slugArg = process.argv.find(a => a.startsWith('--slug='));
+  const allProducts = products;
+  if (slugArg) {
+    const wanted = decodeURIComponent(slugArg.slice('--slug='.length));
+    products = products.filter(p => p.slug === wanted);
+    if (products.length === 0) {
+      console.error(`No product found with slug "${wanted}"`);
+      process.exit(1);
+    }
+    console.log(`Single-page mode: regenerating only "${wanted}" (no clean)`);
+  } else {
+    // Full build: clean products directory completely
+    if (fs.existsSync(PRODUCTS_DIR)) {
+      cleanDir(PRODUCTS_DIR);
+      console.log('Cleaned old product pages');
+    }
   }
 
   // Generate each product page as /products/{slug}/index.html
@@ -602,7 +639,7 @@ function main() {
       continue;
     }
 
-    const html = generateProductPage(product, categories, products);
+    const html = generateProductPage(product, categories, allProducts);
     const slugDir = path.join(PRODUCTS_DIR, product.slug);
     fs.mkdirSync(slugDir, { recursive: true });
     fs.writeFileSync(path.join(slugDir, 'index.html'), html, 'utf-8');
