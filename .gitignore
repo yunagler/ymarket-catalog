@@ -5,3 +5,4 @@ backups/
 # Python
 __pycache__/
 *.pyc
+*.webp_backup
