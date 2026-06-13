@@ -72,7 +72,8 @@
         out.push(Object.assign({}, rep, {
           name: g.name,
           slug: g.seoSlug || rep.seoSlug || rep.slug,
-          saleNis: prices.length ? Math.min.apply(null, prices) : rep.saleNis
+          saleNis: prices.length ? Math.min.apply(null, prices) : rep.saleNis,
+          imageUrl: g.groupImageUrl || rep.imageUrl
         }));
       } else { out.push(it); }
     });

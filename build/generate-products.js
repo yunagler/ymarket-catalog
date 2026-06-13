@@ -143,7 +143,8 @@ function generateProductPage(product, categories, allProducts, group) {
   const primaryCat = categories.find(c => c.slug === primaryCatSlug);
   const categoryUrl = primaryCat ? getFullCategoryUrl(primaryCat, categories) : getCategoryUrl(product, categories);
   const parentChain = primaryCat ? getParentChain(primaryCat, categories) : [];
-  const imgSrcJpg = product.imageUrl || `/items/${product.id}.jpg`;
+  // For a variant group with a composite "group photo", use it as the hero image.
+  const imgSrcJpg = (isGroup && group.groupImageUrl) ? group.groupImageUrl : (product.imageUrl || `/items/${product.id}.jpg`);
   const imgSrc = imgSrcJpg.replace(/\.jpg$/i, '.webp');
   const imgSrcThumb = imgSrcJpg.replace(/\.jpg$/i, '-thumb.webp');
   const canonicalSlug = isGroup ? (group.seoSlug || product.seoSlug || product.slug) : (product.seoSlug || product.slug);
@@ -723,7 +724,9 @@ function generateProductPage(product, categories, allProducts, group) {
     if (goBtn) goBtn.addEventListener('click', function(){ if (!goBtn.disabled) window.location.href = '/cart'; });
 
     window.addEventListener('storage', function(e){ if (e.key === 'ym_cart') sync(); });
-    selectVariant(0);
+    // If the group has a composite "all variants" hero, keep it on load (don't switch
+    // to variant 0). Tapping a variant thumbnail still swaps the hero to that variant.
+    if (${isGroup && group.groupImageUrl ? 'false' : 'true'}) selectVariant(0);
     sync();
   })();
   </script>` : `<script>
@@ -861,7 +864,7 @@ function main() {
   const groupContext = (gid) => {
     const def = groupDefById.get(gid);
     const members = groupMembers.get(gid);
-    return { id: gid, name: def.name, axis: def.axis, seoSlug: def.seoSlug || (members[0].seoSlug || members[0].slug), variants: members };
+    return { id: gid, name: def.name, axis: def.axis, seoSlug: def.seoSlug || (members[0].seoSlug || members[0].slug), groupImageUrl: def.groupImageUrl || null, variants: members };
   };
 
   // Optional single-page mode: `--slug=<slug>` regenerates ONE product page

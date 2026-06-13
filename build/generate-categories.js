@@ -283,6 +283,7 @@ function collapseVariants(items, variantGroups) {
         name: g.name,
         slug: g.seoSlug || rep.seoSlug || rep.slug,
         saleNis: prices.length ? Math.min(...prices) : rep.saleNis,
+          imageUrl: g.groupImageUrl || rep.imageUrl,
         originalPrice: null, discountPercent: null, productStatus: null,
         _isVariantGroup: true,
         _variantCount: members.length,
