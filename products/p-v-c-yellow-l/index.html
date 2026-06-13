@@ -94,6 +94,7 @@
 </head>
 <body>
   <!-- ═══ ANNOUNCEMENT ═══ -->
+<!-- ═══ ANNOUNCEMENT ═══ -->
   <div class="announcement">
     <a href="/register">
       <i class="fas fa-crown"></i>
@@ -392,7 +393,7 @@
     </div>
   </section>
 
-  <footer class="footer">
+    <footer class="footer">
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
@@ -414,6 +415,10 @@
             <a href="/category/food-packaging-delivery-solutions/">אריזות Take Away</a>
             <a href="/category/office-coffee-breakroom-supplies/">קפה, שתייה וכיבוד</a>
             <a href="/category/safety-ppe-equipment-for-business/">בטיחות ומיגון</a>
+            <a href="/category/heavy-duty-garbage-bags-wholesale/">שקיות אשפה</a>
+            <a href="/category/professional-cleaning-cloths-microfiber/">טקסטיל ומטליות</a>
+            <a href="/category/office-supplies-wholesale-business/">ציוד משרדי</a>
+            <a href="/category/maintenance-technical-equipment-wholesale/">ציוד טכני</a>
           </div>
         </div>
 
@@ -556,7 +561,9 @@
     if (goBtn) goBtn.addEventListener('click', function(){ if (!goBtn.disabled) window.location.href = '/cart'; });
 
     window.addEventListener('storage', function(e){ if (e.key === 'ym_cart') sync(); });
-    selectVariant(0);
+    // If the group has a composite "all variants" hero, keep it on load (don't switch
+    // to variant 0). Tapping a variant thumbnail still swaps the hero to that variant.
+    if (true) selectVariant(0);
     sync();
   })();
   </script>
