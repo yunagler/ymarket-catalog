@@ -389,7 +389,7 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
     // Variant group → link to unified page; else add-to-cart (or WhatsApp if no price)
     const actionsHtml = p._isVariantGroup
       ? `<div class="product-card__actions">
-          <a href="/products/${p.slug}/" class="product-card__add-btn"><i class="fas fa-layer-group"></i> בחר ${({'צבע':'צבע','מידה':'מידה','נפח':'נפח','גודל':'גודל'})[p._variantAxis] || 'וריאנט'} (${p._variantCount})</a>
+          <a href="/products/${p.slug}/" class="product-card__add-btn"><i class="fas fa-layer-group"></i> בחר ${({'צבע':'צבע','מידה':'מידה','נפח':'נפח','גודל':'גודל','סוג':'סוג'})[p._variantAxis] || 'וריאנט'} (${p._variantCount})</a>
         </div>`
       : p.saleNis
       ? `<div class="product-card__actions">

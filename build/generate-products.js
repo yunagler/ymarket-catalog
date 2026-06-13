@@ -110,7 +110,7 @@ function generateProductPage(product, categories, allProducts, group) {
   // When present, this page is a UNIFIED variant page (one page for S/M/L/XL etc.)
   const isGroup = !!(group && group.variants && group.variants.length > 1);
   const groupAxis = (group && group.axis) || 'מידה';
-  const AXIS_WORDS = { 'צבע': 'צבע', 'מידה': 'מידה', 'נפח': 'נפח', 'גודל': 'גודל' };
+  const AXIS_WORDS = { 'צבע': 'צבע', 'מידה': 'מידה', 'נפח': 'נפח', 'גודל': 'גודל', 'סוג': 'סוג' };
   const axisWord = AXIS_WORDS[groupAxis] || 'וריאנט';
   const variantData = isGroup ? group.variants.map(v => {
     const vJpg = v.imageUrl || `/items/${v.id}.jpg`;
@@ -195,7 +195,7 @@ function generateProductPage(product, categories, allProducts, group) {
   // Pricing headline (JS updates it when a variant pill is selected)
   // Compact price line for group pages — replaces the bulky site price banner.
   const unitWord = variantData[0] && variantData[0].unit ? 'ל' + variantData[0].unit : 'ליחידה';
-  const AXIS_PLURALS = { 'צבע': 'צבעים', 'מידה': 'מידות', 'נפח': 'נפחים', 'גודל': 'גדלים' };
+  const AXIS_PLURALS = { 'צבע': 'צבעים', 'מידה': 'מידות', 'נפח': 'נפחים', 'גודל': 'גדלים', 'סוג': 'סוגים' };
   const axisPlural = AXIS_PLURALS[axisWord] || 'וריאנטים';
   const countWord = `${variantData.length} ${axisPlural}`;
   // The price is now the header of the selection card (connected as one unit) — no

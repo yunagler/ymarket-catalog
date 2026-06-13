@@ -8269,9 +8269,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 57,
+      "variantLabel": "אנד ביוטי",
+      "variantSortOrder": 5
     },
     {
       "id": 1044,
@@ -8325,9 +8325,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 57,
+      "variantLabel": "יבש לגבר",
+      "variantSortOrder": 1
     },
     {
       "id": 1053,
@@ -8381,9 +8381,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 57,
+      "variantLabel": "יבש נשים",
+      "variantSortOrder": 3
     },
     {
       "id": 1052,
@@ -8437,9 +8437,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 57,
+      "variantLabel": "פרש נשים",
+      "variantSortOrder": 4
     },
     {
       "id": 1054,
@@ -8493,9 +8493,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 57,
+      "variantLabel": "קיק מלר גברים",
+      "variantSortOrder": 2
     },
     {
       "id": 795,
@@ -50344,6 +50344,12 @@
       "name": "שקית זבל שחורה עבה 25 ק\"ג",
       "axis": "מידה",
       "seoSlug": "garbage-bag-black-25kg"
+    },
+    {
+      "id": 57,
+      "name": "דאודורנט רול NIVEA 50 מ\"ל",
+      "axis": "סוג",
+      "seoSlug": "nivea-roll-deodorant-50ml"
     }
   ],
   "exportedAt": "2026-06-13T18:47:49.653Z",

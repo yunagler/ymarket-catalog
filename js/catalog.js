@@ -706,7 +706,7 @@
         '</div>' +
         '<div class="product-card__actions">' +
           (p._isVariantGroup ?
-            '<a href="' + productUrl + '" class="product-card__add-btn"><i class="fas fa-layer-group"></i> בחר ' + ({'צבע':'צבע','מידה':'מידה','נפח':'נפח','גודל':'גודל'}[p._variantAxis] || 'וריאנט') + ' (' + p._variantCount + ')</a>'
+            '<a href="' + productUrl + '" class="product-card__add-btn"><i class="fas fa-layer-group"></i> בחר ' + ({'צבע':'צבע','מידה':'מידה','נפח':'נפח','גודל':'גודל','סוג':'סוג'}[p._variantAxis] || 'וריאנט') + ' (' + p._variantCount + ')</a>'
           : price ?
             '<div class="product-card__qty-row">' +
               '<div class="product-card__qty-selector">' +
