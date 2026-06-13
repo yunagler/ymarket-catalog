@@ -192,46 +192,110 @@ function generateProductPage(product, categories, allProducts, group) {
 
   // ===== Variant group: pricing block, selector + quantity matrix, cart script =====
   // Pricing headline (JS updates it when a variant pill is selected)
+  // Compact price line for group pages — replaces the bulky site price banner.
+  const unitWord = variantData[0] && variantData[0].unit ? 'ל' + variantData[0].unit : 'ליחידה';
+  const axisPlural = axisWord === 'צבע' ? 'צבעים' : axisWord === 'מידה' ? 'מידות' : 'וריאנטים';
+  const countWord = `${variantData.length} ${axisPlural}`;
+  // The price is now the header of the selection card (connected as one unit) — no
+  // separate floating price line under the title.
+  const compactPriceHtml = '';
+
   const pricingHtml = isGroup
-    ? `<div class="product-pricing__price" id="variantPrice">${formatPrice(variantData[0].price)}</div>${gMin !== gMax ? `<div class="product-pricing__unit" id="variantPriceRange">טווח: ${groupPriceLabel}</div>` : ''}`
+    ? ''
     : (price
         ? hasPromo
           ? `<div class="product-pricing__badge">${promoLabel}</div><div class="product-pricing__price" style="color:#dc2626">${price}</div><div class="product-pricing__original" style="text-decoration:line-through;color:#9ca3af;font-size:var(--fs-base)">${formatPrice(product.originalPrice)}</div>${product.discountPercent ? `<div class="product-pricing__discount" style="background:#fef2f2;color:#dc2626;display:inline-block;padding:2px 8px;border-radius:6px;font-size:var(--fs-sm);font-weight:600">${Math.round(product.discountPercent)}%- הנחה</div>` : ''}${perUnit ? `<div class="product-pricing__unit">${perUnit}</div>` : ''}`
           : `<div class="product-pricing__price">${price}</div>${perUnit ? `<div class="product-pricing__unit">${perUnit}</div>` : ''}`
         : '<div class="product-pricing__price" style="font-size: var(--fs-lg);">צרו קשר למחיר</div>');
 
-  // Actions block
-  const variantPillsHtml = isGroup ? `
-    <div class="variant-selector" style="margin-bottom:14px;">
-      <div style="font-size:0.9rem;font-weight:600;color:#1B3A5C;margin-bottom:6px;">${groupAxis}:</div>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;">
-        ${variantData.map((v, i) => `<button type="button" class="variant-pill" data-idx="${i}" style="padding:8px 16px;border-radius:10px;font-weight:600;font-size:0.9rem;cursor:pointer;border:1px solid ${i === 0 ? '#1B3A5C' : '#e2e8f0'};background:${i === 0 ? '#1B3A5C' : '#fff'};color:${i === 0 ? '#fff' : '#4b5563'};transition:all .15s;">${v.label}</button>`).join('')}
-      </div>
-    </div>` : '';
-
+  // Actions block — ONE clean list per variant (thumbnail switches hero; no
+  // redundant pill row). Each row: image + label + unit price + stepper + line total.
   const variantMatrixHtml = isGroup ? `
-    <div class="variant-matrix" style="border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;margin-bottom:14px;">
-      <div style="padding:10px 16px;background:#f8fafc;font-weight:700;font-size:0.9rem;color:#4b5563;border-bottom:1px solid #eef2f6;">הזמנה מהירה — בחרו כמות לכל ${axisWord}</div>
+    <div class="vgroup">
+      <div class="vgroup__bar">
+        <div class="vgroup__price">
+          <span id="variantPrice">${formatPrice(variantData[0].price)}</span>
+          <span class="vgroup__pnote">${unitWord} · ${groupAxis} <bdi dir="ltr" id="variantLabel">${variantData[0].label}</bdi></span>
+        </div>
+        <div class="vgroup__hint"><i class="fas fa-hand-pointer"></i> בחרו ${axisPlural} וכמויות</div>
+      </div>
       ${variantData.map((v, i) => `
-        <div class="variant-row" data-idx="${i}" style="display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid #f1f5f9;">
-          <div style="flex:1;min-width:0;">
-            <div style="font-weight:600;font-size:0.95rem;color:#1f2937;">${v.label}</div>
-            <div style="font-size:0.8rem;color:#94a3b8;">${formatPrice(v.price)}</div>
+        <div class="vrow${i === 0 ? ' is-active' : ''}" data-idx="${i}">
+          <button type="button" class="vrow__pick" data-idx="${i}" aria-label="הצג ${v.label}">
+            <picture><source srcset="${v.img}" type="image/webp"><img src="${v.imgJpg}" alt="${v.label}" loading="lazy" onerror="this.onerror=null;var s=this.parentElement.querySelector('source');if(s)s.remove();this.style.opacity=0.2"></picture>
+          </button>
+          <div class="vrow__meta">
+            <span class="vrow__label">${v.label}</span>
+            <span class="vrow__price">${formatPrice(v.price)}${v.unit ? ' / ' + v.unit : ' ליח׳'}</span>
           </div>
-          <div class="quantity-selector" style="display:flex;align-items:center;border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;">
-            <button type="button" class="quantity-selector__btn vqty-dec" data-idx="${i}" style="width:38px;height:38px;">-</button>
-            <input type="number" class="quantity-selector__input vqty" data-idx="${i}" value="0" min="0" style="width:46px;text-align:center;border-left:1px solid #e2e8f0;border-right:1px solid #e2e8f0;">
-            <button type="button" class="quantity-selector__btn vqty-inc" data-idx="${i}" style="width:38px;height:38px;">+</button>
+          <div class="vrow__stepper">
+            <button type="button" class="vqty-dec" data-idx="${i}" aria-label="הפחת">−</button>
+            <input type="number" class="vqty" data-idx="${i}" value="0" min="0" inputmode="numeric" aria-label="כמות ${v.label}">
+            <button type="button" class="vqty-inc" data-idx="${i}" aria-label="הוסף">+</button>
           </div>
-          <div class="vline-total" data-idx="${i}" style="width:72px;text-align:left;font-weight:700;color:#1B3A5C;font-size:0.9rem;">&nbsp;</div>
+          <div class="vrow__sum vline-total" data-idx="${i}"></div>
         </div>`).join('')}
     </div>` : '';
 
+  const groupStyles = isGroup ? `<style>
+    .vgroup{border:1px solid #e2e8f0;border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 4px 16px rgba(27,58,92,.06)}
+    .vgroup__bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 18px;background:linear-gradient(135deg,#f8fafc 0%,#eef3f9 100%);border-bottom:1px solid #e2e8f0}
+    .vgroup__price{display:flex;align-items:baseline;gap:9px;font-size:1.7rem;font-weight:800;color:#1B3A5C;line-height:1}
+    .vgroup__pnote{font-size:.82rem;font-weight:600;color:#7a8aa0}
+    .vgroup__pnote bdi{font-weight:800;color:#1B3A5C}
+    .vgroup__hint{font-size:.8rem;font-weight:700;color:#64748b;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+    .vgroup__hint i{color:#1B3A5C}
+    .vrow{display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid #f1f5f9;transition:background .15s}
+    .vrow:last-child{border-bottom:none}
+    .vrow.is-active{background:#f0f6ff}
+    .vrow__pick{flex:0 0 auto;width:52px;height:52px;border:1px solid #e5e7eb;border-radius:10px;background:#fff;padding:3px;cursor:pointer;overflow:hidden;transition:border-color .15s,box-shadow .15s}
+    .vrow.is-active .vrow__pick{border-color:#1B3A5C;box-shadow:0 0 0 2px rgba(27,58,92,.15)}
+    .vrow__pick img{width:100%;height:100%;object-fit:contain;display:block}
+    .vrow__meta{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px;text-align:right}
+    .vrow__label{font-weight:700;font-size:1.05rem;color:#1f2937}
+    .vrow__price{font-size:.82rem;color:#94a3b8;white-space:nowrap}
+    .vrow__stepper{flex:0 0 auto;display:flex;align-items:center;border:1px solid #d8dee6;border-radius:10px;overflow:hidden}
+    .vrow__stepper button{width:40px;height:40px;border:none;background:#f8fafc;color:#1B3A5C;font-size:1.25rem;font-weight:600;cursor:pointer;line-height:1;display:flex;align-items:center;justify-content:center;transition:background .15s}
+    .vrow__stepper button:hover{background:#e9eef5}
+    .vrow__stepper .vqty{width:46px;height:40px;text-align:center;border:none;border-left:1px solid #e5e7eb;border-right:1px solid #e5e7eb;font-size:1.05rem;font-weight:700;color:#1f2937;-moz-appearance:textfield}
+    .vrow__stepper .vqty::-webkit-outer-spin-button,.vrow__stepper .vqty::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+    .vrow__sum{flex:0 0 60px;text-align:left;font-weight:700;color:#1B3A5C;font-size:.95rem}
+    .vgroup-actions{display:flex;flex-direction:column;gap:14px;width:100%}
+    .vgroup-add{width:100%;justify-content:center;font-size:1.05rem}
+    .vgroup-add:disabled{background:#e5e7eb;color:#9ca3af;cursor:not-allowed;box-shadow:none;border-color:#e5e7eb}
+    .vgroup-secondary{display:flex;gap:10px}
+    .vgroup-secondary .btn{flex:1;justify-content:center}
+    .vgroup-secondary .btn--phone{background:#1B3A5C;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border-radius:12px;font-weight:600}
+    /* --- subtle motion --- */
+    #mainProductImg{transition:opacity .3s ease, transform .3s ease}
+    #mainProductImg.vfade{animation:vimg .4s cubic-bezier(.22,.61,.36,1)}
+    @keyframes vimg{from{opacity:.25;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
+    #variantPrice{display:inline-block}
+    .vgroup__price.vpulse #variantPrice{animation:vpop .35s cubic-bezier(.22,.61,.36,1)}
+    @keyframes vpop{0%{transform:scale(1)}45%{transform:scale(1.14);color:#2a5080}100%{transform:scale(1)}}
+    .vrow__pick:hover{transform:scale(1.06)}
+    .vrow__pick:active{transform:scale(.95)}
+    .vrow.is-active{animation:vrowin .3s ease}
+    @keyframes vrowin{from{background:#dbeafe}to{background:#f0f6ff}}
+    .vrow__stepper button:active{transform:scale(.88)}
+    .vrow__sum{transition:opacity .25s ease}
+    .vrow__sum.vsumin{animation:vsum .3s ease}
+    @keyframes vsum{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:translateY(0)}}
+    .vgroup-add{transition:background .2s ease, transform .12s ease, box-shadow .2s ease}
+    .vgroup-add:not(:disabled){box-shadow:0 6px 16px rgba(27,58,92,.22)}
+    .vgroup-add:not(:disabled):active{transform:scale(.985)}
+    @media (prefers-reduced-motion: reduce){#mainProductImg.vfade,.vgroup-price.vpulse #variantPrice,.vrow.is-active,.vrow__sum.vsumin{animation:none}}
+  </style>` : '';
+
   const actionsHtml = isGroup
-    ? `${variantPillsHtml}${variantMatrixHtml}
-       <button class="btn btn--primary btn--lg" id="addAllBtn" style="width:100%;"><i class="fas fa-cart-plus"></i> <span id="addAllLabel">בחרו כמות להוספה</span></button>
-       <a href="https://wa.me/972549922492?text=היי, מתעניין ב${encodeURIComponent(group.name)}" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> שאלו אותנו</a>
-       <a href="tel:*3497" class="btn btn--phone btn--lg" style="display:inline-flex;align-items:center;gap:8px;background:#1B3A5C;color:#fff;padding:12px 24px;border-radius:12px;font-weight:600;text-decoration:none;font-size:0.95rem;margin-top:8px;justify-content:center;width:100%;"><i class="fas fa-phone-alt"></i> חייגו *3497</a>`
+    ? `${groupStyles}<div class="vgroup-actions">
+         ${variantMatrixHtml}
+         <button class="btn btn--primary btn--lg vgroup-add" id="addAllBtn" disabled><i class="fas fa-cart-plus"></i> <span id="addAllLabel">בחרו כמות מהמידות</span></button>
+         <div class="vgroup-secondary">
+           <a href="https://wa.me/972549922492?text=היי, מתעניין ב${encodeURIComponent(group.name)}" class="btn btn--whatsapp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> שאלו אותנו</a>
+           <a href="tel:*3497" class="btn btn--phone"><i class="fas fa-phone-alt"></i> חייגו *3497</a>
+         </div>
+       </div>`
     : `${price
         ? `<div class="quantity-selector">
             <button class="quantity-selector__btn" id="qtyDecrease">-</button>
@@ -410,7 +474,7 @@ function generateProductPage(product, categories, allProducts, group) {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="/css/style.min.css">
   <link rel="stylesheet" href="/css/site-header.css">
-  <link rel="stylesheet" href="/css/pages/product-detail.min.css?v=20260310">
+  <link rel="stylesheet" href="/css/pages/product-detail.min.css?v=20260613">
   <script type="application/ld+json">${jsonLd}</script>
   <script type="application/ld+json">${JSON.stringify({
     "@context": "https://schema.org",
@@ -453,7 +517,7 @@ function generateProductPage(product, categories, allProducts, group) {
       <span class="breadcrumb__separator"><i class="fas fa-chevron-left"></i></span>
       <a href="${categoryUrl}">${primaryCat.name}</a>` : ''}
       <span class="breadcrumb__separator"><i class="fas fa-chevron-left"></i></span>
-      <span class="breadcrumb__current">${product.name}</span>
+      <span class="breadcrumb__current">${h1Text}</span>
     </nav>
   </div>
 
@@ -472,12 +536,13 @@ function generateProductPage(product, categories, allProducts, group) {
         <div class="product-info">
           <div class="product-info__category">${categoryName}</div>
           <h1 class="product-info__name">${h1Text}</h1>
-          ${product.partNumber ? `<div class="product-info__sku">מק"ט: ${product.partNumber}</div>` : ''}
-          ${product.unit ? `<div class="product-info__pack">${product.unitsPerPack || ''} ${product.unit || ''}</div>` : ''}
+          ${!isGroup && product.partNumber ? `<div class="product-info__sku">מק"ט: ${product.partNumber}</div>` : ''}
+          ${!isGroup && product.unit ? `<div class="product-info__pack">${product.unitsPerPack || ''} ${product.unit || ''}</div>` : ''}
+          ${isGroup ? compactPriceHtml : ''}
 
-          <div class="product-pricing">
+          ${isGroup ? '' : `<div class="product-pricing">
             ${pricingHtml}
-          </div>
+          </div>`}
 
           <div class="product-actions">
             ${actionsHtml}
@@ -592,6 +657,7 @@ function generateProductPage(product, categories, allProducts, group) {
   <a href="https://wa.me/972549922492?text=שלום, אשמח לקבל הצעת מחיר" class="whatsapp-float" target="_blank" rel="noopener" aria-label="שלחו הודעה בוואטסאפ"><i class="fab fa-whatsapp"></i><span class="whatsapp-float__tooltip">צריכים עזרה? דברו איתנו</span></a>
   <script src="/js/main.min.js?v=20260310b"></script>
   <script src="/js/analytics.js?v=20260314"></script>
+  <script src="/js/search.js?v=20260613"></script>
   <script>
   (function() {
     var PRODUCT = ${JSON.stringify({
@@ -619,24 +685,25 @@ function generateProductPage(product, categories, allProducts, group) {
     // ===== Variant group: selector switches hero, matrix adds one cart line per size =====
     var VARIANTS = ${JSON.stringify(variantData)};
     function fmt(n){ return '‏' + Math.round(n*100)/100 + ' ‏₪'; }
-    var pills = document.querySelectorAll('.variant-pill');
+    var rows = document.querySelectorAll('.vrow');
     var mainImg = document.getElementById('mainProductImg');
     var mainSrc = document.getElementById('mainProductSource');
     var priceEl = document.getElementById('variantPrice');
+    var labelEl = document.getElementById('variantLabel');
     function selectVariant(idx) {
       var v = VARIANTS[idx];
       if (!v) return;
-      pills.forEach(function(p){
-        var on = parseInt(p.dataset.idx) === idx;
-        p.style.background = on ? '#1B3A5C' : '#fff';
-        p.style.color = on ? '#fff' : '#4b5563';
-        p.style.borderColor = on ? '#1B3A5C' : '#e2e8f0';
-      });
-      if (mainImg) { mainImg.src = v.imgJpg; }
+      rows.forEach(function(r){ r.classList.toggle('is-active', parseInt(r.dataset.idx) === idx); });
       if (mainSrc) { mainSrc.srcset = v.img; }
       if (priceEl) { priceEl.textContent = fmt(v.price); }
+      // Bidi-safe label inside <bdi dir="ltr"> — only its text changes, no control chars
+      if (labelEl) { labelEl.textContent = v.label; }
+      // Subtle animations: crossfade hero, pulse price
+      if (mainImg) { mainImg.src = v.imgJpg; mainImg.classList.remove('vfade'); void mainImg.offsetWidth; mainImg.classList.add('vfade'); }
+      var vpWrap = document.querySelector('.vgroup__price'); if (vpWrap) { vpWrap.classList.remove('vpulse'); void vpWrap.offsetWidth; vpWrap.classList.add('vpulse'); }
     }
-    pills.forEach(function(p){ p.addEventListener('click', function(){ selectVariant(parseInt(p.dataset.idx)); }); });
+    // Tapping a variant's thumbnail previews it in the main image
+    document.querySelectorAll('.vrow__pick').forEach(function(b){ b.addEventListener('click', function(){ selectVariant(parseInt(b.dataset.idx)); }); });
 
     // Quantity matrix
     var qtyInputs = document.querySelectorAll('.vqty');
@@ -647,12 +714,15 @@ function generateProductPage(product, categories, allProducts, group) {
         var input = document.querySelector('.vqty[data-idx="'+i+'"]');
         var q = Math.max(0, parseInt(input && input.value) || 0);
         var lt = lineTotalEl(i);
-        if (q > 0) { selected++; totalUnits += q; totalPrice += q * v.price; if (lt) lt.textContent = fmt(q * v.price); }
-        else if (lt) lt.innerHTML = '&nbsp;';
+        if (q > 0) {
+          selected++; totalUnits += q; totalPrice += q * v.price;
+          var t = fmt(q * v.price);
+          if (lt && lt.textContent !== t) { lt.textContent = t; lt.classList.remove('vsumin'); void lt.offsetWidth; lt.classList.add('vsumin'); }
+        } else if (lt) { lt.textContent = ''; }
       });
       var btn = document.getElementById('addAllBtn');
       var label = document.getElementById('addAllLabel');
-      if (label) label.textContent = selected === 0 ? 'בחרו כמות להוספה' : ('הוסף ' + totalUnits + ' פריטים לעגלה (' + fmt(totalPrice) + ')');
+      if (label) label.textContent = selected === 0 ? 'בחרו כמות מהמידות' : ('הוספה לעגלה · ' + totalUnits + ' פריטים · ' + fmt(totalPrice));
       if (btn) btn.disabled = selected === 0;
     }
     document.querySelectorAll('.vqty-dec').forEach(function(b){ b.addEventListener('click', function(){
