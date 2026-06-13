@@ -4270,9 +4270,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 25,
+      "variantLabel": "אפור",
+      "variantSortOrder": 2
     },
     {
       "id": 261,
@@ -7541,9 +7541,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 26,
+      "variantLabel": "שחור",
+      "variantSortOrder": 1
     },
     {
       "id": 1072,
@@ -7597,9 +7597,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 26,
+      "variantLabel": "שקוף",
+      "variantSortOrder": 2
     },
     {
       "id": 205,
@@ -9428,9 +9428,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 4,
+      "variantLabel": "L",
+      "variantSortOrder": 3
     },
     {
       "id": 97,
@@ -9484,9 +9484,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 4,
+      "variantLabel": "M",
+      "variantSortOrder": 2
     },
     {
       "id": 435,
@@ -9540,9 +9540,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 4,
+      "variantLabel": "S",
+      "variantSortOrder": 1
     },
     {
       "id": 99,
@@ -9596,9 +9596,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 4,
+      "variantLabel": "XL",
+      "variantSortOrder": 4
     },
     {
       "id": 683,
@@ -10662,9 +10662,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 17,
+      "variantLabel": "אדום",
+      "variantSortOrder": 2
     },
     {
       "id": 1093,
@@ -10718,9 +10718,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 17,
+      "variantLabel": "כחול",
+      "variantSortOrder": 3
     },
     {
       "id": 1091,
@@ -10774,9 +10774,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 17,
+      "variantLabel": "שחור",
+      "variantSortOrder": 1
     },
     {
       "id": 632,
@@ -13675,9 +13675,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 5,
+      "variantLabel": "L",
+      "variantSortOrder": 3
     },
     {
       "id": 39,
@@ -13731,9 +13731,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 5,
+      "variantLabel": "M",
+      "variantSortOrder": 2
     },
     {
       "id": 38,
@@ -13787,9 +13787,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 5,
+      "variantLabel": "S",
+      "variantSortOrder": 1
     },
     {
       "id": 41,
@@ -13843,9 +13843,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 5,
+      "variantLabel": "XL",
+      "variantSortOrder": 4
     },
     {
       "id": 44,
@@ -13899,9 +13899,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 6,
+      "variantLabel": "L",
+      "variantSortOrder": 3
     },
     {
       "id": 43,
@@ -13955,9 +13955,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 6,
+      "variantLabel": "M",
+      "variantSortOrder": 2
     },
     {
       "id": 42,
@@ -14011,9 +14011,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 6,
+      "variantLabel": "S",
+      "variantSortOrder": 1
     },
     {
       "id": 45,
@@ -14067,9 +14067,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 6,
+      "variantLabel": "XL",
+      "variantSortOrder": 4
     },
     {
       "id": 907,
@@ -16188,9 +16188,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 27,
+      "variantLabel": "לבן",
+      "variantSortOrder": 1
     },
     {
       "id": 917,
@@ -16244,9 +16244,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 27,
+      "variantLabel": "שחור",
+      "variantSortOrder": 2
     },
     {
       "id": 371,
@@ -18040,9 +18040,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 28,
+      "variantLabel": "כחול",
+      "variantSortOrder": 2
     },
     {
       "id": 755,
@@ -18376,9 +18376,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 28,
+      "variantLabel": "שחור",
+      "variantSortOrder": 1
     },
     {
       "id": 921,
@@ -18601,9 +18601,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 9,
+      "variantLabel": "אדום",
+      "variantSortOrder": 3
     },
     {
       "id": 895,
@@ -18657,9 +18657,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 10,
+      "variantLabel": "אדום",
+      "variantSortOrder": 3
     },
     {
       "id": 1076,
@@ -18713,9 +18713,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 14,
+      "variantLabel": "אדום",
+      "variantSortOrder": 3
     },
     {
       "id": 999,
@@ -18769,9 +18769,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 29,
+      "variantLabel": "כחול",
+      "variantSortOrder": 2
     },
     {
       "id": 894,
@@ -18825,9 +18825,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 9,
+      "variantLabel": "כחול",
+      "variantSortOrder": 5
     },
     {
       "id": 1011,
@@ -18881,9 +18881,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 18,
+      "variantLabel": "כחול",
+      "variantSortOrder": 3
     },
     {
       "id": 896,
@@ -18937,9 +18937,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 10,
+      "variantLabel": "כחול",
+      "variantSortOrder": 5
     },
     {
       "id": 898,
@@ -18993,9 +18993,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 9,
+      "variantLabel": "לבן",
+      "variantSortOrder": 1
     },
     {
       "id": 1012,
@@ -19049,9 +19049,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 18,
+      "variantLabel": "לבן",
+      "variantSortOrder": 1
     },
     {
       "id": 897,
@@ -19105,9 +19105,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 10,
+      "variantLabel": "לבן",
+      "variantSortOrder": 1
     },
     {
       "id": 977,
@@ -19161,9 +19161,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 30,
+      "variantLabel": "לבן",
+      "variantSortOrder": 1
     },
     {
       "id": 704,
@@ -19217,9 +19217,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 14,
+      "variantLabel": "לבן",
+      "variantSortOrder": 1
     },
     {
       "id": 923,
@@ -19273,9 +19273,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 9,
+      "variantLabel": "צהוב",
+      "variantSortOrder": 4
     },
     {
       "id": 925,
@@ -19329,9 +19329,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 10,
+      "variantLabel": "צהוב",
+      "variantSortOrder": 4
     },
     {
       "id": 924,
@@ -19385,9 +19385,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 14,
+      "variantLabel": "צהוב",
+      "variantSortOrder": 4
     },
     {
       "id": 1000,
@@ -19441,9 +19441,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 29,
+      "variantLabel": "שחור",
+      "variantSortOrder": 1
     },
     {
       "id": 705,
@@ -19497,9 +19497,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 9,
+      "variantLabel": "שחור",
+      "variantSortOrder": 2
     },
     {
       "id": 1075,
@@ -19553,9 +19553,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 18,
+      "variantLabel": "שחור",
+      "variantSortOrder": 2
     },
     {
       "id": 706,
@@ -19609,9 +19609,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 10,
+      "variantLabel": "שחור",
+      "variantSortOrder": 2
     },
     {
       "id": 707,
@@ -19665,9 +19665,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 30,
+      "variantLabel": "שחור",
+      "variantSortOrder": 2
     },
     {
       "id": 889,
@@ -19721,9 +19721,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 14,
+      "variantLabel": "שחור",
+      "variantSortOrder": 2
     },
     {
       "id": 757,
@@ -19777,9 +19777,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 11,
+      "variantLabel": "אדום",
+      "variantSortOrder": 3
     },
     {
       "id": 759,
@@ -19833,9 +19833,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 12,
+      "variantLabel": "אדום",
+      "variantSortOrder": 3
     },
     {
       "id": 712,
@@ -19889,9 +19889,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 15,
+      "variantLabel": "אדום",
+      "variantSortOrder": 3
     },
     {
       "id": 980,
@@ -19945,9 +19945,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 19,
+      "variantLabel": "אדום",
+      "variantSortOrder": 3
     },
     {
       "id": 1013,
@@ -20041,9 +20041,9 @@
         "isB2BBulk": false,
         "faqs": []
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 11,
+      "variantLabel": "כחול",
+      "variantSortOrder": 5
     },
     {
       "id": 998,
@@ -20097,9 +20097,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 12,
+      "variantLabel": "כחול",
+      "variantSortOrder": 5
     },
     {
       "id": 918,
@@ -20153,9 +20153,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 11,
+      "variantLabel": "לבן",
+      "variantSortOrder": 1
     },
     {
       "id": 997,
@@ -20209,9 +20209,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 12,
+      "variantLabel": "לבן",
+      "variantSortOrder": 1
     },
     {
       "id": 979,
@@ -20265,9 +20265,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 15,
+      "variantLabel": "לבן",
+      "variantSortOrder": 1
     },
     {
       "id": 1010,
@@ -20377,9 +20377,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 19,
+      "variantLabel": "לבן",
+      "variantSortOrder": 1
     },
     {
       "id": 40105,
@@ -20433,9 +20433,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 11,
+      "variantLabel": "צהוב",
+      "variantSortOrder": 4
     },
     {
       "id": 968,
@@ -20489,9 +20489,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 12,
+      "variantLabel": "צהוב",
+      "variantSortOrder": 4
     },
     {
       "id": 888,
@@ -20545,9 +20545,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 15,
+      "variantLabel": "צהוב",
+      "variantSortOrder": 4
     },
     {
       "id": 710,
@@ -20601,9 +20601,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 11,
+      "variantLabel": "שחור",
+      "variantSortOrder": 2
     },
     {
       "id": 713,
@@ -20657,9 +20657,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 12,
+      "variantLabel": "שחור",
+      "variantSortOrder": 2
     },
     {
       "id": 978,
@@ -20713,9 +20713,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 15,
+      "variantLabel": "שחור",
+      "variantSortOrder": 2
     },
     {
       "id": 1077,
@@ -20825,9 +20825,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 19,
+      "variantLabel": "שחור",
+      "variantSortOrder": 2
     },
     {
       "id": 131,
@@ -21443,9 +21443,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 20,
+      "variantLabel": "קרם",
+      "variantSortOrder": 2
     },
     {
       "id": 1037,
@@ -21500,9 +21500,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 20,
+      "variantLabel": "שחור",
+      "variantSortOrder": 1
     },
     {
       "id": 218,
@@ -21557,9 +21557,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 20,
+      "variantLabel": "שקוף",
+      "variantSortOrder": 3
     },
     {
       "id": 878,
@@ -25394,9 +25394,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 31,
+      "variantLabel": "שחור",
+      "variantSortOrder": 1
     },
     {
       "id": 584,
@@ -25450,9 +25450,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 31,
+      "variantLabel": "שקוף",
+      "variantSortOrder": 2
     },
     {
       "id": 469,
@@ -26512,9 +26512,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 13,
+      "variantLabel": "אפור",
+      "variantSortOrder": 3
     },
     {
       "id": 70,
@@ -26568,9 +26568,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 13,
+      "variantLabel": "ורוד",
+      "variantSortOrder": 5
     },
     {
       "id": 5,
@@ -26680,9 +26680,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 13,
+      "variantLabel": "לבן",
+      "variantSortOrder": 1
     },
     {
       "id": 3,
@@ -26736,9 +26736,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 13,
+      "variantLabel": "שחור",
+      "variantSortOrder": 2
     },
     {
       "id": 2,
@@ -26792,9 +26792,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 13,
+      "variantLabel": "תכלת",
+      "variantSortOrder": 4
     },
     {
       "id": 13,
@@ -27425,9 +27425,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 7,
+      "variantLabel": "L",
+      "variantSortOrder": 1
     },
     {
       "id": 208,
@@ -27481,9 +27481,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 7,
+      "variantLabel": "XL",
+      "variantSortOrder": 2
     },
     {
       "id": 790,
@@ -27537,9 +27537,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 7,
+      "variantLabel": "XXL",
+      "variantSortOrder": 3
     },
     {
       "id": 423,
@@ -28889,9 +28889,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 21,
+      "variantLabel": "ירוק",
+      "variantSortOrder": 2
     },
     {
       "id": 764,
@@ -28945,9 +28945,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 21,
+      "variantLabel": "כחול",
+      "variantSortOrder": 3
     },
     {
       "id": 1085,
@@ -29001,9 +29001,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 21,
+      "variantLabel": "צהוב",
+      "variantSortOrder": 1
     },
     {
       "id": 769,
@@ -30949,9 +30949,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 8,
+      "variantLabel": "M",
+      "variantSortOrder": 2
     },
     {
       "id": 944,
@@ -31005,9 +31005,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 8,
+      "variantLabel": "S",
+      "variantSortOrder": 1
     },
     {
       "id": 75,
@@ -31117,9 +31117,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 3,
+      "variantLabel": "L",
+      "variantSortOrder": 4
     },
     {
       "id": 62,
@@ -31173,9 +31173,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 3,
+      "variantLabel": "M",
+      "variantSortOrder": 3
     },
     {
       "id": 61,
@@ -31229,9 +31229,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 3,
+      "variantLabel": "S",
+      "variantSortOrder": 2
     },
     {
       "id": 64,
@@ -31285,9 +31285,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 3,
+      "variantLabel": "XL",
+      "variantSortOrder": 5
     },
     {
       "id": 227,
@@ -31341,9 +31341,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 3,
+      "variantLabel": "XS",
+      "variantSortOrder": 1
     },
     {
       "id": 470,
@@ -31566,9 +31566,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 2,
+      "variantLabel": "S",
+      "variantSortOrder": 1
     },
     {
       "id": 21,
@@ -31622,9 +31622,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 2,
+      "variantLabel": "XL",
+      "variantSortOrder": 4
     },
     {
       "id": 379,
@@ -33129,9 +33129,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 32,
+      "variantLabel": "חום",
+      "variantSortOrder": 2
     },
     {
       "id": 940,
@@ -33185,9 +33185,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 32,
+      "variantLabel": "לבן",
+      "variantSortOrder": 1
     },
     {
       "id": 378,
@@ -37747,9 +37747,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 33,
+      "variantLabel": "לבן",
+      "variantSortOrder": 1
     },
     {
       "id": 539,
@@ -37803,9 +37803,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 33,
+      "variantLabel": "שחור",
+      "variantSortOrder": 2
     },
     {
       "id": 354,
@@ -37859,9 +37859,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 34,
+      "variantLabel": "אפור",
+      "variantSortOrder": 1
     },
     {
       "id": 1001,
@@ -37915,9 +37915,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 34,
+      "variantLabel": "חום",
+      "variantSortOrder": 2
     },
     {
       "id": 729,
@@ -37971,9 +37971,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 35,
+      "variantLabel": "כסף",
+      "variantSortOrder": 2
     },
     {
       "id": 353,
@@ -38027,9 +38027,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 35,
+      "variantLabel": "שחור",
+      "variantSortOrder": 1
     },
     {
       "id": 892,
@@ -38473,9 +38473,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 36,
+      "variantLabel": "כחול",
+      "variantSortOrder": 2
     },
     {
       "id": 288,
@@ -38529,9 +38529,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 36,
+      "variantLabel": "שחור",
+      "variantSortOrder": 1
     },
     {
       "id": 717,
@@ -38921,9 +38921,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 22,
+      "variantLabel": "אדום",
+      "variantSortOrder": 2
     },
     {
       "id": 1099,
@@ -38977,9 +38977,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 22,
+      "variantLabel": "כחול",
+      "variantSortOrder": 3
     },
     {
       "id": 1098,
@@ -39033,9 +39033,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 22,
+      "variantLabel": "שחור",
+      "variantSortOrder": 1
     },
     {
       "id": 1103,
@@ -39089,9 +39089,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 23,
+      "variantLabel": "אדום",
+      "variantSortOrder": 2
     },
     {
       "id": 1102,
@@ -39145,9 +39145,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 23,
+      "variantLabel": "כחול",
+      "variantSortOrder": 3
     },
     {
       "id": 1101,
@@ -39201,9 +39201,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 23,
+      "variantLabel": "שחור",
+      "variantSortOrder": 1
     },
     {
       "id": 698,
@@ -40657,9 +40657,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 25,
+      "variantLabel": "לבן",
+      "variantSortOrder": 1
     },
     {
       "id": 703,
@@ -41314,9 +41314,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 16,
+      "variantLabel": "אפור",
+      "variantSortOrder": 2
     },
     {
       "id": 1030,
@@ -41370,9 +41370,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 16,
+      "variantLabel": "זהב",
+      "variantSortOrder": 3
     },
     {
       "id": 372,
@@ -41427,9 +41427,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 16,
+      "variantLabel": "לבן",
+      "variantSortOrder": 1
     },
     {
       "id": 906,
@@ -41484,9 +41484,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 16,
+      "variantLabel": "קרם",
+      "variantSortOrder": 4
     },
     {
       "id": 910,
@@ -41597,9 +41597,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 37,
+      "variantLabel": "לבן",
+      "variantSortOrder": 1
     },
     {
       "id": 920,
@@ -41654,9 +41654,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 37,
+      "variantLabel": "קרם",
+      "variantSortOrder": 2
     },
     {
       "id": 912,
@@ -43280,9 +43280,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 24,
+      "variantLabel": "אפור",
+      "variantSortOrder": 2
     },
     {
       "id": 292,
@@ -43336,9 +43336,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 24,
+      "variantLabel": "שחור",
+      "variantSortOrder": 1
     },
     {
       "id": 1046,
@@ -43392,9 +43392,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 24,
+      "variantLabel": "תכלת",
+      "variantSortOrder": 3
     },
     {
       "id": 1096,
@@ -43448,9 +43448,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 38,
+      "variantLabel": "כחול",
+      "variantSortOrder": 2
     },
     {
       "id": 291,
@@ -43504,9 +43504,9 @@
           }
         ]
       },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
+      "variantGroupId": 38,
+      "variantLabel": "שחור",
+      "variantSortOrder": 1
     },
     {
       "id": 361,
@@ -50010,16 +50010,232 @@
   ],
   "variantGroups": [
     {
-      "id": 2,
-      "name": "נטריל שחור Perfect",
-      "axis": "מידה",
-      "seoSlug": null
-    },
-    {
       "id": 1,
       "name": "כפפות ניטריל שחור (פרומקס)",
       "axis": "מידה",
       "seoSlug": "nitrile-black-gloves"
+    },
+    {
+      "id": 2,
+      "name": "נטריל שחור Perfect",
+      "axis": "מידה",
+      "seoSlug": "nitrile-black-perfect-size-s-100-without-powder"
+    },
+    {
+      "id": 3,
+      "name": "נטריל כחול (Perfect) - (100 יח) - ללא אבקה",
+      "axis": "מידה",
+      "seoSlug": "nitrile-blue-perfect-size-xs-100-without-powder"
+    },
+    {
+      "id": 4,
+      "name": "ווניל שקוף/לבן (IT-TAI) - (100 יח) - ללא אבקה",
+      "axis": "מידה",
+      "seoSlug": "vinyl-transparent-white-it-tai-size-s-100-without-powder"
+    },
+    {
+      "id": 5,
+      "name": "לטקס ללא אבקה (Perfect) - (100 יח)",
+      "axis": "מידה",
+      "seoSlug": "latex-without-powder-perfect-size-s-100"
+    },
+    {
+      "id": 6,
+      "name": "לטקס עם אבקה (Perfect) - (100 יח)",
+      "axis": "מידה",
+      "seoSlug": "latex-with-powder-perfect-size-s-100"
+    },
+    {
+      "id": 7,
+      "name": "מעיל גשם ארוך P.V.C בצבע צהוב",
+      "axis": "מידה",
+      "seoSlug": "p-v-c-yellow-l"
+    },
+    {
+      "id": 8,
+      "name": "נטריל ורוד ללא אבקה - א' 100 יח'",
+      "axis": "מידה",
+      "seoSlug": "nitrile-pink-without-powder-size-s-100"
+    },
+    {
+      "id": 9,
+      "name": "מגש קלקר סופג - כרעיים 500 יח'",
+      "axis": "צבע",
+      "seoSlug": "tray-cardboard-white-500-898"
+    },
+    {
+      "id": 10,
+      "name": "מגש קלקר סופג - צלעות 480 יח'",
+      "axis": "צבע",
+      "seoSlug": "tray-cardboard-white-480"
+    },
+    {
+      "id": 11,
+      "name": "מגש קלקר רגיל - כרעיים 600 יח'",
+      "axis": "צבע",
+      "seoSlug": "tray-cardboard-white-600"
+    },
+    {
+      "id": 12,
+      "name": "מגש קלקר רגיל - צלעות 480 יח'",
+      "axis": "צבע",
+      "seoSlug": "tray-cardboard-white-480-997"
+    },
+    {
+      "id": 13,
+      "name": "מסכה כירוגית (3 שכבות) - 50 יח'",
+      "axis": "צבע",
+      "seoSlug": "mask-surgical-3-white-50"
+    },
+    {
+      "id": 14,
+      "name": "מגש קלקר סופג - שניצל 500 יח'",
+      "axis": "צבע",
+      "seoSlug": "tray-cardboard-white-500"
+    },
+    {
+      "id": 15,
+      "name": "מגש קלקר רגיל - קבב 300 יח'",
+      "axis": "צבע",
+      "seoSlug": "tray-cardboard-white-300-979"
+    },
+    {
+      "id": 16,
+      "name": "צלחת P.P. גדולה 9 Happy ארוז 100 יח'",
+      "axis": "צבע",
+      "seoSlug": "plate-p-p-large-9-white-happy-100"
+    },
+    {
+      "id": 17,
+      "name": "טוש 90 פרמננט ליין פלוס (12)",
+      "axis": "צבע",
+      "seoSlug": "permanent-marker-90"
+    },
+    {
+      "id": 18,
+      "name": "מגש קלקר סופג - כרעיים 600 יח'",
+      "axis": "צבע",
+      "seoSlug": "tray-cardboard-white-600-1012"
+    },
+    {
+      "id": 19,
+      "name": "מגש קלקר רגיל - שניצל 500 יח'",
+      "axis": "צבע",
+      "seoSlug": "tray-cardboard-white-500-758"
+    },
+    {
+      "id": 20,
+      "name": "מזלג ארוז 50 יח' בחבילה",
+      "axis": "צבע",
+      "seoSlug": "fork-black-50-pack"
+    },
+    {
+      "id": 21,
+      "name": "מרקר מדגיש",
+      "axis": "צבע",
+      "seoSlug": "highlighter-markers"
+    },
+    {
+      "id": 22,
+      "name": "עט מחט 0.5 COBRA דגם 505 (12)",
+      "axis": "צבע",
+      "seoSlug": "pen-0-5-black-cobra-505-12"
+    },
+    {
+      "id": 23,
+      "name": "עט מחט 0.7 COBRA דגם 507 (12)",
+      "axis": "צבע",
+      "seoSlug": "pen-0-7-black-cobra-507-12"
+    },
+    {
+      "id": 24,
+      "name": "קלסר 8 וני",
+      "axis": "צבע",
+      "seoSlug": "binder-8-black"
+    },
+    {
+      "id": 25,
+      "name": "פח שובך 50 ליטר מרובע",
+      "axis": "צבע",
+      "seoSlug": "nesting-bin-50l-square"
+    },
+    {
+      "id": 26,
+      "name": "גביע רוטוב 2OZ ארוז 2500",
+      "axis": "צבע",
+      "seoSlug": "sauce-cup-2oz-2500"
+    },
+    {
+      "id": 27,
+      "name": "מגבון אישי חלק 1000 יחידות",
+      "axis": "צבע",
+      "seoSlug": "personal-wipes-smooth-1000"
+    },
+    {
+      "id": 28,
+      "name": "מגש פלסטיק (מחוזק) - כרעיים 500 יח'",
+      "axis": "צבע",
+      "seoSlug": "tray-plastic-black-500"
+    },
+    {
+      "id": 29,
+      "name": "מגש קלקר סופג - דגים צר 400 יח'",
+      "axis": "צבע",
+      "seoSlug": "tray-cardboard-black-400"
+    },
+    {
+      "id": 30,
+      "name": "מגש קלקר סופג - קבב 300 יח'",
+      "axis": "צבע",
+      "seoSlug": "tray-cardboard-white-300"
+    },
+    {
+      "id": 31,
+      "name": "מכסה שטוח לכוס 95 א' 1000 יח'",
+      "axis": "צבע",
+      "seoSlug": "flat-lid-cup-95"
+    },
+    {
+      "id": 32,
+      "name": "נייר פרגמנט מודפס 45*35 ארוז 4 ק\"ג",
+      "axis": "צבע",
+      "seoSlug": "paper-white-45-35-4"
+    },
+    {
+      "id": 33,
+      "name": "ספירל 8 מ\"מ 100 יח' עד 40 דף",
+      "axis": "צבע",
+      "seoSlug": "spiral-coil-binding-8mm"
+    },
+    {
+      "id": 34,
+      "name": "ספריי יסוד",
+      "axis": "צבע",
+      "seoSlug": "primer-spray-paint"
+    },
+    {
+      "id": 35,
+      "name": "ספריי מבריק",
+      "axis": "צבע",
+      "seoSlug": "gloss-spray-paint"
+    },
+    {
+      "id": 36,
+      "name": "עט + פקק קוברה",
+      "axis": "צבע",
+      "seoSlug": "cobra-ballpoint-pen"
+    },
+    {
+      "id": 37,
+      "name": "צלחת P.P. קטנה 7 Happy ארוז 100 יח'",
+      "axis": "צבע",
+      "seoSlug": "plate-p-p-7-white-happy-100"
+    },
+    {
+      "id": 38,
+      "name": "קלסר גב 5 צבוני",
+      "axis": "צבע",
+      "seoSlug": "binder-5-black"
     }
   ],
   "exportedAt": "2026-06-13T15:27:53.014Z",
