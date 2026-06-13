@@ -29,11 +29,55 @@
     try {
       const res = await fetch('/data/products.json');
       const data = await res.json();
-      allProducts = data.items || [];
+      allProducts = collapseVariants(data.items || [], data.variantGroups || []);
       categories = data.categories || [];
     } catch (e) {
       console.warn('Could not load products.json');
     }
+  }
+
+  // Collapse variant-group members (same product, different size/color) into ONE
+  // representative card that links to the unified product page. Mirrors the grid
+  // logic used in the portal/agent ordering surfaces.
+  function collapseVariants(items, variantGroups) {
+    if (!variantGroups || !variantGroups.length) return items;
+    var groupById = {};
+    variantGroups.forEach(function(g) { groupById[g.id] = g; });
+    var byGroup = {};
+    items.forEach(function(it) {
+      if (it.variantGroupId && groupById[it.variantGroupId]) {
+        (byGroup[it.variantGroupId] = byGroup[it.variantGroupId] || []).push(it);
+      }
+    });
+    Object.keys(byGroup).forEach(function(gid) {
+      byGroup[gid].sort(function(a, b) { return (a.variantSortOrder || 0) - (b.variantSortOrder || 0); });
+    });
+    var seen = {};
+    var out = [];
+    items.forEach(function(it) {
+      var gid = it.variantGroupId;
+      if (gid && byGroup[gid] && byGroup[gid].length > 1) {
+        if (seen[gid]) return;
+        seen[gid] = true;
+        var members = byGroup[gid];
+        var rep = members[0];
+        var g = groupById[gid];
+        var prices = members.map(function(m) { return m.saleNis; }).filter(function(p) { return p > 0; });
+        out.push(Object.assign({}, rep, {
+          name: g.name,
+          slug: g.seoSlug || rep.seoSlug || rep.slug,
+          seoSlug: g.seoSlug || rep.seoSlug,
+          saleNis: prices.length ? Math.min.apply(null, prices) : rep.saleNis,
+          originalPrice: null, discountPercent: null, productStatus: null,
+          _isVariantGroup: true,
+          _variantCount: members.length,
+          _variantAxis: g.axis || 'מידה'
+        }));
+      } else {
+        out.push(it);
+      }
+    });
+    return out;
   }
 
   // ---- Category Tree ----
@@ -661,7 +705,9 @@
           (perUnit ? '<div class="product-card__price-unit">' + perUnit + '</div>' : '') +
         '</div>' +
         '<div class="product-card__actions">' +
-          (price ?
+          (p._isVariantGroup ?
+            '<a href="' + productUrl + '" class="product-card__add-btn"><i class="fas fa-layer-group"></i> בחר ' + (p._variantAxis === 'צבע' ? 'צבע' : p._variantAxis === 'מידה' ? 'מידה' : 'וריאנט') + ' (' + p._variantCount + ')</a>'
+          : price ?
             '<div class="product-card__qty-row">' +
               '<div class="product-card__qty-selector">' +
                 '<button class="product-card__qty-btn" data-action="decrease" data-id="' + p.id + '">-</button>' +

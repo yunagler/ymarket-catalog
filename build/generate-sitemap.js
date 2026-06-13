@@ -20,6 +20,13 @@ function getAllHtmlFiles(dir, base = '') {
       if (['build', 'node_modules', 'images', 'css', 'js', 'data', '.git', '.claude', 'items', 'fonts'].includes(entry.name)) continue;
       files.push(...getAllHtmlFiles(fullPath, relPath));
     } else if (entry.name.endsWith('.html')) {
+      // Skip "301-equivalent" redirect stubs (meta-refresh + noindex) — e.g. old
+      // Hebrew slugs and variant-member URLs that now redirect to a canonical page.
+      // Listing noindex redirects in the sitemap dilutes crawl signals.
+      try {
+        const content = fs.readFileSync(fullPath, 'utf-8');
+        if (/http-equiv="refresh"/i.test(content) && /noindex/i.test(content)) continue;
+      } catch { /* unreadable — include by default */ }
       // Strip .html extension for clean URLs
       const clean = relPath.replace(/\.html$/, '');
       files.push(clean);
@@ -68,7 +75,7 @@ function generateSitemap() {
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
   // Filter out non-content files
-  const excludePatterns = ['404', 'gallery', 'login', 'register', 'order-success'];
+  const excludePatterns = ['404', 'gallery', 'login', 'register', 'order-success', 'world-cup'];
   const filteredFiles = htmlFiles.filter(f => !excludePatterns.some(p => f === p || f.startsWith(p + '/')));
 
   for (const file of filteredFiles) {

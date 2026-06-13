@@ -199,8 +199,8 @@
         <div class="product-gallery">
           <div class="product-gallery__main">
             <picture>
-              <source srcset="/items/279.webp" type="image/webp">
-              <img src="/items/279.jpg" alt="פח שובך אפור 50 ליטר מרובע"
+              <source srcset="/items/279.webp" type="image/webp" id="mainProductSource">
+              <img src="/items/279.jpg" alt="פח שובך אפור 50 ליטר מרובע" id="mainProductImg"
                    onerror="this.onerror=null;var s=this.parentElement.querySelector('source');if(s)s.remove();this.src='https://placehold.co/500x500/f0f2f5/5a6577?text=%D7%A4%D7%97%20%D7%A9%D7%95%D7%91%D7%9A%20%D7%90%D7%A4%D7%95%D7%A8%2050'">
             </picture>
           </div>
@@ -217,13 +217,13 @@
 
           <div class="product-actions">
             <div class="quantity-selector">
-                  <button class="quantity-selector__btn" id="qtyDecrease">-</button>
-                  <input type="number" class="quantity-selector__input" id="qtyInput" value="1" min="1">
-                  <button class="quantity-selector__btn" id="qtyIncrease">+</button>
-                </div>
-                <button class="btn btn--primary btn--lg" id="addToCartBtn" data-id="263"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
-            <a href="https://wa.me/972549922492?text=היי, מתעניין ב%D7%A4%D7%97%20%D7%A9%D7%95%D7%91%D7%9A%20%D7%90%D7%A4%D7%95%D7%A8%2050%20%D7%9C%D7%99%D7%98%D7%A8%20%D7%9E%D7%A8%D7%95%D7%91%D7%A2" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> שאלו אותנו</a>
-            <a href="tel:*3497" class="btn btn--phone btn--lg" style="display:inline-flex;align-items:center;gap:8px;background:#1B3A5C;color:#fff;padding:12px 24px;border-radius:12px;font-weight:600;text-decoration:none;font-size:0.95rem;margin-top:8px;justify-content:center;width:100%;"><i class="fas fa-phone-alt"></i> חייגו *3497</a>
+            <button class="quantity-selector__btn" id="qtyDecrease">-</button>
+            <input type="number" class="quantity-selector__input" id="qtyInput" value="1" min="1">
+            <button class="quantity-selector__btn" id="qtyIncrease">+</button>
+          </div>
+          <button class="btn btn--primary btn--lg" id="addToCartBtn" data-id="263"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+       <a href="https://wa.me/972549922492?text=היי, מתעניין ב%D7%A4%D7%97%20%D7%A9%D7%95%D7%91%D7%9A%20%D7%90%D7%A4%D7%95%D7%A8%2050%20%D7%9C%D7%99%D7%98%D7%A8%20%D7%9E%D7%A8%D7%95%D7%91%D7%A2" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> שאלו אותנו</a>
+       <a href="tel:*3497" class="btn btn--phone btn--lg" style="display:inline-flex;align-items:center;gap:8px;background:#1B3A5C;color:#fff;padding:12px 24px;border-radius:12px;font-weight:600;text-decoration:none;font-size:0.95rem;margin-top:8px;justify-content:center;width:100%;"><i class="fas fa-phone-alt"></i> חייגו *3497</a>
           </div>
 
           <div class="product-trust-badges">
@@ -437,7 +437,7 @@
   <script src="/js/analytics.js?v=20260314"></script>
   <script>
   (function() {
-    var PRODUCT = {"id":263,"name":"פח שובך אפור 50 ליטר מרובע","price":70,"unit":"","imageUrl":"/items/279.webp","slug":"פח-שובך-אפור-50-ליטר-מרובע","categoryName":"כלי עבודה וציוד משקי"};
+    var PRODUCT = {"id":263,"name":"פח שובך אפור 50 ליטר מרובע","price":70,"unit":"","imageUrl":"/items/279.webp","slug":"gray-50","categoryName":"כלי עבודה וציוד משקי"};
 
     // Facebook Pixel - ViewContent (product page view)
     if (window.YMarketAnalytics && window.YMarketAnalytics.fbViewContent) {
@@ -447,7 +447,11 @@
     if (window.YMarketAnalytics && window.YMarketAnalytics.trackViewItem) {
       window.YMarketAnalytics.trackViewItem(PRODUCT);
     }
-
+  })();
+  </script>
+  <script>
+  (function() {
+    var PRODUCT = {"id":263,"name":"פח שובך אפור 50 ליטר מרובע","price":70,"unit":"","imageUrl":"/items/279.webp","slug":"פח-שובך-אפור-50-ליטר-מרובע"};
     // Quantity controls
     var qtyInput = document.getElementById('qtyInput');
     var decBtn = document.getElementById('qtyDecrease');

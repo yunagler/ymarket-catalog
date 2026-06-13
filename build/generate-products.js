@@ -105,7 +105,30 @@ function getFullCategoryUrl(cat, categories) {
   return '/category/' + slugs.join('/') + '/';
 }
 
-function generateProductPage(product, categories, allProducts) {
+function generateProductPage(product, categories, allProducts, group) {
+  // group (optional): { name, axis, variants: [items sorted by variantSortOrder] }
+  // When present, this page is a UNIFIED variant page (one page for S/M/L/XL etc.)
+  const isGroup = !!(group && group.variants && group.variants.length > 1);
+  const groupAxis = (group && group.axis) || 'מידה';
+  const axisWord = groupAxis === 'צבע' ? 'צבע' : groupAxis === 'מידה' ? 'מידה' : 'וריאנט';
+  const variantData = isGroup ? group.variants.map(v => {
+    const vJpg = v.imageUrl || `/items/${v.id}.jpg`;
+    return {
+      id: v.id,
+      label: v.variantLabel || v.name,
+      name: v.name,
+      price: v.saleNis || 0,
+      unit: v.unit || '',
+      img: vJpg.replace(/\.jpg$/i, '.webp'),
+      imgJpg: vJpg,
+      slug: v.slug,
+    };
+  }) : [];
+  const groupPrices = variantData.map(v => v.price).filter(p => p > 0);
+  const gMin = groupPrices.length ? Math.min(...groupPrices) : 0;
+  const gMax = groupPrices.length ? Math.max(...groupPrices) : 0;
+  const groupPriceLabel = gMin === gMax ? formatPrice(gMin) : `${formatPrice(gMin)} - ${formatPrice(gMax)}`;
+
   const price = product.saleNis ? formatPrice(product.saleNis) : '';
   const unitLabel = product.unit || 'יחידה';
   const perUnit = product.saleNis && product.unitsPerPack > 1
@@ -122,13 +145,13 @@ function generateProductPage(product, categories, allProducts) {
   const imgSrcJpg = product.imageUrl || `/items/${product.id}.jpg`;
   const imgSrc = imgSrcJpg.replace(/\.jpg$/i, '.webp');
   const imgSrcThumb = imgSrcJpg.replace(/\.jpg$/i, '-thumb.webp');
-  const canonicalSlug = product.seoSlug || product.slug;
+  const canonicalSlug = isGroup ? (group.seoSlug || product.seoSlug || product.slug) : (product.seoSlug || product.slug);
   const productUrl = `${SITE_URL}/products/${canonicalSlug}/`;
 
   // SEO overrides from products.json
   const seo = product.seo || {};
-  const pageTitle = seo.title || `${product.name} | וואי מרקט`;
-  const h1Text = seo.h1 || product.name;
+  const pageTitle = isGroup ? `${group.name} | וואי מרקט` : (seo.title || `${product.name} | וואי מרקט`);
+  const h1Text = isGroup ? group.name : (seo.h1 || product.name);
   const metaDesc = seo.metaDesc || `${product.name} - ${categoryName}. מחירי סיטונאות, משלוח ארצי. וואי מרקט - אספקה לעסקים ומוסדות.`;
   const ogDesc = seo.metaDesc || `${product.name} - ${categoryName}. מחירי סיטונאות, משלוח ארצי.`;
   const specsHtml = (seo.specs && seo.specs.length > 0)
@@ -167,9 +190,63 @@ function generateProductPage(product, categories, allProducts) {
         `).join('')}
       </div>` : '';
 
-  // Related products from same category
+  // ===== Variant group: pricing block, selector + quantity matrix, cart script =====
+  // Pricing headline (JS updates it when a variant pill is selected)
+  const pricingHtml = isGroup
+    ? `<div class="product-pricing__price" id="variantPrice">${formatPrice(variantData[0].price)}</div>${gMin !== gMax ? `<div class="product-pricing__unit" id="variantPriceRange">טווח: ${groupPriceLabel}</div>` : ''}`
+    : (price
+        ? hasPromo
+          ? `<div class="product-pricing__badge">${promoLabel}</div><div class="product-pricing__price" style="color:#dc2626">${price}</div><div class="product-pricing__original" style="text-decoration:line-through;color:#9ca3af;font-size:var(--fs-base)">${formatPrice(product.originalPrice)}</div>${product.discountPercent ? `<div class="product-pricing__discount" style="background:#fef2f2;color:#dc2626;display:inline-block;padding:2px 8px;border-radius:6px;font-size:var(--fs-sm);font-weight:600">${Math.round(product.discountPercent)}%- הנחה</div>` : ''}${perUnit ? `<div class="product-pricing__unit">${perUnit}</div>` : ''}`
+          : `<div class="product-pricing__price">${price}</div>${perUnit ? `<div class="product-pricing__unit">${perUnit}</div>` : ''}`
+        : '<div class="product-pricing__price" style="font-size: var(--fs-lg);">צרו קשר למחיר</div>');
+
+  // Actions block
+  const variantPillsHtml = isGroup ? `
+    <div class="variant-selector" style="margin-bottom:14px;">
+      <div style="font-size:0.9rem;font-weight:600;color:#1B3A5C;margin-bottom:6px;">${groupAxis}:</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        ${variantData.map((v, i) => `<button type="button" class="variant-pill" data-idx="${i}" style="padding:8px 16px;border-radius:10px;font-weight:600;font-size:0.9rem;cursor:pointer;border:1px solid ${i === 0 ? '#1B3A5C' : '#e2e8f0'};background:${i === 0 ? '#1B3A5C' : '#fff'};color:${i === 0 ? '#fff' : '#4b5563'};transition:all .15s;">${v.label}</button>`).join('')}
+      </div>
+    </div>` : '';
+
+  const variantMatrixHtml = isGroup ? `
+    <div class="variant-matrix" style="border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;margin-bottom:14px;">
+      <div style="padding:10px 16px;background:#f8fafc;font-weight:700;font-size:0.9rem;color:#4b5563;border-bottom:1px solid #eef2f6;">הזמנה מהירה — בחרו כמות לכל ${axisWord}</div>
+      ${variantData.map((v, i) => `
+        <div class="variant-row" data-idx="${i}" style="display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid #f1f5f9;">
+          <div style="flex:1;min-width:0;">
+            <div style="font-weight:600;font-size:0.95rem;color:#1f2937;">${v.label}</div>
+            <div style="font-size:0.8rem;color:#94a3b8;">${formatPrice(v.price)}</div>
+          </div>
+          <div class="quantity-selector" style="display:flex;align-items:center;border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;">
+            <button type="button" class="quantity-selector__btn vqty-dec" data-idx="${i}" style="width:38px;height:38px;">-</button>
+            <input type="number" class="quantity-selector__input vqty" data-idx="${i}" value="0" min="0" style="width:46px;text-align:center;border-left:1px solid #e2e8f0;border-right:1px solid #e2e8f0;">
+            <button type="button" class="quantity-selector__btn vqty-inc" data-idx="${i}" style="width:38px;height:38px;">+</button>
+          </div>
+          <div class="vline-total" data-idx="${i}" style="width:72px;text-align:left;font-weight:700;color:#1B3A5C;font-size:0.9rem;">&nbsp;</div>
+        </div>`).join('')}
+    </div>` : '';
+
+  const actionsHtml = isGroup
+    ? `${variantPillsHtml}${variantMatrixHtml}
+       <button class="btn btn--primary btn--lg" id="addAllBtn" style="width:100%;"><i class="fas fa-cart-plus"></i> <span id="addAllLabel">בחרו כמות להוספה</span></button>
+       <a href="https://wa.me/972549922492?text=היי, מתעניין ב${encodeURIComponent(group.name)}" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> שאלו אותנו</a>
+       <a href="tel:*3497" class="btn btn--phone btn--lg" style="display:inline-flex;align-items:center;gap:8px;background:#1B3A5C;color:#fff;padding:12px 24px;border-radius:12px;font-weight:600;text-decoration:none;font-size:0.95rem;margin-top:8px;justify-content:center;width:100%;"><i class="fas fa-phone-alt"></i> חייגו *3497</a>`
+    : `${price
+        ? `<div class="quantity-selector">
+            <button class="quantity-selector__btn" id="qtyDecrease">-</button>
+            <input type="number" class="quantity-selector__input" id="qtyInput" value="1" min="1">
+            <button class="quantity-selector__btn" id="qtyIncrease">+</button>
+          </div>
+          <button class="btn btn--primary btn--lg" id="addToCartBtn" data-id="${product.id}"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>`
+        : ''}
+       <a href="https://wa.me/972549922492?text=היי, מתעניין ב${encodeURIComponent(product.name)}" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> שאלו אותנו</a>
+       <a href="tel:*3497" class="btn btn--phone btn--lg" style="display:inline-flex;align-items:center;gap:8px;background:#1B3A5C;color:#fff;padding:12px 24px;border-radius:12px;font-weight:600;text-decoration:none;font-size:0.95rem;margin-top:8px;justify-content:center;width:100%;"><i class="fas fa-phone-alt"></i> חייגו *3497</a>`;
+
+  // Related products from same category (exclude this product and same-group siblings)
   const related = allProducts
-    .filter(p => p.categorySlug === product.categorySlug && p.id !== product.id)
+    .filter(p => p.categorySlug === product.categorySlug && p.id !== product.id
+      && !(isGroup && p.variantGroupId === group.id))
     .slice(0, 4);
 
   const relatedHtml = related.map(p => {
@@ -198,7 +275,7 @@ function generateProductPage(product, categories, allProducts) {
   const schemaDescription = seo.isB2BBulk ? `סיטונאות / Wholesale - ${productDescription}` : productDescription;
   // priceValidUntil - end of current year (Google requires this)
   const priceValidUntil = new Date().getFullYear() + '-12-31';
-  const jsonLd = JSON.stringify({
+  const schemaBase = {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": product.name,
@@ -270,7 +347,36 @@ function generateProductPage(product, categories, allProducts) {
         }
       }
     } : {})
-  }, null, 2);
+  };
+
+  // Variant groups emit a ProductGroup with hasVariant (correct schema.org modeling)
+  const jsonLd = JSON.stringify(isGroup ? {
+    "@context": "https://schema.org",
+    "@type": "ProductGroup",
+    "name": group.name,
+    "description": schemaDescription,
+    "image": `${SITE_URL}${variantData[0].imgJpg}`,
+    "url": productUrl,
+    "brand": { "@type": "Brand", "name": "וואי מרקט" },
+    "category": categoryName,
+    "variesBy": groupAxis === 'צבע' ? "https://schema.org/color" : "https://schema.org/size",
+    "hasVariant": variantData.map(v => ({
+      "@type": "Product",
+      "name": v.name,
+      "image": `${SITE_URL}${v.imgJpg}`,
+      "url": productUrl,
+      ...(v.price ? {
+        "offers": {
+          "@type": "Offer",
+          "price": v.price,
+          "priceCurrency": "ILS",
+          "availability": "https://schema.org/InStock",
+          "priceValidUntil": priceValidUntil,
+          "url": productUrl
+        }
+      } : {})
+    }))
+  } : schemaBase, null, 2);
 
   return `<!DOCTYPE html>
 <html lang="he" dir="rtl">
@@ -357,9 +463,9 @@ function generateProductPage(product, categories, allProducts) {
         <div class="product-gallery">
           <div class="product-gallery__main">
             <picture>
-              <source srcset="${imgSrc}" type="image/webp">
-              <img src="${imgSrcJpg}" alt="${seo.imageAlt || product.name}"
-                   onerror="this.onerror=null;var s=this.parentElement.querySelector('source');if(s)s.remove();this.src='https://placehold.co/500x500/f0f2f5/5a6577?text=${encodeURIComponent((product.name || '').substring(0,15))}'">
+              <source srcset="${imgSrc}" type="image/webp" id="mainProductSource">
+              <img src="${imgSrcJpg}" alt="${seo.imageAlt || h1Text}" id="mainProductImg"
+                   onerror="this.onerror=null;var s=this.parentElement.querySelector('source');if(s)s.remove();this.src='https://placehold.co/500x500/f0f2f5/5a6577?text=${encodeURIComponent((h1Text || '').substring(0,15))}'">
             </picture>
           </div>
         </div>
@@ -370,26 +476,11 @@ function generateProductPage(product, categories, allProducts) {
           ${product.unit ? `<div class="product-info__pack">${product.unitsPerPack || ''} ${product.unit || ''}</div>` : ''}
 
           <div class="product-pricing">
-            ${price
-              ? hasPromo
-                ? `<div class="product-pricing__badge">${promoLabel}</div><div class="product-pricing__price" style="color:#dc2626">${price}</div><div class="product-pricing__original" style="text-decoration:line-through;color:#9ca3af;font-size:var(--fs-base)">${formatPrice(product.originalPrice)}</div>${product.discountPercent ? `<div class="product-pricing__discount" style="background:#fef2f2;color:#dc2626;display:inline-block;padding:2px 8px;border-radius:6px;font-size:var(--fs-sm);font-weight:600">${Math.round(product.discountPercent)}%- הנחה</div>` : ''}${perUnit ? `<div class="product-pricing__unit">${perUnit}</div>` : ''}`
-                : `<div class="product-pricing__price">${price}</div>${perUnit ? `<div class="product-pricing__unit">${perUnit}</div>` : ''}`
-              : '<div class="product-pricing__price" style="font-size: var(--fs-lg);">צרו קשר למחיר</div>'
-            }
+            ${pricingHtml}
           </div>
 
           <div class="product-actions">
-            ${price
-              ? `<div class="quantity-selector">
-                  <button class="quantity-selector__btn" id="qtyDecrease">-</button>
-                  <input type="number" class="quantity-selector__input" id="qtyInput" value="1" min="1">
-                  <button class="quantity-selector__btn" id="qtyIncrease">+</button>
-                </div>
-                <button class="btn btn--primary btn--lg" id="addToCartBtn" data-id="${product.id}"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>`
-              : ''
-            }
-            <a href="https://wa.me/972549922492?text=היי, מתעניין ב${encodeURIComponent(product.name)}" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> שאלו אותנו</a>
-            <a href="tel:*3497" class="btn btn--phone btn--lg" style="display:inline-flex;align-items:center;gap:8px;background:#1B3A5C;color:#fff;padding:12px 24px;border-radius:12px;font-weight:600;text-decoration:none;font-size:0.95rem;margin-top:8px;justify-content:center;width:100%;"><i class="fas fa-phone-alt"></i> חייגו *3497</a>
+            ${actionsHtml}
           </div>
 
           <div class="product-trust-badges">
@@ -505,11 +596,11 @@ function generateProductPage(product, categories, allProducts) {
   (function() {
     var PRODUCT = ${JSON.stringify({
       id: product.id,
-      name: product.name,
+      name: isGroup ? group.name : product.name,
       price: product.saleNis || 0,
       unit: product.unit || '',
       imageUrl: imgSrc,
-      slug: product.slug,
+      slug: canonicalSlug,
       categoryName: primaryCat ? primaryCat.name : ''
     })};
 
@@ -521,7 +612,101 @@ function generateProductPage(product, categories, allProducts) {
     if (window.YMarketAnalytics && window.YMarketAnalytics.trackViewItem) {
       window.YMarketAnalytics.trackViewItem(PRODUCT);
     }
+  })();
+  </script>
+  ${isGroup ? `<script>
+  (function() {
+    // ===== Variant group: selector switches hero, matrix adds one cart line per size =====
+    var VARIANTS = ${JSON.stringify(variantData)};
+    function fmt(n){ return '‏' + Math.round(n*100)/100 + ' ‏₪'; }
+    var pills = document.querySelectorAll('.variant-pill');
+    var mainImg = document.getElementById('mainProductImg');
+    var mainSrc = document.getElementById('mainProductSource');
+    var priceEl = document.getElementById('variantPrice');
+    function selectVariant(idx) {
+      var v = VARIANTS[idx];
+      if (!v) return;
+      pills.forEach(function(p){
+        var on = parseInt(p.dataset.idx) === idx;
+        p.style.background = on ? '#1B3A5C' : '#fff';
+        p.style.color = on ? '#fff' : '#4b5563';
+        p.style.borderColor = on ? '#1B3A5C' : '#e2e8f0';
+      });
+      if (mainImg) { mainImg.src = v.imgJpg; }
+      if (mainSrc) { mainSrc.srcset = v.img; }
+      if (priceEl) { priceEl.textContent = fmt(v.price); }
+    }
+    pills.forEach(function(p){ p.addEventListener('click', function(){ selectVariant(parseInt(p.dataset.idx)); }); });
 
+    // Quantity matrix
+    var qtyInputs = document.querySelectorAll('.vqty');
+    function lineTotalEl(idx){ return document.querySelector('.vline-total[data-idx="'+idx+'"]'); }
+    function refreshTotals() {
+      var totalUnits = 0, totalPrice = 0, selected = 0;
+      VARIANTS.forEach(function(v, i){
+        var input = document.querySelector('.vqty[data-idx="'+i+'"]');
+        var q = Math.max(0, parseInt(input && input.value) || 0);
+        var lt = lineTotalEl(i);
+        if (q > 0) { selected++; totalUnits += q; totalPrice += q * v.price; if (lt) lt.textContent = fmt(q * v.price); }
+        else if (lt) lt.innerHTML = '&nbsp;';
+      });
+      var btn = document.getElementById('addAllBtn');
+      var label = document.getElementById('addAllLabel');
+      if (label) label.textContent = selected === 0 ? 'בחרו כמות להוספה' : ('הוסף ' + totalUnits + ' פריטים לעגלה (' + fmt(totalPrice) + ')');
+      if (btn) btn.disabled = selected === 0;
+    }
+    document.querySelectorAll('.vqty-dec').forEach(function(b){ b.addEventListener('click', function(){
+      var i = b.dataset.idx; var input = document.querySelector('.vqty[data-idx="'+i+'"]');
+      if (input) { input.value = Math.max(0, (parseInt(input.value)||0) - 1); refreshTotals(); }
+    }); });
+    document.querySelectorAll('.vqty-inc').forEach(function(b){ b.addEventListener('click', function(){
+      var i = b.dataset.idx; var input = document.querySelector('.vqty[data-idx="'+i+'"]');
+      if (input) { input.value = (parseInt(input.value)||0) + 1; refreshTotals(); }
+    }); });
+    qtyInputs.forEach(function(input){ input.addEventListener('input', refreshTotals); });
+
+    // Add all selected variants to cart (one line per variant, keyed by id)
+    var addAll = document.getElementById('addAllBtn');
+    if (addAll) addAll.addEventListener('click', function(){
+      var cart = JSON.parse(localStorage.getItem('ym_cart') || '[]');
+      var added = 0, addedUnits = 0;
+      VARIANTS.forEach(function(v, i){
+        var input = document.querySelector('.vqty[data-idx="'+i+'"]');
+        var q = Math.max(0, parseInt(input && input.value) || 0);
+        if (q <= 0) return;
+        var existing = null;
+        for (var k = 0; k < cart.length; k++) { if (cart[k].id === v.id) { existing = cart[k]; break; } }
+        if (existing) { existing.quantity += q; }
+        else { cart.push({ id: v.id, name: v.name, price: v.price, unit: v.unit, imageUrl: v.img, slug: v.slug, quantity: q }); }
+        added++; addedUnits += q;
+        if (window.YMarketAnalytics && window.YMarketAnalytics.trackAddToCart) {
+          window.YMarketAnalytics.trackAddToCart({ id: v.id, name: v.name, price: v.price, quantity: q });
+        }
+      });
+      if (added === 0) return;
+      localStorage.setItem('ym_cart', JSON.stringify(cart));
+      if (window.YMarket) {
+        window.YMarket.updateCartBadge();
+        window.YMarket.showToast(addedUnits + ' פריטים נוספו לעגלה');
+      }
+      // Reset inputs after adding
+      qtyInputs.forEach(function(input){ input.value = 0; });
+      refreshTotals();
+    });
+
+    selectVariant(0);
+    refreshTotals();
+  })();
+  </script>` : `<script>
+  (function() {
+    var PRODUCT = ${JSON.stringify({
+      id: product.id,
+      name: product.name,
+      price: product.saleNis || 0,
+      unit: product.unit || '',
+      imageUrl: imgSrc,
+      slug: product.slug,
+    })};
     // Quantity controls
     var qtyInput = document.getElementById('qtyInput');
     var decBtn = document.getElementById('qtyDecrease');
@@ -579,7 +764,7 @@ function generateProductPage(product, categories, allProducts) {
       }
     }
   })();
-  </script>
+  </script>`}
 </body>
 </html>`;
 }
@@ -627,24 +812,55 @@ function main() {
   const data = JSON.parse(fs.readFileSync(DATA_PATH, 'utf-8'));
   let products = data.items || [];
   const categories = data.categories || [];
+  const variantGroupDefs = data.variantGroups || []; // [{id,name,axis,seoSlug}]
 
   if (products.length === 0) {
     console.log('No products found in data.');
     return;
   }
 
-  // Optional single-page mode: `--slug=<slug>` regenerates ONE product page
-  // without wiping the products directory. Used to safely pilot one page.
-  const slugArg = process.argv.find(a => a.startsWith('--slug='));
+  // Build variant-group lookups from the FULL item set
   const allProducts = products;
+  const groupDefById = new Map(variantGroupDefs.map(g => [g.id, g]));
+  const groupMembers = new Map(); // groupId -> [items], sorted by variantSortOrder
+  for (const p of allProducts) {
+    if (p.variantGroupId == null) continue;
+    if (!groupDefById.has(p.variantGroupId)) continue;
+    const arr = groupMembers.get(p.variantGroupId) || [];
+    arr.push(p);
+    groupMembers.set(p.variantGroupId, arr);
+  }
+  for (const arr of groupMembers.values()) {
+    arr.sort((a, b) => (a.variantSortOrder ?? 0) - (b.variantSortOrder ?? 0));
+  }
+  // Only groups with 2+ members get a unified page; singletons render normally
+  const activeGroupIds = new Set([...groupMembers.entries()].filter(([, m]) => m.length > 1).map(([id]) => id));
+  // Resolve the group context object passed to generateProductPage
+  const groupContext = (gid) => {
+    const def = groupDefById.get(gid);
+    const members = groupMembers.get(gid);
+    return { id: gid, name: def.name, axis: def.axis, seoSlug: def.seoSlug || (members[0].seoSlug || members[0].slug), variants: members };
+  };
+
+  // Optional single-page mode: `--slug=<slug>` regenerates ONE product page
+  // without wiping the products directory. Matches an item slug OR a group slug.
+  const slugArg = process.argv.find(a => a.startsWith('--slug='));
+  let onlyGroupId = null; // when single-page mode targets a group
   if (slugArg) {
     const wanted = decodeURIComponent(slugArg.slice('--slug='.length));
-    products = products.filter(p => p.slug === wanted || p.seoSlug === wanted);
-    if (products.length === 0) {
-      console.error(`No product found with slug "${wanted}"`);
-      process.exit(1);
+    const matchedGroup = variantGroupDefs.find(g => g.seoSlug === wanted && activeGroupIds.has(g.id));
+    if (matchedGroup) {
+      onlyGroupId = matchedGroup.id;
+      products = groupMembers.get(matchedGroup.id);
+      console.log(`Single-page mode: regenerating variant group "${wanted}" (${products.length} variants, no clean)`);
+    } else {
+      products = products.filter(p => p.slug === wanted || p.seoSlug === wanted);
+      if (products.length === 0) {
+        console.error(`No product found with slug "${wanted}"`);
+        process.exit(1);
+      }
+      console.log(`Single-page mode: regenerating only "${wanted}" (no clean)`);
     }
-    console.log(`Single-page mode: regenerating only "${wanted}" (no clean)`);
   } else {
     // Full build: clean products directory completely
     if (fs.existsSync(PRODUCTS_DIR)) {
@@ -653,9 +869,40 @@ function main() {
     }
   }
 
+  // Write a unified group page at its canonical slug + redirect stubs for members.
+  const generatedGroups = new Set();
+  function generateGroup(gid) {
+    if (generatedGroups.has(gid)) return;
+    generatedGroups.add(gid);
+    const ctx = groupContext(gid);
+    const rep = ctx.variants[0];
+    const html = generateProductPage(rep, categories, allProducts, ctx);
+    const groupDir = path.join(PRODUCTS_DIR, ctx.seoSlug);
+    fs.mkdirSync(groupDir, { recursive: true });
+    fs.writeFileSync(path.join(groupDir, 'index.html'), html, 'utf-8');
+    // Redirect each member's own URLs (English seoSlug + Hebrew slug) → group page
+    const target = `/products/${ctx.seoSlug}/`;
+    for (const m of ctx.variants) {
+      for (const memberSlug of [m.seoSlug, m.slug]) {
+        if (!memberSlug || memberSlug === ctx.seoSlug) continue;
+        const d = path.join(PRODUCTS_DIR, memberSlug);
+        fs.mkdirSync(d, { recursive: true });
+        fs.writeFileSync(path.join(d, 'index.html'), buildRedirectStub(target, m.name), 'utf-8');
+      }
+    }
+    return ctx.variants.length;
+  }
+
   // Generate each product page as /products/{slug}/index.html
-  let count = 0;
+  let count = 0, groupCount = 0;
   for (const product of products) {
+    // Grouped variant → defer to unified group page (generated once)
+    const gid = product.variantGroupId;
+    if (gid != null && activeGroupIds.has(gid)) {
+      if (!generatedGroups.has(gid)) { generateGroup(gid); groupCount++; }
+      continue;
+    }
+
     if (!product.slug) {
       console.warn(`Skipping product ${product.id}: no slug`);
       continue;
@@ -679,7 +926,7 @@ function main() {
     }
   }
 
-  console.log(`Generated ${count} product pages in ${PRODUCTS_DIR}`);
+  console.log(`Generated ${count} product pages + ${groupCount} variant-group pages in ${PRODUCTS_DIR}`);
 }
 
 main();

@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>מבצע מונדיאל לעסקים | Y Market</title>
+  <meta name="description" content="התארגנו למונדיאל עם כוסות 330 מ״ל, פרינגלס אדום/ירוק ומוצרים משלימים לעסקים. הזמנה מהירה דרך פורטל Y Market ואספקה מהירה.">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <link rel="canonical" href="https://ymarket.co.il/world-cup/">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#08264a">
+  <meta property="og:title" content="מבצע מונדיאל לעסקים - כוסות, פרינגלס ומוצרים משלימים | Y Market">
+  <meta property="og:description" content="פותחים משחק? שני מוצרי דגל ומוצרים משלימים להזמנה מהירה בפורטל Y Market.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ymarket.co.il/world-cup/">
+  <meta property="og:image" content="https://ymarket.co.il/items/151.jpg">
+  <meta property="og:locale" content="he_IL">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #08264a;
+      --navy-2: #0d3566;
+      --blue: #144c87;
+      --yellow: #ffc400;
+      --yellow-2: #fff3bd;
+      --red: #d71920;
+      --green: #1b7f28;
+      --ink: #091c36;
+      --muted: #5d6b7f;
+      --line: #d9e1ec;
+      --paper: #f4f7fb;
+      --white: #ffffff;
+      --shadow: 0 22px 58px rgba(8, 38, 74, 0.16);
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      font-family: "Assistant", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.45;
+    }
+
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+    .container { width: min(1460px, calc(100% - 48px)); margin: 0 auto; }
+
+    .btn {
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 24px;
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      font-size: 1.08rem;
+      font-weight: 900;
+      line-height: 1;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn--navy {
+      background: linear-gradient(180deg, #0d3566, #071f3e);
+      color: var(--white);
+      box-shadow: 0 14px 28px rgba(8, 38, 74, 0.22);
+    }
+    .btn--yellow {
+      background: linear-gradient(180deg, #ffd836, #ffc400);
+      color: var(--navy);
+      box-shadow: 0 14px 28px rgba(255, 196, 0, 0.28);
+    }
+    .btn--outline {
+      background: var(--white);
+      color: var(--navy);
+      border-color: var(--line);
+    }
+
+    .campaign-top {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+
+    .campaign-top__inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .logo {
+      width: 118px;
+      min-height: 54px;
+      display: grid;
+      place-items: center;
+      text-decoration: none;
+    }
+
+    .logo img { width: 112px; height: auto; }
+    .top-actions { display: flex; gap: 10px; align-items: center; }
+
+    .campaign-hero {
+      position: relative;
+      min-height: calc(100vh - 72px);
+      padding: 28px 0 34px;
+      background:
+        radial-gradient(circle at 7% 7%, rgba(20, 76, 135, 0.22), transparent 22%),
+        radial-gradient(circle at 93% 9%, rgba(20, 76, 135, 0.18), transparent 24%),
+        linear-gradient(180deg, #ffffff 0%, #f7f9fd 54%, #edf3f8 100%);
+      overflow: hidden;
+    }
+
+    .campaign-hero::before,
+    .campaign-hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 230px;
+      height: 100%;
+      pointer-events: none;
+      background:
+        radial-gradient(circle, rgba(255,255,255,0.95) 0 4px, transparent 5px),
+        radial-gradient(circle, rgba(20,76,135,0.28) 0 2px, transparent 3px);
+      background-size: 34px 34px, 62px 62px;
+      filter: blur(0.1px);
+      opacity: 0.75;
+    }
+
+    .campaign-hero::before { right: -68px; transform: skewY(-5deg); }
+    .campaign-hero::after { left: -68px; transform: skewY(5deg); }
+
+    .hero-head {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 1120px;
+      margin: 0 auto 22px;
+    }
+
+    .brush {
+      width: fit-content;
+      margin: 0 auto 8px;
+      padding: 6px 46px 8px;
+      color: var(--white);
+      background: var(--navy);
+      font-size: clamp(1.35rem, 2.6vw, 2.3rem);
+      font-weight: 900;
+      line-height: 1;
+      transform: rotate(-1deg);
+      box-shadow: 12px 0 0 rgba(8,38,74,0.92), -12px 0 0 rgba(8,38,74,0.92);
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(4.2rem, 10vw, 8.8rem);
+      line-height: 0.84;
+      letter-spacing: 0;
+      font-weight: 900;
+    }
+
+    .ball {
+      display: inline-grid;
+      place-items: center;
+      width: 76px;
+      height: 76px;
+      margin-inline: 10px;
+      border-radius: 999px;
+      color: var(--navy);
+      background:
+        radial-gradient(circle at 52% 48%, #111 0 12%, transparent 13%),
+        conic-gradient(from 20deg, #111 0 9%, #fff 9% 20%, #111 20% 29%, #fff 29% 42%, #111 42% 50%, #fff 50% 63%, #111 63% 72%, #fff 72% 100%);
+      border: 4px solid #fff;
+      box-shadow: 0 10px 22px rgba(8,38,74,0.18);
+      vertical-align: middle;
+    }
+
+    .hero-sub {
+      margin: 10px auto 0;
+      color: var(--navy);
+      font-size: clamp(1.26rem, 2vw, 1.9rem);
+      font-weight: 800;
+    }
+    .hero-sub strong { color: var(--red); }
+
+    .hero-products {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .deal-card {
+      min-height: 500px;
+      display: grid;
+      grid-template-columns: 0.9fr 1fr;
+      gap: 18px;
+      padding: 26px;
+      border: 1px solid rgba(8, 38, 74, 0.12);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .deal-card__visual {
+      position: relative;
+      min-height: 360px;
+      display: grid;
+      align-content: end;
+      justify-items: center;
+      padding: 64px 0 0;
+    }
+
+    .flag-label {
+      position: absolute;
+      top: 0;
+      right: 0;
+      min-width: 132px;
+      padding: 9px 14px 12px;
+      color: var(--white);
+      text-align: center;
+      background:
+        linear-gradient(180deg, var(--navy) 0 42%, transparent 43%),
+        linear-gradient(180deg, transparent 0 40%, var(--yellow) 41% 100%);
+      font-size: 1.05rem;
+      font-weight: 900;
+      transform: rotate(-7deg);
+    }
+    .flag-label span {
+      display: block;
+      color: var(--navy);
+      font-size: 3.4rem;
+      line-height: 0.92;
+    }
+
+    .cup-photo {
+      width: min(100%, 300px);
+      max-height: 330px;
+      object-fit: contain;
+      filter: drop-shadow(0 22px 20px rgba(8,38,74,0.14));
+    }
+
+    .crate-stack {
+      position: absolute;
+      bottom: 0;
+      right: 4px;
+      display: grid;
+      gap: 8px;
+      transform: perspective(500px) rotateY(-7deg);
+      z-index: -1;
+    }
+
+    .box {
+      width: 150px;
+      height: 78px;
+      display: grid;
+      place-items: center;
+      border: 2px solid #9a6a2f;
+      border-radius: 5px;
+      color: var(--navy);
+      background: linear-gradient(135deg, #c99044, #e4b66d);
+      font-weight: 900;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25);
+    }
+    .box small { display: block; color: #183a5a; font-size: 0.92rem; }
+
+    .pringles-stage {
+      position: relative;
+      width: 100%;
+      min-height: 310px;
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .pringles-pallet {
+      position: absolute;
+      right: 4px;
+      bottom: 0;
+      display: grid;
+      gap: 6px;
+      opacity: 0.94;
+    }
+
+    .pringles-row {
+      width: 188px;
+      height: 46px;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 4px;
+      padding: 5px;
+      border: 2px solid #9a6a2f;
+      background: linear-gradient(135deg, #c99044, #e3b269);
+      border-radius: 5px;
+    }
+    .tiny-can {
+      border-radius: 6px;
+      background: linear-gradient(90deg, #b50d16, #ea333c);
+    }
+    .tiny-can:nth-child(even) { background: linear-gradient(90deg, #0f773f, #1fa761); }
+
+    .tube {
+      position: relative;
+      z-index: 2;
+      width: 88px;
+      height: 238px;
+      display: grid;
+      place-items: center;
+      border-radius: 26px 26px 16px 16px;
+      color: var(--white);
+      font-size: 1.15rem;
+      font-weight: 900;
+      writing-mode: vertical-rl;
+      box-shadow: inset 14px 0 16px rgba(255,255,255,0.22), 0 20px 26px rgba(8,38,74,0.18);
+    }
+    .tube::before {
+      content: "";
+      position: absolute;
+      top: -4px;
+      left: 14px;
+      right: 14px;
+      height: 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.84);
+    }
+    .tube--red { background: linear-gradient(90deg, #9d1119, #ed333b); }
+    .tube--green { height: 222px; background: linear-gradient(90deg, #0c6c3c, #1f9d60); }
+
+    .deal-card__content {
+      display: grid;
+      align-content: center;
+      gap: 18px;
+      min-width: 0;
+    }
+
+    .deal-card h2 {
+      margin: 0;
+      padding-bottom: 10px;
+      color: var(--navy);
+      border-bottom: 4px solid var(--yellow);
+      font-size: clamp(2.1rem, 3.2vw, 3.25rem);
+      line-height: 1.03;
+      font-weight: 900;
+    }
+
+    .lead {
+      margin: 0;
+      color: var(--ink);
+      font-size: 1.32rem;
+      font-weight: 700;
+    }
+
+    .spec-list,
+    .check-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+    .spec-list li,
+    .check-list li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--navy);
+      font-size: 1.18rem;
+      font-weight: 800;
+    }
+    .spec-list strong { color: var(--red); font-size: 1.4em; }
+    .check-list li::after {
+      content: "✓";
+      flex: 0 0 28px;
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      color: var(--white);
+      background: var(--green);
+      font-size: 1rem;
+      font-weight: 900;
+    }
+
+    .fit-note {
+      grid-column: 1 / -1;
+      margin: -4px 0 0;
+      padding-top: 10px;
+      border-top: 1px solid var(--line);
+      color: var(--navy);
+      text-align: center;
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+    .fit-note::before { content: "✓"; color: var(--green); margin-left: 8px; }
+
+    .basket-strip {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      gap: 22px;
+      align-items: center;
+      margin-top: 24px;
+      padding: 20px 28px;
+      border: 1px solid #ecd986;
+      border-radius: 18px;
+      background: linear-gradient(90deg, #fffdf4, #fff2bd);
+      box-shadow: 0 14px 32px rgba(8, 38, 74, 0.1);
+    }
+
+    .basket-icon {
+      width: 74px;
+      height: 74px;
+      display: grid;
+      place-items: center;
+      border: 4px solid var(--navy);
+      border-radius: 18px;
+      color: var(--navy);
+      font-size: 1.5rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .basket-strip h2 {
+      margin: 0 0 4px;
+      color: var(--navy);
+      font-size: clamp(2rem, 3vw, 3.1rem);
+      line-height: 1;
+      font-weight: 900;
+    }
+    .basket-strip p {
+      margin: 0;
+      color: var(--ink);
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .section {
+      padding: 62px 0;
+      background: var(--white);
+    }
+    .section--tint { background: var(--paper); }
+    .section__head {
+      max-width: 850px;
+      margin-bottom: 24px;
+    }
+    .section__head h2 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: clamp(2.05rem, 4vw, 3.6rem);
+      line-height: 1;
+      font-weight: 900;
+    }
+    .section__head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .small-card {
+      min-height: 188px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: 0 16px 34px rgba(8,38,74,0.07);
+    }
+    .section--tint .small-card { background: #fff; }
+
+    .small-card__icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 14px;
+      border-radius: var(--radius);
+      color: var(--navy);
+      background: var(--yellow);
+      font-size: 1.45rem;
+      font-weight: 900;
+    }
+    .small-card h3 {
+      margin: 0 0 7px;
+      color: var(--navy);
+      font-size: 1.3rem;
+      line-height: 1.1;
+    }
+    .small-card p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .small-card a {
+      color: var(--navy);
+      font-weight: 900;
+      text-decoration: none;
+      border-bottom: 2px solid var(--yellow);
+    }
+
+    .final-cta {
+      padding: 58px 0;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 12% 10%, rgba(255,196,0,0.2), transparent 24%),
+        linear-gradient(135deg, #061d3a, #0d3566);
+    }
+    .final-cta__box {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 22px;
+      align-items: center;
+    }
+    .final-cta h2 {
+      margin: 0 0 8px;
+      color: var(--yellow);
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      line-height: 1;
+    }
+    .final-cta p {
+      margin: 0;
+      max-width: 820px;
+      color: rgba(255,255,255,0.88);
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    .final-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+
+    .campaign-footer {
+      padding: 30px 0;
+      color: rgba(255,255,255,0.8);
+      background: #061d3a;
+    }
+    .campaign-footer__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; }
+    .campaign-footer a { color: var(--white); text-decoration: none; font-weight: 900; }
+
+    @media (max-width: 1180px) {
+      .hero-products { grid-template-columns: 1fr; }
+      .deal-card { min-height: auto; }
+      .category-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 860px) {
+      .container { width: min(100% - 28px, 1460px); }
+      .campaign-hero { padding-top: 22px; }
+      .campaign-top__inner { min-height: 64px; }
+      .logo img { display: none; }
+      .logo {
+        width: auto;
+        min-height: 42px;
+        padding: 7px 10px;
+        border: 2px solid var(--navy);
+        border-radius: var(--radius);
+        color: var(--navy);
+        font-size: 0.94rem;
+        font-weight: 900;
+      }
+      .logo::after { content: "Y MARKET"; }
+      .top-actions .btn--outline { display: none; }
+      .top-actions .btn { min-height: 42px; padding: 10px 12px; font-size: 0.92rem; }
+      .brush { padding-inline: 22px; }
+      h1 { font-size: clamp(3.25rem, 18vw, 5rem); line-height: 0.88; }
+      .ball { display: none; }
+      .hero-sub { font-size: 1.05rem; max-width: 350px; }
+      .deal-card {
+        grid-template-columns: 1fr;
+        padding: 18px;
+        border-radius: 14px;
+      }
+      .deal-card__visual {
+        min-height: 300px;
+        padding-top: 60px;
+      }
+      .flag-label { min-width: 112px; font-size: 0.95rem; }
+      .flag-label span { font-size: 2.8rem; }
+      .cup-photo { max-height: 270px; }
+      .crate-stack { transform: none; opacity: 0.78; }
+      .box { width: 128px; height: 66px; }
+      .deal-card h2 { font-size: 2.05rem; }
+      .lead { font-size: 1.08rem; }
+      .spec-list li,
+      .check-list li { font-size: 1.02rem; }
+      .btn { width: 100%; }
+      .basket-strip {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 20px;
+      }
+      .basket-icon { font-size: 3.4rem; }
+      .category-grid,
+      .info-grid { grid-template-columns: 1fr; }
+      .final-cta__box { grid-template-columns: 1fr; }
+      .final-actions { justify-content: stretch; }
+      .campaign-footer__inner { display: grid; }
+      .footer-links { display: grid; gap: 8px; }
+    }
+
+    @media (max-width: 460px) {
+      .container { width: min(100% - 24px, 1460px); }
+      .campaign-hero::before,
+      .campaign-hero::after { display: none; }
+      .brush { font-size: 1.08rem; }
+      h1 { font-size: clamp(3rem, 17vw, 4.2rem); }
+      .hero-products { gap: 16px; }
+      .deal-card__visual { min-height: 280px; }
+      .pringles-stage { min-height: 270px; }
+      .tube { width: 72px; height: 202px; font-size: 0.95rem; }
+      .tube--green { height: 188px; }
+      .pringles-row { width: 150px; height: 39px; }
+    }
+  </style>
+</head>
+<body>
+<!-- ═══ ANNOUNCEMENT ═══ -->
+<!-- ═══ ANNOUNCEMENT ═══ -->
+  <div class="announcement">
+    <a href="/register">
+      <i class="fas fa-crown"></i>
+      רוכשים בכמויות מסחריות? הצטרפו למועדון הלקוחות וקבלו מחירון סיטונאי ייעודי
+      <i class="fas fa-chevron-left" style="font-size:0.75em;"></i>
+    </a>
+  </div>
+
+  <!-- ═══ INFO BAR ═══ -->
+  <div class="info-bar">
+    <div class="container">
+      <div class="info-bar__group">
+        <div class="info-bar__item"><i class="fas fa-phone-alt"></i> <a href="tel:037740400">03-7740400</a></div>
+        <div class="info-bar__item"><i class="fas fa-envelope"></i> <a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a></div>
+        <div class="info-bar__item"><i class="fas fa-clock"></i> <span>א'-ה' 08:00-17:00</span></div>
+      </div>
+      <div class="info-bar__group info-bar__social">
+        <a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100083110428101" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/ymarket.ai" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="header" id="header">
+    <div class="container">
+      <a href="/" class="header__logo">
+        <img src="/images/logo/logo-dark-2x.png" alt="וואי מרקט" height="44" style="height:44px;width:auto;">
+      </a>
+      <nav class="nav" aria-label="ניווט ראשי">
+        <div class="nav__item"><a href="/" class="nav__link">דף הבית</a></div>
+        <div class="nav__item">
+          <a href="/catalog" class="nav__link">מוצרים <i class="fas fa-chevron-down"></i></a>
+          <div class="mega-menu">
+            <div class="mega-menu__grid">
+              <a href="/category/industrial-cleaning-supplies-wholesale/" class="mega-menu__cat"><i class="fas fa-spray-can"></i> חומרי ניקוי</a>
+              <a href="/category/bulk-paper-towel-office-supplies/" class="mega-menu__cat"><i class="fas fa-toilet-paper"></i> מוצרי נייר</a>
+              <a href="/category/disposable-catering-food-service/" class="mega-menu__cat"><i class="fas fa-utensils"></i> חד פעמי</a>
+              <a href="/category/food-packaging-delivery-solutions/" class="mega-menu__cat"><i class="fas fa-box-open"></i> אריזות מזון</a>
+              <a href="/category/heavy-duty-garbage-bags-wholesale/" class="mega-menu__cat"><i class="fas fa-trash-alt"></i> שקיות אשפה</a>
+              <a href="/category/professional-cleaning-cloths-microfiber/" class="mega-menu__cat"><i class="fas fa-tshirt"></i> טקסטיל ומטליות</a>
+              <a href="/category/office-coffee-breakroom-supplies/" class="mega-menu__cat"><i class="fas fa-coffee"></i> קפה וכיבוד</a>
+              <a href="/category/safety-ppe-equipment-for-business/" class="mega-menu__cat"><i class="fas fa-hard-hat"></i> בטיחות ומיגון</a>
+              <a href="/category/office-supplies-wholesale-business/" class="mega-menu__cat"><i class="fas fa-pen"></i> ציוד משרדי</a>
+              <a href="/category/maintenance-technical-equipment-wholesale/" class="mega-menu__cat"><i class="fas fa-wrench"></i> ציוד טכני</a>
+              <a href="/category/warehouse-packaging-supplies-wholesale/" class="mega-menu__cat"><i class="fas fa-tape"></i> אריזה ולוגיסטיקה</a>
+              <a href="/category/first-aid-medical-equipment-business/" class="mega-menu__cat"><i class="fas fa-first-aid"></i> עזרה ראשונה</a>
+              <a href="/category/personal-hygiene-products-wholesale/" class="mega-menu__cat"><i class="fas fa-pump-soap"></i> טואלטיקה</a>
+              <a href="/category/institutional-cleaning-tools-equipment/" class="mega-menu__cat"><i class="fas fa-tools"></i> ציוד משקי</a>
+            </div>
+          </div>
+        </div>
+        <div class="nav__item"><a href="/about" class="nav__link">אודות</a></div>
+        <div class="nav__item"><a href="/blog" class="nav__link">בלוג</a></div>
+        <div class="nav__item"><a href="/contact" class="nav__link">צרו קשר</a></div>
+      </nav>
+      <div class="header__actions">
+        <button class="header__btn" aria-label="חיפוש"><i class="fas fa-search"></i></button>
+        <a href="/cart" class="header__btn" aria-label="עגלה" id="cartBtn"><i class="fas fa-shopping-cart"></i><span class="cart-badge" id="cartBadge">0</span></a>
+        <a href="/login" class="header__btn header__login"><i class="fas fa-user"></i> <span>כניסה</span></a>
+        <a href="/register" class="header__btn header__register"><i class="fas fa-user-plus"></i> <span>הרשמה</span></a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="תפריט"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+  <div class="mobile-overlay"></div>
+  <div class="search-overlay"><div class="search-overlay__inner"><form action="/catalog" method="get"><input type="search" name="search" class="search-overlay__input" placeholder="חפשו מוצר..." aria-label="חיפוש מוצר" autocomplete="off"></form></div></div>
+
+  <header class="campaign-top">
+    <div class="container campaign-top__inner">
+      <a class="logo" href="/" aria-label="Y Market">
+        <img src="/images/logo/logo-dark.png" alt="Y Market">
+      </a>
+      <div class="top-actions">
+        <a class="btn btn--outline" href="/register">פתיחת גישה</a>
+        <a class="btn btn--navy" href="/login">כניסה לפורטל</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="campaign-hero">
+      <div class="container">
+        <div class="hero-head">
+          <div class="brush">פותחים משחק?</div>
+          <h1>מתארגנים <span class="ball" aria-hidden="true"></span> נכון</h1>
+          <p class="hero-sub">שני מוצרים חזקים <strong>לימי המונדיאל</strong> - מוכנים להזמנה מהירה לעסקים.</p>
+        </div>
+
+        <div class="hero-products">
+          <article class="deal-card">
+            <div class="deal-card__visual">
+              <div class="flag-label">מוצר הדגל<span>1</span></div>
+              <div class="crate-stack" aria-hidden="true">
+                <div class="box">כוס קר 330<small>40×50</small></div>
+                <div class="box">כוס קר 330<small>40×50</small></div>
+              </div>
+              <img class="cup-photo" src="/items/151.webp" alt="כוס קר 330 מ״ל" loading="eager" onerror="this.src='/items/151.jpg'">
+            </div>
+            <div class="deal-card__content">
+              <h2>כוס קר 330 מ״ל</h2>
+              <p class="lead">הכוס הקלאסית לשתייה קרה, בירה, אירוח וצפייה במשחקים.</p>
+              <ul class="spec-list">
+                <li><span>40 יח׳ בשרוול</span></li>
+                <li><span>50 שרוולים בקרטון</span></li>
+                <li><span>סה״כ <strong>2,000 יח׳</strong> בקרטון</span></li>
+                <li><span>סימון קרטון: 40×50</span></li>
+              </ul>
+              <a class="btn btn--navy" href="/login">להזמנת כוס 330 בפורטל</a>
+            </div>
+            <p class="fit-note">מתאים לקיוסקים, מינימרקטים, מוסדות, חדרי עובדים, אירועים ועוד</p>
+          </article>
+
+          <article class="deal-card">
+            <div class="deal-card__visual">
+              <div class="flag-label">מוצר הדגל<span>2</span></div>
+              <div class="pringles-stage">
+                <div class="pringles-pallet" aria-hidden="true">
+                  <div class="pringles-row"><i class="tiny-can"></i><i class="tiny-can"></i><i class="tiny-can"></i><i class="tiny-can"></i><i class="tiny-can"></i><i class="tiny-can"></i></div>
+                  <div class="pringles-row"><i class="tiny-can"></i><i class="tiny-can"></i><i class="tiny-can"></i><i class="tiny-can"></i><i class="tiny-can"></i><i class="tiny-can"></i></div>
+                  <div class="pringles-row"><i class="tiny-can"></i><i class="tiny-can"></i><i class="tiny-can"></i><i class="tiny-can"></i><i class="tiny-can"></i><i class="tiny-can"></i></div>
+                </div>
+                <div class="tube tube--red">PRINGLES</div>
+                <div class="tube tube--green">PRINGLES</div>
+              </div>
+            </div>
+            <div class="deal-card__content">
+              <h2>פרינגלס אדום / ירוק</h2>
+              <p class="lead">החטיף המוכר והאהוב - מתאים למכירה, אירוח והנאה מלאה בזמן המשחק.</p>
+              <ul class="check-list">
+                <li><span>טעמים אהובים</span></li>
+                <li><span>אדום או ירוק</span></li>
+                <li><span>מתאים למכירה בקופה</span></li>
+                <li><span>מוצר משלים מצוין לצד שתייה קרה</span></li>
+              </ul>
+              <a class="btn btn--navy" href="/login">להזמנת פרינגלס בפורטל</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="basket-strip">
+          <div class="basket-icon" aria-hidden="true">סל</div>
+          <div>
+            <h2>רוצים לסגור סל מונדיאל מלא?</h2>
+            <p>הוסיפו להזמנה גם חד־פעמי, מוצרי נייר, ניקיון, שקיות ואירוח - הכול במקום אחד.</p>
+          </div>
+          <a class="btn btn--yellow" href="#basket">לצפייה במוצרים משלימים</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="basket">
+      <div class="container">
+        <div class="section__head">
+          <h2>השלימו את ההזמנה למונדיאל</h2>
+          <p>לא מציפים ב־100 מוצרים. מציגים את הקטגוריות שהעסק באמת צריך סביב ימי המשחקים.</p>
+        </div>
+        <div class="category-grid">
+          <article class="small-card">
+            <div class="small-card__icon">1</div>
+            <h3>חד־פעמי ואירוח</h3>
+            <p>כוסות, צלחות, סכו״ם, מפיות, קשים ומגשים.</p>
+            <a href="/category/disposable-catering-food-service/">לחד־פעמי ואירוח</a>
+          </article>
+          <article class="small-card">
+            <div class="small-card__icon">2</div>
+            <h3>כיבוד ושתייה</h3>
+            <p>חטיפים, שתייה, קפה, סוכר ומוצרים לפינת קפה.</p>
+            <a href="/category/office-coffee-breakroom-supplies/">לכיבוד ושתייה</a>
+          </article>
+          <article class="small-card">
+            <div class="small-card__icon">3</div>
+            <h3>מוצרי נייר</h3>
+            <p>נייר ניגוב, מגבות נייר, נייר טואלט ומפיות.</p>
+            <a href="/category/bulk-paper-towel-office-supplies/">למוצרי נייר</a>
+          </article>
+          <article class="small-card">
+            <div class="small-card__icon">4</div>
+            <h3>שקיות וניקיון</h3>
+            <p>שקיות אשפה, חומרי ניקוי, מטליות וסבון ידיים.</p>
+            <a href="/category/industrial-cleaning-supplies-wholesale/">לניקיון ושקיות</a>
+          </article>
+          <article class="small-card">
+            <div class="small-card__icon">5</div>
+            <h3>אריזות מזון</h3>
+            <p>קופסאות, תבניות, אריזות ופתרונות Take Away.</p>
+            <a href="/category/food-packaging-delivery-solutions/">לאריזות מזון</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2>מתאים במיוחד ללקוחות עסקיים</h2>
+          <p>מלאי מסודר לעסקים שמוכרים, מארחים או מתפעלים פעילות סביב משחקים.</p>
+        </div>
+        <div class="info-grid">
+          <article class="small-card">
+            <div class="small-card__icon">מ</div>
+            <h3>מינימרקטים וקיוסקים</h3>
+            <p>כוסות, חטיפים, מוצרים למכירה, שקיות וניקיון.</p>
+          </article>
+          <article class="small-card">
+            <div class="small-card__icon">ח</div>
+            <h3>מוסדות וחדרי עובדים</h3>
+            <p>כיבוד, שתייה, נייר, חד־פעמי וניקיון.</p>
+          </article>
+          <article class="small-card">
+            <div class="small-card__icon">ס</div>
+            <h3>מסעדות ומזנונים</h3>
+            <p>חד־פעמי, אריזות מזון, כוסות, נייר ושקיות.</p>
+          </article>
+          <article class="small-card">
+            <div class="small-card__icon">פ</div>
+            <h3>מרכזי ספורט ופנאי</h3>
+            <p>כוסות, חטיפים, ניקיון, נייר וציוד תפעולי.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint">
+      <div class="container">
+        <div class="section__head">
+          <h2>למה להזמין דרך פורטל Y Market?</h2>
+          <p>הזמנה מהירה וברורה לעסקים, עם מגוון מוצרים במקום אחד.</p>
+        </div>
+        <div class="info-grid">
+          <article class="small-card">
+            <div class="small-card__icon">₪</div>
+            <h3>מחירים לעסקים</h3>
+            <p>מחירים מותאמים ללקוחות עסקיים ולכמויות.</p>
+          </article>
+          <article class="small-card">
+            <div class="small-card__icon">✓</div>
+            <h3>הזמנה מהירה ונוחה</h3>
+            <p>הזמנה דרך הפורטל בלי להמתין לנציג.</p>
+          </article>
+          <article class="small-card">
+            <div class="small-card__icon">+</div>
+            <h3>מגוון רחב במקום אחד</h3>
+            <p>כוסות, חטיפים, נייר, ניקיון, אריזות ועוד.</p>
+          </article>
+          <article class="small-card">
+            <div class="small-card__icon">↗</div>
+            <h3>אספקה מהירה</h3>
+            <p>הזמנה מסודרת, טיפול מהיר ואספקה לעסק.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container final-cta__box">
+        <div>
+          <h2>המלאי למונדיאל זז מהר</h2>
+          <p>הכינו את העסק לימי המשחקים עם סל מוצרים מסודר - כוסות, פרינגלס, חד־פעמי, נייר, ניקיון ואריזות.</p>
+        </div>
+        <div class="final-actions">
+          <a class="btn btn--yellow" href="/login">להזמנה עכשיו בפורטל</a>
+          <a class="btn btn--outline" href="/register">אני עסק חדש - פתחו לי גישה</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+      <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="/images/logo/logo-white.png" alt="וואי מרקט" width="112" height="60">
+          <p>נגלר סחר והפצה — סחר, שיווק והפצה של מוצרי צריכה שוטפת לעסקים ומוסדות בכל רחבי הארץ.</p>
+          <div class="footer__social">
+            <a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100083110428101" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/ymarket.ai" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h4>קטגוריות</h4>
+          <div class="footer__links">
+            <a href="/category/bulk-paper-towel-office-supplies/">מוצרי נייר וניגוב</a>
+            <a href="/category/industrial-cleaning-supplies-wholesale/">חומרי ניקוי</a>
+            <a href="/category/disposable-catering-food-service/">חד פעמי ואירוח</a>
+            <a href="/category/food-packaging-delivery-solutions/">אריזות Take Away</a>
+            <a href="/category/office-coffee-breakroom-supplies/">קפה, שתייה וכיבוד</a>
+            <a href="/category/safety-ppe-equipment-for-business/">בטיחות ומיגון</a>
+            <a href="/category/heavy-duty-garbage-bags-wholesale/">שקיות אשפה</a>
+            <a href="/category/professional-cleaning-cloths-microfiber/">טקסטיל ומטליות</a>
+            <a href="/category/office-supplies-wholesale-business/">ציוד משרדי</a>
+            <a href="/category/maintenance-technical-equipment-wholesale/">ציוד טכני</a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h4>קישורים מהירים</h4>
+          <div class="footer__links">
+            <a href="/catalog">קטלוג מוצרים</a>
+            <a href="/about">אודות</a>
+            <a href="/blog">בלוג</a>
+            <a href="/faq">שאלות ותשובות</a>
+            <a href="/contact">צרו קשר</a>
+            <a href="/tracking">מעקב משלוחים</a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h4>צרו קשר</h4>
+          <div class="footer__contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <a href="tel:037740400">03-7740400</a>
+          </div>
+          <div class="footer__contact-item">
+            <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/972549922492" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+          <div class="footer__contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a>
+          </div>
+          <div class="footer__contact-item">
+            <i class="fas fa-clock"></i>
+            <span>א'-ה' 08:00-17:00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span class="footer__copyright">&copy; 2026 וואי מרקט — נגלר סחר והפצה. כל הזכויות שמורות.</span>
+        <div class="footer__legal">
+          <a href="/legal/terms">תקנון האתר</a>
+          <a href="/legal/privacy">מדיניות פרטיות</a>
+          <a href="/legal/shipping">מדיניות משלוחים</a>
+          <a href="/legal/returns">החזרות וביטולים</a>
+          <a href="/legal/accessibility">נגישות</a>
+          <a href="/legal/cookies">עוגיות</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -47,6 +47,38 @@
   var products = null;
   var loading = false;
 
+  // Collapse variant-group members into one representative linking to the unified page
+  function collapseVariants(items, variantGroups) {
+    if (!variantGroups || !variantGroups.length) return items;
+    var groupById = {};
+    variantGroups.forEach(function(g) { groupById[g.id] = g; });
+    var byGroup = {};
+    items.forEach(function(it) {
+      if (it.variantGroupId && groupById[it.variantGroupId]) {
+        (byGroup[it.variantGroupId] = byGroup[it.variantGroupId] || []).push(it);
+      }
+    });
+    Object.keys(byGroup).forEach(function(gid) {
+      byGroup[gid].sort(function(a, b) { return (a.variantSortOrder || 0) - (b.variantSortOrder || 0); });
+    });
+    var seen = {}, out = [];
+    items.forEach(function(it) {
+      var gid = it.variantGroupId;
+      if (gid && byGroup[gid] && byGroup[gid].length > 1) {
+        if (seen[gid]) return;
+        seen[gid] = true;
+        var members = byGroup[gid], rep = members[0], g = groupById[gid];
+        var prices = members.map(function(m) { return m.saleNis; }).filter(function(p) { return p > 0; });
+        out.push(Object.assign({}, rep, {
+          name: g.name,
+          slug: g.seoSlug || rep.seoSlug || rep.slug,
+          saleNis: prices.length ? Math.min.apply(null, prices) : rep.saleNis
+        }));
+      } else { out.push(it); }
+    });
+    return out;
+  }
+
   function loadProducts(cb) {
     if (products) return cb(products);
     if (loading) return;
@@ -54,7 +86,8 @@
     fetch('/data/products.json')
       .then(function(r){ return r.json(); })
       .then(function(data){
-        products = Array.isArray(data) ? data : (data.items || data.products || []);
+        var items = Array.isArray(data) ? data : (data.items || data.products || []);
+        products = collapseVariants(items, (data && data.variantGroups) || []);
         loading = false;
         cb(products);
       })

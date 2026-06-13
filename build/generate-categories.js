@@ -255,6 +255,46 @@ function getDescendantSlugs(category, catMap) {
   return slugs;
 }
 
+// Collapse variant-group members into one representative card linking to the unified
+// product page (mirrors the website catalog/search + portal/agent ordering grids).
+function collapseVariants(items, variantGroups) {
+  if (!variantGroups || !variantGroups.length) return items;
+  const groupById = {};
+  variantGroups.forEach(g => { groupById[g.id] = g; });
+  const byGroup = {};
+  items.forEach(it => {
+    if (it.variantGroupId && groupById[it.variantGroupId]) {
+      (byGroup[it.variantGroupId] = byGroup[it.variantGroupId] || []).push(it);
+    }
+  });
+  Object.keys(byGroup).forEach(gid => byGroup[gid].sort((a, b) => (a.variantSortOrder || 0) - (b.variantSortOrder || 0)));
+  const seen = {};
+  const out = [];
+  items.forEach(it => {
+    const gid = it.variantGroupId;
+    if (gid && byGroup[gid] && byGroup[gid].length > 1) {
+      if (seen[gid]) return;
+      seen[gid] = true;
+      const members = byGroup[gid];
+      const rep = members[0];
+      const g = groupById[gid];
+      const prices = members.map(m => m.saleNis).filter(p => p > 0);
+      out.push(Object.assign({}, rep, {
+        name: g.name,
+        slug: g.seoSlug || rep.seoSlug || rep.slug,
+        saleNis: prices.length ? Math.min(...prices) : rep.saleNis,
+        originalPrice: null, discountPercent: null, productStatus: null,
+        _isVariantGroup: true,
+        _variantCount: members.length,
+        _variantAxis: g.axis || 'מידה',
+      }));
+    } else {
+      out.push(it);
+    }
+  });
+  return out;
+}
+
 function generateCategoryPage(category, products, allCategories, catMap, treeRoots) {
   // Include products from ALL descendant categories (inheritance)
   const descendantSlugs = getDescendantSlugs(category, catMap);
@@ -346,8 +386,12 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
     // Volume badge for items with bulk packaging
     const volBadge = (p.unitsPerPack && p.unitsPerPack >= 6) ? '<div class="product-card__vol-badge"><i class="fas fa-cubes" style="font-size:0.6rem"></i> הנחת כמות</div>' : '';
 
-    // Add to cart button (ecommerce) or WhatsApp for items without price
-    const actionsHtml = p.saleNis
+    // Variant group → link to unified page; else add-to-cart (or WhatsApp if no price)
+    const actionsHtml = p._isVariantGroup
+      ? `<div class="product-card__actions">
+          <a href="/products/${p.slug}/" class="product-card__add-btn"><i class="fas fa-layer-group"></i> בחר ${p._variantAxis === 'צבע' ? 'צבע' : p._variantAxis === 'מידה' ? 'מידה' : 'וריאנט'} (${p._variantCount})</a>
+        </div>`
+      : p.saleNis
       ? `<div class="product-card__actions">
             <button class="product-card__add-btn" data-id="${p.id}" data-name="${(p.name || '').replace(/"/g, '&quot;')}" data-price="${p.saleNis}" data-unit="${(p.unit || '').replace(/"/g, '&quot;')}" data-img="${imgSrcThumb}" data-slug="${p.slug}"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
         </div>`
@@ -897,7 +941,7 @@ function main() {
   }
 
   const data = JSON.parse(fs.readFileSync(DATA_PATH, 'utf-8'));
-  const products = data.items || [];
+  const products = collapseVariants(data.items || [], data.variantGroups || []);
   const categories = data.categories || [];
 
   if (categories.length === 0) {

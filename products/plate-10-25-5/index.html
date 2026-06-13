@@ -201,8 +201,8 @@
         <div class="product-gallery">
           <div class="product-gallery__main">
             <picture>
-              <source srcset="/items/1011.webp" type="image/webp">
-              <img src="/items/1011.jpg" alt="צלחת עיקרית 10 אינץ 25.5 ס"מ מזכוכית מחוסמת לבנה"
+              <source srcset="/items/1011.webp" type="image/webp" id="mainProductSource">
+              <img src="/items/1011.jpg" alt="צלחת עיקרית 10 אינץ 25.5 ס"מ מזכוכית מחוסמת לבנה" id="mainProductImg"
                    onerror="this.onerror=null;var s=this.parentElement.querySelector('source');if(s)s.remove();this.src='https://placehold.co/500x500/f0f2f5/5a6577?text=%D7%A6%D7%9C%D7%97%D7%AA%20%D7%A2%D7%99%D7%A7%D7%A8%D7%99%D7%AA%2010%20'">
             </picture>
           </div>
@@ -219,13 +219,13 @@
 
           <div class="product-actions">
             <div class="quantity-selector">
-                  <button class="quantity-selector__btn" id="qtyDecrease">-</button>
-                  <input type="number" class="quantity-selector__input" id="qtyInput" value="1" min="1">
-                  <button class="quantity-selector__btn" id="qtyIncrease">+</button>
-                </div>
-                <button class="btn btn--primary btn--lg" id="addToCartBtn" data-id="993"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
-            <a href="https://wa.me/972549922492?text=היי, מתעניין ב%D7%A6%D7%9C%D7%97%D7%AA%20%D7%A2%D7%99%D7%A7%D7%A8%D7%99%D7%AA%2010%20%D7%90%D7%99%D7%A0%D7%A5%2025.5%20%D7%A1%22%D7%9E%20%D7%9E%D7%96%D7%9B%D7%95%D7%9B%D7%99%D7%AA%20%D7%9E%D7%97%D7%95%D7%A1%D7%9E%D7%AA%20%D7%9C%D7%91%D7%A0%D7%94" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> שאלו אותנו</a>
-            <a href="tel:*3497" class="btn btn--phone btn--lg" style="display:inline-flex;align-items:center;gap:8px;background:#1B3A5C;color:#fff;padding:12px 24px;border-radius:12px;font-weight:600;text-decoration:none;font-size:0.95rem;margin-top:8px;justify-content:center;width:100%;"><i class="fas fa-phone-alt"></i> חייגו *3497</a>
+            <button class="quantity-selector__btn" id="qtyDecrease">-</button>
+            <input type="number" class="quantity-selector__input" id="qtyInput" value="1" min="1">
+            <button class="quantity-selector__btn" id="qtyIncrease">+</button>
+          </div>
+          <button class="btn btn--primary btn--lg" id="addToCartBtn" data-id="993"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+       <a href="https://wa.me/972549922492?text=היי, מתעניין ב%D7%A6%D7%9C%D7%97%D7%AA%20%D7%A2%D7%99%D7%A7%D7%A8%D7%99%D7%AA%2010%20%D7%90%D7%99%D7%A0%D7%A5%2025.5%20%D7%A1%22%D7%9E%20%D7%9E%D7%96%D7%9B%D7%95%D7%9B%D7%99%D7%AA%20%D7%9E%D7%97%D7%95%D7%A1%D7%9E%D7%AA%20%D7%9C%D7%91%D7%A0%D7%94" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> שאלו אותנו</a>
+       <a href="tel:*3497" class="btn btn--phone btn--lg" style="display:inline-flex;align-items:center;gap:8px;background:#1B3A5C;color:#fff;padding:12px 24px;border-radius:12px;font-weight:600;text-decoration:none;font-size:0.95rem;margin-top:8px;justify-content:center;width:100%;"><i class="fas fa-phone-alt"></i> חייגו *3497</a>
           </div>
 
           <div class="product-trust-badges">
@@ -409,7 +409,7 @@
   <script src="/js/analytics.js?v=20260314"></script>
   <script>
   (function() {
-    var PRODUCT = {"id":993,"name":"צלחת עיקרית 10 אינץ 25.5 ס\"מ מזכוכית מחוסמת לבנה","price":11,"unit":"","imageUrl":"/items/1011.webp","slug":"צלחת-עיקרית-10-אינץ-25-5-ס-מ-מזכוכית-מחוסמת-לבנה","categoryName":"צלחות וכלי הגשה רב-פעמיים"};
+    var PRODUCT = {"id":993,"name":"צלחת עיקרית 10 אינץ 25.5 ס\"מ מזכוכית מחוסמת לבנה","price":11,"unit":"","imageUrl":"/items/1011.webp","slug":"plate-10-25-5","categoryName":"צלחות וכלי הגשה רב-פעמיים"};
 
     // Facebook Pixel - ViewContent (product page view)
     if (window.YMarketAnalytics && window.YMarketAnalytics.fbViewContent) {
@@ -419,7 +419,11 @@
     if (window.YMarketAnalytics && window.YMarketAnalytics.trackViewItem) {
       window.YMarketAnalytics.trackViewItem(PRODUCT);
     }
-
+  })();
+  </script>
+  <script>
+  (function() {
+    var PRODUCT = {"id":993,"name":"צלחת עיקרית 10 אינץ 25.5 ס\"מ מזכוכית מחוסמת לבנה","price":11,"unit":"","imageUrl":"/items/1011.webp","slug":"צלחת-עיקרית-10-אינץ-25-5-ס-מ-מזכוכית-מחוסמת-לבנה"};
     // Quantity controls
     var qtyInput = document.getElementById('qtyInput');
     var decBtn = document.getElementById('qtyDecrease');
