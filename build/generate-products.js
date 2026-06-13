@@ -237,75 +237,46 @@ function generateProductPage(product, categories, allProducts, group) {
         </div>`).join('')}
     </div>` : '';
 
-  const groupStyles = isGroup ? `<style>
-    .vgroup{border:1px solid #e2e8f0;border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 4px 16px rgba(27,58,92,.06)}
-    .vgroup__bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 18px;background:linear-gradient(135deg,#f8fafc 0%,#eef3f9 100%);border-bottom:1px solid #e2e8f0}
-    .vgroup__price{display:flex;align-items:baseline;gap:9px;font-size:1.7rem;font-weight:800;color:#1B3A5C;line-height:1}
-    .vgroup__pnote{font-size:.82rem;font-weight:600;color:#7a8aa0}
-    .vgroup__pnote bdi{font-weight:800;color:#1B3A5C}
-    .vgroup__hint{font-size:.8rem;font-weight:700;color:#64748b;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
-    .vgroup__hint i{color:#1B3A5C}
-    .vrow{display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid #f1f5f9;transition:background .15s}
-    .vrow:last-child{border-bottom:none}
-    .vrow.is-active{background:#f0f6ff}
-    .vrow__pick{flex:0 0 auto;width:52px;height:52px;border:1px solid #e5e7eb;border-radius:10px;background:#fff;padding:3px;cursor:pointer;overflow:hidden;transition:border-color .15s,box-shadow .15s}
-    .vrow.is-active .vrow__pick{border-color:#1B3A5C;box-shadow:0 0 0 2px rgba(27,58,92,.15)}
-    .vrow__pick img{width:100%;height:100%;object-fit:contain;display:block}
-    .vrow__meta{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px;text-align:right}
-    .vrow__label{font-weight:700;font-size:1.05rem;color:#1f2937}
-    .vrow__price{font-size:.82rem;color:#94a3b8;white-space:nowrap}
-    .vrow__stepper{flex:0 0 auto;display:flex;align-items:center;border:1px solid #d8dee6;border-radius:10px;overflow:hidden}
-    .vrow__stepper button{width:40px;height:40px;border:none;background:#f8fafc;color:#1B3A5C;font-size:1.25rem;font-weight:600;cursor:pointer;line-height:1;display:flex;align-items:center;justify-content:center;transition:background .15s}
-    .vrow__stepper button:hover{background:#e9eef5}
-    .vrow__stepper .vqty{width:46px;height:40px;text-align:center;border:none;border-left:1px solid #e5e7eb;border-right:1px solid #e5e7eb;font-size:1.05rem;font-weight:700;color:#1f2937;-moz-appearance:textfield}
-    .vrow__stepper .vqty::-webkit-outer-spin-button,.vrow__stepper .vqty::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
-    .vrow__sum{flex:0 0 60px;text-align:left;font-weight:700;color:#1B3A5C;font-size:.95rem}
-    .vgroup-actions{display:flex;flex-direction:column;gap:14px;width:100%}
-    .vgroup-add{width:100%;justify-content:center;font-size:1.05rem}
-    .vgroup-add:disabled{background:#e5e7eb;color:#9ca3af;cursor:not-allowed;box-shadow:none;border-color:#e5e7eb}
-    .vgroup-secondary{display:flex;gap:10px}
-    .vgroup-secondary .btn{flex:1;justify-content:center}
-    .vgroup-secondary .btn--phone{background:#1B3A5C;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border-radius:12px;font-weight:600}
-    /* --- subtle motion --- */
-    #mainProductImg{transition:opacity .3s ease, transform .3s ease}
-    #mainProductImg.vfade{animation:vimg .4s cubic-bezier(.22,.61,.36,1)}
-    @keyframes vimg{from{opacity:.25;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
-    #variantPrice{display:inline-block}
-    .vgroup__price.vpulse #variantPrice{animation:vpop .35s cubic-bezier(.22,.61,.36,1)}
-    @keyframes vpop{0%{transform:scale(1)}45%{transform:scale(1.14);color:#2a5080}100%{transform:scale(1)}}
-    .vrow__pick:hover{transform:scale(1.06)}
-    .vrow__pick:active{transform:scale(.95)}
-    .vrow.is-active{animation:vrowin .3s ease}
-    @keyframes vrowin{from{background:#dbeafe}to{background:#f0f6ff}}
-    .vrow__stepper button:active{transform:scale(.88)}
-    .vrow__sum{transition:opacity .25s ease}
-    .vrow__sum.vsumin{animation:vsum .3s ease}
-    @keyframes vsum{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:translateY(0)}}
-    .vgroup-add{transition:background .2s ease, transform .12s ease, box-shadow .2s ease}
-    .vgroup-add:not(:disabled){box-shadow:0 6px 16px rgba(27,58,92,.22)}
-    .vgroup-add:not(:disabled):active{transform:scale(.985)}
-    @media (prefers-reduced-motion: reduce){#mainProductImg.vfade,.vgroup-price.vpulse #variantPrice,.vrow.is-active,.vrow__sum.vsumin{animation:none}}
-  </style>` : '';
+  // Card CSS now lives in the master file css/pages/product-detail.css (shared by
+  // group + single pages). No inline <style> needed.
+  const secondaryBtns = (waText) => `<div class="vgroup-secondary">
+           <a href="https://wa.me/972549922492?text=${encodeURIComponent('היי, מתעניין ב' + waText)}" class="btn btn--whatsapp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> שאלו אותנו</a>
+           <a href="tel:*3497" class="btn btn--phone"><i class="fas fa-phone-alt"></i> חייגו *3497</a>
+         </div>`;
 
   const actionsHtml = isGroup
-    ? `${groupStyles}<div class="vgroup-actions">
+    ? `<div class="vgroup-actions">
          ${variantMatrixHtml}
          <button class="btn btn--primary btn--lg vgroup-add" id="addAllBtn" disabled><i class="fas fa-cart-plus"></i> <span id="addAllLabel">בחרו כמות מהמידות</span></button>
-         <div class="vgroup-secondary">
-           <a href="https://wa.me/972549922492?text=היי, מתעניין ב${encodeURIComponent(group.name)}" class="btn btn--whatsapp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> שאלו אותנו</a>
-           <a href="tel:*3497" class="btn btn--phone"><i class="fas fa-phone-alt"></i> חייגו *3497</a>
-         </div>
+         ${secondaryBtns(group.name)}
        </div>`
-    : `${price
-        ? `<div class="quantity-selector">
-            <button class="quantity-selector__btn" id="qtyDecrease">-</button>
-            <input type="number" class="quantity-selector__input" id="qtyInput" value="1" min="1">
-            <button class="quantity-selector__btn" id="qtyIncrease">+</button>
-          </div>
-          <button class="btn btn--primary btn--lg" id="addToCartBtn" data-id="${product.id}"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>`
-        : ''}
-       <a href="https://wa.me/972549922492?text=היי, מתעניין ב${encodeURIComponent(product.name)}" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> שאלו אותנו</a>
-       <a href="tel:*3497" class="btn btn--phone btn--lg" style="display:inline-flex;align-items:center;gap:8px;background:#1B3A5C;color:#fff;padding:12px 24px;border-radius:12px;font-weight:600;text-decoration:none;font-size:0.95rem;margin-top:8px;justify-content:center;width:100%;"><i class="fas fa-phone-alt"></i> חייגו *3497</a>`;
+    : price
+    // Single SKU — same card as a variant group, with one row
+    ? `<div class="vgroup-actions">
+         <div class="vgroup">
+           <div class="vgroup__bar">
+             <div class="vgroup__price"><span>${price}</span><span class="vgroup__pnote">${product.unit ? 'ל' + product.unit : 'ליחידה'}${perUnit ? ' · ' + perUnit : ''}</span></div>
+             <div class="vgroup__hint"><i class="fas fa-cubes"></i> בחרו כמות</div>
+           </div>
+           <div class="vrow is-active">
+             <div class="vrow__pick"><picture><source srcset="${imgSrcThumb}" type="image/webp"><img src="${imgSrcJpg}" alt="${(seo.imageAlt || h1Text).replace(/"/g,'&quot;')}" onerror="this.onerror=null;var s=this.parentElement.querySelector('source');if(s)s.remove();this.style.opacity=.2"></picture></div>
+             <div class="vrow__meta"><span class="vrow__label">${product.unit || 'יחידה'}</span><span class="vrow__price">${price}${product.unit ? ' / ' + product.unit : ''}</span></div>
+             <div class="vrow__stepper">
+               <button type="button" id="qtyDecrease" aria-label="הפחת">−</button>
+               <input type="number" class="vqty" id="qtyInput" value="1" min="1" inputmode="numeric" aria-label="כמות">
+               <button type="button" id="qtyIncrease" aria-label="הוסף">+</button>
+             </div>
+             <div class="vrow__sum" id="lineTotal">${price}</div>
+           </div>
+         </div>
+         <button class="btn btn--primary btn--lg vgroup-add" id="addToCartBtn" data-id="${product.id}"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+         ${secondaryBtns(product.name)}
+       </div>`
+    // No price — contact CTA only
+    : `<div class="vgroup-actions">
+         <div class="product-pricing__price" style="font-size:var(--fs-lg);margin-bottom:8px;">צרו קשר למחיר</div>
+         ${secondaryBtns(product.name)}
+       </div>`;
 
   // Related products from same category (exclude this product and same-group siblings)
   const related = allProducts
@@ -474,7 +445,7 @@ function generateProductPage(product, categories, allProducts, group) {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="/css/style.min.css">
   <link rel="stylesheet" href="/css/site-header.css">
-  <link rel="stylesheet" href="/css/pages/product-detail.min.css?v=20260613">
+  <link rel="stylesheet" href="/css/pages/product-detail.min.css?v=20260613b">
   <script type="application/ld+json">${jsonLd}</script>
   <script type="application/ld+json">${JSON.stringify({
     "@context": "https://schema.org",
@@ -539,10 +510,6 @@ function generateProductPage(product, categories, allProducts, group) {
           ${!isGroup && product.partNumber ? `<div class="product-info__sku">מק"ט: ${product.partNumber}</div>` : ''}
           ${!isGroup && product.unit ? `<div class="product-info__pack">${product.unitsPerPack || ''} ${product.unit || ''}</div>` : ''}
           ${isGroup ? compactPriceHtml : ''}
-
-          ${isGroup ? '' : `<div class="product-pricing">
-            ${pricingHtml}
-          </div>`}
 
           <div class="product-actions">
             ${actionsHtml}
@@ -781,12 +748,23 @@ function generateProductPage(product, categories, allProducts, group) {
     var qtyInput = document.getElementById('qtyInput');
     var decBtn = document.getElementById('qtyDecrease');
     var incBtn = document.getElementById('qtyIncrease');
+    var lineTotalEl = document.getElementById('lineTotal');
+    function fmtPrice(n){ return '‏' + (Math.round(n*100)/100).toLocaleString('he-IL') + ' ‏₪'; }
+    function updateLineTotal(){
+      if (!lineTotalEl) return;
+      var q = Math.max(1, parseInt(qtyInput && qtyInput.value) || 1);
+      lineTotalEl.textContent = fmtPrice(q * PRODUCT.price);
+      lineTotalEl.classList.remove('vsumin'); void lineTotalEl.offsetWidth; lineTotalEl.classList.add('vsumin');
+    }
     if (decBtn) decBtn.addEventListener('click', function() {
       if (qtyInput && parseInt(qtyInput.value) > 1) qtyInput.value = parseInt(qtyInput.value) - 1;
+      updateLineTotal();
     });
     if (incBtn) incBtn.addEventListener('click', function() {
       if (qtyInput) qtyInput.value = parseInt(qtyInput.value) + 1;
+      updateLineTotal();
     });
+    if (qtyInput) qtyInput.addEventListener('input', updateLineTotal);
 
     // Add to cart
     var addBtn = document.getElementById('addToCartBtn');

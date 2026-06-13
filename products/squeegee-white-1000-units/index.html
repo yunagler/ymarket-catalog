@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="/css/style.min.css">
   <link rel="stylesheet" href="/css/site-header.css">
-  <link rel="stylesheet" href="/css/pages/product-detail.min.css?v=20260613">
+  <link rel="stylesheet" href="/css/pages/product-detail.min.css?v=20260613b">
   <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "Product",
@@ -213,19 +213,30 @@
           
           
 
-          <div class="product-pricing">
-            <div class="product-pricing__price">‏90 ‏₪</div>
-          </div>
-
           <div class="product-actions">
-            <div class="quantity-selector">
-            <button class="quantity-selector__btn" id="qtyDecrease">-</button>
-            <input type="number" class="quantity-selector__input" id="qtyInput" value="1" min="1">
-            <button class="quantity-selector__btn" id="qtyIncrease">+</button>
-          </div>
-          <button class="btn btn--primary btn--lg" id="addToCartBtn" data-id="319"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
-       <a href="https://wa.me/972549922492?text=היי, מתעניין ב%D7%9E%D7%92%D7%91%D7%95%D7%9F%20%D7%90%D7%99%D7%A9%D7%99%20%D7%97%D7%9C%D7%A7%20(%D7%9C%D7%91%D7%9F)%201000%20%D7%99%D7%97%D7%99%D7%93%D7%95%D7%AA" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> שאלו אותנו</a>
-       <a href="tel:*3497" class="btn btn--phone btn--lg" style="display:inline-flex;align-items:center;gap:8px;background:#1B3A5C;color:#fff;padding:12px 24px;border-radius:12px;font-weight:600;text-decoration:none;font-size:0.95rem;margin-top:8px;justify-content:center;width:100%;"><i class="fas fa-phone-alt"></i> חייגו *3497</a>
+            <div class="vgroup-actions">
+         <div class="vgroup">
+           <div class="vgroup__bar">
+             <div class="vgroup__price"><span>‏90 ‏₪</span><span class="vgroup__pnote">ליחידה</span></div>
+             <div class="vgroup__hint"><i class="fas fa-cubes"></i> בחרו כמות</div>
+           </div>
+           <div class="vrow is-active">
+             <div class="vrow__pick"><picture><source srcset="/items/335-thumb.webp" type="image/webp"><img src="/items/335.jpg" alt="מגבון אישי חלק (לבן) 1000 יחידות" onerror="this.onerror=null;var s=this.parentElement.querySelector('source');if(s)s.remove();this.style.opacity=.2"></picture></div>
+             <div class="vrow__meta"><span class="vrow__label">יחידה</span><span class="vrow__price">‏90 ‏₪</span></div>
+             <div class="vrow__stepper">
+               <button type="button" id="qtyDecrease" aria-label="הפחת">−</button>
+               <input type="number" class="vqty" id="qtyInput" value="1" min="1" inputmode="numeric" aria-label="כמות">
+               <button type="button" id="qtyIncrease" aria-label="הוסף">+</button>
+             </div>
+             <div class="vrow__sum" id="lineTotal">‏90 ‏₪</div>
+           </div>
+         </div>
+         <button class="btn btn--primary btn--lg vgroup-add" id="addToCartBtn" data-id="319"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+         <div class="vgroup-secondary">
+           <a href="https://wa.me/972549922492?text=%D7%94%D7%99%D7%99%2C%20%D7%9E%D7%AA%D7%A2%D7%A0%D7%99%D7%99%D7%9F%20%D7%91%D7%9E%D7%92%D7%91%D7%95%D7%9F%20%D7%90%D7%99%D7%A9%D7%99%20%D7%97%D7%9C%D7%A7%20(%D7%9C%D7%91%D7%9F)%201000%20%D7%99%D7%97%D7%99%D7%93%D7%95%D7%AA" class="btn btn--whatsapp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> שאלו אותנו</a>
+           <a href="tel:*3497" class="btn btn--phone"><i class="fas fa-phone-alt"></i> חייגו *3497</a>
+         </div>
+       </div>
           </div>
 
           <div class="product-trust-badges">
@@ -455,12 +466,23 @@
     var qtyInput = document.getElementById('qtyInput');
     var decBtn = document.getElementById('qtyDecrease');
     var incBtn = document.getElementById('qtyIncrease');
+    var lineTotalEl = document.getElementById('lineTotal');
+    function fmtPrice(n){ return '‏' + (Math.round(n*100)/100).toLocaleString('he-IL') + ' ‏₪'; }
+    function updateLineTotal(){
+      if (!lineTotalEl) return;
+      var q = Math.max(1, parseInt(qtyInput && qtyInput.value) || 1);
+      lineTotalEl.textContent = fmtPrice(q * PRODUCT.price);
+      lineTotalEl.classList.remove('vsumin'); void lineTotalEl.offsetWidth; lineTotalEl.classList.add('vsumin');
+    }
     if (decBtn) decBtn.addEventListener('click', function() {
       if (qtyInput && parseInt(qtyInput.value) > 1) qtyInput.value = parseInt(qtyInput.value) - 1;
+      updateLineTotal();
     });
     if (incBtn) incBtn.addEventListener('click', function() {
       if (qtyInput) qtyInput.value = parseInt(qtyInput.value) + 1;
+      updateLineTotal();
     });
+    if (qtyInput) qtyInput.addEventListener('input', updateLineTotal);
 
     // Add to cart
     var addBtn = document.getElementById('addToCartBtn');
