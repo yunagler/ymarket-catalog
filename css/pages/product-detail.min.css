@@ -59,3 +59,8 @@
 @keyframes vsum{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:translateY(0)}}
 @media (prefers-color-scheme:dark){.vgroup{background:#161e2e;border-color:#2a3a55}.vgroup__bar{background:linear-gradient(135deg,#1b2740,#22304c);border-color:#2c3c59}.vgroup__price{color:#dbe6f5}.vrow{border-color:#26344c}.vrow.is-active{background:#1b2740}.vrow__label{color:#e5edf7}.vrow__stepper,.vrow__stepper .vqty,.vrow__stepper button{background:#1f2940;color:#dbe6f5;border-color:#33425e}.vrow__pick{background:#1f2940;border-color:#33425e}}
 @media (prefers-reduced-motion: reduce){#mainProductImg.vfade,.vgroup__price.vpulse>span,.vrow.is-active,.vrow__sum.vsumin{animation:none}}
+
+/* Live-cart remove state for the single-SKU add button */
+.product-actions .vgroup-add--remove{background:#fff;color:#dc2626;border:1.5px solid #fca5a5;box-shadow:none}
+.product-actions .vgroup-add--remove:hover{background:#fef2f2;color:#b91c1c}
+@media (prefers-color-scheme:dark){.product-actions .vgroup-add--remove{background:#2a1a1d;color:#fca5a5;border-color:#7f1d1d}}

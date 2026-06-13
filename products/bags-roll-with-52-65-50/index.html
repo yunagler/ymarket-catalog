@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="/css/style.min.css">
   <link rel="stylesheet" href="/css/site-header.css">
-  <link rel="stylesheet" href="/css/pages/product-detail.min.css?v=20260613b">
+  <link rel="stylesheet" href="/css/pages/product-detail.min.css?v=20260613c">
   <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "Product",
@@ -218,15 +218,15 @@
              <div class="vgroup__price"><span>‏15 ‏₪</span><span class="vgroup__pnote">ליחידה</span></div>
              <div class="vgroup__hint"><i class="fas fa-cubes"></i> בחרו כמות</div>
            </div>
-           <div class="vrow is-active">
+           <div class="vrow">
              <div class="vrow__pick"><picture><source srcset="/items/426-thumb.webp" type="image/webp"><img src="/items/426.jpg" alt="שקיות גליל עם שרוך 52*65 - 50 יח'" onerror="this.onerror=null;var s=this.parentElement.querySelector('source');if(s)s.remove();this.style.opacity=.2"></picture></div>
              <div class="vrow__meta"><span class="vrow__label">יחידה</span><span class="vrow__price">‏15 ‏₪</span></div>
              <div class="vrow__stepper">
                <button type="button" id="qtyDecrease" aria-label="הפחת">−</button>
-               <input type="number" class="vqty" id="qtyInput" value="1" min="1" inputmode="numeric" aria-label="כמות">
+               <input type="number" class="vqty" id="qtyInput" value="0" min="0" inputmode="numeric" aria-label="כמות">
                <button type="button" id="qtyIncrease" aria-label="הוסף">+</button>
              </div>
-             <div class="vrow__sum" id="lineTotal">‏15 ‏₪</div>
+             <div class="vrow__sum" id="lineTotal"></div>
            </div>
          </div>
          <button class="btn btn--primary btn--lg vgroup-add" id="addToCartBtn" data-id="410"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
@@ -440,7 +440,7 @@
   </footer>
 
   <a href="https://wa.me/972549922492?text=שלום, אשמח לקבל הצעת מחיר" class="whatsapp-float" target="_blank" rel="noopener" aria-label="שלחו הודעה בוואטסאפ"><i class="fab fa-whatsapp"></i><span class="whatsapp-float__tooltip">צריכים עזרה? דברו איתנו</span></a>
-  <script src="/js/main.min.js?v=20260310b"></script>
+  <script src="/js/main.min.js?v=20260613"></script>
   <script src="/js/analytics.js?v=20260314"></script>
   <script src="/js/search.js?v=20260613"></script>
   <script>
@@ -460,73 +460,55 @@
   <script>
   (function() {
     var PRODUCT = {"id":410,"name":"שקיות גליל עם שרוך 52*65 - 50 יח'","price":15,"unit":"","imageUrl":"/items/426.webp","slug":"שקיות-גליל-עם-שרוך-52-65-50-יח"};
-    // Quantity controls
+    // ===== Live cart: +/- modify the cart directly; button toggles add/remove =====
     var qtyInput = document.getElementById('qtyInput');
     var decBtn = document.getElementById('qtyDecrease');
     var incBtn = document.getElementById('qtyIncrease');
     var lineTotalEl = document.getElementById('lineTotal');
-    function fmtPrice(n){ return '‏' + (Math.round(n*100)/100).toLocaleString('he-IL') + ' ‏₪'; }
-    function updateLineTotal(){
-      if (!lineTotalEl) return;
-      var q = Math.max(1, parseInt(qtyInput && qtyInput.value) || 1);
-      lineTotalEl.textContent = fmtPrice(q * PRODUCT.price);
-      lineTotalEl.classList.remove('vsumin'); void lineTotalEl.offsetWidth; lineTotalEl.classList.add('vsumin');
-    }
-    if (decBtn) decBtn.addEventListener('click', function() {
-      if (qtyInput && parseInt(qtyInput.value) > 1) qtyInput.value = parseInt(qtyInput.value) - 1;
-      updateLineTotal();
-    });
-    if (incBtn) incBtn.addEventListener('click', function() {
-      if (qtyInput) qtyInput.value = parseInt(qtyInput.value) + 1;
-      updateLineTotal();
-    });
-    if (qtyInput) qtyInput.addEventListener('input', updateLineTotal);
-
-    // Add to cart
     var addBtn = document.getElementById('addToCartBtn');
-    if (addBtn) {
-      addBtn.dataset.id = PRODUCT.id;
-      addBtn.dataset.name = PRODUCT.name;
-      addBtn.dataset.price = PRODUCT.price;
-      addBtn.dataset.unit = PRODUCT.unit || '';
-      addBtn.dataset.img = PRODUCT.imageUrl;
-      addBtn.dataset.slug = PRODUCT.slug;
-
-      addBtn.addEventListener('click', function() {
-        var qty = parseInt(qtyInput ? qtyInput.value : 1);
-        var cart = JSON.parse(localStorage.getItem('ym_cart') || '[]');
-        var existing = null;
-        for (var i = 0; i < cart.length; i++) {
-          if (cart[i].id === PRODUCT.id) { existing = cart[i]; break; }
-        }
-        if (existing) {
-          existing.quantity += qty;
-        } else {
-          cart.push({
-            id: PRODUCT.id, name: PRODUCT.name, price: PRODUCT.price,
-            unit: PRODUCT.unit, imageUrl: PRODUCT.imageUrl, slug: PRODUCT.slug,
-            quantity: qty
-          });
-        }
-        localStorage.setItem('ym_cart', JSON.stringify(cart));
-        if (window.YMarket) {
-          window.YMarket.updateCartBadge();
-          window.YMarket.showToast('המוצר נוסף לעגלה');
-          window.YMarket.showCartQtyControls(addBtn);
-        }
-        if (window.YMarketAnalytics && window.YMarketAnalytics.fbAddToCart) {
-          window.YMarketAnalytics.fbAddToCart({ id: PRODUCT.id, name: PRODUCT.name, price: PRODUCT.price, quantity: qty });
-        }
-        if (window.YMarketAnalytics && window.YMarketAnalytics.trackAddToCart) {
-          window.YMarketAnalytics.trackAddToCart({ id: PRODUCT.id, name: PRODUCT.name, price: PRODUCT.price, quantity: qty });
-        }
-      });
-
-      // Show qty if already in cart
-      if (window.YMarket && window.YMarket.getCartQty(PRODUCT.id) > 0) {
-        window.YMarket.showCartQtyControls(addBtn);
+    var row = document.querySelector('.vrow');
+    function fmtPrice(n){ return '‏' + (Math.round(n*100)/100).toLocaleString('he-IL') + ' ‏₪'; }
+    function cartQty(){
+      var cart = JSON.parse(localStorage.getItem('ym_cart') || '[]');
+      for (var i=0;i<cart.length;i++){ if (cart[i].id === PRODUCT.id) return cart[i].quantity; }
+      return 0;
+    }
+    function setQty(q){
+      q = Math.max(0, Math.floor(q) || 0);
+      var cart = JSON.parse(localStorage.getItem('ym_cart') || '[]');
+      var idx = -1;
+      for (var i=0;i<cart.length;i++){ if (cart[i].id === PRODUCT.id) { idx = i; break; } }
+      if (q <= 0) { if (idx >= 0) cart.splice(idx,1); }
+      else if (idx >= 0) { cart[idx].quantity = q; }
+      else { cart.push({ id: PRODUCT.id, name: PRODUCT.name, price: PRODUCT.price, unit: PRODUCT.unit, imageUrl: PRODUCT.imageUrl, slug: PRODUCT.slug, quantity: q }); }
+      localStorage.setItem('ym_cart', JSON.stringify(cart));
+      if (window.YMarket && window.YMarket.updateCartBadge) window.YMarket.updateCartBadge();
+      if (q > 0 && window.YMarketAnalytics && window.YMarketAnalytics.trackAddToCart) window.YMarketAnalytics.trackAddToCart({ id: PRODUCT.id, name: PRODUCT.name, price: PRODUCT.price, quantity: q });
+      sync();
+    }
+    function sync(){
+      var q = cartQty();
+      if (qtyInput) qtyInput.value = q;
+      if (lineTotalEl) {
+        if (q > 0) { lineTotalEl.textContent = fmtPrice(q * PRODUCT.price); lineTotalEl.classList.remove('vsumin'); void lineTotalEl.offsetWidth; lineTotalEl.classList.add('vsumin'); }
+        else lineTotalEl.textContent = '';
+      }
+      if (row) row.classList.toggle('is-active', q > 0);
+      if (addBtn) {
+        if (q > 0) { addBtn.innerHTML = '<i class="fas fa-trash-alt"></i> הסר מהעגלה'; addBtn.classList.add('vgroup-add--remove'); }
+        else { addBtn.innerHTML = '<i class="fas fa-cart-plus"></i> הוסף לעגלה'; addBtn.classList.remove('vgroup-add--remove'); }
       }
     }
+    if (decBtn) decBtn.addEventListener('click', function(){ setQty(cartQty() - 1); });
+    if (incBtn) incBtn.addEventListener('click', function(){ var was = cartQty(); setQty(was + 1); if (was === 0 && window.YMarket && window.YMarket.showToast) window.YMarket.showToast('המוצר נוסף לעגלה'); });
+    if (qtyInput) qtyInput.addEventListener('change', function(){ setQty(parseInt(this.value) || 0); });
+    if (addBtn) addBtn.addEventListener('click', function(){
+      if (cartQty() > 0) { setQty(0); if (window.YMarket && window.YMarket.showToast) window.YMarket.showToast('הוסר מהעגלה'); }
+      else { setQty(1); if (window.YMarket && window.YMarket.showToast) window.YMarket.showToast('המוצר נוסף לעגלה'); }
+    });
+    // Keep in sync if cart changes in another tab
+    window.addEventListener('storage', function(e){ if (e.key === 'ym_cart') sync(); });
+    sync();
   })();
   </script>
 </body>

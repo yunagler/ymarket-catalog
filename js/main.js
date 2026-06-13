@@ -376,7 +376,7 @@ function initCartButton() {
 
 /* ---- Cart Badge ---- */
 function updateCartBadge() {
-  const badge = document.querySelector('.cart-count');
+  const badge = document.querySelector('.cart-count, .cart-badge');
   if (!badge) return;
 
   const cart = JSON.parse(localStorage.getItem('ym_cart') || '[]');
