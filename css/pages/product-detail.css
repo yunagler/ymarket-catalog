@@ -750,7 +750,7 @@
 .vrow:last-child{border-bottom:none}
 .vrow.is-active{background:#f0f6ff}
 .vrow__pick{flex:0 0 auto;width:52px;height:52px;border:1px solid #e5e7eb;border-radius:10px;background:#fff;padding:3px;cursor:pointer;overflow:hidden;transition:border-color .15s,box-shadow .15s}
-.vrow.is-active .vrow__pick{border-color:#1B3A5C;box-shadow:0 0 0 2px rgba(27,58,92,.15)}
+.vrow.is-hero .vrow__pick{border-color:#1B3A5C;box-shadow:0 0 0 2px rgba(27,58,92,.15)}
 .vrow__pick img{width:100%;height:100%;object-fit:contain;display:block}
 .vrow__meta{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px;text-align:right}
 .vrow__label{font-weight:700;font-size:1.05rem;color:#1f2937}
