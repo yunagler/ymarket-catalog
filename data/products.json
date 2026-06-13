@@ -40922,7 +40922,7 @@
           }
         ]
       },
-      "variantGroupId": null,
+      "variantGroupId": 39,
       "variantLabel": null,
       "variantSortOrder": 0
     },
@@ -50244,6 +50244,6 @@
       "seoSlug": "binder-5-black"
     }
   ],
-  "exportedAt": "2026-06-13T18:43:29.743Z",
+  "exportedAt": "2026-06-13T18:47:12.045Z",
   "totalItems": 832
 }
