@@ -1586,7 +1586,7 @@
       "icon": "fa-box",
       "parentId": 5,
       "sortOrder": 2,
-      "itemCount": 16,
+      "itemCount": 17,
       "metaTitle": "מיכלים לסלט ומנות – אריזות מזון ו-Take Away בסיטונאות | ו...",
       "metaDescription": "מיכלים לסלט ומנות במחירי סיטונאות ישירות מהמפיץ. 17 פריטים באיכות מוסדית. אספקה 24-72 שעות. מינימום 1,600₪. וואי מרקט.",
       "seoSlug": "salad-containers-meal-packaging",
@@ -23764,13 +23764,14 @@
       "categorySlug": "אריזות-מזון-ו-Take-Away",
       "categoryName": "אריזות מזון ו-Take Away",
       "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away"
+        "אריזות-מזון-ו-Take-Away",
+        "מיכלים"
       ],
       "unit": "",
       "unitsPerPack": 250,
       "imageUrl": "/items/1156.jpg",
       "isFeatured": false,
-      "productStatus": "new",
+      "productStatus": "active",
       "description": "מיכל אינטגרלי מהודר 50 - א' 200 יח'",
       "partNumber": "",
       "barcode": "",
@@ -50394,6 +50395,6 @@
       "seoSlug": "garbage-bag-black-25kg"
     }
   ],
-  "exportedAt": "2026-06-14T07:59:15.919Z",
+  "exportedAt": "2026-06-14T08:01:19.385Z",
   "totalItems": 833
 }
