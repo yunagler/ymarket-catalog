@@ -2670,7 +2670,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 5,
-      "itemCount": 193,
+      "itemCount": 195,
       "metaTitle": "אריזות מזון ו-Take Away בסיטונאות למוסדות ועסקים | וואי מרקט",
       "metaDescription": "אריזות מזון ו-Take Away במחירי סיטונאות ישירות מהמפיץ. 193 פריטים באיכות מוסדית. אספקה 24-72 שעות. מינימום 1,600₪. וואי מרקט.",
       "seoSlug": "food-packaging-delivery-solutions",
@@ -11670,6 +11670,48 @@
             "answer": "מינימום הזמנה באתר: 1,600 ₪ + מע\"מ (לפני משלוח). ניתן לשלב מוצרים מכל הקטגוריות כדי להגיע למינימום."
           }
         ]
+      },
+      "variantGroupId": null,
+      "variantLabel": null,
+      "variantSortOrder": 0
+    },
+    {
+      "id": 170909,
+      "name": "כוס טוליפ 500 מ\"ל - א' 1000 יח'",
+      "slug": "כוס-טוליפ-500-מ-ל-א-1000-יח",
+      "saleNis": 255,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
+      "categorySlugs": [
+        "אריזות-מזון-ו-Take-Away"
+      ],
+      "unit": "",
+      "unitsPerPack": 1000,
+      "imageUrl": "/items/1153.jpg",
+      "isFeatured": false,
+      "productStatus": "new",
+      "description": "כוס טוליפ 500 מ\"ל - א' 1000",
+      "partNumber": "",
+      "barcode": "",
+      "searchTags": "",
+      "technicalDesc": "",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": [],
+      "seoSlug": null,
+      "seo": {
+        "title": null,
+        "metaDesc": null,
+        "imageAltText": null,
+        "geoContent": null,
+        "gtin": null,
+        "mpn": null,
+        "isB2BBulk": false,
+        "faqs": []
       },
       "variantGroupId": null,
       "variantLabel": null,
@@ -24658,6 +24700,48 @@
       "variantSortOrder": 0
     },
     {
+      "id": 170910,
+      "name": "מכסה כיפה לכוס טוליפ 500/680 -א' 1000 יח'",
+      "slug": "מכסה-כיפה-לכוס-טוליפ-500-680-א-1000-יח",
+      "saleNis": 110,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
+      "categorySlugs": [
+        "אריזות-מזון-ו-Take-Away"
+      ],
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/1155.jpg",
+      "isFeatured": false,
+      "productStatus": "new",
+      "description": "מכסה כיפה לכוס טוליפ 500/680 -א' 1000 יח'",
+      "partNumber": "",
+      "barcode": "",
+      "searchTags": "",
+      "technicalDesc": "",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": [],
+      "seoSlug": null,
+      "seo": {
+        "title": null,
+        "metaDesc": null,
+        "imageAltText": null,
+        "geoContent": null,
+        "gtin": null,
+        "mpn": null,
+        "isB2BBulk": false,
+        "faqs": []
+      },
+      "variantGroupId": null,
+      "variantLabel": null,
+      "variantSortOrder": 0
+    },
+    {
       "id": 643,
       "name": "מכסה לגביע קראפט - 450 מ\"ל",
       "slug": "מכסה-לגביע-קראפט-450-מ-ל",
@@ -24994,62 +25078,6 @@
       "variantSortOrder": 3
     },
     {
-      "id": 640,
-      "name": "מכסה לקראפט - 1300 מ\"ל",
-      "slug": "מכסה-לקראפט-1300-מ-ל",
-      "saleNis": 0.43,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "אריזות-מזון-ו-Take-Away",
-      "categoryName": "אריזות מזון ו-Take Away",
-      "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away",
-        "קראפטים"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/656.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "אריזות מזון מקצועי — אטימות מלאה",
-      "partNumber": "",
-      "barcode": "",
-      "searchTags": "אריזות, טייק אווי, קופסאות מזון, משלוחים, מיכלים, אריזת מזון, מכסה, לקראפט, מ\"ל, סיטונאי, לעסקים, מוסדי",
-      "technicalDesc": "[{\"label\":\"סוג מוצר\",\"value\":\"אריזת מזון\"},{\"label\":\"בטיחות מזון\",\"value\":\"מאושר למגע מזון\"},{\"label\":\"אספקה\",\"value\":\"1-3 ימי עסקים\"}]",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": [],
-      "seoSlug": "1300",
-      "seo": {
-        "title": "מכסה לקראפט - 1300 מ\"ל | אריזות מזון בסיטונאות",
-        "metaDesc": "מכסה לקראפט - 1300 מ\"ל | אריזות מזון לעסקים ומוסדות. משלוח מהיר, מחירי סיטונאות. הזמינו אונליין ב-YMARKET.",
-        "imageAltText": "מכסה לקראפט - 1300 מ\"ל - אריזות מזון לעסקים | וואי מרקט",
-        "geoContent": "<h3>מידע מקצועי על מכסה לקראפט - 1300 מ\"ל</h3>\n<p>מכסה לקראפט - 1300 מ\"ל — אריזת מזון מקצועית למסעדות, שירותי משלוחים וקייטרינג. מתוכננת לשמירה על טריות המזון ועמידות בתנאי משלוח.</p>\n<p><strong>יתרונות:</strong> אטימות מלאה, עמידות בחום/קור, מאושרת למגע מזון. אידאלית למשלוחי מזון ול-Take Away.</p>\n<p><strong>טיפ:</strong> בחירת האריזה הנכונה משפיעה על חוויית הלקוח. <a href=\"https://wa.me/972549922492\">צרו קשר</a> לייעוץ בבחירת אריזות למסעדה שלכם.</p>",
-        "gtin": null,
-        "mpn": null,
-        "isB2BBulk": false,
-        "faqs": [
-          {
-            "question": "האם מכסה לקראפט - 1300 מ\"ל אטום לנוזלים?",
-            "answer": "מרבית אריזות המזון שלנו מיועדות לאטימות. בדקו את פרטי המוצר לאישור התאמה לנוזלים חמים."
-          },
-          {
-            "question": "האם מכסה לקראפט - 1300 מ\"ל מתאים להקפאה?",
-            "answer": "חלק מהאריזות מתאימות להקפאה. עיינו בפרטי המוצר או צרו קשר לייעוץ."
-          },
-          {
-            "question": "מה מינימום ההזמנה של מכסה לקראפט - 1300 מ\"ל?",
-            "answer": "מינימום הזמנה באתר: 1,600 ₪ + מע\"מ (לפני משלוח). ניתן לשלב מוצרים מכל הקטגוריות כדי להגיע למינימום."
-          }
-        ]
-      },
-      "variantGroupId": 55,
-      "variantLabel": "1300",
-      "variantSortOrder": 4
-    },
-    {
       "id": 905,
       "name": "מכסה לקראפט - 1300 מ\"ל",
       "slug": "מכסה-לקראפט-1300-מ-ל-2",
@@ -25104,6 +25132,62 @@
       "variantGroupId": null,
       "variantLabel": null,
       "variantSortOrder": 0
+    },
+    {
+      "id": 640,
+      "name": "מכסה לקראפט - 1300 מ\"ל",
+      "slug": "מכסה-לקראפט-1300-מ-ל",
+      "saleNis": 0.43,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
+      "categorySlugs": [
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
+      ],
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/656.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "אריזות מזון מקצועי — אטימות מלאה",
+      "partNumber": "",
+      "barcode": "",
+      "searchTags": "אריזות, טייק אווי, קופסאות מזון, משלוחים, מיכלים, אריזת מזון, מכסה, לקראפט, מ\"ל, סיטונאי, לעסקים, מוסדי",
+      "technicalDesc": "[{\"label\":\"סוג מוצר\",\"value\":\"אריזת מזון\"},{\"label\":\"בטיחות מזון\",\"value\":\"מאושר למגע מזון\"},{\"label\":\"אספקה\",\"value\":\"1-3 ימי עסקים\"}]",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": [],
+      "seoSlug": "1300",
+      "seo": {
+        "title": "מכסה לקראפט - 1300 מ\"ל | אריזות מזון בסיטונאות",
+        "metaDesc": "מכסה לקראפט - 1300 מ\"ל | אריזות מזון לעסקים ומוסדות. משלוח מהיר, מחירי סיטונאות. הזמינו אונליין ב-YMARKET.",
+        "imageAltText": "מכסה לקראפט - 1300 מ\"ל - אריזות מזון לעסקים | וואי מרקט",
+        "geoContent": "<h3>מידע מקצועי על מכסה לקראפט - 1300 מ\"ל</h3>\n<p>מכסה לקראפט - 1300 מ\"ל — אריזת מזון מקצועית למסעדות, שירותי משלוחים וקייטרינג. מתוכננת לשמירה על טריות המזון ועמידות בתנאי משלוח.</p>\n<p><strong>יתרונות:</strong> אטימות מלאה, עמידות בחום/קור, מאושרת למגע מזון. אידאלית למשלוחי מזון ול-Take Away.</p>\n<p><strong>טיפ:</strong> בחירת האריזה הנכונה משפיעה על חוויית הלקוח. <a href=\"https://wa.me/972549922492\">צרו קשר</a> לייעוץ בבחירת אריזות למסעדה שלכם.</p>",
+        "gtin": null,
+        "mpn": null,
+        "isB2BBulk": false,
+        "faqs": [
+          {
+            "question": "האם מכסה לקראפט - 1300 מ\"ל אטום לנוזלים?",
+            "answer": "מרבית אריזות המזון שלנו מיועדות לאטימות. בדקו את פרטי המוצר לאישור התאמה לנוזלים חמים."
+          },
+          {
+            "question": "האם מכסה לקראפט - 1300 מ\"ל מתאים להקפאה?",
+            "answer": "חלק מהאריזות מתאימות להקפאה. עיינו בפרטי המוצר או צרו קשר לייעוץ."
+          },
+          {
+            "question": "מה מינימום ההזמנה של מכסה לקראפט - 1300 מ\"ל?",
+            "answer": "מינימום הזמנה באתר: 1,600 ₪ + מע\"מ (לפני משלוח). ניתן לשלב מוצרים מכל הקטגוריות כדי להגיע למינימום."
+          }
+        ]
+      },
+      "variantGroupId": 55,
+      "variantLabel": "1300",
+      "variantSortOrder": 4
     },
     {
       "id": 642,
@@ -50395,6 +50479,6 @@
       "seoSlug": "garbage-bag-black-25kg"
     }
   ],
-  "exportedAt": "2026-06-14T08:01:47.322Z",
-  "totalItems": 833
+  "exportedAt": "2026-06-14T08:30:09.857Z",
+  "totalItems": 835
 }
