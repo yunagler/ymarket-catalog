@@ -327,7 +327,7 @@ function generateProductPage(product, categories, allProducts, group) {
     "url": productUrl,
     "brand": { "@type": "Brand", "name": "וואי מרקט" },
     "category": categoryName,
-    ...(product.partNumber ? { "sku": product.partNumber } : {}),
+    "sku": product.partNumber || String(product.id),
     ...(seo.gtin ? { "gtin": seo.gtin } : {}),
     ...(seo.mpn ? { "mpn": seo.mpn } : {}),
     // NOTE: aggregateRating/review are ONLY emitted when real review data exists
@@ -348,6 +348,7 @@ function generateProductPage(product, categories, allProducts, group) {
         "price": product.saleNis,
         "priceCurrency": "ILS",
         "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition",
         "priceValidUntil": priceValidUntil,
         "url": productUrl,
         "areaServed": { "@type": "Country", "name": "ישראל" },
@@ -414,6 +415,7 @@ function generateProductPage(product, categories, allProducts, group) {
           "price": v.price,
           "priceCurrency": "ILS",
           "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
           "priceValidUntil": priceValidUntil,
           "url": productUrl
         }
