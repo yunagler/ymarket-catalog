@@ -445,6 +445,14 @@ function generateProductPage(product, categories, allProducts, group) {
   <meta property="og:site_name" content="וואי מרקט">
   <meta property="og:image:width" content="600">
   <meta property="og:image:height" content="600">
+  <meta property="og:price:amount" content="${product.saleNis || ''}">
+  <meta property="og:price:currency" content="ILS">
+  <meta property="product:price:amount" content="${product.saleNis || ''}">
+  <meta property="product:price:currency" content="ILS">
+  <meta property="product:availability" content="in stock">
+  <meta property="product:condition" content="new">
+  <meta property="product:retailer_item_id" content="${product.partNumber || product.id}">
+  <meta property="product:brand" content="וואי מרקט">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${pageTitle}">
   <meta name="twitter:description" content="${ogDesc}">
