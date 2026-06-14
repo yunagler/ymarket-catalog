@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="/css/style.min.css">
   <link rel="stylesheet" href="/css/site-header.css">
-  <link rel="stylesheet" href="/css/pages/product-detail.min.css?v=20260613d">
+  <link rel="stylesheet" href="/css/pages/product-detail.min.css?v=20260614a">
   <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "ProductGroup",
@@ -122,7 +122,6 @@
 </head>
 <body>
   <!-- ═══ ANNOUNCEMENT ═══ -->
-<!-- ═══ ANNOUNCEMENT ═══ -->
   <div class="announcement">
     <a href="/register">
       <i class="fas fa-crown"></i>
@@ -451,7 +450,7 @@
     </div>
   </section>
 
-    <footer class="footer">
+  <footer class="footer">
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
@@ -473,10 +472,6 @@
             <a href="/category/food-packaging-delivery-solutions/">אריזות Take Away</a>
             <a href="/category/office-coffee-breakroom-supplies/">קפה, שתייה וכיבוד</a>
             <a href="/category/safety-ppe-equipment-for-business/">בטיחות ומיגון</a>
-            <a href="/category/heavy-duty-garbage-bags-wholesale/">שקיות אשפה</a>
-            <a href="/category/professional-cleaning-cloths-microfiber/">טקסטיל ומטליות</a>
-            <a href="/category/office-supplies-wholesale-business/">ציוד משרדי</a>
-            <a href="/category/maintenance-technical-equipment-wholesale/">ציוד טכני</a>
           </div>
         </div>
 
@@ -542,6 +537,30 @@
     // GA4 - view_item
     if (window.YMarketAnalytics && window.YMarketAnalytics.trackViewItem) {
       window.YMarketAnalytics.trackViewItem(PRODUCT);
+    }
+
+    // Click-to-zoom lightbox for the main product image (all product pages)
+    var lbMain = document.getElementById('mainProductImg');
+    var lb = document.getElementById('imgLightbox');
+    if (lbMain && lb) {
+      var lbImg = lb.querySelector('.img-lightbox__img');
+      var lbClose = lb.querySelector('.img-lightbox__close');
+      var openLb = function() {
+        lbImg.src = lbMain.currentSrc || lbMain.src;
+        lbImg.alt = lbMain.alt || '';
+        lb.classList.add('is-open');
+        lb.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      };
+      var closeLb = function() {
+        lb.classList.remove('is-open');
+        lb.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      };
+      lbMain.addEventListener('click', openLb);
+      lbClose.addEventListener('click', closeLb);
+      lb.addEventListener('click', function(e) { if (e.target === lb) closeLb(); });
+      document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && lb.classList.contains('is-open')) closeLb(); });
     }
   })();
   </script>
@@ -625,5 +644,9 @@
     sync();
   })();
   </script>
+  <div id="imgLightbox" class="img-lightbox" aria-hidden="true">
+    <button class="img-lightbox__close" type="button" aria-label="סגור">&times;</button>
+    <img class="img-lightbox__img" src="" alt="">
+  </div>
 </body>
 </html>

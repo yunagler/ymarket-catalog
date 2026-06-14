@@ -50274,346 +50274,403 @@
   ],
   "variantGroups": [
     {
-      "id": 25,
-      "name": "פח שובך 50 ליטר מרובע",
-      "axis": "צבע",
-      "seoSlug": "nesting-bin-50l-square"
-    },
-    {
-      "id": 45,
-      "name": "גביע PP - א 2000 יח",
-      "axis": "גודל",
-      "seoSlug": "pp-cup-clear-2000"
-    },
-    {
-      "id": 43,
-      "name": "גביע רוטב מחובר CC א 1000 יח",
-      "axis": "נפח",
-      "seoSlug": "sauce-cup-attached"
-    },
-    {
-      "id": 26,
-      "name": "גביע רוטוב 2OZ ארוז 2500",
-      "axis": "צבע",
-      "seoSlug": "sauce-cup-2oz-2500"
-    },
-    {
-      "id": 57,
-      "name": "דאודורנט רול NIVEA 50 מ\"ל",
-      "axis": "סוג",
-      "seoSlug": "nivea-roll-deodorant-50ml"
-    },
-    {
-      "id": 4,
-      "name": "ווניל שקוף/לבן (IT-TAI) - (100 יח) - ללא אבקה",
+      "id": 1,
+      "name": "כפפות ניטריל שחור (פרומקס)",
       "axis": "מידה",
-      "seoSlug": "vinyl-transparent-white-it-tai-size-s-100-without-powder"
-    },
-    {
-      "id": 17,
-      "name": "טוש 90 פרמננט ליין פלוס (12)",
-      "axis": "צבע",
-      "seoSlug": "permanent-marker-90"
-    },
-    {
-      "id": 5,
-      "name": "לטקס ללא אבקה (Perfect) - (100 יח)",
-      "axis": "מידה",
-      "seoSlug": "latex-without-powder-perfect-size-s-100"
-    },
-    {
-      "id": 6,
-      "name": "לטקס עם אבקה (Perfect) - (100 יח)",
-      "axis": "מידה",
-      "seoSlug": "latex-with-powder-perfect-size-s-100"
-    },
-    {
-      "id": 27,
-      "name": "מגבון אישי חלק 1000 יחידות",
-      "axis": "צבע",
-      "seoSlug": "personal-wipes-smooth-1000"
-    },
-    {
-      "id": 28,
-      "name": "מגש פלסטיק (מחוזק) - כרעיים 500 יח'",
-      "axis": "צבע",
-      "seoSlug": "tray-plastic-black-500"
-    },
-    {
-      "id": 9,
-      "name": "מגש קלקר סופג - כרעיים 500 יח'",
-      "axis": "צבע",
-      "seoSlug": "tray-cardboard-white-500-898"
-    },
-    {
-      "id": 10,
-      "name": "מגש קלקר סופג - צלעות 480 יח'",
-      "axis": "צבע",
-      "seoSlug": "tray-cardboard-white-480"
-    },
-    {
-      "id": 14,
-      "name": "מגש קלקר סופג - שניצל 500 יח'",
-      "axis": "צבע",
-      "seoSlug": "tray-cardboard-white-500"
-    },
-    {
-      "id": 29,
-      "name": "מגש קלקר סופג - דגים צר 400 יח'",
-      "axis": "צבע",
-      "seoSlug": "tray-cardboard-black-400"
-    },
-    {
-      "id": 18,
-      "name": "מגש קלקר סופג - כרעיים 600 יח'",
-      "axis": "צבע",
-      "seoSlug": "tray-cardboard-white-600-1012"
-    },
-    {
-      "id": 30,
-      "name": "מגש קלקר סופג - קבב 300 יח'",
-      "axis": "צבע",
-      "seoSlug": "tray-cardboard-white-300"
-    },
-    {
-      "id": 11,
-      "name": "מגש קלקר רגיל - כרעיים 600 יח'",
-      "axis": "צבע",
-      "seoSlug": "tray-cardboard-white-600"
-    },
-    {
-      "id": 12,
-      "name": "מגש קלקר רגיל - צלעות 480 יח'",
-      "axis": "צבע",
-      "seoSlug": "tray-cardboard-white-480-997"
-    },
-    {
-      "id": 15,
-      "name": "מגש קלקר רגיל - קבב 300 יח'",
-      "axis": "צבע",
-      "seoSlug": "tray-cardboard-white-300-979"
-    },
-    {
-      "id": 19,
-      "name": "מגש קלקר רגיל - שניצל 500 יח'",
-      "axis": "צבע",
-      "seoSlug": "tray-cardboard-white-500-758"
-    },
-    {
-      "id": 41,
-      "name": "מדבקות 32 דף לבן",
-      "axis": "מידה",
-      "seoSlug": "label-stickers-32sheet"
-    },
-    {
-      "id": 20,
-      "name": "מזלג ארוז 50 יח' בחבילה",
-      "axis": "צבע",
-      "seoSlug": "fork-black-50-pack"
-    },
-    {
-      "id": 54,
-      "name": "מיכל ליטר + מכסה",
-      "axis": "נפח",
-      "seoSlug": "liter-container-lid"
-    },
-    {
-      "id": 46,
-      "name": "מיכל טינטגרלי מהודר הדר - 400 יח",
-      "axis": "גודל",
-      "seoSlug": "hadar-container"
-    },
-    {
-      "id": 55,
-      "name": "מכסה לקראפט",
-      "axis": "נפח",
-      "seoSlug": "kraft-lid"
-    },
-    {
-      "id": 31,
-      "name": "מכסה שטוח לכוס 95 א' 1000 יח'",
-      "axis": "צבע",
-      "seoSlug": "flat-lid-cup-95"
-    },
-    {
-      "id": 13,
-      "name": "מסכה כירוגית (3 שכבות) - 50 יח'",
-      "axis": "צבע",
-      "seoSlug": "mask-surgical-3-white-50"
-    },
-    {
-      "id": 47,
-      "name": "מסקנטייפ סמ רוחב 25 מטר",
-      "axis": "גודל",
-      "seoSlug": "masking-tape-roll"
-    },
-    {
-      "id": 7,
-      "name": "מעיל גשם ארוך P.V.C בצבע צהוב",
-      "axis": "מידה",
-      "seoSlug": "p-v-c-yellow-l"
-    },
-    {
-      "id": 48,
-      "name": "מפיות 1/8 ארוז 2400 יח",
-      "axis": "מידה",
-      "seoSlug": "napkins-1-8-23-33-2400"
-    },
-    {
-      "id": 21,
-      "name": "מרקר מדגיש",
-      "axis": "צבע",
-      "seoSlug": "highlighter-markers"
-    },
-    {
-      "id": 8,
-      "name": "נטריל ורוד ללא אבקה - א' 100 יח'",
-      "axis": "מידה",
-      "seoSlug": "nitrile-pink-without-powder-size-s-100"
-    },
-    {
-      "id": 3,
-      "name": "נטריל כחול (Perfect) - (100 יח) - ללא אבקה",
-      "axis": "מידה",
-      "seoSlug": "nitrile-blue-perfect-size-xs-100-without-powder"
+      "seoSlug": "nitrile-black-gloves",
+      "groupImageUrl": null
     },
     {
       "id": 2,
       "name": "נטריל שחור Perfect",
       "axis": "מידה",
-      "seoSlug": "nitrile-black-perfect-size-s-100-without-powder"
+      "seoSlug": "nitrile-black-perfect-size-s-100-without-powder",
+      "groupImageUrl": null
     },
     {
-      "id": 1,
-      "name": "כפפות ניטריל שחור (פרומקס)",
+      "id": 3,
+      "name": "נטריל כחול (Perfect) - (100 יח) - ללא אבקה",
       "axis": "מידה",
-      "seoSlug": "nitrile-black-gloves"
+      "seoSlug": "nitrile-blue-perfect-size-xs-100-without-powder",
+      "groupImageUrl": null
     },
     {
-      "id": 49,
-      "name": "נייר אפיה ארוז 1/1000",
+      "id": 4,
+      "name": "ווניל שקוף/לבן (IT-TAI) - (100 יח) - ללא אבקה",
       "axis": "מידה",
-      "seoSlug": "baking-paper-sheets"
+      "seoSlug": "vinyl-transparent-white-it-tai-size-s-100-without-powder",
+      "groupImageUrl": null
     },
     {
-      "id": 50,
-      "name": "נייר טרמי לקופה",
+      "id": 5,
+      "name": "לטקס ללא אבקה (Perfect) - (100 יח)",
       "axis": "מידה",
-      "seoSlug": "thermal-paper-roll"
+      "seoSlug": "latex-without-powder-perfect-size-s-100",
+      "groupImageUrl": null
     },
     {
-      "id": 32,
-      "name": "נייר פרגמנט מודפס 45*35 ארוז 4 ק\"ג",
+      "id": 6,
+      "name": "לטקס עם אבקה (Perfect) - (100 יח)",
+      "axis": "מידה",
+      "seoSlug": "latex-with-powder-perfect-size-s-100",
+      "groupImageUrl": null
+    },
+    {
+      "id": 7,
+      "name": "מעיל גשם ארוך P.V.C בצבע צהוב",
+      "axis": "מידה",
+      "seoSlug": "p-v-c-yellow-l",
+      "groupImageUrl": null
+    },
+    {
+      "id": 8,
+      "name": "נטריל ורוד ללא אבקה - א' 100 יח'",
+      "axis": "מידה",
+      "seoSlug": "nitrile-pink-without-powder-size-s-100",
+      "groupImageUrl": null
+    },
+    {
+      "id": 9,
+      "name": "מגש קלקר סופג - כרעיים 500 יח'",
       "axis": "צבע",
-      "seoSlug": "paper-white-45-35-4"
+      "seoSlug": "tray-cardboard-white-500-898",
+      "groupImageUrl": null
     },
     {
-      "id": 44,
-      "name": "נרות נשמה שעות",
-      "axis": "גודל",
-      "seoSlug": "memorial-candles"
-    },
-    {
-      "id": 33,
-      "name": "ספירל 8 מ\"מ 100 יח' עד 40 דף",
+      "id": 10,
+      "name": "מגש קלקר סופג - צלעות 480 יח'",
       "axis": "צבע",
-      "seoSlug": "spiral-coil-binding-8mm"
+      "seoSlug": "tray-cardboard-white-480",
+      "groupImageUrl": null
     },
     {
-      "id": 34,
-      "name": "ספריי יסוד",
+      "id": 11,
+      "name": "מגש קלקר רגיל - כרעיים 600 יח'",
       "axis": "צבע",
-      "seoSlug": "primer-spray-paint"
+      "seoSlug": "tray-cardboard-white-600",
+      "groupImageUrl": null
     },
     {
-      "id": 35,
-      "name": "ספריי מבריק",
+      "id": 12,
+      "name": "מגש קלקר רגיל - צלעות 480 יח'",
       "axis": "צבע",
-      "seoSlug": "gloss-spray-paint"
+      "seoSlug": "tray-cardboard-white-480-997",
+      "groupImageUrl": null
     },
     {
-      "id": 36,
-      "name": "עט + פקק קוברה",
+      "id": 13,
+      "name": "מסכה כירוגית (3 שכבות) - 50 יח'",
       "axis": "צבע",
-      "seoSlug": "cobra-ballpoint-pen"
+      "seoSlug": "mask-surgical-3-white-50",
+      "groupImageUrl": "/items/group-13.jpg"
     },
     {
-      "id": 22,
-      "name": "עט מחט 0.5 COBRA דגם 505 (12)",
+      "id": 14,
+      "name": "מגש קלקר סופג - שניצל 500 יח'",
       "axis": "צבע",
-      "seoSlug": "pen-0-5-black-cobra-505-12"
+      "seoSlug": "tray-cardboard-white-500",
+      "groupImageUrl": null
     },
     {
-      "id": 23,
-      "name": "עט מחט 0.7 COBRA דגם 507 (12)",
+      "id": 15,
+      "name": "מגש קלקר רגיל - קבב 300 יח'",
       "axis": "צבע",
-      "seoSlug": "pen-0-7-black-cobra-507-12"
-    },
-    {
-      "id": 39,
-      "name": "פרינגלס 149-158 גרם",
-      "axis": "טעם",
-      "seoSlug": "pringels"
+      "seoSlug": "tray-cardboard-white-300-979",
+      "groupImageUrl": null
     },
     {
       "id": 16,
       "name": "צלחת P.P. גדולה 9 Happy ארוז 100 יח'",
       "axis": "צבע",
-      "seoSlug": "plate-p-p-large-9-white-happy-100"
+      "seoSlug": "plate-p-p-large-9-white-happy-100",
+      "groupImageUrl": null
     },
     {
-      "id": 37,
-      "name": "צלחת P.P. קטנה 7 Happy ארוז 100 יח'",
+      "id": 17,
+      "name": "טוש 90 פרמננט ליין פלוס (12)",
       "axis": "צבע",
-      "seoSlug": "plate-p-p-7-white-happy-100"
+      "seoSlug": "permanent-marker-90",
+      "groupImageUrl": null
     },
     {
-      "id": 51,
-      "name": "צלחת לבן PS מידה - 50 יח",
-      "axis": "גודל",
-      "seoSlug": "plate-white-ps-size-7-50"
+      "id": 18,
+      "name": "מגש קלקר סופג - כרעיים 600 יח'",
+      "axis": "צבע",
+      "seoSlug": "tray-cardboard-white-600-1012",
+      "groupImageUrl": null
+    },
+    {
+      "id": 19,
+      "name": "מגש קלקר רגיל - שניצל 500 יח'",
+      "axis": "צבע",
+      "seoSlug": "tray-cardboard-white-500-758",
+      "groupImageUrl": null
+    },
+    {
+      "id": 20,
+      "name": "מזלג ארוז 50 יח' בחבילה",
+      "axis": "צבע",
+      "seoSlug": "fork-black-50-pack",
+      "groupImageUrl": null
+    },
+    {
+      "id": 21,
+      "name": "מרקר מדגיש",
+      "axis": "צבע",
+      "seoSlug": "highlighter-markers",
+      "groupImageUrl": null
+    },
+    {
+      "id": 22,
+      "name": "עט מחט 0.5 COBRA דגם 505 (12)",
+      "axis": "צבע",
+      "seoSlug": "pen-0-5-black-cobra-505-12",
+      "groupImageUrl": null
+    },
+    {
+      "id": 23,
+      "name": "עט מחט 0.7 COBRA דגם 507 (12)",
+      "axis": "צבע",
+      "seoSlug": "pen-0-7-black-cobra-507-12",
+      "groupImageUrl": null
     },
     {
       "id": 24,
       "name": "קלסר 8 וני",
       "axis": "צבע",
-      "seoSlug": "binder-8-black"
+      "seoSlug": "binder-8-black",
+      "groupImageUrl": null
+    },
+    {
+      "id": 25,
+      "name": "פח שובך 50 ליטר מרובע",
+      "axis": "צבע",
+      "seoSlug": "nesting-bin-50l-square",
+      "groupImageUrl": null
+    },
+    {
+      "id": 26,
+      "name": "גביע רוטוב 2OZ ארוז 2500",
+      "axis": "צבע",
+      "seoSlug": "sauce-cup-2oz-2500",
+      "groupImageUrl": null
+    },
+    {
+      "id": 27,
+      "name": "מגבון אישי חלק 1000 יחידות",
+      "axis": "צבע",
+      "seoSlug": "personal-wipes-smooth-1000",
+      "groupImageUrl": null
+    },
+    {
+      "id": 28,
+      "name": "מגש פלסטיק (מחוזק) - כרעיים 500 יח'",
+      "axis": "צבע",
+      "seoSlug": "tray-plastic-black-500",
+      "groupImageUrl": null
+    },
+    {
+      "id": 29,
+      "name": "מגש קלקר סופג - דגים צר 400 יח'",
+      "axis": "צבע",
+      "seoSlug": "tray-cardboard-black-400",
+      "groupImageUrl": null
+    },
+    {
+      "id": 30,
+      "name": "מגש קלקר סופג - קבב 300 יח'",
+      "axis": "צבע",
+      "seoSlug": "tray-cardboard-white-300",
+      "groupImageUrl": null
+    },
+    {
+      "id": 31,
+      "name": "מכסה שטוח לכוס 95 א' 1000 יח'",
+      "axis": "צבע",
+      "seoSlug": "flat-lid-cup-95",
+      "groupImageUrl": null
+    },
+    {
+      "id": 32,
+      "name": "נייר פרגמנט מודפס 45*35 ארוז 4 ק\"ג",
+      "axis": "צבע",
+      "seoSlug": "paper-white-45-35-4",
+      "groupImageUrl": null
+    },
+    {
+      "id": 33,
+      "name": "ספירל 8 מ\"מ 100 יח' עד 40 דף",
+      "axis": "צבע",
+      "seoSlug": "spiral-coil-binding-8mm",
+      "groupImageUrl": null
+    },
+    {
+      "id": 34,
+      "name": "ספריי יסוד",
+      "axis": "צבע",
+      "seoSlug": "primer-spray-paint",
+      "groupImageUrl": null
+    },
+    {
+      "id": 35,
+      "name": "ספריי מבריק",
+      "axis": "צבע",
+      "seoSlug": "gloss-spray-paint",
+      "groupImageUrl": null
+    },
+    {
+      "id": 36,
+      "name": "עט + פקק קוברה",
+      "axis": "צבע",
+      "seoSlug": "cobra-ballpoint-pen",
+      "groupImageUrl": null
+    },
+    {
+      "id": 37,
+      "name": "צלחת P.P. קטנה 7 Happy ארוז 100 יח'",
+      "axis": "צבע",
+      "seoSlug": "plate-p-p-7-white-happy-100",
+      "groupImageUrl": null
     },
     {
       "id": 38,
       "name": "קלסר גב 5 צבוני",
       "axis": "צבע",
-      "seoSlug": "binder-5-black"
+      "seoSlug": "binder-5-black",
+      "groupImageUrl": null
+    },
+    {
+      "id": 39,
+      "name": "פרינגלס 149-158 גרם",
+      "axis": "טעם",
+      "seoSlug": "pringels",
+      "groupImageUrl": "/items/group-39.jpg"
     },
     {
       "id": 40,
       "name": "קערת קרטון קראפט - מ ל",
       "axis": "נפח",
-      "seoSlug": "kraft-bowl"
+      "seoSlug": "kraft-bowl",
+      "groupImageUrl": null
     },
     {
-      "id": 52,
-      "name": "שיפוד עגול ס מ א 50 יח",
-      "axis": "גודל",
-      "seoSlug": "round-skewer"
-    },
-    {
-      "id": 53,
-      "name": "שפכתל מידה + ידית סיליקון",
-      "axis": "גודל",
-      "seoSlug": "silicone-spatula"
+      "id": 41,
+      "name": "מדבקות 32 דף לבן",
+      "axis": "מידה",
+      "seoSlug": "label-stickers-32sheet",
+      "groupImageUrl": null
     },
     {
       "id": 42,
       "name": "שקיות שקילה נילון ל - 1 ק ג",
       "axis": "מידה",
-      "seoSlug": "weighing-bags-1kg"
+      "seoSlug": "weighing-bags-1kg",
+      "groupImageUrl": null
+    },
+    {
+      "id": 43,
+      "name": "גביע רוטב מחובר CC א 1000 יח",
+      "axis": "נפח",
+      "seoSlug": "sauce-cup-attached",
+      "groupImageUrl": null
+    },
+    {
+      "id": 44,
+      "name": "נרות נשמה שעות",
+      "axis": "גודל",
+      "seoSlug": "memorial-candles",
+      "groupImageUrl": null
+    },
+    {
+      "id": 45,
+      "name": "גביע PP - א 2000 יח",
+      "axis": "גודל",
+      "seoSlug": "pp-cup-clear-2000",
+      "groupImageUrl": null
+    },
+    {
+      "id": 46,
+      "name": "מיכל טינטגרלי מהודר הדר - 400 יח",
+      "axis": "גודל",
+      "seoSlug": "hadar-container",
+      "groupImageUrl": null
+    },
+    {
+      "id": 47,
+      "name": "מסקנטייפ סמ רוחב 25 מטר",
+      "axis": "גודל",
+      "seoSlug": "masking-tape-roll",
+      "groupImageUrl": null
+    },
+    {
+      "id": 48,
+      "name": "מפיות 1/8 ארוז 2400 יח",
+      "axis": "מידה",
+      "seoSlug": "napkins-1-8-23-33-2400",
+      "groupImageUrl": null
+    },
+    {
+      "id": 49,
+      "name": "נייר אפיה ארוז 1/1000",
+      "axis": "מידה",
+      "seoSlug": "baking-paper-sheets",
+      "groupImageUrl": null
+    },
+    {
+      "id": 50,
+      "name": "נייר טרמי לקופה",
+      "axis": "מידה",
+      "seoSlug": "thermal-paper-roll",
+      "groupImageUrl": null
+    },
+    {
+      "id": 51,
+      "name": "צלחת לבן PS מידה - 50 יח",
+      "axis": "גודל",
+      "seoSlug": "plate-white-ps-size-7-50",
+      "groupImageUrl": null
+    },
+    {
+      "id": 52,
+      "name": "שיפוד עגול ס מ א 50 יח",
+      "axis": "גודל",
+      "seoSlug": "round-skewer",
+      "groupImageUrl": null
+    },
+    {
+      "id": 53,
+      "name": "שפכתל מידה + ידית סיליקון",
+      "axis": "גודל",
+      "seoSlug": "silicone-spatula",
+      "groupImageUrl": null
+    },
+    {
+      "id": 54,
+      "name": "מיכל ליטר + מכסה",
+      "axis": "נפח",
+      "seoSlug": "liter-container-lid",
+      "groupImageUrl": null
+    },
+    {
+      "id": 55,
+      "name": "מכסה לקראפט",
+      "axis": "נפח",
+      "seoSlug": "kraft-lid",
+      "groupImageUrl": null
     },
     {
       "id": 56,
       "name": "שקית זבל שחורה עבה 25 ק\"ג",
       "axis": "מידה",
-      "seoSlug": "garbage-bag-black-25kg"
+      "seoSlug": "garbage-bag-black-25kg",
+      "groupImageUrl": null
+    },
+    {
+      "id": 57,
+      "name": "דאודורנט רול NIVEA 50 מ\"ל",
+      "axis": "סוג",
+      "seoSlug": "nivea-roll-deodorant-50ml",
+      "groupImageUrl": null
     }
   ],
   "exportedAt": "2026-06-14T19:32:40.759Z",
