@@ -6809,7 +6809,7 @@
         "אריזות-מזון-ו-Take-Away"
       ],
       "unit": "",
-      "unitsPerPack": 60,
+      "unitsPerPack": 1,
       "imageUrl": "/items/1150.jpg",
       "isFeatured": false,
       "productStatus": "new",
@@ -50521,6 +50521,6 @@
       "seoSlug": "garbage-bag-black-25kg"
     }
   ],
-  "exportedAt": "2026-06-14T08:35:26.544Z",
+  "exportedAt": "2026-06-14T08:38:40.346Z",
   "totalItems": 836
 }
