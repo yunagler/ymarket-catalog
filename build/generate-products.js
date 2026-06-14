@@ -147,6 +147,11 @@ function generateProductPage(product, categories, allProducts, group) {
   const imgSrcJpg = (isGroup && group.groupImageUrl) ? group.groupImageUrl : (product.imageUrl || `/items/${product.id}.jpg`);
   const imgSrc = imgSrcJpg.replace(/\.jpg$/i, '.webp');
   const imgSrcThumb = imgSrcJpg.replace(/\.jpg$/i, '-thumb.webp');
+  // Open Graph / social preview image: prefer the lightweight items/og/<name>.jpg
+  // (~18KB vs ~560KB) so WhatsApp/social previews load fast & reliably. Falls back
+  // to the full image if no og version exists.
+  const ogName = imgSrcJpg.split('/').pop().split('?')[0];
+  const ogImage = fs.existsSync(path.join(ROOT_DIR, 'items', 'og', ogName)) ? `/items/og/${ogName}` : imgSrcJpg;
   const canonicalSlug = isGroup ? (group.seoSlug || product.seoSlug || product.slug) : (product.seoSlug || product.slug);
   const productUrl = `${SITE_URL}/products/${canonicalSlug}/`;
 
@@ -432,7 +437,7 @@ function generateProductPage(product, categories, allProducts, group) {
   <meta property="og:title" content="${pageTitle}">
   <meta property="og:description" content="${ogDesc}">
   <meta property="og:type" content="product">
-  <meta property="og:image" content="${SITE_URL}${product.imageUrl || '/items/' + product.id + '.jpg'}">
+  <meta property="og:image" content="${SITE_URL}${ogImage}">
   <meta property="og:url" content="${productUrl}">
   <meta property="og:locale" content="he_IL">
   <meta property="og:site_name" content="וואי מרקט">
@@ -441,7 +446,7 @@ function generateProductPage(product, categories, allProducts, group) {
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${pageTitle}">
   <meta name="twitter:description" content="${ogDesc}">
-  <meta name="twitter:image" content="${SITE_URL}${product.imageUrl || '/items/' + product.id + '.jpg'}">
+  <meta name="twitter:image" content="${SITE_URL}${ogImage}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
