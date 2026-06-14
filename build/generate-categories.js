@@ -25,11 +25,11 @@ const CATEGORY_SEO = {
     seoText: `<div class="category-seo">
       <h2>חומרי ניקוי מוסדיים בסיטונאות – אספקה מהירה לכל הארץ</h2>
       <p>אנחנו ב-YMARKET מבינים שניהול מלאי חומרי הניקוי במוסד הוא קריטי. לכן אנו מספקים מגוון רחב של כימיקלים, סבונים וחומרי חיטוי בריכוז גבוה המותאמים לשימוש תעשייתי ומוסדי. הקטלוג שלנו כולל אקונומיקה תעשייתית, חומצת מלח, מסירי שומן, נוזלי רצפה ומוצרי ניקוי מקצועיים מבית BLINX ומותגים מובילים נוספים.</p>
-      <p>בין אם אתם חברת ניקיון, בית מלון, מסעדה, בית ספר או משרד – אנו מציעים פתרונות ניקוי מותאמים עם מחירי סיטונאות ואספקה תוך 24-72 שעות לכל רחבי ישראל. מינימום הזמנה 1,600 ₪ + מע"מ.</p>
+      <p>בין אם אתם חברת ניקיון, בית מלון, מסעדה, בית ספר או משרד – אנו מציעים פתרונות ניקוי מותאמים עם מחירי סיטונאות ואספקה תוך 24-72 שעות לכל רחבי ישראל. מינימום הזמנה 200 ₪ + מע"מ.</p>
       <p><strong>צריכים הצעת מחיר מותאמת?</strong> <a href="/contact">צרו קשר</a> או שלחו הודעה ב<a href="https://wa.me/972549922492?text=היי, מעוניין בהצעת מחיר לחומרי ניקוי למוסד" target="_blank" rel="noopener">וואטסאפ</a> ונחזור אליכם תוך שעות.</p>
     </div>`,
     faqs: [
-      { q: 'יש מינימום הזמנה לחומרי ניקוי?', a: 'כן, מינימום הזמנה 1,600 ₪ + מע"מ. ניתן לשלב מוצרים מכל הקטגוריות בהזמנה אחת.' },
+      { q: 'יש מינימום הזמנה לחומרי ניקוי?', a: 'כן, מינימום הזמנה 200 ₪ + מע"מ. ניתן לשלב מוצרים מכל הקטגוריות בהזמנה אחת.' },
       { q: 'האם אתם מספקים אישורי בטיחות (MSDS) לחומרים?', a: 'בהחלט. אנו מספקים גיליונות בטיחות (MSDS) לכל חומרי הניקוי והכימיקלים שלנו, כנדרש לפי תקנות הבטיחות במוסדות.' },
       { q: 'תוך כמה זמן מגיעה ההזמנה?', a: 'אספקה תוך 24-72 שעות לכל רחבי ישראל, בהתאם לאזור. אזור גוש דן — בדרך כלל למחרת.' },
       { q: 'האם יש הנחות כמות לחומרי ניקוי?', a: 'כן, ללקוחות קבועים ולהזמנות גדולות אנו מציעים מחירונים מותאמים אישית עם הנחות משמעותיות. צרו קשר לקבלת הצעת מחיר.' }
@@ -782,7 +782,7 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
                 <a href="https://wa.me/972549922492?text=${encodeURIComponent('היי, אשמח לקבל הצעת מחיר ל' + category.name)}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:#25d366;color:#fff;border-radius:12px;font-weight:700;font-size:1rem;text-decoration:none;transition:transform 0.2s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"><i class="fab fa-whatsapp" style="font-size:1.2rem"></i> שלחו הודעה בוואטסאפ</a>
                 <a href="tel:037740400" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.3);border-radius:12px;font-weight:600;font-size:1rem;text-decoration:none;transition:background 0.2s" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'"><i class="fas fa-phone-alt"></i> 03-7740400</a>
               </div>
-              <p style="margin-top:12px;font-size:0.78rem;opacity:0.65;">מינימום הזמנה 1,600 ₪ + מע"מ | ניתן לשלב מוצרים מכל הקטגוריות</p>
+              <p style="margin-top:12px;font-size:0.78rem;opacity:0.65;">מינימום הזמנה 200 ₪ + מע"מ | ניתן לשלב מוצרים מכל הקטגוריות</p>
             </div>
           </div>
         </div>
