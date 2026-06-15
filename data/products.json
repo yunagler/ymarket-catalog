@@ -19466,7 +19466,7 @@
       },
       "variantGroupId": 9,
       "variantLabel": "לבן",
-      "variantSortOrder": 1
+      "variantSortOrder": 6
     },
     {
       "id": 1012,
@@ -51567,6 +51567,6 @@
       "groupImageUrl": null
     }
   ],
-  "exportedAt": "2026-06-15T09:46:13.618Z",
+  "exportedAt": "2026-06-15T10:37:40.157Z",
   "totalItems": 837
 }
