@@ -72,7 +72,16 @@
       "@type": "Product",
       "name": "ספריי כסף מבריק",
       "image": "https://ymarket.co.il/items/745.jpg",
-      "url": "https://ymarket.co.il/products/gloss-spray-paint/"
+      "url": "https://ymarket.co.il/products/gloss-spray-paint/",
+      "offers": {
+        "@type": "Offer",
+        "price": 15,
+        "priceCurrency": "ILS",
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition",
+        "priceValidUntil": "2026-12-31",
+        "url": "https://ymarket.co.il/products/gloss-spray-paint/"
+      }
     }
   ]
 }</script>
@@ -219,7 +228,7 @@
           </button>
           <div class="vrow__meta">
             <span class="vrow__label">כסף</span>
-            <span class="vrow__price">‏0 ‏₪ ליח׳</span>
+            <span class="vrow__price">‏15 ‏₪ ליח׳</span>
           </div>
           <div class="vrow__stepper">
             <button type="button" class="vqty-dec" data-idx="1" aria-label="הפחת">−</button>
@@ -473,7 +482,7 @@
   <script>
   (function() {
     // ===== Variant group — LIVE cart: each size's +/- adds/removes it directly =====
-    var VARIANTS = [{"id":353,"label":"שחור","name":"ספריי שחור מבריק","price":12,"unit":"","img":"/items/369.webp","imgJpg":"/items/369.jpg","slug":"ספריי-שחור-מבריק"},{"id":729,"label":"כסף","name":"ספריי כסף מבריק","price":0,"unit":"","img":"/items/745.webp","imgJpg":"/items/745.jpg","slug":"ספריי-כסף-מבריק"}];
+    var VARIANTS = [{"id":353,"label":"שחור","name":"ספריי שחור מבריק","price":12,"unit":"","img":"/items/369.webp","imgJpg":"/items/369.jpg","slug":"ספריי-שחור-מבריק"},{"id":729,"label":"כסף","name":"ספריי כסף מבריק","price":15,"unit":"","img":"/items/745.webp","imgJpg":"/items/745.jpg","slug":"ספריי-כסף-מבריק"}];
     function fmt(n){ return '‏' + Math.round(n*100)/100 + ' ‏₪'; }
     var mainImg = document.getElementById('mainProductImg');
     var mainSrc = document.getElementById('mainProductSource');
