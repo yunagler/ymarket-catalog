@@ -1438,7 +1438,7 @@
       "icon": "fa-box",
       "parentId": 12,
       "sortOrder": 1,
-      "itemCount": 18,
+      "itemCount": 19,
       "metaTitle": "כלי גינון וחצרנות – ציוד טכני ואחזקה בסיטונאות | וואי מרקט",
       "metaDescription": "כלי גינון וחצרנות במחירי סיטונאות ישירות מהמפיץ. 18 פריטים באיכות מוסדית. אספקה 24-72 שעות. מינימום 200₪. וואי מרקט.",
       "seoSlug": "garden-tools-grounds-maintenance",
@@ -3001,7 +3001,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 10,
-      "itemCount": 44,
+      "itemCount": 45,
       "metaTitle": "מוצרי נייר וניגוב בסיטונאות למוסדות ועסקים | וואי מרקט",
       "metaDescription": "מוצרי נייר וניגוב במחירי סיטונאות ישירות מהמפיץ. 44 פריטים באיכות מוסדית. אספקה 24-72 שעות. מינימום 200₪. וואי מרקט.",
       "seoSlug": "bulk-paper-towel-office-supplies",
@@ -22108,6 +22108,49 @@
       "variantSortOrder": 0
     },
     {
+      "id": 176589,
+      "name": "מזמרה ידנית לגיזום להב פלדה",
+      "slug": "מזמרה-ידנית-לגיזום-להב-פלדה",
+      "saleNis": 45,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "garden-yard-tools",
+      "categoryName": "כלי גינון וחצרנות",
+      "categorySlugs": [
+        "garden-yard-tools"
+      ],
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/1158.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "barcode": "",
+      "searchTags": "",
+      "technicalDesc": "",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": [],
+      "seoSlug": null,
+      "seo": {
+        "title": null,
+        "metaDesc": null,
+        "imageAlt": null,
+        "geoContent": null,
+        "gtin": null,
+        "mpn": null,
+        "isB2BBulk": false,
+        "faqs": [],
+        "specs": []
+      },
+      "variantGroupId": null,
+      "variantLabel": null,
+      "variantSortOrder": 0
+    },
+    {
       "id": 574,
       "name": "מחברת (קמפוס) 40 שורה - קטנה",
       "slug": "מחברת-קמפוס-40-שורה-קטנה",
@@ -33745,6 +33788,49 @@
       "variantSortOrder": 0
     },
     {
+      "id": 175452,
+      "name": "נייר סופג ארוז 9 ב-1",
+      "slug": "נייר-סופג-ארוז-9-ב-1",
+      "saleNis": 18.9,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "מוצרי-נייר-וניגוב",
+      "categoryName": "מוצרי נייר וניגוב",
+      "categorySlugs": [
+        "מוצרי-נייר-וניגוב"
+      ],
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/1157.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "",
+      "partNumber": "",
+      "barcode": "",
+      "searchTags": "",
+      "technicalDesc": "",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": [],
+      "seoSlug": null,
+      "seo": {
+        "title": null,
+        "metaDesc": null,
+        "imageAlt": null,
+        "geoContent": null,
+        "gtin": null,
+        "mpn": null,
+        "isB2BBulk": false,
+        "faqs": [],
+        "specs": []
+      },
+      "variantGroupId": null,
+      "variantLabel": null,
+      "variantSortOrder": 0
+    },
+    {
       "id": 282,
       "name": "נייר פלסמס רגיל ארוז 1000 יח'",
       "slug": "נייר-פלסמס-רגיל-ארוז-1000-יח",
@@ -38837,7 +38923,7 @@
       "id": 729,
       "name": "ספריי כסף מבריק",
       "slug": "ספריי-כסף-מבריק",
-      "saleNis": 15,
+      "saleNis": 0,
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
@@ -51539,6 +51625,6 @@
       "groupImageUrl": null
     }
   ],
-  "exportedAt": "2026-06-17T00:21:20.086Z",
-  "totalItems": 836
+  "exportedAt": "2026-06-17T15:47:52.157Z",
+  "totalItems": 838
 }
