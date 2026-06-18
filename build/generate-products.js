@@ -159,8 +159,15 @@ function generateProductPage(product, categories, allProducts, group) {
   const seo = product.seo || {};
   const pageTitle = isGroup ? `${group.name} | וואי מרקט` : (seo.title || `${product.name} | וואי מרקט`);
   const h1Text = isGroup ? group.name : (seo.h1 || product.name);
-  const metaDesc = seo.metaDesc || `${product.name} - ${categoryName}. מחירי סיטונאות, משלוח ארצי. וואי מרקט - אספקה לעסקים ומוסדות.`;
-  const ogDesc = seo.metaDesc || `${product.name} - ${categoryName}. מחירי סיטונאות, משלוח ארצי.`;
+  // Group pages must describe the PRODUCT, not the representative variant (e.g. size S):
+  // derive meta/og/alt from the clean group.name so SEO text isn't stuck on one variant.
+  const metaDesc = isGroup
+    ? `${group.name} - ${categoryName}. מחירי סיטונאות, משלוח ארצי. וואי מרקט - אספקה לעסקים ומוסדות.`
+    : (seo.metaDesc || `${product.name} - ${categoryName}. מחירי סיטונאות, משלוח ארצי. וואי מרקט - אספקה לעסקים ומוסדות.`);
+  const ogDesc = isGroup
+    ? `${group.name} - ${categoryName}. מחירי סיטונאות, משלוח ארצי.`
+    : (seo.metaDesc || `${product.name} - ${categoryName}. מחירי סיטונאות, משלוח ארצי.`);
+  const mainImgAlt = isGroup ? h1Text : (seo.imageAlt || h1Text);
   const specsHtml = (seo.specs && seo.specs.length > 0)
     ? `<div class="product-specs" style="margin: 1.5rem 0;">
         <table style="width:100%;border-collapse:collapse;font-size:0.95rem;">
@@ -267,7 +274,7 @@ function generateProductPage(product, categories, allProducts, group) {
              <div class="vgroup__hint"><i class="fas fa-cubes"></i> בחרו כמות</div>
            </div>
            <div class="vrow">
-             <div class="vrow__pick"><picture><source srcset="${imgSrcThumb}" type="image/webp"><img src="${imgSrcJpg}" alt="${(seo.imageAlt || h1Text).replace(/"/g,'&quot;')}" onerror="this.onerror=null;var s=this.parentElement.querySelector('source');if(s)s.remove();this.style.opacity=.2"></picture></div>
+             <div class="vrow__pick"><picture><source srcset="${imgSrcThumb}" type="image/webp"><img src="${imgSrcJpg}" alt="${mainImgAlt.replace(/"/g,'&quot;')}" onerror="this.onerror=null;var s=this.parentElement.querySelector('source');if(s)s.remove();this.style.opacity=.2"></picture></div>
              <div class="vrow__meta"><span class="vrow__label">${product.unit || 'יחידה'}</span><span class="vrow__price">${price}${product.unit ? ' / ' + product.unit : ''}</span></div>
              <div class="vrow__stepper">
                <button type="button" id="qtyDecrease" aria-label="הפחת">−</button>
@@ -517,7 +524,7 @@ function generateProductPage(product, categories, allProducts, group) {
           <div class="product-gallery__main">
             <picture>
               <source srcset="${imgSrc}" type="image/webp" id="mainProductSource">
-              <img src="${imgSrcJpg}" alt="${seo.imageAlt || h1Text}" id="mainProductImg"
+              <img src="${imgSrcJpg}" alt="${mainImgAlt}" id="mainProductImg"
                    onerror="this.onerror=null;var s=this.parentElement.querySelector('source');if(s)s.remove();this.src='https://placehold.co/500x500/f0f2f5/5a6577?text=${encodeURIComponent((h1Text || '').substring(0,15))}'">
             </picture>
           </div>
