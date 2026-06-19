@@ -51,13 +51,17 @@
     "name": "וואי מרקט"
   },
   "category": "קיסמים ושיפודים",
+  "productGroupID": "round-skewer",
   "variesBy": "https://schema.org/size",
   "hasVariant": [
     {
       "@type": "Product",
       "name": "שיפוד עגול 25 ס\"מ א' 50 יח'",
+      "size": "25",
+      "description": "כלים חד פעמיים מקצועי — איכות מזון מאושרת",
       "image": "https://ymarket.co.il/items/944.jpg",
       "url": "https://ymarket.co.il/products/round-skewer/",
+      "sku": "926",
       "offers": {
         "@type": "Offer",
         "price": 7,
@@ -65,14 +69,56 @@
         "availability": "https://schema.org/InStock",
         "itemCondition": "https://schema.org/NewCondition",
         "priceValidUntil": "2026-12-31",
-        "url": "https://ymarket.co.il/products/round-skewer/"
+        "url": "https://ymarket.co.il/products/round-skewer/",
+        "seller": {
+          "@type": "Organization",
+          "name": "וואי מרקט - נגלר סחר והפצה"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "ILS"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "IL"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 3,
+              "unitCode": "DAY"
+            }
+          }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "IL",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 14,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/FreeReturn"
+        }
       }
     },
     {
       "@type": "Product",
       "name": "שיפוד עגול  30 ס\"מ א' 50 יח'",
+      "size": "30",
+      "description": "כלים חד פעמיים מקצועי — איכות מזון מאושרת",
       "image": "https://ymarket.co.il/items/805.jpg",
       "url": "https://ymarket.co.il/products/round-skewer/",
+      "sku": "788",
       "offers": {
         "@type": "Offer",
         "price": 7,
@@ -80,7 +126,46 @@
         "availability": "https://schema.org/InStock",
         "itemCondition": "https://schema.org/NewCondition",
         "priceValidUntil": "2026-12-31",
-        "url": "https://ymarket.co.il/products/round-skewer/"
+        "url": "https://ymarket.co.il/products/round-skewer/",
+        "seller": {
+          "@type": "Organization",
+          "name": "וואי מרקט - נגלר סחר והפצה"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "ILS"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "IL"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 3,
+              "unitCode": "DAY"
+            }
+          }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "IL",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 14,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/FreeReturn"
+        }
       }
     }
   ]
@@ -90,6 +175,7 @@
 </head>
 <body>
   <!-- ═══ ANNOUNCEMENT ═══ -->
+<!-- ═══ ANNOUNCEMENT ═══ -->
   <div class="announcement">
     <a href="/register">
       <i class="fas fa-crown"></i>
@@ -375,7 +461,7 @@
     </div>
   </section>
 
-  <footer class="footer">
+    <footer class="footer">
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
@@ -397,6 +483,10 @@
             <a href="/category/food-packaging-delivery-solutions/">אריזות Take Away</a>
             <a href="/category/office-coffee-breakroom-supplies/">קפה, שתייה וכיבוד</a>
             <a href="/category/safety-ppe-equipment-for-business/">בטיחות ומיגון</a>
+            <a href="/category/heavy-duty-garbage-bags-wholesale/">שקיות אשפה</a>
+            <a href="/category/professional-cleaning-cloths-microfiber/">טקסטיל ומטליות</a>
+            <a href="/category/office-supplies-wholesale-business/">ציוד משרדי</a>
+            <a href="/category/maintenance-technical-equipment-wholesale/">ציוד טכני</a>
           </div>
         </div>
 
@@ -492,7 +582,7 @@
   <script>
   (function() {
     // ===== Variant group — LIVE cart: each size's +/- adds/removes it directly =====
-    var VARIANTS = [{"id":926,"label":"25","name":"שיפוד עגול 25 ס\"מ א' 50 יח'","price":7,"unit":"","img":"/items/944.webp","imgJpg":"/items/944.jpg","slug":"שיפוד-עגול-25-ס-מ-א-50-יח"},{"id":788,"label":"30","name":"שיפוד עגול  30 ס\"מ א' 50 יח'","price":7,"unit":"","img":"/items/805.webp","imgJpg":"/items/805.jpg","slug":"שיפוד-עגול-30-ס-מ-א-50-יח"}];
+    var VARIANTS = [{"id":926,"label":"25","name":"שיפוד עגול 25 ס\"מ א' 50 יח'","price":7,"unit":"","img":"/items/944.webp","imgJpg":"/items/944.jpg","slug":"שיפוד-עגול-25-ס-מ-א-50-יח","gtin":null,"mpn":null,"sku":"926","desc":"כלים חד פעמיים מקצועי — איכות מזון מאושרת"},{"id":788,"label":"30","name":"שיפוד עגול  30 ס\"מ א' 50 יח'","price":7,"unit":"","img":"/items/805.webp","imgJpg":"/items/805.jpg","slug":"שיפוד-עגול-30-ס-מ-א-50-יח","gtin":null,"mpn":null,"sku":"788","desc":"כלים חד פעמיים מקצועי — איכות מזון מאושרת"}];
     function fmt(n){ return '‏' + Math.round(n*100)/100 + ' ‏₪'; }
     var mainImg = document.getElementById('mainProductImg');
     var mainSrc = document.getElementById('mainProductSource');

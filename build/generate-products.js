@@ -123,6 +123,10 @@ function generateProductPage(product, categories, allProducts, group) {
       img: vJpg.replace(/\.jpg$/i, '.webp'),
       imgJpg: vJpg,
       slug: v.slug,
+      gtin: (v.seo && v.seo.gtin) || v.barcode || null,
+      mpn: (v.seo && v.seo.mpn) || v.partNumber || null,
+      sku: v.partNumber || String(v.id),
+      desc: v.description || '',
     };
   }) : [];
   const groupPrices = variantData.map(v => v.price).filter(p => p > 0);
@@ -157,17 +161,24 @@ function generateProductPage(product, categories, allProducts, group) {
 
   // SEO overrides from products.json
   const seo = product.seo || {};
-  const pageTitle = isGroup ? `${group.name} | וואי מרקט` : (seo.title || `${product.name} | וואי מרקט`);
+  // Group pages: prefer a CURATED seo.title/metaDesc/imageAlt (authored on the
+  // representative variant) when present, else fall back to the clean group.name
+  // auto-text. This lets a group page be fully SEO-optimized (title is the #1
+  // on-page signal) while ungroomed groups keep the safe generic default.
+  // Group pages: a CURATED title/meta/alt must live at the GROUP level (group.seoTitle…),
+  // NOT on the representative variant — otherwise every group inherits the rep variant's
+  // size/color in its title (e.g. "...מידה S..."), which is wrong for a multi-size page.
+  // Ungroomed groups fall back to the clean size-agnostic group.name auto-text.
+  const pageTitle = isGroup ? (group.seoTitle || `${group.name} | וואי מרקט`) : (seo.title || `${product.name} | וואי מרקט`);
+  // H1 stays the clean group/product name (a heading, not the SEO title tag).
   const h1Text = isGroup ? group.name : (seo.h1 || product.name);
-  // Group pages must describe the PRODUCT, not the representative variant (e.g. size S):
-  // derive meta/og/alt from the clean group.name so SEO text isn't stuck on one variant.
   const metaDesc = isGroup
-    ? `${group.name} - ${categoryName}. מחירי סיטונאות, משלוח ארצי. וואי מרקט - אספקה לעסקים ומוסדות.`
+    ? (group.seoMetaDesc || `${group.name} - ${categoryName}. מחירי סיטונאות, משלוח ארצי. וואי מרקט - אספקה לעסקים ומוסדות.`)
     : (seo.metaDesc || `${product.name} - ${categoryName}. מחירי סיטונאות, משלוח ארצי. וואי מרקט - אספקה לעסקים ומוסדות.`);
   const ogDesc = isGroup
-    ? `${group.name} - ${categoryName}. מחירי סיטונאות, משלוח ארצי.`
+    ? (group.seoMetaDesc || `${group.name} - ${categoryName}. מחירי סיטונאות, משלוח ארצי.`)
     : (seo.metaDesc || `${product.name} - ${categoryName}. מחירי סיטונאות, משלוח ארצי.`);
-  const mainImgAlt = isGroup ? h1Text : (seo.imageAlt || h1Text);
+  const mainImgAlt = isGroup ? (group.seoImageAlt || h1Text) : (seo.imageAlt || h1Text);
   const specsHtml = (seo.specs && seo.specs.length > 0)
     ? `<div class="product-specs" style="margin: 1.5rem 0;">
         <table style="width:100%;border-collapse:collapse;font-size:0.95rem;">
@@ -325,6 +336,27 @@ function generateProductPage(product, categories, allProducts, group) {
   const schemaDescription = seo.isB2BBulk ? `סיטונאות / Wholesale - ${productDescription}` : productDescription;
   // priceValidUntil - end of current year (Google requires this)
   const priceValidUntil = new Date().getFullYear() + '-12-31';
+  // Shared Offer sub-objects — reused by the single-product schema AND every variant
+  // offer in a ProductGroup, so Merchant listings stay valid across both shapes.
+  const SHIPPING_DETAILS = {
+    "@type": "OfferShippingDetails",
+    "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "ILS" },
+    "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "IL" },
+    "deliveryTime": {
+      "@type": "ShippingDeliveryTime",
+      "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 1, "unitCode": "DAY" },
+      "transitTime": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 3, "unitCode": "DAY" }
+    }
+  };
+  const RETURN_POLICY = {
+    "@type": "MerchantReturnPolicy",
+    "applicableCountry": "IL",
+    "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+    "merchantReturnDays": 14,
+    "returnMethod": "https://schema.org/ReturnByMail",
+    "returnFees": "https://schema.org/FreeReturn"
+  };
+  const SELLER = { "@type": "Organization", "name": "וואי מרקט - נגלר סחר והפצה" };
   const schemaBase = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -360,47 +392,15 @@ function generateProductPage(product, categories, allProducts, group) {
         "url": productUrl,
         "areaServed": { "@type": "Country", "name": "ישראל" },
         "availableAtOrFrom": { "@type": "Place", "name": "וואי מרקט - גת רימון", "address": { "@type": "PostalAddress", "addressLocality": "גת רימון", "addressCountry": "IL" } },
-        "seller": { "@type": "Organization", "name": "וואי מרקט - נגלר סחר והפצה" },
-        "shippingDetails": {
-          "@type": "OfferShippingDetails",
-          "shippingRate": {
-            "@type": "MonetaryAmount",
-            "value": "0",
-            "currency": "ILS"
-          },
-          "shippingDestination": {
-            "@type": "DefinedRegion",
-            "addressCountry": "IL"
-          },
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 0,
-              "maxValue": 1,
-              "unitCode": "DAY"
-            },
-            "transitTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 1,
-              "maxValue": 3,
-              "unitCode": "DAY"
-            }
-          }
-        },
-        "hasMerchantReturnPolicy": {
-          "@type": "MerchantReturnPolicy",
-          "applicableCountry": "IL",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-          "merchantReturnDays": 14,
-          "returnMethod": "https://schema.org/ReturnByMail",
-          "returnFees": "https://schema.org/FreeReturn"
-        }
+        "seller": SELLER,
+        "shippingDetails": SHIPPING_DETAILS,
+        "hasMerchantReturnPolicy": RETURN_POLICY
       }
     } : {})
   };
 
   // Variant groups emit a ProductGroup with hasVariant (correct schema.org modeling)
+  const isColorAxis = groupAxis === 'צבע';
   const jsonLd = JSON.stringify(isGroup ? {
     "@context": "https://schema.org",
     "@type": "ProductGroup",
@@ -410,12 +410,20 @@ function generateProductPage(product, categories, allProducts, group) {
     "url": productUrl,
     "brand": { "@type": "Brand", "name": "וואי מרקט" },
     "category": categoryName,
-    "variesBy": groupAxis === 'צבע' ? "https://schema.org/color" : "https://schema.org/size",
+    "productGroupID": canonicalSlug,
+    "variesBy": isColorAxis ? "https://schema.org/color" : "https://schema.org/size",
     "hasVariant": variantData.map(v => ({
       "@type": "Product",
       "name": v.name,
+      // Each variant MUST carry the varying attribute (size/color) or Google rejects
+      // the merchant listing as an invalid variant.
+      ...(isColorAxis ? { "color": v.label } : { "size": v.label }),
+      "description": v.desc || schemaDescription,
       "image": `${SITE_URL}${v.imgJpg}`,
       "url": productUrl,
+      "sku": v.sku,
+      ...(v.gtin ? { "gtin": String(v.gtin) } : {}),
+      ...(v.mpn ? { "mpn": String(v.mpn) } : {}),
       ...(v.price ? {
         "offers": {
           "@type": "Offer",
@@ -424,7 +432,10 @@ function generateProductPage(product, categories, allProducts, group) {
           "availability": "https://schema.org/InStock",
           "itemCondition": "https://schema.org/NewCondition",
           "priceValidUntil": priceValidUntil,
-          "url": productUrl
+          "url": productUrl,
+          "seller": SELLER,
+          "shippingDetails": SHIPPING_DETAILS,
+          "hasMerchantReturnPolicy": RETURN_POLICY
         }
       } : {})
     }))
@@ -914,7 +925,7 @@ function main() {
   const groupContext = (gid) => {
     const def = groupDefById.get(gid);
     const members = groupMembers.get(gid);
-    return { id: gid, name: def.name, axis: def.axis, seoSlug: def.seoSlug || (members[0].seoSlug || members[0].slug), groupImageUrl: def.groupImageUrl || null, variants: members };
+    return { id: gid, name: def.name, axis: def.axis, seoSlug: def.seoSlug || (members[0].seoSlug || members[0].slug), groupImageUrl: def.groupImageUrl || null, seoTitle: def.seoTitle || null, seoMetaDesc: def.seoMetaDesc || null, seoImageAlt: def.seoImageAlt || null, variants: members };
   };
 
   // Optional single-page mode: `--slug=<slug>` regenerates ONE product page

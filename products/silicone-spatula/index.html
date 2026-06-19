@@ -51,13 +51,17 @@
     "name": "וואי מרקט"
   },
   "category": "כלי עבודה ואחזקה",
+  "productGroupID": "silicone-spatula",
   "variesBy": "https://schema.org/size",
   "hasVariant": [
     {
       "@type": "Product",
       "name": "שפכתל מידה 2 + ידית סיליקון",
+      "size": "2",
+      "description": "ציוד טכני מקצועי — איכות מקצועית",
       "image": "https://ymarket.co.il/items/416.jpg",
       "url": "https://ymarket.co.il/products/silicone-spatula/",
+      "sku": "400",
       "offers": {
         "@type": "Offer",
         "price": 10,
@@ -65,14 +69,56 @@
         "availability": "https://schema.org/InStock",
         "itemCondition": "https://schema.org/NewCondition",
         "priceValidUntil": "2026-12-31",
-        "url": "https://ymarket.co.il/products/silicone-spatula/"
+        "url": "https://ymarket.co.il/products/silicone-spatula/",
+        "seller": {
+          "@type": "Organization",
+          "name": "וואי מרקט - נגלר סחר והפצה"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "ILS"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "IL"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 3,
+              "unitCode": "DAY"
+            }
+          }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "IL",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 14,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/FreeReturn"
+        }
       }
     },
     {
       "@type": "Product",
       "name": "שפכתל מידה 4 + ידית סיליקון",
+      "size": "4",
+      "description": "ציוד טכני מקצועי — איכות מקצועית",
       "image": "https://ymarket.co.il/items/897.jpg",
       "url": "https://ymarket.co.il/products/silicone-spatula/",
+      "sku": "880",
       "offers": {
         "@type": "Offer",
         "price": 15,
@@ -80,7 +126,46 @@
         "availability": "https://schema.org/InStock",
         "itemCondition": "https://schema.org/NewCondition",
         "priceValidUntil": "2026-12-31",
-        "url": "https://ymarket.co.il/products/silicone-spatula/"
+        "url": "https://ymarket.co.il/products/silicone-spatula/",
+        "seller": {
+          "@type": "Organization",
+          "name": "וואי מרקט - נגלר סחר והפצה"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "ILS"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "IL"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 3,
+              "unitCode": "DAY"
+            }
+          }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "IL",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 14,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/FreeReturn"
+        }
       }
     }
   ]
@@ -90,6 +175,7 @@
 </head>
 <body>
   <!-- ═══ ANNOUNCEMENT ═══ -->
+<!-- ═══ ANNOUNCEMENT ═══ -->
   <div class="announcement">
     <a href="/register">
       <i class="fas fa-crown"></i>
@@ -375,7 +461,7 @@
     </div>
   </section>
 
-  <footer class="footer">
+    <footer class="footer">
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
@@ -397,6 +483,10 @@
             <a href="/category/food-packaging-delivery-solutions/">אריזות Take Away</a>
             <a href="/category/office-coffee-breakroom-supplies/">קפה, שתייה וכיבוד</a>
             <a href="/category/safety-ppe-equipment-for-business/">בטיחות ומיגון</a>
+            <a href="/category/heavy-duty-garbage-bags-wholesale/">שקיות אשפה</a>
+            <a href="/category/professional-cleaning-cloths-microfiber/">טקסטיל ומטליות</a>
+            <a href="/category/office-supplies-wholesale-business/">ציוד משרדי</a>
+            <a href="/category/maintenance-technical-equipment-wholesale/">ציוד טכני</a>
           </div>
         </div>
 
@@ -492,7 +582,7 @@
   <script>
   (function() {
     // ===== Variant group — LIVE cart: each size's +/- adds/removes it directly =====
-    var VARIANTS = [{"id":400,"label":"2","name":"שפכתל מידה 2 + ידית סיליקון","price":10,"unit":"","img":"/items/416.webp","imgJpg":"/items/416.jpg","slug":"שפכתל-מידה-2-ידית-סיליקון"},{"id":880,"label":"4","name":"שפכתל מידה 4 + ידית סיליקון","price":15,"unit":"","img":"/items/897.webp","imgJpg":"/items/897.jpg","slug":"שפכתל-מידה-4-ידית-סיליקון"}];
+    var VARIANTS = [{"id":400,"label":"2","name":"שפכתל מידה 2 + ידית סיליקון","price":10,"unit":"","img":"/items/416.webp","imgJpg":"/items/416.jpg","slug":"שפכתל-מידה-2-ידית-סיליקון","gtin":null,"mpn":null,"sku":"400","desc":"ציוד טכני מקצועי — איכות מקצועית"},{"id":880,"label":"4","name":"שפכתל מידה 4 + ידית סיליקון","price":15,"unit":"","img":"/items/897.webp","imgJpg":"/items/897.jpg","slug":"שפכתל-מידה-4-ידית-סיליקון","gtin":null,"mpn":null,"sku":"880","desc":"ציוד טכני מקצועי — איכות מקצועית"}];
     function fmt(n){ return '‏' + Math.round(n*100)/100 + ' ‏₪'; }
     var mainImg = document.getElementById('mainProductImg');
     var mainSrc = document.getElementById('mainProductSource');

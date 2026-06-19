@@ -51,31 +51,44 @@
     "name": "וואי מרקט"
   },
   "category": "אריזות מזון ו-Take Away",
+  "productGroupID": "kraft-lid",
   "variesBy": "https://schema.org/size",
   "hasVariant": [
     {
       "@type": "Product",
       "name": "מכסה לקראפט - 500 מ\"ל",
+      "size": "500",
+      "description": "אריזות מזון מקצועי — אטימות מלאה",
       "image": "https://ymarket.co.il/items/642.jpg",
-      "url": "https://ymarket.co.il/products/kraft-lid/"
+      "url": "https://ymarket.co.il/products/kraft-lid/",
+      "sku": "642"
     },
     {
       "@type": "Product",
       "name": "מכסה לקראפט - 750 מ\"ל",
+      "size": "750",
+      "description": "אריזות מזון מקצועי — אטימות מלאה",
       "image": "https://ymarket.co.il/items/641.jpg",
-      "url": "https://ymarket.co.il/products/kraft-lid/"
+      "url": "https://ymarket.co.il/products/kraft-lid/",
+      "sku": "641"
     },
     {
       "@type": "Product",
       "name": "מכסה לקראפט - 1100 מ\"ל",
+      "size": "1100",
+      "description": "אריזות מזון מקצועי — אטימות מלאה",
       "image": "https://ymarket.co.il/items/661.jpg",
-      "url": "https://ymarket.co.il/products/kraft-lid/"
+      "url": "https://ymarket.co.il/products/kraft-lid/",
+      "sku": "645"
     },
     {
       "@type": "Product",
       "name": "מכסה לקראפט - 1300 מ\"ל",
+      "size": "1300",
+      "description": "אריזות מזון מקצועי — אטימות מלאה",
       "image": "https://ymarket.co.il/items/656.jpg",
-      "url": "https://ymarket.co.il/products/kraft-lid/"
+      "url": "https://ymarket.co.il/products/kraft-lid/",
+      "sku": "640"
     }
   ]
 }</script>
@@ -84,6 +97,7 @@
 </head>
 <body>
   <!-- ═══ ANNOUNCEMENT ═══ -->
+<!-- ═══ ANNOUNCEMENT ═══ -->
   <div class="announcement">
     <a href="/register">
       <i class="fas fa-crown"></i>
@@ -397,7 +411,7 @@
     </div>
   </section>
 
-  <footer class="footer">
+    <footer class="footer">
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
@@ -419,6 +433,10 @@
             <a href="/category/food-packaging-delivery-solutions/">אריזות Take Away</a>
             <a href="/category/office-coffee-breakroom-supplies/">קפה, שתייה וכיבוד</a>
             <a href="/category/safety-ppe-equipment-for-business/">בטיחות ומיגון</a>
+            <a href="/category/heavy-duty-garbage-bags-wholesale/">שקיות אשפה</a>
+            <a href="/category/professional-cleaning-cloths-microfiber/">טקסטיל ומטליות</a>
+            <a href="/category/office-supplies-wholesale-business/">ציוד משרדי</a>
+            <a href="/category/maintenance-technical-equipment-wholesale/">ציוד טכני</a>
           </div>
         </div>
 
@@ -514,7 +532,7 @@
   <script>
   (function() {
     // ===== Variant group — LIVE cart: each size's +/- adds/removes it directly =====
-    var VARIANTS = [{"id":642,"label":"500","name":"מכסה לקראפט - 500 מ\"ל","price":0,"unit":"","img":"/items/642.webp","imgJpg":"/items/642.jpg","slug":"מכסה-לקראפט-500-מ-ל"},{"id":641,"label":"750","name":"מכסה לקראפט - 750 מ\"ל","price":0,"unit":"","img":"/items/641.webp","imgJpg":"/items/641.jpg","slug":"מכסה-לקראפט-750-מ-ל"},{"id":645,"label":"1100","name":"מכסה לקראפט - 1100 מ\"ל","price":0,"unit":"","img":"/items/661.webp","imgJpg":"/items/661.jpg","slug":"מכסה-לקראפט-1100-מ-ל"},{"id":640,"label":"1300","name":"מכסה לקראפט - 1300 מ\"ל","price":0,"unit":"","img":"/items/656.webp","imgJpg":"/items/656.jpg","slug":"מכסה-לקראפט-1300-מ-ל"}];
+    var VARIANTS = [{"id":642,"label":"500","name":"מכסה לקראפט - 500 מ\"ל","price":0,"unit":"","img":"/items/642.webp","imgJpg":"/items/642.jpg","slug":"מכסה-לקראפט-500-מ-ל","gtin":null,"mpn":null,"sku":"642","desc":"אריזות מזון מקצועי — אטימות מלאה"},{"id":641,"label":"750","name":"מכסה לקראפט - 750 מ\"ל","price":0,"unit":"","img":"/items/641.webp","imgJpg":"/items/641.jpg","slug":"מכסה-לקראפט-750-מ-ל","gtin":null,"mpn":null,"sku":"641","desc":"אריזות מזון מקצועי — אטימות מלאה"},{"id":645,"label":"1100","name":"מכסה לקראפט - 1100 מ\"ל","price":0,"unit":"","img":"/items/661.webp","imgJpg":"/items/661.jpg","slug":"מכסה-לקראפט-1100-מ-ל","gtin":null,"mpn":null,"sku":"645","desc":"אריזות מזון מקצועי — אטימות מלאה"},{"id":640,"label":"1300","name":"מכסה לקראפט - 1300 מ\"ל","price":0,"unit":"","img":"/items/656.webp","imgJpg":"/items/656.jpg","slug":"מכסה-לקראפט-1300-מ-ל","gtin":null,"mpn":null,"sku":"640","desc":"אריזות מזון מקצועי — אטימות מלאה"}];
     function fmt(n){ return '‏' + Math.round(n*100)/100 + ' ‏₪'; }
     var mainImg = document.getElementById('mainProductImg');
     var mainSrc = document.getElementById('mainProductSource');

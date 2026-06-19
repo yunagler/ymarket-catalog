@@ -51,13 +51,17 @@
     "name": "וואי מרקט"
   },
   "category": "אריזות מזון ו-Take Away",
+  "productGroupID": "sauce-cup-2oz-2500",
   "variesBy": "https://schema.org/color",
   "hasVariant": [
     {
       "@type": "Product",
       "name": "גביע רוטוב 2OZ ארוז 2500 - שחור",
+      "color": "שחור",
+      "description": "אריזות מזון מקצועי — אטימות מלאה",
       "image": "https://ymarket.co.il/items/343.jpg",
       "url": "https://ymarket.co.il/products/sauce-cup-2oz-2500/",
+      "sku": "327",
       "offers": {
         "@type": "Offer",
         "price": 140,
@@ -65,14 +69,56 @@
         "availability": "https://schema.org/InStock",
         "itemCondition": "https://schema.org/NewCondition",
         "priceValidUntil": "2026-12-31",
-        "url": "https://ymarket.co.il/products/sauce-cup-2oz-2500/"
+        "url": "https://ymarket.co.il/products/sauce-cup-2oz-2500/",
+        "seller": {
+          "@type": "Organization",
+          "name": "וואי מרקט - נגלר סחר והפצה"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "ILS"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "IL"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 3,
+              "unitCode": "DAY"
+            }
+          }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "IL",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 14,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/FreeReturn"
+        }
       }
     },
     {
       "@type": "Product",
       "name": "גביע רוטוב 2OZ ארוז 2500 - שקוף",
+      "color": "שקוף",
+      "description": "אריזות מזון מקצועי — אטימות מלאה",
       "image": "https://ymarket.co.il/items/1090.jpg",
-      "url": "https://ymarket.co.il/products/sauce-cup-2oz-2500/"
+      "url": "https://ymarket.co.il/products/sauce-cup-2oz-2500/",
+      "sku": "1072"
     }
   ]
 }</script>
@@ -81,6 +127,7 @@
 </head>
 <body>
   <!-- ═══ ANNOUNCEMENT ═══ -->
+<!-- ═══ ANNOUNCEMENT ═══ -->
   <div class="announcement">
     <a href="/register">
       <i class="fas fa-crown"></i>
@@ -364,7 +411,7 @@
     </div>
   </section>
 
-  <footer class="footer">
+    <footer class="footer">
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
@@ -386,6 +433,10 @@
             <a href="/category/food-packaging-delivery-solutions/">אריזות Take Away</a>
             <a href="/category/office-coffee-breakroom-supplies/">קפה, שתייה וכיבוד</a>
             <a href="/category/safety-ppe-equipment-for-business/">בטיחות ומיגון</a>
+            <a href="/category/heavy-duty-garbage-bags-wholesale/">שקיות אשפה</a>
+            <a href="/category/professional-cleaning-cloths-microfiber/">טקסטיל ומטליות</a>
+            <a href="/category/office-supplies-wholesale-business/">ציוד משרדי</a>
+            <a href="/category/maintenance-technical-equipment-wholesale/">ציוד טכני</a>
           </div>
         </div>
 
@@ -481,7 +532,7 @@
   <script>
   (function() {
     // ===== Variant group — LIVE cart: each size's +/- adds/removes it directly =====
-    var VARIANTS = [{"id":327,"label":"שחור","name":"גביע רוטוב 2OZ ארוז 2500 - שחור","price":140,"unit":"","img":"/items/343.webp","imgJpg":"/items/343.jpg","slug":"גביע-רוטוב-2OZ-ארוז-2500-שחור"},{"id":1072,"label":"שקוף","name":"גביע רוטוב 2OZ ארוז 2500 - שקוף","price":0,"unit":"","img":"/items/1090.webp","imgJpg":"/items/1090.jpg","slug":"גביע-רוטוב-2OZ-ארוז-2500-שקוף"}];
+    var VARIANTS = [{"id":327,"label":"שחור","name":"גביע רוטוב 2OZ ארוז 2500 - שחור","price":140,"unit":"","img":"/items/343.webp","imgJpg":"/items/343.jpg","slug":"גביע-רוטוב-2OZ-ארוז-2500-שחור","gtin":null,"mpn":null,"sku":"327","desc":"אריזות מזון מקצועי — אטימות מלאה"},{"id":1072,"label":"שקוף","name":"גביע רוטוב 2OZ ארוז 2500 - שקוף","price":0,"unit":"","img":"/items/1090.webp","imgJpg":"/items/1090.jpg","slug":"גביע-רוטוב-2OZ-ארוז-2500-שקוף","gtin":null,"mpn":null,"sku":"1072","desc":"אריזות מזון מקצועי — אטימות מלאה"}];
     function fmt(n){ return '‏' + Math.round(n*100)/100 + ' ‏₪'; }
     var mainImg = document.getElementById('mainProductImg');
     var mainSrc = document.getElementById('mainProductSource');
