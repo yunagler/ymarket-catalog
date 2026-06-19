@@ -215,6 +215,34 @@ function generateProductPage(product, categories, allProducts, group) {
         `).join('')}
       </div>` : '';
 
+  // ===== Customer reviews — REAL only. Both the visible block AND the schema are
+  // driven by the same `reviews` array, so structured data always matches what the
+  // user sees (Google requires this; fabricated reviews are forbidden). =====
+  const reviews = (isGroup ? (group.reviews || []) : (seo.reviews || [])).filter(r => r && r.body);
+  const reviewAvg = reviews.length ? Math.round((reviews.reduce((s, r) => s + Number(r.rating || 0), 0) / reviews.length) * 10) / 10 : 0;
+  const stars = n => '★★★★★☆☆☆☆☆'.slice(5 - Math.round(n), 10 - Math.round(n));
+  const reviewsHtml = reviews.length
+    ? `<div class="product-reviews" style="margin-top:1.5rem;">
+        <h3 style="font-size:1.05rem;font-weight:700;color:#1B3A5C;margin-bottom:6px;display:flex;align-items:center;gap:8px;"><i class="fas fa-star" style="color:#C9A227;"></i> ביקורות לקוחות</h3>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;"><span style="color:#C9A227;font-size:1.1rem;letter-spacing:2px;">${stars(reviewAvg)}</span><span style="font-weight:700;color:#1f2937;">${reviewAvg}</span><span style="font-size:0.85rem;color:#6b7280;">(${reviews.length} ${reviews.length === 1 ? 'ביקורת' : 'ביקורות'})</span></div>
+        ${reviews.map(r => `
+          <div style="background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:12px 16px;margin-bottom:8px;">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;"><span style="font-weight:600;font-size:0.9rem;color:#1f2937;">${r.author || 'לקוח'}</span><span style="color:#C9A227;letter-spacing:1px;font-size:0.9rem;">${stars(Number(r.rating || 0))}</span></div>
+            <div style="font-size:0.9rem;color:#4b5563;line-height:1.7;">${r.body}</div>
+          </div>
+        `).join('')}
+      </div>` : '';
+  const reviewSchema = reviews.length ? {
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": String(reviewAvg), "reviewCount": String(reviews.length), "bestRating": "5", "worstRating": "1" },
+    "review": reviews.map(r => ({
+      "@type": "Review",
+      "reviewRating": { "@type": "Rating", "ratingValue": String(r.rating), "bestRating": "5", "worstRating": "1" },
+      "author": { "@type": "Person", "name": r.author || "לקוח" },
+      ...(r.date ? { "datePublished": r.date } : {}),
+      "reviewBody": r.body,
+    })),
+  } : {};
+
   // ===== Variant group: pricing block, selector + quantity matrix, cart script =====
   // Pricing headline (JS updates it when a variant pill is selected)
   // Compact price line for group pages — replaces the bulky site price banner.
@@ -438,8 +466,9 @@ function generateProductPage(product, categories, allProducts, group) {
           "hasMerchantReturnPolicy": RETURN_POLICY
         }
       } : {})
-    }))
-  } : schemaBase, null, 2);
+    })),
+    ...reviewSchema
+  } : { ...schemaBase, ...reviewSchema }, null, 2);
 
   return `<!DOCTYPE html>
 <html lang="he" dir="rtl">
@@ -572,6 +601,7 @@ function generateProductPage(product, categories, allProducts, group) {
           ${specsHtml}
           ${bulkCtaHtml}
           ${geoContentHtml}
+          ${reviewsHtml}
           ${faqsHtml}
         </div>
       </div>
@@ -925,7 +955,7 @@ function main() {
   const groupContext = (gid) => {
     const def = groupDefById.get(gid);
     const members = groupMembers.get(gid);
-    return { id: gid, name: def.name, axis: def.axis, seoSlug: def.seoSlug || (members[0].seoSlug || members[0].slug), groupImageUrl: def.groupImageUrl || null, seoTitle: def.seoTitle || null, seoMetaDesc: def.seoMetaDesc || null, seoImageAlt: def.seoImageAlt || null, variants: members };
+    return { id: gid, name: def.name, axis: def.axis, seoSlug: def.seoSlug || (members[0].seoSlug || members[0].slug), groupImageUrl: def.groupImageUrl || null, seoTitle: def.seoTitle || null, seoMetaDesc: def.seoMetaDesc || null, seoImageAlt: def.seoImageAlt || null, reviews: def.reviews || [], variants: members };
   };
 
   // Optional single-page mode: `--slug=<slug>` regenerates ONE product page
