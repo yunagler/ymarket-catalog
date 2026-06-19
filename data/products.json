@@ -38478,11 +38478,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "מוצרי-נייר-וניגוב",
-      "categoryName": "מוצרי נייר וניגוב",
+      "categorySlug": "מגבות-נייר-ידיים",
+      "categoryName": "מגבות נייר ידיים",
       "categorySlugs": [
-        "מוצרי-נייר-וניגוב",
-        "מגבות-נייר-ידיים"
+        "מגבות-נייר-ידיים",
+        "מוצרי-נייר-וניגוב"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -51908,6 +51908,6 @@
       "reviews": []
     }
   ],
-  "exportedAt": "2026-06-19T15:17:47.111Z",
+  "exportedAt": "2026-06-19T15:27:40.077Z",
   "totalItems": 837
 }
