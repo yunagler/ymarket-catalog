@@ -3809,7 +3809,7 @@
       "productStatus": "recommended",
       "description": "",
       "partNumber": "",
-      "barcode": "",
+      "barcode": "7290020320155",
       "searchTags": "ממחטות, טישו, טישו אף",
       "technicalDesc": "",
       "videoUrl": "",
@@ -4282,6 +4282,78 @@
       "variantGroupId": null,
       "variantLabel": null,
       "variantSortOrder": 0
+    },
+    {
+      "id": 21,
+      "name": "נטריל שחור (Perfect) - מידה XL - (100 יח) - ללא אבקה",
+      "slug": "נטריל-שחור-Perfect-מידה-XL-100-יח-ללא-אבקה",
+      "saleNis": 18,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "בטיחות-ומיגון-אישי-PPE",
+      "categoryName": "מיגון ובטיחות בעבודה (PPE)",
+      "categorySlugs": [
+        "בטיחות-ומיגון-אישי-PPE",
+        "-כפפות-חדפעמיות"
+      ],
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/37.jpg",
+      "isFeatured": true,
+      "productStatus": "recommended",
+      "description": "מיגון ובטיחות מקצועי — עומד בתקני בטיחות",
+      "partNumber": "7290113286580",
+      "barcode": "7290113286580",
+      "searchTags": "כפפות, מסכה, משקפי מגן, ביגוד מגן, PPE, בטיחות, מיגון, נטריל, שחור, Perfect, ללא, אבקה, סיטונאי, לעסקים, מוסדי",
+      "technicalDesc": "[{\"label\":\"סוג מוצר\",\"value\":\"ציוד מיגון (PPE)\"},{\"label\":\"תקנים\",\"value\":\"עומד בתקני בטיחות\"},{\"label\":\"אספקה\",\"value\":\"1-3 ימי עסקים\"},{\"label\":\"מחיר\",\"value\":\"₪18 + מע\\\"מ\"}]",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": [
+        {
+          "id": 63,
+          "name": "נטריל כחול (Perfect) - מידה L - (100 יח) - ללא אבקה",
+          "saleNis": 18,
+          "imageUrl": "/items/79.jpg",
+          "slug": "נטריל-כחול-Perfect-מידה-L-100-יח-ללא-אבקה"
+        },
+        {
+          "id": 379,
+          "name": "נטריל שחור L {פרומקס}",
+          "saleNis": 25,
+          "imageUrl": "/items/395.jpg",
+          "slug": "נטריל-שחור-L-פרומקס"
+        }
+      ],
+      "seoSlug": "nitrile-black-perfect-size-xl-100-without-powder",
+      "seo": {
+        "title": "נטריל שחור (Perfect) - מידה XL - (100 יח) - ללא אבקה | YMARKET",
+        "metaDesc": "נטריל שחור (Perfect) - מידה XL - (100 יח) - ללא אבקה החל מ-₪18 | מיגון ובטיחות לעסקים ומוסדות. משלוח מהיר, מחירי סיטונאות. הזמינו אונליין ב-YMARKET.",
+        "imageAlt": "נטריל שחור (Perfect) - מידה XL - (100 יח) - ללא אבקה - מיגון ובטיחות לעסקים | וואי מרקט",
+        "geoContent": "<h3>מידע מקצועי על נטריל שחור (Perfect) - מידה XL - (100 יח) - ללא אבקה</h3>\n<p>נטריל שחור (Perfect) - מידה XL - (100 יח) - ללא אבקה — ציוד הגנה אישי (PPE) מקצועי לשימוש מוסדי. מתאים למפעלים, חברות בנייה, מעבדות, מטבחים מוסדיים ובתי חולים.</p>\n<p><strong>תקנים:</strong> עומד בתקני הבטיחות המחייבים. חשוב לבחור את המידה הנכונה להגנה מיטבית ונוחות לאורך זמן.</p>\n<p><strong>טיפ:</strong> ודאו שהציוד תואם את סוג הסיכון הספציפי בסביבת העבודה שלכם. <a href=\"https://wa.me/972549922492\">צרו קשר</a> לייעוץ.</p>",
+        "gtin": "7290113286580",
+        "mpn": "7290113286580",
+        "isB2BBulk": false,
+        "faqs": [
+          {
+            "question": "האם נטריל שחור (Perfect) - מידה XL - (100 יח) - ללא אבקה עומד בתקני בטיחות?",
+            "answer": "כל מוצרי הבטיחות שלנו עומדים בתקנים המחייבים. ודאו שאתם בוחרים את המידה המתאימה להגנה מיטבית."
+          },
+          {
+            "question": "איזו מידה לבחור בנטריל שחור (Perfect) - מידה XL - (100 יח) - ללא אבקה?",
+            "answer": "מומלץ למדוד לפי טבלת המידות המופיעה על האריזה. אם אינכם בטוחים — צרו קשר ונעזור להתאים."
+          },
+          {
+            "question": "מה מינימום ההזמנה של נטריל שחור (Perfect) - מידה XL - (100 יח) - ללא אבקה?",
+            "answer": "מינימום הזמנה באתר: 200 ₪ + מע\"מ (לפני משלוח). ניתן לשלב מוצרים מכל הקטגוריות כדי להגיע למינימום."
+          }
+        ],
+        "specs": []
+      },
+      "variantGroupId": 2,
+      "variantLabel": "XL",
+      "variantSortOrder": 4
     },
     {
       "id": 91,
@@ -16202,7 +16274,7 @@
       "productStatus": "active",
       "description": "ציוד ניקיון מקצועי — עמידות תעשייתית",
       "partNumber": "7290000599861",
-      "barcode": "",
+      "barcode": "7290000599861",
       "searchTags": "מטאטא, מגב, דלי, מקל, ציוד ניקיון, כלי ניקוי, מברשת, פלסטיק, BASIC, סיטונאי, לעסקים, מוסדי",
       "technicalDesc": "[{\"label\":\"סוג מוצר\",\"value\":\"ציוד ניקיון מקצועי\"},{\"label\":\"דרגת עמידות\",\"value\":\"תעשייתי / מוסדי\"},{\"label\":\"אספקה\",\"value\":\"1-3 ימי עסקים\"},{\"label\":\"מחיר\",\"value\":\"₪6 + מע\\\"מ\"}]",
       "videoUrl": "",
@@ -22798,7 +22870,7 @@
       "productStatus": "active",
       "description": "ציוד ניקיון מקצועי — עמידות תעשייתית",
       "partNumber": "",
-      "barcode": "",
+      "barcode": "7290020173041",
       "searchTags": "מטאטא, מגב, דלי, מקל, ציוד ניקיון, כלי ניקוי, מברשת, כביש, ניילון, ס\"מ, סיטונאי, לעסקים, מוסדי",
       "technicalDesc": "[{\"label\":\"סוג מוצר\",\"value\":\"ציוד ניקיון מקצועי\"},{\"label\":\"דרגת עמידות\",\"value\":\"תעשייתי / מוסדי\"},{\"label\":\"אספקה\",\"value\":\"1-3 ימי עסקים\"},{\"label\":\"מחיר\",\"value\":\"₪22 + מע\\\"מ\"}]",
       "videoUrl": "",
@@ -25630,63 +25702,6 @@
       "variantSortOrder": 3
     },
     {
-      "id": 640,
-      "name": "מכסה לקראפט - 1300 מ\"ל",
-      "slug": "מכסה-לקראפט-1300-מ-ל",
-      "saleNis": 0,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "אריזות-מזון-ו-Take-Away",
-      "categoryName": "אריזות מזון ו-Take Away",
-      "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away",
-        "קראפטים"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/656.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "אריזות מזון מקצועי — אטימות מלאה",
-      "partNumber": "",
-      "barcode": "",
-      "searchTags": "אריזות, טייק אווי, קופסאות מזון, משלוחים, מיכלים, אריזת מזון, מכסה, לקראפט, מ\"ל, סיטונאי, לעסקים, מוסדי",
-      "technicalDesc": "[{\"label\":\"סוג מוצר\",\"value\":\"אריזת מזון\"},{\"label\":\"בטיחות מזון\",\"value\":\"מאושר למגע מזון\"},{\"label\":\"אספקה\",\"value\":\"1-3 ימי עסקים\"}]",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": [],
-      "seoSlug": "1300",
-      "seo": {
-        "title": "מכסה לקראפט - 1300 מ\"ל | אריזות מזון בסיטונאות",
-        "metaDesc": "מכסה לקראפט - 1300 מ\"ל | אריזות מזון לעסקים ומוסדות. משלוח מהיר, מחירי סיטונאות. הזמינו אונליין ב-YMARKET.",
-        "imageAlt": "מכסה לקראפט - 1300 מ\"ל - אריזות מזון לעסקים | וואי מרקט",
-        "geoContent": "<h3>מידע מקצועי על מכסה לקראפט - 1300 מ\"ל</h3>\n<p>מכסה לקראפט - 1300 מ\"ל — אריזת מזון מקצועית למסעדות, שירותי משלוחים וקייטרינג. מתוכננת לשמירה על טריות המזון ועמידות בתנאי משלוח.</p>\n<p><strong>יתרונות:</strong> אטימות מלאה, עמידות בחום/קור, מאושרת למגע מזון. אידאלית למשלוחי מזון ול-Take Away.</p>\n<p><strong>טיפ:</strong> בחירת האריזה הנכונה משפיעה על חוויית הלקוח. <a href=\"https://wa.me/972549922492\">צרו קשר</a> לייעוץ בבחירת אריזות למסעדה שלכם.</p>",
-        "gtin": null,
-        "mpn": null,
-        "isB2BBulk": false,
-        "faqs": [
-          {
-            "question": "האם מכסה לקראפט - 1300 מ\"ל אטום לנוזלים?",
-            "answer": "מרבית אריזות המזון שלנו מיועדות לאטימות. בדקו את פרטי המוצר לאישור התאמה לנוזלים חמים."
-          },
-          {
-            "question": "האם מכסה לקראפט - 1300 מ\"ל מתאים להקפאה?",
-            "answer": "חלק מהאריזות מתאימות להקפאה. עיינו בפרטי המוצר או צרו קשר לייעוץ."
-          },
-          {
-            "question": "מה מינימום ההזמנה של מכסה לקראפט - 1300 מ\"ל?",
-            "answer": "מינימום הזמנה באתר: 200 ₪ + מע\"מ (לפני משלוח). ניתן לשלב מוצרים מכל הקטגוריות כדי להגיע למינימום."
-          }
-        ],
-        "specs": []
-      },
-      "variantGroupId": 55,
-      "variantLabel": "1300",
-      "variantSortOrder": 4
-    },
-    {
       "id": 905,
       "name": "מכסה לקראפט - 1300 מ\"ל",
       "slug": "מכסה-לקראפט-1300-מ-ל-2",
@@ -25742,6 +25757,63 @@
       "variantGroupId": null,
       "variantLabel": null,
       "variantSortOrder": 0
+    },
+    {
+      "id": 640,
+      "name": "מכסה לקראפט - 1300 מ\"ל",
+      "slug": "מכסה-לקראפט-1300-מ-ל",
+      "saleNis": 0,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
+      "categorySlugs": [
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
+      ],
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/656.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "אריזות מזון מקצועי — אטימות מלאה",
+      "partNumber": "",
+      "barcode": "",
+      "searchTags": "אריזות, טייק אווי, קופסאות מזון, משלוחים, מיכלים, אריזת מזון, מכסה, לקראפט, מ\"ל, סיטונאי, לעסקים, מוסדי",
+      "technicalDesc": "[{\"label\":\"סוג מוצר\",\"value\":\"אריזת מזון\"},{\"label\":\"בטיחות מזון\",\"value\":\"מאושר למגע מזון\"},{\"label\":\"אספקה\",\"value\":\"1-3 ימי עסקים\"}]",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": [],
+      "seoSlug": "1300",
+      "seo": {
+        "title": "מכסה לקראפט - 1300 מ\"ל | אריזות מזון בסיטונאות",
+        "metaDesc": "מכסה לקראפט - 1300 מ\"ל | אריזות מזון לעסקים ומוסדות. משלוח מהיר, מחירי סיטונאות. הזמינו אונליין ב-YMARKET.",
+        "imageAlt": "מכסה לקראפט - 1300 מ\"ל - אריזות מזון לעסקים | וואי מרקט",
+        "geoContent": "<h3>מידע מקצועי על מכסה לקראפט - 1300 מ\"ל</h3>\n<p>מכסה לקראפט - 1300 מ\"ל — אריזת מזון מקצועית למסעדות, שירותי משלוחים וקייטרינג. מתוכננת לשמירה על טריות המזון ועמידות בתנאי משלוח.</p>\n<p><strong>יתרונות:</strong> אטימות מלאה, עמידות בחום/קור, מאושרת למגע מזון. אידאלית למשלוחי מזון ול-Take Away.</p>\n<p><strong>טיפ:</strong> בחירת האריזה הנכונה משפיעה על חוויית הלקוח. <a href=\"https://wa.me/972549922492\">צרו קשר</a> לייעוץ בבחירת אריזות למסעדה שלכם.</p>",
+        "gtin": null,
+        "mpn": null,
+        "isB2BBulk": false,
+        "faqs": [
+          {
+            "question": "האם מכסה לקראפט - 1300 מ\"ל אטום לנוזלים?",
+            "answer": "מרבית אריזות המזון שלנו מיועדות לאטימות. בדקו את פרטי המוצר לאישור התאמה לנוזלים חמים."
+          },
+          {
+            "question": "האם מכסה לקראפט - 1300 מ\"ל מתאים להקפאה?",
+            "answer": "חלק מהאריזות מתאימות להקפאה. עיינו בפרטי המוצר או צרו קשר לייעוץ."
+          },
+          {
+            "question": "מה מינימום ההזמנה של מכסה לקראפט - 1300 מ\"ל?",
+            "answer": "מינימום הזמנה באתר: 200 ₪ + מע\"מ (לפני משלוח). ניתן לשלב מוצרים מכל הקטגוריות כדי להגיע למינימום."
+          }
+        ],
+        "specs": []
+      },
+      "variantGroupId": 55,
+      "variantLabel": "1300",
+      "variantSortOrder": 4
     },
     {
       "id": 642,
@@ -30848,7 +30920,7 @@
       "productStatus": "active",
       "description": "חומרי ניקוי מקצועי — ריכוז גבוה לחיסכון",
       "partNumber": "",
-      "barcode": "",
+      "barcode": "7290008427531",
       "searchTags": "חומר ניקוי, ניקוי מוסדי, חיטוי, מרוכז, תעשייתי, מקצועי, נוזל, כלים, 12%, ליטר, BLINX, סיטונאי, לעסקים, מוסדי",
       "technicalDesc": "[{\"label\":\"סוג מוצר\",\"value\":\"חומר ניקוי מקצועי\"},{\"label\":\"שימוש\",\"value\":\"מוסדי / תעשייתי\"},{\"label\":\"אספקה\",\"value\":\"1-3 ימי עסקים\"},{\"label\":\"מחיר\",\"value\":\"₪18 + מע\\\"מ\"}]",
       "videoUrl": "",
@@ -32427,63 +32499,6 @@
       "variantGroupId": 2,
       "variantLabel": "S",
       "variantSortOrder": 1
-    },
-    {
-      "id": 21,
-      "name": "נטריל שחור (Perfect) - מידה XL - (100 יח) - ללא אבקה",
-      "slug": "נטריל-שחור-Perfect-מידה-XL-100-יח-ללא-אבקה",
-      "saleNis": 18,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "בטיחות-ומיגון-אישי-PPE",
-      "categoryName": "מיגון ובטיחות בעבודה (PPE)",
-      "categorySlugs": [
-        "בטיחות-ומיגון-אישי-PPE",
-        "-כפפות-חדפעמיות"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/37.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "מיגון ובטיחות מקצועי — עומד בתקני בטיחות",
-      "partNumber": "7290113286580",
-      "barcode": "7290113286580",
-      "searchTags": "כפפות, מסכה, משקפי מגן, ביגוד מגן, PPE, בטיחות, מיגון, נטריל, שחור, Perfect, ללא, אבקה, סיטונאי, לעסקים, מוסדי",
-      "technicalDesc": "[{\"label\":\"סוג מוצר\",\"value\":\"ציוד מיגון (PPE)\"},{\"label\":\"תקנים\",\"value\":\"עומד בתקני בטיחות\"},{\"label\":\"אספקה\",\"value\":\"1-3 ימי עסקים\"},{\"label\":\"מחיר\",\"value\":\"₪18 + מע\\\"מ\"}]",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": [],
-      "seoSlug": "nitrile-black-perfect-size-xl-100-without-powder",
-      "seo": {
-        "title": "נטריל שחור (Perfect) - מידה XL - (100 יח) - ללא אבקה | YMARKET",
-        "metaDesc": "נטריל שחור (Perfect) - מידה XL - (100 יח) - ללא אבקה החל מ-₪18 | מיגון ובטיחות לעסקים ומוסדות. משלוח מהיר, מחירי סיטונאות. הזמינו אונליין ב-YMARKET.",
-        "imageAlt": "נטריל שחור (Perfect) - מידה XL - (100 יח) - ללא אבקה - מיגון ובטיחות לעסקים | וואי מרקט",
-        "geoContent": "<h3>מידע מקצועי על נטריל שחור (Perfect) - מידה XL - (100 יח) - ללא אבקה</h3>\n<p>נטריל שחור (Perfect) - מידה XL - (100 יח) - ללא אבקה — ציוד הגנה אישי (PPE) מקצועי לשימוש מוסדי. מתאים למפעלים, חברות בנייה, מעבדות, מטבחים מוסדיים ובתי חולים.</p>\n<p><strong>תקנים:</strong> עומד בתקני הבטיחות המחייבים. חשוב לבחור את המידה הנכונה להגנה מיטבית ונוחות לאורך זמן.</p>\n<p><strong>טיפ:</strong> ודאו שהציוד תואם את סוג הסיכון הספציפי בסביבת העבודה שלכם. <a href=\"https://wa.me/972549922492\">צרו קשר</a> לייעוץ.</p>",
-        "gtin": "7290113286580",
-        "mpn": "7290113286580",
-        "isB2BBulk": false,
-        "faqs": [
-          {
-            "question": "האם נטריל שחור (Perfect) - מידה XL - (100 יח) - ללא אבקה עומד בתקני בטיחות?",
-            "answer": "כל מוצרי הבטיחות שלנו עומדים בתקנים המחייבים. ודאו שאתם בוחרים את המידה המתאימה להגנה מיטבית."
-          },
-          {
-            "question": "איזו מידה לבחור בנטריל שחור (Perfect) - מידה XL - (100 יח) - ללא אבקה?",
-            "answer": "מומלץ למדוד לפי טבלת המידות המופיעה על האריזה. אם אינכם בטוחים — צרו קשר ונעזור להתאים."
-          },
-          {
-            "question": "מה מינימום ההזמנה של נטריל שחור (Perfect) - מידה XL - (100 יח) - ללא אבקה?",
-            "answer": "מינימום הזמנה באתר: 200 ₪ + מע\"מ (לפני משלוח). ניתן לשלב מוצרים מכל הקטגוריות כדי להגיע למינימום."
-          }
-        ],
-        "specs": []
-      },
-      "variantGroupId": 2,
-      "variantLabel": "XL",
-      "variantSortOrder": 4
     },
     {
       "id": 379,
@@ -37004,63 +37019,6 @@
       "variantSortOrder": 0
     },
     {
-      "id": 393,
-      "name": "סט 4 מדגיש צבעוני",
-      "slug": "סט-4-מדגיש-צבעוני-2",
-      "saleNis": 10,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "writing-instruments",
-      "categoryName": "כלי כתיבה",
-      "categorySlugs": [
-        "writing-instruments",
-        "ציוד-משרדי-וכללי"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/409.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "ציוד משרדי מקצועי — מותגים מוכרים",
-      "partNumber": "",
-      "barcode": "",
-      "searchTags": "ציוד משרדי, נייר צילום, עטים, קלסר, דבק, מדפסת, משרד, מדגיש, צבעוני, סיטונאי, לעסקים, מוסדי",
-      "technicalDesc": "[{\"label\":\"סוג מוצר\",\"value\":\"ציוד משרדי\"},{\"label\":\"אספקה\",\"value\":\"1-3 ימי עסקים\"},{\"label\":\"מחיר\",\"value\":\"₪10 + מע\\\"מ\"}]",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": [],
-      "seoSlug": null,
-      "seo": {
-        "title": "סט 4 מדגיש צבעוני | ציוד משרדי בסיטונאות",
-        "metaDesc": "סט 4 מדגיש צבעוני החל מ-₪10 | ציוד משרדי לעסקים ומוסדות. משלוח מהיר, מחירי סיטונאות. הזמינו אונליין ב-YMARKET.",
-        "imageAlt": "סט 4 מדגיש צבעוני - ציוד משרדי לעסקים | וואי מרקט",
-        "geoContent": "<h3>מידע מקצועי על סט 4 מדגיש צבעוני</h3>\n<p>סט 4 מדגיש צבעוני — ציוד משרדי מקצועי למשרדים, מוסדות חינוך וארגונים. מותגים מוכרים במחירי סיטונאות.</p>\n<p><strong>יתרונות:</strong> מלאי קבוע, משלוח עד המשרד, חיסכון של עד 30% לעומת חנויות ציוד משרדי.</p>\n<p><strong>טיפ:</strong> שלבו ציוד משרדי עם מוצרי צריכה שוטפת בהזמנה אחת וחסכו במשלוח. <a href=\"https://wa.me/972549922492\">צרו קשר</a>.</p>",
-        "gtin": null,
-        "mpn": null,
-        "isB2BBulk": false,
-        "faqs": [
-          {
-            "question": "האם סט 4 מדגיש צבעוני זמין במלאי?",
-            "answer": "מרבית מוצרי הציוד המשרדי זמינים במלאי לאספקה מיידית. ניתן להוסיף לעגלה ולהזמין אונליין."
-          },
-          {
-            "question": "האם יש הנחת כמות על סט 4 מדגיש צבעוני?",
-            "answer": "כן! ככל שמזמינים יותר, המחיר ליחידה יורד. צרו קשר לקבלת הצעת מחיר מותאמת לכמויות גדולות."
-          },
-          {
-            "question": "מה מינימום ההזמנה של סט 4 מדגיש צבעוני?",
-            "answer": "מינימום הזמנה באתר: 200 ₪ + מע\"מ (לפני משלוח). ניתן לשלב מוצרים מכל הקטגוריות כדי להגיע למינימום."
-          }
-        ],
-        "specs": []
-      },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
-    },
-    {
       "id": 363,
       "name": "סט 4 מדגיש צבעוני",
       "slug": "סט-4-מדגיש-צבעוני",
@@ -37092,6 +37050,63 @@
       "seo": {
         "title": "סט 4 מדגיש צבעוני | ציוד משרדי בסיטונאות",
         "metaDesc": "סט 4 מדגיש צבעוני החל מ-₪9.5 | ציוד משרדי לעסקים ומוסדות. משלוח מהיר, מחירי סיטונאות. הזמינו אונליין ב-YMARKET.",
+        "imageAlt": "סט 4 מדגיש צבעוני - ציוד משרדי לעסקים | וואי מרקט",
+        "geoContent": "<h3>מידע מקצועי על סט 4 מדגיש צבעוני</h3>\n<p>סט 4 מדגיש צבעוני — ציוד משרדי מקצועי למשרדים, מוסדות חינוך וארגונים. מותגים מוכרים במחירי סיטונאות.</p>\n<p><strong>יתרונות:</strong> מלאי קבוע, משלוח עד המשרד, חיסכון של עד 30% לעומת חנויות ציוד משרדי.</p>\n<p><strong>טיפ:</strong> שלבו ציוד משרדי עם מוצרי צריכה שוטפת בהזמנה אחת וחסכו במשלוח. <a href=\"https://wa.me/972549922492\">צרו קשר</a>.</p>",
+        "gtin": null,
+        "mpn": null,
+        "isB2BBulk": false,
+        "faqs": [
+          {
+            "question": "האם סט 4 מדגיש צבעוני זמין במלאי?",
+            "answer": "מרבית מוצרי הציוד המשרדי זמינים במלאי לאספקה מיידית. ניתן להוסיף לעגלה ולהזמין אונליין."
+          },
+          {
+            "question": "האם יש הנחת כמות על סט 4 מדגיש צבעוני?",
+            "answer": "כן! ככל שמזמינים יותר, המחיר ליחידה יורד. צרו קשר לקבלת הצעת מחיר מותאמת לכמויות גדולות."
+          },
+          {
+            "question": "מה מינימום ההזמנה של סט 4 מדגיש צבעוני?",
+            "answer": "מינימום הזמנה באתר: 200 ₪ + מע\"מ (לפני משלוח). ניתן לשלב מוצרים מכל הקטגוריות כדי להגיע למינימום."
+          }
+        ],
+        "specs": []
+      },
+      "variantGroupId": null,
+      "variantLabel": null,
+      "variantSortOrder": 0
+    },
+    {
+      "id": 393,
+      "name": "סט 4 מדגיש צבעוני",
+      "slug": "סט-4-מדגיש-צבעוני-2",
+      "saleNis": 10,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
+      "categorySlugs": [
+        "writing-instruments",
+        "ציוד-משרדי-וכללי"
+      ],
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/409.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "ציוד משרדי מקצועי — מותגים מוכרים",
+      "partNumber": "",
+      "barcode": "",
+      "searchTags": "ציוד משרדי, נייר צילום, עטים, קלסר, דבק, מדפסת, משרד, מדגיש, צבעוני, סיטונאי, לעסקים, מוסדי",
+      "technicalDesc": "[{\"label\":\"סוג מוצר\",\"value\":\"ציוד משרדי\"},{\"label\":\"אספקה\",\"value\":\"1-3 ימי עסקים\"},{\"label\":\"מחיר\",\"value\":\"₪10 + מע\\\"מ\"}]",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": [],
+      "seoSlug": null,
+      "seo": {
+        "title": "סט 4 מדגיש צבעוני | ציוד משרדי בסיטונאות",
+        "metaDesc": "סט 4 מדגיש צבעוני החל מ-₪10 | ציוד משרדי לעסקים ומוסדות. משלוח מהיר, מחירי סיטונאות. הזמינו אונליין ב-YMARKET.",
         "imageAlt": "סט 4 מדגיש צבעוני - ציוד משרדי לעסקים | וואי מרקט",
         "geoContent": "<h3>מידע מקצועי על סט 4 מדגיש צבעוני</h3>\n<p>סט 4 מדגיש צבעוני — ציוד משרדי מקצועי למשרדים, מוסדות חינוך וארגונים. מותגים מוכרים במחירי סיטונאות.</p>\n<p><strong>יתרונות:</strong> מלאי קבוע, משלוח עד המשרד, חיסכון של עד 30% לעומת חנויות ציוד משרדי.</p>\n<p><strong>טיפ:</strong> שלבו ציוד משרדי עם מוצרי צריכה שוטפת בהזמנה אחת וחסכו במשלוח. <a href=\"https://wa.me/972549922492\">צרו קשר</a>.</p>",
         "gtin": null,
@@ -37710,7 +37725,7 @@
       "productStatus": "active",
       "description": "מיגון ובטיחות מקצועי — עומד בתקני בטיחות",
       "partNumber": "7290000599267",
-      "barcode": "",
+      "barcode": "7290000599267",
       "searchTags": "כפפות, מסכה, משקפי מגן, ביגוד מגן, PPE, בטיחות, מיגון, שירותים, URBAN, לבן, סיטונאי, לעסקים, מוסדי",
       "technicalDesc": "[{\"label\":\"סוג מוצר\",\"value\":\"ציוד מיגון (PPE)\"},{\"label\":\"תקנים\",\"value\":\"עומד בתקני בטיחות\"},{\"label\":\"אספקה\",\"value\":\"1-3 ימי עסקים\"},{\"label\":\"מחיר\",\"value\":\"₪10 + מע\\\"מ\"}]",
       "videoUrl": "",
@@ -51288,244 +51303,6 @@
   ],
   "variantGroups": [
     {
-      "id": 25,
-      "name": "פח שובך 50 ליטר מרובע",
-      "axis": "צבע",
-      "seoSlug": "nesting-bin-50l-square",
-      "groupImageUrl": null
-    },
-    {
-      "id": 45,
-      "name": "גביע PP - א 2000 יח",
-      "axis": "גודל",
-      "seoSlug": "pp-cup-clear-2000",
-      "groupImageUrl": null
-    },
-    {
-      "id": 43,
-      "name": "גביע רוטב מחובר CC א 1000 יח",
-      "axis": "נפח",
-      "seoSlug": "sauce-cup-attached",
-      "groupImageUrl": null
-    },
-    {
-      "id": 26,
-      "name": "גביע רוטוב 2OZ ארוז 2500",
-      "axis": "צבע",
-      "seoSlug": "sauce-cup-2oz-2500",
-      "groupImageUrl": null
-    },
-    {
-      "id": 57,
-      "name": "דאודורנט רול NIVEA 50 מ\"ל",
-      "axis": "סוג",
-      "seoSlug": "nivea-roll-deodorant-50ml",
-      "groupImageUrl": null
-    },
-    {
-      "id": 4,
-      "name": "ווניל שקוף/לבן (IT-TAI) - (100 יח) - ללא אבקה",
-      "axis": "מידה",
-      "seoSlug": "vinyl-it-tai",
-      "groupImageUrl": null
-    },
-    {
-      "id": 17,
-      "name": "טוש 90 פרמננט ליין פלוס (12)",
-      "axis": "צבע",
-      "seoSlug": "permanent-marker-90",
-      "groupImageUrl": null
-    },
-    {
-      "id": 5,
-      "name": "לטקס ללא אבקה (Perfect) - (100 יח)",
-      "axis": "מידה",
-      "seoSlug": "latex-perfect-powder-free",
-      "groupImageUrl": null
-    },
-    {
-      "id": 6,
-      "name": "לטקס עם אבקה (Perfect) - (100 יח)",
-      "axis": "מידה",
-      "seoSlug": "latex-perfect-powdered",
-      "groupImageUrl": null
-    },
-    {
-      "id": 27,
-      "name": "מגבון אישי חלק 1000 יחידות",
-      "axis": "צבע",
-      "seoSlug": "personal-wipes-smooth-1000",
-      "groupImageUrl": null
-    },
-    {
-      "id": 28,
-      "name": "מגש פלסטיק (מחוזק) - כרעיים 500 יח'",
-      "axis": "צבע",
-      "seoSlug": "tray-plastic-reinforced-thighs-500",
-      "groupImageUrl": null
-    },
-    {
-      "id": 9,
-      "name": "מגש קלקר סופג - כרעיים 500 יח'",
-      "axis": "צבע",
-      "seoSlug": "tray-foam-absorbent-thighs-500",
-      "groupImageUrl": "/items/group-9.jpg"
-    },
-    {
-      "id": 10,
-      "name": "מגש קלקר סופג - צלעות 480 יח'",
-      "axis": "צבע",
-      "seoSlug": "tray-foam-absorbent-ribs-480",
-      "groupImageUrl": null
-    },
-    {
-      "id": 14,
-      "name": "מגש קלקר סופג - שניצל 500 יח'",
-      "axis": "צבע",
-      "seoSlug": "tray-foam-absorbent-schnitzel-500",
-      "groupImageUrl": null
-    },
-    {
-      "id": 29,
-      "name": "מגש קלקר סופג - דגים צר 400 יח'",
-      "axis": "צבע",
-      "seoSlug": "tray-foam-absorbent-fish-400",
-      "groupImageUrl": null
-    },
-    {
-      "id": 18,
-      "name": "מגש קלקר סופג - כרעיים 600 יח'",
-      "axis": "צבע",
-      "seoSlug": "tray-foam-absorbent-thighs-600",
-      "groupImageUrl": null
-    },
-    {
-      "id": 30,
-      "name": "מגש קלקר סופג - קבב 300 יח'",
-      "axis": "צבע",
-      "seoSlug": "tray-foam-absorbent-kebab-300",
-      "groupImageUrl": null
-    },
-    {
-      "id": 11,
-      "name": "מגש קלקר רגיל - כרעיים 600 יח'",
-      "axis": "צבע",
-      "seoSlug": "tray-foam-regular-thighs-600",
-      "groupImageUrl": null
-    },
-    {
-      "id": 12,
-      "name": "מגש קלקר רגיל - צלעות 480 יח'",
-      "axis": "צבע",
-      "seoSlug": "tray-foam-regular-ribs-480",
-      "groupImageUrl": null
-    },
-    {
-      "id": 15,
-      "name": "מגש קלקר רגיל - קבב 300 יח'",
-      "axis": "צבע",
-      "seoSlug": "tray-foam-regular-kebab-300",
-      "groupImageUrl": null
-    },
-    {
-      "id": 19,
-      "name": "מגש קלקר רגיל - שניצל 500 יח'",
-      "axis": "צבע",
-      "seoSlug": "tray-foam-regular-schnitzel-500",
-      "groupImageUrl": null
-    },
-    {
-      "id": 41,
-      "name": "מדבקות 32 דף לבן",
-      "axis": "מידה",
-      "seoSlug": "label-stickers-32sheet",
-      "groupImageUrl": null
-    },
-    {
-      "id": 20,
-      "name": "מזלג ארוז 50 יח' בחבילה",
-      "axis": "צבע",
-      "seoSlug": "fork-50-pack",
-      "groupImageUrl": null
-    },
-    {
-      "id": 54,
-      "name": "מיכל ליטר + מכסה",
-      "axis": "נפח",
-      "seoSlug": "liter-container-lid",
-      "groupImageUrl": null
-    },
-    {
-      "id": 46,
-      "name": "מיכל טינטגרלי מהודר הדר - 400 יח",
-      "axis": "גודל",
-      "seoSlug": "hadar-container",
-      "groupImageUrl": null
-    },
-    {
-      "id": 55,
-      "name": "מכסה לקראפט",
-      "axis": "נפח",
-      "seoSlug": "kraft-lid",
-      "groupImageUrl": null
-    },
-    {
-      "id": 31,
-      "name": "מכסה שטוח לכוס 95 א' 1000 יח'",
-      "axis": "צבע",
-      "seoSlug": "flat-lid-cup-95",
-      "groupImageUrl": null
-    },
-    {
-      "id": 13,
-      "name": "מסכה כירוגית (3 שכבות) - 50 יח'",
-      "axis": "צבע",
-      "seoSlug": "mask-surgical-3ply-50",
-      "groupImageUrl": "/items/group-13.jpg"
-    },
-    {
-      "id": 47,
-      "name": "מסקנטייפ סמ רוחב 25 מטר",
-      "axis": "גודל",
-      "seoSlug": "masking-tape-roll",
-      "groupImageUrl": null
-    },
-    {
-      "id": 7,
-      "name": "מעיל גשם ארוך P.V.C בצבע צהוב",
-      "axis": "מידה",
-      "seoSlug": "pvc-raincoat-yellow",
-      "groupImageUrl": "/items/group-7.jpg"
-    },
-    {
-      "id": 48,
-      "name": "מפיות 1/8 ארוז 2400 יח",
-      "axis": "מידה",
-      "seoSlug": "napkins-1-8-2400",
-      "groupImageUrl": null
-    },
-    {
-      "id": 21,
-      "name": "מרקר מדגיש",
-      "axis": "צבע",
-      "seoSlug": "highlighter-markers",
-      "groupImageUrl": null
-    },
-    {
-      "id": 8,
-      "name": "נטריל ורוד ללא אבקה - א' 100 יח'",
-      "axis": "מידה",
-      "seoSlug": "nitrile-pink-powder-free",
-      "groupImageUrl": null
-    },
-    {
-      "id": 3,
-      "name": "נטריל כחול (Perfect) - (100 יח) - ללא אבקה",
-      "axis": "מידה",
-      "seoSlug": "nitrile-blue-perfect",
-      "groupImageUrl": null
-    },
-    {
       "id": 2,
       "name": "כפפות ניטריל שחור ללא אבקה (Perfect)",
       "axis": "מידה",
@@ -51544,160 +51321,622 @@
       ]
     },
     {
+      "id": 25,
+      "name": "פח שובך 50 ליטר מרובע",
+      "axis": "צבע",
+      "seoSlug": "nesting-bin-50l-square",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 45,
+      "name": "גביע PP - א 2000 יח",
+      "axis": "גודל",
+      "seoSlug": "pp-cup-clear-2000",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 43,
+      "name": "גביע רוטב מחובר CC א 1000 יח",
+      "axis": "נפח",
+      "seoSlug": "sauce-cup-attached",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 26,
+      "name": "גביע רוטוב 2OZ ארוז 2500",
+      "axis": "צבע",
+      "seoSlug": "sauce-cup-2oz-2500",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 57,
+      "name": "דאודורנט רול NIVEA 50 מ\"ל",
+      "axis": "סוג",
+      "seoSlug": "nivea-roll-deodorant-50ml",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 4,
+      "name": "ווניל שקוף/לבן (IT-TAI) - (100 יח) - ללא אבקה",
+      "axis": "מידה",
+      "seoSlug": "vinyl-it-tai",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 17,
+      "name": "טוש 90 פרמננט ליין פלוס (12)",
+      "axis": "צבע",
+      "seoSlug": "permanent-marker-90",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 5,
+      "name": "לטקס ללא אבקה (Perfect) - (100 יח)",
+      "axis": "מידה",
+      "seoSlug": "latex-perfect-powder-free",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 6,
+      "name": "לטקס עם אבקה (Perfect) - (100 יח)",
+      "axis": "מידה",
+      "seoSlug": "latex-perfect-powdered",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 27,
+      "name": "מגבון אישי חלק 1000 יחידות",
+      "axis": "צבע",
+      "seoSlug": "personal-wipes-smooth-1000",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 28,
+      "name": "מגש פלסטיק (מחוזק) - כרעיים 500 יח'",
+      "axis": "צבע",
+      "seoSlug": "tray-plastic-reinforced-thighs-500",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 9,
+      "name": "מגש קלקר סופג - כרעיים 500 יח'",
+      "axis": "צבע",
+      "seoSlug": "tray-foam-absorbent-thighs-500",
+      "groupImageUrl": "/items/group-9.jpg",
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 10,
+      "name": "מגש קלקר סופג - צלעות 480 יח'",
+      "axis": "צבע",
+      "seoSlug": "tray-foam-absorbent-ribs-480",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 14,
+      "name": "מגש קלקר סופג - שניצל 500 יח'",
+      "axis": "צבע",
+      "seoSlug": "tray-foam-absorbent-schnitzel-500",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 29,
+      "name": "מגש קלקר סופג - דגים צר 400 יח'",
+      "axis": "צבע",
+      "seoSlug": "tray-foam-absorbent-fish-400",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 18,
+      "name": "מגש קלקר סופג - כרעיים 600 יח'",
+      "axis": "צבע",
+      "seoSlug": "tray-foam-absorbent-thighs-600",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 30,
+      "name": "מגש קלקר סופג - קבב 300 יח'",
+      "axis": "צבע",
+      "seoSlug": "tray-foam-absorbent-kebab-300",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 11,
+      "name": "מגש קלקר רגיל - כרעיים 600 יח'",
+      "axis": "צבע",
+      "seoSlug": "tray-foam-regular-thighs-600",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 12,
+      "name": "מגש קלקר רגיל - צלעות 480 יח'",
+      "axis": "צבע",
+      "seoSlug": "tray-foam-regular-ribs-480",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 15,
+      "name": "מגש קלקר רגיל - קבב 300 יח'",
+      "axis": "צבע",
+      "seoSlug": "tray-foam-regular-kebab-300",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 19,
+      "name": "מגש קלקר רגיל - שניצל 500 יח'",
+      "axis": "צבע",
+      "seoSlug": "tray-foam-regular-schnitzel-500",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 41,
+      "name": "מדבקות 32 דף לבן",
+      "axis": "מידה",
+      "seoSlug": "label-stickers-32sheet",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 20,
+      "name": "מזלג ארוז 50 יח' בחבילה",
+      "axis": "צבע",
+      "seoSlug": "fork-50-pack",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 54,
+      "name": "מיכל ליטר + מכסה",
+      "axis": "נפח",
+      "seoSlug": "liter-container-lid",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 46,
+      "name": "מיכל טינטגרלי מהודר הדר - 400 יח",
+      "axis": "גודל",
+      "seoSlug": "hadar-container",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 55,
+      "name": "מכסה לקראפט",
+      "axis": "נפח",
+      "seoSlug": "kraft-lid",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 31,
+      "name": "מכסה שטוח לכוס 95 א' 1000 יח'",
+      "axis": "צבע",
+      "seoSlug": "flat-lid-cup-95",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 13,
+      "name": "מסכה כירוגית (3 שכבות) - 50 יח'",
+      "axis": "צבע",
+      "seoSlug": "mask-surgical-3ply-50",
+      "groupImageUrl": "/items/group-13.jpg",
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 47,
+      "name": "מסקנטייפ סמ רוחב 25 מטר",
+      "axis": "גודל",
+      "seoSlug": "masking-tape-roll",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 7,
+      "name": "מעיל גשם ארוך P.V.C בצבע צהוב",
+      "axis": "מידה",
+      "seoSlug": "pvc-raincoat-yellow",
+      "groupImageUrl": "/items/group-7.jpg",
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 48,
+      "name": "מפיות 1/8 ארוז 2400 יח",
+      "axis": "מידה",
+      "seoSlug": "napkins-1-8-2400",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 21,
+      "name": "מרקר מדגיש",
+      "axis": "צבע",
+      "seoSlug": "highlighter-markers",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 8,
+      "name": "נטריל ורוד ללא אבקה - א' 100 יח'",
+      "axis": "מידה",
+      "seoSlug": "nitrile-pink-powder-free",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
+      "id": 3,
+      "name": "נטריל כחול (Perfect) - (100 יח) - ללא אבקה",
+      "axis": "מידה",
+      "seoSlug": "nitrile-blue-perfect",
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
+    },
+    {
       "id": 1,
       "name": "כפפות ניטריל שחור (פרומקס)",
       "axis": "מידה",
       "seoSlug": "nitrile-black-gloves",
-      "groupImageUrl": null
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
     },
     {
       "id": 49,
       "name": "נייר אפיה ארוז 1/1000",
       "axis": "מידה",
       "seoSlug": "baking-paper-sheets",
-      "groupImageUrl": null
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
     },
     {
       "id": 50,
       "name": "נייר טרמי לקופה",
       "axis": "מידה",
       "seoSlug": "thermal-paper-roll",
-      "groupImageUrl": null
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
     },
     {
       "id": 32,
       "name": "נייר פרגמנט מודפס 45*35 ארוז 4 ק\"ג",
       "axis": "צבע",
       "seoSlug": "parchment-paper-printed-45-35",
-      "groupImageUrl": null
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
     },
     {
       "id": 44,
       "name": "נרות נשמה שעות",
       "axis": "גודל",
       "seoSlug": "memorial-candles",
-      "groupImageUrl": null
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
     },
     {
       "id": 33,
       "name": "ספירל 8 מ\"מ 100 יח' עד 40 דף",
       "axis": "צבע",
       "seoSlug": "spiral-coil-binding-8mm",
-      "groupImageUrl": null
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
     },
     {
       "id": 34,
       "name": "ספריי יסוד",
       "axis": "צבע",
       "seoSlug": "primer-spray-paint",
-      "groupImageUrl": null
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
     },
     {
       "id": 35,
       "name": "ספריי מבריק",
       "axis": "צבע",
       "seoSlug": "gloss-spray-paint",
-      "groupImageUrl": null
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
     },
     {
       "id": 36,
       "name": "עט + פקק קוברה",
       "axis": "צבע",
       "seoSlug": "cobra-ballpoint-pen",
-      "groupImageUrl": null
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
     },
     {
       "id": 22,
       "name": "עט מחט 0.5 COBRA דגם 505 (12)",
       "axis": "צבע",
       "seoSlug": "pen-needle-0-5-cobra-505",
-      "groupImageUrl": null
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
     },
     {
       "id": 23,
       "name": "עט מחט 0.7 COBRA דגם 507 (12)",
       "axis": "צבע",
       "seoSlug": "pen-needle-0-7-cobra-507",
-      "groupImageUrl": null
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
     },
     {
       "id": 39,
       "name": "פרינגלס 149-158 גרם",
       "axis": "טעם",
       "seoSlug": "pringels",
-      "groupImageUrl": "/items/group-39.jpg"
+      "groupImageUrl": "/items/group-39.jpg",
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
     },
     {
       "id": 16,
       "name": "צלחת P.P. גדולה 9 Happy ארוז 100 יח'",
       "axis": "צבע",
       "seoSlug": "plate-pp-large-9-happy",
-      "groupImageUrl": null
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
     },
     {
       "id": 37,
       "name": "צלחת P.P. קטנה 7 Happy ארוז 100 יח'",
       "axis": "צבע",
       "seoSlug": "plate-pp-small-7-happy",
-      "groupImageUrl": null
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
     },
     {
       "id": 51,
       "name": "צלחת לבן PS מידה - 50 יח",
       "axis": "גודל",
       "seoSlug": "plate-white-ps",
-      "groupImageUrl": null
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
     },
     {
       "id": 24,
       "name": "קלסר 8 וני",
       "axis": "צבע",
       "seoSlug": "binder-8-colored",
-      "groupImageUrl": null
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
     },
     {
       "id": 38,
       "name": "קלסר גב 5 צבוני",
       "axis": "צבע",
       "seoSlug": "binder-5-colored",
-      "groupImageUrl": null
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
     },
     {
       "id": 40,
       "name": "קערת קרטון קראפט - מ ל",
       "axis": "נפח",
       "seoSlug": "kraft-bowl",
-      "groupImageUrl": null
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
     },
     {
       "id": 52,
       "name": "שיפוד עגול ס מ א 50 יח",
       "axis": "גודל",
       "seoSlug": "round-skewer",
-      "groupImageUrl": null
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
     },
     {
       "id": 53,
       "name": "שפכתל מידה + ידית סיליקון",
       "axis": "גודל",
       "seoSlug": "silicone-spatula",
-      "groupImageUrl": null
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
     },
     {
       "id": 42,
       "name": "שקיות שקילה נילון ל - 1 ק ג",
       "axis": "מידה",
       "seoSlug": "weighing-bags-1kg",
-      "groupImageUrl": "/items/group-42.jpg"
+      "groupImageUrl": "/items/group-42.jpg",
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
     },
     {
       "id": 56,
       "name": "שקית זבל שחורה עבה 25 ק\"ג",
       "axis": "מידה",
       "seoSlug": "garbage-bag-black-25kg",
-      "groupImageUrl": null
+      "groupImageUrl": null,
+      "seoTitle": null,
+      "seoMetaDesc": null,
+      "seoImageAlt": null,
+      "reviews": []
     }
   ],
-  "exportedAt": "2026-06-18T11:15:10.568Z",
+  "exportedAt": "2026-06-19T08:29:10.024Z",
   "totalItems": 838
 }
