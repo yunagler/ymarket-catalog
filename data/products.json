@@ -34716,8 +34716,7 @@
       },
       "variantGroupId": null,
       "variantLabel": null,
-      "variantSortOrder": 0,
-      "isB2BBulk": true
+      "variantSortOrder": 0
     },
     {
       "id": 937,
@@ -52092,6 +52091,6 @@
       "reviews": []
     }
   ],
-  "exportedAt": "2026-06-19T20:20:11.125Z",
+  "exportedAt": "2026-06-19T20:25:22.725Z",
   "totalItems": 837
 }
