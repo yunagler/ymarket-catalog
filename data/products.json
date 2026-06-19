@@ -17073,8 +17073,7 @@
       },
       "variantGroupId": null,
       "variantLabel": null,
-      "variantSortOrder": 0,
-      "isB2BBulk": true
+      "variantSortOrder": 0
     },
     {
       "id": 401,
@@ -23623,11 +23622,11 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "מוצרי-נייר-וניגוב",
-      "categoryName": "מוצרי נייר וניגוב",
+      "categorySlug": "ממחטות-וטישו",
+      "categoryName": "נייר תעשייתי",
       "categorySlugs": [
-        "מוצרי-נייר-וניגוב",
-        "ממחטות-וטישו"
+        "ממחטות-וטישו",
+        "מוצרי-נייר-וניגוב"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -51970,6 +51969,6 @@
       "reviews": []
     }
   ],
-  "exportedAt": "2026-06-19T18:47:29.706Z",
+  "exportedAt": "2026-06-19T19:25:44.216Z",
   "totalItems": 837
 }
