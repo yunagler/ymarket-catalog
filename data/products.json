@@ -46959,7 +46959,7 @@
       "leadTimeDays": null,
       "maxOrderQty": null,
       "alternatives": [],
-      "seoSlug": "15-1-2-5",
+      "seoSlug": "anti-slip-rubber-zigzag-mat-15m",
       "seo": {
         "title": "שטיח גומי זיגזג נגד החלקה לבריכה ומקלחות — גליל 15מ׳ | וואי מרקט",
         "metaDesc": "שטיח גומי זיגזג נגד החלקה לבריכות, מלתחות ומקלחות ציבוריות — גליל 15מ׳ × 1.2מ׳ × 5מ\"מ. ניקוז מים מובנה, לא סופג, מסייע בהפחתת סיכון להחלקה. מחיר סיטונאי. וואי מרקט.",
@@ -47047,7 +47047,10 @@
       },
       "variantGroupId": null,
       "variantLabel": null,
-      "variantSortOrder": 0
+      "variantSortOrder": 0,
+      "oldSlugs": [
+        "15-1-2-5"
+      ]
     },
     {
       "id": 529,

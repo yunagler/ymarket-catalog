@@ -30679,12 +30679,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ymarket.co.il/products/15-1-2-5/</loc>
-    <lastmod>2026-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://ymarket.co.il/products/15-100/</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
@@ -31196,6 +31190,12 @@
   </url>
   <url>
     <loc>https://ymarket.co.il/products/aluminum-8/</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ymarket.co.il/products/anti-slip-rubber-zigzag-mat-15m/</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
