@@ -559,12 +559,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://ymarket.co.il/cart</loc>
-    <lastmod>2026-06-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://ymarket.co.il/catalog</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -1087,12 +1081,6 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://ymarket.co.il/checkout</loc>
-    <lastmod>2026-06-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://ymarket.co.il/clearance/</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -1118,24 +1106,6 @@
   </url>
   <url>
     <loc>https://ymarket.co.il/glossary</loc>
-    <lastmod>2026-06-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://ymarket.co.il/index-preview-v2</loc>
-    <lastmod>2026-06-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://ymarket.co.il/index-preview</loc>
-    <lastmod>2026-06-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://ymarket.co.il/index-v2</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -5498,24 +5468,6 @@
   </url>
   <url>
     <loc>https://ymarket.co.il/promo/cleaning-companies</loc>
-    <lastmod>2026-06-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://ymarket.co.il/search</loc>
-    <lastmod>2026-06-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://ymarket.co.il/site-architecture</loc>
-    <lastmod>2026-06-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://ymarket.co.il/tracking</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
