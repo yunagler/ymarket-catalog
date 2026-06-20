@@ -75,7 +75,7 @@ function generateSitemap() {
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
   // Filter out non-content files
-  const excludePatterns = ['404', 'gallery', 'login', 'register', 'order-success', 'world-cup'];
+  const excludePatterns = ['404', 'gallery', 'login', 'register', 'order-success', 'world-cup', 'search', 'cart', 'checkout', 'tracking', 'index-preview', 'index-preview-v2', 'index-v2', 'site-architecture'];
   const filteredFiles = htmlFiles.filter(f => !excludePatterns.some(p => f === p || f.startsWith(p + '/')));
 
   for (const file of filteredFiles) {
