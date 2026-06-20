@@ -25,7 +25,7 @@ function getAllHtmlFiles(dir, base = '') {
       // Listing noindex redirects in the sitemap dilutes crawl signals.
       try {
         const content = fs.readFileSync(fullPath, 'utf-8');
-        if (/http-equiv="refresh"/i.test(content) && /noindex/i.test(content)) continue;
+        if (/http-equiv="refresh"/i.test(content)) continue; // any meta-refresh = redirect stub → exclude
       } catch { /* unreadable — include by default */ }
       // Strip .html extension for clean URLs
       const clean = relPath.replace(/\.html$/, '');
