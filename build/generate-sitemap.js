@@ -17,7 +17,7 @@ function getAllHtmlFiles(dir, base = '') {
     const relPath = base ? `${base}/${entry.name}` : entry.name;
 
     if (entry.isDirectory()) {
-      if (['build', 'node_modules', 'images', 'css', 'js', 'data', '.git', '.claude', 'items', 'fonts'].includes(entry.name)) continue;
+      if (['build', 'node_modules', 'images', 'css', 'js', 'data', '.git', '.claude', 'items', 'fonts', 'backups', 'includes'].includes(entry.name)) continue;
       files.push(...getAllHtmlFiles(fullPath, relPath));
     } else if (entry.name.endsWith('.html')) {
       // Skip "301-equivalent" redirect stubs (meta-refresh + noindex) — e.g. old
