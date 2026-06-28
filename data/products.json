@@ -24235,15 +24235,15 @@
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
-      "categorySlug": "מגבונים-רטובים",
-      "categoryName": "מגבונים רטובים",
+      "categorySlug": "חומרי-ניקוי-וכימיקלים",
+      "categoryName": "חומרי ניקוי וכימיקלים",
       "categorySlugs": [
-        "מגבונים-רטובים",
-        "מטליות-כותנה-וסחבות",
-        "טקסטיל-מטליות-וסחבות",
-        "ניקוי-משטחים-מיוחדים",
         "חומרי-ניקוי-וכימיקלים",
-        "-מטאטאים-מגבים-ומקלות"
+        "טקסטיל-מטליות-וסחבות",
+        "-מטאטאים-מגבים-ומקלות",
+        "ניקוי-משטחים-מיוחדים",
+        "מטליות-כותנה-וסחבות",
+        "מגבונים-רטובים"
       ],
       "unit": "",
       "unitsPerPack": 1,
@@ -24267,7 +24267,7 @@
         "geoContent": null,
         "gtin": null,
         "mpn": null,
-        "isB2BBulk": false,
+        "isB2BBulk": true,
         "faqs": [],
         "specs": []
       },
@@ -53078,6 +53078,6 @@
       "reviews": []
     }
   ],
-  "exportedAt": "2026-06-28T21:08:24.749Z",
+  "exportedAt": "2026-06-28T21:10:24.224Z",
   "totalItems": 848
 }
