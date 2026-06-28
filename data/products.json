@@ -24231,7 +24231,7 @@
       "id": 382,
       "name": "מטליות רצפה עשריות Naif",
       "slug": "מטליות-רצפה-עשריות-Naif",
-      "saleNis": 6.46,
+      "saleNis": 8,
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
@@ -24258,7 +24258,15 @@
       "videoUrl": "",
       "leadTimeDays": null,
       "maxOrderQty": null,
-      "alternatives": [],
+      "alternatives": [
+        {
+          "id": 148,
+          "name": "מטליות רצפה (Delux) ריחני בדלי - 50 יח'",
+          "saleNis": 25,
+          "imageUrl": "/items/164.jpg",
+          "slug": "מטליות-רצפה-Delux-ריחני-בדלי-50-יח"
+        }
+      ],
       "seoSlug": null,
       "seo": {
         "title": null,
@@ -53078,6 +53086,6 @@
       "reviews": []
     }
   ],
-  "exportedAt": "2026-06-28T21:11:16.667Z",
+  "exportedAt": "2026-06-28T21:15:21.680Z",
   "totalItems": 848
 }
