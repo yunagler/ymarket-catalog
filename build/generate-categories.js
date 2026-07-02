@@ -1,0 +1,1147 @@
+#!/usr/bin/env node
+/**
+ * Generate individual category HTML pages from products.json
+ * Supports hierarchical categories (parent → children tree)
+ * Uses directory-based clean URLs: /category/{slug}/index.html
+ */
+
+const fs = require('fs');
+const path = require('path');
+
+const ROOT_DIR = path.join(__dirname, '..');
+const CATEGORY_DIR = path.join(ROOT_DIR, 'category');
+const DATA_PATH = path.join(ROOT_DIR, 'data', 'products.json');
+const SITE_URL = 'https://ymarket.co.il';
+
+// Load header from single source of truth
+const SITE_HEADER = fs.readFileSync(path.join(ROOT_DIR, 'includes', 'site-header.html'), 'utf-8').trim();
+
+// SEO data per category
+const CATEGORY_SEO = {
+  'חומרי-ניקוי-וכימיקלים': {
+    title: 'חומרי ניקוי בסיטונאות למוסדות ועסקים | וואי מרקט',
+    h1: 'חומרי ניקוי בסיטונאות למוסדות ועסקים',
+    metaDesc: 'מחפשים ספק חומרי ניקוי אמין? ב-YMARKET תמצאו כימיקלים, סבונים וחומרי חיטוי תעשייתיים במחירי סיטונאות ישירות מהיצרן. אספקה מהירה עד 72 שעות.',
+    seoText: `<div class="category-seo">
+      <h2>חומרי ניקוי מוסדיים בסיטונאות – אספקה מהירה לכל הארץ</h2>
+      <p>אנחנו ב-YMARKET מבינים שניהול מלאי חומרי הניקוי במוסד הוא קריטי. לכן אנו מספקים מגוון רחב של כימיקלים, סבונים וחומרי חיטוי בריכוז גבוה המותאמים לשימוש תעשייתי ומוסדי. הקטלוג שלנו כולל אקונומיקה תעשייתית, חומצת מלח, מסירי שומן, נוזלי רצפה ומוצרי ניקוי מקצועיים מבית BLINX ומותגים מובילים נוספים.</p>
+      <p>בין אם אתם חברת ניקיון, בית מלון, מסעדה, בית ספר או משרד – אנו מציעים פתרונות ניקוי מותאמים עם מחירי סיטונאות ואספקה תוך 24-72 שעות לכל רחבי ישראל. מינימום הזמנה 200 ₪ + מע"מ.</p>
+      <p><strong>צריכים הצעת מחיר מותאמת?</strong> <a href="/contact">צרו קשר</a> או שלחו הודעה ב<a href="https://wa.me/972549922492?text=היי, מעוניין בהצעת מחיר לחומרי ניקוי למוסד" target="_blank" rel="noopener">וואטסאפ</a> ונחזור אליכם תוך שעות.</p>
+    </div>`,
+    faqs: [
+      { q: 'יש מינימום הזמנה לחומרי ניקוי?', a: 'כן, מינימום הזמנה 200 ₪ + מע"מ. ניתן לשלב מוצרים מכל הקטגוריות בהזמנה אחת.' },
+      { q: 'האם אתם מספקים אישורי בטיחות (MSDS) לחומרים?', a: 'בהחלט. אנו מספקים גיליונות בטיחות (MSDS) לכל חומרי הניקוי והכימיקלים שלנו, כנדרש לפי תקנות הבטיחות במוסדות.' },
+      { q: 'תוך כמה זמן מגיעה ההזמנה?', a: 'אספקה תוך 24-72 שעות לכל רחבי ישראל, בהתאם לאזור. אזור גוש דן — בדרך כלל למחרת.' },
+      { q: 'האם יש הנחות כמות לחומרי ניקוי?', a: 'כן, ללקוחות קבועים ולהזמנות גדולות אנו מציעים מחירונים מותאמים אישית עם הנחות משמעותיות. צרו קשר לקבלת הצעת מחיר.' }
+    ]
+  },
+  'מוצרי-נייר-וניגוב': {
+    title: 'מוצרי נייר וניגוב לעסקים - אספקה בסיטונאות | וואי מרקט',
+    h1: 'מוצרי נייר וניגוב לעסקים – אספקה בסיטונאות',
+    metaDesc: 'כל פתרונות הנייר למשרד ולמוסד במקום אחד: נייר טואלט, מגבות ידיים, מפיות וגלילי תעשייה. איכות ללא פשרות ומחירים הוגנים לעסקים. כנסו לקטלוג.',
+    seoText: `<div class="category-seo">
+      <h2>מוצרי נייר תעשייתיים לעסקים ומוסדות</h2>
+      <p>מוצרי נייר הם מוצר יסוד בכל עסק ומוסד. ב-YMARKET תמצאו מגוון מלא של נייר טואלט מוסדי, מגבות נייר תעשייתיות, מפיות, גלילי ניגוב ומוצרי נייר נוספים – הכל במחירי סיטונאות עם אספקה מהירה.</p>
+      <p>אנו עובדים עם מותגים מובילים כמו טורקיש ומציעים פתרונות המותאמים לשירותי ציבור, מטבחים מוסדיים, משרדים ומפעלים. חסכו בעלויות עם רכישה מרוכזת ישירות מהמפיץ.</p>
+      <p><strong>צריכים כמות גדולה?</strong> <a href="/contact">לחצו כאן להצעת מחיר מותאמת אישית</a>.</p>
+    </div>`,
+    faqs: [
+      { q: 'מהו ההבדל בין נייר טואלט ביתי למוסדי?', a: 'נייר מוסדי מגיע בגלילים גדולים יותר (ג\'מבו) המתאימים למתקני שירותים ציבוריים, חוסך החלפות תכופות ומפחית עלויות.' },
+      { q: 'האם אתם מספקים מתקני תליה לנייר?', a: 'כן, אנו מציעים מתקני נייר טואלט ומגבות ידיים תעשייתיים בנפרד. צרו קשר לפרטים.' }
+    ]
+  },
+  'חד-פעמי-ואירוח': {
+    title: 'כלים חד פעמיים בסיטונאות לאירוח ומוסדות | וואי מרקט',
+    h1: 'כלים חד פעמיים בסיטונאות לאירוח ומוסדות',
+    metaDesc: 'ציוד חד פעמי איכותי לאירועים, משרדים ומוסדות. כוסות, צלחות, סכו"ם ופתרונות אירוח מלאים. חסכו בעלויות התפעול עם רכישה מרוכזת ב-YMARKET.',
+    seoText: `<div class="category-seo">
+<p>ברוכים הבאים לקטגוריית **כלים חד פעמיים לעסקים בסיטונאות** בוואי מרקט – הפתרון המקיף והחסכוני לעסקים מכל סוג וגודל. אנו מציעים מגוון רחב של כלים חד פעמיים איכותיים, המיועדים לעמוד בדרישות הגבוהות של המגזר העסקי, תוך הקפדה על נוחות, היגיינה ויעילות תפעולית. בין אם אתם מפעילים מסעדה, בית קפה, קייטרינג, משרד, מוסד חינוכי או כל עסק אחר הזקוק לפתרונות אירוח והגשה מהירים ונוחים, כאן תמצאו את כל הציוד הנדרש.</p>
+
+<p>הבחירה בכלים חד פעמיים מתאימים היא קריטית לתפעול יעיל וחלק. אנו מציעים מגוון חומרים, כולל פלסטיק עמיד, קרטון, ונייר, המותאמים למגוון שימושים – משתייה קרה וחמה, דרך הגשת מנות עיקריות, סלטים וקינוחים, ועד לפתרונות אריזה וטייק אווי. בעת בחירת הכלים, חשוב לשקול את סוג המזון או המשקה שיוגש, את טמפרטורתו, ואת משך השימוש, על מנת להבטיח עמידות מרבית וחווית שימוש מיטבית ללקוחותיכם. רכישה בסיטונאות דרכנו מבטיחה לכם לא רק חיסכון משמעותי בעלויות, אלא גם זמינות מלאה של מלאי ופתרונות לוגיסטיים נוחים, שיאפשרו לכם להתמקד בליבת העסק שלכם.</p>
+
+<h2>מגוון כלים חד פעמיים לעסקים: פתרונות מותאמים לכל צורך</h2>
+<ul>
+    <li><strong>כוסות חד פעמיות:</strong> מפלסטיק, קרטון ונייר, למשקאות קרים וחמים, בגדלים שונים.</li>
+    <li><strong>צלחות חד פעמיות:</strong> ממגוון חומרים, בגדלים וצורות שונות, למנות ראשונות, עיקריות וקינוחים.</li>
+    <li><strong>סכו"ם חד פעמי:</strong> מזלגות, סכינים וכפיות מפלסטיק איכותי, עמיד ונוח לשימוש.</li>
+    <li><strong>קערות חד פעמיות:</strong> לסלטים, מרקים, קינוחים ומנות צד, במגוון גדלים.</li>
+    <li><strong>מגשים וכלים לאירוח:</strong> פתרונות הגשה ואירוח למגוון אירועים וכנסים.</li>
+    <li><strong>אביזרים נלווים:</strong> מפיות, קשיות, מכסים לכוסות וכלים נוספים להשלמת חווית ההגשה.</li>
+</ul>
+<p>לצרכים ספציפיים (כשרות/אקולוגי) צרו קשר לקבלת מידע נוסף והתאמה אישית.</p>
+    </div>`,
+    faqs: [
+      { q: "אילו סוגי חומרים של כלים חד פעמיים אתם מציעים?", a: "אנו מציעים כלים חד פעמיים ממגוון חומרים, כולל פלסטיק, קרטון ונייר, המותאמים לשימושים שונים." },
+      { q: "האם ניתן לרכוש כלים חד פעמיים בכמויות גדולות (סיטונאיות)?", a: "כן, וואי מרקט מתמחה באספקת כלים חד פעמיים בכמויות סיטונאיות לעסקים מכל הסוגים." },
+      { q: "כיצד אבחר את הכלים החד פעמיים המתאימים לעסק שלי?", a: "הבחירה תלויה בסוג המזון/משקה, טמפרטורה, ומשך השימוש. צוות המומחים שלנו ישמח לסייע לכם בבחירה." },
+      { q: "האם אתם מספקים פתרונות משלוח לעסקים?", a: "כן, אנו מציעים פתרונות לוגיסטיים נוחים ומשלוחים ישירים לעסקים ברחבי הארץ." },
+      { q: "האם יש לכם כלים חד פעמיים המתאימים למשקאות חמים?", a: "כן, אנו מציעים מגוון כוסות וכלים חד פעמיים המיועדים ועמידים בפני משקאות חמים." },
+      { q: "למי מיועדים הכלים החד פעמיים שאתם משווקים?", a: "הכלים מיועדים למגוון רחב של עסקים ומוסדות, כולל מסעדות, בתי קפה, קייטרינג, משרדים, מוסדות חינוך ועוד." }
+    ]
+  },
+  'אריזות-מזון-ו-Take-Away': {
+    title: 'אריזות מזון ופתרונות Take Away למסעדות | וואי מרקט',
+    h1: 'אריזות מזון ופתרונות Take Away למסעדות',
+    metaDesc: 'שדרגו את מערך המשלוחים שלכם. קופסאות מזון, שקיות ופתרונות אריזה מתקדמים השומרים על טריות. מותאם אישית לצרכי ענף המזון והאירוח.',
+    seoText: `<div class="category-seo">
+      <h2>אריזות מזון מקצועיות לעסקי מזון ומשלוחים</h2>
+      <p>בעידן המשלוחים, אריזות איכותיות הן חלק בלתי נפרד מחוויית הלקוח. ב-YMARKET תמצאו מגוון רחב של קופסאות מזון, מיכלים חד פעמיים, שקיות נשיאה, נייר עטיפה ופתרונות אריזה לכל סוגי המזון.</p>
+      <p>אנו מספקים למסעדות, קייטרינגים, פיצריות, מאפיות ועסקי מזון בכל הגדלים. מחירי סיטונאות, איכות מעולה ואספקה מהירה לכל הארץ.</p>
+    </div>`,
+    faqs: [
+      { q: 'האם האריזות מתאימות למיקרוגל?', a: 'חלק מהאריזות שלנו מתאימות לחימום במיקרוגל. בדפי המוצרים הספציפיים מצוין האם האריזה מיקרוגל-safe.' },
+      { q: 'האם ניתן לקבל הדפסה/מיתוג על האריזות?', a: 'כרגע אנחנו מספקים אריזות גנריות. לפתרונות מיתוג מותאם צרו קשר ונבדוק אפשרויות.' }
+    ]
+  },
+  'בטיחות-ומיגון-אישי-PPE': {
+    title: 'ציוד בטיחות ומיגון אישי לעובדים ומוסדות | וואי מרקט',
+    h1: 'ציוד בטיחות ומיגון אישי לעובדים ומוסדות',
+    metaDesc: 'שמירה על בטיחות העובדים היא בעדיפות עליונה. כפפות, מסכות, ביגוד מגן וציוד עזרה ראשונה בתקנים המחמירים ביותר. הזמינו עכשיו בסיטונאות.',
+    seoText: `<div class="category-seo">
+      <h2>ציוד בטיחות ומיגון – עמידה בתקנים לעסקים ומוסדות</h2>
+      <p>ב-YMARKET תמצאו ציוד בטיחות ומיגון אישי (PPE) המתאים לכל סוגי העסקים: כפפות חד פעמיות, מסכות הגנה, משקפי מגן, ביגוד מגן וציוד עזרה ראשונה. כל המוצרים עומדים בתקנים הישראליים והבינלאומיים.</p>
+      <p>אנו מספקים למפעלים, חברות ניקיון, מוסדות רפואיים, מטבחים מוסדיים ולכל עסק שמחויב בציוד מיגון לעובדים.</p>
+    </div>`,
+    faqs: [
+      { q: 'האם ציוד הבטיחות עומד בתקנים?', a: 'כן, כל ציוד הבטיחות שלנו עומד בתקנים הישראליים ובתקני CE/ISO הרלוונטיים.' },
+      { q: 'האם ניתן לקבל ייעוץ לגבי ציוד נדרש?', a: 'בהחלט. צרו קשר ונעזור לכם להרכיב את סל ציוד הבטיחות המתאים לסוג העסק שלכם.' }
+    ]
+  },
+  'קפה-שתייה-וכיבוד': {
+    title: 'קפה, שתייה וכיבוד למשרדים ועסקים בסיטונאות | וואי מרקט',
+    h1: 'קפה, שתייה וכיבוד למשרדים ועסקים',
+    metaDesc: 'קפה, תה, שתייה וכיבוד למשרד ולמוסד במחירי סיטונאות. מותגים מובילים, אספקה שוטפת ומהירה. הזמינו עכשיו ב-YMARKET.',
+    seoText: `<div class="category-seo">
+      <h2>פתרונות כיבוד למשרדים ומוסדות</h2>
+      <p>כיבוד איכותי במשרד משפר את חוויית העובדים והלקוחות. ב-YMARKET תמצאו מגוון קפה, תה, סוכר, חלב, עוגיות ומוצרי כיבוד נוספים – הכל בגדלים מוסדיים ובמחירי סיטונאות.</p>
+      <p>אנו מספקים לכל סוגי המשרדים והמוסדות, עם אספקה שוטפת שמבטיחה שפינת הקפה שלכם תמיד מלאה.</p>
+    </div>`,
+    faqs: []
+  },
+  'שקיות-ופתרונות-אשפה': {
+    title: 'שקיות אשפה ופתרונות פסולת לעסקים בסיטונאות | וואי מרקט',
+    h1: 'שקיות אשפה ופתרונות פסולת לעסקים',
+    metaDesc: 'שקיות אשפה בכל הגדלים והעוביים לעסקים ומוסדות. שקיות גופיה, שקיות HD, שקיות כבדות. מחירי סיטונאות ואספקה מהירה.',
+    seoText: `<div class="category-seo">
+      <h2>שקיות אשפה מוסדיות – לכל סוג עסק ומוסד</h2>
+      <p>מוצר בסיסי שכל עסק צורך בכמויות. ב-YMARKET תמצאו שקיות אשפה בכל הגדלים: 75×90, 80×120 ועוד, בעוביים שונים המותאמים לשימוש מוסדי כבד. שקיות עם שרוך, עם ידית, ובצבעים לפי סוג פסולת.</p>
+      <p>מחירי סיטונאות, משלוח ארצי ואספקה מהירה.</p>
+    </div>`,
+    faqs: []
+  },
+  'טקסטיל-מטליות-וסחבות': {
+    title: 'מטליות, סחבות וטקסטיל ניקוי לעסקים | וואי מרקט',
+    h1: 'מטליות, סחבות וטקסטיל ניקוי לעסקים',
+    metaDesc: 'מטליות ניקוי, סחבות רצפה, מגבים וטקסטיל מקצועי לעסקים ומוסדות. איכות תעשייתית במחירי סיטונאות. משלוח ארצי.',
+    seoText: `<div class="category-seo">
+      <h2>מטליות וטקסטיל ניקוי מקצועי</h2>
+      <p>מטליות ניקוי איכותיות הן כלי עבודה חיוני לכל עסק. ב-YMARKET תמצאו מטליות מיקרופייבר, סחבות ספונג׳, מגבים ומוצרי טקסטיל מקצועיים לשימוש תעשייתי ומוסדי.</p>
+    </div>`,
+    faqs: []
+  }
+};
+
+function formatPrice(price) {
+  return new Intl.NumberFormat('he-IL', {
+    style: 'currency', currency: 'ILS',
+    minimumFractionDigits: 0, maximumFractionDigits: 2
+  }).format(price);
+}
+
+// Build tree from flat categories list
+function buildCategoryTree(flatCategories) {
+  const map = new Map();
+  flatCategories.forEach(c => map.set(c.id, { ...c, children: [] }));
+
+  const roots = [];
+  for (const cat of map.values()) {
+    if (cat.parentId && map.has(cat.parentId)) {
+      map.get(cat.parentId).children.push(cat);
+    } else {
+      roots.push(cat);
+    }
+  }
+
+  // Sort children by sortOrder
+  const sortChildren = (cats) => {
+    cats.sort((a, b) => (a.sortOrder || 0) - (b.sortOrder || 0));
+    cats.forEach(c => sortChildren(c.children));
+  };
+  sortChildren(roots);
+
+  return { roots, map };
+}
+
+// Get parent category chain for breadcrumb
+function getParentChain(category, catMap) {
+  const chain = [];
+  let current = category;
+  while (current.parentId && catMap.has(current.parentId)) {
+    current = catMap.get(current.parentId);
+    chain.unshift(current);
+  }
+  return chain;
+}
+
+// Get the effective slug for a category (seoSlug if set, otherwise slug)
+function getEffectiveSlug(category) {
+  return category.seoSlug || category.slug;
+}
+
+// Build full URL path for a category (nested under parents)
+// e.g. /category/industrial-cleaning-supplies-wholesale/ or /category/אריזות-מזון-ו-Take-Away/גביעים/
+function getCategoryUrlPath(category, catMap) {
+  const chain = getParentChain(category, catMap);
+  const slugs = chain.map(c => getEffectiveSlug(c));
+  slugs.push(getEffectiveSlug(category));
+  return '/category/' + slugs.join('/') + '/';
+}
+
+// Build filesystem path for a category page
+function getCategoryFsPath(category, catMap, categoryDir) {
+  const chain = getParentChain(category, catMap);
+  const slugs = chain.map(c => getEffectiveSlug(c));
+  slugs.push(getEffectiveSlug(category));
+  return path.join(categoryDir, ...slugs);
+}
+
+// Get total item count including all descendants
+function getTotalItemCount(cat, catMap, products) {
+  const slugs = getDescendantSlugs(cat, catMap);
+  const seen = new Set();
+  let count = 0;
+  for (const p of products) {
+    if (seen.has(p.id)) continue;
+    if (slugs.has(p.categorySlug) || (p.categorySlugs && p.categorySlugs.some(s => slugs.has(s)))) {
+      seen.add(p.id);
+      count++;
+    }
+  }
+  return count;
+}
+
+// Build sidebar HTML with tree structure
+function buildSidebarHtml(roots, currentSlug, catMap, products) {
+  function renderNode(cat, depth) {
+    const isActive = cat.slug === currentSlug;
+    const hasChildren = cat.children && cat.children.length > 0;
+    const isAncestor = hasChildren && isDescendant(currentSlug, cat, catMap);
+    const isOpen = isActive || isAncestor;
+    const catUrl = getCategoryUrlPath(cat, catMap);
+    const totalCount = getTotalItemCount(cat, catMap, products);
+
+    let html = `<a href="${catUrl}" class="category-list__item${isActive ? ' active' : ''}" style="${depth > 0 ? `padding-right:${16 + depth * 16}px;font-size:0.9em;` : ''}">`;
+    if (hasChildren) {
+      html += `<i class="fas fa-chevron-down" style="font-size:0.6em;margin-left:4px;transition:transform 0.2s;${isOpen ? '' : 'transform:rotate(90deg);'}"></i>`;
+    }
+    html += `<span>${cat.name}</span><span class="category-list__count">${totalCount}</span></a>`;
+
+    if (hasChildren) {
+      html += `<div class="category-children" style="${isOpen ? '' : 'display:none;'}">`;
+      for (const child of cat.children) {
+        html += renderNode(child, depth + 1);
+      }
+      html += '</div>';
+    }
+
+    return html;
+  }
+
+  function isDescendant(slug, parent, map) {
+    for (const child of parent.children) {
+      if (child.slug === slug) return true;
+      if (child.children && isDescendant(slug, child, map)) return true;
+    }
+    return false;
+  }
+
+  return roots.map(cat => renderNode(cat, 0)).join('\n');
+}
+
+// Collect all descendant slugs for a category (for product inheritance)
+function getDescendantSlugs(category, catMap) {
+  const slugs = new Set([category.slug]);
+  const children = catMap.get(category.id)?.children || [];
+  for (const child of children) {
+    for (const s of getDescendantSlugs(child, catMap)) {
+      slugs.add(s);
+    }
+  }
+  return slugs;
+}
+
+// Collapse variant-group members into one representative card linking to the unified
+// product page (mirrors the website catalog/search + portal/agent ordering grids).
+function collapseVariants(items, variantGroups) {
+  if (!variantGroups || !variantGroups.length) return items;
+  const groupById = {};
+  variantGroups.forEach(g => { groupById[g.id] = g; });
+  const byGroup = {};
+  items.forEach(it => {
+    if (it.variantGroupId && groupById[it.variantGroupId]) {
+      (byGroup[it.variantGroupId] = byGroup[it.variantGroupId] || []).push(it);
+    }
+  });
+  Object.keys(byGroup).forEach(gid => byGroup[gid].sort((a, b) => (a.variantSortOrder || 0) - (b.variantSortOrder || 0)));
+  const seen = {};
+  const out = [];
+  items.forEach(it => {
+    const gid = it.variantGroupId;
+    if (gid && byGroup[gid] && byGroup[gid].length > 1) {
+      if (seen[gid]) return;
+      seen[gid] = true;
+      const members = byGroup[gid];
+      const rep = members[0];
+      const g = groupById[gid];
+      const prices = members.map(m => m.saleNis).filter(p => p > 0);
+      out.push(Object.assign({}, rep, {
+        name: g.name,
+        slug: g.seoSlug || rep.seoSlug || rep.slug,
+        saleNis: prices.length ? Math.min(...prices) : rep.saleNis,
+          imageUrl: g.groupImageUrl || rep.imageUrl,
+        originalPrice: null, discountPercent: null, productStatus: null,
+        _isVariantGroup: true,
+        _variantCount: members.length,
+        _variantAxis: g.axis || 'מידה',
+      }));
+    } else {
+      out.push(it);
+    }
+  });
+  return out;
+}
+
+function generateCategoryPage(category, products, allCategories, catMap, treeRoots) {
+  // Include products from ALL descendant categories (inheritance)
+  const descendantSlugs = getDescendantSlugs(category, catMap);
+  const seen = new Set();
+  const categoryProducts = products.filter(p => {
+    const match = descendantSlugs.has(p.categorySlug) ||
+      (p.categorySlugs && p.categorySlugs.some(s => descendantSlugs.has(s)));
+    if (match && !seen.has(p.id)) {
+      seen.add(p.id);
+      return true;
+    }
+    return false;
+  });
+  const categoryPath = getCategoryUrlPath(category, catMap);
+  const categoryUrl = `${SITE_URL}${categoryPath}`;
+
+  const catSeo = CATEGORY_SEO[category.slug] || {};
+  // DB SEO fields (from products.json) take priority over hardcoded CATEGORY_SEO, with final fallback to defaults
+  const seoDesc = category.metaDescription || catSeo.metaDesc || `${category.name} - ${categoryProducts.length} מוצרים במחירי סיטונאות. וואי מרקט - אספקה חכמה לעסקים ומוסדות. משלוח ארצי.`;
+  const h1Text = category.h1Override || catSeo.h1 || category.name;
+  const pageTitle = category.metaTitle || catSeo.title || `${category.name} | וואי מרקט - אספקה למוסדות ועסקים`;
+  const seoContentBlock = category.seoContent || catSeo.seoText || '';
+  const categoryImageAlt = category.imageAlt || category.name;
+  // FAQ: prefer DB faqs (from category.faqs), fallback to hardcoded CATEGORY_SEO faqs
+  const categoryFaqs = (category.faqs && category.faqs.length > 0) ? category.faqs : (catSeo.faqs || []);
+  // GEO content from DB
+  const geoContentBlock = category.geoContent || '';
+
+  // Hero image: DB image, auto-generated hero, or null
+  const effectiveSlug = getEffectiveSlug(category);
+  const heroImageAutoPath = path.join(ROOT_DIR, 'images', 'categories', effectiveSlug + '.webp');
+  const heroImageAutoExists = fs.existsSync(heroImageAutoPath);
+  const categoryImage = category.imageUrl || (heroImageAutoExists ? `/images/categories/${effectiveSlug}.webp` : null);
+
+  // dateModified for freshness signal
+  const today = new Date().toISOString().split('T')[0];
+  const hebrewDate = new Date().toLocaleDateString('he-IL');
+
+  // LCP: first product image for preload (use WebP thumbnail)
+  const firstProductImgJpg = categoryProducts.length > 0
+    ? (categoryProducts[0].imageUrl || `/items/${categoryProducts[0].id}.jpg`)
+    : null;
+  const firstProductImg = firstProductImgJpg ? firstProductImgJpg.replace(/\.jpg$/i, '-thumb.webp') : null;
+
+  // Build breadcrumb with parent chain
+  const parentChain = getParentChain(category, catMap);
+  let breadcrumbHtml = `<a href="/">דף הבית</a>
+      <span class="breadcrumb__separator"><i class="fas fa-chevron-left"></i></span>
+      <a href="/catalog">מוצרים</a>`;
+  for (const parent of parentChain) {
+    const parentUrl = getCategoryUrlPath(parent, catMap);
+    breadcrumbHtml += `
+      <span class="breadcrumb__separator"><i class="fas fa-chevron-left"></i></span>
+      <a href="${parentUrl}">${parent.name}</a>`;
+  }
+  breadcrumbHtml += `
+      <span class="breadcrumb__separator"><i class="fas fa-chevron-left"></i></span>
+      <span class="breadcrumb__current">${category.name}</span>`;
+
+  // Breadcrumb JSON-LD
+  const breadcrumbItems = [
+    { "@type": "ListItem", "position": 1, "name": "דף הבית", "item": SITE_URL + "/" },
+    { "@type": "ListItem", "position": 2, "name": "מוצרים", "item": SITE_URL + "/catalog" }
+  ];
+  parentChain.forEach((parent, i) => {
+    const parentUrl = getCategoryUrlPath(parent, catMap);
+    breadcrumbItems.push({ "@type": "ListItem", "position": 3 + i, "name": parent.name, "item": `${SITE_URL}${parentUrl}` });
+  });
+  breadcrumbItems.push({ "@type": "ListItem", "position": 3 + parentChain.length, "name": category.name });
+
+  const productsHtml = categoryProducts.map((p, idx) => {
+    const imgSrcJpg = p.imageUrl || `/items/${p.id}.jpg`;
+    const imgSrcThumb = imgSrcJpg.replace(/\.jpg$/i, '-thumb.webp');
+    const hasPromo = p.productStatus === 'on_sale' && p.originalPrice;
+    // First 4 images: eager load with high priority for LCP; rest: lazy load
+    const imgLoading = idx < 4 ? 'fetchpriority="high"' : 'loading="lazy"';
+
+    let badgeHtml = '';
+    if (hasPromo) {
+      badgeHtml = `<div class="product-card__badge" style="background:#dc2626;color:#fff;position:absolute;top:8px;right:8px;padding:4px 10px;border-radius:6px;font-size:0.75rem;font-weight:700;z-index:2">${p.discountPercent ? Math.round(p.discountPercent) + '%-' : (p.promotionLabel || 'מבצע')}</div>`;
+    } else if (p.productStatus === 'recommended' || p.isFeatured) {
+      badgeHtml = '<div class="product-card__badge" style="background:#16a34a;color:#fff;position:absolute;top:8px;right:8px;padding:4px 10px;border-radius:6px;font-size:0.75rem;font-weight:700;z-index:2">מומלץ</div>';
+    } else if (p.productStatus === 'new') {
+      badgeHtml = '<div class="product-card__badge" style="background:#2563eb;color:#fff;position:absolute;top:8px;right:8px;padding:4px 10px;border-radius:6px;font-size:0.75rem;font-weight:700;z-index:2">חדש</div>';
+    } else if (p.productStatus === 'clearance') {
+      badgeHtml = '<div class="product-card__badge" style="background:#dc2626;color:#fff;position:absolute;top:8px;right:8px;padding:4px 10px;border-radius:6px;font-size:0.75rem;font-weight:700;z-index:2">חיסול</div>';
+    }
+
+    // Volume badge for items with bulk packaging
+    const volBadge = (p.unitsPerPack && p.unitsPerPack >= 6) ? '<div class="product-card__vol-badge"><i class="fas fa-cubes" style="font-size:0.6rem"></i> הנחת כמות</div>' : '';
+
+    // Variant group → link to unified page; else add-to-cart (or WhatsApp if no price)
+    const actionsHtml = p._isVariantGroup
+      ? `<div class="product-card__actions">
+          <a href="/products/${p.slug}/" class="product-card__add-btn"><i class="fas fa-layer-group"></i> בחר ${({'צבע':'צבע','מידה':'מידה','נפח':'נפח','גודל':'גודל','סוג':'סוג'})[p._variantAxis] || 'וריאנט'} (${p._variantCount})</a>
+        </div>`
+      : p.saleNis
+      ? `<div class="product-card__actions">
+            <button class="product-card__add-btn" data-id="${p.id}" data-name="${(p.name || '').replace(/"/g, '&quot;')}" data-price="${p.saleNis}" data-unit="${(p.unit || '').replace(/"/g, '&quot;')}" data-img="${imgSrcThumb}" data-slug="${p.slug}"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>
+        </div>`
+      : `<div class="product-card__actions">
+          <a href="https://wa.me/972549922492?text=${encodeURIComponent('היי, מתעניין ב' + p.name)}" class="product-card__add-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> בקשו הצעת מחיר</a>
+        </div>`;
+
+    return `
+    <div class="product-card" style="position:relative">
+      ${badgeHtml}
+      ${volBadge}
+      <div class="product-card__image">
+        <a href="/products/${p.slug}/">
+          <picture>
+            <source srcset="${imgSrcThumb}" type="image/webp">
+            <img src="${imgSrcJpg}" alt="${p.name}" width="300" height="300" ${imgLoading}
+                 onerror="this.onerror=null;var s=this.parentElement.querySelector('source');if(s)s.remove();this.src='https://placehold.co/300x300/f0f2f5/5a6577?text=${encodeURIComponent((p.name || '').substring(0,15))}'">
+          </picture>
+        </a>
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__name"><a href="/products/${p.slug}/">${p.name}</a></h3>
+        ${p.unit ? `<div class="product-card__unit">${p.unitsPerPack > 1 ? p.unitsPerPack + ' ' : ''}${p.unit}</div>` : ''}
+        <div class="product-card__pricing">
+        ${p.saleNis
+          ? hasPromo
+            ? `<div class="product-card__price" style="color:#dc2626">${formatPrice(p.saleNis)}</div><div style="text-decoration:line-through;color:#9ca3af;font-size:0.85rem">${formatPrice(p.originalPrice)}</div>`
+            : `<div class="product-card__price">${formatPrice(p.saleNis)}</div>`
+          : '<div class="product-card__price" style="color:var(--color-text-light)">צרו קשר למחיר</div>'
+        }
+        </div>
+        ${actionsHtml}
+      </div>
+    </div>`;
+  }).join('\n');
+
+  // Sidebar with tree structure (pass products for accurate counts)
+  const sidebarHtml = buildSidebarHtml(treeRoots, category.slug, catMap, products);
+
+  // Show subcategories links if this category has children
+  const children = catMap.get(category.id)?.children || [];
+  let subcategoriesHtml = '';
+  if (children.length > 0) {
+    subcategoriesHtml = `<div class="subcategories-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-bottom:24px;">
+      ${children.map(child => {
+        const childUrl = getCategoryUrlPath(child, catMap);
+        return `<a href="${childUrl}" class="subcategory-card" style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:#f8f9fa;border:1px solid #e5e7eb;border-radius:10px;text-decoration:none;color:#1f2937;transition:all 0.2s;font-size:0.95rem;">
+          <i class="fas ${child.icon || 'fa-folder'}" style="color:#1B3A5C;font-size:1.1rem;"></i>
+          <span>${child.name}</span>
+          <span style="margin-right:auto;color:#9ca3af;font-size:0.8rem;">${child.itemCount}</span>
+        </a>`;
+      }).join('\n')}
+    </div>`;
+  }
+
+  const jsonLd = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": category.name,
+    "description": seoDesc,
+    "url": categoryUrl,
+    "dateModified": today,
+    "inLanguage": "he-IL",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "וואי מרקט",
+      "url": SITE_URL
+    },
+    "numberOfItems": categoryProducts.length,
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": category.name,
+      "numberOfItems": categoryProducts.length,
+      "itemListElement": categoryProducts.slice(0, 20).map((p, i) => {
+        const item = {
+          "@type": "ListItem",
+          "position": i + 1,
+          "url": `${SITE_URL}/products/${p.slug}/`,
+          "name": p.name,
+          "item": {
+            "@type": "Product",
+            "name": p.name,
+            "url": `${SITE_URL}/products/${p.slug}/`,
+            "image": p.imageUrl ? `${SITE_URL}${p.imageUrl}` : `${SITE_URL}/items/${p.id}.jpg`,
+          }
+        };
+        if (p.saleNis) {
+          item.item.offers = {
+            "@type": "Offer",
+            "priceCurrency": "ILS",
+            "price": p.saleNis,
+            "availability": "https://schema.org/InStock",
+            "seller": { "@type": "Organization", "name": "וואי מרקט" }
+          };
+        }
+        return item;
+      })
+    }
+  }, null, 2);
+
+  // Organization schema (once per page for E-E-A-T)
+  const orgSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "וואי מרקט",
+    "legalName": "נגלר סחר והפצה",
+    "url": SITE_URL,
+    "logo": `${SITE_URL}/images/logo/logo-dark.png`,
+    "foundingDate": "2020",
+    "founder": { "@type": "Person", "name": "יובל נגלר" },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+972-3-7740400",
+      "email": "Pm@ymarket.co.il",
+      "contactType": "sales",
+      "availableLanguage": ["Hebrew", "English"],
+      "areaServed": { "@type": "Country", "name": "Israel" }
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IL",
+      "addressRegion": "מחוז תל אביב"
+    },
+    "areaServed": { "@type": "Country", "name": "Israel" },
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=100083110428101",
+      "https://www.instagram.com/ymarket.ai",
+      "https://wa.me/972549922492"
+    ]
+  });
+
+  // Build related categories section
+  const parentChainForRelated = getParentChain(category, catMap);
+  let relatedCats = [];
+  if (category.parentId && catMap.has(category.parentId)) {
+    const parentCat = catMap.get(category.parentId);
+    relatedCats = (parentCat.children || []).filter(c => c.id !== category.id).slice(0, 4);
+  }
+  if (relatedCats.length < 3) {
+    const rootId = parentChainForRelated.length > 0 ? parentChainForRelated[0].id : category.id;
+    const extras = treeRoots.filter(r => r.id !== rootId && !relatedCats.find(rc => rc.id === r.id)).slice(0, 4 - relatedCats.length);
+    relatedCats = [...relatedCats, ...extras];
+  }
+  const relatedHtml = relatedCats.length > 0 ? `
+          <div class="related-categories" style="margin-top:2rem;">
+            <h3 style="font-size:1.05rem;font-weight:700;color:#1B3A5C;margin-bottom:12px;display:flex;align-items:center;gap:8px;"><i class="fas fa-th-large" style="color:#6366f1;"></i> קטגוריות קשורות</h3>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;">
+              ${relatedCats.map(rc => {
+                const rcUrl = getCategoryUrlPath(rc, catMap);
+                const rcCount = getTotalItemCount(rc, catMap, products);
+                return `<a href="${rcUrl}" style="display:flex;align-items:center;gap:10px;padding:14px 16px;background:#f8f9fa;border:1px solid #e5e7eb;border-radius:10px;text-decoration:none;color:#1f2937;transition:all 0.2s;font-size:0.95rem;" onmouseover="this.style.background='#eef2ff';this.style.borderColor='#c7d2fe'" onmouseout="this.style.background='#f8f9fa';this.style.borderColor='#e5e7eb'">
+                  <i class="fas ${rc.icon || 'fa-folder'}" style="color:#1B3A5C;font-size:1.1rem;"></i>
+                  <span>${rc.name}</span>
+                  <span style="margin-right:auto;color:#9ca3af;font-size:0.8rem;">${rcCount}</span>
+                </a>`;
+              }).join('\n')}
+            </div>
+          </div>` : '';
+
+  // OG image: use hero if available, else default
+  const ogImage = categoryImage ? `${SITE_URL}${categoryImage}` : `${SITE_URL}/images/og-image.jpg`;
+
+  return `<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${pageTitle}</title>
+  <meta name="description" content="${seoDesc}">
+  <link rel="canonical" href="${categoryUrl}">
+  <link rel="alternate" hreflang="he-IL" href="${categoryUrl}">
+  <link rel="alternate" hreflang="x-default" href="${categoryUrl}">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#1B3A5C">
+  <meta property="og:title" content="${category.name} | וואי מרקט">
+  <meta property="og:description" content="${seoDesc}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="${categoryUrl}">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:site_name" content="וואי מרקט">
+  <meta property="og:image" content="${ogImage}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${category.name} | וואי מרקט">
+  <meta name="twitter:image" content="${ogImage}">
+  ${firstProductImg ? `<link rel="preload" as="image" href="${firstProductImg}">` : ''}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.min.css">
+  <link rel="stylesheet" href="/css/site-header.css">
+  <link rel="stylesheet" href="/css/pages/catalog.min.css">
+  <style>
+    .category-seo{margin-top:2.5rem;padding:2rem;background:#fff;border-top:2px solid #e5e7eb;line-height:1.8}
+    .category-seo h2{font-size:1.25rem;margin-bottom:1rem;color:var(--color-text,#1f2937)}
+    .category-seo h3{font-size:1.1rem;margin:1.2rem 0 0.6rem;color:var(--color-text,#1f2937)}
+    .category-seo p{margin-bottom:1rem;color:var(--color-text-secondary,#4b5563)}
+    .category-seo ul,.category-seo ol{margin:0.5rem 0 1rem 1.5rem;color:var(--color-text-secondary,#4b5563);line-height:1.8}
+    .category-seo li{margin-bottom:0.3rem}
+    .category-seo a{color:var(--color-primary,#1B3A5C);text-decoration:underline}
+    .category-children{border-right:2px solid #e5e7eb;margin-right:12px;}
+    .subcategory-card:hover{background:#eef2ff !important;border-color:#c7d2fe !important;}
+    details summary .fa-chevron-down{transition:transform 0.3s ease;}
+    details[open] summary .fa-chevron-down{transform:rotate(180deg);}
+    /* Trust badges bar */
+    .trust-badges{display:flex;gap:0;background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;margin-bottom:1.5rem;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+    .trust-badges__item{flex:1;display:flex;align-items:center;gap:10px;padding:14px 16px;border-left:1px solid #f0f0f0;text-align:right}
+    .trust-badges__item:last-child{border-left:none}
+    .trust-badges__icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+    .trust-badges__text{font-size:0.82rem;line-height:1.3}
+    .trust-badges__text strong{display:block;font-size:0.88rem;color:#1f2937}
+    .trust-badges__text span{color:#6b7280}
+    @media(max-width:768px){.trust-badges{flex-wrap:wrap}.trust-badges__item{flex:1 1 45%;border-bottom:1px solid #f0f0f0;padding:10px 12px}}
+    @media(max-width:480px){.trust-badges__item{flex:1 1 100%}}
+    /* Why YMarket section */
+    .why-ym{margin:1.5rem 0;padding:24px;background:linear-gradient(135deg,#f0f4ff 0%,#f8fafc 100%);border:1px solid #dde4f0;border-radius:14px}
+    .why-ym__title{font-size:1rem;font-weight:700;color:#1B3A5C;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+    .why-ym__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .why-ym__card{display:flex;align-items:flex-start;gap:10px;padding:14px;background:#fff;border-radius:10px;border:1px solid #e8ecf4}
+    .why-ym__card i{font-size:1.2rem;color:#1B3A5C;margin-top:2px;flex-shrink:0}
+    .why-ym__card strong{display:block;font-size:0.88rem;color:#1f2937;margin-bottom:2px}
+    .why-ym__card span{font-size:0.8rem;color:#6b7280;line-height:1.4}
+    @media(max-width:640px){.why-ym__grid{grid-template-columns:1fr}}
+    /* Stats counter */
+    .stats-bar{display:flex;justify-content:center;gap:2rem;padding:16px 0;margin-bottom:1rem;border-bottom:1px solid #f0f0f0}
+    .stats-bar__item{text-align:center}
+    .stats-bar__num{font-size:1.5rem;font-weight:800;color:#1B3A5C}
+    .stats-bar__label{font-size:0.78rem;color:#6b7280;margin-top:2px}
+    @media(max-width:480px){.stats-bar{gap:1rem}.stats-bar__num{font-size:1.2rem}}
+    /* Enhanced product card */
+    .product-card__vol-badge{position:absolute;top:8px;left:8px;background:#7c3aed;color:#fff;padding:3px 8px;border-radius:6px;font-size:0.7rem;font-weight:700;z-index:2}
+    .product-card__pricing{margin-bottom:4px}
+    /* Consultation CTA */
+    .consult-cta{display:flex;align-items:center;gap:20px;margin:1.5rem 0;padding:20px 24px;background:linear-gradient(135deg,#1B3A5C,#2a5080);border-radius:14px;color:#fff}
+    .consult-cta__icon{font-size:2.2rem;opacity:0.9;flex-shrink:0}
+    .consult-cta__text h3{font-size:1rem;font-weight:700;margin-bottom:4px}
+    .consult-cta__text p{font-size:0.85rem;opacity:0.85;margin:0}
+    .consult-cta__btn{margin-right:auto;display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:#25d366;color:#fff;border-radius:10px;font-weight:700;font-size:0.9rem;text-decoration:none;white-space:nowrap;transition:transform 0.2s}
+    .consult-cta__btn:hover{transform:scale(1.04)}
+    @media(max-width:640px){.consult-cta{flex-direction:column;text-align:center;gap:12px}.consult-cta__btn{margin:0 auto}}
+    /* Hero overlay */
+    .hero-wrapper{position:relative;border-radius:12px;overflow:hidden;margin-bottom:1rem}
+    .hero-wrapper img{display:block;width:100%;max-height:260px;object-fit:cover}
+    .hero-overlay{position:absolute;bottom:0;left:0;right:0;padding:20px 24px;background:linear-gradient(transparent,rgba(27,58,92,0.85));color:#fff}
+    .hero-overlay h1{font-size:1.5rem;font-weight:800;margin:0 0 4px;text-shadow:0 1px 4px rgba(0,0,0,0.3)}
+    .hero-overlay p{font-size:0.88rem;opacity:0.9;margin:0}
+    @media(max-width:480px){.hero-overlay h1{font-size:1.15rem}.hero-overlay{padding:14px 16px}}
+    .mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:999;background:#fff;box-shadow:0 -2px 12px rgba(0,0,0,0.12);padding:10px 16px;gap:10px;align-items:center;}
+    .mobile-cta-bar a{flex:1;text-align:center;padding:12px 8px;border-radius:10px;font-weight:600;font-size:0.95rem;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:6px;}
+    .mobile-cta-bar .cta-wa{background:#25d366;color:#fff;}
+    .mobile-cta-bar .cta-phone{background:#f3f4f6;color:#1B3A5C;border:1px solid #d1d5db;}
+    @media(max-width:768px){.mobile-cta-bar{display:flex!important;}body{padding-bottom:70px;}.whatsapp-float{bottom:80px;}}
+  </style>
+  <script type="application/ld+json">${jsonLd}</script>
+  <script type="application/ld+json">${orgSchema}</script>
+  ${(categoryFaqs && categoryFaqs.length > 0) ? `<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": categoryFaqs.map(f => ({
+      "@type": "Question",
+      "name": f.q || f.question,
+      "acceptedAnswer": { "@type": "Answer", "text": f.a || f.answer }
+    }))
+  }, null, 2)}</script>` : ''}
+  <script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": breadcrumbItems
+  })}</script>
+</head>
+<body>
+  ${SITE_HEADER}
+  <div class="mobile-overlay"></div>
+
+  <div class="container">
+    <nav class="breadcrumb" aria-label="ניווט פירורי לחם">
+      ${breadcrumbHtml}
+    </nav>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="catalog-layout">
+        <aside class="catalog-sidebar">
+          <div class="sidebar-section">
+            <h3>קטגוריות</h3>
+            <div class="category-list">
+              ${sidebarHtml}
+              <a href="/catalog" class="category-list__item" style="margin-top:8px;border-top:1px solid #e5e7eb;padding-top:8px;"><span>כל המוצרים</span></a>
+            </div>
+          </div>
+        </aside>
+        <div class="catalog-main">
+          <div class="catalog-header">
+            ${categoryImage ? `
+            <div class="hero-wrapper">
+              <img src="${categoryImage}" alt="${categoryImageAlt} - מבחר מוצרים בסיטונאות | וואי מרקט" width="1200" height="400" fetchpriority="high" />
+              <div class="hero-overlay">
+                <h1>${h1Text}</h1>
+                <p>${categoryProducts.length} מוצרים במחירי סיטונאות | אספקה תוך 24-72 שעות</p>
+              </div>
+            </div>` : `<h1>${h1Text}</h1>`}
+            ${!categoryImage ? `<p>${categoryProducts.length} מוצרים</p>` : ''}
+            <p style="font-size:0.8rem;color:#9ca3af;margin-top:4px;">עודכן לאחרונה: ${hebrewDate}</p>
+          </div>
+          <div class="trust-badges">
+            <div class="trust-badges__item">
+              <div class="trust-badges__icon" style="background:#f0fdf4;color:#16a34a"><i class="fas fa-truck"></i></div>
+              <div class="trust-badges__text"><strong>אספקה מהירה</strong><span>24-72 שעות לכל הארץ</span></div>
+            </div>
+            <div class="trust-badges__item">
+              <div class="trust-badges__icon" style="background:#eff6ff;color:#2563eb"><i class="fas fa-tags"></i></div>
+              <div class="trust-badges__text"><strong>מחירי סיטונאות</strong><span>ישירות מהמפיץ</span></div>
+            </div>
+            <div class="trust-badges__item">
+              <div class="trust-badges__icon" style="background:#fef3c7;color:#d97706"><i class="fas fa-headset"></i></div>
+              <div class="trust-badges__text"><strong>ייעוץ אישי</strong><span>צוות מקצועי לשירותכם</span></div>
+            </div>
+            <div class="trust-badges__item">
+              <div class="trust-badges__icon" style="background:#fdf2f8;color:#db2777"><i class="fas fa-file-invoice"></i></div>
+              <div class="trust-badges__text"><strong>חשבונית מס</strong><span>מע"מ + תנאי תשלום</span></div>
+            </div>
+          </div>
+          ${subcategoriesHtml}
+          <div class="products-grid">
+            ${productsHtml}
+          </div>
+          <div class="consult-cta">
+            <i class="fas fa-user-tie consult-cta__icon"></i>
+            <div class="consult-cta__text">
+              <h3>לא בטוחים מה מתאים? נשמח לייעץ</h3>
+              <p>הצוות שלנו מכיר את המוצרים לעומק ויתאים עבורכם את הפתרון המדויק</p>
+            </div>
+            <a href="https://wa.me/972549922492?text=${encodeURIComponent('היי, אשמח לייעוץ בנושא ' + category.name)}" target="_blank" rel="noopener" class="consult-cta__btn"><i class="fab fa-whatsapp"></i> ייעוץ חינם</a>
+          </div>
+          <div class="why-ym">
+            <div class="why-ym__title"><i class="fas fa-award" style="color:#d97706"></i> למה עסקים בוחרים בוואי מרקט</div>
+            <div class="why-ym__grid">
+              <div class="why-ym__card">
+                <i class="fas fa-box-open"></i>
+                <div><strong>ספק אחד לכל המוצרים</strong><span>חומרי ניקוי, נייר, חד פעמי, ציוד משרדי — הכל בהזמנה אחת, חשבונית אחת</span></div>
+              </div>
+              <div class="why-ym__card">
+                <i class="fas fa-hand-holding-usd"></i>
+                <div><strong>מחירים ישירים ללא תיווך</strong><span>חסכו 15-30% בעלויות הרכש השוטפות — אנחנו מפיצים ישירים</span></div>
+              </div>
+              <div class="why-ym__card">
+                <i class="fas fa-shipping-fast"></i>
+                <div><strong>אספקה עד הדלת תוך 24-72 שעות</strong><span>פריסה ארצית — גוש דן, חיפה, ירושלים, ב"ש ועד אילת</span></div>
+              </div>
+              <div class="why-ym__card">
+                <i class="fas fa-redo-alt"></i>
+                <div><strong>הזמנה חוזרת בקליק</strong><span>לקוחות קבועים נהנים ממחירון אישי, אשראי ושירות מועדף</span></div>
+              </div>
+            </div>
+          </div>
+          ${seoContentBlock ? `<div class="category-seo">${seoContentBlock}</div>` : ''}
+          ${geoContentBlock ? `<div class="category-geo" style="margin-top:1.5rem;padding:24px;background:linear-gradient(135deg,#f8fafc 0%,#f0f4f8 100%);border:1px solid #e2e8f0;border-radius:14px;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+              <div style="width:28px;height:28px;border-radius:8px;background:#1B3A5C;color:#fff;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">E</div>
+              <span style="font-size:0.85rem;font-weight:600;color:#1B3A5C;">מידע מקצועי</span>
+            </div>
+            <div style="font-size:0.9rem;line-height:1.8;color:#374151;">${geoContentBlock}</div>
+          </div>` : ''}
+          ${categoryFaqs.length > 0 ? `<div class="category-faq" style="margin-top:1.5rem;">
+            <h3 style="font-size:1.05rem;font-weight:700;color:#1B3A5C;margin-bottom:12px;display:flex;align-items:center;gap:8px;"><i class="fas fa-question-circle" style="color:#2563eb;"></i> שאלות נפוצות</h3>
+            ${categoryFaqs.map(f => `
+              <details style="margin-bottom:8px;background:#fff;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;">
+                <summary style="padding:12px 16px;cursor:pointer;font-weight:600;font-size:0.9rem;color:#1f2937;list-style:none;display:flex;align-items:center;justify-content:space-between;">
+                  ${f.q || f.question}
+                  <i class="fas fa-chevron-down" style="font-size:0.7rem;color:#9ca3af;transition:transform 0.2s;"></i>
+                </summary>
+                <div style="padding:0 16px 14px;font-size:0.88rem;color:#4b5563;line-height:1.7;">${f.a || f.answer}</div>
+              </details>
+            `).join('')}
+          </div>` : ''}
+          ${relatedHtml}
+          <div class="category-cta" style="background:linear-gradient(135deg,#1B3A5C 0%,#2a5080 100%);border-radius:16px;padding:2.5rem;margin-top:2rem;text-align:center;color:#fff;position:relative;overflow:hidden;">
+            <div style="position:absolute;top:-20px;left:-20px;width:120px;height:120px;background:rgba(255,255,255,0.05);border-radius:50%"></div>
+            <div style="position:absolute;bottom:-30px;right:-30px;width:160px;height:160px;background:rgba(255,255,255,0.03);border-radius:50%"></div>
+            <div style="position:relative;z-index:1">
+              <div style="font-size:2rem;margin-bottom:12px;"><i class="fas fa-calculator"></i></div>
+              <h3 style="margin-bottom:0.5rem;font-size:1.2rem;font-weight:800;">קבלו הצעת מחיר תוך דקות</h3>
+              <p style="opacity:0.85;margin-bottom:1.2rem;max-width:500px;margin-left:auto;margin-right:auto;">שלחו רשימת מוצרים בוואטסאפ ונחזור עם הצעה מותאמת כולל מחיר משלוח — בדרך כלל תוך שעה</p>
+              <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+                <a href="https://wa.me/972549922492?text=${encodeURIComponent('היי, אשמח לקבל הצעת מחיר ל' + category.name)}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:#25d366;color:#fff;border-radius:12px;font-weight:700;font-size:1rem;text-decoration:none;transition:transform 0.2s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"><i class="fab fa-whatsapp" style="font-size:1.2rem"></i> שלחו הודעה בוואטסאפ</a>
+                <a href="tel:037740400" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.3);border-radius:12px;font-weight:600;font-size:1rem;text-decoration:none;transition:background 0.2s" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'"><i class="fas fa-phone-alt"></i> 03-7740400</a>
+              </div>
+              <p style="margin-top:12px;font-size:0.78rem;opacity:0.65;">מינימום הזמנה 200 ₪ + מע"מ | ניתן לשלב מוצרים מכל הקטגוריות</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="/images/logo/logo-white.png" alt="וואי מרקט" width="112" height="60">
+          <p>נגלר סחר והפצה — סחר, שיווק והפצה של מוצרי צריכה שוטפת לעסקים ומוסדות בכל רחבי הארץ.</p>
+          <div class="footer__social">
+            <a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100083110428101" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/ymarket.ai" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>קטגוריות</h4>
+          <div class="footer__links">
+            <a href="/category/bulk-paper-towel-office-supplies/">מוצרי נייר וניגוב</a>
+            <a href="/category/industrial-cleaning-supplies-wholesale/">חומרי ניקוי</a>
+            <a href="/category/disposable-catering-food-service/">חד פעמי ואירוח</a>
+            <a href="/category/food-packaging-delivery-solutions/">אריזות Take Away</a>
+            <a href="/category/office-coffee-breakroom-supplies/">קפה, שתייה וכיבוד</a>
+            <a href="/category/safety-ppe-equipment-for-business/">בטיחות ומיגון</a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>קישורים מהירים</h4>
+          <div class="footer__links">
+            <a href="/catalog">קטלוג מוצרים</a>
+            <a href="/about">אודות</a>
+            <a href="/blog">בלוג</a>
+            <a href="/faq">שאלות ותשובות</a>
+            <a href="/contact">צרו קשר</a>
+            <a href="/tracking">מעקב משלוחים</a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>צרו קשר</h4>
+          <div class="footer__contact-item"><i class="fas fa-phone-alt"></i><a href="tel:037740400">03-7740400</a></div>
+          <div class="footer__contact-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/972549922492" target="_blank" rel="noopener">WhatsApp</a></div>
+          <div class="footer__contact-item"><i class="fas fa-envelope"></i><a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a></div>
+          <div class="footer__contact-item"><i class="fas fa-clock"></i><span>א'-ה' 08:00-17:00</span></div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span class="footer__copyright">&copy; 2026 וואי מרקט — נגלר סחר והפצה. כל הזכויות שמורות.</span>
+        <div class="footer__legal">
+          <a href="/legal/terms">תקנון האתר</a>
+          <a href="/legal/privacy">מדיניות פרטיות</a>
+          <a href="/legal/shipping">מדיניות משלוחים</a>
+          <a href="/legal/returns">החזרות וביטולים</a>
+          <a href="/legal/accessibility">נגישות</a>
+          <a href="/legal/cookies">עוגיות</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-cta-bar">
+    <a href="https://wa.me/972549922492?text=היי, אשמח לקבל הצעת מחיר ל${encodeURIComponent(category.name)}" class="cta-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> וואטסאפ</a>
+    <a href="tel:037740400" class="cta-phone"><i class="fas fa-phone-alt"></i> 03-7740400</a>
+  </div>
+  <a href="https://wa.me/972549922492" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <script src="/js/main.min.js?v=20260310b"></script>
+  <script>
+    // Toggle subcategory visibility in sidebar
+    document.querySelectorAll('.category-list__item').forEach(function(item) {
+      item.addEventListener('click', function(e) {
+        var children = this.nextElementSibling;
+        if (children && children.classList.contains('category-children')) {
+          var icon = this.querySelector('.fa-chevron-down');
+          if (icon) {
+            if (children.style.display === 'none') {
+              children.style.display = '';
+              icon.style.transform = '';
+            } else if (!this.classList.contains('active')) {
+              e.preventDefault();
+              children.style.display = 'none';
+              icon.style.transform = 'rotate(90deg)';
+            }
+          }
+        }
+      });
+    });
+
+    // ---- Ecommerce: Add to Cart ----
+    function ymAddToCart(btn) {
+      var id = parseInt(btn.dataset.id);
+      var cart = JSON.parse(localStorage.getItem('ym_cart') || '[]');
+      var existing = cart.find(function(item) { return item.id === id; });
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({
+          id: id,
+          name: btn.dataset.name,
+          price: parseFloat(btn.dataset.price),
+          unit: btn.dataset.unit,
+          imageUrl: btn.dataset.img,
+          slug: btn.dataset.slug,
+          quantity: 1
+        });
+      }
+      localStorage.setItem('ym_cart', JSON.stringify(cart));
+      if (window.YMarket) {
+        window.YMarket.updateCartBadge();
+        window.YMarket.showToast(btn.dataset.name + ' נוסף לעגלה');
+        window.YMarket.showCartQtyControls(btn);
+      }
+      // Analytics
+      if (window.YMarketAnalytics && window.YMarketAnalytics.fbAddToCart) {
+        window.YMarketAnalytics.fbAddToCart({ id: id, name: btn.dataset.name, price: parseFloat(btn.dataset.price), quantity: 1 });
+      }
+      if (window.YMarketAnalytics && window.YMarketAnalytics.trackAddToCart) {
+        window.YMarketAnalytics.trackAddToCart({ id: id, name: btn.dataset.name, price: parseFloat(btn.dataset.price), quantity: 1 });
+      }
+    }
+
+    // Add to cart buttons
+    document.querySelectorAll('.product-card__add-btn[data-id]').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        ymAddToCart(btn);
+      });
+      // Show qty controls for items already in cart
+      if (window.YMarket && window.YMarket.getCartQty(parseInt(btn.dataset.id)) > 0) {
+        window.YMarket.showCartQtyControls(btn);
+      }
+    });
+  </script>
+</body>
+</html>`;
+}
+
+function cleanDir(dir) {
+  if (!fs.existsSync(dir)) return;
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      cleanDir(full);
+      fs.rmdirSync(full);
+    } else {
+      fs.unlinkSync(full);
+    }
+  }
+}
+
+function main() {
+  if (!fs.existsSync(DATA_PATH)) {
+    console.error(`Error: ${DATA_PATH} not found.`);
+    process.exit(1);
+  }
+
+  const data = JSON.parse(fs.readFileSync(DATA_PATH, 'utf-8'));
+  const products = collapseVariants(data.items || [], data.variantGroups || []);
+  const categories = data.categories || [];
+
+  if (categories.length === 0) {
+    console.log('No categories found.');
+    return;
+  }
+
+  // Build category tree
+  const { roots: treeRoots, map: catMap } = buildCategoryTree(categories);
+
+  // Clean category directory completely
+  if (fs.existsSync(CATEGORY_DIR)) {
+    cleanDir(CATEGORY_DIR);
+  }
+
+  // Track generated slugs to prevent duplicates
+  const generatedSlugs = new Set();
+
+  // Generate page for EVERY category (parents and children), one page per slug
+  let count = 0;
+  for (const category of categories) {
+    if (!category.slug) continue;
+    if (generatedSlugs.has(category.slug)) {
+      console.warn(`Skipping duplicate slug: ${category.slug}`);
+      continue;
+    }
+    generatedSlugs.add(category.slug);
+
+    const treeCategory = catMap.get(category.id);
+    const html = generateCategoryPage(treeCategory || category, products, categories, catMap, treeRoots);
+    const slugDir = getCategoryFsPath(treeCategory || category, catMap, CATEGORY_DIR);
+    fs.mkdirSync(slugDir, { recursive: true });
+    fs.writeFileSync(path.join(slugDir, 'index.html'), html, 'utf-8');
+    count++;
+  }
+
+  console.log(`Generated ${count} category pages (tree structure) in ${CATEGORY_DIR}`);
+
+  // Generate redirect pages for old Hebrew slug URLs (where seoSlug differs from slug)
+  let redirectCount = 0;
+  for (const category of categories) {
+    if (!category.seoSlug || !category.slug || category.seoSlug === category.slug) continue;
+    // Build the old Hebrew slug directory path
+    const treeCategory = catMap.get(category.id);
+    const chain = getParentChain(treeCategory || category, catMap);
+    const oldSlugs = chain.map(c => c.slug);
+    oldSlugs.push(category.slug);
+    const oldDir = path.join(CATEGORY_DIR, ...oldSlugs);
+    const newUrl = getCategoryUrlPath(treeCategory || category, catMap);
+
+    // Only create redirect if old path differs from new
+    const oldUrl = '/category/' + oldSlugs.join('/') + '/';
+    if (oldUrl === newUrl) continue;
+
+    fs.mkdirSync(oldDir, { recursive: true });
+    fs.writeFileSync(path.join(oldDir, 'index.html'),
+      `<!DOCTYPE html><html lang="he"><head><meta charset="UTF-8"><meta http-equiv="refresh" content="0;url=${newUrl}"><link rel="canonical" href="https://ymarket.co.il${newUrl}"><title>הפניה...</title></head><body><p>הדף עבר: <a href="${newUrl}">${category.name}</a></p></body></html>`,
+      'utf-8');
+    redirectCount++;
+  }
+  // Redirect pages for a PREVIOUS English seoSlug that was renamed (oldSeoSlug).
+  // Keeps the already-indexed old English URL alive after a slug correction.
+  for (const category of categories) {
+    if (!category.oldSeoSlug) continue;
+    const treeCategory = catMap.get(category.id);
+    const chain = getParentChain(treeCategory || category, catMap);
+    const oldSlugs = chain.map(c => getEffectiveSlug(c));
+    oldSlugs.push(category.oldSeoSlug);
+    const oldDir = path.join(CATEGORY_DIR, ...oldSlugs);
+    const newUrl = getCategoryUrlPath(treeCategory || category, catMap);
+    const oldUrl = '/category/' + oldSlugs.join('/') + '/';
+    if (oldUrl === newUrl) continue;
+    fs.mkdirSync(oldDir, { recursive: true });
+    fs.writeFileSync(path.join(oldDir, 'index.html'),
+      `<!DOCTYPE html><html lang="he"><head><meta charset="UTF-8"><meta http-equiv="refresh" content="0;url=${newUrl}"><link rel="canonical" href="https://ymarket.co.il${newUrl}"><meta name="robots" content="noindex, follow"><title>הפניה...</title></head><body><p>הדף עבר: <a href="${newUrl}">${category.name}</a></p></body></html>`,
+      'utf-8');
+    redirectCount++;
+  }
+  if (redirectCount > 0) console.log(`Created ${redirectCount} redirect pages for old URLs`);
+
+  // Update all static HTML files with correct seoSlug-based links
+  updateStaticLinks(categories, catMap);
+}
+
+/**
+ * Update hardcoded category links across all static HTML files.
+ * Replaces /category/{hebrew-slug}/ with /category/{seoSlug}/ wherever seoSlug is defined.
+ */
+function updateStaticLinks(categories, catMap) {
+  // Build mapping: old URL path → new URL path (only for categories with seoSlug)
+  const urlReplacements = new Map();
+  for (const cat of categories) {
+    if (!cat.seoSlug || !cat.slug) continue;
+    // Old path uses original slug
+    const oldSlugs = [];
+    let current = cat;
+    while (current.parentId && catMap.has(current.parentId)) {
+      current = catMap.get(current.parentId);
+      oldSlugs.unshift(current.slug);
+    }
+    oldSlugs.push(cat.slug);
+    const oldPath = '/category/' + oldSlugs.join('/') + '/';
+
+    // New path uses seoSlug
+    const treeCat = catMap.get(cat.id) || cat;
+    const newPath = getCategoryUrlPath(treeCat, catMap);
+
+    if (oldPath !== newPath) {
+      urlReplacements.set(oldPath, newPath);
+    }
+  }
+
+  // Also map a renamed English seoSlug (oldSeoSlug) → current path, so existing
+  // links in static HTML get updated to the corrected slug.
+  for (const cat of categories) {
+    if (!cat.oldSeoSlug) continue;
+    const treeCat = catMap.get(cat.id) || cat;
+    const chain = getParentChain(treeCat, catMap);
+    const oldSlugs = chain.map(c => getEffectiveSlug(c));
+    oldSlugs.push(cat.oldSeoSlug);
+    const oldPath = '/category/' + oldSlugs.join('/') + '/';
+    const newPath = getCategoryUrlPath(treeCat, catMap);
+    if (oldPath !== newPath) urlReplacements.set(oldPath, newPath);
+  }
+
+  if (urlReplacements.size === 0) {
+    console.log('No URL replacements needed.');
+    return;
+  }
+
+  console.log(`\nUpdating static links (${urlReplacements.size} URL mappings):`);
+  for (const [oldUrl, newUrl] of urlReplacements) {
+    console.log(`  ${oldUrl} → ${newUrl}`);
+  }
+
+  // Collect all HTML files to update
+  const htmlFiles = [];
+
+  // Root HTML files
+  const rootFiles = fs.readdirSync(ROOT_DIR).filter(f => f.endsWith('.html'));
+  htmlFiles.push(...rootFiles.map(f => path.join(ROOT_DIR, f)));
+
+  // Blog HTML files
+  const blogDir = path.join(ROOT_DIR, 'blog');
+  if (fs.existsSync(blogDir)) {
+    const blogFiles = fs.readdirSync(blogDir).filter(f => f.endsWith('.html'));
+    htmlFiles.push(...blogFiles.map(f => path.join(blogDir, f)));
+  }
+
+  // Legal HTML files
+  const legalDir = path.join(ROOT_DIR, 'legal');
+  if (fs.existsSync(legalDir)) {
+    const legalFiles = fs.readdirSync(legalDir).filter(f => f.endsWith('.html'));
+    htmlFiles.push(...legalFiles.map(f => path.join(legalDir, f)));
+  }
+
+  let updatedCount = 0;
+  for (const filePath of htmlFiles) {
+    let content = fs.readFileSync(filePath, 'utf-8');
+    let modified = false;
+
+    for (const [oldUrl, newUrl] of urlReplacements) {
+      // Replace href="..." patterns and also relative ../category/... patterns in blog posts
+      const patterns = [
+        `href="${oldUrl}"`,
+        `href="..${oldUrl}"`,
+      ];
+      for (const pattern of patterns) {
+        const replacement = pattern.startsWith('href="..') ? `href="..${newUrl}"` : `href="${newUrl}"`;
+        if (content.includes(pattern)) {
+          content = content.split(pattern).join(replacement);
+          modified = true;
+        }
+      }
+    }
+
+    if (modified) {
+      fs.writeFileSync(filePath, content, 'utf-8');
+      updatedCount++;
+      console.log(`  Updated: ${path.relative(ROOT_DIR, filePath)}`);
+    }
+  }
+
+  console.log(`Updated links in ${updatedCount} HTML files.`);
+}
+
+main();

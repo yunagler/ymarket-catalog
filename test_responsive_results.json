@@ -1,0 +1,5848 @@
+[
+  {
+    "page": "דף הבית",
+    "viewport": "iPhone SE",
+    "resolution": "375x667",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "64px",
+          "height": "21px",
+          "text": "WhatsApp"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        },
+        {
+          "element": "a",
+          "width": "30px",
+          "height": "44px",
+          "text": "עוגיות"
+        },
+        {
+          "element": "a",
+          "width": "66px",
+          "height": "21px",
+          "text": "למידע נוסף"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 591,
+          "bottom": 643,
+          "height": 52
+        },
+        {
+          "element": "div.cookie-banner.show",
+          "zIndex": "400",
+          "position": "fixed",
+          "top": 533,
+          "bottom": 667,
+          "height": 134
+        }
+      ]
+    }
+  },
+  {
+    "page": "דף הבית",
+    "viewport": "iPhone 14",
+    "resolution": "390x844",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "64px",
+          "height": "21px",
+          "text": "WhatsApp"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        },
+        {
+          "element": "a",
+          "width": "30px",
+          "height": "44px",
+          "text": "עוגיות"
+        },
+        {
+          "element": "a",
+          "width": "66px",
+          "height": "21px",
+          "text": "למידע נוסף"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 768,
+          "bottom": 820,
+          "height": 52
+        },
+        {
+          "element": "div.cookie-banner.show",
+          "zIndex": "400",
+          "position": "fixed",
+          "top": 710,
+          "bottom": 844,
+          "height": 134
+        }
+      ]
+    }
+  },
+  {
+    "page": "דף הבית",
+    "viewport": "iPhone 14 Pro Max",
+    "resolution": "430x932",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "64px",
+          "height": "21px",
+          "text": "WhatsApp"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        },
+        {
+          "element": "a",
+          "width": "30px",
+          "height": "44px",
+          "text": "עוגיות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 856,
+          "bottom": 908,
+          "height": 52
+        },
+        {
+          "element": "div.cookie-banner.show",
+          "zIndex": "400",
+          "position": "fixed",
+          "top": 798,
+          "bottom": 932,
+          "height": 134
+        }
+      ]
+    }
+  },
+  {
+    "page": "דף הבית",
+    "viewport": "Galaxy S20",
+    "resolution": "360x800",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "64px",
+          "height": "21px",
+          "text": "WhatsApp"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        },
+        {
+          "element": "a",
+          "width": "30px",
+          "height": "44px",
+          "text": "עוגיות"
+        },
+        {
+          "element": "a",
+          "width": "66px",
+          "height": "21px",
+          "text": "למידע נוסף"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 724,
+          "bottom": 776,
+          "height": 52
+        },
+        {
+          "element": "div.cookie-banner.show",
+          "zIndex": "400",
+          "position": "fixed",
+          "top": 666,
+          "bottom": 800,
+          "height": 134
+        }
+      ]
+    }
+  },
+  {
+    "page": "דף הבית",
+    "viewport": "Galaxy S21 Ultra",
+    "resolution": "412x915",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "64px",
+          "height": "21px",
+          "text": "WhatsApp"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        },
+        {
+          "element": "a",
+          "width": "30px",
+          "height": "44px",
+          "text": "עוגיות"
+        },
+        {
+          "element": "a",
+          "width": "66px",
+          "height": "21px",
+          "text": "למידע נוסף"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 839,
+          "bottom": 891,
+          "height": 52
+        },
+        {
+          "element": "div.cookie-banner.show",
+          "zIndex": "400",
+          "position": "fixed",
+          "top": 781,
+          "bottom": 915,
+          "height": 134
+        }
+      ]
+    }
+  },
+  {
+    "page": "דף הבית",
+    "viewport": "iPad Portrait",
+    "resolution": "768x1024",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 940,
+          "bottom": 1000,
+          "height": 60
+        },
+        {
+          "element": "div.cookie-banner.show",
+          "zIndex": "400",
+          "position": "fixed",
+          "top": 911,
+          "bottom": 1024,
+          "height": 113
+        }
+      ]
+    }
+  },
+  {
+    "page": "דף הבית",
+    "viewport": "iPad Landscape",
+    "resolution": "1024x768",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 684,
+          "bottom": 744,
+          "height": 60
+        },
+        {
+          "element": "div.cookie-banner.show",
+          "zIndex": "400",
+          "position": "fixed",
+          "top": 692,
+          "bottom": 768,
+          "height": 76
+        }
+      ]
+    }
+  },
+  {
+    "page": "דף הבית",
+    "viewport": "Desktop 1280",
+    "resolution": "1280x800",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 716,
+          "bottom": 776,
+          "height": 60
+        },
+        {
+          "element": "div.cookie-banner.show",
+          "zIndex": "400",
+          "position": "fixed",
+          "top": 724,
+          "bottom": 800,
+          "height": 76
+        }
+      ]
+    }
+  },
+  {
+    "page": "דף הבית",
+    "viewport": "Desktop 1920",
+    "resolution": "1920x1080",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 996,
+          "bottom": 1056,
+          "height": 60
+        },
+        {
+          "element": "div.cookie-banner.show",
+          "zIndex": "400",
+          "position": "fixed",
+          "top": 1004,
+          "bottom": 1080,
+          "height": 76
+        }
+      ]
+    }
+  },
+  {
+    "page": "קטלוג",
+    "viewport": "iPhone SE",
+    "resolution": "375x667",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "36px",
+          "height": "44px",
+          "text": "כרית ווקום"
+        },
+        {
+          "element": "a",
+          "width": "58px",
+          "height": "24px",
+          "text": "מגב חלון"
+        },
+        {
+          "element": "a",
+          "width": "62px",
+          "height": "24px",
+          "text": "מגב שיש"
+        },
+        {
+          "element": "a",
+          "width": "47px",
+          "height": "24px",
+          "text": "מגן זקן"
+        },
+        {
+          "element": "a",
+          "width": "49px",
+          "height": "24px",
+          "text": "מד חום"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "24px",
+          "text": "נוזל"
+        },
+        {
+          "element": "a",
+          "width": "57px",
+          "height": "24px",
+          "text": "נייר קלף"
+        },
+        {
+          "element": "a",
+          "width": "39px",
+          "height": "44px",
+          "text": "סיכות 26/6"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 591,
+          "bottom": 643,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "קטלוג",
+    "viewport": "iPhone 14",
+    "resolution": "390x844",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "36px",
+          "height": "44px",
+          "text": "כרית ווקום"
+        },
+        {
+          "element": "a",
+          "width": "58px",
+          "height": "24px",
+          "text": "מגב חלון"
+        },
+        {
+          "element": "a",
+          "width": "62px",
+          "height": "24px",
+          "text": "מגב שיש"
+        },
+        {
+          "element": "a",
+          "width": "47px",
+          "height": "24px",
+          "text": "מגן זקן"
+        },
+        {
+          "element": "a",
+          "width": "49px",
+          "height": "24px",
+          "text": "מד חום"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "24px",
+          "text": "נוזל"
+        },
+        {
+          "element": "a",
+          "width": "57px",
+          "height": "24px",
+          "text": "נייר קלף"
+        },
+        {
+          "element": "a",
+          "width": "39px",
+          "height": "44px",
+          "text": "סיכות 26/6"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 768,
+          "bottom": 820,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "קטלוג",
+    "viewport": "iPhone 14 Pro Max",
+    "resolution": "430x932",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "36px",
+          "height": "44px",
+          "text": "כרית ווקום"
+        },
+        {
+          "element": "a",
+          "width": "58px",
+          "height": "24px",
+          "text": "מגב חלון"
+        },
+        {
+          "element": "a",
+          "width": "62px",
+          "height": "24px",
+          "text": "מגב שיש"
+        },
+        {
+          "element": "a",
+          "width": "47px",
+          "height": "24px",
+          "text": "מגן זקן"
+        },
+        {
+          "element": "a",
+          "width": "49px",
+          "height": "24px",
+          "text": "מד חום"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "24px",
+          "text": "נוזל"
+        },
+        {
+          "element": "a",
+          "width": "57px",
+          "height": "24px",
+          "text": "נייר קלף"
+        },
+        {
+          "element": "a",
+          "width": "39px",
+          "height": "44px",
+          "text": "סיכות 26/6"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 856,
+          "bottom": 908,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "קטלוג",
+    "viewport": "Galaxy S20",
+    "resolution": "360x800",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "67px",
+          "height": "39px",
+          "text": "12 ממרקות ברזל 30 גר'"
+        },
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "39px",
+          "text": "3 כריות ברזל לקרצוף חזק"
+        },
+        {
+          "element": "a",
+          "width": "82px",
+          "height": "39px",
+          "text": "4 כריות מתכת - Shiny"
+        },
+        {
+          "element": "a",
+          "width": "81px",
+          "height": "39px",
+          "text": "4 סרטי רקצוף לניקוי יסודי"
+        },
+        {
+          "element": "a",
+          "width": "82px",
+          "height": "39px",
+          "text": "6 ספוגי הפלא - Shiny"
+        },
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "39px",
+          "text": "אבקת כביסה אריאל 5 ק\"ג"
+        },
+        {
+          "element": "a",
+          "width": "84px",
+          "height": "39px",
+          "text": "אבקת כביסה אריאל 7.5 ק\"ג"
+        },
+        {
+          "element": "a",
+          "width": "65px",
+          "height": "39px",
+          "text": "אוזניות נגד רעש"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 724,
+          "bottom": 776,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "קטלוג",
+    "viewport": "Galaxy S21 Ultra",
+    "resolution": "412x915",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "36px",
+          "height": "44px",
+          "text": "כרית ווקום"
+        },
+        {
+          "element": "a",
+          "width": "58px",
+          "height": "24px",
+          "text": "מגב חלון"
+        },
+        {
+          "element": "a",
+          "width": "62px",
+          "height": "24px",
+          "text": "מגב שיש"
+        },
+        {
+          "element": "a",
+          "width": "47px",
+          "height": "24px",
+          "text": "מגן זקן"
+        },
+        {
+          "element": "a",
+          "width": "49px",
+          "height": "24px",
+          "text": "מד חום"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "24px",
+          "text": "נוזל"
+        },
+        {
+          "element": "a",
+          "width": "57px",
+          "height": "24px",
+          "text": "נייר קלף"
+        },
+        {
+          "element": "a",
+          "width": "39px",
+          "height": "44px",
+          "text": "סיכות 26/6"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 839,
+          "bottom": 891,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "קטלוג",
+    "viewport": "iPad Portrait",
+    "resolution": "768x1024",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 940,
+          "bottom": 1000,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "קטלוג",
+    "viewport": "iPad Landscape",
+    "resolution": "1024x768",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "aside.catalog-sidebar",
+          "zIndex": "auto",
+          "position": "sticky",
+          "top": 221,
+          "bottom": 736,
+          "height": 515
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 684,
+          "bottom": 744,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "קטלוג",
+    "viewport": "Desktop 1280",
+    "resolution": "1280x800",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "aside.catalog-sidebar",
+          "zIndex": "auto",
+          "position": "sticky",
+          "top": 221,
+          "bottom": 736,
+          "height": 515
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 716,
+          "bottom": 776,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "קטלוג",
+    "viewport": "Desktop 1920",
+    "resolution": "1920x1080",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "aside.catalog-sidebar",
+          "zIndex": "auto",
+          "position": "sticky",
+          "top": 221,
+          "bottom": 736,
+          "height": 515
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 996,
+          "bottom": 1056,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "אודות",
+    "viewport": "iPhone SE",
+    "resolution": "375x667",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 591,
+          "bottom": 643,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "אודות",
+    "viewport": "iPhone 14",
+    "resolution": "390x844",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 768,
+          "bottom": 820,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "אודות",
+    "viewport": "iPhone 14 Pro Max",
+    "resolution": "430x932",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 856,
+          "bottom": 908,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "אודות",
+    "viewport": "Galaxy S20",
+    "resolution": "360x800",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 724,
+          "bottom": 776,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "אודות",
+    "viewport": "Galaxy S21 Ultra",
+    "resolution": "412x915",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 839,
+          "bottom": 891,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "אודות",
+    "viewport": "iPad Portrait",
+    "resolution": "768x1024",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 940,
+          "bottom": 1000,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "אודות",
+    "viewport": "iPad Landscape",
+    "resolution": "1024x768",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 684,
+          "bottom": 744,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "אודות",
+    "viewport": "Desktop 1280",
+    "resolution": "1280x800",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 716,
+          "bottom": 776,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "אודות",
+    "viewport": "Desktop 1920",
+    "resolution": "1920x1080",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 996,
+          "bottom": 1056,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "צור קשר",
+    "viewport": "iPhone SE",
+    "resolution": "375x667",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "88px",
+          "height": "24px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "130px",
+          "height": "24px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 591,
+          "bottom": 643,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "צור קשר",
+    "viewport": "iPhone 14",
+    "resolution": "390x844",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "88px",
+          "height": "24px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "130px",
+          "height": "24px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 768,
+          "bottom": 820,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "צור קשר",
+    "viewport": "iPhone 14 Pro Max",
+    "resolution": "430x932",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "88px",
+          "height": "24px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "130px",
+          "height": "24px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 856,
+          "bottom": 908,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "צור קשר",
+    "viewport": "Galaxy S20",
+    "resolution": "360x800",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "88px",
+          "height": "24px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "130px",
+          "height": "24px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 724,
+          "bottom": 776,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "צור קשר",
+    "viewport": "Galaxy S21 Ultra",
+    "resolution": "412x915",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "88px",
+          "height": "24px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "130px",
+          "height": "24px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 839,
+          "bottom": 891,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "צור קשר",
+    "viewport": "iPad Portrait",
+    "resolution": "768x1024",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 940,
+          "bottom": 1000,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "צור קשר",
+    "viewport": "iPad Landscape",
+    "resolution": "1024x768",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 684,
+          "bottom": 744,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "צור קשר",
+    "viewport": "Desktop 1280",
+    "resolution": "1280x800",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 716,
+          "bottom": 776,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "צור קשר",
+    "viewport": "Desktop 1920",
+    "resolution": "1920x1080",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 996,
+          "bottom": 1056,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "בלוג",
+    "viewport": "iPhone SE",
+    "resolution": "375x667",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 591,
+          "bottom": 643,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "בלוג",
+    "viewport": "iPhone 14",
+    "resolution": "390x844",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 768,
+          "bottom": 820,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "בלוג",
+    "viewport": "iPhone 14 Pro Max",
+    "resolution": "430x932",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 856,
+          "bottom": 908,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "בלוג",
+    "viewport": "Galaxy S20",
+    "resolution": "360x800",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 724,
+          "bottom": 776,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "בלוג",
+    "viewport": "Galaxy S21 Ultra",
+    "resolution": "412x915",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 839,
+          "bottom": 891,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "בלוג",
+    "viewport": "iPad Portrait",
+    "resolution": "768x1024",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 940,
+          "bottom": 1000,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "בלוג",
+    "viewport": "iPad Landscape",
+    "resolution": "1024x768",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 684,
+          "bottom": 744,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "בלוג",
+    "viewport": "Desktop 1280",
+    "resolution": "1280x800",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 716,
+          "bottom": 776,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "בלוג",
+    "viewport": "Desktop 1920",
+    "resolution": "1920x1080",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 996,
+          "bottom": 1056,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "שאלות נפוצות",
+    "viewport": "iPhone SE",
+    "resolution": "375x667",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "56px",
+          "height": "24px",
+          "text": "צרו קשר"
+        },
+        {
+          "element": "a",
+          "width": "124px",
+          "height": "24px",
+          "text": "דף מעקב משלוחים"
+        },
+        {
+          "element": "a",
+          "width": "100px",
+          "height": "24px",
+          "text": "מדיניות החזרות"
+        },
+        {
+          "element": "a",
+          "width": "60px",
+          "height": "24px",
+          "text": "וואטסאפ"
+        },
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 591,
+          "bottom": 643,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "שאלות נפוצות",
+    "viewport": "iPhone 14",
+    "resolution": "390x844",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "56px",
+          "height": "24px",
+          "text": "צרו קשר"
+        },
+        {
+          "element": "a",
+          "width": "124px",
+          "height": "24px",
+          "text": "דף מעקב משלוחים"
+        },
+        {
+          "element": "a",
+          "width": "100px",
+          "height": "24px",
+          "text": "מדיניות החזרות"
+        },
+        {
+          "element": "a",
+          "width": "60px",
+          "height": "24px",
+          "text": "וואטסאפ"
+        },
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 768,
+          "bottom": 820,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "שאלות נפוצות",
+    "viewport": "iPhone 14 Pro Max",
+    "resolution": "430x932",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "124px",
+          "height": "24px",
+          "text": "דף מעקב משלוחים"
+        },
+        {
+          "element": "a",
+          "width": "100px",
+          "height": "24px",
+          "text": "מדיניות החזרות"
+        },
+        {
+          "element": "a",
+          "width": "60px",
+          "height": "24px",
+          "text": "וואטסאפ"
+        },
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 856,
+          "bottom": 908,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "שאלות נפוצות",
+    "viewport": "Galaxy S20",
+    "resolution": "360x800",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "56px",
+          "height": "24px",
+          "text": "צרו קשר"
+        },
+        {
+          "element": "a",
+          "width": "124px",
+          "height": "24px",
+          "text": "דף מעקב משלוחים"
+        },
+        {
+          "element": "a",
+          "width": "100px",
+          "height": "24px",
+          "text": "מדיניות החזרות"
+        },
+        {
+          "element": "a",
+          "width": "60px",
+          "height": "24px",
+          "text": "וואטסאפ"
+        },
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 724,
+          "bottom": 776,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "שאלות נפוצות",
+    "viewport": "Galaxy S21 Ultra",
+    "resolution": "412x915",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "56px",
+          "height": "24px",
+          "text": "צרו קשר"
+        },
+        {
+          "element": "a",
+          "width": "100px",
+          "height": "24px",
+          "text": "מדיניות החזרות"
+        },
+        {
+          "element": "a",
+          "width": "60px",
+          "height": "24px",
+          "text": "וואטסאפ"
+        },
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 839,
+          "bottom": 891,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "שאלות נפוצות",
+    "viewport": "iPad Portrait",
+    "resolution": "768x1024",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 940,
+          "bottom": 1000,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "שאלות נפוצות",
+    "viewport": "iPad Landscape",
+    "resolution": "1024x768",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 684,
+          "bottom": 744,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "שאלות נפוצות",
+    "viewport": "Desktop 1280",
+    "resolution": "1280x800",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 716,
+          "bottom": 776,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "שאלות נפוצות",
+    "viewport": "Desktop 1920",
+    "resolution": "1920x1080",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 996,
+          "bottom": 1056,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "עגלת קניות",
+    "viewport": "iPhone SE",
+    "resolution": "375x667",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 591,
+          "bottom": 643,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "עגלת קניות",
+    "viewport": "iPhone 14",
+    "resolution": "390x844",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 768,
+          "bottom": 820,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "עגלת קניות",
+    "viewport": "iPhone 14 Pro Max",
+    "resolution": "430x932",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 856,
+          "bottom": 908,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "עגלת קניות",
+    "viewport": "Galaxy S20",
+    "resolution": "360x800",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 724,
+          "bottom": 776,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "עגלת קניות",
+    "viewport": "Galaxy S21 Ultra",
+    "resolution": "412x915",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 839,
+          "bottom": 891,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "עגלת קניות",
+    "viewport": "iPad Portrait",
+    "resolution": "768x1024",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 940,
+          "bottom": 1000,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "עגלת קניות",
+    "viewport": "iPad Landscape",
+    "resolution": "1024x768",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 684,
+          "bottom": 744,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "עגלת קניות",
+    "viewport": "Desktop 1280",
+    "resolution": "1280x800",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 716,
+          "bottom": 776,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "עגלת קניות",
+    "viewport": "Desktop 1920",
+    "resolution": "1920x1080",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 996,
+          "bottom": 1056,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "צ'קאאוט",
+    "viewport": "iPhone SE",
+    "resolution": "375x667",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 591,
+          "bottom": 643,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "צ'קאאוט",
+    "viewport": "iPhone 14",
+    "resolution": "390x844",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 768,
+          "bottom": 820,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "צ'קאאוט",
+    "viewport": "iPhone 14 Pro Max",
+    "resolution": "430x932",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 856,
+          "bottom": 908,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "צ'קאאוט",
+    "viewport": "Galaxy S20",
+    "resolution": "360x800",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 724,
+          "bottom": 776,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "צ'קאאוט",
+    "viewport": "Galaxy S21 Ultra",
+    "resolution": "412x915",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 839,
+          "bottom": 891,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "צ'קאאוט",
+    "viewport": "iPad Portrait",
+    "resolution": "768x1024",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 940,
+          "bottom": 1000,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "צ'קאאוט",
+    "viewport": "iPad Landscape",
+    "resolution": "1024x768",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 684,
+          "bottom": 744,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "צ'קאאוט",
+    "viewport": "Desktop 1280",
+    "resolution": "1280x800",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 716,
+          "bottom": 776,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "צ'קאאוט",
+    "viewport": "Desktop 1920",
+    "resolution": "1920x1080",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 996,
+          "bottom": 1056,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "כניסה",
+    "viewport": "iPhone SE",
+    "resolution": "375x667",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        }
+      ]
+    }
+  },
+  {
+    "page": "כניסה",
+    "viewport": "iPhone 14",
+    "resolution": "390x844",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        }
+      ]
+    }
+  },
+  {
+    "page": "כניסה",
+    "viewport": "iPhone 14 Pro Max",
+    "resolution": "430x932",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        }
+      ]
+    }
+  },
+  {
+    "page": "כניסה",
+    "viewport": "Galaxy S20",
+    "resolution": "360x800",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        }
+      ]
+    }
+  },
+  {
+    "page": "כניסה",
+    "viewport": "Galaxy S21 Ultra",
+    "resolution": "412x915",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        }
+      ]
+    }
+  },
+  {
+    "page": "כניסה",
+    "viewport": "iPad Portrait",
+    "resolution": "768x1024",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        }
+      ]
+    }
+  },
+  {
+    "page": "כניסה",
+    "viewport": "iPad Landscape",
+    "resolution": "1024x768",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        }
+      ]
+    }
+  },
+  {
+    "page": "כניסה",
+    "viewport": "Desktop 1280",
+    "resolution": "1280x800",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        }
+      ]
+    }
+  },
+  {
+    "page": "כניסה",
+    "viewport": "Desktop 1920",
+    "resolution": "1920x1080",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        }
+      ]
+    }
+  },
+  {
+    "page": "הרשמה",
+    "viewport": "iPhone SE",
+    "resolution": "375x667",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "כניסה"
+        },
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        }
+      ]
+    }
+  },
+  {
+    "page": "הרשמה",
+    "viewport": "iPhone 14",
+    "resolution": "390x844",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "כניסה"
+        },
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        }
+      ]
+    }
+  },
+  {
+    "page": "הרשמה",
+    "viewport": "iPhone 14 Pro Max",
+    "resolution": "430x932",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "כניסה"
+        },
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        }
+      ]
+    }
+  },
+  {
+    "page": "הרשמה",
+    "viewport": "Galaxy S20",
+    "resolution": "360x800",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "כניסה"
+        },
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        }
+      ]
+    }
+  },
+  {
+    "page": "הרשמה",
+    "viewport": "Galaxy S21 Ultra",
+    "resolution": "412x915",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "כניסה"
+        },
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        }
+      ]
+    }
+  },
+  {
+    "page": "הרשמה",
+    "viewport": "iPad Portrait",
+    "resolution": "768x1024",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        }
+      ]
+    }
+  },
+  {
+    "page": "הרשמה",
+    "viewport": "iPad Landscape",
+    "resolution": "1024x768",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        }
+      ]
+    }
+  },
+  {
+    "page": "הרשמה",
+    "viewport": "Desktop 1280",
+    "resolution": "1280x800",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        }
+      ]
+    }
+  },
+  {
+    "page": "הרשמה",
+    "viewport": "Desktop 1920",
+    "resolution": "1920x1080",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        }
+      ]
+    }
+  },
+  {
+    "page": "מעקב הזמנה",
+    "viewport": "iPhone SE",
+    "resolution": "375x667",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "144px",
+          "height": "24px",
+          "text": "התקשרו 03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 591,
+          "bottom": 643,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "מעקב הזמנה",
+    "viewport": "iPhone 14",
+    "resolution": "390x844",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "153px",
+          "height": "24px",
+          "text": "שלחו הודעה בוואטסאפ"
+        },
+        {
+          "element": "a",
+          "width": "144px",
+          "height": "24px",
+          "text": "התקשרו 03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 768,
+          "bottom": 820,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "מעקב הזמנה",
+    "viewport": "iPhone 14 Pro Max",
+    "resolution": "430x932",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "153px",
+          "height": "24px",
+          "text": "שלחו הודעה בוואטסאפ"
+        },
+        {
+          "element": "a",
+          "width": "144px",
+          "height": "24px",
+          "text": "התקשרו 03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 856,
+          "bottom": 908,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "מעקב הזמנה",
+    "viewport": "Galaxy S20",
+    "resolution": "360x800",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "144px",
+          "height": "24px",
+          "text": "התקשרו 03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 724,
+          "bottom": 776,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "מעקב הזמנה",
+    "viewport": "Galaxy S21 Ultra",
+    "resolution": "412x915",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "153px",
+          "height": "24px",
+          "text": "שלחו הודעה בוואטסאפ"
+        },
+        {
+          "element": "a",
+          "width": "144px",
+          "height": "24px",
+          "text": "התקשרו 03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 839,
+          "bottom": 891,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "מעקב הזמנה",
+    "viewport": "iPad Portrait",
+    "resolution": "768x1024",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 940,
+          "bottom": 1000,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "מעקב הזמנה",
+    "viewport": "iPad Landscape",
+    "resolution": "1024x768",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 684,
+          "bottom": 744,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "מעקב הזמנה",
+    "viewport": "Desktop 1280",
+    "resolution": "1280x800",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 716,
+          "bottom": 776,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "מעקב הזמנה",
+    "viewport": "Desktop 1920",
+    "resolution": "1920x1080",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 996,
+          "bottom": 1056,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "דף מוצר",
+    "viewport": "iPhone SE",
+    "resolution": "375x667",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "161px",
+          "height": "24px",
+          "text": "קש ארומה 0.8 - 400 יח'"
+        },
+        {
+          "element": "a",
+          "width": "193px",
+          "height": "24px",
+          "text": "גביע 150 (125 גר') - א' 2000"
+        },
+        {
+          "element": "a",
+          "width": "175px",
+          "height": "24px",
+          "text": "גביע 150 PP - א' 2000 יח'"
+        },
+        {
+          "element": "a",
+          "width": "175px",
+          "height": "24px",
+          "text": "גביע 250 PP - א' 2000 יח'"
+        },
+        {
+          "element": "a",
+          "width": "86px",
+          "height": "21px",
+          "text": "054-992-2492"
+        },
+        {
+          "element": "a",
+          "width": "195px",
+          "height": "21px",
+          "text": "naglertradesystem@gmail.com"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "div.product-pricing",
+          "zIndex": "50",
+          "position": "sticky",
+          "top": 665,
+          "bottom": 741,
+          "height": 76
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 591,
+          "bottom": 643,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "דף מוצר",
+    "viewport": "iPhone 14",
+    "resolution": "390x844",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "161px",
+          "height": "24px",
+          "text": "קש ארומה 0.8 - 400 יח'"
+        },
+        {
+          "element": "a",
+          "width": "193px",
+          "height": "24px",
+          "text": "גביע 150 (125 גר') - א' 2000"
+        },
+        {
+          "element": "a",
+          "width": "175px",
+          "height": "24px",
+          "text": "גביע 150 PP - א' 2000 יח'"
+        },
+        {
+          "element": "a",
+          "width": "175px",
+          "height": "24px",
+          "text": "גביע 250 PP - א' 2000 יח'"
+        },
+        {
+          "element": "a",
+          "width": "86px",
+          "height": "21px",
+          "text": "054-992-2492"
+        },
+        {
+          "element": "a",
+          "width": "195px",
+          "height": "21px",
+          "text": "naglertradesystem@gmail.com"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "div.product-pricing",
+          "zIndex": "50",
+          "position": "sticky",
+          "top": 768,
+          "bottom": 844,
+          "height": 76
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 768,
+          "bottom": 820,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "דף מוצר",
+    "viewport": "iPhone 14 Pro Max",
+    "resolution": "430x932",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "161px",
+          "height": "24px",
+          "text": "קש ארומה 0.8 - 400 יח'"
+        },
+        {
+          "element": "a",
+          "width": "193px",
+          "height": "24px",
+          "text": "גביע 150 (125 גר') - א' 2000"
+        },
+        {
+          "element": "a",
+          "width": "175px",
+          "height": "24px",
+          "text": "גביע 150 PP - א' 2000 יח'"
+        },
+        {
+          "element": "a",
+          "width": "175px",
+          "height": "24px",
+          "text": "גביע 250 PP - א' 2000 יח'"
+        },
+        {
+          "element": "a",
+          "width": "86px",
+          "height": "21px",
+          "text": "054-992-2492"
+        },
+        {
+          "element": "a",
+          "width": "195px",
+          "height": "21px",
+          "text": "naglertradesystem@gmail.com"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "div.product-pricing",
+          "zIndex": "50",
+          "position": "sticky",
+          "top": 833,
+          "bottom": 909,
+          "height": 76
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 856,
+          "bottom": 908,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "דף מוצר",
+    "viewport": "Galaxy S20",
+    "resolution": "360x800",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "141px",
+          "height": "21px",
+          "text": "קש ארומה 0.8 - 400 יח'"
+        },
+        {
+          "element": "a",
+          "width": "169px",
+          "height": "21px",
+          "text": "גביע 150 (125 גר') - א' 2000"
+        },
+        {
+          "element": "a",
+          "width": "153px",
+          "height": "21px",
+          "text": "גביע 150 PP - א' 2000 יח'"
+        },
+        {
+          "element": "a",
+          "width": "153px",
+          "height": "21px",
+          "text": "גביע 250 PP - א' 2000 יח'"
+        },
+        {
+          "element": "a",
+          "width": "86px",
+          "height": "21px",
+          "text": "054-992-2492"
+        },
+        {
+          "element": "a",
+          "width": "195px",
+          "height": "21px",
+          "text": "naglertradesystem@gmail.com"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "div.product-pricing",
+          "zIndex": "50",
+          "position": "sticky",
+          "top": 724,
+          "bottom": 800,
+          "height": 76
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 724,
+          "bottom": 776,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "דף מוצר",
+    "viewport": "Galaxy S21 Ultra",
+    "resolution": "412x915",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "161px",
+          "height": "24px",
+          "text": "קש ארומה 0.8 - 400 יח'"
+        },
+        {
+          "element": "a",
+          "width": "193px",
+          "height": "24px",
+          "text": "גביע 150 (125 גר') - א' 2000"
+        },
+        {
+          "element": "a",
+          "width": "175px",
+          "height": "24px",
+          "text": "גביע 150 PP - א' 2000 יח'"
+        },
+        {
+          "element": "a",
+          "width": "175px",
+          "height": "24px",
+          "text": "גביע 250 PP - א' 2000 יח'"
+        },
+        {
+          "element": "a",
+          "width": "86px",
+          "height": "21px",
+          "text": "054-992-2492"
+        },
+        {
+          "element": "a",
+          "width": "195px",
+          "height": "21px",
+          "text": "naglertradesystem@gmail.com"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "div.product-pricing",
+          "zIndex": "50",
+          "position": "sticky",
+          "top": 831,
+          "bottom": 907,
+          "height": 76
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 839,
+          "bottom": 891,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "דף מוצר",
+    "viewport": "iPad Portrait",
+    "resolution": "768x1024",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "div.product-pricing",
+          "zIndex": "50",
+          "position": "sticky",
+          "top": 774,
+          "bottom": 859,
+          "height": 85
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 940,
+          "bottom": 1000,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "דף מוצר",
+    "viewport": "iPad Landscape",
+    "resolution": "1024x768",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "div.product-gallery",
+          "zIndex": "auto",
+          "position": "sticky",
+          "top": 253,
+          "bottom": 669,
+          "height": 416
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 684,
+          "bottom": 744,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "דף מוצר",
+    "viewport": "Desktop 1280",
+    "resolution": "1280x800",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "div.product-gallery",
+          "zIndex": "auto",
+          "position": "sticky",
+          "top": 253,
+          "bottom": 683,
+          "height": 430
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 716,
+          "bottom": 776,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "דף מוצר",
+    "viewport": "Desktop 1920",
+    "resolution": "1920x1080",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "div.product-gallery",
+          "zIndex": "auto",
+          "position": "sticky",
+          "top": 253,
+          "bottom": 683,
+          "height": 430
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 996,
+          "bottom": 1056,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "מדיניות פרטיות",
+    "viewport": "iPhone SE",
+    "resolution": "375x667",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 591,
+          "bottom": 643,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "מדיניות פרטיות",
+    "viewport": "iPhone 14",
+    "resolution": "390x844",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 768,
+          "bottom": 820,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "מדיניות פרטיות",
+    "viewport": "iPhone 14 Pro Max",
+    "resolution": "430x932",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 856,
+          "bottom": 908,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "מדיניות פרטיות",
+    "viewport": "Galaxy S20",
+    "resolution": "360x800",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 724,
+          "bottom": 776,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "מדיניות פרטיות",
+    "viewport": "Galaxy S21 Ultra",
+    "resolution": "412x915",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 839,
+          "bottom": 891,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "מדיניות פרטיות",
+    "viewport": "iPad Portrait",
+    "resolution": "768x1024",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 940,
+          "bottom": 1000,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "מדיניות פרטיות",
+    "viewport": "iPad Landscape",
+    "resolution": "1024x768",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 684,
+          "bottom": 744,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "מדיניות פרטיות",
+    "viewport": "Desktop 1280",
+    "resolution": "1280x800",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 716,
+          "bottom": 776,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "מדיניות פרטיות",
+    "viewport": "Desktop 1920",
+    "resolution": "1920x1080",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 996,
+          "bottom": 1056,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "תנאי שימוש",
+    "viewport": "iPhone SE",
+    "resolution": "375x667",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 591,
+          "bottom": 643,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "תנאי שימוש",
+    "viewport": "iPhone 14",
+    "resolution": "390x844",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 768,
+          "bottom": 820,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "תנאי שימוש",
+    "viewport": "iPhone 14 Pro Max",
+    "resolution": "430x932",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 856,
+          "bottom": 908,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "תנאי שימוש",
+    "viewport": "Galaxy S20",
+    "resolution": "360x800",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 724,
+          "bottom": 776,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "תנאי שימוש",
+    "viewport": "Galaxy S21 Ultra",
+    "resolution": "412x915",
+    "issues": {
+      "small_tap_targets": [
+        {
+          "element": "a",
+          "width": "75px",
+          "height": "21px",
+          "text": "03-7740400"
+        },
+        {
+          "element": "a",
+          "width": "114px",
+          "height": "21px",
+          "text": "Pm@ymarket.co.il"
+        },
+        {
+          "element": "a",
+          "width": "26px",
+          "height": "44px",
+          "text": "תקנון"
+        },
+        {
+          "element": "a",
+          "width": "35px",
+          "height": "44px",
+          "text": "פרטיות"
+        },
+        {
+          "element": "a",
+          "width": "33px",
+          "height": "44px",
+          "text": "נגישות"
+        }
+      ],
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 839,
+          "bottom": 891,
+          "height": 52
+        }
+      ]
+    }
+  },
+  {
+    "page": "תנאי שימוש",
+    "viewport": "iPad Portrait",
+    "resolution": "768x1024",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 60,
+          "bottom": 121,
+          "height": 61
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 940,
+          "bottom": 1000,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "תנאי שימוש",
+    "viewport": "iPad Landscape",
+    "resolution": "1024x768",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 684,
+          "bottom": 744,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "תנאי שימוש",
+    "viewport": "Desktop 1280",
+    "resolution": "1280x800",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 716,
+          "bottom": 776,
+          "height": 60
+        }
+      ]
+    }
+  },
+  {
+    "page": "תנאי שימוש",
+    "viewport": "Desktop 1920",
+    "resolution": "1920x1080",
+    "issues": {
+      "fixed_elements": [
+        {
+          "element": "header.header",
+          "zIndex": "200",
+          "position": "sticky",
+          "top": 40,
+          "bottom": 113,
+          "height": 73
+        },
+        {
+          "element": "a.whatsapp-float",
+          "zIndex": "600",
+          "position": "fixed",
+          "top": 996,
+          "bottom": 1056,
+          "height": 60
+        }
+      ]
+    }
+  }
+]

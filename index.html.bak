@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>וואי מרקט | אספקה חכמה ומדויקת של מוצרי צריכה למוסדות ועסקים</title>
+  <meta name="description" content="וואי מרקט - סחר, שיווק והפצה של מוצרי צריכה שוטפת לעסקים ומוסדות. מוצרי ניקיון, נייר, חד פעמי, ציוד משרדי ועוד. משלוח ארצי, מחירי סיטונאות.">
+  <meta name="keywords" content="מוצרי ניקיון למוסדות, חד פעמי לעסקים, נייר תעשייתי, אספקה לעסקים, מוצרי צריכה שוטפת, ספק מוסדי">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://ymarket.co.il/">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1B3A5C">
+  <meta name="google-site-verification" content="4XTzI4q3oV5FoW-ZmUx8Q_RjPVZVF8N1ZXz1I0zleK8" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="וואי מרקט | אספקה חכמה ומדויקת של מוצרי צריכה למוסדות ועסקים">
+  <meta property="og:description" content="וואי מרקט - סחר, שיווק והפצה של מוצרי צריכה שוטפת לעסקים ומוסדות. מוצרי ניקיון, נייר, חד פעמי, ציוד משרדי ועוד. משלוח ארצי, מחירי סיטונאות.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ymarket.co.il/">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:site_name" content="וואי מרקט">
+  <meta property="og:image" content="https://ymarket.co.il/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="וואי מרקט | אספקה חכמה ומדויקת למוסדות ועסקים">
+  <meta name="twitter:description" content="מוצרי צריכה שוטפת לעסקים ומוסדות - מחירי סיטונאות, משלוח ארצי.">
+  <meta name="twitter:image" content="https://ymarket.co.il/images/og-image.jpg">
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="he" href="https://ymarket.co.il/">
+  <link rel="alternate" hreflang="x-default" href="https://ymarket.co.il/">
+
+  <!-- Preconnect to font origins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+  <!-- Preload Heebo 700 woff2 (critical weight for above-the-fold) -->
+  <link rel="preload" href="https://fonts.gstatic.com/s/heebo/v28/NGS6v5_NC0k9P9H0TbFhsqMA.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Critical CSS: inlined for instant first paint on mobile -->
+  <style>
+    /* Self-hosted critical font: Heebo 700 */
+    @font-face {
+      font-family: 'Heebo';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/heebo/v28/NGS6v5_NC0k9P9H0TbFhsqMA.woff2) format('woff2');
+      unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F, U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    /* Font-display swap for Font Awesome (override CDN) */
+    @font-face {
+      font-family: 'Font Awesome 6 Free';
+      font-style: normal;
+      font-weight: 900;
+      font-display: swap;
+      src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-solid-900.woff2) format('woff2');
+    }
+    @font-face {
+      font-family: 'Font Awesome 6 Brands';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-brands-400.woff2) format('woff2');
+    }
+
+    /* === CSS Variables (critical subset) === */
+    :root {
+      --color-primary: #1B3A5C;
+      --color-primary-dark: #112A45;
+      --color-primary-light: #2A5080;
+      --color-accent: #3A7BD5;
+      --color-accent-light: #5A9BE6;
+      --color-accent-gold: #e8a735;
+      --color-accent-gold-hover: #d4952e;
+      --color-white: #FFFFFF;
+      --color-bg: #F8F9FB;
+      --color-bg-alt: #EEF1F5;
+      --color-border: #D8DDE5;
+      --color-border-light: #E8ECF1;
+      --color-text: #1A1A2E;
+      --color-text-secondary: #4A5568;
+      --color-text-light: #6B7280;
+      --color-text-on-primary: #FFFFFF;
+      --color-danger: #DC3545;
+      --color-danger-bg: #FFEBEE;
+      --color-success: #28A745;
+      --font-hebrew: 'Heebo', Arial, sans-serif;
+      --font-body: var(--font-hebrew);
+      --fs-xs: 0.75rem;
+      --fs-sm: 0.875rem;
+      --fs-base: 1rem;
+      --fs-md: 1.125rem;
+      --fs-lg: 1.25rem;
+      --fs-xl: 1.5rem;
+      --fs-2xl: 2rem;
+      --fs-3xl: 2.5rem;
+      --fs-4xl: 3rem;
+      --fw-regular: 400;
+      --fw-medium: 500;
+      --fw-semibold: 600;
+      --fw-bold: 700;
+      --fw-extrabold: 800;
+      --lh-tight: 1.25;
+      --lh-normal: 1.5;
+      --lh-relaxed: 1.75;
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2rem;
+      --space-2xl: 3rem;
+      --space-3xl: 4rem;
+      --space-4xl: 6rem;
+      --container-max: 1280px;
+      --container-padding: 1.5rem;
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --radius-xl: 16px;
+      --radius-pill: 50px;
+      --radius-round: 50%;
+      --shadow-sm: 0 1px 3px rgba(27,58,92,0.08);
+      --shadow-md: 0 4px 12px rgba(27,58,92,0.1);
+      --shadow-lg: 0 8px 24px rgba(27,58,92,0.12);
+      --shadow-xl: 0 12px 36px rgba(27,58,92,0.15);
+      --transition-fast: 150ms ease;
+      --transition-normal: 250ms ease;
+      --transition-slow: 400ms ease;
+      --z-dropdown: 1000;
+      --z-sticky: 9000;
+      --z-overlay: 9500;
+      --z-modal: 9800;
+      --z-whatsapp: 8000;
+    }
+
+    /* === Reset (critical) === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; -webkit-text-size-adjust: 100%; overflow-x: clip; }
+    body {
+      font-family: var(--font-body);
+      font-size: var(--fs-base);
+      font-weight: var(--fw-regular);
+      line-height: var(--lh-normal);
+      color: var(--color-text);
+      background-color: var(--color-white);
+      direction: rtl;
+      text-align: right;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: clip;
+    }
+    img, picture, video, canvas, svg { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    ul, ol { list-style: none; }
+    h1, h2, h3, h4, h5, h6 { font-weight: var(--fw-bold); line-height: var(--lh-tight); color: var(--color-primary-dark); }
+    h1 { font-size: var(--fs-4xl); }
+    p { margin-bottom: var(--space-md); color: var(--color-text-secondary); }
+    button, a, [role="button"], .btn { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+
+    /* === Container === */
+    .container { width: 100%; max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-padding); }
+
+    /* === Skip Link === */
+    .skip-link { position: absolute; top: -100%; left: 50%; transform: translateX(-50%); background: var(--color-primary); color: var(--color-white); padding: 0.75rem 1.5rem; border-radius: 0 0 var(--radius-md) var(--radius-md); z-index: 9999; font-weight: var(--fw-semibold); text-decoration: none; }
+    .skip-link:focus { top: 0; }
+
+    /* === Top Bar (sticky) === */
+    .top-bar { background-color: var(--color-primary-dark); color: var(--color-white); font-size: var(--fs-sm); }
+
+    /* === Header === */
+    .header { background-color: var(--color-white); border-bottom: 1px solid var(--color-border-light); position: sticky; top: 0; z-index: var(--z-sticky); overflow: visible; }
+    .header .container { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .header__logo { flex-shrink: 0; }
+    .header__logo img { height: 52px; width: auto; }
+
+    /* === Main Nav (desktop) === */
+    .main-nav { display: flex; align-items: center; gap: var(--space-xs); flex: 1; justify-content: center; }
+    .main-nav__link { display: flex; align-items: center; gap: var(--space-xs); padding: var(--space-sm) var(--space-md); font-size: var(--fs-sm); font-weight: var(--fw-medium); color: var(--color-text); border-radius: var(--radius-md); transition: background-color 0.15s ease, opacity 0.15s ease; white-space: nowrap; }
+    .main-nav__link:hover, .main-nav__link.active { color: var(--color-primary); background-color: var(--color-bg); opacity: 1; }
+
+    /* === Header Actions === */
+    .header__actions { display: flex; align-items: center; gap: var(--space-sm); }
+    .header__search-toggle, .header__cart-btn, .header__login-btn { display: flex; align-items: center; gap: var(--space-xs); padding: var(--space-sm) var(--space-md); background: none; border: none; cursor: pointer; font-size: var(--fs-sm); font-weight: var(--fw-medium); color: var(--color-text); border-radius: var(--radius-md); }
+    .header__login-btn { background: var(--color-primary); color: var(--color-white); border-radius: var(--radius-pill); min-height: 44px; }
+    .header__register-btn { display: inline-flex; align-items: center; gap: var(--space-xs); padding: var(--space-sm) var(--space-md); background: var(--color-accent-gold); color: var(--color-white); border-radius: var(--radius-pill); font-size: var(--fs-sm); font-weight: var(--fw-semibold); text-decoration: none; min-height: 44px; }
+    .cart-count { display: none; }
+    .mobile-menu-btn { display: none; background: none; border: none; font-size: var(--fs-xl); color: var(--color-primary); cursor: pointer; padding: var(--space-sm); min-width: 44px; min-height: 44px; }
+    .mega-menu { position: absolute; top: 100%; right: 0; background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); box-shadow: var(--shadow-xl); padding: var(--space-xl); min-width: min(600px, calc(100vw - 2rem)); opacity: 0; visibility: hidden; transform: translateY(10px); transition: all var(--transition-normal); z-index: var(--z-dropdown); }
+
+    /* === Hero (above the fold) === */
+    .hero { min-height: 480px; }
+    .hero__title { font-size: var(--fs-4xl); font-weight: var(--fw-extrabold); line-height: 1.2; }
+    .hero__subtitle { font-size: var(--fs-lg); line-height: var(--lh-relaxed); }
+    .hero__actions { display: flex; gap: var(--space-md); flex-wrap: wrap; }
+
+    /* === Buttons (critical) === */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-sm); padding: 0.75rem 1.75rem; font-family: var(--font-body); font-size: var(--fs-base); font-weight: var(--fw-semibold); line-height: 1; border: 2px solid transparent; border-radius: var(--radius-pill); cursor: pointer; transition: all var(--transition-normal); white-space: nowrap; text-decoration: none; }
+    .btn--secondary { background-color: transparent; color: var(--color-primary); border-color: var(--color-primary); }
+    .btn--whatsapp { background: #1a7f37 !important; color: #fff !important; }
+
+    /* === Trust Strip === */
+    .trust-strip { background: var(--color-white); padding: var(--space-xl) 0; border-bottom: 1px solid var(--color-border-light); min-height: 100px; }
+    .trust-strip__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-lg); }
+    .trust-strip__item { display: flex; align-items: center; gap: var(--space-md); background: var(--color-white); padding: var(--space-lg); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
+    .trust-strip__icon { width: 48px; height: 48px; border-radius: var(--radius-round); background: linear-gradient(135deg, var(--color-primary), var(--color-accent)); display: flex; align-items: center; justify-content: center; color: var(--color-white); font-size: var(--fs-lg); flex-shrink: 0; }
+    .trust-strip__text strong { display: block; font-size: var(--fs-sm); font-weight: var(--fw-bold); color: var(--color-text); }
+    .trust-strip__text span { font-size: var(--fs-xs); color: #5A6577; }
+
+    /* === CLS prevention === */
+    .categories-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg); min-height: 400px; }
+    .category-card { min-height: 140px; background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); padding: var(--space-lg); text-align: center; text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: var(--space-md); }
+    .stats-grid { min-height: 100px; }
+    .stat-item__number { min-height: 48px; }
+    .animate-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity var(--transition-slow), transform var(--transition-slow); }
+    .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+
+    /* === Accessibility contrast fixes === */
+    .category-card__count { color: #4A5568; }
+    .hero__stat-label { color: rgba(255,255,255,0.85); }
+    .stat-item__label { color: rgba(255,255,255,0.9); }
+    .section-subtitle { color: #4A5568; }
+    .info-card__text { color: #4A5568; }
+    .b2b-price-tease { color: #374151; }
+    .b2b-price-tease a { color: #0A58CA; font-weight: 700; }
+    .badge-delivery { color: #157347; }
+    .product-card { color: #374151; }
+
+    /* === Touch targets === */
+    .info-bar__item a, .info-bar__item span { display: inline-flex; align-items: center; min-height: 44px; }
+    .footer__social a { min-width: 44px; min-height: 44px; }
+
+    /* === Responsive (critical mobile overrides) === */
+    @media (max-width: 1024px) {
+      .trust-strip__grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      :root { --fs-4xl: 2.25rem; --fs-3xl: 1.875rem; --fs-2xl: 1.5rem; }
+      .header .container { height: 60px; }
+      .header__logo img { height: 36px; }
+      .mobile-menu-btn { display: flex; }
+      .main-nav { position: fixed; top: 0; right: 0; width: 85%; max-width: 360px; height: 100dvh; background: var(--color-white); flex-direction: column; align-items: stretch; justify-content: flex-start; padding: var(--space-xl); gap: 0; z-index: calc(var(--z-modal) + 1); box-shadow: var(--shadow-xl); transform: translateX(100%); transition: transform var(--transition-slow); clip-path: inset(0 -100% 0 0); }
+      .main-nav.open { transform: translateX(0); }
+      .main-nav__link { padding: var(--space-md); font-size: var(--fs-base); border-bottom: 1px solid var(--color-border-light); border-radius: 0; min-height: 48px; }
+      .hero { min-height: 360px; }
+      .categories-grid { grid-template-columns: repeat(2, 1fr); min-height: 300px; }
+      .trust-strip__grid { grid-template-columns: repeat(2, 1fr); }
+      .trust-strip { margin-top: 0; }
+      .trust-strip .container { margin-top: 0; }
+      .header__actions .header__search-toggle, .header__actions .header__cart-btn { min-width: 44px; min-height: 44px; justify-content: center; }
+    }
+    @media (max-width: 480px) {
+      :root { --fs-4xl: 1.875rem; --fs-3xl: 1.5rem; --container-padding: 1rem; }
+      .hero { min-height: 300px; }
+      .hero__actions { flex-direction: column; gap: var(--space-sm); }
+      .hero__actions .btn { width: 100%; justify-content: center; }
+      .categories-grid { grid-template-columns: repeat(2, 1fr); min-height: auto; gap: var(--space-sm); }
+      .trust-strip__grid { grid-template-columns: 1fr; }
+      .trust-strip__item { padding: var(--space-md); }
+      .header__login-btn span, .header__register-btn span { display: none; }
+      .header__register-btn { padding: var(--space-xs) var(--space-sm); font-size: var(--fs-base); }
+      .whatsapp-float { width: 52px; height: 52px; font-size: 24px; bottom: 16px; right: 16px; }
+    }
+    @media (max-width: 374px) {
+      :root { --fs-4xl: 1.625rem; --fs-3xl: 1.375rem; --fs-2xl: 1.125rem; --container-padding: 0.75rem; }
+      .hero__title { font-size: 1.375rem; }
+      .hero__subtitle { font-size: var(--fs-sm); }
+    }
+  </style>
+
+  <!-- Non-blocking stylesheets: main CSS + fonts + icons + page CSS -->
+  <link rel="stylesheet" href="css/style.min.css?v=20260325" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="css/style.min.css?v=20260325"></noscript>
+  <link rel="stylesheet" href="css/pages/home.min.css?v=20260325" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="css/pages/home.min.css?v=20260325"></noscript>
+  <link rel="stylesheet" href="css/mobile-fixes.css?v=20260325" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="css/mobile-fixes.css?v=20260325"></noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;800&display=swap" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;500;600&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap"></noscript>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "וואי מרקט - נגלר סחר והפצה",
+    "telephone": "+972-3-7740400",
+    "email": "Pm@ymarket.co.il",
+    "url": "https://ymarket.co.il",
+    "openingHours": "Su-Th 08:00-17:00",
+    "areaServed": "IL"
+  }
+  </script>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">דלג לתוכן הראשי</a>
+
+  <!-- Top Bar with B2B Tease -->
+  <div class="top-bar" style="background: var(--color-primary-dark); color: var(--color-accent-gold); text-align: center; padding: 0; font-weight: var(--fw-bold); font-size: var(--fs-sm); border-bottom: 2px solid var(--color-accent-gold); position: sticky; top: 0; z-index: var(--z-sticky);">
+    <a href="register" style="display: block; padding: 12px 0; color: inherit; text-decoration: none; min-height: 44px; transition: background 0.3s;" aria-label="הצטרפו למועדון הלקוחות - מחירון סיטונאי">
+      <i class="fas fa-crown" style="margin-left: 8px;"></i> רוכשים בכמויות מסחריות? הצטרפו למועדון הלקוחות שלנו וקבלו מחירון סיטונאי ייעודי <i class="fas fa-chevron-left" style="margin-right: 8px; font-size: 0.8em;"></i>
+    </a>
+  </div>
+  
+  <!-- Info Top Bar -->
+  <div class="info-bar" style="background: var(--color-white); border-bottom: 1px solid var(--color-border-light);">
+    <div class="container" style="display: flex; justify-content: space-between; padding: 8px 0; font-size: 0.85rem; color: #4A5568;">
+      <div class="info-bar__left" style="display: flex; gap: var(--space-md);">
+        <div class="info-bar__item"><i class="fas fa-phone-alt"></i> <a href="tel:037740400" style="color: #4A5568; text-decoration: none;">03-7740400</a></div>
+        <div class="info-bar__item"><i class="fas fa-envelope"></i> <a href="mailto:Pm@ymarket.co.il" style="color: #4A5568; text-decoration: none;">Pm@ymarket.co.il</a></div>
+        <div class="info-bar__item"><i class="fas fa-clock"></i> <span style="color: #4A5568;">א'-ה' 08:00-17:00</span></div>
+      </div>
+      <div class="info-bar__right" style="display: flex; gap: var(--space-md);">
+        <a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp - סרגל עליון" style="color: #4A5568; min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center;"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100083110428101" target="_blank" rel="noopener" aria-label="Facebook - סרגל עליון" style="color: #4A5568; min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center;"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/ymarket.ai" target="_blank" rel="noopener" aria-label="Instagram - סרגל עליון" style="color: #4A5568; min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center;"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container">
+      <a href="/" class="header__logo">
+        <img src="/images/logo/logo-dark-2x.png" alt="וואי מרקט" width="98" height="52" fetchpriority="high">
+      </a>
+      <nav class="main-nav" aria-label="ניווט ראשי">
+        <div class="main-nav__item">
+          <a href="/" class="main-nav__link" data-nav="home">דף הבית</a>
+        </div>
+        <div class="main-nav__item">
+          <a href="/catalog" class="main-nav__link" data-nav="catalog">מוצרים <i class="fas fa-chevron-down"></i></a>
+          <div class="mega-menu">
+            <div class="mega-menu__grid">
+              <a href="/category/industrial-cleaning-supplies-wholesale/" class="mega-menu__category"><i class="fas fa-spray-can"></i><span class="mega-menu__cat-name">חומרי ניקוי וכימיקלים</span></a>
+              <a href="/category/bulk-paper-towel-office-supplies/" class="mega-menu__category"><i class="fas fa-toilet-paper"></i><span class="mega-menu__cat-name">מוצרי נייר וניגוב</span></a>
+              <a href="/category/disposable-catering-food-service/" class="mega-menu__category"><i class="fas fa-utensils"></i><span class="mega-menu__cat-name">חד פעמי ואירוח</span></a>
+              <a href="/category/food-packaging-delivery-solutions/" class="mega-menu__category"><i class="fas fa-box-open"></i><span class="mega-menu__cat-name">אריזות מזון ו-Take Away</span></a>
+              <a href="/category/heavy-duty-garbage-bags-wholesale/" class="mega-menu__category"><i class="fas fa-trash-alt"></i><span class="mega-menu__cat-name">שקיות ופתרונות אשפה</span></a>
+              <a href="/category/professional-cleaning-cloths-microfiber/" class="mega-menu__category"><i class="fas fa-tshirt"></i><span class="mega-menu__cat-name">טקסטיל, מטליות וסחבות</span></a>
+              <a href="/category/office-coffee-breakroom-supplies/" class="mega-menu__category"><i class="fas fa-coffee"></i><span class="mega-menu__cat-name">קפה, שתייה וכיבוד</span></a>
+              <a href="/category/safety-ppe-equipment-for-business/" class="mega-menu__category"><i class="fas fa-hard-hat"></i><span class="mega-menu__cat-name">בטיחות ומיגון אישי</span></a>
+              <a href="/category/office-supplies-wholesale-business/" class="mega-menu__category"><i class="fas fa-pen"></i><span class="mega-menu__cat-name">ציוד משרדי וכללי</span></a>
+              <a href="/category/maintenance-technical-equipment-wholesale/" class="mega-menu__category"><i class="fas fa-wrench"></i><span class="mega-menu__cat-name">ציוד טכני ואחזקה</span></a>
+              <a href="/category/warehouse-packaging-supplies-wholesale/" class="mega-menu__category"><i class="fas fa-tape"></i><span class="mega-menu__cat-name">עטיפה, אריזה ולוגיסטיקה</span></a>
+              <a href="/category/first-aid-medical-equipment-business/" class="mega-menu__category"><i class="fas fa-first-aid"></i><span class="mega-menu__cat-name">עזרה ראשונה - רפואי</span></a>
+              <a href="/category/personal-hygiene-products-wholesale/" class="mega-menu__category"><i class="fas fa-pump-soap"></i><span class="mega-menu__cat-name">טואלטיקה וטיפוח</span></a>
+              <a href="/category/institutional-cleaning-tools-equipment/" class="mega-menu__category"><i class="fas fa-tools"></i><span class="mega-menu__cat-name">כלי עבודה וציוד משקי</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="main-nav__item">
+          <a href="/about" class="main-nav__link" data-nav="about">אודות</a>
+        </div>
+        <div class="main-nav__item">
+          <a href="/blog" class="main-nav__link" data-nav="blog">בלוג</a>
+        </div>
+        <div class="main-nav__item">
+          <a href="/contact" class="main-nav__link" data-nav="contact">צרו קשר</a>
+        </div>
+      </nav>
+      <div class="header__actions">
+        <button class="header__search-toggle" aria-label="חיפוש"><i class="fas fa-search"></i></button>
+        <button class="header__cart-btn" aria-label="עגלת קניות"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></button>
+        <a href="/login" class="header__login-btn" aria-label="כניסת לקוחות"><i class="fas fa-user"></i> <span>כניסת לקוחות</span></a>
+        <a href="/register" class="header__register-btn" aria-label="הרשמה לאתר"><i class="fas fa-user-plus"></i> <span>הרשמה</span></a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="תפריט" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+  <div class="mobile-overlay"></div>
+  <div class="search-overlay"><div class="search-overlay__inner"><form action="/catalog" method="get"><input type="search" name="search" class="search-overlay__input" placeholder="חפשו מוצר..." aria-label="חיפוש מוצר" autocomplete="off"></form></div></div>
+
+  <main id="main-content">
+
+  <!-- Hero Section -->
+  <section class="hero" style="background: var(--color-bg); padding: var(--space-4xl) 0; position: relative; overflow: hidden; border-bottom: 1px solid var(--color-border-light);">
+    <div class="container">
+      <div class="hero__grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: center;">
+        
+        <!-- Left/Right Content: The Public E-Commerce Pitch -->
+        <div class="hero__content" style="z-index: 2;">
+          <div style="display: inline-block; background: var(--color-danger-bg); color: var(--color-danger); padding: 4px 12px; border-radius: var(--radius-pill); font-size: var(--fs-sm); font-weight: var(--fw-bold); margin-bottom: var(--space-md); border: 1px solid rgba(255, 71, 87, 0.2);">
+            ⚡ מלאי זמין לאספקה ב-72 שעות
+          </div>
+          <h1 class="hero__title" style="font-size: var(--fs-4xl); color: var(--color-primary); font-weight: var(--fw-extrabold); line-height: var(--lh-tight); margin-bottom: var(--space-md);">
+            כל המתכלים לעסק.<br>הכל בלחיצת כפתור.
+          </h1>
+          <p class="hero__subtitle" style="font-size: var(--fs-lg); color: #4A5568; margin-bottom: var(--space-lg); max-width: 90%;">
+            מכפפות ואריזות עד חומרי ניקוי ונייר. משלוח ישיר עד הדלת, במחירי סיטונאות וללא כאבי ראש.
+          </p>
+          <div class="hero__actions" style="display: flex; gap: var(--space-md); margin-bottom: var(--space-xl);">
+            <a href="catalog" class="btn" style="background: var(--color-accent); color: var(--color-white); padding: 16px 32px; border-radius: var(--radius-md); font-weight: var(--fw-bold); font-size: var(--fs-md); box-shadow: 0 4px 15px rgba(10, 88, 202, 0.3); transition: var(--transition-normal); text-decoration: none;">
+              צפו בקטלוג המלא <i class="fas fa-arrow-left" style="margin-right: 8px;"></i>
+            </a>
+          </div>
+          
+          <!-- Social Proof -->
+          <div class="hero__social-proof" style="display: flex; align-items: center; gap: var(--space-md);">
+            <span style="font-size: var(--fs-sm); font-weight: var(--fw-semibold); color: #4A5568;">הבחירה של מעל 200 מוסדות ועסקים בכל הארץ</span>
+          </div>
+        </div>
+
+        <!-- The Exclusive Club Card (Right Side) -->
+        <div class="hero__b2b-card" style="background: var(--color-white); padding: var(--space-xl); border-radius: var(--radius-xl); box-shadow: var(--shadow-xl); position: relative; z-index: 2; border: 1px solid var(--color-border-light);">
+          <div style="position: absolute; top: -15px; right: 30px; background: var(--color-primary-dark); color: var(--color-accent-gold); padding: 6px 16px; border-radius: var(--radius-pill); font-size: var(--fs-sm); font-weight: var(--fw-bold); display: flex; align-items: center; gap: 8px; box-shadow: var(--shadow-md);">
+            <i class="fas fa-crown"></i> מועדון לקוחות אקסקלוסיבי
+          </div>
+          
+          <h2 style="font-size: var(--fs-2xl); color: var(--color-primary-dark); font-weight: var(--fw-bold); margin-top: var(--space-sm); margin-bottom: var(--space-sm);">
+            קונים קבוע? מגיע לכם מחירון משלכם.
+          </h2>
+          <p style="color: var(--color-text-secondary); line-height: var(--lh-normal); margin-bottom: var(--space-lg);">
+            לקוחות עסקיים קבועים (אטליזים, קייטרינג, מוסדות) נהנים מפורטל הזמנות אישי סגור, מחירי יבואן סיטונאיים ושליטה מלאה ברכש.
+          </p>
+          
+          <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
+            <a href="register" class="btn" style="background: var(--color-primary-dark); color: var(--color-white); padding: 14px 24px; border-radius: var(--radius-md); font-weight: var(--fw-bold); text-align: center; text-decoration: none; transition: var(--transition-normal);">
+              <i class="fas fa-lock" style="color: var(--color-accent-gold); margin-left: 8px;"></i> הגש בקשה למחירון עסקי
+            </a>
+            <a href="login" class="btn" style="background: transparent; color: var(--color-primary-dark); border: 2px solid var(--color-border); padding: 12px 24px; border-radius: var(--radius-md); font-weight: var(--fw-bold); text-align: center; text-decoration: none; transition: var(--transition-normal);">
+              כניסה לחברי מועדון בפורטל
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- Abstract Tech Background Element -->
+    <div style="position: absolute; top: -100px; left: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(10,88,202,0.05) 0%, rgba(248,249,251,0) 70%); border-radius: 50%; z-index: 1;"></div>
+  </section>
+
+  <!-- Trust Strip -->
+  <section class="trust-strip">
+    <div class="container">
+      <div class="trust-strip__grid">
+        <div class="trust-strip__item animate-on-scroll">
+          <div class="trust-strip__icon"><i class="fas fa-truck-fast"></i></div>
+          <div class="trust-strip__text">
+            <strong>משלוח ארצי</strong>
+            <span>אספקה תוך 24-72 שעות</span>
+          </div>
+        </div>
+        <div class="trust-strip__item animate-on-scroll">
+          <div class="trust-strip__icon"><i class="fas fa-tags"></i></div>
+          <div class="trust-strip__text">
+            <strong>מחירי סיטונאות</strong>
+            <span>ישירות מהיצרנים</span>
+          </div>
+        </div>
+        <div class="trust-strip__item animate-on-scroll">
+          <div class="trust-strip__icon"><i class="fas fa-headset"></i></div>
+          <div class="trust-strip__text">
+            <strong>שירות אישי</strong>
+            <span>מענה מהיר, אדם אמיתי</span>
+          </div>
+        </div>
+        <div class="trust-strip__item animate-on-scroll">
+          <div class="trust-strip__icon"><i class="fas fa-rotate"></i></div>
+          <div class="trust-strip__text">
+            <strong>הזמנה חוזרת</strong>
+            <span>אספקה שוטפת בקליק</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products Carousel -->
+  <section class="section featured-products" id="featuredProducts" style="display:none">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title">מוצרים מומלצים</h2>
+        <p class="section-subtitle">המוצרים הנבחרים שלנו — באיכות ובמחיר הטובים ביותר</p>
+      </div>
+      <div class="swiper featured-swiper">
+        <div class="swiper-wrapper" id="featuredWrapper">
+          <!-- Populated by JS from products.json -->
+        </div>
+        <div class="swiper-pagination featured-pagination"></div>
+      </div>
+      <div class="text-center" style="margin-top: var(--space-lg);">
+        <a href="catalog" class="btn btn--secondary">לכל המוצרים <i class="fas fa-arrow-left"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title">קטגוריות מוצרים</h2>
+        <p class="section-subtitle">כל מה שהעסק שלכם צריך — במקום אחד</p>
+      </div>
+      <div class="categories-grid">
+        <a href="/category/bulk-paper-towel-office-supplies/" class="category-card animate-on-scroll">
+          <div class="category-card__icon"><i class="fas fa-toilet-paper"></i></div>
+          <span class="category-card__name">מוצרי נייר וניגוב</span>
+          <span class="category-card__count">נייר טואלט, מגבות, מפיות</span>
+        </a>
+        <a href="/category/industrial-cleaning-supplies-wholesale/" class="category-card animate-on-scroll">
+          <div class="category-card__icon"><i class="fas fa-spray-can"></i></div>
+          <span class="category-card__name">חומרי ניקוי וכימיקלים</span>
+          <span class="category-card__count">מנקים, מחטאים, סבונים</span>
+        </a>
+        <a href="/category/disposable-catering-food-service/" class="category-card animate-on-scroll">
+          <div class="category-card__icon"><i class="fas fa-utensils"></i></div>
+          <span class="category-card__name">חד פעמי ואירוח</span>
+          <span class="category-card__count">צלחות, כוסות, סכום</span>
+        </a>
+        <a href="/category/food-packaging-delivery-solutions/" class="category-card animate-on-scroll">
+          <div class="category-card__icon"><i class="fas fa-box-open"></i></div>
+          <span class="category-card__name">אריזות מזון ו-Take Away</span>
+          <span class="category-card__count">קופסאות, שקיות, נייר</span>
+        </a>
+        <a href="/category/professional-cleaning-cloths-microfiber/" class="category-card animate-on-scroll">
+          <div class="category-card__icon"><i class="fas fa-tshirt"></i></div>
+          <span class="category-card__name">טקסטיל, מטליות וסחבות</span>
+          <span class="category-card__count">מטליות, סחבות, מגבים</span>
+        </a>
+        <a href="/category/office-coffee-breakroom-supplies/" class="category-card animate-on-scroll">
+          <div class="category-card__icon"><i class="fas fa-coffee"></i></div>
+          <span class="category-card__name">קפה, שתייה וכיבוד</span>
+          <span class="category-card__count">קפה, סוכר, חטיפים</span>
+        </a>
+        <a href="/category/safety-ppe-equipment-for-business/" class="category-card animate-on-scroll">
+          <div class="category-card__icon"><i class="fas fa-hard-hat"></i></div>
+          <span class="category-card__name">בטיחות ומיגון אישי</span>
+          <span class="category-card__count">כפפות, מסכות, ביגוד</span>
+        </a>
+        <a href="/category/office-supplies-wholesale-business/" class="category-card animate-on-scroll">
+          <div class="category-card__icon"><i class="fas fa-pen"></i></div>
+          <span class="category-card__name">ציוד משרדי וכללי</span>
+          <span class="category-card__count">עטים, נייר, מוצרי משרד</span>
+        </a>
+        <a href="/category/heavy-duty-garbage-bags-wholesale/" class="category-card animate-on-scroll">
+          <div class="category-card__icon"><i class="fas fa-trash-alt"></i></div>
+          <span class="category-card__name">שקיות ופתרונות אשפה</span>
+          <span class="category-card__count">שקיות אשפה, ניילונים</span>
+        </a>
+        <a href="/category/maintenance-technical-equipment-wholesale/" class="category-card animate-on-scroll">
+          <div class="category-card__icon"><i class="fas fa-wrench"></i></div>
+          <span class="category-card__name">ציוד טכני ואחזקה</span>
+          <span class="category-card__count">כלי עבודה, תחזוקה</span>
+        </a>
+        <a href="/category/warehouse-packaging-supplies-wholesale/" class="category-card animate-on-scroll">
+          <div class="category-card__icon"><i class="fas fa-tape"></i></div>
+          <span class="category-card__name">עטיפה, אריזה ולוגיסטיקה</span>
+          <span class="category-card__count">דבקים, סרטים, אריזה</span>
+        </a>
+        <a href="/category/first-aid-medical-equipment-business/" class="category-card animate-on-scroll">
+          <div class="category-card__icon"><i class="fas fa-first-aid"></i></div>
+          <span class="category-card__name">עזרה ראשונה - רפואי</span>
+          <span class="category-card__count">תחבושות, כפפות, AED</span>
+        </a>
+        <a href="/category/personal-hygiene-products-wholesale/" class="category-card animate-on-scroll">
+          <div class="category-card__icon"><i class="fas fa-pump-soap"></i></div>
+          <span class="category-card__name">טואלטיקה וטיפוח</span>
+          <span class="category-card__count">סבונים, שמפו, דאודורנט</span>
+        </a>
+        <a href="/category/institutional-cleaning-tools-equipment/" class="category-card animate-on-scroll">
+          <div class="category-card__icon"><i class="fas fa-tools"></i></div>
+          <span class="category-card__name">כלי עבודה וציוד משקי</span>
+          <span class="category-card__count">מגבים, דליים, עגלות</span>
+        </a>
+      </div>
+      <div class="text-center" style="margin-top: var(--space-xl);">
+        <a href="catalog" class="btn btn--secondary">לכל הקטגוריות <i class="fas fa-arrow-left"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title">למה לבחור בוואי מרקט?</h2>
+        <p class="section-subtitle">אנחנו מבינים את הצרכים של העסק שלכם</p>
+      </div>
+      <div class="features-grid">
+        <div class="info-card animate-on-scroll">
+          <div class="info-card__icon"><i class="fas fa-check-double"></i></div>
+          <h3 class="info-card__title">מותאם למוסדות</h3>
+          <p class="info-card__text">כל המוצרים נבחרו במיוחד לצרכים של עסקים ומוסדות — בכמויות גדולות, באיכות מקצועית</p>
+        </div>
+        <div class="info-card animate-on-scroll">
+          <div class="info-card__icon"><i class="fas fa-hand-holding-dollar"></i></div>
+          <h3 class="info-card__title">מחירים הוגנים</h3>
+          <p class="info-card__text">עובדים ישירות עם היצרנים והיבואנים הגדולים ומעבירים את החיסכון אליכם</p>
+        </div>
+        <div class="info-card animate-on-scroll">
+          <div class="info-card__icon"><i class="fas fa-bolt"></i></div>
+          <h3 class="info-card__title">אספקה מהירה</h3>
+          <p class="info-card__text">משלוח תוך 24-48 שעות לכל הארץ. נגמר משהו? מחר זה אצלכם</p>
+        </div>
+        <div class="info-card animate-on-scroll">
+          <div class="info-card__icon"><i class="fas fa-user-tie"></i></div>
+          <h3 class="info-card__title">שירות אישי</h3>
+          <p class="info-card__text">יובל נגלר, בעל העסק, זמין תמיד לייעוץ ומענה מהיר. לא מוקד — אדם שמבין עסקים</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item animate-on-scroll">
+          <div class="stat-item__number" data-count="214">214</div>
+          <div class="stat-item__label">לקוחות פעילים</div>
+        </div>
+        <div class="stat-item animate-on-scroll">
+          <div class="stat-item__number" data-count="5" data-suffix="+">5+</div>
+          <div class="stat-item__label">שנות ניסיון</div>
+        </div>
+        <div class="stat-item animate-on-scroll">
+          <div class="stat-item__number" data-count="1000" data-suffix="+">1,000+</div>
+          <div class="stat-item__label">משלוחים בשנה</div>
+        </div>
+        <div class="stat-item animate-on-scroll">
+          <div class="stat-item__number" data-count="98" data-suffix="%">98%</div>
+          <div class="stat-item__label">שביעות רצון</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Segments Section -->
+  <section class="segments-section" id="segments">
+    <div class="container">
+      <h2 class="section-title">למי אנחנו מספקים?</h2>
+      <p class="section-subtitle">וואי מרקט מספקת מוצרי צריכה שוטפת למגוון רחב של עסקים ומוסדות בכל הגדלים</p>
+      <div class="segments-grid">
+        <div class="segment-card">
+          <i class="fas fa-broom"></i>
+          <h3>חברות ניקיון ואחזקה</h3>
+          <p>חומרי ניקוי, מטליות, שקיות אשפה וציוד מקצועי לחברות ניקיון ואחזקת מבנים. אספקה שוטפת לעשרות אתרים ברחבי הארץ.</p>
+        </div>
+        <div class="segment-card">
+          <i class="fas fa-utensils"></i>
+          <h3>מסעדות ושירותי הסעדה</h3>
+          <p>כלים חד פעמיים, אריזות Take Away, מוצרי נייר וציוד למטבחים מוסדיים. פתרונות אריזה ואירוח מקצועיים.</p>
+        </div>
+        <div class="segment-card">
+          <i class="fas fa-store"></i>
+          <h3>סופרמרקטים ומינימרקטים</h3>
+          <p>מוצרי צריכה שוטפת במחירי סיטונאות, שקיות, אריזות ומוצרי ניקיון. אספקה ישירה לחנויות קמעונאיות.</p>
+        </div>
+        <div class="segment-card">
+          <i class="fas fa-building"></i>
+          <h3>משרדים וחללי עבודה</h3>
+          <p>ציוד משרדי, נייר, מוצרי ניקיון וטואלטיקה למשרדים וחללי עבודה משותפים. חבילות אספקה חודשיות מותאמות.</p>
+        </div>
+        <div class="segment-card">
+          <i class="fas fa-dumbbell"></i>
+          <h3>מרכזי ספורט ופנאי</h3>
+          <p>מוצרי ניקיון, טואלטיקה, מגבות נייר וציוד תחזוקה לחדרי כושר, בריכות שחייה ומרכזי פנאי.</p>
+        </div>
+        <div class="segment-card">
+          <i class="fas fa-hand-holding-medical"></i>
+          <h3>רפואה ובריאות</h3>
+          <p>כפפות, מסכות, חומרי חיטוי וציוד מיגון למרפאות, מעבדות ומוסדות בריאות. עמידה בתקנים מחמירים.</p>
+        </div>
+        <div class="segment-card">
+          <i class="fas fa-drumstick-bite"></i>
+          <h3>אטליזים וחנויות מזון</h3>
+          <p>שקיות ואקום, אריזות מזון, כפפות, סכינים חד פעמיים, מגשי הגשה ומוצרי אריזה לבשר, דגים ומוצרי מזון טריים.</p>
+        </div>
+        <div class="segment-card">
+          <i class="fas fa-industry"></i>
+          <h3>מפעלי ייצור ותעשייה</h3>
+          <p>ציוד בטיחות, מוצרי ניקיון תעשייתי, שקיות אשפה כבדות, סרטי דבק ומוצרי אריזה למפעלים וקווי ייצור.</p>
+        </div>
+        <div class="segment-card">
+          <i class="fas fa-users-cog"></i>
+          <h3>חברות כוח אדם ושירותים</h3>
+          <p>ציוד ניקיון, מוצרי נייר, טואלטיקה וחומרי חיטוי לחברות כוח אדם המנהלות אתרים ומשרדים מרובים.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas Section -->
+  <section class="areas-section" id="serviceAreas">
+    <div class="container">
+      <h2 class="section-title">אזורי אספקה ושירות</h2>
+      <p class="section-subtitle">משלוחים ארציים עם דגש על אזור המרכז והשרון</p>
+      <div class="areas-content">
+        <div class="areas-main">
+          <p>וואי מרקט מספקת <strong>חומרי ניקיון, מוצרי נייר, כלים חד פעמיים ומוצרי צריכה שוטפת</strong> לעסקים ומוסדות בכל רחבי ישראל. עיקר פעילותנו מתרכזת באזור גוש דן והמרכז עם משלוחים יומיים ל<strong>תל אביב, פתח תקווה, ראשון לציון, הרצליה, רמת גן, חולון, בת ים, גבעתיים, רעננה וכפר סבא</strong>.</p>
+          <p>אנו מספקים גם לאזורי <strong>חיפה והצפון, ירושלים, באר שבע, אשדוד, אשקלון ועד אילת</strong>. משלוחים מקצועיים ישירות לפתח העסק שלכם. מינימום הזמנה <strong>1,600 ₪ + מע"מ</strong>.</p>
+          <p>עם מעל <strong>900 מוצרים מקצועיים</strong> במלאי, <strong>שירות אישי וצמוד</strong> ו<strong>מחירי סיטונאות</strong> תחרותיים - וואי מרקט היא השותפה האמינה שלכם לאספקה חכמה ומדויקת.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Blog Section -->
+  <section class="blog-preview-section">
+    <div class="container">
+      <h2 class="section-title">מדריכים וטיפים מקצועיים</h2>
+      <p class="section-subtitle">ידע מקצועי שיעזור לכם לחסוך ולבחור נכון</p>
+      <div class="blog-preview-grid">
+        <a href="blog/wholesale-cleaning-products" class="blog-preview-card">
+          <h3>חומרי ניקיון בסיטונאות - המדריך המלא</h3>
+          <p>איך לבחור חומרי ניקיון מקצועיים, מה ההבדל בין המותגים ואיך לחסוך עד 40% בקנייה סיטונאית.</p>
+          <span class="blog-preview-link">קראו עוד ←</span>
+        </a>
+        <a href="blog/institutional-garbage-bags" class="blog-preview-card">
+          <h3>שקיות אשפה למוסדות - מדריך בחירה</h3>
+          <p>סוגי שקיות, עוביים, גדלים והתאמה לסוג העסק. כל מה שצריך לדעת לפני הזמנה.</p>
+          <span class="blog-preview-link">קראו עוד ←</span>
+        </a>
+        <a href="blog/restaurant-disposable-equipment" class="blog-preview-card">
+          <h3>ציוד חד פעמי למסעדות - המדריך השלם</h3>
+          <p>אילו כלים חד פעמיים כל מסעדה צריכה, כמויות מומלצות ואיך לבחור איכות במחיר נכון.</p>
+          <span class="blog-preview-link">קראו עוד ←</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration Benefits Section -->
+  <section class="registration-benefits">
+    <div class="container">
+      <h2>למה להירשם לפורטל ההזמנות?</h2>
+      <div class="registration-benefits__grid">
+        <div class="registration-benefits__item">
+          <div class="registration-benefits__icon"><i class="fas fa-tags"></i></div>
+          <div class="registration-benefits__text">מחירים מותאמים אישית לעסק שלכם</div>
+        </div>
+        <div class="registration-benefits__item">
+          <div class="registration-benefits__icon"><i class="fas fa-clock"></i></div>
+          <div class="registration-benefits__text">הזמנה אונליין 24/7 בלי להמתין לנציג</div>
+        </div>
+        <div class="registration-benefits__item">
+          <div class="registration-benefits__icon"><i class="fas fa-history"></i></div>
+          <div class="registration-benefits__text">היסטוריית הזמנות והזמנה חוזרת בקליק</div>
+        </div>
+        <div class="registration-benefits__item">
+          <div class="registration-benefits__icon"><i class="fas fa-truck"></i></div>
+          <div class="registration-benefits__text">מעקב משלוחים ואספקה שוטפת</div>
+        </div>
+      </div>
+      <a href="register" class="btn btn--register btn--lg"><i class="fas fa-user-plus"></i> פתחו חשבון עסקי בחינם</a>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section section">
+    <div class="container">
+      <h2>מוכנים להזמין?</h2>
+      <p>צרו קשר עכשיו וקבלו הצעת מחיר מותאמת לעסק שלכם. מינימום הזמנה 500 ש"ח פלוס מע"מ.</p>
+      <div class="cta-section__actions">
+        <a href="register" class="btn btn--register btn--lg">
+          <i class="fas fa-user-plus"></i> הרשמה בחינם
+        </a>
+        <a href="https://wa.me/972549922492?text=שלום, אשמח לקבל הצעת מחיר" target="_blank" rel="noopener" class="btn btn--whatsapp btn--lg">
+          <i class="fab fa-whatsapp"></i> שלחו הודעה בוואטסאפ
+        </a>
+        <a href="tel:037740400" class="btn btn--white btn--lg">
+          <i class="fas fa-phone"></i> 03-7740400
+        </a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="/images/logo/logo-white-2x.png" alt="וואי מרקט" width="112" height="60" loading="lazy">
+          <p>נגלר סחר והפצה — סחר, שיווק והפצה של מוצרי צריכה שוטפת לעסקים ומוסדות בכל רחבי הארץ.</p>
+          <div class="footer__social">
+            <a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp - פוטר"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100083110428101" target="_blank" rel="noopener" aria-label="Facebook - פוטר"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/ymarket.ai" target="_blank" rel="noopener" aria-label="Instagram - פוטר"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h3 class="footer__heading">קטגוריות</h3>
+          <nav aria-label="קטגוריות מוצרים - פוטר">
+          <div class="footer__links">
+            <a href="/category/bulk-paper-towel-office-supplies/" aria-label="מוצרי נייר וניגוב - קטגוריה">מוצרי נייר וניגוב</a>
+            <a href="/category/industrial-cleaning-supplies-wholesale/" aria-label="חומרי ניקוי - קטגוריה">חומרי ניקוי</a>
+            <a href="/category/disposable-catering-food-service/" aria-label="חד פעמי ואירוח - קטגוריה">חד פעמי ואירוח</a>
+            <a href="/category/food-packaging-delivery-solutions/" aria-label="אריזות Take Away - קטגוריה">אריזות Take Away</a>
+            <a href="/category/office-coffee-breakroom-supplies/" aria-label="קפה, שתייה וכיבוד - קטגוריה">קפה, שתייה וכיבוד</a>
+            <a href="/category/safety-ppe-equipment-for-business/" aria-label="בטיחות ומיגון - קטגוריה">בטיחות ומיגון</a>
+            <a href="/category/heavy-duty-garbage-bags-wholesale/" aria-label="שקיות אשפה - קטגוריה">שקיות אשפה</a>
+            <a href="/category/professional-cleaning-cloths-microfiber/" aria-label="טקסטיל ומטליות - קטגוריה">טקסטיל ומטליות</a>
+            <a href="/category/office-supplies-wholesale-business/" aria-label="ציוד משרדי - קטגוריה">ציוד משרדי</a>
+            <a href="/category/maintenance-technical-equipment-wholesale/" aria-label="ציוד טכני - קטגוריה">ציוד טכני</a>
+          </div>
+          </nav>
+        </div>
+
+        <div class="footer__col">
+          <h3 class="footer__heading">קישורים מהירים</h3>
+          <div class="footer__links">
+            <a href="/catalog" aria-label="קטלוג מוצרים - פוטר">קטלוג מוצרים</a>
+            <a href="/about" aria-label="אודות - פוטר">אודות</a>
+            <a href="/blog" aria-label="בלוג - פוטר">בלוג</a>
+            <a href="/faq">שאלות ותשובות</a>
+            <a href="/contact" aria-label="צרו קשר - פוטר">צרו קשר</a>
+            <a href="/tracking">מעקב משלוחים</a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h3 class="footer__heading">צרו קשר</h3>
+          <div class="footer__contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <a href="tel:037740400">03-7740400</a>
+          </div>
+          <div class="footer__contact-item">
+            <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/972549922492" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+          <div class="footer__contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a>
+          </div>
+          <div class="footer__contact-item">
+            <i class="fas fa-clock"></i>
+            <span>א'-ה' 08:00-17:00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span class="footer__copyright">&copy; 2026 וואי מרקט — נגלר סחר והפצה. כל הזכויות שמורות.</span>
+        <div class="footer__legal">
+          <a href="/legal/terms">תקנון האתר</a>
+          <a href="/legal/privacy">מדיניות פרטיות</a>
+          <a href="/legal/shipping">מדיניות משלוחים</a>
+          <a href="/legal/returns">החזרות וביטולים</a>
+          <a href="/legal/accessibility">נגישות</a>
+          <a href="/legal/cookies">עוגיות</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/972549922492?text=שלום, אשמח לשמוע על המוצרים שלכם" class="whatsapp-float" target="_blank" rel="noopener" aria-label="שלחו הודעה בוואטסאפ">
+    <i class="fab fa-whatsapp"></i>
+    <span class="whatsapp-float__tooltip">צריכים עזרה? דברו איתנו</span>
+  </a>
+
+  <!-- Cookie Consent -->
+  <div class="cookie-banner">
+    <p class="cookie-banner__text">
+      אתר זה משתמש בעוגיות כדי לשפר את חוויית הגלישה שלכם.
+      <a href="legal/cookies">למידע נוסף</a>
+    </p>
+    <div class="cookie-banner__actions">
+      <button class="btn btn--sm btn--white" data-cookie-accept>אישור</button>
+      <button class="btn btn--sm btn--secondary" data-cookie-decline style="border-color: rgba(255,255,255,0.5); color: rgba(255,255,255,0.9);">רק חיוניים</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.min.js?v=20260324" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="js/featured-carousel.min.js?v=20260324" defer></script>
+  <script src="js/schema-markup.js" defer></script>
+  <!-- Analytics loaded after page is interactive -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var s = document.createElement('script');
+        s.src = 'js/analytics.min.js';
+        document.body.appendChild(s);
+      }, 2000);
+    });
+  </script>
+<!-- Deferred below-the-fold styles (segments, areas, blog-preview) -->
+<style>
+    .segments-section { padding: var(--space-3xl) 0; background: var(--color-bg); }
+    .segments-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg); margin-top: var(--space-xl); }
+    .segment-card { background: var(--color-white); border-radius: var(--radius-lg); padding: var(--space-xl); text-align: center; box-shadow: var(--shadow-sm); transition: var(--transition-normal); }
+    .segment-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+    .segment-card i { font-size: 2.5rem; color: var(--color-primary); margin-bottom: var(--space-md); }
+    .segment-card h3 { font-size: var(--fs-lg); font-weight: var(--fw-bold); margin-bottom: var(--space-sm); color: var(--color-text); }
+    .segment-card p { font-size: var(--fs-sm); color: var(--color-text-secondary); line-height: 1.7; }
+    .areas-section { padding: var(--space-3xl) 0; }
+    .areas-content { margin-top: var(--space-xl); }
+    .areas-main p { font-size: var(--fs-base); line-height: 1.9; color: var(--color-text-secondary); margin-bottom: var(--space-md); }
+    .areas-main strong { color: var(--color-text); }
+    .blog-preview-section { padding: var(--space-3xl) 0; background: var(--color-bg); }
+    .blog-preview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg); margin-top: var(--space-xl); }
+    .blog-preview-card { background: var(--color-white); border-radius: var(--radius-lg); padding: var(--space-xl); text-decoration: none; color: #1f2937 !important; box-shadow: var(--shadow-sm); transition: var(--transition-normal); display: flex; flex-direction: column; }
+    .blog-preview-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+    .blog-preview-card h3 { font-size: var(--fs-base); font-weight: var(--fw-bold); margin-bottom: var(--space-sm); color: var(--color-primary); }
+    .blog-preview-card p { font-size: var(--fs-sm); color: #374151 !important; line-height: 1.7; flex: 1; }
+    .blog-preview-link { font-size: var(--fs-sm); color: #1a4fc9 !important; font-weight: 700 !important; display: inline-flex; align-items: center; min-height: 44px; margin-top: var(--space-md); }
+    .footer__copyright { color: rgba(255,255,255,0.65); }
+    .footer__legal a { color: rgba(255,255,255,0.65); }
+    .footer__brand p { color: rgba(255,255,255,0.8); }
+    .footer__links a { color: rgba(255,255,255,0.85); }
+    .footer__contact-item { color: rgba(255,255,255,0.8); }
+    .footer__contact-item a { color: rgba(255,255,255,0.8); }
+    .swiper-pagination-bullet { width: 12px !important; height: 12px !important; margin: 0 6px !important; }
+    @media (max-width: 768px) {
+      .segments-grid { grid-template-columns: repeat(2, 1fr); }
+      .blog-preview-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .segments-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</body>
+</html>
