@@ -6,7 +6,7 @@
 (function() {
   'use strict';
 
-  var API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
+  var API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://app.ymarket.co.il';
   // Read config from CRM sync (injected by apply-config), fallback to defaults
   var CONFIG = window.YM_CHECKOUT_CONFIG || {};
   var MIN_ORDER = CONFIG.minOrderAmount || 200;
