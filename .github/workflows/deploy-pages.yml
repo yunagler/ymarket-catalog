@@ -1,0 +1,45 @@
+name: Deploy site to GitHub Pages
+
+# Large, image-heavy static site (~6,900 files). The default GitHub Pages
+# builder aborts the *deploy* step at its 10-minute queue timeout, so we run
+# our own workflow that (a) prunes non-site files from the artifact and
+# (b) raises actions/deploy-pages timeout well above the default 600000 ms.
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Keep committed dev deps out of the published artifact (18MB DLL etc.)
+      - name: Prune non-site files
+        run: rm -rf node_modules
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
+        with:
+          timeout: 1800000   # 30 min (default 600000 = 10 min) — was aborting
+          error_count: 25
