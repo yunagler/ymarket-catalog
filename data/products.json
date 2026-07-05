@@ -2101,7 +2101,7 @@
       "icon": "fa-box",
       "parentId": 56,
       "sortOrder": 3,
-      "itemCount": 2,
+      "itemCount": 3,
       "metaTitle": "אחסון ואביזרי מטבח – כלי הגשה רב-פעמיים בסיטונאות | וואי ...",
       "metaDescription": "אחסון ואביזרי מטבח במחירי סיטונאות ישירות מהמפיץ. 2 פריטים באיכות מוסדית. אספקה 24-72 שעות. מינימום 200₪. וואי מרקט.",
       "seoSlug": "kitchen-storage-accessories",
@@ -3266,7 +3266,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 100,
-      "itemCount": 14,
+      "itemCount": 15,
       "metaTitle": "כלי הגשה רב-פעמיים למוסדות ועסקים | וואי מרקט",
       "metaDescription": "כלי הגשה רב-פעמיים איכותיים בסיטונאות. פתרונות עמידים למטבחים מוסדיים ועסקים. אספקה מהירה וואי מרקט.",
       "seoSlug": "reusable-serving-tools",
@@ -9264,7 +9264,7 @@
       "productStatus": "on_sale",
       "description": "אריזות מזון מקצועי — אטימות מלאה",
       "partNumber": "",
-      "barcode": "",
+      "barcode": "7290017093185",
       "searchTags": "אריזות, טייק אווי, קופסאות מזון, משלוחים, מיכלים, אריזת מזון, דפי, הפרדה, פרגפלסט, עבה, 25*35, ק\"ג, סיטונאי, לעסקים, מוסדי",
       "technicalDesc": "[{\"label\":\"סוג מוצר\",\"value\":\"מוצר נייר מוסדי\"},{\"label\":\"שימוש\",\"value\":\"מוסדי / עסקי\"},{\"label\":\"אספקה\",\"value\":\"1-3 ימי עסקים\"},{\"label\":\"מחיר\",\"value\":\"₪20 + מע\\\"מ\"}]",
       "videoUrl": "",
@@ -13358,6 +13358,50 @@
             "answer": "מינימום הזמנה באתר: 200 ₪ + מע\"מ (לפני משלוח). ניתן לשלב מוצרים מכל הקטגוריות כדי להגיע למינימום."
           }
         ],
+        "specs": []
+      },
+      "variantGroupId": null,
+      "variantLabel": null,
+      "variantSortOrder": 0
+    },
+    {
+      "id": 180001,
+      "name": "כף הגשה מחורצת 26 ס\"מ מנירוסטה איכותית",
+      "slug": "כף-הגשה-מחורצת-26-ס-מ-מנירוסטה-איכותית",
+      "saleNis": 28,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "reusable-serving-tools",
+      "categoryName": "כלי הגשה רב-פעמיים",
+      "categorySlugs": [
+        "reusable-serving-tools",
+        "kitchen-storage-accessories"
+      ],
+      "unit": "יח'",
+      "unitsPerPack": 12,
+      "imageUrl": "/items/1170.jpg",
+      "isFeatured": false,
+      "productStatus": "new",
+      "description": "כף הגשה מחורצת 26 ס\"מ מנירוסטה איכותית",
+      "partNumber": "6054",
+      "barcode": "7296051105334",
+      "searchTags": "",
+      "technicalDesc": "",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": [],
+      "seoSlug": null,
+      "seo": {
+        "title": null,
+        "metaDesc": null,
+        "imageAlt": null,
+        "geoContent": null,
+        "gtin": null,
+        "mpn": null,
+        "isB2BBulk": false,
+        "faqs": [],
         "specs": []
       },
       "variantGroupId": null,
@@ -38033,63 +38077,6 @@
       "variantSortOrder": 0
     },
     {
-      "id": 363,
-      "name": "סט 4 מדגיש צבעוני",
-      "slug": "סט-4-מדגיש-צבעוני",
-      "saleNis": 9.5,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "writing-instruments",
-      "categoryName": "כלי כתיבה",
-      "categorySlugs": [
-        "writing-instruments",
-        "ציוד-משרדי-וכללי"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/379.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "ציוד משרדי מקצועי — מותגים מוכרים",
-      "partNumber": "",
-      "barcode": "",
-      "searchTags": "ציוד משרדי, נייר צילום, עטים, קלסר, דבק, מדפסת, משרד, מדגיש, צבעוני, סיטונאי, לעסקים, מוסדי",
-      "technicalDesc": "[{\"label\":\"סוג מוצר\",\"value\":\"ציוד משרדי\"},{\"label\":\"אספקה\",\"value\":\"1-3 ימי עסקים\"},{\"label\":\"מחיר\",\"value\":\"₪9.5 + מע\\\"מ\"}]",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": [],
-      "seoSlug": null,
-      "seo": {
-        "title": "סט 4 מדגיש צבעוני | ציוד משרדי בסיטונאות",
-        "metaDesc": "סט 4 מדגיש צבעוני החל מ-₪9.5 | ציוד משרדי לעסקים ומוסדות. משלוח מהיר, מחירי סיטונאות. הזמינו אונליין ב-YMARKET.",
-        "imageAlt": "סט 4 מדגיש צבעוני - ציוד משרדי לעסקים | וואי מרקט",
-        "geoContent": "<h3>מידע מקצועי על סט 4 מדגיש צבעוני</h3>\n<p>סט 4 מדגיש צבעוני — ציוד משרדי מקצועי למשרדים, מוסדות חינוך וארגונים. מותגים מוכרים במחירי סיטונאות.</p>\n<p><strong>יתרונות:</strong> מלאי קבוע, משלוח עד המשרד, חיסכון של עד 30% לעומת חנויות ציוד משרדי.</p>\n<p><strong>טיפ:</strong> שלבו ציוד משרדי עם מוצרי צריכה שוטפת בהזמנה אחת וחסכו במשלוח. <a href=\"https://wa.me/972549922492\">צרו קשר</a>.</p>",
-        "gtin": null,
-        "mpn": null,
-        "isB2BBulk": false,
-        "faqs": [
-          {
-            "question": "האם סט 4 מדגיש צבעוני זמין במלאי?",
-            "answer": "מרבית מוצרי הציוד המשרדי זמינים במלאי לאספקה מיידית. ניתן להוסיף לעגלה ולהזמין אונליין."
-          },
-          {
-            "question": "האם יש הנחת כמות על סט 4 מדגיש צבעוני?",
-            "answer": "כן! ככל שמזמינים יותר, המחיר ליחידה יורד. צרו קשר לקבלת הצעת מחיר מותאמת לכמויות גדולות."
-          },
-          {
-            "question": "מה מינימום ההזמנה של סט 4 מדגיש צבעוני?",
-            "answer": "מינימום הזמנה באתר: 200 ₪ + מע\"מ (לפני משלוח). ניתן לשלב מוצרים מכל הקטגוריות כדי להגיע למינימום."
-          }
-        ],
-        "specs": []
-      },
-      "variantGroupId": null,
-      "variantLabel": null,
-      "variantSortOrder": 0
-    },
-    {
       "id": 393,
       "name": "סט 4 מדגיש צבעוני",
       "slug": "סט-4-מדגיש-צבעוני-2",
@@ -38121,6 +38108,63 @@
       "seo": {
         "title": "סט 4 מדגיש צבעוני | ציוד משרדי בסיטונאות",
         "metaDesc": "סט 4 מדגיש צבעוני החל מ-₪10 | ציוד משרדי לעסקים ומוסדות. משלוח מהיר, מחירי סיטונאות. הזמינו אונליין ב-YMARKET.",
+        "imageAlt": "סט 4 מדגיש צבעוני - ציוד משרדי לעסקים | וואי מרקט",
+        "geoContent": "<h3>מידע מקצועי על סט 4 מדגיש צבעוני</h3>\n<p>סט 4 מדגיש צבעוני — ציוד משרדי מקצועי למשרדים, מוסדות חינוך וארגונים. מותגים מוכרים במחירי סיטונאות.</p>\n<p><strong>יתרונות:</strong> מלאי קבוע, משלוח עד המשרד, חיסכון של עד 30% לעומת חנויות ציוד משרדי.</p>\n<p><strong>טיפ:</strong> שלבו ציוד משרדי עם מוצרי צריכה שוטפת בהזמנה אחת וחסכו במשלוח. <a href=\"https://wa.me/972549922492\">צרו קשר</a>.</p>",
+        "gtin": null,
+        "mpn": null,
+        "isB2BBulk": false,
+        "faqs": [
+          {
+            "question": "האם סט 4 מדגיש צבעוני זמין במלאי?",
+            "answer": "מרבית מוצרי הציוד המשרדי זמינים במלאי לאספקה מיידית. ניתן להוסיף לעגלה ולהזמין אונליין."
+          },
+          {
+            "question": "האם יש הנחת כמות על סט 4 מדגיש צבעוני?",
+            "answer": "כן! ככל שמזמינים יותר, המחיר ליחידה יורד. צרו קשר לקבלת הצעת מחיר מותאמת לכמויות גדולות."
+          },
+          {
+            "question": "מה מינימום ההזמנה של סט 4 מדגיש צבעוני?",
+            "answer": "מינימום הזמנה באתר: 200 ₪ + מע\"מ (לפני משלוח). ניתן לשלב מוצרים מכל הקטגוריות כדי להגיע למינימום."
+          }
+        ],
+        "specs": []
+      },
+      "variantGroupId": null,
+      "variantLabel": null,
+      "variantSortOrder": 0
+    },
+    {
+      "id": 363,
+      "name": "סט 4 מדגיש צבעוני",
+      "slug": "סט-4-מדגיש-צבעוני",
+      "saleNis": 9.5,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "writing-instruments",
+      "categoryName": "כלי כתיבה",
+      "categorySlugs": [
+        "writing-instruments",
+        "ציוד-משרדי-וכללי"
+      ],
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/379.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "ציוד משרדי מקצועי — מותגים מוכרים",
+      "partNumber": "",
+      "barcode": "",
+      "searchTags": "ציוד משרדי, נייר צילום, עטים, קלסר, דבק, מדפסת, משרד, מדגיש, צבעוני, סיטונאי, לעסקים, מוסדי",
+      "technicalDesc": "[{\"label\":\"סוג מוצר\",\"value\":\"ציוד משרדי\"},{\"label\":\"אספקה\",\"value\":\"1-3 ימי עסקים\"},{\"label\":\"מחיר\",\"value\":\"₪9.5 + מע\\\"מ\"}]",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": [],
+      "seoSlug": null,
+      "seo": {
+        "title": "סט 4 מדגיש צבעוני | ציוד משרדי בסיטונאות",
+        "metaDesc": "סט 4 מדגיש צבעוני החל מ-₪9.5 | ציוד משרדי לעסקים ומוסדות. משלוח מהיר, מחירי סיטונאות. הזמינו אונליין ב-YMARKET.",
         "imageAlt": "סט 4 מדגיש צבעוני - ציוד משרדי לעסקים | וואי מרקט",
         "geoContent": "<h3>מידע מקצועי על סט 4 מדגיש צבעוני</h3>\n<p>סט 4 מדגיש צבעוני — ציוד משרדי מקצועי למשרדים, מוסדות חינוך וארגונים. מותגים מוכרים במחירי סיטונאות.</p>\n<p><strong>יתרונות:</strong> מלאי קבוע, משלוח עד המשרד, חיסכון של עד 30% לעומת חנויות ציוד משרדי.</p>\n<p><strong>טיפ:</strong> שלבו ציוד משרדי עם מוצרי צריכה שוטפת בהזמנה אחת וחסכו במשלוח. <a href=\"https://wa.me/972549922492\">צרו קשר</a>.</p>",
         "gtin": null,
@@ -46501,7 +46545,7 @@
       "id": 106,
       "name": "קפה נמס טסטר צ'ויס אדום 200 גרם",
       "slug": "קפה-נמס-טסטר-צ-ויס-אדום-200-גרם",
-      "saleNis": 35,
+      "saleNis": 44,
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
@@ -53086,6 +53130,6 @@
       "reviews": []
     }
   ],
-  "exportedAt": "2026-06-28T21:40:23.019Z",
-  "totalItems": 848
+  "exportedAt": "2026-07-05T08:10:18.695Z",
+  "totalItems": 849
 }
