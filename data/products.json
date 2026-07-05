@@ -2943,7 +2943,7 @@
       "icon": "fa-box",
       "parentId": 11,
       "sortOrder": 7,
-      "itemCount": 8,
+      "itemCount": 9,
       "metaTitle": "ציוד קופה ומחשב – ציוד משרדי וכללי בסיטונאות | וואי מרקט",
       "metaDescription": "ציוד קופה ומחשב במחירי סיטונאות ישירות מהמפיץ. 8 פריטים באיכות מוסדית. אספקה 24-72 שעות. מינימום 200₪. וואי מרקט.",
       "seoSlug": "pos-computer-supplies-wholesale",
@@ -2982,7 +2982,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 9,
-      "itemCount": 16,
+      "itemCount": 17,
       "metaTitle": "אריזה לוגיסטית ומחסן לעסקים בסיטונאות | וואי מרקט",
       "metaDescription": "פתרונות אריזה ולוגיסטיקה מוסדיים במחירי סיטונאות. אספקה מהירה לעסקים ומוסדות. איכות ואמינות עם וואי מרקט.",
       "seoSlug": "warehouse-packaging-supplies-wholesale",
@@ -3107,7 +3107,7 @@
       "icon": "fa-box",
       "parentId": null,
       "sortOrder": 12,
-      "itemCount": 112,
+      "itemCount": 113,
       "metaTitle": "ציוד משרדי וכללי בסיטונאות למוסדות ועסקים | וואי מרקט",
       "metaDescription": "ציוד משרדי וכללי במחירי סיטונאות ישירות מהמפיץ. 111 פריטים באיכות מוסדית. אספקה 24-72 שעות. מינימום 200₪. וואי מרקט.",
       "seoSlug": "office-supplies-wholesale-business",
@@ -22334,6 +22334,51 @@
       "variantSortOrder": 0
     },
     {
+      "id": 190339,
+      "name": "מדבקות מקודד לבן (תאריך אחרון) שורה 1 - 100 יח'",
+      "slug": "מדבקות-מקודד-לבן-תאריך-אחרון-שורה-1-100-יח",
+      "saleNis": 200,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "עטיפה-אריזה-ולוגיסטיקה",
+      "categoryName": "אריזה לוגיסטית ומחסן",
+      "categorySlugs": [
+        "עטיפה-אריזה-ולוגיסטיקה",
+        "pos-computer-supplies",
+        "ציוד-משרדי-וכללי"
+      ],
+      "unit": "",
+      "unitsPerPack": 10,
+      "imageUrl": "/items/1171.jpg",
+      "isFeatured": false,
+      "productStatus": "new",
+      "description": "מדבקות מקודד לבן (תאריך אחרון) שורה 1 - 100 יח'",
+      "partNumber": "2931",
+      "barcode": "",
+      "searchTags": "",
+      "technicalDesc": "",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": [],
+      "seoSlug": null,
+      "seo": {
+        "title": null,
+        "metaDesc": null,
+        "imageAlt": null,
+        "geoContent": null,
+        "gtin": null,
+        "mpn": null,
+        "isB2BBulk": false,
+        "faqs": [],
+        "specs": []
+      },
+      "variantGroupId": null,
+      "variantLabel": null,
+      "variantSortOrder": 0
+    },
+    {
       "id": 667,
       "name": "מזלג - חלק - איכות גבוהה",
       "slug": "מזלג-חלק-איכות-גבוהה",
@@ -26317,63 +26362,6 @@
       "variantSortOrder": 3
     },
     {
-      "id": 640,
-      "name": "מכסה לקראפט - 1300 מ\"ל",
-      "slug": "מכסה-לקראפט-1300-מ-ל",
-      "saleNis": 0.43,
-      "originalPrice": null,
-      "discountPercent": null,
-      "promotionLabel": null,
-      "categorySlug": "אריזות-מזון-ו-Take-Away",
-      "categoryName": "אריזות מזון ו-Take Away",
-      "categorySlugs": [
-        "אריזות-מזון-ו-Take-Away",
-        "קראפטים"
-      ],
-      "unit": "",
-      "unitsPerPack": 1,
-      "imageUrl": "/items/656.jpg",
-      "isFeatured": false,
-      "productStatus": "active",
-      "description": "אריזות מזון מקצועי — אטימות מלאה",
-      "partNumber": "",
-      "barcode": "",
-      "searchTags": "אריזות, טייק אווי, קופסאות מזון, משלוחים, מיכלים, אריזת מזון, מכסה, לקראפט, מ\"ל, סיטונאי, לעסקים, מוסדי",
-      "technicalDesc": "[{\"label\":\"סוג מוצר\",\"value\":\"אריזת מזון\"},{\"label\":\"בטיחות מזון\",\"value\":\"מאושר למגע מזון\"},{\"label\":\"אספקה\",\"value\":\"1-3 ימי עסקים\"}]",
-      "videoUrl": "",
-      "leadTimeDays": null,
-      "maxOrderQty": null,
-      "alternatives": [],
-      "seoSlug": "1300",
-      "seo": {
-        "title": "מכסה לקראפט - 1300 מ\"ל | אריזות מזון בסיטונאות",
-        "metaDesc": "מכסה לקראפט - 1300 מ\"ל | אריזות מזון לעסקים ומוסדות. משלוח מהיר, מחירי סיטונאות. הזמינו אונליין ב-YMARKET.",
-        "imageAlt": "מכסה לקראפט - 1300 מ\"ל - אריזות מזון לעסקים | וואי מרקט",
-        "geoContent": "<h3>מידע מקצועי על מכסה לקראפט - 1300 מ\"ל</h3>\n<p>מכסה לקראפט - 1300 מ\"ל — אריזת מזון מקצועית למסעדות, שירותי משלוחים וקייטרינג. מתוכננת לשמירה על טריות המזון ועמידות בתנאי משלוח.</p>\n<p><strong>יתרונות:</strong> אטימות מלאה, עמידות בחום/קור, מאושרת למגע מזון. אידאלית למשלוחי מזון ול-Take Away.</p>\n<p><strong>טיפ:</strong> בחירת האריזה הנכונה משפיעה על חוויית הלקוח. <a href=\"https://wa.me/972549922492\">צרו קשר</a> לייעוץ בבחירת אריזות למסעדה שלכם.</p>",
-        "gtin": null,
-        "mpn": null,
-        "isB2BBulk": false,
-        "faqs": [
-          {
-            "question": "האם מכסה לקראפט - 1300 מ\"ל אטום לנוזלים?",
-            "answer": "מרבית אריזות המזון שלנו מיועדות לאטימות. בדקו את פרטי המוצר לאישור התאמה לנוזלים חמים."
-          },
-          {
-            "question": "האם מכסה לקראפט - 1300 מ\"ל מתאים להקפאה?",
-            "answer": "חלק מהאריזות מתאימות להקפאה. עיינו בפרטי המוצר או צרו קשר לייעוץ."
-          },
-          {
-            "question": "מה מינימום ההזמנה של מכסה לקראפט - 1300 מ\"ל?",
-            "answer": "מינימום הזמנה באתר: 200 ₪ + מע\"מ (לפני משלוח). ניתן לשלב מוצרים מכל הקטגוריות כדי להגיע למינימום."
-          }
-        ],
-        "specs": []
-      },
-      "variantGroupId": 55,
-      "variantLabel": "1300",
-      "variantSortOrder": 4
-    },
-    {
       "id": 905,
       "name": "מכסה לקראפט - 1300 מ\"ל",
       "slug": "מכסה-לקראפט-1300-מ-ל-2",
@@ -26429,6 +26417,63 @@
       "variantGroupId": null,
       "variantLabel": null,
       "variantSortOrder": 0
+    },
+    {
+      "id": 640,
+      "name": "מכסה לקראפט - 1300 מ\"ל",
+      "slug": "מכסה-לקראפט-1300-מ-ל",
+      "saleNis": 0.43,
+      "originalPrice": null,
+      "discountPercent": null,
+      "promotionLabel": null,
+      "categorySlug": "אריזות-מזון-ו-Take-Away",
+      "categoryName": "אריזות מזון ו-Take Away",
+      "categorySlugs": [
+        "אריזות-מזון-ו-Take-Away",
+        "קראפטים"
+      ],
+      "unit": "",
+      "unitsPerPack": 1,
+      "imageUrl": "/items/656.jpg",
+      "isFeatured": false,
+      "productStatus": "active",
+      "description": "אריזות מזון מקצועי — אטימות מלאה",
+      "partNumber": "",
+      "barcode": "",
+      "searchTags": "אריזות, טייק אווי, קופסאות מזון, משלוחים, מיכלים, אריזת מזון, מכסה, לקראפט, מ\"ל, סיטונאי, לעסקים, מוסדי",
+      "technicalDesc": "[{\"label\":\"סוג מוצר\",\"value\":\"אריזת מזון\"},{\"label\":\"בטיחות מזון\",\"value\":\"מאושר למגע מזון\"},{\"label\":\"אספקה\",\"value\":\"1-3 ימי עסקים\"}]",
+      "videoUrl": "",
+      "leadTimeDays": null,
+      "maxOrderQty": null,
+      "alternatives": [],
+      "seoSlug": "1300",
+      "seo": {
+        "title": "מכסה לקראפט - 1300 מ\"ל | אריזות מזון בסיטונאות",
+        "metaDesc": "מכסה לקראפט - 1300 מ\"ל | אריזות מזון לעסקים ומוסדות. משלוח מהיר, מחירי סיטונאות. הזמינו אונליין ב-YMARKET.",
+        "imageAlt": "מכסה לקראפט - 1300 מ\"ל - אריזות מזון לעסקים | וואי מרקט",
+        "geoContent": "<h3>מידע מקצועי על מכסה לקראפט - 1300 מ\"ל</h3>\n<p>מכסה לקראפט - 1300 מ\"ל — אריזת מזון מקצועית למסעדות, שירותי משלוחים וקייטרינג. מתוכננת לשמירה על טריות המזון ועמידות בתנאי משלוח.</p>\n<p><strong>יתרונות:</strong> אטימות מלאה, עמידות בחום/קור, מאושרת למגע מזון. אידאלית למשלוחי מזון ול-Take Away.</p>\n<p><strong>טיפ:</strong> בחירת האריזה הנכונה משפיעה על חוויית הלקוח. <a href=\"https://wa.me/972549922492\">צרו קשר</a> לייעוץ בבחירת אריזות למסעדה שלכם.</p>",
+        "gtin": null,
+        "mpn": null,
+        "isB2BBulk": false,
+        "faqs": [
+          {
+            "question": "האם מכסה לקראפט - 1300 מ\"ל אטום לנוזלים?",
+            "answer": "מרבית אריזות המזון שלנו מיועדות לאטימות. בדקו את פרטי המוצר לאישור התאמה לנוזלים חמים."
+          },
+          {
+            "question": "האם מכסה לקראפט - 1300 מ\"ל מתאים להקפאה?",
+            "answer": "חלק מהאריזות מתאימות להקפאה. עיינו בפרטי המוצר או צרו קשר לייעוץ."
+          },
+          {
+            "question": "מה מינימום ההזמנה של מכסה לקראפט - 1300 מ\"ל?",
+            "answer": "מינימום הזמנה באתר: 200 ₪ + מע\"מ (לפני משלוח). ניתן לשלב מוצרים מכל הקטגוריות כדי להגיע למינימום."
+          }
+        ],
+        "specs": []
+      },
+      "variantGroupId": 55,
+      "variantLabel": "1300",
+      "variantSortOrder": 4
     },
     {
       "id": 642,
@@ -53130,6 +53175,6 @@
       "reviews": []
     }
   ],
-  "exportedAt": "2026-07-05T08:11:22.403Z",
-  "totalItems": 849
+  "exportedAt": "2026-07-05T08:32:17.666Z",
+  "totalItems": 850
 }
