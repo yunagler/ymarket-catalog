@@ -10248,7 +10248,7 @@
       "categoryName": "",
       "categorySlugs": [],
       "unit": "",
-      "unitsPerPack": 6,
+      "unitsPerPack": 1,
       "imageUrl": "/items/1179.jpg",
       "isFeatured": false,
       "productStatus": "new",
@@ -53216,6 +53216,6 @@
       "reviews": []
     }
   ],
-  "exportedAt": "2026-07-05T08:41:55.534Z",
+  "exportedAt": "2026-07-05T08:43:07.947Z",
   "totalItems": 851
 }
