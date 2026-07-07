@@ -567,8 +567,11 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
             </div>
           </div>` : '';
 
-  // OG image: use hero if available, else default
-  const ogImage = categoryImage ? `${SITE_URL}${categoryImage}` : `${SITE_URL}/images/og-image.jpg`;
+  // OG image: custom promo banner > hero > default
+  const ogPromoPath = path.join(ROOT_DIR, 'images', 'categories', 'og', effectiveSlug + '.jpg');
+  const ogImage = fs.existsSync(ogPromoPath)
+    ? `${SITE_URL}/images/categories/og/${effectiveSlug}.jpg`
+    : categoryImage ? `${SITE_URL}${categoryImage}` : `${SITE_URL}/images/og-image.jpg`;
 
   return `<!DOCTYPE html>
 <html lang="he" dir="rtl">
