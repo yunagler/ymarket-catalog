@@ -26,6 +26,7 @@ function render() {
   el('quantity').textContent = quantity;
   el('total').textContent = total.toLocaleString('he-IL');
   el('button-total').textContent = total.toLocaleString('he-IL');
+  el('unit-price').textContent = (total / 1.18 / quantity).toFixed(2);
   el('form-quantity').value = quantity;
   el('form-amount').value = total;
   el('shipping').textContent = quantity < 50 ? 'כולל מע״מ ומשלוח 59 ₪' : 'כולל מע״מ ומשלוח';
