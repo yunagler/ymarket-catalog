@@ -39,6 +39,13 @@ document.querySelectorAll('.deal').forEach(button => button.addEventListener('cl
   render();
 }));
 
+document.querySelectorAll('[data-bundles]').forEach(button => button.addEventListener('click', () => {
+  plan = 'double';
+  quantity = Number(button.dataset.bundles) * 100;
+  render();
+  document.querySelector('.quantity-panel').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}));
+
 el('plus').addEventListener('click', () => {
   const p = plans[plan];
   quantity = Math.min(p.max, quantity + p.step);
