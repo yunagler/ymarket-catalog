@@ -183,3 +183,81 @@
     font-size: var(--fs-lg);
   }
 }
+
+/* ===== Payment method selection (checkout step 1/2) ===== */
+.paymethod__opt {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  margin-bottom: var(--space-sm);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  cursor: pointer;
+  transition: border-color .15s ease, background-color .15s ease;
+}
+.paymethod__opt:hover {
+  border-color: var(--color-primary);
+}
+.paymethod__opt:has(input:checked) {
+  border-color: var(--color-primary);
+  background: var(--color-bg);
+}
+.paymethod__opt:focus-within {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+.paymethod__opt input {
+  margin-top: 4px;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary);
+}
+.paymethod__body {
+  display: block;
+}
+.paymethod__title {
+  display: block;
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-base);
+  margin-bottom: 2px;
+}
+.paymethod__title i {
+  margin-left: var(--space-xs);
+  color: var(--color-primary);
+}
+.paymethod__desc {
+  display: block;
+  font-size: var(--fs-xs);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+.paymethod__step {
+  display: inline-block;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-light);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: 1px 8px;
+  margin-right: var(--space-xs);
+}
+.paymethod__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: var(--space-sm);
+}
+.paymethod__chip {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-secondary);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 2px 8px;
+  letter-spacing: .3px;
+}

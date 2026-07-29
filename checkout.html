@@ -366,12 +366,46 @@
               <textarea class="form-textarea" id="co-notes" name="notes" rows="3" placeholder="קומה, קוד כניסה, שעות מועדפות, הערות מיוחדות..."></textarea>
             </div>
 
+            <div class="form-group paymethod">
+              <label class="form-label">אופן התשלום *</label>
+
+              <label class="paymethod__opt" for="pm-order">
+                <input type="radio" name="paymentMethod" id="pm-order" value="order" checked>
+                <span class="paymethod__body">
+                  <span class="paymethod__title">
+                    <i class="fas fa-truck"></i> שליחת הזמנה — תשלום במשלוח או בהעברה
+                  </span>
+                  <span class="paymethod__desc">נחזור אליכם לאישור ותיאום מועד. התשלום בעת האספקה או בהעברה בנקאית.</span>
+                </span>
+              </label>
+
+              <label class="paymethod__opt" for="pm-card">
+                <input type="radio" name="paymentMethod" id="pm-card" value="card">
+                <span class="paymethod__body">
+                  <span class="paymethod__title">
+                    <i class="fas fa-credit-card"></i> תשלום מאובטח בכרטיס אשראי
+                    <span class="paymethod__step">שלב 2 מתוך 2</span>
+                  </span>
+                  <span class="paymethod__desc">לאחר שליחת הפרטים תועברו לעמוד סליקה מאובטח להשלמת התשלום.</span>
+                  <span class="paymethod__cards">
+                    <span class="paymethod__chip">VISA</span>
+                    <span class="paymethod__chip">Mastercard</span>
+                    <span class="paymethod__chip">ישראכרט</span>
+                    <span class="paymethod__chip">AMEX</span>
+                  </span>
+                </span>
+              </label>
+            </div>
+
             <button type="submit" class="btn btn--primary btn--block btn--lg" id="submitOrderBtn">
               <i class="fas fa-check-circle"></i> שלחו הזמנה
             </button>
 
             <p style="text-align: center; font-size: var(--fs-xs); color: var(--color-text-light); margin-top: var(--space-md);">
               <i class="fas fa-lock"></i> הפרטים שלכם מאובטחים ומשמשים לטיפול בהזמנה בלבד
+            </p>
+            <p id="pmSecureNote" style="display:none; text-align: center; font-size: var(--fs-xs); color: var(--color-text-light); margin-top: var(--space-xs);">
+              <i class="fas fa-shield-alt"></i> פרטי האשראי נמסרים ישירות לחברת הסליקה בתקן PCI-DSS ואינם נשמרים באתר
             </p>
           </form>
         </div>
@@ -387,7 +421,11 @@
             <span id="checkoutTotal">₪0</span>
           </div>
           <p style="font-size: var(--fs-xs); color: var(--color-text-light); margin-top: var(--space-sm); text-align: center;">
-            * המחירים כוללים מע"מ. התשלום בעת המשלוח או בהעברה.
+            * המחירים כוללים מע"מ. התשלום בכרטיס אשראי, בעת המשלוח או בהעברה בנקאית — לפי בחירתכם.
+          </p>
+          <p style="font-size: var(--fs-xs); color: var(--color-text-light); margin-top: var(--space-sm); text-align: center; line-height: 1.7;">
+            נגלר סחר והפצה (וואי מרקט) · ע.מ 315071829 · גת רימון, מרכז הארץ<br>
+            <a href="/legal/terms">תקנון האתר</a> · <a href="/legal/cancellation">ביטול עסקה</a> · <a href="/legal/shipping">מדיניות משלוחים</a>
           </p>
           <a href="cart" class="checkout-summary__back">
             <i class="fas fa-arrow-right"></i> חזרה לעגלה

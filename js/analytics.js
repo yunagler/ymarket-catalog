@@ -174,4 +174,135 @@
     }
   });
 
+  /* =========================================================================
+     FIRST-PARTY LAYER — "The Analyst"
+     Mirrors behavioural events into OUR database (app.ymarket.co.il), row by
+     row, so every movement between pages — and where it came from — is ours,
+     joinable to customers/leads/orders. GA4/Meta above stay untouched.
+     ========================================================================= */
+  (function () {
+    var COLLECT_URL = 'https://app.ymarket.co.il/api/analytics/collect';
+    var SESSION_IDLE_MS = 30 * 60 * 1000; // new session after 30m inactivity
+    var ss = window.sessionStorage, ls = window.localStorage;
+
+    function uuid() {
+      try { if (crypto && crypto.randomUUID) return crypto.randomUUID(); } catch (e) {}
+      return 'x' + Date.now().toString(36) + Math.random().toString(36).slice(2, 10);
+    }
+    function get(store, k) { try { return store.getItem(k); } catch (e) { return null; } }
+    function set(store, k, v) { try { store.setItem(k, v); } catch (e) {} }
+
+    // durable visitor id (across sessions) + rolling session id (idle-reset)
+    var visitorId = get(ls, 'ym_vid') || uuid(); set(ls, 'ym_vid', visitorId);
+    var last = parseInt(get(ss, 'ym_sid_ts') || '0', 10);
+    var sessionId = get(ss, 'ym_sid');
+    var isNewSession = false;
+    if (!sessionId || !last || (Date.now() - last) > SESSION_IDLE_MS) {
+      sessionId = uuid(); isNewSession = true; set(ss, 'ym_sid', sessionId);
+    }
+    set(ss, 'ym_sid_ts', String(Date.now()));
+
+    // acquisition — captured once on the session's landing hit, echoed after
+    var qp = new URLSearchParams(location.search);
+    var utm = {
+      source: qp.get('utm_source'), medium: qp.get('utm_medium'),
+      campaign: qp.get('utm_campaign'), term: qp.get('utm_term'), content: qp.get('utm_content')
+    };
+    if (isNewSession) {
+      set(ss, 'ym_landing', location.pathname);
+      set(ss, 'ym_utm', JSON.stringify(utm));
+      if (document.referrer && document.referrer.indexOf(location.host) === -1) {
+        set(ss, 'ym_ext_ref', document.referrer);
+      }
+    } else {
+      try { utm = JSON.parse(get(ss, 'ym_utm') || '{}'); } catch (e) {}
+    }
+    var landing = get(ss, 'ym_landing') || location.pathname;
+    var device = (function () {
+      var w = window.innerWidth || 1024;
+      if (w < 768) return 'mobile';
+      if (w < 1024) return 'tablet';
+      return 'desktop';
+    })();
+
+    // ---- batching + reliable delivery ----
+    var queue = [];
+    function flush(sync) {
+      if (!queue.length) return;
+      var batch = queue.splice(0, queue.length);
+      var payload = JSON.stringify({
+        sessionId: sessionId, visitorId: visitorId,
+        landing: landing, device: device, utm: utm, events: batch
+      });
+      var sent = false;
+      try {
+        if (navigator.sendBeacon) {
+          sent = navigator.sendBeacon(COLLECT_URL, new Blob([payload], { type: 'text/plain' }));
+        }
+      } catch (e) {}
+      if (!sent) {
+        try {
+          fetch(COLLECT_URL, { method: 'POST', body: payload, keepalive: true, mode: 'cors',
+            headers: { 'Content-Type': 'text/plain' } }).catch(function () {});
+        } catch (e) {}
+      }
+    }
+    function track(type, props) {
+      props = props || {};
+      queue.push({
+        eventId: uuid(), type: type, ts: Date.now(),
+        path: location.pathname, title: document.title,
+        from: props.from, referrer: get(ss, 'ym_ext_ref') || null,
+        itemId: props.itemId, orderId: props.orderId,
+        value: props.value, quantity: props.quantity, meta: props.meta || null
+      });
+      // page/exit events go out immediately; commerce events micro-batch
+      if (type === 'page_view' || type === 'session_start' || type === 'order_placed') flush();
+    }
+
+    // expose so page scripts (checkout, catalog) can emit precise events
+    window.YMarketAnalyst = {
+      track: track,
+      productView: function (p) { track('product_view', { itemId: p && p.id, value: p && p.price }); },
+      addToCart: function (p) { track('add_to_cart', { itemId: p && p.id, value: p && p.price, quantity: p && p.quantity }); },
+      removeFromCart: function (p) { track('remove_from_cart', { itemId: p && p.id, quantity: p && p.quantity }); },
+      beginCheckout: function (total, n) { track('begin_checkout', { value: total, quantity: n }); },
+      leadSubmit: function (method) { track('lead_submit', { meta: { method: method } }); },
+      orderPlaced: function (orderId, total) { track('order_placed', { orderId: orderId, value: total }); },
+      search: function (q) { track('search', { meta: { q: (q || '').slice(0, 120) } }); }
+    };
+
+    // auto-wire the existing GA/Meta wrappers so page code that already calls
+    // YMarketAnalytics also feeds first-party — zero extra work on the pages.
+    if (window.YMarketAnalytics) {
+      var A = window.YMarketAnalytics;
+      var wrap = function (name, fn) { var o = A[name]; A[name] = function () { try { fn.apply(null, arguments); } catch (e) {} if (o) return o.apply(A, arguments); }; };
+      wrap('trackAddToCart', function (p) { window.YMarketAnalyst.addToCart(p); });
+      wrap('trackViewItem', function (p) { window.YMarketAnalyst.productView(p); });
+      wrap('trackSearch', function (q) { window.YMarketAnalyst.search(q); });
+      wrap('trackContact', function (m) { window.YMarketAnalyst.leadSubmit(m); });
+    }
+
+    // page-to-page flow: remember the last path we were on
+    var fromPath = get(ss, 'ym_last_path') || null;
+    set(ss, 'ym_last_path', location.pathname);
+
+    if (isNewSession) track('session_start', {});
+    track('page_view', { from: fromPath });
+
+    // scroll depth (fires once at 75%) — engagement signal
+    var deep = false;
+    window.addEventListener('scroll', function () {
+      if (deep) return;
+      var h = document.documentElement;
+      var pct = (h.scrollTop + window.innerHeight) / (h.scrollHeight || 1);
+      if (pct >= 0.75) { deep = true; track('scroll_depth', { meta: { pct: 75 } }); }
+    }, { passive: true });
+
+    // flush on the way out — sendBeacon survives unload
+    document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') flush(true); });
+    window.addEventListener('pagehide', function () { flush(true); });
+    setInterval(flush, 10000); // safety net for long-lived tabs
+  })();
+
 })();

@@ -23,7 +23,36 @@
     setupForm(cart);
     setupDateMin();
     setupDeliveryZones();
+    setupPaymentMethod();
   });
+
+  /** Which of the two checkout paths the buyer picked: 'order' (as always) or 'card'. */
+  function getPaymentMethod() {
+    var checked = document.querySelector('input[name="paymentMethod"]:checked');
+    return checked ? checked.value : 'order';
+  }
+
+  /* The button and the PCI note follow the choice, so it is always obvious whether
+     this click sends an order or opens step 2/2 (the secure payment page). */
+  function setupPaymentMethod() {
+    var radios = document.querySelectorAll('input[name="paymentMethod"]');
+    if (!radios.length) return;
+
+    function sync() {
+      var card = getPaymentMethod() === 'card';
+      var btn = document.getElementById('submitOrderBtn');
+      if (btn && !btn.disabled) {
+        btn.innerHTML = card
+          ? '<i class="fas fa-lock"></i> המשיכו לתשלום מאובטח'
+          : '<i class="fas fa-check-circle"></i> שלחו הזמנה';
+      }
+      var note = document.getElementById('pmSecureNote');
+      if (note) note.style.display = card ? '' : 'none';
+    }
+
+    for (var i = 0; i < radios.length; i++) radios[i].addEventListener('change', sync);
+    sync();
+  }
 
   function getCart() {
     try {
@@ -100,14 +129,19 @@
       // Validate
       if (!validate(name, phone, address, city, cart)) return;
 
+      var paymentMethod = getPaymentMethod();
+
       // Disable submit
       var btn = document.getElementById('submitOrderBtn');
       if (btn) {
         btn.disabled = true;
-        btn.innerHTML = '<span class="spinner"></span> שולחים הזמנה...';
+        btn.innerHTML = paymentMethod === 'card'
+          ? '<span class="spinner"></span> מעבירים לתשלום מאובטח...'
+          : '<span class="spinner"></span> שולחים הזמנה...';
       }
 
       var payload = {
+        paymentMethod: paymentMethod,
         customer: {
           name: name,
           phone: phone,
@@ -141,7 +175,7 @@
       .then(function(result) {
         if (!result.ok) {
           // API returned error - fallback to WhatsApp
-          sendOrderViaWhatsApp(name, phone, email, businessName, address, city, deliveryDate, notes, cart);
+          sendOrderViaWhatsApp(name, phone, email, businessName, address, city, deliveryDate, notes, cart, paymentMethod);
           return;
         }
 
@@ -155,11 +189,24 @@
         localStorage.removeItem('ym_cart');
         if (window.YMarket) window.YMarket.updateCartBadge();
 
+        // First-party attribution: tie this order back to its session/source
+        if (window.YMarketAnalyst) {
+          try { window.YMarketAnalyst.orderPlaced(result.data.orderId, result.data.totalAmount); } catch (e) {}
+        }
+
+        // Step 2/2 — the secure payment page. The card is entered there, never here.
+        // If the link could not be minted we still have a valid order, so fall through
+        // to the normal confirmation rather than leaving the buyer on a dead end.
+        if (paymentMethod === 'card' && result.data.payUrl) {
+          window.location.href = result.data.payUrl;
+          return;
+        }
+
         window.location.href = 'order-success';
       })
       .catch(function() {
         // Network error (no backend) - send via WhatsApp
-        sendOrderViaWhatsApp(name, phone, email, businessName, address, city, deliveryDate, notes, cart);
+        sendOrderViaWhatsApp(name, phone, email, businessName, address, city, deliveryDate, notes, cart, paymentMethod);
       });
     });
   }
@@ -243,8 +290,9 @@
     btn.innerHTML = '<i class="fas fa-check-circle"></i> שלחו הזמנה';
   }
 
-  function sendOrderViaWhatsApp(name, phone, email, businessName, address, city, deliveryDate, notes, cart) {
+  function sendOrderViaWhatsApp(name, phone, email, businessName, address, city, deliveryDate, notes, cart, paymentMethod) {
     var lines = ['הזמנה חדשה מהאתר:', ''];
+    if (paymentMethod === 'card') lines.push('** הלקוח ביקש לשלם באשראי — יש לשלוח לינק תשלום **', '');
     lines.push('שם: ' + name);
     lines.push('טלפון: ' + phone);
     if (email) lines.push('מייל: ' + email);
