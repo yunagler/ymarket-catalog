@@ -60,8 +60,10 @@ el('take-upgrade').addEventListener('click', () => {
 el('order-form').addEventListener('submit', async event => {
   event.preventDefault();
   const button = event.currentTarget.querySelector('.pay-button');
+  const fallback = el('fallback-order');
   const data = Object.fromEntries(new FormData(event.currentTarget));
   button.disabled = true;
+  fallback.hidden = true;
   el('form-message').textContent = 'פותחים תשלום מאובטח…';
   try {
     const apiBase = location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://app.ymarket.co.il';
@@ -76,7 +78,19 @@ el('order-form').addEventListener('submit', async event => {
     if (typeof fbq === 'function') fbq('track','InitiateCheckout',{content_ids:['304'],content_type:'product',num_items:quantity,value:result.totalAmount,currency:'ILS'});
     location.href = result.payUrl;
   } catch (error) {
-    el('form-message').textContent = error.message || 'לא הצלחנו להתחבר לתשלום. נסו שוב.';
+    const orderText = [
+      'הזמנה מדף נייר תרמי 80×80',
+      `שם: ${data.name}`,
+      data.businessName ? `עסק: ${data.businessName}` : '',
+      `טלפון: ${data.phone}`,
+      `כתובת: ${data.address}, ${data.city}`,
+      `כמות: ${quantity} גלילים`,
+      `סכום: ${priceFor(quantity)} ₪ כולל מע״מ ומשלוח`,
+      'אשמח לקבל קישור PayMe לתשלום'
+    ].filter(Boolean).join('\n');
+    fallback.href = `https://wa.me/972549922492?text=${encodeURIComponent(orderText)}`;
+    fallback.hidden = false;
+    el('form-message').textContent = 'הסליקה הישירה עדיין מתעדכנת. אפשר להמשיך עכשיו בוואטסאפ ולקבל קישור PayMe.';
     button.disabled = false;
   }
 });
