@@ -1113,6 +1113,10 @@
               <label class="fld-label" for="reg-address">כתובת (רחוב ומספר) *</label>
               <input type="text" class="fld-input" id="reg-address" name="address" placeholder="רחוב ומספר בית" required>
             </div>
+            <div class="fld">
+              <label class="fld-label" for="reg-unloading">כתובת פריקה</label>
+              <input type="text" class="fld-input" id="reg-unloading" name="unloadingAddress" placeholder="רק אם המשלוח מגיע לכתובת אחרת">
+            </div>
             <div class="fld-row">
               <div class="fld">
                 <label class="fld-label" for="reg-city">עיר *</label>
@@ -1230,6 +1234,10 @@
             <a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a>
           </div>
           <div class="footer__contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>גת רימון, מרכז הארץ</span>
+          </div>
+          <div class="footer__contact-item">
             <i class="fas fa-clock"></i>
             <span>א'-ה' 08:00-17:00</span>
           </div>
@@ -1284,6 +1292,7 @@
       const email = data.get('email')?.trim() || '';
       const city = data.get('city')?.trim() || '';
       const address = data.get('address')?.trim() || '';
+      const unloadingAddress = data.get('unloadingAddress')?.trim() || '';
       const businessType = data.get('businessType')?.trim() || '';
 
       if (!businessName || !vatNumber || !contactName || !phone || !password || !address || !city || !businessType) {
@@ -1315,6 +1324,7 @@
             email: email || undefined,
             city: city || undefined,
             address: address || undefined,
+            unloadingAddress: unloadingAddress || undefined,
             businessType: businessType || undefined,
             password,
           }),
