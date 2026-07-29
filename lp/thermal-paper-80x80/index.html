@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>נייר תרמי 80×80 — 80 מטר אמיתי</title>
+  <meta name="description" content="נייר תרמי לקופות ולמדפסות קבלות. 80 מטר אמיתי, משלוח לכל הארץ ורכישה מאובטחת.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+    (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','1465208441826085');
+    fbq('track','PageView');
+    fbq('track','ViewContent',{content_name:'נייר תרמי 80x80',content_ids:['304'],content_type:'product',value:450,currency:'ILS'});
+  </script>
+</head>
+<body>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1465208441826085&ev=PageView&noscript=1" alt=""></noscript>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span></span> מלאי זמין לכל השנה</div>
+        <h1>80 מטר.<br><em>באמת 80.</em></h1>
+        <p class="lead">נייר תרמי 80×80 למדפסות קבלות וקופות. הדפסה חדה שנשמרת לאורך שנים ומשלוח לכל הארץ.</p>
+        <div class="proof-row" aria-label="יתרונות המוצר">
+          <span>✓ 80 מטר אמיתי</span><span>✓ הדפסה עמידה</span><span>✓ אספקה ארצית</span>
+        </div>
+      </div>
+      <div class="product-stage" aria-label="חמישה גלילי נייר תרמי">
+        <div class="measure"><b>80</b><span>מטר</span></div>
+        <img src="product.png" alt="חמישה גלילי נייר תרמי 80 על 80">
+        <div class="arrow arrow-a">לכל מדפסת קבלות נפוצה</div>
+        <div class="arrow arrow-b">ליבה איכותית וגליל מלא</div>
+        <div class="arrow arrow-c">הדפסה ברורה לאורך זמן</div>
+      </div>
+    </section>
+
+    <section class="checkout" id="checkout">
+      <header>
+        <div><span class="step">01</span><h2>כמה גלילים לשלוח?</h2></div>
+        <p>בחרו כמות, ראו מחיר וסיימו תשלום בדקה.</p>
+      </header>
+
+      <div class="deal-grid" role="radiogroup" aria-label="בחירת חבילה">
+        <button class="deal" data-plan="small" type="button" role="radio" aria-checked="false">
+          <span class="deal-title">חבילה קטנה</span>
+          <strong>5–45 גלילים</strong>
+          <small>בקפיצות של 5 · משלוח 59 ₪</small>
+        </button>
+        <button class="deal" data-plan="carton" type="button" role="radio" aria-checked="false">
+          <span class="deal-title">קרטון מלא</span>
+          <strong>50 גלילים</strong>
+          <small>250 ₪ כולל משלוח</small>
+        </button>
+        <button class="deal selected hero-deal" data-plan="double" type="button" role="radio" aria-checked="true">
+          <span class="best">העסקה המשתלמת</span>
+          <span class="deal-title">2 קרטונים</span>
+          <strong>100 גלילים</strong>
+          <small>450 ₪ כולל משלוח</small>
+        </button>
+      </div>
+
+      <div class="quantity-panel">
+        <div>
+          <span class="label">כמות</span>
+          <div class="stepper">
+            <button type="button" id="plus" aria-label="הוספת יחידה">+</button>
+            <strong id="quantity">100</strong>
+            <span>גלילים</span>
+            <button type="button" id="minus" aria-label="הפחתת יחידה">−</button>
+          </div>
+        </div>
+        <div class="total-box">
+          <span>סה״כ לתשלום</span>
+          <strong><span id="total">450</span> ₪</strong>
+          <small id="shipping">כולל מע״מ ומשלוח</small>
+        </div>
+      </div>
+
+      <div class="upgrade" id="upgrade" hidden>
+        <b>יותר נייר, פחות כסף.</b>
+        <span>קרטון של 50 גלילים עולה רק 250 ₪ כולל משלוח.</span>
+        <button type="button" id="take-upgrade">עברו לקרטון</button>
+      </div>
+
+      <form id="order-form" class="order-form">
+        <div class="fields">
+          <label>שם מלא<input name="name" autocomplete="name" required></label>
+          <label>טלפון<input name="phone" inputmode="tel" autocomplete="tel" placeholder="05X-XXXXXXX" required></label>
+          <label>שם העסק<input name="businessName" autocomplete="organization"></label>
+          <label>עיר<input name="city" autocomplete="address-level2" required></label>
+          <label style="grid-column:1/-1">כתובת למשלוח<input name="address" autocomplete="street-address" required></label>
+        </div>
+        <input type="hidden" name="quantity" id="form-quantity" value="100">
+        <input type="hidden" name="amount" id="form-amount" value="450">
+        <button class="pay-button" type="submit">
+          <span>לתשלום מאובטח</span><strong><span id="button-total">450</span> ₪</strong>
+        </button>
+        <p class="secure">🔒 סליקה מאובטחת באמצעות PayMe · פרטי הכרטיס אינם נשמרים אצלנו</p>
+        <p class="form-message" id="form-message" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="bulk">
+      <div><span class="step">02</span><h2>צריכים משטח או מיתוג?</h2></div>
+      <p>מחירי מפיצים ורשתות, משטחי יורו של 36 קרטונים ומיתוג פרטי בכמויות של 700 קרטונים ומעלה.</p>
+      <a href="https://wa.me/972549922492?text=%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%94%D7%A6%D7%A2%D7%94%20%D7%A2%D7%9C%20%D7%A0%D7%99%D7%99%D7%A8%20%D7%AA%D7%A8%D7%9E%D7%99%2080x80" target="_blank" rel="noopener">לקבלת מחיר מפיצים ←</a>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
