@@ -30,6 +30,7 @@ function render() {
   el('form-quantity').value = quantity;
   el('form-amount').value = total;
   el('shipping').textContent = quantity < 50 ? 'כולל מע״מ ומשלוח 59 ₪' : 'כולל מע״מ ומשלוח';
+  el('three-ds-note').hidden = total <= 499;
   el('upgrade').hidden = !(plan === 'small' && quantity >= 20);
 }
 
