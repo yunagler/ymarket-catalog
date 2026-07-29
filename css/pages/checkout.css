@@ -261,3 +261,35 @@
   padding: 2px 8px;
   letter-spacing: .3px;
 }
+
+/* Save-card opt-in — only shown when the card option is selected */
+.paymethod__save {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  margin: calc(var(--space-sm) * -1) 0 var(--space-sm);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  cursor: pointer;
+}
+.paymethod__save input {
+  margin-top: 3px;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-primary);
+}
+.paymethod__save-title {
+  display: block;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+}
+.paymethod__save-desc {
+  display: block;
+  font-size: var(--fs-xs);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin-top: 2px;
+}

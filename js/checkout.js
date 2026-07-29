@@ -48,6 +48,8 @@
       }
       var note = document.getElementById('pmSecureNote');
       if (note) note.style.display = card ? '' : 'none';
+      var saveRow = document.getElementById('pmSaveCardRow');
+      if (saveRow) saveRow.style.display = card ? '' : 'none';
     }
 
     for (var i = 0; i < radios.length; i++) radios[i].addEventListener('change', sync);
@@ -140,8 +142,11 @@
           : '<span class="spinner"></span> שולחים הזמנה...';
       }
 
+      var saveCardEl = document.getElementById('pm-savecard');
+
       var payload = {
         paymentMethod: paymentMethod,
+        saveCard: paymentMethod === 'card' && !!(saveCardEl && saveCardEl.checked),
         customer: {
           name: name,
           phone: phone,
