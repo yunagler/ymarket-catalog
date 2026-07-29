@@ -179,6 +179,14 @@
       })
       .then(function(result) {
         if (!result.ok) {
+          // A card buyer must never be silently diverted to WhatsApp: they expect to
+          // pay now, the popup is usually blocked (looks like "nothing happened"),
+          // and the cart would be cleared without a payment ever being taken.
+          // Show why, keep the cart, let them retry.
+          if (paymentMethod === 'card') {
+            failCard(btn, (result.data && result.data.error) || 'לא הצלחנו לפתוח את עמוד התשלום. נסו שוב בעוד רגע.');
+            return;
+          }
           // API returned error - fallback to WhatsApp
           sendOrderViaWhatsApp(name, phone, email, businessName, address, city, deliveryDate, notes, cart, paymentMethod);
           return;
@@ -210,6 +218,10 @@
         window.location.href = 'order-success';
       })
       .catch(function() {
+        if (paymentMethod === 'card') {
+          failCard(btn, 'אין כרגע חיבור לשרת התשלומים. נסו שוב בעוד רגע.');
+          return;
+        }
         // Network error (no backend) - send via WhatsApp
         sendOrderViaWhatsApp(name, phone, email, businessName, address, city, deliveryDate, notes, cart, paymentMethod);
       });
@@ -292,7 +304,15 @@
   function resetButton(btn) {
     if (!btn) return;
     btn.disabled = false;
-    btn.innerHTML = '<i class="fas fa-check-circle"></i> שלחו הזמנה';
+    btn.innerHTML = getPaymentMethod() === 'card'
+      ? '<i class="fas fa-lock"></i> המשיכו לתשלום מאובטח'
+      : '<i class="fas fa-check-circle"></i> שלחו הזמנה';
+  }
+
+  /** Card path failed: say why, restore the button, and leave the cart intact. */
+  function failCard(btn, msg) {
+    showError(msg);
+    resetButton(btn);
   }
 
   function sendOrderViaWhatsApp(name, phone, email, businessName, address, city, deliveryDate, notes, cart, paymentMethod) {
