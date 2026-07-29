@@ -1,0 +1,31 @@
+:root{--ink:#071b2c;--paper:#f4f8fb;--cyan:#00d9ff;--blue:#0878ff;--violet:#7657ff;--lime:#b8ff5a;--white:#fff}
+*{box-sizing:border-box}
+html{background:var(--ink)}
+body{margin:0;font-family:"Heebo",Arial,sans-serif;color:var(--white);background:radial-gradient(circle at 70% 10%,#163b63 0,transparent 36%),linear-gradient(135deg,#061625 0%,#092944 52%,#071b2c 100%);min-height:100vh;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,#000,transparent 85%)}
+.arrival{width:min(1180px,calc(100% - 36px));margin:auto;padding:54px 0 28px;position:relative}
+.confirmation{max-width:760px;position:relative;z-index:3}
+.check{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--lime);color:var(--ink);font-size:26px;font-weight:900;box-shadow:0 0 30px rgba(184,255,90,.35)}
+.eyebrow{color:#a9c5d9;font-size:15px;font-weight:700;letter-spacing:.04em;margin:18px 0 8px}
+h1{font-size:clamp(42px,7vw,88px);line-height:.94;letter-spacing:-.055em;margin:0;font-weight:900}
+h1 span{color:transparent;-webkit-text-stroke:1.5px #8eb7d3}
+.order-ref{display:inline-block;border:1px solid rgba(255,255,255,.18);border-radius:100px;padding:7px 13px;color:#b9d0df;font-size:14px}
+.intro{font-size:clamp(18px,2vw,23px);line-height:1.55;color:#c9dae6;max-width:690px}
+.portal-wrap{position:relative;margin-top:40px;padding:26px 0 54px;display:grid;place-items:center;perspective:1000px}
+.portal-glow{position:absolute;width:min(760px,90vw);height:240px;background:radial-gradient(ellipse,rgba(0,217,255,.36),transparent 65%);filter:blur(40px);bottom:0}
+.portal{position:relative;width:min(870px,100%);min-height:470px;padding:2px;border-radius:52% 52% 18px 18px/25% 25% 18px 18px;background:conic-gradient(from 210deg,var(--cyan),var(--violet),var(--lime),var(--blue),var(--cyan));box-shadow:0 0 12px var(--cyan),0 0 80px rgba(0,217,255,.27),inset 0 0 35px rgba(255,255,255,.55);transform:rotateX(1deg);animation:arrive .9s cubic-bezier(.2,.8,.2,1) both}
+.portal:before{content:"";position:absolute;inset:8px;border-radius:inherit;background:linear-gradient(150deg,rgba(5,18,31,.96),rgba(12,48,73,.88));z-index:0}
+.portal-depth{position:absolute;inset:18px;overflow:hidden;border-radius:inherit;z-index:1;background:radial-gradient(circle at 50% 54%,rgba(184,255,90,.3),transparent 8%,rgba(0,217,255,.15) 18%,transparent 35%)}
+.orbit{position:absolute;inset:12%;border:1px solid rgba(134,232,255,.25);border-radius:50%;animation:spin 14s linear infinite}.orbit-two{inset:22%;animation-duration:9s;animation-direction:reverse}.orbit-three{inset:34%;animation-duration:6s}
+.portal-content{position:relative;z-index:2;text-align:center;max-width:620px;margin:auto;padding:64px 28px 48px}
+.portal-content>p{margin:0;color:var(--lime);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:13px}
+.portal h2{font-size:clamp(38px,6vw,68px);line-height:.98;letter-spacing:-.04em;margin:8px 0 22px}
+.portal ul{display:flex;justify-content:center;gap:22px;list-style:none;padding:0;margin:0 0 30px;color:#c4d9e8;font-size:15px}.portal li{max-width:160px}.portal li+li{border-right:1px solid rgba(255,255,255,.16);padding-right:22px}
+#enter-world{display:inline-flex;align-items:center;gap:16px;background:var(--white);color:var(--ink);font-weight:900;font-size:19px;padding:16px 26px;border-radius:100px;text-decoration:none;box-shadow:0 12px 35px rgba(0,0,0,.28);transition:.25s transform,.25s box-shadow}
+#enter-world:hover,#enter-world:focus-visible{transform:translateY(-3px) scale(1.02);box-shadow:0 18px 50px rgba(0,217,255,.3);outline:3px solid var(--lime);outline-offset:4px}
+#enter-world span{font-size:24px}
+footer{text-align:center;color:#91acbe;font-size:14px}footer a{color:#d8f7ff}
+@keyframes arrive{from{opacity:0;transform:translateY(50px) rotateX(8deg) scale(.92)}to{opacity:1;transform:translateY(0) rotateX(1deg) scale(1)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:680px){.arrival{padding-top:32px}.portal{border-radius:42% 42% 18px 18px/16% 16% 18px 18px;min-height:520px}.portal-content{padding-top:58px}.portal ul{flex-direction:column;align-items:center;gap:8px}.portal li{max-width:270px}.portal li+li{border:0;padding:0}.intro{font-size:18px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
