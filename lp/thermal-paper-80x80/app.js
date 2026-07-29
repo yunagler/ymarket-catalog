@@ -79,13 +79,33 @@ el('order-form').addEventListener('submit', async event => {
     const response = await fetch(`${apiBase}/api/campaigns/thermal-paper-80x80/orders`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...data, ...tracking, quantity: Number(data.quantity) })
+      body: JSON.stringify({ ...data, ...tracking, quantity: Number(data.quantity) }),
+      keepalive: true
     });
     const result = await response.json();
-    if (!response.ok || !result.payUrl) throw new Error(result.error || 'לא הצלחנו לפתוח את התשלום');
-    sessionStorage.setItem('thermal_order', JSON.stringify({ orderId: result.orderId, quantity, amount: result.totalAmount }));
+    if (!response.ok || !result.orderId) throw new Error(result.error || 'לא הצלחנו לשמור את ההזמנה');
+    sessionStorage.setItem('thermal_order', JSON.stringify({ orderId: result.orderId, leadId: result.leadId, quantity, amount: result.totalAmount }));
     if (typeof fbq === 'function') fbq('track','InitiateCheckout',{content_ids:['304'],content_type:'product',num_items:quantity,value:result.totalAmount,currency:'ILS'});
-    location.href = result.payUrl;
+    if (typeof fbq === 'function') fbq('track','Lead',{content_name:'נייר טרמי 80x80',value:result.totalAmount,currency:'ILS'});
+    if (result.payUrl) {
+      location.href = result.payUrl;
+      return;
+    }
+
+    const savedOrderText = [
+      `הזמנה #${result.orderId} מדף נייר טרמי 80×80`,
+      `שם: ${data.name}`,
+      data.businessName ? `עסק: ${data.businessName}` : '',
+      `טלפון: ${data.phone}`,
+      `כתובת: ${data.address}, ${data.city}`,
+      `כמות: ${quantity} גלילים`,
+      `סכום: ${result.totalAmount} ₪ כולל מע״מ ומשלוח`,
+      'ההזמנה כבר שמורה ב-CRM. אשמח לקבל קישור PayMe לתשלום.'
+    ].filter(Boolean).join('\n');
+    fallback.href = `https://wa.me/972549922492?text=${encodeURIComponent(savedOrderText)}`;
+    fallback.hidden = false;
+    el('form-message').textContent = `הזמנה #${result.orderId} נשמרה ב-CRM. אפשר להשלים את התשלום בוואטסאפ.`;
+    button.disabled = false;
   } catch (error) {
     const orderText = [
       'הזמנה מדף נייר תרמי 80×80',
@@ -99,7 +119,7 @@ el('order-form').addEventListener('submit', async event => {
     ].filter(Boolean).join('\n');
     fallback.href = `https://wa.me/972549922492?text=${encodeURIComponent(orderText)}`;
     fallback.hidden = false;
-    el('form-message').textContent = 'הסליקה הישירה עדיין מתעדכנת. אפשר להמשיך עכשיו בוואטסאפ ולקבל קישור PayMe.';
+    el('form-message').textContent = 'לא הצלחנו לאשר שההזמנה נשמרה. אפשר להמשיך עכשיו בוואטסאפ ונבדוק אותה מיד.';
     button.disabled = false;
   }
 });
