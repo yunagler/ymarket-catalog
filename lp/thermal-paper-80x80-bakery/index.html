@@ -78,6 +78,14 @@
       const data = Object.fromEntries(new FormData(form));
       trackingKeys.forEach((key) => data[key] = params.get(key) || '');
       data.campaign = 'thermal_bakery_instagram';
+      const visitorMessage = data.message || '';
+      data.message = [
+        '[thermal_bakery_instagram]',
+        `Branches: ${data.branches}`,
+        `Estimated monthly rolls: ${data.monthlyUsage}`,
+        `Attribution: utm_source=${data.utm_source || 'instagram'} | utm_medium=${data.utm_medium || 'paid_social'} | utm_campaign=${data.utm_campaign || 'thermal_80x80_bakery'} | utm_content=${data.utm_content || 'unknown'}`,
+        visitorMessage,
+      ].filter(Boolean).join('\n');
       button.disabled = true;
       message.className = 'message';
       message.textContent = 'שומרים את הפרטים…';
