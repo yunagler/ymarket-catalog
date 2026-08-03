@@ -64,7 +64,7 @@
       "sku": "435",
       "offers": {
         "@type": "Offer",
-        "price": 18,
+        "price": 21.24,
         "priceCurrency": "ILS",
         "availability": "https://schema.org/InStock",
         "itemCondition": "https://schema.org/NewCondition",
@@ -122,7 +122,7 @@
       "mpn": "0787269067745",
       "offers": {
         "@type": "Offer",
-        "price": 18,
+        "price": 21.24,
         "priceCurrency": "ILS",
         "availability": "https://schema.org/InStock",
         "itemCondition": "https://schema.org/NewCondition",
@@ -180,7 +180,7 @@
       "mpn": "0787269067752",
       "offers": {
         "@type": "Offer",
-        "price": 18,
+        "price": 21.24,
         "priceCurrency": "ILS",
         "availability": "https://schema.org/InStock",
         "itemCondition": "https://schema.org/NewCondition",
@@ -238,7 +238,7 @@
       "mpn": "0787269067769",
       "offers": {
         "@type": "Offer",
-        "price": 18,
+        "price": 21.24,
         "priceCurrency": "ILS",
         "availability": "https://schema.org/InStock",
         "itemCondition": "https://schema.org/NewCondition",
@@ -292,7 +292,6 @@
 </head>
 <body>
   <!-- ═══ ANNOUNCEMENT ═══ -->
-<!-- ═══ ANNOUNCEMENT ═══ -->
   <div class="announcement">
     <a href="/register">
       <i class="fas fa-crown"></i>
@@ -403,6 +402,7 @@
         <div class="vgroup__price">
           <span id="variantPrice">‏18 ‏₪</span>
           <span class="vgroup__pnote">ליחידה · מידה <bdi dir="ltr" id="variantLabel">S</bdi></span>
+          <span class="vgroup__vat" id="variantPriceVat" style="display:block;color:var(--color-text-secondary,#6b7280);font-size:var(--fs-sm)">‏21.24 ‏₪ כולל מע״מ</span>
         </div>
         <div class="vgroup__hint"><i class="fas fa-hand-pointer"></i> בחרו מידות וכמויות</div>
       </div>
@@ -607,8 +607,7 @@
     </div>
   </section>
 
-  <!-- ═══ FOOTER ═══ -->
-                                                                                                                                                                                                                                                                                                                                                                                  <footer class="footer">
+  <footer class="footer">
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
@@ -630,10 +629,6 @@
             <a href="/category/food-packaging-delivery-solutions/">אריזות Take Away</a>
             <a href="/category/office-coffee-breakroom-supplies/">קפה, שתייה וכיבוד</a>
             <a href="/category/safety-ppe-equipment-for-business/">בטיחות ומיגון</a>
-            <a href="/category/heavy-duty-garbage-bags-wholesale/">שקיות אשפה</a>
-            <a href="/category/professional-cleaning-cloths-microfiber/">טקסטיל ומטליות</a>
-            <a href="/category/office-supplies-wholesale-business/">ציוד משרדי</a>
-            <a href="/category/maintenance-technical-equipment-wholesale/">ציוד טכני</a>
           </div>
         </div>
 
@@ -662,10 +657,6 @@
           <div class="footer__contact-item">
             <i class="fas fa-envelope"></i>
             <a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a>
-          </div>
-          <div class="footer__contact-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>גת רימון, מרכז הארץ</span>
           </div>
           <div class="footer__contact-item">
             <i class="fas fa-clock"></i>
@@ -738,6 +729,7 @@
     var mainImg = document.getElementById('mainProductImg');
     var mainSrc = document.getElementById('mainProductSource');
     var priceEl = document.getElementById('variantPrice');
+    var priceVatEl = document.getElementById('variantPriceVat');
     var labelEl = document.getElementById('variantLabel');
     // Hero preview (which variant the big image shows) — separate from cart state
     function selectVariant(idx) {
@@ -746,6 +738,9 @@
       document.querySelectorAll('.vrow').forEach(function(r){ r.classList.toggle('is-hero', parseInt(r.dataset.idx) === idx); });
       if (mainSrc) { mainSrc.srcset = v.img; }
       if (priceEl) { priceEl.textContent = fmt(v.price); }
+      // Gross figure must track the selected variant — Google compares the feed price
+      // against what this page actually renders.
+      if (priceVatEl) { priceVatEl.textContent = fmt(Math.round(v.price * 1.18 * 100) / 100) + ' כולל מע״מ'; }
       if (labelEl) { labelEl.textContent = v.label; }
       if (mainImg) { mainImg.src = v.imgJpg; mainImg.classList.remove('vfade'); void mainImg.offsetWidth; mainImg.classList.add('vfade'); }
       var vpWrap = document.querySelector('.vgroup__price'); if (vpWrap) { vpWrap.classList.remove('vpulse'); void vpWrap.offsetWidth; vpWrap.classList.add('vpulse'); }

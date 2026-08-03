@@ -43,6 +43,18 @@ function formatPrice(price) {
   }).format(price);
 }
 
+// Catalog prices are net (B2B convention). Google Shopping requires tax-inclusive
+// prices outside the US/Canada AND requires the feed price to match what this page
+// shows — so every price on the page is published alongside its gross figure, and
+// the Product schema carries the gross one. Keep this in step with VAT_RATE in
+// crm-app/scripts/generate-meta-feed.mjs.
+const VAT_RATE = 0.18;
+const withVat = net => Math.round(net * (1 + VAT_RATE) * 100) / 100;
+function vatLine(net) {
+  if (!net) return '';
+  return `<div class="product-pricing__vat" style="color:var(--color-text-secondary,#6b7280);font-size:var(--fs-sm)">${formatPrice(withVat(net))} כולל מע״מ</div>`;
+}
+
 // Footer category IDs and display names (top-level categories to show in footer)
 const FOOTER_CATEGORIES = [
   { id: 9, label: 'מוצרי נייר וניגוב' },
@@ -258,8 +270,8 @@ function generateProductPage(product, categories, allProducts, group) {
     ? ''
     : (price
         ? hasPromo
-          ? `<div class="product-pricing__badge">${promoLabel}</div><div class="product-pricing__price" style="color:#dc2626">${price}</div><div class="product-pricing__original" style="text-decoration:line-through;color:#9ca3af;font-size:var(--fs-base)">${formatPrice(product.originalPrice)}</div>${product.discountPercent ? `<div class="product-pricing__discount" style="background:#fef2f2;color:#dc2626;display:inline-block;padding:2px 8px;border-radius:6px;font-size:var(--fs-sm);font-weight:600">${Math.round(product.discountPercent)}%- הנחה</div>` : ''}${perUnit ? `<div class="product-pricing__unit">${perUnit}</div>` : ''}`
-          : `<div class="product-pricing__price">${price}</div>${perUnit ? `<div class="product-pricing__unit">${perUnit}</div>` : ''}`
+          ? `<div class="product-pricing__badge">${promoLabel}</div><div class="product-pricing__price" style="color:#dc2626">${price}</div><div class="product-pricing__original" style="text-decoration:line-through;color:#9ca3af;font-size:var(--fs-base)">${formatPrice(product.originalPrice)}</div>${vatLine(product.saleNis)}${product.discountPercent ? `<div class="product-pricing__discount" style="background:#fef2f2;color:#dc2626;display:inline-block;padding:2px 8px;border-radius:6px;font-size:var(--fs-sm);font-weight:600">${Math.round(product.discountPercent)}%- הנחה</div>` : ''}${perUnit ? `<div class="product-pricing__unit">${perUnit}</div>` : ''}`
+          : `<div class="product-pricing__price">${price}</div>${vatLine(product.saleNis)}${perUnit ? `<div class="product-pricing__unit">${perUnit}</div>` : ''}`
         : '<div class="product-pricing__price" style="font-size: var(--fs-lg);">צרו קשר למחיר</div>');
 
   // Actions block — ONE clean list per variant (thumbnail switches hero; no
@@ -270,6 +282,7 @@ function generateProductPage(product, categories, allProducts, group) {
         <div class="vgroup__price">
           <span id="variantPrice">${formatPrice(variantData[0].price)}</span>
           <span class="vgroup__pnote">${unitWord} · ${groupAxis} <bdi dir="ltr" id="variantLabel">${variantData[0].label}</bdi></span>
+          <span class="vgroup__vat" id="variantPriceVat" style="display:block;color:var(--color-text-secondary,#6b7280);font-size:var(--fs-sm)">${formatPrice(withVat(variantData[0].price))} כולל מע״מ</span>
         </div>
         <div class="vgroup__hint"><i class="fas fa-hand-pointer"></i> בחרו ${axisPlural} וכמויות</div>
       </div>
@@ -309,7 +322,7 @@ function generateProductPage(product, categories, allProducts, group) {
     ? `<div class="vgroup-actions">
          <div class="vgroup">
            <div class="vgroup__bar">
-             <div class="vgroup__price"><span>${price}</span><span class="vgroup__pnote">${product.unit ? 'ל' + product.unit : 'ליחידה'}${perUnit ? ' · ' + perUnit : ''}</span></div>
+             <div class="vgroup__price"><span>${price}</span><span class="vgroup__pnote">${product.unit ? 'ל' + product.unit : 'ליחידה'}${perUnit ? ' · ' + perUnit : ''}</span><span class="vgroup__vat" style="display:block;color:var(--color-text-secondary,#6b7280);font-size:var(--fs-sm)">${formatPrice(withVat(product.saleNis))} כולל מע״מ</span></div>
              <div class="vgroup__hint"><i class="fas fa-cubes"></i> בחרו כמות</div>
            </div>
            <div class="vrow">
@@ -412,7 +425,7 @@ function generateProductPage(product, categories, allProducts, group) {
     ...(product.saleNis ? {
       "offers": {
         "@type": "Offer",
-        "price": product.saleNis,
+        "price": withVat(product.saleNis),
         "priceCurrency": "ILS",
         "availability": "https://schema.org/InStock",
         "itemCondition": "https://schema.org/NewCondition",
@@ -455,7 +468,7 @@ function generateProductPage(product, categories, allProducts, group) {
       ...(v.price ? {
         "offers": {
           "@type": "Offer",
-          "price": v.price,
+          "price": withVat(v.price),
           "priceCurrency": "ILS",
           "availability": "https://schema.org/InStock",
           "itemCondition": "https://schema.org/NewCondition",
@@ -745,6 +758,7 @@ function generateProductPage(product, categories, allProducts, group) {
     var mainImg = document.getElementById('mainProductImg');
     var mainSrc = document.getElementById('mainProductSource');
     var priceEl = document.getElementById('variantPrice');
+    var priceVatEl = document.getElementById('variantPriceVat');
     var labelEl = document.getElementById('variantLabel');
     // Hero preview (which variant the big image shows) — separate from cart state
     function selectVariant(idx) {
@@ -753,6 +767,9 @@ function generateProductPage(product, categories, allProducts, group) {
       document.querySelectorAll('.vrow').forEach(function(r){ r.classList.toggle('is-hero', parseInt(r.dataset.idx) === idx); });
       if (mainSrc) { mainSrc.srcset = v.img; }
       if (priceEl) { priceEl.textContent = fmt(v.price); }
+      // Gross figure must track the selected variant — Google compares the feed price
+      // against what this page actually renders.
+      if (priceVatEl) { priceVatEl.textContent = fmt(Math.round(v.price * 1.18 * 100) / 100) + ' כולל מע״מ'; }
       if (labelEl) { labelEl.textContent = v.label; }
       if (mainImg) { mainImg.src = v.imgJpg; mainImg.classList.remove('vfade'); void mainImg.offsetWidth; mainImg.classList.add('vfade'); }
       var vpWrap = document.querySelector('.vgroup__price'); if (vpWrap) { vpWrap.classList.remove('vpulse'); void vpWrap.offsetWidth; vpWrap.classList.add('vpulse'); }
