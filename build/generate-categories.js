@@ -1034,8 +1034,11 @@ function main() {
     const oldUrl = '/category/' + oldSlugs.join('/') + '/';
     if (oldUrl === newUrl) continue;
     fs.mkdirSync(oldDir, { recursive: true });
+    // No robots noindex here — it contradicts the canonical (drop this page vs.
+    // fold it into that one), and Google asks not to combine the two. The sitemap
+    // generator already excludes these on the meta-refresh alone.
     fs.writeFileSync(path.join(oldDir, 'index.html'),
-      `<!DOCTYPE html><html lang="he"><head><meta charset="UTF-8"><meta http-equiv="refresh" content="0;url=${newUrl}"><link rel="canonical" href="https://ymarket.co.il${newUrl}"><meta name="robots" content="noindex, follow"><title>הפניה...</title></head><body><p>הדף עבר: <a href="${newUrl}">${category.name}</a></p></body></html>`,
+      `<!DOCTYPE html><html lang="he"><head><meta charset="UTF-8"><meta http-equiv="refresh" content="0;url=${newUrl}"><link rel="canonical" href="https://ymarket.co.il${newUrl}"><title>הפניה...</title></head><body><p>הדף עבר: <a href="${newUrl}">${category.name}</a></p></body></html>`,
       'utf-8');
     redirectCount++;
   }

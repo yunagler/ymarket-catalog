@@ -942,6 +942,14 @@ function cleanDir(dir) {
 // Static "301-equivalent" redirect page left at an old Hebrew product URL after it
 // migrates to an English seoSlug. Keeps the already-indexed Hebrew URL alive and
 // consolidates signals to the new URL via canonical + meta-refresh.
+//
+// Deliberately NO robots noindex: noindex and rel=canonical are contradictory
+// instructions (drop this page vs. fold it into that one), and Google asks not to
+// combine them. These stubs still carry real traffic — a 90-day sample of the top
+// 200 old Hebrew URLs found 131 stubs serving 2,142 impressions and 79 clicks — so
+// the signal is worth consolidating rather than telling Google to discard it.
+// The sitemap generator excludes them on the meta-refresh alone, so dropping
+// noindex does not put them back into the sitemap.
 function buildRedirectStub(targetPath, name) {
   const safeName = (name || '').replace(/"/g, '&quot;');
   return `<!DOCTYPE html>
@@ -951,7 +959,6 @@ function buildRedirectStub(targetPath, name) {
   <title>${safeName} | וואי מרקט</title>
   <link rel="canonical" href="${SITE_URL}${targetPath}">
   <meta http-equiv="refresh" content="0; url=${targetPath}">
-  <meta name="robots" content="noindex, follow">
   <script>location.replace('${targetPath}');</script>
 </head>
 <body>
@@ -1083,7 +1090,28 @@ function main() {
     }
   }
 
+  // Hand-maintained redirects for URLs the automatic stub above cannot cover.
+  // It only knows the product's CURRENT Hebrew slug, so renaming a product orphans
+  // whichever slug preceded the rename — the URL starts returning 404 while Google
+  // is still sending traffic to it. build/legacy-redirects.json records those.
+  let legacyCount = 0;
+  const legacyPath = path.join(__dirname, 'legacy-redirects.json');
+  if (fs.existsSync(legacyPath)) {
+    const { redirects = {} } = JSON.parse(fs.readFileSync(legacyPath, 'utf-8'));
+    for (const [from, to] of Object.entries(redirects)) {
+      const rel = from.replace(/^\/products\//, '').replace(/\/$/, '');
+      if (!rel || rel.includes('..')) continue;
+      const dir = path.join(PRODUCTS_DIR, rel);
+      // Never clobber a real page that happens to share the path
+      if (fs.existsSync(path.join(dir, 'index.html'))) continue;
+      fs.mkdirSync(dir, { recursive: true });
+      fs.writeFileSync(path.join(dir, 'index.html'), buildRedirectStub(to, ''), 'utf-8');
+      legacyCount++;
+    }
+  }
+
   console.log(`Generated ${count} product pages + ${groupCount} variant-group pages in ${PRODUCTS_DIR}`);
+  if (legacyCount) console.log(`Restored ${legacyCount} legacy redirects from legacy-redirects.json`);
 }
 
 main();
