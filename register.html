@@ -1120,7 +1120,7 @@
             <div class="fld-row">
               <div class="fld">
                 <label class="fld-label" for="reg-city">עיר *</label>
-                <input type="text" class="fld-input" id="reg-city" name="city" placeholder="עיר / ישוב" required>
+                <input type="text" class="fld-input" id="reg-city" name="city" placeholder="עיר / ישוב" required data-city-list autocomplete="address-level2">
               </div>
               <div class="fld">
                 <label class="fld-label" for="reg-type">סוג עסק *</label>
@@ -1361,5 +1361,6 @@
   <script src="/js/new-header-inject.js" defer></script>
   <a href="https://wa.me/972549922492?text=שלום, אשמח לקבל הצעת מחיר" class="whatsapp-float" target="_blank" rel="noopener" aria-label="שלחו הודעה בוואטסאפ"><i class="fab fa-whatsapp"></i></a>
 <script src="/js/search.js?v=2" defer></script>
+<script src="/js/city-autocomplete.js" defer></script>
 </body>
 </html>
