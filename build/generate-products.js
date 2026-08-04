@@ -345,11 +345,35 @@ function generateProductPage(product, categories, allProducts, group) {
          ${secondaryBtns(product.name)}
        </div>`;
 
-  // Related products from same category (exclude this product and same-group siblings)
-  const related = allProducts
-    .filter(p => p.categorySlug === product.categorySlug && p.id !== product.id
-      && !(isGroup && p.variantGroupId === group.id))
-    .slice(0, 4);
+  // Related products from the same category.
+  //
+  // The window ROTATES by the product's own position in the category instead of
+  // always taking the first few. Taking a fixed slice made every page in a category
+  // point at the same handful of items: the top 20% of pages were absorbing 68% of
+  // all internal links while 289 pages were left with one or two, and pages with few
+  // internal links are markedly less likely to get indexed. Rotating turns the
+  // category into a ring where each product both gives and receives RELATED_COUNT links.
+  //
+  // Variant members are skipped as targets — their individual pages are redirect stubs
+  // pointing at the group page, so a link there passes nothing.
+  const RELATED_COUNT = 4;
+  const related = (() => {
+    const eligible = p => p.id !== product.id && !p.variantGroupId;
+    let pool = allProducts.filter(p => eligible(p) && p.categorySlug === product.categorySlug);
+    if (pool.length < RELATED_COUNT) {
+      // Leaf category too thin (a handful of products sit alone in theirs) — widen to
+      // any shared category before giving up on the block.
+      const mine = new Set(product.categorySlugs || [product.categorySlug]);
+      pool = allProducts.filter(p => eligible(p)
+        && (p.categorySlugs || [p.categorySlug]).some(c => mine.has(c)));
+    }
+    if (!pool.length) return [];
+    pool.sort((a, b) => a.id - b.id);
+    const after = pool.findIndex(p => p.id > product.id);
+    const start = after === -1 ? 0 : after;
+    return Array.from({ length: Math.min(RELATED_COUNT, pool.length) },
+      (_, k) => pool[(start + k) % pool.length]);
+  })();
 
   const relatedHtml = related.map(p => {
     const rJpg = p.imageUrl || `/items/${p.id}.jpg`;
