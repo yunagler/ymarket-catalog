@@ -50,6 +50,17 @@ function formatPrice(price) {
 // crm-app/scripts/generate-meta-feed.mjs.
 const VAT_RATE = 0.18;
 const withVat = net => Math.round(net * (1 + VAT_RATE) * 100) / 100;
+
+// Swap a .jpg URL for its webp sibling, keeping any ?v= cache-buster intact.
+// products.json now versions image URLs (…/500.jpg?v=1772916497420), and a plain
+// `.replace(/\.jpg$/)` no longer matches — which silently left <source
+// type="image/webp"> pointing at the JPG on every page.
+function webpVariant(jpgUrl, suffix = '.webp') {
+  if (!jpgUrl) return jpgUrl;
+  const [file, query] = String(jpgUrl).split('?');
+  if (!/\.jpg$/i.test(file)) return jpgUrl;
+  return file.replace(/\.jpg$/i, suffix) + (query ? `?${query}` : '');
+}
 function vatLine(net) {
   if (!net) return '';
   return `<div class="product-pricing__vat" style="color:var(--color-text-secondary,#6b7280);font-size:var(--fs-sm)">${formatPrice(withVat(net))} כולל מע״מ</div>`;
@@ -132,7 +143,7 @@ function generateProductPage(product, categories, allProducts, group) {
       name: v.name,
       price: v.saleNis || 0,
       unit: v.unit || '',
-      img: vJpg.replace(/\.jpg$/i, '.webp'),
+      img: webpVariant(vJpg),
       imgJpg: vJpg,
       slug: v.slug,
       gtin: (v.seo && v.seo.gtin) || v.barcode || null,
@@ -161,8 +172,8 @@ function generateProductPage(product, categories, allProducts, group) {
   const parentChain = primaryCat ? getParentChain(primaryCat, categories) : [];
   // For a variant group with a composite "group photo", use it as the hero image.
   const imgSrcJpg = (isGroup && group.groupImageUrl) ? group.groupImageUrl : (product.imageUrl || `/items/${product.id}.jpg`);
-  const imgSrc = imgSrcJpg.replace(/\.jpg$/i, '.webp');
-  const imgSrcThumb = imgSrcJpg.replace(/\.jpg$/i, '-thumb.webp');
+  const imgSrc = webpVariant(imgSrcJpg);
+  const imgSrcThumb = webpVariant(imgSrcJpg, '-thumb.webp');
   // Open Graph / social preview image: prefer the lightweight items/og/<name>.jpg
   // (~18KB vs ~560KB) so WhatsApp/social previews load fast & reliably. Falls back
   // to the full image if no og version exists.
@@ -377,7 +388,7 @@ function generateProductPage(product, categories, allProducts, group) {
 
   const relatedHtml = related.map(p => {
     const rJpg = p.imageUrl || `/items/${p.id}.jpg`;
-    const rThumb = rJpg.replace(/\.jpg$/i, '-thumb.webp');
+    const rThumb = webpVariant(rJpg, '-thumb.webp');
     const rSlug = p.seoSlug || p.slug;  // English link when available, Hebrew name preserved as text
     return `
     <div class="product-card" style="min-width: 220px;">
