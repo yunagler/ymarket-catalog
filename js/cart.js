@@ -92,15 +92,47 @@
     updateSummary(cart);
   }
 
+  // Catalogue prices are net (B2B convention). The Merchant feed and the product
+  // schema publish the GROSS figure, and Google requires the feed price to match
+  // what checkout charges — so the cart has to show the gross total too, not just
+  // net line items labelled (wrongly) as VAT-inclusive.
+  const VAT_RATE = 0.18;
+
+  // Enforced server-side in /api/b2c/orders (B2C_MIN_ORDER). Surfacing it here
+  // stops a shopper filling the whole checkout form only to be refused at submit.
+  const MIN_ORDER_NET = 200;
+
   function updateSummary(cart) {
     const subtotal = cart.reduce((sum, item) => sum + ((item.price || 0) * item.quantity), 0);
     const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const vat = Math.round(subtotal * VAT_RATE * 100) / 100;
 
     const subtotalEl = document.getElementById('cartSubtotal');
+    const vatEl = document.getElementById('cartVat');
+    const totalEl = document.getElementById('cartTotal');
     const countEl = document.getElementById('cartItemCount');
 
     if (subtotalEl) subtotalEl.textContent = formatPrice(subtotal);
+    if (vatEl) vatEl.textContent = formatPrice(vat);
+    // Round the sum, not just the parts — 72 + 12.96 lands on 84.96000000000001
+    // in binary floating point and only the formatter was hiding it.
+    if (totalEl) totalEl.textContent = formatPrice(Math.round((subtotal + vat) * 100) / 100);
     if (countEl) countEl.textContent = itemCount;
+
+    const notice = document.getElementById('cartMinNotice');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    const short = MIN_ORDER_NET - subtotal;
+    if (notice) {
+      if (subtotal > 0 && short > 0) {
+        notice.textContent = 'מינימום הזמנה ' + formatPrice(MIN_ORDER_NET) + ' לפני מע"מ — חסרים ' + formatPrice(short);
+        notice.style.display = '';
+      } else {
+        notice.style.display = 'none';
+      }
+    }
+    // Leave the button usable — WhatsApp ordering has no minimum, and blocking it
+    // outright would strand a shopper who arrived from a search result.
+    if (checkoutBtn) checkoutBtn.setAttribute('aria-describedby', short > 0 ? 'cartMinNotice' : '');
   }
 
   function setupCartEvents() {

@@ -352,11 +352,20 @@
           <span>מוצרים בעגלה:</span>
           <span id="cartItemCount">0</span>
         </div>
-        <div class="cart-summary__row cart-summary__total">
-          <span>סה"כ:</span>
+        <div class="cart-summary__row">
+          <span>סכום לפני מע"מ:</span>
           <span id="cartSubtotal">0</span>
         </div>
-        <p style="font-size: var(--fs-sm); color: var(--color-text-light); margin-top: var(--space-sm);">* המחירים כוללים מע"מ. משלוח חינם בהזמנות מעל 2,000 ₪</p>
+        <div class="cart-summary__row">
+          <span>מע"מ 18%:</span>
+          <span id="cartVat">0</span>
+        </div>
+        <div class="cart-summary__row cart-summary__total">
+          <span>סה"כ לתשלום:</span>
+          <span id="cartTotal">0</span>
+        </div>
+        <div id="cartMinNotice" style="display: none; margin-top: var(--space-sm); padding: var(--space-sm) var(--space-md); border-radius: 8px; background: #FFF7E6; color: #8A6100; font-size: var(--fs-sm);"></div>
+        <p style="font-size: var(--fs-sm); color: var(--color-text-light); margin-top: var(--space-sm);">* מחירי המוצרים מוצגים לפני מע"מ. משלוח חינם בהזמנות מעל 2,000 ₪</p>
 
         <div class="cart-actions">
           <a href="checkout" class="btn btn--primary btn--lg" id="checkoutBtn"><i class="fas fa-check-circle"></i> המשיכו להזמנה</a>
