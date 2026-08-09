@@ -97,7 +97,34 @@
     }
 
     container.innerHTML = html;
-    if (totalEl) totalEl.textContent = formatPrice(total);
+
+    // Line items are net (B2B convention). The Merchant feed publishes the GROSS
+    // price and Google matches it against what checkout charges, so the total here
+    // has to be the gross one — and the old "prices include VAT" note was simply
+    // untrue. Rounding the sum, not only the parts, keeps 72 + 12.96 off 84.96000…1
+    var VAT_RATE = 0.18;
+    var MIN_ORDER_NET = 200;   // mirrors B2C_MIN_ORDER in /api/b2c/orders
+    var vat = Math.round(total * VAT_RATE * 100) / 100;
+    var gross = Math.round((total + vat) * 100) / 100;
+
+    var subtotalEl = document.getElementById('checkoutSubtotal');
+    var vatEl = document.getElementById('checkoutVat');
+    if (subtotalEl) subtotalEl.textContent = formatPrice(total);
+    if (vatEl) vatEl.textContent = formatPrice(vat);
+    if (totalEl) totalEl.textContent = formatPrice(gross);
+
+    // The server rejects under-minimum orders at submit; say so before the form is
+    // filled rather than after.
+    var notice = document.getElementById('checkoutMinNotice');
+    if (notice) {
+      var short = MIN_ORDER_NET - total;
+      if (total > 0 && short > 0) {
+        notice.textContent = 'מינימום הזמנה ' + formatPrice(MIN_ORDER_NET) + ' לפני מע"מ — חסרים ' + formatPrice(short);
+        notice.style.display = '';
+      } else {
+        notice.style.display = 'none';
+      }
+    }
     if (countEl) countEl.textContent = itemCount + ' פריטים';
   }
 

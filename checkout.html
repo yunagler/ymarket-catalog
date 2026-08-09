@@ -425,12 +425,21 @@
           <div class="checkout-summary__count" id="checkoutCount">0 פריטים</div>
           <div id="checkoutItems"></div>
           <hr class="checkout-summary__divider">
+          <div class="checkout-summary__row" style="display: flex; justify-content: space-between; font-size: var(--fs-sm); color: var(--color-text-secondary); padding: 2px 0;">
+            <span>סכום לפני מע"מ:</span>
+            <span id="checkoutSubtotal">₪0</span>
+          </div>
+          <div class="checkout-summary__row" style="display: flex; justify-content: space-between; font-size: var(--fs-sm); color: var(--color-text-secondary); padding: 2px 0;">
+            <span>מע"מ 18%:</span>
+            <span id="checkoutVat">₪0</span>
+          </div>
           <div class="checkout-summary__total">
-            <span>סה"כ:</span>
+            <span>סה"כ לתשלום:</span>
             <span id="checkoutTotal">₪0</span>
           </div>
+          <div id="checkoutMinNotice" style="display: none; margin-top: var(--space-sm); padding: var(--space-sm); border-radius: 8px; background: #FFF7E6; color: #8A6100; font-size: var(--fs-sm); text-align: center;"></div>
           <p style="font-size: var(--fs-xs); color: var(--color-text-light); margin-top: var(--space-sm); text-align: center;">
-            * המחירים כוללים מע"מ. התשלום בכרטיס אשראי, בעת המשלוח או בהעברה בנקאית — לפי בחירתכם.
+            * מחירי המוצרים מוצגים לפני מע"מ. התשלום בכרטיס אשראי, בעת המשלוח או בהעברה בנקאית — לפי בחירתכם.
           </p>
           <p style="font-size: var(--fs-xs); color: var(--color-text-light); margin-top: var(--space-sm); text-align: center; line-height: 1.7;">
             נגלר סחר והפצה (וואי מרקט) · ע.מ 315071829 · גת רימון, מרכז הארץ<br>
