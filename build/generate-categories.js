@@ -141,6 +141,17 @@ const CATEGORY_SEO = {
   }
 };
 
+/**
+ * Product image with a fallback that resolves. The previous fallback guessed
+ * `/items/<internal id>.jpg`, but image files are named by rivhitItemId — so every
+ * item without a photo rendered a broken thumbnail on its category page and published
+ * a 404 into the category's JSON-LD `image` field.
+ */
+const PLACEHOLDER_IMG = '/images/products/placeholder.jpg';
+function productImage(entity) {
+  return (entity && entity.imageUrl) || PLACEHOLDER_IMG;
+}
+
 function formatPrice(price) {
   return new Intl.NumberFormat('he-IL', {
     style: 'currency', currency: 'ILS',
@@ -382,7 +393,7 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
   breadcrumbItems.push({ "@type": "ListItem", "position": 3 + parentChain.length, "name": category.name });
 
   const productsHtml = categoryProducts.map((p, idx) => {
-    const imgSrcJpg = p.imageUrl || `/items/${p.id}.jpg`;
+    const imgSrcJpg = productImage(p);
     const imgSrcThumb = imgSrcJpg.replace(/\.jpg$/i, '-thumb.webp');
     const hasPromo = p.productStatus === 'on_sale' && p.originalPrice;
     // First 4 images: eager load with high priority for LCP; rest: lazy load
@@ -491,7 +502,7 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
             "@type": "Product",
             "name": p.name,
             "url": `${SITE_URL}/products/${p.slug}/`,
-            "image": p.imageUrl ? `${SITE_URL}${p.imageUrl}` : `${SITE_URL}/items/${p.id}.jpg`,
+            "image": `${SITE_URL}${productImage(p)}`,
           }
         };
         if (p.saleNis) {

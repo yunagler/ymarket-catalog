@@ -120,6 +120,23 @@ function getParentChain(cat, categories) {
   return chain;
 }
 
+/**
+ * Image path for a product, with a fallback that actually resolves.
+ *
+ * This used to fall back to `/items/<id>.jpg`, guessing a path from the CRM's internal
+ * item id — but image files are named by rivhitItemId, which is a different number. The
+ * guess therefore 404'd every time it was used, and it fed og:image and the JSON-LD
+ * `image` field too, so an item without a photo advertised a broken image to Google and
+ * to every social preview. 37 items were in that state.
+ *
+ * The placeholder is named .jpg so webpVariant() derives its .webp siblings the same way
+ * it does for real photos — no special case anywhere downstream.
+ */
+const PLACEHOLDER_IMG = '/images/products/placeholder.jpg';
+function productImage(entity) {
+  return (entity && entity.imageUrl) || PLACEHOLDER_IMG;
+}
+
 // Get full category URL path including all ancestors
 function getFullCategoryUrl(cat, categories) {
   const chain = getParentChain(cat, categories);
@@ -136,7 +153,7 @@ function generateProductPage(product, categories, allProducts, group) {
   const AXIS_WORDS = { 'צבע': 'צבע', 'מידה': 'מידה', 'נפח': 'נפח', 'גודל': 'גודל', 'סוג': 'סוג' };
   const axisWord = AXIS_WORDS[groupAxis] || 'וריאנט';
   const variantData = isGroup ? group.variants.map(v => {
-    const vJpg = v.imageUrl || `/items/${v.id}.jpg`;
+    const vJpg = productImage(v);
     return {
       id: v.id,
       label: v.variantLabel || v.name,
@@ -171,7 +188,7 @@ function generateProductPage(product, categories, allProducts, group) {
   const categoryUrl = primaryCat ? getFullCategoryUrl(primaryCat, categories) : getCategoryUrl(product, categories);
   const parentChain = primaryCat ? getParentChain(primaryCat, categories) : [];
   // For a variant group with a composite "group photo", use it as the hero image.
-  const imgSrcJpg = (isGroup && group.groupImageUrl) ? group.groupImageUrl : (product.imageUrl || `/items/${product.id}.jpg`);
+  const imgSrcJpg = (isGroup && group.groupImageUrl) ? group.groupImageUrl : productImage(product);
   const imgSrc = webpVariant(imgSrcJpg);
   const imgSrcThumb = webpVariant(imgSrcJpg, '-thumb.webp');
   // Open Graph / social preview image: prefer the lightweight items/og/<name>.jpg
@@ -387,7 +404,7 @@ function generateProductPage(product, categories, allProducts, group) {
   })();
 
   const relatedHtml = related.map(p => {
-    const rJpg = p.imageUrl || `/items/${p.id}.jpg`;
+    const rJpg = productImage(p);
     const rThumb = webpVariant(rJpg, '-thumb.webp');
     const rSlug = p.seoSlug || p.slug;  // English link when available, Hebrew name preserved as text
     return `
@@ -438,7 +455,7 @@ function generateProductPage(product, categories, allProducts, group) {
     "@type": "Product",
     "name": product.name,
     "description": schemaDescription,
-    "image": `${SITE_URL}${product.imageUrl || '/items/' + product.id + '.jpg'}`,
+    "image": `${SITE_URL}${productImage(product)}`,
     "url": productUrl,
     "brand": { "@type": "Brand", "name": "וואי מרקט" },
     "category": categoryName,
