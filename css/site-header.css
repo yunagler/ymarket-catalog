@@ -1,7 +1,7 @@
 /* site-header.css - Generated from index.html inline <style>.
    Source of truth: index.html
    Propagated by: build_header_css.py
-   Generated: 2026-04-12T23:19:44.279789
+   Generated: 2026-08-15T20:32:58.513658
    DO NOT EDIT DIRECTLY. Edit the inline <style> in index.html, then run build_header_css.py
 */
 /* =====================================================
@@ -1563,3 +1563,7 @@
         padding: 0 var(--sp-lg) var(--sp-md);
       }
     }
+    .lang-switch { display: inline-flex; gap: 4px; align-items: center; }
+    .lang-switch a { color: #fff; opacity: 0.7; text-decoration: none; font-size: 0.8rem; padding: 2px 7px; border-radius: 12px; }
+    .lang-switch a.active { background: #C9A227; color: #1B3A5C; opacity: 1; font-weight: bold; }
+    .lang-switch a:hover { opacity: 1; }

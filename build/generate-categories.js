@@ -692,9 +692,17 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
     "@type": "BreadcrumbList",
     "itemListElement": breadcrumbItems
   })}</script>
+  <!-- מדידה: קטגוריות היו העמודים היחידים באתר בלי תיוג כלל (86 עמודים).
+       בלי זה, תנועה מקמפיין לעמוד קטגוריה נעלמת — "0 אירועים" נראה כמו
+       "אין תנועה" במקום "לא נמדד". אותו קובץ שרץ על עמודי המוצר. -->
+  <script src="/js/analytics.js?v=20260314"></script>
 </head>
 <body>
   ${SITE_HEADER}
+  <!-- שכבת החיפוש שכפתור הזכוכית בהדר פותח. קיימת ב-752 עמודי מוצר,
+       48 עמודי בלוג ובשורש — ונשמטה מהמחולל הזה, כך שרגנרציה של הקטגוריות
+       הייתה משביתה את החיפוש ב-86 עמודים. -->
+  <div class="search-overlay"><div class="search-overlay__inner"><form action="/catalog" method="get"><input type="search" name="search" class="search-overlay__input" placeholder="חפשו מוצר..." aria-label="חיפוש מוצר" autocomplete="off"></form></div></div>
   <div class="mobile-overlay"></div>
 
   <div class="container">
@@ -1028,7 +1036,7 @@ function main() {
 
     fs.mkdirSync(oldDir, { recursive: true });
     fs.writeFileSync(path.join(oldDir, 'index.html'),
-      `<!DOCTYPE html><html lang="he"><head><meta charset="UTF-8"><meta http-equiv="refresh" content="0;url=${newUrl}"><link rel="canonical" href="https://ymarket.co.il${newUrl}"><title>הפניה...</title></head><body><p>הדף עבר: <a href="${newUrl}">${category.name}</a></p></body></html>`,
+      `<!DOCTYPE html><html lang="he"><head><meta charset="UTF-8"><script>location.replace('${newUrl}' + location.search + location.hash);</script><meta http-equiv="refresh" content="0;url=${newUrl}"><link rel="canonical" href="https://ymarket.co.il${newUrl}"><title>הפניה...</title></head><body><p>הדף עבר: <a href="${newUrl}">${category.name}</a></p></body></html>`,
       'utf-8');
     redirectCount++;
   }
@@ -1049,7 +1057,7 @@ function main() {
     // fold it into that one), and Google asks not to combine the two. The sitemap
     // generator already excludes these on the meta-refresh alone.
     fs.writeFileSync(path.join(oldDir, 'index.html'),
-      `<!DOCTYPE html><html lang="he"><head><meta charset="UTF-8"><meta http-equiv="refresh" content="0;url=${newUrl}"><link rel="canonical" href="https://ymarket.co.il${newUrl}"><title>הפניה...</title></head><body><p>הדף עבר: <a href="${newUrl}">${category.name}</a></p></body></html>`,
+      `<!DOCTYPE html><html lang="he"><head><meta charset="UTF-8"><script>location.replace('${newUrl}' + location.search + location.hash);</script><meta http-equiv="refresh" content="0;url=${newUrl}"><link rel="canonical" href="https://ymarket.co.il${newUrl}"><title>הפניה...</title></head><body><p>הדף עבר: <a href="${newUrl}">${category.name}</a></p></body></html>`,
       'utf-8');
     redirectCount++;
   }

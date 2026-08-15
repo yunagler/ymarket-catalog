@@ -989,8 +989,11 @@ function buildRedirectStub(targetPath, name) {
   <meta charset="UTF-8">
   <title>${safeName} | וואי מרקט</title>
   <link rel="canonical" href="${SITE_URL}${targetPath}">
+  <!-- ⚠️ חייב להעביר את ה-query string הלאה: 880 עמודי הפניה כאלה חיים באתר,
+       וקישור מקמפיין שנוחת על אחד מהם איבד עד היום את תיוג ה-UTM בשקט —
+       ההפניה הובילה לכתובת קבועה, והייחוס נמחק לפני שהאנליטיקס בכלל נטען. -->
+  <script>location.replace('${targetPath}' + location.search + location.hash);</script>
   <meta http-equiv="refresh" content="0; url=${targetPath}">
-  <script>location.replace('${targetPath}');</script>
 </head>
 <body>
   <p>הדף עבר לכתובת חדשה. <a href="${targetPath}">המשך לעמוד המוצר ←</a></p>
