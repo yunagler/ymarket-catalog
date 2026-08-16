@@ -113,6 +113,14 @@
     if (vatEl) vatEl.textContent = formatPrice(vat);
     if (totalEl) totalEl.textContent = formatPrice(gross);
 
+    // Funnel step "reached checkout" was never emitted, so the drop between
+    // add_to_cart and a placed order could not be located. Fires once per page
+    // render, only with a non-empty cart.
+    if (!window.__ymBeginCheckoutSent && itemCount > 0 && window.YMarketAnalyst) {
+      window.__ymBeginCheckoutSent = true;
+      try { window.YMarketAnalyst.beginCheckout(gross, itemCount); } catch (e) {}
+    }
+
     // The server rejects under-minimum orders at submit; say so before the form is
     // filled rather than after.
     var notice = document.getElementById('checkoutMinNotice');
@@ -380,6 +388,15 @@
     }));
     localStorage.removeItem('ym_cart');
     if (window.YMarket) window.YMarket.updateCartBadge();
+
+    // The WhatsApp fallback runs whenever the order API errors — and until now it
+    // recorded nothing at all, so a campaign click that ended in a real order this
+    // way was invisible on both sides. No numeric orderId exists here (the order
+    // lives only in the WhatsApp thread), so the method is carried in meta.
+    if (window.YMarketAnalyst) {
+      try { window.YMarketAnalyst.track('order_placed', { value: total, meta: { method: 'whatsapp_fallback' } }); } catch (e) {}
+    }
+
     window.location.href = 'order-success';
   }
 
