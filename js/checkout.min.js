@@ -11,6 +11,8 @@
   var CONFIG = window.YM_CHECKOUT_CONFIG || {};
   var MIN_ORDER = CONFIG.minOrderAmount || 200;
   var DELIVERY_ZONES = CONFIG.deliveryZones || [];
+  var VAT_RATE = 0.18;
+  var MIN_ORDER_NET = 200;   // mirrors B2C_MIN_ORDER in /api/b2c/orders
   var WHATSAPP_NUMBER = '972549922492';
 
   document.addEventListener('DOMContentLoaded', function() {
@@ -71,6 +73,22 @@
     }).format(price);
   }
 
+  // Net goods + net shipping, then VAT — the same arithmetic /api/b2c/orders uses for
+  // the card amount (gross = round(net × 1.18)), so the page and the charge agree.
+  function renderTotals() {
+    var itemsNet = window._ymItemsNet || 0;
+    var ship = window._ymShipping;
+    var net = Math.round((itemsNet + (ship ? ship.feeNis : 0)) * 100) / 100;
+    var gross = Math.round(net * (1 + VAT_RATE) * 100) / 100;
+    var vat = Math.round((gross - net) * 100) / 100;
+    var subtotalEl = document.getElementById('checkoutSubtotal');
+    var vatEl = document.getElementById('checkoutVat');
+    var totalEl = document.getElementById('checkoutTotal');
+    if (subtotalEl) subtotalEl.textContent = formatPrice(net);
+    if (vatEl) vatEl.textContent = formatPrice(vat);
+    if (totalEl) totalEl.textContent = formatPrice(gross);
+  }
+
   function renderSummary(cart) {
     var container = document.getElementById('checkoutItems');
     var totalEl = document.getElementById('checkoutTotal');
@@ -102,16 +120,11 @@
     // price and Google matches it against what checkout charges, so the total here
     // has to be the gross one — and the old "prices include VAT" note was simply
     // untrue. Rounding the sum, not only the parts, keeps 72 + 12.96 off 84.96000…1
-    var VAT_RATE = 0.18;
-    var MIN_ORDER_NET = 200;   // mirrors B2C_MIN_ORDER in /api/b2c/orders
-    var vat = Math.round(total * VAT_RATE * 100) / 100;
-    var gross = Math.round((total + vat) * 100) / 100;
-
-    var subtotalEl = document.getElementById('checkoutSubtotal');
-    var vatEl = document.getElementById('checkoutVat');
-    if (subtotalEl) subtotalEl.textContent = formatPrice(total);
-    if (vatEl) vatEl.textContent = formatPrice(vat);
-    if (totalEl) totalEl.textContent = formatPrice(gross);
+    var gross = Math.round(total * (1 + VAT_RATE) * 100) / 100;
+    window._ymItemsNet = total;
+    renderTotals();
+    // The free-shipping threshold depends on the basket, so a changed cart re-quotes.
+    if (window._ymRefreshShipping) window._ymRefreshShipping();
 
     // Funnel step "reached checkout" was never emitted, so the drop between
     // add_to_cart and a placed order could not be located. Fires once per page
@@ -194,7 +207,8 @@
           return { id: item.id, quantity: item.quantity, price: item.price || 0 };
         }),
         deliveryDate: deliveryDate || undefined,
-        notes: [notes, window._ymDeliveryZone ? 'אזור: ' + window._ymDeliveryZone : '', window._ymDeliveryCost ? 'משלוח: ' + window._ymDeliveryCost + '₪' : ''].filter(Boolean).join(' | ') || undefined
+        // Shipping is priced by the server; nothing about it is sent from here.
+        notes: notes || undefined
       };
 
       var headers = { 'Content-Type': 'application/json' };
@@ -401,70 +415,78 @@
   }
 
   function setupDeliveryZones() {
-    if (!DELIVERY_ZONES.length) return;
-
+    // Shipping is priced by the SERVER (/api/b2c/shipping-quote), from the same table
+    // /api/b2c/orders charges. This page used to price it from its own zone list, never
+    // sent the result, and showed "חינם" for any city it did not know — so orders were
+    // placed without shipping and the card hold came out short (orders 431/432,
+    // 14/09/2026). Nothing here decides a price any more; it only shows the server's.
     var cityInput = document.getElementById('co-city');
-    if (!cityInput) return;
+    var subtotalEl = document.getElementById('checkoutSubtotal');
+    if (!cityInput || !subtotalEl || !subtotalEl.parentNode) return;
 
-    // Create delivery cost display
-    var deliveryRow = document.createElement('div');
-    deliveryRow.id = 'deliveryCostRow';
-    deliveryRow.className = 'checkout-summary__item';
-    deliveryRow.style.display = 'none';
-    deliveryRow.style.borderTop = '1px solid #e5e7eb';
-    deliveryRow.style.paddingTop = '8px';
-    deliveryRow.style.marginTop = '8px';
-    deliveryRow.innerHTML = '<div class="checkout-summary__item-info"><div class="checkout-summary__item-name">משלוח</div>' +
-      '<div class="checkout-summary__item-qty" id="deliveryZoneName" style="font-size:0.75rem;color:#64748B"></div></div>' +
-      '<div class="checkout-summary__item-price" id="deliveryCost"></div>';
+    var row = document.createElement('div');
+    row.id = 'deliveryCostRow';
+    row.className = 'checkout-summary__row';
+    row.style.cssText = 'display:none;justify-content:space-between;font-size:var(--fs-sm);color:var(--color-text-secondary);padding:2px 0;';
+    row.innerHTML = '<span>משלוח <span id="deliveryZoneName" style="font-size:0.75rem;color:#64748B"></span>:</span><span id="deliveryCost"></span>';
+    var subRow = subtotalEl.parentNode;
+    subRow.parentNode.insertBefore(row, subRow);
 
-    var totalEl = document.getElementById('checkoutTotal');
-    if (totalEl && totalEl.parentNode) {
-      totalEl.parentNode.insertBefore(deliveryRow, totalEl);
+    var zoneEl = row.querySelector('#deliveryZoneName');
+    var costEl = row.querySelector('#deliveryCost');
+    var seq = 0;
+    var timer = null;
+
+    function show(q) {
+      var label;
+      if (!q.recognized) label = '(אזור לא מזוהה — נאשר מולך לפני האספקה)';
+      else if (q.waivedByThreshold) label = '(' + q.zoneName + ' · חינם מעל ' + formatPrice(q.freeAboveNet) + ')';
+      else label = '(' + q.zoneName + ')';
+      zoneEl.textContent = label;
+      costEl.textContent = q.feeNis > 0 ? formatPrice(q.feeNis) : 'חינם';
+      costEl.style.color = q.feeNis > 0 ? '' : '#22C55E';
     }
 
-    function updateDelivery() {
+    function refresh() {
       var city = (cityInput.value || '').trim();
-      if (!city) { deliveryRow.style.display = 'none'; return; }
-
-      var zone = null;
-      for (var i = 0; i < DELIVERY_ZONES.length; i++) {
-        var z = DELIVERY_ZONES[i];
-        for (var j = 0; j < z.cities.length; j++) {
-          if (city.indexOf(z.cities[j]) !== -1 || z.cities[j].indexOf(city) !== -1) {
-            zone = z; break;
-          }
-        }
-        if (zone) break;
+      var mine = ++seq;
+      if (!city) {
+        window._ymShipping = null;
+        row.style.display = 'none';
+        renderTotals();
+        return;
       }
-
-      var cart = getCart();
-      var subtotal = cart.reduce(function(s, item) { return s + ((item.price || 0) * item.quantity); }, 0);
-
-      var deliveryCost = 0;
-      var zoneName = '';
-      if (zone) {
-        deliveryCost = (zone.freeAbove && subtotal >= zone.freeAbove) ? 0 : zone.price;
-        zoneName = zone.name + (deliveryCost === 0 && zone.price > 0 ? ' (חינם!)' : '');
-      } else {
-        zoneName = 'אזור לא מזוהה — ייתכן חיוב נוסף';
-      }
-
-      document.getElementById('deliveryZoneName').textContent = zoneName;
-      document.getElementById('deliveryCost').textContent = deliveryCost > 0 ? formatPrice(deliveryCost) : 'חינם';
-      document.getElementById('deliveryCost').style.color = deliveryCost > 0 ? '' : '#22C55E';
-      deliveryRow.style.display = '';
-
-      // Update total with delivery
-      if (totalEl) totalEl.textContent = formatPrice(subtotal + deliveryCost);
-
-      // Store delivery cost for order submission
-      window._ymDeliveryCost = deliveryCost;
-      window._ymDeliveryZone = zone ? zone.name : '';
+      row.style.display = 'flex';
+      zoneEl.textContent = '';
+      costEl.style.color = '';
+      costEl.textContent = 'מחשב…';
+      var url = API_BASE + '/api/b2c/shipping-quote?city=' + encodeURIComponent(city) +
+        '&itemsNet=' + encodeURIComponent(window._ymItemsNet || 0);
+      fetch(url)
+        .then(function(r) { if (!r.ok) throw new Error('quote ' + r.status); return r.json(); })
+        .then(function(q) {
+          if (mine !== seq) return;
+          window._ymShipping = q;
+          show(q);
+          renderTotals();
+        })
+        .catch(function() {
+          if (mine !== seq) return;
+          // Never guess a price here. The server still prices the order correctly.
+          window._ymShipping = null;
+          zoneEl.textContent = '';
+          costEl.textContent = 'יחושב בסיום ההזמנה';
+          renderTotals();
+        });
     }
 
-    cityInput.addEventListener('input', updateDelivery);
-    cityInput.addEventListener('change', updateDelivery);
+    window._ymRefreshShipping = refresh;
+    cityInput.addEventListener('input', function() {
+      clearTimeout(timer);
+      timer = setTimeout(refresh, 350);
+    });
+    cityInput.addEventListener('change', refresh);
+    if ((cityInput.value || '').trim()) refresh();
   }
 
   function escapeHtml(str) {
