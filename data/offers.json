@@ -1,5 +1,5 @@
 {
-  "_comment": "Segment offers for paid ads (commerce-platform sprint 1, 24/09/2026). Built by build/generate-offers.js into offer/<slug>/index.html. items = products.json ids + quantities; prices are always read from products.json at build time, never written here. Contents approved by Yuval 24/09/2026 (co-purchase data to 12/08/2026). Only promises that operations keep today.",
+  "_comment": "Segment offers for paid ads (commerce-platform sprint 1, 24/09/2026). Built by build/generate-offers.js into offer/<slug>/index.html. items = products.json ids + quantities; prices are always read from products.json at build time, never written here. Contents approved by Yuval 24/09/2026 (co-purchase data to 12/08/2026). Each kit is sized above the ₪2,000 net free-shipping threshold (Yuval 24/09). Only promises that operations keep today.",
   "offers": [
     {
       "slug": "butcher-kit",
@@ -13,14 +13,42 @@
         "חמישה ספקים, חמש חשבוניות, חמישה תשלומים"
       ],
       "items": [
-        { "id": 708, "qty": 4 },
-        { "id": 19, "qty": 10 },
-        { "id": 803, "qty": 10 },
-        { "id": 899, "qty": 2 },
-        { "id": 889, "qty": 2 },
-        { "id": 648, "qty": 3 },
-        { "id": 846, "qty": 3 },
-        { "id": 728, "qty": 1 }
+        {
+          "id": 708,
+          "qty": 4
+        },
+        {
+          "id": 19,
+          "qty": 10
+        },
+        {
+          "id": 803,
+          "qty": 10
+        },
+        {
+          "id": 899,
+          "qty": 2
+        },
+        {
+          "id": 889,
+          "qty": 2
+        },
+        {
+          "id": 648,
+          "qty": 3
+        },
+        {
+          "id": 846,
+          "qty": 3
+        },
+        {
+          "id": 728,
+          "qty": 1
+        },
+        {
+          "id": 710,
+          "qty": 1
+        }
       ],
       "waText": "שלום, ראיתי את ערכת האטליז ואשמח להתאים אותה לעסק שלי"
     },
@@ -36,13 +64,38 @@
         "קניות קטנות מפוזרות שאי אפשר לעקוב אחריהן"
       ],
       "items": [
-        { "id": 62, "qty": 20 },
-        { "id": 63, "qty": 20 },
-        { "id": 487, "qty": 100 },
-        { "id": 143, "qty": 30 },
-        { "id": 174, "qty": 4 },
-        { "id": 326, "qty": 4 },
-        { "id": 250, "qty": 4 }
+        {
+          "id": 62,
+          "qty": 20
+        },
+        {
+          "id": 63,
+          "qty": 20
+        },
+        {
+          "id": 487,
+          "qty": 100
+        },
+        {
+          "id": 143,
+          "qty": 50
+        },
+        {
+          "id": 174,
+          "qty": 5
+        },
+        {
+          "id": 326,
+          "qty": 4
+        },
+        {
+          "id": 250,
+          "qty": 4
+        },
+        {
+          "id": 339,
+          "qty": 4
+        }
       ],
       "waText": "שלום, ראיתי את ערכת הניקיון לאתר ואשמח להתאים אותה לחברה שלי"
     },
@@ -58,14 +111,38 @@
         "הזמנות קטנות מכמה ספקים שכל אחד מגיע ביום אחר"
       ],
       "items": [
-        { "id": 18, "qty": 10 },
-        { "id": 19, "qty": 10 },
-        { "id": 648, "qty": 6 },
-        { "id": 739, "qty": 1 },
-        { "id": 547, "qty": 4 },
-        { "id": 143, "qty": 20 },
-        { "id": 82, "qty": 6 },
-        { "id": 841, "qty": 6 }
+        {
+          "id": 18,
+          "qty": 20
+        },
+        {
+          "id": 19,
+          "qty": 20
+        },
+        {
+          "id": 648,
+          "qty": 8
+        },
+        {
+          "id": 739,
+          "qty": 1
+        },
+        {
+          "id": 547,
+          "qty": 4
+        },
+        {
+          "id": 143,
+          "qty": 20
+        },
+        {
+          "id": 82,
+          "qty": 7
+        },
+        {
+          "id": 841,
+          "qty": 6
+        }
       ],
       "waText": "שלום, ראיתי את ערכת המסעדה ואשמח להתאים אותה למסעדה שלי"
     }
