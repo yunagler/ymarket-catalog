@@ -84,3 +84,4 @@ Sitemap: https://ymarket.co.il/sitemap.xml
 Sitemap: https://ymarket.co.il/sitemap-blog.xml
 Sitemap: https://ymarket.co.il/sitemap-products.xml
 Sitemap: https://ymarket.co.il/lp/sitemap-lp.xml
+Sitemap: https://ymarket.co.il/offer/sitemap-offer.xml
