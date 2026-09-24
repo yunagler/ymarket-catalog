@@ -133,6 +133,103 @@
     // Leave the button usable — WhatsApp ordering has no minimum, and blocking it
     // outright would strand a shopper who arrived from a search result.
     if (checkoutBtn) checkoutBtn.setAttribute('aria-describedby', short > 0 ? 'cartMinNotice' : '');
+
+    renderFreeShippingBar(subtotal);
+    loadUpsell(cart);
+  }
+
+  // ---- Free-shipping progress ----
+  // The threshold lives in crm-app/src/lib/shipping-policy.ts (FREE_SHIPPING_ABOVE_NET)
+  // and is read from the shipping-quote API; 2000 is only the offline fallback.
+  const API_BASE = 'https://app.ymarket.co.il';
+  let freeAboveNet = 2000;
+  fetch(API_BASE + '/api/b2c/shipping-quote?itemsNet=0')
+    .then(function(r) { return r.ok ? r.json() : null; })
+    .then(function(q) {
+      if (q && q.freeAboveNet > 0) { freeAboveNet = q.freeAboveNet; renderFreeShippingBar(currentSubtotal()); }
+    })
+    .catch(function() {});
+
+  function currentSubtotal() {
+    return getCart().reduce((sum, item) => sum + ((item.price || 0) * item.quantity), 0);
+  }
+
+  function renderFreeShippingBar(subtotal) {
+    const anchor = document.getElementById('cartMinNotice');
+    if (!anchor) return;
+    let bar = document.getElementById('cartFreeShip');
+    if (!bar) {
+      bar = document.createElement('div');
+      bar.id = 'cartFreeShip';
+      bar.style.cssText = 'margin-top:var(--space-sm);padding:var(--space-sm) var(--space-md);border-radius:8px;background:#EEF3F8;color:#1B3A5C;font-size:var(--fs-sm)';
+      bar.innerHTML = '<div id="cartFreeShipText"></div>' +
+        '<div style="height:6px;border-radius:3px;background:#D6E0EA;margin-top:6px;overflow:hidden">' +
+        '<div id="cartFreeShipFill" style="height:100%;width:0;background:#C9A227;transition:width .3s"></div></div>';
+      anchor.parentNode.insertBefore(bar, anchor.nextSibling);
+    }
+    if (subtotal <= 0) { bar.style.display = 'none'; return; }
+    bar.style.display = '';
+    const missing = freeAboveNet - subtotal;
+    document.getElementById('cartFreeShipText').textContent = missing > 0
+      ? 'עוד ' + formatPrice(Math.ceil(missing)) + ' לפני מע"מ — והמשלוח עלינו'
+      : 'המשלוח עלינו ✓';
+    document.getElementById('cartFreeShipFill').style.width = Math.min(100, subtotal / freeAboveNet * 100) + '%';
+  }
+
+  // ---- Upsell: "businesses like you also add" (/api/b2c/recommendations) ----
+  let upsellKey = '';
+  function loadUpsell(cart) {
+    const key = cart.map(i => i.id).sort((a, b) => a - b).join(',');
+    if (!key || key === upsellKey) return;
+    upsellKey = key;
+    fetch(API_BASE + '/api/b2c/recommendations?ids=' + key)
+      .then(function(r) { return r.ok ? r.json() : null; })
+      .then(function(d) { renderUpsell((d && d.recommendations) || []); })
+      .catch(function() {});
+  }
+
+  function renderUpsell(recs) {
+    const items = document.getElementById('cartItems');
+    if (!items) return;
+    let box = document.getElementById('cartUpsell');
+    const inCart = new Set(getCart().map(i => i.id));
+    recs = recs.filter(r => !inCart.has(r.id));
+    if (!recs.length) { if (box) box.style.display = 'none'; return; }
+    if (!box) {
+      box = document.createElement('div');
+      box.id = 'cartUpsell';
+      box.style.cssText = 'margin-top:var(--space-lg);padding:var(--space-md);border:1px solid var(--color-border);border-radius:12px';
+      items.parentNode.insertBefore(box, items.nextSibling);
+      box.addEventListener('click', onUpsellClick);
+    }
+    box.style.display = '';
+    box._recs = recs;
+    box.innerHTML = '<h3 style="margin:0 0 var(--space-sm);font-size:var(--fs-md);color:#1B3A5C">עסקים כמוך מוסיפים גם</h3>' +
+      recs.map(function(r) {
+        return '<div style="display:flex;align-items:center;gap:12px;padding:8px 0;border-top:1px solid var(--color-border)">' +
+          '<img src="' + escapeHtml(r.imageUrl) + '" alt="' + escapeHtml(r.name) + '" width="56" height="56" loading="lazy" style="object-fit:contain;border-radius:8px;background:#fff">' +
+          '<div style="flex:1;min-width:0"><div style="font-weight:600">' + escapeHtml(r.name) + '</div>' +
+          '<div style="color:var(--color-text-secondary);font-size:var(--fs-sm)">' + formatPrice(r.price) + (r.unit ? ' · ' + escapeHtml(r.unit) : '') + ' לפני מע"מ</div></div>' +
+          '<button type="button" class="btn btn--outline btn--sm" data-upsell="' + r.id + '">הוספה</button></div>';
+      }).join('');
+  }
+
+  function onUpsellClick(e) {
+    const btn = e.target.closest('[data-upsell]');
+    if (!btn) return;
+    const box = document.getElementById('cartUpsell');
+    const rec = (box._recs || []).find(r => r.id === parseInt(btn.dataset.upsell, 10));
+    if (!rec) return;
+    const cart = getCart();
+    const existing = cart.find(i => i.id === rec.id);
+    if (existing) existing.quantity += 1;
+    else cart.push({ id: rec.id, name: rec.name, price: rec.price, unit: rec.unit || '', imageUrl: rec.imageUrl, slug: rec.slug, quantity: 1 });
+    saveCart(cart);
+    const A = window.YMarketAnalytics;
+    try { A && A.trackAddToCart && A.trackAddToCart(Object.assign({ quantity: 1 }, rec)); } catch (err) {}
+    try { A && A.fbAddToCart && A.fbAddToCart(Object.assign({ quantity: 1 }, rec)); } catch (err) {}
+    renderCart();
+    window.YMarket?.showToast('נוסף לעגלה');
   }
 
   function setupCartEvents() {

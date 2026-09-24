@@ -211,6 +211,13 @@
         notes: notes || undefined
       };
 
+      // Acquisition source (utm/fbclid/_fbp) + the Meta event id shared by the
+      // browser Purchase and the server CAPI event, so Meta counts it once.
+      var tracking = null;
+      try { tracking = window.YMarketAnalyst && window.YMarketAnalyst.getAttribution(); } catch (e) {}
+      if (tracking) payload.tracking = tracking;
+      var purchaseItems = cart.map(function(item) { return { id: item.id, quantity: item.quantity }; });
+
       var headers = { 'Content-Type': 'application/json' };
       var csrfMeta = document.querySelector('meta[name="csrf-token"]');
       if (csrfMeta) headers['X-CSRF-Token'] = csrfMeta.content;
@@ -246,7 +253,13 @@
           orderId: result.data.orderId,
           totalAmount: result.data.totalAmount,
           customerName: name,
-          itemCount: cart.length
+          itemCount: cart.length,
+          // card orders are only a purchase once paid — the server reports those
+          purchase: paymentMethod === 'card' ? null : {
+            eventId: tracking && tracking.eventId,
+            value: result.data.totalAmount,
+            items: purchaseItems
+          }
         }));
         localStorage.removeItem('ym_cart');
         if (window.YMarket) window.YMarket.updateCartBadge();

@@ -441,6 +441,12 @@
             '<span>' + fmt.format(Number(data.totalAmount) || 0) + '</span>' +
           '</div>';
         el.style.display = 'block';
+        // Meta Purchase — only for orders the server created and that are not
+        // pending card payment (those are reported server-side once paid).
+        // Removing ym_last_order below keeps a reload from counting it twice.
+        if (data.purchase && window.YMarketAnalytics && window.YMarketAnalytics.fbPurchase) {
+          try { window.YMarketAnalytics.fbPurchase(data.purchase); } catch (e) {}
+        }
         sessionStorage.removeItem('ym_last_order');
       }
     })();

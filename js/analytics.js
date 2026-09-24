@@ -77,11 +77,13 @@
   }
 
   // ---- Facebook Pixel Commerce Events ----
+  // content_ids = String(Item.id) — the same g:id the Meta catalog feed uses
+  // (crm-app/scripts/generate-meta-feed.mjs), so retargeting matches products.
   if (window.YMarketAnalytics) {
     window.YMarketAnalytics.fbViewContent = function(product) {
       if (window.fbq) {
         fbq('track', 'ViewContent', {
-          content_ids: ['YM_' + product.id],
+          content_ids: [String(product.id)],
           content_name: product.name,
           content_type: 'product',
           value: product.price || 0,
@@ -93,12 +95,12 @@
     window.YMarketAnalytics.fbAddToCart = function(product) {
       if (window.fbq) {
         fbq('track', 'AddToCart', {
-          content_ids: ['YM_' + product.id],
+          content_ids: [String(product.id)],
           content_name: product.name,
           content_type: 'product',
           value: product.price || 0,
           currency: 'ILS',
-          contents: [{ id: 'YM_' + product.id, quantity: product.quantity || 1 }]
+          contents: [{ id: String(product.id), quantity: product.quantity || 1 }]
         });
       }
     };
@@ -118,11 +120,26 @@
     window.YMarketAnalytics.fbInitiateCheckout = function(items, total) {
       if (window.fbq) {
         fbq('track', 'InitiateCheckout', {
-          content_ids: items.map(function(i) { return 'YM_' + i.id; }),
+          content_ids: items.map(function(i) { return String(i.id); }),
           num_items: items.length,
           value: total || 0,
           currency: 'ILS'
         });
+      }
+    };
+
+    // Purchase — eventID must equal the meta_event_id sent with the order, so
+    // Meta dedupes this browser event against the server (CAPI) one.
+    window.YMarketAnalytics.fbPurchase = function(order) {
+      if (window.fbq && order) {
+        fbq('track', 'Purchase', {
+          content_ids: (order.items || []).map(function(i) { return String(i.id); }),
+          contents: (order.items || []).map(function(i) { return { id: String(i.id), quantity: i.quantity || 1 }; }),
+          content_type: 'product',
+          num_items: (order.items || []).length,
+          value: order.value || 0,
+          currency: 'ILS'
+        }, order.eventId ? { eventID: order.eventId } : undefined);
       }
     };
   }
@@ -208,7 +225,8 @@
       source: qp.get('utm_source'), medium: qp.get('utm_medium'),
       campaign: qp.get('utm_campaign'), term: qp.get('utm_term'), content: qp.get('utm_content')
     };
-    if (isNewSession) {
+    // a tagged link mid-session (e.g. an ad clicked again) is new acquisition too
+    if (isNewSession || utm.source) {
       set(ss, 'ym_landing', location.pathname);
       set(ss, 'ym_utm', JSON.stringify(utm));
       if (document.referrer && document.referrer.indexOf(location.host) === -1) {
@@ -216,6 +234,32 @@
       }
     } else {
       try { utm = JSON.parse(get(ss, 'ym_utm') || '{}'); } catch (e) {}
+    }
+
+    // Meta click id — kept 90 days (Meta's attribution window) in the _fbc
+    // format fb.1.<ms>.<fbclid>, and sent with the order for CAPI matching.
+    var fbclid = qp.get('fbclid');
+    if (fbclid) {
+      set(ls, 'ym_fbc', JSON.stringify({ v: 'fb.1.' + Date.now() + '.' + fbclid, id: fbclid, ts: Date.now() }));
+    }
+    function cookie(name) {
+      var m = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+      return m ? decodeURIComponent(m[1]) : null;
+    }
+    function attribution() {
+      var fbc = null, fbcId = null;
+      try {
+        var s = JSON.parse(get(ls, 'ym_fbc') || 'null');
+        if (s && Date.now() - s.ts < 90 * 864e5) { fbc = s.v; fbcId = s.id; }
+      } catch (e) {}
+      return {
+        utm_source: utm.source || null, utm_medium: utm.medium || null,
+        utm_campaign: utm.campaign || null, utm_content: utm.content || null,
+        utm_term: utm.term || null,
+        fbclid: fbcId, fbc: cookie('_fbc') || fbc, fbp: cookie('_fbp'),
+        landing: get(ss, 'ym_landing') || location.pathname,
+        eventId: uuid()
+      };
     }
     var landing = get(ss, 'ym_landing') || location.pathname;
     var device = (function () {
@@ -269,6 +313,7 @@
       beginCheckout: function (total, n) { track('begin_checkout', { value: total, quantity: n }); },
       leadSubmit: function (method) { track('lead_submit', { meta: { method: method } }); },
       orderPlaced: function (orderId, total) { track('order_placed', { orderId: orderId, value: total }); },
+      getAttribution: attribution,
       search: function (q) { track('search', { meta: { q: (q || '').slice(0, 120) } }); }
     };
 
