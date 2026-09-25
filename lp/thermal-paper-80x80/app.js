@@ -12,9 +12,9 @@ const SIZES={
   '80x40':{label:'80×40',itemId:679,perCase:100,small:{min:10,max:90,step:10,perRoll:7},bulkMin:200,bulkStep:100,
            cartons:c=>c===1?399:c*359,note:'לקופה ולמדפסת קבלות',kind:'למדפסת קופה',img:'../thermal-paper-80x80-bakery/hero.webp'},
   '57x40':{label:'57×40',itemId:678,perCase:100,small:{min:10,max:90,step:10,perRoll:6},bulkMin:200,bulkStep:100,
-           cartons:c=>c===1?379:c*339,note:'למסופון אשראי',kind:'למסופון אשראי',img:'../thermal-paper-80x80-bakery/operations.webp'},
+           cartons:c=>c===1?379:c*339,note:'למסופון אשראי',kind:'למסופון אשראי',img:'../../items/694.jpg',photo:true},
   '57x17':{label:'57×17',itemId:677,perCase:100,small:{min:10,max:90,step:10,perRoll:5},bulkMin:200,bulkStep:100,
-           cartons:c=>c===1?299:c*269,note:'למסופון אשראי קטן',kind:'למסופון אשראי',img:'../thermal-paper-80x80-bakery/operations.webp'}
+           cartons:c=>c===1?299:c*269,note:'למסופון אשראי קטן',kind:'למסופון אשראי',img:'../../items/693.jpg',photo:true}
 };
 // ?size=57x40 preselects a size — one ad per size can point at this same page.
 let sizeKey=SIZES[params.get('size')]?params.get('size'):'80x80';
@@ -71,9 +71,9 @@ const HERO={
   caption:$('hero-caption').textContent
 };
 
-// The hero follows the chosen size: a photo already published on the site (the catalog
-// images for 80×40 / 57×40 / 57×17 are still "התמונה בדרך אליך" placeholders, so the
-// bakery-page roll photos are used — no size printed on them, unlike product.png),
+// The hero follows the chosen size: 57×40 / 57×17 show their real product photo (the
+// catalog image, shown whole); 80×40 still borrows a bakery-page roll photo because its
+// catalog image is a "התמונה בדרך אליך" placeholder,
 // its own title and a per-roll price anchor from the same table that charges. The
 // 80×80-only claims (80 mm, 80 m) are hidden for the other sizes.
 function renderHero(){
@@ -84,8 +84,8 @@ function renderHero(){
   const img=$('hero-img');
   img.src=is8080?HERO.img:size.img;
   img.alt=is8080?HERO.alt:`גליל נייר טרמי ${dims} ${size.kind}`;
-  img.style.objectFit=is8080?'':'cover';
-  img.style.objectPosition=is8080?'':'center 72%';   // portrait photos: keep the rolls in frame
+  img.style.objectFit=is8080?'':(size.photo?'contain':'cover');
+  img.style.objectPosition=is8080||size.photo?'':'center 72%';   // portrait photos: keep the rolls in frame
   $('hero-caption').textContent=is8080?HERO.caption:`נייר טרמי ${dims} ${size.kind}`;
   $('hero-case-count').textContent=String(size.perCase);
   document.querySelectorAll('[data-only-8080]').forEach(el=>{el.hidden=!is8080;});
