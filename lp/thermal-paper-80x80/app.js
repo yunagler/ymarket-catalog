@@ -86,6 +86,7 @@ function renderHero(){
   img.style.objectFit=is8080?'':'cover';
   img.style.objectPosition=is8080?'':'center 72%';   // portrait photos: keep the rolls in frame
   $('hero-caption').textContent=is8080?HERO.caption:`נייר טרמי ${dims} ${size.kind}`;
+  $('hero-case-count').textContent=String(size.perCase);
   document.querySelectorAll('[data-only-8080]').forEach(el=>{el.hidden=!is8080;});
   const singleNet=size.small.perRoll/1.18;
   const bulkNet=size.cartons(size.bulkMin/size.perCase)/1.18/size.bulkMin;
