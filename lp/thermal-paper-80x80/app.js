@@ -65,7 +65,7 @@ function buildSingleOptions(){
 
 // Hero as authored for 80×80 — restored when 80×80 is picked again.
 const HERO={
-  title:$('hero-title').textContent,
+  title:$('hero-title').innerHTML,   // innerHTML: the authored title has a <br>
   img:$('hero-img').getAttribute('src'),
   alt:$('hero-img').alt,
   caption:$('hero-caption').textContent
@@ -79,7 +79,8 @@ const HERO={
 function renderHero(){
   const is8080=sizeKey==='80x80';
   const dims=size.label.replace('×','x');
-  $('hero-title').textContent=is8080?HERO.title:`נייר טרמי ${size.kind} ${dims} — פעם אחת בלבד.`;
+  if(is8080)$('hero-title').innerHTML=HERO.title;
+  else $('hero-title').textContent=`נייר ${dims} ${size.kind}. מלאי שלא נגמר באמצע יום.`;
   const img=$('hero-img');
   img.src=is8080?HERO.img:size.img;
   img.alt=is8080?HERO.alt:`גליל נייר טרמי ${dims} ${size.kind}`;
