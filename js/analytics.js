@@ -62,7 +62,10 @@
   }
 
   // ---- Facebook Pixel ----
-  if (FB_PIXEL_ID) {
+  // Not on local previews/screenshot runs — 127.0.0.1 page views were landing in the
+  // production pixel and skewing its funnel.
+  const IS_LOCAL = /^(localhost|127\.0\.0\.1|0\.0\.0\.0)$/.test(location.hostname);
+  if (FB_PIXEL_ID && !IS_LOCAL) {
     !function(f,b,e,v,n,t,s) {
       if(f.fbq)return;n=f.fbq=function(){n.callMethod?
       n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -92,7 +95,9 @@
       }
     };
 
+    var fbAtcAt = {};  // product id -> when fbAddToCart last fired for it
     window.YMarketAnalytics.fbAddToCart = function(product) {
+      fbAtcAt[String(product.id)] = Date.now();
       if (window.fbq) {
         fbq('track', 'AddToCart', {
           content_ids: [String(product.id)],
@@ -104,6 +109,20 @@
         });
       }
     };
+
+    // Product pages only call the GA add_to_cart, so Meta never saw those carts. Bridge
+    // it: after the click handler finishes, send the Meta event unless the caller
+    // already sent it (catalog/carousels/cart call both, in either order).
+    var gaAddToCart = window.YMarketAnalytics.trackAddToCart;
+    if (gaAddToCart) {
+      window.YMarketAnalytics.trackAddToCart = function(product) {
+        gaAddToCart(product);
+        setTimeout(function() {
+          if (!product || product.id == null) return;
+          if (Date.now() - (fbAtcAt[String(product.id)] || 0) > 1000) window.YMarketAnalytics.fbAddToCart(product);
+        }, 0);
+      };
+    }
 
     window.YMarketAnalytics.fbSearch = function(searchTerm) {
       if (window.fbq) {

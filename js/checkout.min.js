@@ -22,6 +22,7 @@
       return;
     }
     renderSummary(cart);
+    trackInitiateCheckout(cart);
     setupForm(cart);
     setupDateMin();
     setupDeliveryZones();
@@ -56,6 +57,18 @@
 
     for (var i = 0; i < radios.length; i++) radios[i].addEventListener('change', sync);
     sync();
+  }
+
+  /* Meta InitiateCheckout — the step between AddToCart and Purchase. Without it the
+     pixel funnel read 81 carts → 4 checkouts, and those 4 were all the thermal landing page. */
+  function trackInitiateCheckout(cart) {
+    try {
+      var A = window.YMarketAnalytics;
+      if (!A || !A.fbInitiateCheckout) return;
+      var total = 0;
+      for (var i = 0; i < cart.length; i++) total += (Number(cart[i].price) || 0) * (Number(cart[i].quantity) || 1);
+      A.fbInitiateCheckout(cart, Math.round(total * 100) / 100);
+    } catch (e) {}
   }
 
   function getCart() {
