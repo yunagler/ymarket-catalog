@@ -71,6 +71,8 @@ a{color:var(--blue)}
 .plans button.active{border-color:var(--navy);background:var(--navy);color:#fff;font-weight:800}
 .plans small{display:block;color:var(--green);font-size:10px;font-weight:800;margin-top:2px}
 .plans .active small{color:#ffd37a}
+.plans.sizes{grid-template-columns:repeat(4,1fr)}
+.plans.sizes small{color:var(--navy-soft);font-weight:600}
 .single-options{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px}
 .single-options button{border:1.5px solid #eceff3;background:#fff;color:var(--navy-soft);font-size:14px;font-weight:700;width:46px;height:42px;border-radius:12px;cursor:pointer}
 .single-options button.active{border-color:var(--navy);background:var(--navy);color:#fff;font-weight:800}

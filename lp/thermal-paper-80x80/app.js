@@ -1,21 +1,39 @@
-const plans={
-  small:{qty:20,step:5,min:5,max:45},
-  carton:{qty:50,step:50,min:50,max:50},
-  bulk:{qty:100,step:100,min:100,max:5000}
-};
-const singleQuantities=[5,10,15,20,25,30,35,40,45];
-let plan='bulk';
-let quantity=100;
-
 const $=id=>document.getElementById(id);
 const trackingKeys=['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','ad_id','creative_id'];
 const params=new URLSearchParams(location.search);
 const tracking=Object.fromEntries(trackingKeys.map(key=>[key,params.get(key)||'']));
 
+// Prices per size approved by Yuval 25/09/2026. MUST match the server table that
+// actually charges: crm-app/src/lib/campaigns/thermal-pricing.ts (gross, VAT incl.).
+const SMALL_SHIPPING=59;
+const SIZES={
+  '80x80':{label:'80×80',itemId:304,perCase:50,small:{min:5,max:45,step:5,perRoll:10},bulkMin:100,bulkStep:100,
+           cartons:c=>Math.floor(c/2)*450+(c%2?250:0),note:'80 מטר אמיתי בגליל'},
+  '80x40':{label:'80×40',itemId:679,perCase:100,small:{min:10,max:90,step:10,perRoll:7},bulkMin:200,bulkStep:100,
+           cartons:c=>c===1?399:c*359,note:'לקופה ולמדפסת קבלות'},
+  '57x40':{label:'57×40',itemId:678,perCase:100,small:{min:10,max:90,step:10,perRoll:6},bulkMin:200,bulkStep:100,
+           cartons:c=>c===1?379:c*339,note:'למסופון אשראי'},
+  '57x17':{label:'57×17',itemId:677,perCase:100,small:{min:10,max:90,step:10,perRoll:5},bulkMin:200,bulkStep:100,
+           cartons:c=>c===1?299:c*269,note:'למסופון אשראי קטן'}
+};
+// ?size=57x40 preselects a size — one ad per size can point at this same page.
+let sizeKey=SIZES[params.get('size')]?params.get('size'):'80x80';
+let size=SIZES[sizeKey];
+let plans;
+let plan='bulk';
+let quantity;
+
+function plansFor(s){
+  return{
+    small:{qty:s.small.min*4,step:s.small.step,min:s.small.min,max:s.small.max},
+    carton:{qty:s.perCase,step:s.perCase,min:s.perCase,max:s.perCase},
+    bulk:{qty:s.bulkMin,step:s.bulkStep,min:s.bulkMin,max:5000}
+  };
+}
+
 function pricingFor(qty){
-  if(qty<50)return{goods:qty*10,shipping:59};
-  if(qty===50)return{goods:250,shipping:0};
-  return{goods:(qty/100)*450,shipping:0};
+  if(qty<size.perCase)return{goods:qty*size.small.perRoll,shipping:SMALL_SHIPPING};
+  return{goods:size.cartons(qty/size.perCase),shipping:0};
 }
 
 function priceFor(qty){
@@ -29,7 +47,8 @@ function money(value){
 
 function buildSingleOptions(){
   const container=$('single-options');
-  singleQuantities.forEach(value=>{
+  container.innerHTML='';
+  for(let value=size.small.min;value<=size.small.max;value+=size.small.step){
     const button=document.createElement('button');
     button.type='button';
     button.textContent=String(value);
@@ -41,13 +60,35 @@ function buildSingleOptions(){
       render();
     });
     container.appendChild(button);
+  }
+}
+
+function selectSize(key){
+  sizeKey=key;
+  size=SIZES[key];
+  plans=plansFor(size);
+  quantity=plans[plan].qty;
+  buildSingleOptions();
+  $('plan-small-range').textContent=`${size.small.min}–${size.small.max}`;
+  $('plan-carton-size').textContent=String(size.perCase);
+  $('plan-bulk-min').textContent=String(size.bulkMin);
+  $('carton-title').textContent=`קרטון סגור · ${size.perCase} גלילים`;
+  $('buy-offer').textContent=`${size.label} · ${size.note}`;
+  document.querySelectorAll('[data-size]').forEach(button=>{
+    const selected=button.dataset.size===key;
+    button.classList.toggle('active',selected);
+    button.setAttribute('aria-checked',String(selected));
   });
+  if(typeof fbq==='function'){
+    fbq('track','ViewContent',{content_ids:[String(size.itemId)],content_type:'product',content_name:`נייר טרמי ${size.label}`,currency:'ILS'});
+  }
+  render();
 }
 
 function render(){
   const price=pricingFor(quantity);
   const total=price.goods+price.shipping;
-  const regular=quantity*10+59;
+  const regular=quantity*size.small.perRoll+SMALL_SHIPPING;
   const saving=Math.max(0,regular-total);
   const unit=price.goods/1.18/quantity;
   const hasSaving=saving>0;
@@ -71,7 +112,7 @@ function render(){
   $('sticky-saving').hidden=!hasSaving;
 
   $('quantity').textContent=`${quantity.toLocaleString('he-IL')} גלילים`;
-  $('cartons').textContent=`${quantity/50} קרטונים · משלוח כלול`;
+  $('cartons').textContent=`${quantity/size.perCase} קרטונים · משלוח כלול`;
   $('total').textContent=money(total);
   $('unit-price').textContent=`${unit.toFixed(2)} ₪`;
   $('shipping').textContent=price.shipping?`משלוח ${money(price.shipping)} להזמנה · כולל מע״מ`:'משלוח כלול במחיר · כולל מע״מ';
@@ -79,13 +120,15 @@ function render(){
   $('saving').textContent=money(saving);
   $('form-quantity').value=String(quantity);
   $('sticky-total').textContent=money(total);
-  $('sticky-desc').textContent=`${quantity} גלילים · ${price.shipping?`משלוח ${money(price.shipping)}`:'משלוח כלול'}`;
+  $('sticky-desc').textContent=`${size.label} · ${quantity} גלילים · ${price.shipping?`משלוח ${money(price.shipping)}`:'משלוח כלול'}`;
   $('sticky-saving').textContent=`חיסכון ${money(saving)}`;
-  $('final-qty').textContent=`${quantity} גלילים · ${money(total)} כולל מע״מ ומשלוח`;
+  $('final-qty').textContent=`נייר ${size.label} · ${quantity} גלילים · ${money(total)} כולל מע״מ ומשלוח`;
   $('final-copy').textContent=hasSaving
     ?`${unit.toFixed(2)} ₪ לגליל לפני מע״מ — חיסכון של ${money(saving)} לעומת קנייה בגלילים בודדים.`
     :`${unit.toFixed(2)} ₪ לגליל לפני מע״מ · משלוח ${money(price.shipping)} להזמנה.`;
 }
+
+document.querySelectorAll('[data-size]').forEach(button=>button.addEventListener('click',()=>selectSize(button.dataset.size)));
 
 document.querySelectorAll('[data-plan]').forEach(button=>button.addEventListener('click',()=>{
   plan=button.dataset.plan;
@@ -105,15 +148,10 @@ $('minus').addEventListener('click',()=>{
   render();
 });
 
-// ViewContent — the page IS the product page for item 304 (catalog g:id "304").
-if(typeof fbq==='function'){
-  fbq('track','ViewContent',{content_ids:['304'],content_type:'product',content_name:'נייר טרמי 80x80',currency:'ILS'});
-}
-
 document.querySelectorAll('[data-open-order]').forEach(button=>button.addEventListener('click',()=>{
   if(typeof fbq==='function'){
     fbq('track','InitiateCheckout',{
-      content_ids:['304'],
+      content_ids:[String(size.itemId)],
       content_type:'product',
       num_items:quantity,
       value:priceFor(quantity),
@@ -174,6 +212,7 @@ $('order-form').addEventListener('submit',async event=>{
         campaign:'thermal-paper-80x80',
         payment_provider:'PayMe',
         page_version:'claude-design-import-20260801-2',
+        size:sizeKey,
         quantity
       }),
       keepalive:true
@@ -185,13 +224,15 @@ $('order-form').addEventListener('submit',async event=>{
       orderId:result.orderId,
       leadId:result.leadId,
       quantity,
+      size:sizeKey,
+      itemId:size.itemId,
       amount:result.totalAmount
     }));
     // Not 'Lead': this fires BEFORE payment, and a standard Lead here would teach
     // Meta to find form-fillers instead of buyers. Purchase fires after payment.
     if(typeof fbq==='function'){
       fbq('trackCustom','ThermalOrderStarted',{
-        content_ids:['304'],
+        content_ids:[String(size.itemId)],
         value:result.totalAmount,
         currency:'ILS'
       });
@@ -203,7 +244,7 @@ $('order-form').addEventListener('submit',async event=>{
     throw new Error('pay_url_missing');
   }catch(error){
     const message=[
-      'הזמנת נייר טרמי 80x80',
+      `הזמנת נייר טרמי ${size.label}`,
       `שם: ${data.name}`,
       data.businessName?`עסק: ${data.businessName}`:'',
       `טלפון: ${data.phone}`,
@@ -218,5 +259,4 @@ $('order-form').addEventListener('submit',async event=>{
   }
 });
 
-buildSingleOptions();
-render();
+selectSize(sizeKey);

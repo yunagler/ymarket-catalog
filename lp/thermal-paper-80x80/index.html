@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&family=Rubik:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style-v2.css?v=20260801-2">
+  <link rel="stylesheet" href="style-v2.css?v=20260925-1">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
     {"@type":"Product","name":"נייר טרמי למדפסת קופה 80x80","sku":"thermal-paper-80x80","description":"גליל נייר טרמי 80x80 עם 80 מטר אמיתי למדפסות קופה, קופות רושמות, POS ומדפסות קבלות.","image":"https://ymarket.co.il/lp/thermal-paper-80x80/product.png","offers":[
@@ -137,19 +137,26 @@
         </div>
 
         <aside class="buy-card" id="checkout" aria-labelledby="buy-title">
-          <header><h2 id="buy-title">רכישה מהירה</h2><span>מבצע: 100 גלילים ב־450 ₪</span></header>
+          <header><h2 id="buy-title">רכישה מהירה</h2><span id="buy-offer">מבצע: 100 גלילים ב־450 ₪</span></header>
           <div class="buy-content">
+            <p class="field-label">גודל הגליל</p>
+            <div class="plans sizes" role="radiogroup" aria-label="גודל גליל">
+              <button type="button" data-size="80x80" role="radio" aria-checked="true" class="active"><bdi dir="ltr">80×80</bdi><small>קופה</small></button>
+              <button type="button" data-size="80x40" role="radio" aria-checked="false"><bdi dir="ltr">80×40</bdi><small>קופה</small></button>
+              <button type="button" data-size="57x40" role="radio" aria-checked="false"><bdi dir="ltr">57×40</bdi><small>מסופון</small></button>
+              <button type="button" data-size="57x17" role="radio" aria-checked="false"><bdi dir="ltr">57×17</bdi><small>מסופון</small></button>
+            </div>
             <p class="field-label">בחר כמות</p>
             <div class="plans" role="radiogroup" aria-label="כמות להזמנה">
-              <button type="button" data-plan="small" role="radio" aria-checked="false"><bdi dir="ltr">5–45</bdi> גלילים</button>
-              <button type="button" data-plan="carton" role="radio" aria-checked="false">קרטון · 50</button>
-              <button type="button" data-plan="bulk" role="radio" aria-checked="true" class="active">100 ומעלה <small>הכי משתלם</small></button>
+              <button type="button" data-plan="small" role="radio" aria-checked="false"><bdi dir="ltr" id="plan-small-range">5–45</bdi> גלילים</button>
+              <button type="button" data-plan="carton" role="radio" aria-checked="false">קרטון · <span id="plan-carton-size">50</span></button>
+              <button type="button" data-plan="bulk" role="radio" aria-checked="true" class="active"><span id="plan-bulk-min">100</span> ומעלה <small>הכי משתלם</small></button>
             </div>
 
             <div id="single-options" class="single-options" aria-label="בחירת מספר גלילים" hidden></div>
             <div id="carton-summary" class="carton-summary" hidden>
               <span class="box-icon" aria-hidden="true">□</span>
-              <span><b>קרטון סגור · 50 גלילים</b><small>משלוח כלול במחיר</small></span>
+              <span><b id="carton-title">קרטון סגור · 50 גלילים</b><small>משלוח כלול במחיר</small></span>
             </div>
             <div id="bulk-stepper" class="stepper">
               <button type="button" id="minus" aria-label="הפחת 100 גלילים">−</button>
@@ -220,7 +227,7 @@
       <details><summary>מתאים למסעדות, בתי קפה ומאפיות?</summary><p>כן, בתנאי שמדפסת הקבלות תומכת ברוחב 80 מ״מ.</p></details>
       <details><summary>מה אורך הגליל?</summary><p>80 מטר בגליל.</p></details>
       <details><summary>אפשר להזמין משטח לרשת?</summary><p>כן. משטח יורו כולל 36 קרטונים ו־1,800 גלילים. את המחיר המסחרי והאספקה מתאמים לפי הכמות ומספר הסניפים.</p></details>
-      <details><summary>יש גדלים חלופיים?</summary><p>בדף זה נמכר 80x80. לגדלים אחרים אפשר לפנות אלינו לפני ההזמנה.</p></details>
+      <details><summary>יש גדלים חלופיים?</summary><p>כן. בכרטיס הרכישה אפשר לבחור 80x80 או 80x40 למדפסות קופה, ו־57x40 או 57x17 למסופוני אשראי. לגדלים אחרים אפשר לפנות אלינו לפני ההזמנה.</p></details>
     </section>
 
     <section class="final-cta"><div class="wrap"><div><b id="final-qty">100 גלילים · 450 ₪ כולל מע״מ ומשלוח</b><p id="final-copy">3.81 ₪ לגליל לפני מע״מ — חיסכון של 609 ₪ לעומת קנייה בגלילים בודדים.</p></div><button class="cta primary" type="button" data-open-order>להזמנה מיידית</button></div></section>
@@ -325,6 +332,6 @@
     <span id="sticky-saving">חיסכון ₪609</span>
     <button class="cta primary" type="button" data-open-order>להזמנה מיידית</button>
   </div>
-  <script src="app.js?v=20260925-1"></script>
+  <script src="app.js?v=20260925-2"></script>
 </body>
 </html>
