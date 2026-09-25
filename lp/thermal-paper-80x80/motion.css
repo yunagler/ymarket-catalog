@@ -1,0 +1,53 @@
+/* One composed entrance; later motion is tied to scrolling or a customer action. */
+@media (prefers-reduced-motion:no-preference){
+  @keyframes thermal-enter{
+    from{opacity:0;transform:translateY(16px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+  @keyframes thermal-photo{
+    from{opacity:0;transform:translateY(20px) scale(.985)}
+    to{opacity:1;transform:translateY(0) scale(1)}
+  }
+  @keyframes thermal-dialog{
+    from{opacity:0;transform:translateY(12px) scale(.985)}
+    to{opacity:1;transform:translateY(0) scale(1)}
+  }
+  .hero-eyebrow{animation:thermal-enter .5s cubic-bezier(.2,.75,.25,1) .06s backwards}
+  .hero-copy h1{animation:thermal-enter .58s cubic-bezier(.2,.75,.25,1) .13s backwards}
+  .hero-copy .lead{animation:thermal-enter .58s cubic-bezier(.2,.75,.25,1) .2s backwards}
+  .hero-copy .chips,.hero-actions,.price-anchor{animation:thermal-enter .54s cubic-bezier(.2,.75,.25,1) .3s backwards}
+  .hero-visual{animation:thermal-photo .72s cubic-bezier(.2,.75,.25,1) .32s backwards}
+  .buy-card{animation:thermal-enter .67s cubic-bezier(.2,.75,.25,1) .4s backwards}
+
+  .checkout-scene img,.audience-photo img,.pallet img{transition:transform .55s cubic-bezier(.2,.75,.25,1)}
+  .cta{transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+  .cta:active{transform:translateY(1px) scale(.985);box-shadow:0 3px 10px #0c2a4a1c}
+  .plans button,.single-options button,.stepper button{transition:transform .18s ease,border-color .18s ease,background .18s ease,box-shadow .18s ease}
+  .plans button:active,.single-options button:active,.stepper button:active{transform:scale(.96)}
+  .plans button.active,.single-options button.active{box-shadow:0 4px 13px #0c2a4a1d}
+  .faq details{transition:background-color .2s ease}
+  .faq details[open]{background:#f6f9fb}
+  dialog[open] #order-form{animation:thermal-dialog .26s cubic-bezier(.2,.75,.25,1) both}
+
+  /* These elements stay visible if JavaScript or IntersectionObserver is unavailable. */
+  .motion-ready .audience-photo,.motion-ready .pallet{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .7s cubic-bezier(.2,.75,.25,1)}
+  .motion-ready .audience-photo.is-visible,.motion-ready .pallet.is-visible{opacity:1;transform:translateY(0)}
+  .steps{position:relative}
+  .steps article{position:relative;z-index:1}
+  .steps::before{content:"";position:absolute;z-index:0;right:3%;left:3%;top:20px;height:2px;background:repeating-linear-gradient(90deg,#9fc0d7 0 12px,transparent 12px 19px);transform:scaleX(0);transform-origin:right center;transition:transform 1.15s cubic-bezier(.2,.75,.25,1)}
+  .steps.is-visible::before{transform:scaleX(1)}
+  .steps article i{transition:color .25s ease,transform .25s ease}
+  .steps article:hover i{color:#125281;transform:translateY(-2px)}
+}
+@media (hover:hover) and (prefers-reduced-motion:no-preference){
+  .checkout-scene:hover img,.audience-photo:hover img,.pallet:hover img{transform:scale(1.025)}
+}
+@media (max-width:700px) and (prefers-reduced-motion:no-preference){
+  .steps::before{right:15px;left:auto;top:20px;bottom:20px;width:2px;height:auto;background:repeating-linear-gradient(180deg,#9fc0d7 0 12px,transparent 12px 19px);transform:scaleY(0);transform-origin:center top}
+  .steps.is-visible::before{transform:scaleY(1)}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero-eyebrow,.hero-copy h1,.hero-copy .lead,.hero-copy .chips,.hero-actions,.price-anchor,.hero-visual,.buy-card,dialog[open] #order-form{animation:none!important}
+  .audience-photo,.pallet,.checkout-scene img,.audience-photo img,.pallet img,.cta,.plans button,.single-options button,.stepper button{transition:none!important;transform:none!important;opacity:1!important}
+  .steps::before{display:none}
+}
