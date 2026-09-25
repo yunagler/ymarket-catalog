@@ -105,6 +105,11 @@ $('minus').addEventListener('click',()=>{
   render();
 });
 
+// ViewContent — the page IS the product page for item 304 (catalog g:id "304").
+if(typeof fbq==='function'){
+  fbq('track','ViewContent',{content_ids:['304'],content_type:'product',content_name:'נייר טרמי 80x80',currency:'ILS'});
+}
+
 document.querySelectorAll('[data-open-order]').forEach(button=>button.addEventListener('click',()=>{
   if(typeof fbq==='function'){
     fbq('track','InitiateCheckout',{
@@ -150,12 +155,20 @@ $('order-form').addEventListener('submit',async event=>{
     const apiBase=location.hostname==='localhost'||location.hostname==='127.0.0.1'
       ?'http://localhost:3000'
       :'https://app.ymarket.co.il';
+    // _fbp/_fbc + the Meta event id shared by the success-page Purchase and the
+    // server CAPI Purchase (js/analytics.js getAttribution) — so Meta counts one.
+    let attribution={};
+    try{attribution=(window.YMarketAnalyst&&window.YMarketAnalyst.getAttribution())||{};}catch(e){}
     const response=await fetch(`${apiBase}/api/campaigns/thermal-paper-80x80/orders`,{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({
         ...data,
         ...tracking,
+        fbp:attribution.fbp||'',
+        fbc:attribution.fbc||'',
+        eventId:attribution.eventId||'',
+        landing:attribution.landing||location.pathname,
         source:'meta_ads',
         checkout_source:'landing_page',
         campaign:'thermal-paper-80x80',
@@ -174,9 +187,11 @@ $('order-form').addEventListener('submit',async event=>{
       quantity,
       amount:result.totalAmount
     }));
+    // Not 'Lead': this fires BEFORE payment, and a standard Lead here would teach
+    // Meta to find form-fillers instead of buyers. Purchase fires after payment.
     if(typeof fbq==='function'){
-      fbq('track','Lead',{
-        content_name:'נייר טרמי 80x80',
+      fbq('trackCustom','ThermalOrderStarted',{
+        content_ids:['304'],
         value:result.totalAmount,
         currency:'ILS'
       });
