@@ -112,26 +112,26 @@
       <div class="wrap hero">
         <div class="hero-main">
           <div class="hero-copy">
-            <h1>נייר טרמי למדפסת קופה 80x80 — פעם אחת בלבד.</h1>
+            <h1 id="hero-title">נייר טרמי למדפסת קופה 80x80 — פעם אחת בלבד.</h1>
             <p class="lead">מזמינים מלאי לשנה שלמה, מקבלים אותו עד העסק, ומפסיקים לרוץ לקנות גלילים כל שבועיים.</p>
             <div class="chips" aria-label="יתרונות מרכזיים">
-              <span class="warm">80 מטר אמיתי</span>
+              <span class="warm" data-only-8080>80 מטר אמיתי</span>
               <span>הדפסה ברורה</span>
               <span>מלאי לשנה</span>
               <span class="green">✓ אספקה ארצית · מחיר משתלם</span>
             </div>
             <div class="price-anchor" aria-label="השוואת מחיר לגליל">
-              <small>בקנייה של גלילים בודדים <del>8.47 ₪ לגליל</del></small>
+              <small>בקנייה של גלילים בודדים <del id="anchor-single">8.47 ₪ לגליל</del></small>
               <b aria-hidden="true">←</b>
-              <strong>בהזמנת 100 גלילים <mark>3.81 ₪ לגליל</mark><span>לפני מע״מ</span></strong>
+              <strong>בהזמנת <span id="anchor-bulk-qty">100</span> גלילים <mark id="anchor-bulk">3.81 ₪ לגליל</mark><span>לפני מע״מ</span></strong>
             </div>
           </div>
 
           <figure class="product-card">
-            <img src="product.png" alt="חבילת גלילי נייר טרמי 80x80 למדפסת קופה" width="620" height="500">
-            <figcaption class="sr-only">נייר טרמי 80x80, 80 מטר בגליל</figcaption>
-            <span class="callout one">הגליל עצמו · 80 מ״מ רוחב</span>
-            <span class="callout two">80 מטר אמיתי בגליל</span>
+            <img id="hero-img" src="product.png" alt="חבילת גלילי נייר טרמי 80x80 למדפסת קופה" width="620" height="500">
+            <figcaption class="sr-only" id="hero-caption">נייר טרמי 80x80, 80 מטר בגליל</figcaption>
+            <span class="callout one" data-only-8080>הגליל עצמו · 80 מ״מ רוחב</span>
+            <span class="callout two" data-only-8080>80 מטר אמיתי בגליל</span>
             <span class="callout three">הדפסה ברורה וקריאה</span>
           </figure>
         </div>
@@ -332,6 +332,6 @@
     <span id="sticky-saving">חיסכון ₪609</span>
     <button class="cta primary" type="button" data-open-order>להזמנה מיידית</button>
   </div>
-  <script src="app.js?v=20260925-2"></script>
+  <script src="app.js?v=20260925-3"></script>
 </body>
 </html>

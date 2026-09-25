@@ -8,13 +8,13 @@ const tracking=Object.fromEntries(trackingKeys.map(key=>[key,params.get(key)||''
 const SMALL_SHIPPING=59;
 const SIZES={
   '80x80':{label:'80×80',itemId:304,perCase:50,small:{min:5,max:45,step:5,perRoll:10},bulkMin:100,bulkStep:100,
-           cartons:c=>Math.floor(c/2)*450+(c%2?250:0),note:'80 מטר אמיתי בגליל'},
+           cartons:c=>Math.floor(c/2)*450+(c%2?250:0),note:'80 מטר אמיתי בגליל',kind:'למדפסת קופה',img:null},
   '80x40':{label:'80×40',itemId:679,perCase:100,small:{min:10,max:90,step:10,perRoll:7},bulkMin:200,bulkStep:100,
-           cartons:c=>c===1?399:c*359,note:'לקופה ולמדפסת קבלות'},
+           cartons:c=>c===1?399:c*359,note:'לקופה ולמדפסת קבלות',kind:'למדפסת קופה',img:'../thermal-paper-80x80-bakery/hero.webp'},
   '57x40':{label:'57×40',itemId:678,perCase:100,small:{min:10,max:90,step:10,perRoll:6},bulkMin:200,bulkStep:100,
-           cartons:c=>c===1?379:c*339,note:'למסופון אשראי'},
+           cartons:c=>c===1?379:c*339,note:'למסופון אשראי',kind:'למסופון אשראי',img:'../thermal-paper-80x80-bakery/operations.webp'},
   '57x17':{label:'57×17',itemId:677,perCase:100,small:{min:10,max:90,step:10,perRoll:5},bulkMin:200,bulkStep:100,
-           cartons:c=>c===1?299:c*269,note:'למסופון אשראי קטן'}
+           cartons:c=>c===1?299:c*269,note:'למסופון אשראי קטן',kind:'למסופון אשראי',img:'../thermal-paper-80x80-bakery/operations.webp'}
 };
 // ?size=57x40 preselects a size — one ad per size can point at this same page.
 let sizeKey=SIZES[params.get('size')]?params.get('size'):'80x80';
@@ -63,6 +63,37 @@ function buildSingleOptions(){
   }
 }
 
+// Hero as authored for 80×80 — restored when 80×80 is picked again.
+const HERO={
+  title:$('hero-title').textContent,
+  img:$('hero-img').getAttribute('src'),
+  alt:$('hero-img').alt,
+  caption:$('hero-caption').textContent
+};
+
+// The hero follows the chosen size: a photo already published on the site (the catalog
+// images for 80×40 / 57×40 / 57×17 are still "התמונה בדרך אליך" placeholders, so the
+// bakery-page roll photos are used — no size printed on them, unlike product.png),
+// its own title and a per-roll price anchor from the same table that charges. The
+// 80×80-only claims (80 mm, 80 m) are hidden for the other sizes.
+function renderHero(){
+  const is8080=sizeKey==='80x80';
+  const dims=size.label.replace('×','x');
+  $('hero-title').textContent=is8080?HERO.title:`נייר טרמי ${size.kind} ${dims} — פעם אחת בלבד.`;
+  const img=$('hero-img');
+  img.src=is8080?HERO.img:size.img;
+  img.alt=is8080?HERO.alt:`גליל נייר טרמי ${dims} ${size.kind}`;
+  img.style.objectFit=is8080?'':'cover';
+  img.style.objectPosition=is8080?'':'center 72%';   // portrait photos: keep the rolls in frame
+  $('hero-caption').textContent=is8080?HERO.caption:`נייר טרמי ${dims} ${size.kind}`;
+  document.querySelectorAll('[data-only-8080]').forEach(el=>{el.hidden=!is8080;});
+  const singleNet=size.small.perRoll/1.18;
+  const bulkNet=size.cartons(size.bulkMin/size.perCase)/1.18/size.bulkMin;
+  $('anchor-single').textContent=`${singleNet.toFixed(2)} ₪ לגליל`;
+  $('anchor-bulk-qty').textContent=String(size.bulkMin);
+  $('anchor-bulk').textContent=`${bulkNet.toFixed(2)} ₪ לגליל`;
+}
+
 function selectSize(key){
   sizeKey=key;
   size=SIZES[key];
@@ -79,6 +110,7 @@ function selectSize(key){
     button.classList.toggle('active',selected);
     button.setAttribute('aria-checked',String(selected));
   });
+  renderHero();
   if(typeof fbq==='function'){
     fbq('track','ViewContent',{content_ids:[String(size.itemId)],content_type:'product',content_name:`נייר טרמי ${size.label}`,currency:'ILS'});
   }
