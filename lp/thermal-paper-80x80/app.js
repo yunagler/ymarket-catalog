@@ -237,6 +237,10 @@ $('order-form').addEventListener('submit',async event=>{
       body:JSON.stringify({
         ...data,
         ...tracking,
+        // The URL loses its tags when the buyer browses and comes back; the session
+        // kept the ones it landed with (js/analytics.js), so fall back to those.
+        ...Object.fromEntries(['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid']
+          .map(key=>[key,tracking[key]||attribution[key]||''])),
         fbp:attribution.fbp||'',
         fbc:attribution.fbc||'',
         eventId:attribution.eventId||'',
