@@ -3,6 +3,18 @@ const trackingKeys=['utm_source','utm_medium','utm_campaign','utm_content','utm_
 const params=new URLSearchParams(location.search);
 const tracking=Object.fromEntries(trackingKeys.map(key=>[key,params.get(key)||'']));
 
+// First-party funnel steps (js/analytics.js → analytics_event). Meta already gets its
+// own events; without these our data only saw "landed" and "scrolled 75%", so a visitor
+// who picked a size and gave up looked the same as one who left at once.
+// Types must be in the collect API allow-list — the step name rides in meta.step.
+function step(name,extra,type){
+  try{
+    if(window.YMarketAnalyst)window.YMarketAnalyst.track(type||'click',{
+      itemId:size&&size.itemId,quantity,meta:{step:name,size:sizeKey,plan,...(extra||{})}
+    });
+  }catch(e){}
+}
+
 // Prices per size approved by Yuval 25/09/2026. MUST match the server table that
 // actually charges: crm-app/src/lib/campaigns/thermal-pricing.ts (gross, VAT incl.).
 const SMALL_SHIPPING=59;
@@ -58,6 +70,7 @@ function buildSingleOptions(){
       plan='small';
       quantity=value;
       render();
+      step('qty_small');
     });
     container.appendChild(button);
   }
@@ -162,24 +175,27 @@ function render(){
     :`${unit.toFixed(2)} ₪ לגליל לפני מע״מ · משלוח ${money(price.shipping)} להזמנה.`;
 }
 
-document.querySelectorAll('[data-size]').forEach(button=>button.addEventListener('click',()=>selectSize(button.dataset.size)));
+document.querySelectorAll('[data-size]').forEach(button=>button.addEventListener('click',()=>{selectSize(button.dataset.size);step('size');}));
 
 document.querySelectorAll('[data-plan]').forEach(button=>button.addEventListener('click',()=>{
   plan=button.dataset.plan;
   quantity=plans[plan].qty;
   render();
+  step('plan');
 }));
 
 $('plus').addEventListener('click',()=>{
   const selected=plans[plan];
   quantity=Math.min(selected.max,quantity+selected.step);
   render();
+  step('qty_plus');
 });
 
 $('minus').addEventListener('click',()=>{
   const selected=plans[plan];
   quantity=Math.max(selected.min,quantity-selected.step);
   render();
+  step('qty_minus');
 });
 
 document.querySelectorAll('[data-open-order]').forEach(button=>button.addEventListener('click',()=>{
@@ -193,9 +209,11 @@ document.querySelectorAll('[data-open-order]').forEach(button=>button.addEventLi
     });
   }
   $('order-dialog').showModal();
+  step('open_form',{from:button.closest('.sticky')?'sticky':'card',value:priceFor(quantity)},'begin_checkout');
 }));
 
 document.querySelectorAll('[data-wholesale-cta]').forEach(link=>link.addEventListener('click',()=>{
+  step('wholesale');
   if(typeof fbq==='function'){
     fbq('trackCustom','WholesaleIntent',{
       content_ids:['304'],
@@ -207,6 +225,13 @@ document.querySelectorAll('[data-wholesale-cta]').forEach(link=>link.addEventLis
 }));
 
 $('order-dialog').querySelector('.close').addEventListener('click',()=>$('order-dialog').close());
+// Closed without being sent to payment = abandoned the form; which fields were filled
+// (never their contents) tells us where it stopped.
+$('order-dialog').addEventListener('close',()=>{
+  if(orderSubmitted)return;
+  const f=$('order-form');
+  step('close_form',{filled:['name','phone','city','address'].filter(n=>f[n]&&f[n].value.trim()).join(',')});
+});
 $('order-dialog').addEventListener('click',event=>{
   if(event.target===$('order-dialog'))$('order-dialog').close();
 });
@@ -214,7 +239,8 @@ $('order-dialog').addEventListener('click',event=>{
 $('order-form').addEventListener('submit',async event=>{
   event.preventDefault();
   const form=event.currentTarget;
-  if(!form.reportValidity())return;
+  if(!form.reportValidity()){step('form_invalid');return;}
+  step('submit');
 
   const button=form.querySelector('.submit');
   const fallback=$('fallback-order');
@@ -275,12 +301,15 @@ $('order-form').addEventListener('submit',async event=>{
         currency:'ILS'
       });
     }
+    orderSubmitted=true;
+    step('to_payment',{orderId:result.orderId},'order_placed');
     if(result.payUrl){
       location.href=result.payUrl;
       return;
     }
     throw new Error('pay_url_missing');
   }catch(error){
+    step('order_error',{error:String(error&&error.message||error).slice(0,80)});
     const message=[
       `הזמנת נייר טרמי ${size.label}`,
       `שם: ${data.name}`,
@@ -298,3 +327,17 @@ $('order-form').addEventListener('submit',async event=>{
 });
 
 selectSize(sizeKey);
+
+let orderSubmitted=false;
+document.querySelectorAll('a.cta[href="#checkout"]').forEach(link=>link.addEventListener('click',()=>step('cta_choose')));
+// analytics.js reports 75% only; the first screen is where most visitors decide.
+(()=>{
+  const marks=[25,50,90];
+  const onScroll=()=>{
+    const h=document.documentElement;
+    const pct=(h.scrollTop+innerHeight)/(h.scrollHeight||1)*100;
+    while(marks.length&&pct>=marks[0])step('scroll',{pct:marks.shift()},'scroll_depth');
+    if(!marks.length)removeEventListener('scroll',onScroll);
+  };
+  addEventListener('scroll',onScroll,{passive:true});
+})();
