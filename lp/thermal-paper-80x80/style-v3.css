@@ -90,3 +90,22 @@ body{background:#fff}
   .steps article{padding:19px 20px}
 }
 @media(max-width:390px){.checkout-scene{height:240px}.hero-visual{min-height:270px}.product-card{height:115px}.checkout-scene figcaption{left:30%;font-size:12px}}
+/* Mobile first screen (28/09, Clarity): offer + order card before the photos, and the
+   fact chips no longer look like buttons (they drew dead taps). */
+.hero-offer,.lead-short{display:none}
+@media(max-width:700px){
+  .hero-main{display:contents}
+  .hero-copy{order:1}.buy-card{order:2}.hero-visual{order:3}
+  .hero-eyebrow,.hero-copy .lead,.price-anchor{display:none}
+  .hero-copy h1{margin-bottom:14px}
+  .hero-offer:not([hidden]){display:flex;align-items:center;gap:12px;background:#fff;border:1px solid #d9e3e9;border-radius:16px;padding:10px 12px;margin:0 0 12px;box-shadow:0 8px 22px #0c2a4a12}
+  .hero-offer img{width:104px;height:78px;object-fit:contain;flex:none}
+  .hero-offer p{margin:0;display:grid;gap:3px}
+  .hero-offer b{font-size:19px;color:var(--navy);line-height:1.25}
+  .hero-offer small{font-size:13px;font-weight:600;color:var(--navy-soft)}
+  .lead-short{display:block;font-size:15px;line-height:1.55;font-weight:500;color:var(--navy-soft);margin:0 0 12px}
+  .chips{gap:4px 14px;margin-bottom:14px}
+  .chips span,.chips .warm,.chips .green{background:none;border:0;box-shadow:none;padding:0;border-radius:0;font-size:13px;color:var(--navy-soft)}
+  .chips>span::before{content:"✓ ";color:var(--green);font-weight:800}
+  .hero-actions{margin-bottom:0}
+}
