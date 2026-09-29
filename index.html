@@ -1644,6 +1644,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@600;700;800&display=swap" rel="stylesheet">
   <script>document.documentElement.classList.add('hv-js')</script>
   <link rel="stylesheet" href="/css/pages/home-v2.css?v=2">
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/pages/home-v3.css?v=2">
 </head>
 <body>
 
@@ -1718,20 +1720,22 @@
   <main id="main-content" class="hv">
 
     <!-- ═══ HERO: speed + a working order list ═══ -->
-    <section class="hv-hero" id="hvHero" aria-labelledby="hv-title">
+    <section class="hv-hero y3-hero" id="hvHero" aria-labelledby="hv-title">
       <div class="hv-wrap hv-hero__grid">
         <div>
+          <span class="y3-eyebrow"><i class="fas fa-warehouse" aria-hidden="true"></i> מחסן בגת רימון · משלוח לכל הארץ</span>
           <h1 class="hv-hero__title" id="hv-title"><span class="hv-l"><span>כל המתכלים לעסק.</span></span> <span class="hv-l"><span>הכל בלחיצת כפתור.</span></span></h1>
           <p class="hv-hero__lead">מכפפות ואריזות ועד חומרי ניקוי ונייר. משלוח ישיר עד הדלת, במחירי סיטונאות, ואדם אמיתי שעונה לכם.</p>
-          <div class="hv-hero__links">
-            <a href="/catalog" class="hv-btn hv-btn--line-light">לקטלוג המלא</a>
-            <a href="tel:037740400" class="hv-btn hv-btn--line-light"><i class="fas fa-phone" aria-hidden="true"></i> 03-7740400</a>
+          <div class="hv-hero__links y3-cta">
+            <a href="/catalog" class="hv-btn hv-btn--gold"><i class="fas fa-cart-shopping" aria-hidden="true"></i> קנייה באתר</a>
+            <a href="/register" class="hv-btn hv-btn--line-light"><i class="fas fa-crown" aria-hidden="true"></i> הרשמה לפורטל ול-CASH MARKET</a>
           </div>
+          <p class="y3-talk">מעדיפים לדבר? <a href="https://wa.me/972549922492?text=שלום, אשמח לעזרה בהזמנה" target="_blank" rel="noopener"><i class="fab fa-whatsapp" aria-hidden="true"></i> וואטסאפ</a> · <a href="tel:037740400"><i class="fas fa-phone" aria-hidden="true"></i> 03-7740400</a></p>
           <div class="hv-track" aria-label="הדרך של הזמנה">
             <div class="hv-track__line" aria-hidden="true"></div>
             <ol>
-              <li><strong>שולחים רשימה</strong>כאן בעמוד או בוואטסאפ</li>
-              <li><strong>הצעת מחיר</strong>תוך שעות ספורות</li>
+              <li><strong>בוחרים מוצרים</strong>כאן בעמוד או בקטלוג</li>
+              <li><strong>משלמים באתר</strong>או מזמינים מהפורטל העסקי</li>
               <li><strong>נארז בגת רימון</strong>מהמלאי במחסן</li>
               <li><strong>אצלכם בעסק</strong>24–72 שעות בגוש דן</li>
             </ol>
@@ -1739,11 +1743,13 @@
         </div>
 
         <div class="hv-order" id="hvOrder">
+          <div class="y3-tabs"><span class="is-on">קנייה מהירה</span><a href="/login">כניסה ללקוחות</a><a href="/tracking">מעקב משלוח</a></div>
+          <div class="y3-card__body">
           <div class="hv-order__head">
-            <h2 class="hv-order__title">רשימת הזמנה</h2>
+            <h2 class="hv-order__title">קנייה מהירה</h2>
             <span class="hv-order__count" id="hvCount" aria-live="polite"></span>
           </div>
-          <p class="hv-order__hint">מוסיפים מוצרים וכמויות, שולחים, ומקבלים הצעת מחיר.</p>
+          <p class="hv-order__hint">מחפשים מוצר, בוחרים כמות וממשיכים לתשלום באתר.</p>
           <div class="hv-find">
             <label for="hvFind" class="sr-only">הוספת מוצר לרשימה</label>
             <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
@@ -1761,76 +1767,248 @@
           <ul class="hv-lines" id="hvLines" hidden></ul>
           <p class="hv-order__empty" id="hvEmpty">הרשימה ריקה. חפשו מוצר או בחרו מהחיפושים הנפוצים.</p>
           <div class="hv-order__send">
-            <button type="button" class="hv-btn hv-btn--gold" id="hvSend" disabled><i class="fab fa-whatsapp" aria-hidden="true"></i> שלחו את הרשימה בוואטסאפ</button>
-            <p class="hv-order__note">נחזור אליכם עם הצעת מחיר תוך שעות ספורות.</p>
+            <p class="y3-sum" id="hvSum" aria-live="polite"></p>
+            <button type="button" class="hv-btn hv-btn--gold" id="hvSend" disabled><i class="fas fa-cart-shopping" aria-hidden="true"></i> המשך לסל ולתשלום</button>
+            <p class="hv-order__note">לקוחות רשומים? <a href="/login">היכנסו לפורטל</a> למחירון האישי. <button type="button" class="y3-walink" id="hvWa" hidden>או שלחו את הרשימה בוואטסאפ</button></p>
             <button type="button" class="hv-order__clear" id="hvClear" hidden>ניקוי הרשימה</button>
+          </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══ PRODUCT STRIP (decorative, links duplicate the category grid) ═══ -->
-    <div class="hv-strip" aria-hidden="true">
-      <div class="hv-strip__track"><a href="/category/bulk-paper-towel-office-supplies/" tabindex="-1"><img src="/items/107.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/industrial-cleaning-supplies-wholesale/" tabindex="-1"><img src="/items/877.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/disposable-catering-food-service/" tabindex="-1"><img src="/items/650.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/safety-ppe-equipment-for-business/" tabindex="-1"><img src="/items/34.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/heavy-duty-garbage-bags-wholesale/" tabindex="-1"><img src="/items/159.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/food-packaging-delivery-solutions/" tabindex="-1"><img src="/items/319.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/professional-cleaning-cloths-microfiber/" tabindex="-1"><img src="/items/182.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/office-coffee-breakroom-supplies/" tabindex="-1"><img src="/items/271.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/industrial-cleaning-supplies-wholesale/" tabindex="-1"><img src="/items/121.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/personal-hygiene-products-wholesale/" tabindex="-1"><img src="/items/97.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/bulk-paper-towel-office-supplies/" tabindex="-1"><img src="/items/1002.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/warehouse-packaging-supplies-wholesale/" tabindex="-1"><img src="/items/168.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/institutional-cleaning-tools-equipment/" tabindex="-1"><img src="/items/644.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/food-packaging-delivery-solutions/" tabindex="-1"><img src="/items/587.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/office-supplies-wholesale-business/" tabindex="-1"><img src="/items/265.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/professional-cleaning-cloths-microfiber/" tabindex="-1"><img src="/items/183.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/disposable-catering-food-service/" tabindex="-1"><img src="/items/70.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/institutional-cleaning-tools-equipment/" tabindex="-1"><img src="/items/482.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/bulk-paper-towel-office-supplies/" tabindex="-1"><img src="/items/107.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/industrial-cleaning-supplies-wholesale/" tabindex="-1"><img src="/items/877.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/disposable-catering-food-service/" tabindex="-1"><img src="/items/650.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/safety-ppe-equipment-for-business/" tabindex="-1"><img src="/items/34.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/heavy-duty-garbage-bags-wholesale/" tabindex="-1"><img src="/items/159.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/food-packaging-delivery-solutions/" tabindex="-1"><img src="/items/319.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/professional-cleaning-cloths-microfiber/" tabindex="-1"><img src="/items/182.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/office-coffee-breakroom-supplies/" tabindex="-1"><img src="/items/271.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/industrial-cleaning-supplies-wholesale/" tabindex="-1"><img src="/items/121.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/personal-hygiene-products-wholesale/" tabindex="-1"><img src="/items/97.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/bulk-paper-towel-office-supplies/" tabindex="-1"><img src="/items/1002.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/warehouse-packaging-supplies-wholesale/" tabindex="-1"><img src="/items/168.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/institutional-cleaning-tools-equipment/" tabindex="-1"><img src="/items/644.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/food-packaging-delivery-solutions/" tabindex="-1"><img src="/items/587.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/office-supplies-wholesale-business/" tabindex="-1"><img src="/items/265.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/professional-cleaning-cloths-microfiber/" tabindex="-1"><img src="/items/183.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/disposable-catering-food-service/" tabindex="-1"><img src="/items/70.jpg" alt="" loading="lazy" width="120" height="120"></a><a href="/category/institutional-cleaning-tools-equipment/" tabindex="-1"><img src="/items/482.jpg" alt="" loading="lazy" width="120" height="120"></a></div>
-    </div>
+    <!-- ═══ QUICK ACTIONS ═══ -->
+    <nav class="y3-quick" aria-label="פעולות מהירות">
+      <div class="hv-wrap">
+        <ul>
+          <li><a href="/catalog"><span class="y3-ic"><i class="fas fa-cart-shopping" aria-hidden="true"></i></span>קנייה באתר<small>מעל 800 מוצרים</small></a></li>
+          <li><a href="/register"><span class="y3-ic y3-ic--gold"><i class="fas fa-crown" aria-hidden="true"></i></span>CASH MARKET<small>הרשמה לפורטל</small></a></li>
+          <li><a href="/login"><span class="y3-ic"><i class="fas fa-rotate" aria-hidden="true"></i></span>הזמנה חוזרת<small>ללקוחות רשומים</small></a></li>
+          <li><a href="#deliveryMap"><span class="y3-ic"><i class="fas fa-location-dot" aria-hidden="true"></i></span>אזור משלוח<small>בדיקה לפי יישוב</small></a></li>
+          <li><a href="/tracking"><span class="y3-ic"><i class="fas fa-truck-fast" aria-hidden="true"></i></span>מעקב משלוח<small>איפה ההזמנה</small></a></li>
+          <li><a class="y3-wa" href="https://wa.me/972549922492?text=שלום, אשמח לעזרה" target="_blank" rel="noopener"><span class="y3-ic"><i class="fab fa-whatsapp" aria-hidden="true"></i></span>דברו איתנו<small>וואטסאפ · טלפון</small></a></li>
+        </ul>
+      </div>
+    </nav>
 
-    <!-- ═══ CATEGORIES ═══ -->
+    <!-- ═══ BEST SELLERS (from real orders, last 90 days — refresh periodically) ═══ -->
+    <section class="hv-sec y3-best" aria-labelledby="hv-best">
+      <div class="hv-wrap">
+        <div class="hv-sec__head">
+          <div>
+            <h2 class="hv-sec__title" id="hv-best">מה העסקים מזמינים הכי הרבה</h2>
+            <p class="hv-sec__sub">המוצרים שהכי הרבה לקוחות עסקיים הזמינו אצלנו ברבעון האחרון. מוסיפים לסל ישר מכאן.</p>
+          </div>
+          <div class="y3-best__nav"><button type="button" class="y3-nav" data-dir="1" aria-label="הקודם"><i class="fas fa-chevron-right" aria-hidden="true"></i></button><button type="button" class="y3-nav" data-dir="-1" aria-label="הבא"><i class="fas fa-chevron-left" aria-hidden="true"></i></button></div>
+        </div>
+        <div class="y3-rail" id="y3Rail">
+          <article class="y3-prod">
+            <a class="y3-prod__img" href="/products/cups-8b-oz-50-wp-carton-1000/"><img src="/items/95.jpg?v=1772907827005" alt="כוסות חד פעמי חם 8B oz (50 יח) - WP - בקרטון 1000 יח" loading="lazy" width="160" height="160"></a>
+            <a class="y3-prod__name" href="/products/cups-8b-oz-50-wp-carton-1000/">כוסות חד פעמי חם 8B oz (50 יח) - WP - בקרטון 1000 יח</a>
+            <div class="y3-prod__foot"><span class="y3-prod__price">₪100<small>לפני מע״מ</small></span>
+              <button type="button" class="y3-prod__add" data-p="{&quot;id&quot;: 79, &quot;name&quot;: &quot;כוסות חד פעמי חם 8B oz (50 יח) - WP - בקרטון 1000 יח&quot;, &quot;price&quot;: 100, &quot;unit&quot;: &quot;&quot;, &quot;imageUrl&quot;: &quot;/items/95.jpg?v=1772907827005&quot;, &quot;slug&quot;: &quot;כוסות-חד-פעמי-חם-8B-oz-50-יח-WP-בקרטון-1000-יח&quot;}" aria-label="הוספה לסל: כוסות חד פעמי חם 8B oz (50 יח) - WP - בקרטון 1000 יח"><i class="fas fa-plus" aria-hidden="true"></i><span>לסל</span></button></div>
+          </article>
+          <article class="y3-prod">
+            <a class="y3-prod__img" href="/products/nitrile-black-perfect-size-m-100-without-powder/"><img src="/items/34.jpg?v=1772913032593" alt="נטריל שחור (Perfect) - מידה M - (100 יח) - ללא אבקה" loading="lazy" width="160" height="160"></a>
+            <a class="y3-prod__name" href="/products/nitrile-black-perfect-size-m-100-without-powder/">נטריל שחור (Perfect) - מידה M - (100 יח) - ללא אבקה</a>
+            <div class="y3-prod__foot"><span class="y3-prod__price">₪18<small>לפני מע״מ</small></span>
+              <button type="button" class="y3-prod__add" data-p="{&quot;id&quot;: 18, &quot;name&quot;: &quot;נטריל שחור (Perfect) - מידה M - (100 יח) - ללא אבקה&quot;, &quot;price&quot;: 18, &quot;unit&quot;: &quot;&quot;, &quot;imageUrl&quot;: &quot;/items/34.jpg?v=1772913032593&quot;, &quot;slug&quot;: &quot;נטריל-שחור-Perfect-מידה-M-100-יח-ללא-אבקה&quot;}" aria-label="הוספה לסל: נטריל שחור (Perfect) - מידה M - (100 יח) - ללא אבקה"><i class="fas fa-plus" aria-hidden="true"></i><span>לסל</span></button></div>
+          </article>
+          <article class="y3-prod">
+            <a class="y3-prod__img" href="/products/paper-industrial-blinx-28/"><img src="/items/664.jpg?v=1780512740930" alt="נייר תעשייתי Blinx 28 ס&quot;מ" loading="lazy" width="160" height="160"></a>
+            <a class="y3-prod__name" href="/products/paper-industrial-blinx-28/">נייר תעשייתי Blinx 28 ס&quot;מ</a>
+            <div class="y3-prod__foot"><span class="y3-prod__price">₪69<small>לפני מע״מ</small></span>
+              <button type="button" class="y3-prod__add" data-p="{&quot;id&quot;: 648, &quot;name&quot;: &quot;נייר תעשייתי Blinx 28 ס\&quot;מ&quot;, &quot;price&quot;: 69, &quot;unit&quot;: &quot;&quot;, &quot;imageUrl&quot;: &quot;/items/664.jpg?v=1780512740930&quot;, &quot;slug&quot;: &quot;נייר-תעשייתי-Blinx-28-ס-מ&quot;}" aria-label="הוספה לסל: נייר תעשייתי Blinx 28 ס&quot;מ"><i class="fas fa-plus" aria-hidden="true"></i><span>לסל</span></button></div>
+          </article>
+          <article class="y3-prod">
+            <a class="y3-prod__img" href="/products/handle/"><img src="/items/266.jpg?v=1772948480471" alt="מקל עץ + הברגה" loading="lazy" width="160" height="160"></a>
+            <a class="y3-prod__name" href="/products/handle/">מקל עץ + הברגה</a>
+            <div class="y3-prod__foot"><span class="y3-prod__price">₪7<small>לפני מע״מ</small></span>
+              <button type="button" class="y3-prod__add" data-p="{&quot;id&quot;: 250, &quot;name&quot;: &quot;מקל עץ + הברגה&quot;, &quot;price&quot;: 7, &quot;unit&quot;: &quot;&quot;, &quot;imageUrl&quot;: &quot;/items/266.jpg?v=1772948480471&quot;, &quot;slug&quot;: &quot;מקל-עץ-הברגה&quot;}" aria-label="הוספה לסל: מקל עץ + הברגה"><i class="fas fa-plus" aria-hidden="true"></i><span>לסל</span></button></div>
+          </article>
+          <article class="y3-prod">
+            <a class="y3-prod__img" href="/products/bleach-3-5-scented-4-blinx/"><img src="/items/857.jpg?v=1772960011405" alt="אקונומיקה 3.5% ריחנית  - 4 ליטר BLINX" loading="lazy" width="160" height="160"></a>
+            <a class="y3-prod__name" href="/products/bleach-3-5-scented-4-blinx/">אקונומיקה 3.5% ריחנית  - 4 ליטר BLINX</a>
+            <div class="y3-prod__foot"><span class="y3-prod__price">₪10<small>לפני מע״מ</small></span>
+              <button type="button" class="y3-prod__add" data-p="{&quot;id&quot;: 840, &quot;name&quot;: &quot;אקונומיקה 3.5% ריחנית  - 4 ליטר BLINX&quot;, &quot;price&quot;: 10, &quot;unit&quot;: &quot;&quot;, &quot;imageUrl&quot;: &quot;/items/857.jpg?v=1772960011405&quot;, &quot;slug&quot;: &quot;אקונומיקה-3-5-ריחנית-4-ליטר-BLINX&quot;}" aria-label="הוספה לסל: אקונומיקה 3.5% ריחנית  - 4 ליטר BLINX"><i class="fas fa-plus" aria-hidden="true"></i><span>לסל</span></button></div>
+          </article>
+          <article class="y3-prod">
+            <a class="y3-prod__img" href="/products/bag-black-75-90-800-blinx-25/"><img src="/items/934.jpg?v=1775677174532" alt="שקית זבל שחורה - 75*90 - 800 גר&#x27; (Blinx) - 25 יח" loading="lazy" width="160" height="160"></a>
+            <a class="y3-prod__name" href="/products/bag-black-75-90-800-blinx-25/">שקית זבל שחורה - 75*90 - 800 גר&#x27; (Blinx) - 25 יח</a>
+            <div class="y3-prod__foot"><span class="y3-prod__price">₪10<small>לפני מע״מ</small></span>
+              <button type="button" class="y3-prod__add" data-p="{&quot;id&quot;: 934, &quot;name&quot;: &quot;שקית זבל שחורה - 75*90 - 800 גר&#x27; (Blinx) - 25 יח&quot;, &quot;price&quot;: 10, &quot;unit&quot;: &quot;&quot;, &quot;imageUrl&quot;: &quot;/items/934.jpg?v=1775677174532&quot;, &quot;slug&quot;: &quot;שקית-זבל-שחורה-75-90-800-גר-Blinx-25-יח&quot;}" aria-label="הוספה לסל: שקית זבל שחורה - 75*90 - 800 גר&#x27; (Blinx) - 25 יח"><i class="fas fa-plus" aria-hidden="true"></i><span>לסל</span></button></div>
+          </article>
+          <article class="y3-prod">
+            <a class="y3-prod__img" href="/products/cling-6/"><img src="/items/724.jpg?v=1772920828702" alt="נילון נצמד מכונה - 6 ק&quot;ג" loading="lazy" width="160" height="160"></a>
+            <a class="y3-prod__name" href="/products/cling-6/">נילון נצמד מכונה - 6 ק&quot;ג</a>
+            <div class="y3-prod__foot"><span class="y3-prod__price">₪75<small>לפני מע״מ</small></span>
+              <button type="button" class="y3-prod__add" data-p="{&quot;id&quot;: 708, &quot;name&quot;: &quot;נילון נצמד מכונה - 6 ק\&quot;ג&quot;, &quot;price&quot;: 75, &quot;unit&quot;: &quot;&quot;, &quot;imageUrl&quot;: &quot;/items/724.jpg?v=1772920828702&quot;, &quot;slug&quot;: &quot;נילון-נצמד-מכונה-6-ק-ג&quot;}" aria-label="הוספה לסל: נילון נצמד מכונה - 6 ק&quot;ג"><i class="fas fa-plus" aria-hidden="true"></i><span>לסל</span></button></div>
+          </article>
+          <article class="y3-prod">
+            <a class="y3-prod__img" href="/products/paper-80-80/"><img src="/items/320.jpg?v=1772912346737" alt="נייר טרמי לקופה 80*80" loading="lazy" width="160" height="160"></a>
+            <a class="y3-prod__name" href="/products/paper-80-80/">נייר טרמי לקופה 80*80</a>
+            <div class="y3-prod__foot"><span class="y3-prod__price">₪5<small>לפני מע״מ</small></span>
+              <button type="button" class="y3-prod__add" data-p="{&quot;id&quot;: 304, &quot;name&quot;: &quot;נייר טרמי לקופה 80*80&quot;, &quot;price&quot;: 5, &quot;unit&quot;: &quot;&quot;, &quot;imageUrl&quot;: &quot;/items/320.jpg?v=1772912346737&quot;, &quot;slug&quot;: &quot;נייר-טרמי-לקופה-80-80&quot;}" aria-label="הוספה לסל: נייר טרמי לקופה 80*80"><i class="fas fa-plus" aria-hidden="true"></i><span>לסל</span></button></div>
+          </article>
+          <article class="y3-prod">
+            <a class="y3-prod__img" href="/products/towel-4000-781/"><img src="/items/798.jpg?v=1781894837612" alt="מגבת צץ רץ - תאית חד שכבתי 4000 יח" loading="lazy" width="160" height="160"></a>
+            <a class="y3-prod__name" href="/products/towel-4000-781/">מגבת צץ רץ - תאית חד שכבתי 4000 יח</a>
+            <div class="y3-prod__foot"><span class="y3-prod__price">₪80<small>לפני מע״מ</small></span>
+              <button type="button" class="y3-prod__add" data-p="{&quot;id&quot;: 781, &quot;name&quot;: &quot;מגבת צץ רץ - תאית חד שכבתי 4000 יח&quot;, &quot;price&quot;: 80, &quot;unit&quot;: &quot;&quot;, &quot;imageUrl&quot;: &quot;/items/798.jpg?v=1781894837612&quot;, &quot;slug&quot;: &quot;מגבת-צץ-רץ-תאית-חד-שכבתי-4000-יח&quot;}" aria-label="הוספה לסל: מגבת צץ רץ - תאית חד שכבתי 4000 יח"><i class="fas fa-plus" aria-hidden="true"></i><span>לסל</span></button></div>
+          </article>
+          <article class="y3-prod">
+            <a class="y3-prod__img" href="/products/gloves/"><img src="/items/503.jpg?v=1772916587367" alt="כפפות בלוקים כתומות ציפוי מחוספס - זוגות" loading="lazy" width="160" height="160"></a>
+            <a class="y3-prod__name" href="/products/gloves/">כפפות בלוקים כתומות ציפוי מחוספס - זוגות</a>
+            <div class="y3-prod__foot"><span class="y3-prod__price">₪4<small>לפני מע״מ</small></span>
+              <button type="button" class="y3-prod__add" data-p="{&quot;id&quot;: 487, &quot;name&quot;: &quot;כפפות בלוקים כתומות ציפוי מחוספס - זוגות&quot;, &quot;price&quot;: 4, &quot;unit&quot;: &quot;&quot;, &quot;imageUrl&quot;: &quot;/items/503.jpg?v=1772916587367&quot;, &quot;slug&quot;: &quot;כפפות-בלוקים-כתומות-ציפוי-מחוספס-זוגות&quot;}" aria-label="הוספה לסל: כפפות בלוקים כתומות ציפוי מחוספס - זוגות"><i class="fas fa-plus" aria-hidden="true"></i><span>לסל</span></button></div>
+          </article>
+          <article class="y3-prod">
+            <a class="y3-prod__img" href="/products/cups-100-splash-180cc-carton-3000/"><img src="/items/83.jpg?v=1772907333330" alt="כוסות חד פעמי (100יח) Splash - 180cc - קרטון 3000 יח" loading="lazy" width="160" height="160"></a>
+            <a class="y3-prod__name" href="/products/cups-100-splash-180cc-carton-3000/">כוסות חד פעמי (100יח) Splash - 180cc - קרטון 3000 יח</a>
+            <div class="y3-prod__foot"><span class="y3-prod__price">₪110<small>לפני מע״מ</small></span>
+              <button type="button" class="y3-prod__add" data-p="{&quot;id&quot;: 67, &quot;name&quot;: &quot;כוסות חד פעמי (100יח) Splash - 180cc - קרטון 3000 יח&quot;, &quot;price&quot;: 110, &quot;unit&quot;: &quot;&quot;, &quot;imageUrl&quot;: &quot;/items/83.jpg?v=1772907333330&quot;, &quot;slug&quot;: &quot;כוסות-חד-פעמי-100יח-Splash-180cc-קרטון-3000-יח&quot;}" aria-label="הוספה לסל: כוסות חד פעמי (100יח) Splash - 180cc - קרטון 3000 יח"><i class="fas fa-plus" aria-hidden="true"></i><span>לסל</span></button></div>
+          </article>
+          <article class="y3-prod">
+            <a class="y3-prod__img" href="/products/paper-industrial-100-2-7/"><img src="/items/954.jpg?v=1780514727353" alt="נייר תעשייתי 100% תאית - 2.7 ק&quot;ג" loading="lazy" width="160" height="160"></a>
+            <a class="y3-prod__name" href="/products/paper-industrial-100-2-7/">נייר תעשייתי 100% תאית - 2.7 ק&quot;ג</a>
+            <div class="y3-prod__foot"><span class="y3-prod__price">₪44<small>לפני מע״מ</small></span>
+              <button type="button" class="y3-prod__add" data-p="{&quot;id&quot;: 936, &quot;name&quot;: &quot;נייר תעשייתי 100% תאית - 2.7 ק\&quot;ג&quot;, &quot;price&quot;: 44, &quot;unit&quot;: &quot;&quot;, &quot;imageUrl&quot;: &quot;/items/954.jpg?v=1780514727353&quot;, &quot;slug&quot;: &quot;נייר-תעשייתי-100-תאית-2-7-ק-ג&quot;}" aria-label="הוספה לסל: נייר תעשייתי 100% תאית - 2.7 ק&quot;ג"><i class="fas fa-plus" aria-hidden="true"></i><span>לסל</span></button></div>
+          </article>
+        </div>
+        <div class="y3-toast" id="y3Toast" role="status" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- ═══ STORES (categories) ═══ -->
     <section class="hv-sec" aria-labelledby="hv-cats">
       <div class="hv-wrap">
         <div class="hv-sec__head">
           <div>
-            <h2 class="hv-sec__title" id="hv-cats">קטגוריות מוצרים</h2>
-            <p class="hv-sec__sub">כל מה שהעסק שלכם צריך, במקום אחד</p>
+            <h2 class="hv-sec__title" id="hv-cats">כל החנויות של העסק במקום אחד</h2>
+            <p class="hv-sec__sub">כל קטגוריה היא חנות: נכנסים, בוחרים ומזמינים.</p>
           </div>
           <a class="hv-more" href="/catalog">לכל הקטגוריות</a>
         </div>
-        <div class="hv-shelf">
-          <a href="/category/bulk-paper-towel-office-supplies/" class="hv-cat"><span class="hv-cat__img"><img src="/items/107.jpg" alt="מוצרי נייר וניגוב לעסקים" loading="lazy" width="240" height="180"></span><span class="hv-cat__txt"><span class="hv-cat__name">מוצרי נייר וניגוב</span><span class="hv-cat__desc">נייר טואלט, מגבות, מפיות</span></span></a>
-          <a href="/category/industrial-cleaning-supplies-wholesale/" class="hv-cat"><span class="hv-cat__img"><img src="/items/877.jpg" alt="חומרי ניקוי וכימיקלים לעסקים" loading="lazy" width="240" height="180"></span><span class="hv-cat__txt"><span class="hv-cat__name">חומרי ניקוי וכימיקלים</span><span class="hv-cat__desc">מנקים, מחטאים, סבונים</span></span></a>
-          <a href="/category/disposable-catering-food-service/" class="hv-cat"><span class="hv-cat__img"><img src="/items/650.jpg" alt="חד פעמי ואירוח" loading="lazy" width="240" height="180"></span><span class="hv-cat__txt"><span class="hv-cat__name">חד פעמי ואירוח</span><span class="hv-cat__desc">צלחות, כוסות, סכום</span></span></a>
-          <a href="/category/food-packaging-delivery-solutions/" class="hv-cat"><span class="hv-cat__img"><img src="/items/319.jpg" alt="אריזות מזון ו-Take Away" loading="lazy" width="240" height="180"></span><span class="hv-cat__txt"><span class="hv-cat__name">אריזות מזון ו-Take Away</span><span class="hv-cat__desc">קופסאות, שקיות, נייר</span></span></a>
-          <a href="/category/safety-ppe-equipment-for-business/" class="hv-cat"><span class="hv-cat__img"><img src="/items/50.jpg" alt="בטיחות ומיגון אישי" loading="lazy" width="240" height="180"></span><span class="hv-cat__txt"><span class="hv-cat__name">בטיחות ומיגון אישי</span><span class="hv-cat__desc">כפפות, מסכות, ביגוד</span></span></a>
-          <a href="/category/heavy-duty-garbage-bags-wholesale/" class="hv-cat"><span class="hv-cat__img"><img src="/items/159.jpg" alt="שקיות ופתרונות אשפה" loading="lazy" width="240" height="180"></span><span class="hv-cat__txt"><span class="hv-cat__name">שקיות ופתרונות אשפה</span><span class="hv-cat__desc">שקיות אשפה, ניילונים</span></span></a>
-          <a href="/category/professional-cleaning-cloths-microfiber/" class="hv-cat"><span class="hv-cat__img"><img src="/items/182.jpg" alt="טקסטיל, מטליות וסחבות" loading="lazy" width="240" height="180"></span><span class="hv-cat__txt"><span class="hv-cat__name">טקסטיל, מטליות וסחבות</span><span class="hv-cat__desc">מטליות, סחבות, מגבים</span></span></a>
-          <a href="/category/office-coffee-breakroom-supplies/" class="hv-cat"><span class="hv-cat__img"><img src="/items/271.jpg" alt="קפה, שתייה וכיבוד למשרד" loading="lazy" width="240" height="180"></span><span class="hv-cat__txt"><span class="hv-cat__name">קפה, שתייה וכיבוד</span><span class="hv-cat__desc">קפה, סוכר, חטיפים</span></span></a>
-          <a href="/category/personal-hygiene-products-wholesale/" class="hv-cat"><span class="hv-cat__img"><img src="/items/97.jpg" alt="טואלטיקה וטיפוח" loading="lazy" width="240" height="180"></span><span class="hv-cat__txt"><span class="hv-cat__name">טואלטיקה וטיפוח</span><span class="hv-cat__desc">סבונים, שמפו, מגבונים</span></span></a>
-          <a href="/category/institutional-cleaning-tools-equipment/" class="hv-cat"><span class="hv-cat__img"><img src="/items/644.jpg" alt="כלי עבודה וציוד משקי" loading="lazy" width="240" height="180"></span><span class="hv-cat__txt"><span class="hv-cat__name">כלי עבודה וציוד משקי</span><span class="hv-cat__desc">מגבים, דליים, עגלות</span></span></a>
-          <a href="/category/office-supplies-wholesale-business/" class="hv-cat"><span class="hv-cat__img"><img src="/items/265.jpg" alt="ציוד משרדי וכללי" loading="lazy" width="240" height="180"></span><span class="hv-cat__txt"><span class="hv-cat__name">ציוד משרדי וכללי</span><span class="hv-cat__desc">עטים, נייר, מוצרי משרד</span></span></a>
-          <a href="/category/warehouse-packaging-supplies-wholesale/" class="hv-cat"><span class="hv-cat__img"><img src="/items/168.jpg" alt="עטיפה, אריזה ולוגיסטיקה" loading="lazy" width="240" height="180"></span><span class="hv-cat__txt"><span class="hv-cat__name">עטיפה, אריזה ולוגיסטיקה</span><span class="hv-cat__desc">דבקים, סרטים, אריזה</span></span></a>
-          <a href="/category/maintenance-technical-equipment-wholesale/" class="hv-cat"><span class="hv-cat__img"><img src="/items/374.jpg" alt="ציוד טכני ואחזקה" loading="lazy" width="240" height="180"></span><span class="hv-cat__txt"><span class="hv-cat__name">ציוד טכני ואחזקה</span><span class="hv-cat__desc">כלי עבודה, תחזוקה</span></span></a>
-          <a href="/category/first-aid-medical-equipment-business/" class="hv-cat"><span class="hv-cat__img"><img src="/items/529.jpg" alt="עזרה ראשונה וציוד רפואי" loading="lazy" width="240" height="180"></span><span class="hv-cat__txt"><span class="hv-cat__name">עזרה ראשונה - רפואי</span><span class="hv-cat__desc">תחבושות, כפפות, AED</span></span></a>
-          <a href="/catalog" class="hv-cat hv-cat--all"><span class="hv-cat__txt"><span class="hv-cat__name">כל הקטלוג</span><span class="hv-cat__desc">מעל 800 מוצרים</span></span></a>
+        <div class="y3-stores">
+          <a href="/category/bulk-paper-towel-office-supplies/" class="y3-store"><span class="y3-store__cover"><img src="/items/107.jpg" alt="מוצרי נייר וניגוב" loading="lazy" width="220" height="160"><span class="y3-store__count">46 מוצרים</span></span><span class="y3-store__body"><span class="y3-store__name">מוצרי נייר וניגוב</span><span class="y3-store__meta"><span>משלוח לפי אזור</span><span>מינימום 200 ₪</span></span></span></a>
+          <a href="/category/industrial-cleaning-supplies-wholesale/" class="y3-store"><span class="y3-store__cover"><img src="/items/877.jpg" alt="חומרי ניקוי וכימיקלים" loading="lazy" width="220" height="160"><span class="y3-store__count">88 מוצרים</span></span><span class="y3-store__body"><span class="y3-store__name">חומרי ניקוי וכימיקלים</span><span class="y3-store__meta"><span>משלוח לפי אזור</span><span>מינימום 200 ₪</span></span></span></a>
+          <a href="/category/disposable-catering-food-service/" class="y3-store"><span class="y3-store__cover"><img src="/items/650.jpg" alt="חד פעמי ואירוח" loading="lazy" width="220" height="160"><span class="y3-store__count">60 מוצרים</span></span><span class="y3-store__body"><span class="y3-store__name">חד פעמי ואירוח</span><span class="y3-store__meta"><span>משלוח לפי אזור</span><span>מינימום 200 ₪</span></span></span></a>
+          <a href="/category/food-packaging-delivery-solutions/" class="y3-store"><span class="y3-store__cover"><img src="/items/319.jpg" alt="אריזות מזון ו-Take Away" loading="lazy" width="220" height="160"><span class="y3-store__count">199 מוצרים</span></span><span class="y3-store__body"><span class="y3-store__name">אריזות מזון ו-Take Away</span><span class="y3-store__meta"><span>משלוח לפי אזור</span><span>מינימום 200 ₪</span></span></span></a>
+          <a href="/category/safety-ppe-equipment-for-business/" class="y3-store"><span class="y3-store__cover"><img src="/items/50.jpg" alt="בטיחות ומיגון אישי" loading="lazy" width="220" height="160"><span class="y3-store__count">70 מוצרים</span></span><span class="y3-store__body"><span class="y3-store__name">בטיחות ומיגון אישי</span><span class="y3-store__meta"><span>משלוח לפי אזור</span><span>מינימום 200 ₪</span></span></span></a>
+          <a href="/category/heavy-duty-garbage-bags-wholesale/" class="y3-store"><span class="y3-store__cover"><img src="/items/159.jpg" alt="שקיות ופתרונות אשפה" loading="lazy" width="220" height="160"><span class="y3-store__count">43 מוצרים</span></span><span class="y3-store__body"><span class="y3-store__name">שקיות ופתרונות אשפה</span><span class="y3-store__meta"><span>משלוח לפי אזור</span><span>מינימום 200 ₪</span></span></span></a>
+          <a href="/category/professional-cleaning-cloths-microfiber/" class="y3-store"><span class="y3-store__cover"><img src="/items/182.jpg" alt="טקסטיל, מטליות וסחבות" loading="lazy" width="220" height="160"><span class="y3-store__count">35 מוצרים</span></span><span class="y3-store__body"><span class="y3-store__name">טקסטיל, מטליות וסחבות</span><span class="y3-store__meta"><span>משלוח לפי אזור</span><span>מינימום 200 ₪</span></span></span></a>
+          <a href="/category/office-coffee-breakroom-supplies/" class="y3-store"><span class="y3-store__cover"><img src="/items/271.jpg" alt="קפה, שתייה וכיבוד" loading="lazy" width="220" height="160"><span class="y3-store__count">20 מוצרים</span></span><span class="y3-store__body"><span class="y3-store__name">קפה, שתייה וכיבוד</span><span class="y3-store__meta"><span>משלוח לפי אזור</span><span>מינימום 200 ₪</span></span></span></a>
+          <a href="/category/personal-hygiene-products-wholesale/" class="y3-store"><span class="y3-store__cover"><img src="/items/97.jpg" alt="טואלטיקה וטיפוח" loading="lazy" width="220" height="160"><span class="y3-store__count">27 מוצרים</span></span><span class="y3-store__body"><span class="y3-store__name">טואלטיקה וטיפוח</span><span class="y3-store__meta"><span>משלוח לפי אזור</span><span>מינימום 200 ₪</span></span></span></a>
+          <a href="/category/institutional-cleaning-tools-equipment/" class="y3-store"><span class="y3-store__cover"><img src="/items/644.jpg" alt="כלי עבודה וציוד משקי" loading="lazy" width="220" height="160"><span class="y3-store__count">34 מוצרים</span></span><span class="y3-store__body"><span class="y3-store__name">כלי עבודה וציוד משקי</span><span class="y3-store__meta"><span>משלוח לפי אזור</span><span>מינימום 200 ₪</span></span></span></a>
+          <a href="/category/office-supplies-wholesale-business/" class="y3-store"><span class="y3-store__cover"><img src="/items/265.jpg" alt="ציוד משרדי וכללי" loading="lazy" width="220" height="160"><span class="y3-store__count">116 מוצרים</span></span><span class="y3-store__body"><span class="y3-store__name">ציוד משרדי וכללי</span><span class="y3-store__meta"><span>משלוח לפי אזור</span><span>מינימום 200 ₪</span></span></span></a>
+          <a href="/category/warehouse-packaging-supplies-wholesale/" class="y3-store"><span class="y3-store__cover"><img src="/items/168.jpg" alt="עטיפה, אריזה ולוגיסטיקה" loading="lazy" width="220" height="160"><span class="y3-store__count">17 מוצרים</span></span><span class="y3-store__body"><span class="y3-store__name">עטיפה, אריזה ולוגיסטיקה</span><span class="y3-store__meta"><span>משלוח לפי אזור</span><span>מינימום 200 ₪</span></span></span></a>
+          <a href="/category/maintenance-technical-equipment-wholesale/" class="y3-store"><span class="y3-store__cover"><img src="/items/374.jpg" alt="ציוד טכני ואחזקה" loading="lazy" width="220" height="160"><span class="y3-store__count">51 מוצרים</span></span><span class="y3-store__body"><span class="y3-store__name">ציוד טכני ואחזקה</span><span class="y3-store__meta"><span>משלוח לפי אזור</span><span>מינימום 200 ₪</span></span></span></a>
+          <a href="/category/first-aid-medical-equipment-business/" class="y3-store"><span class="y3-store__cover"><img src="/items/529.jpg" alt="עזרה ראשונה - רפואי" loading="lazy" width="220" height="160"><span class="y3-store__count">48 מוצרים</span></span><span class="y3-store__body"><span class="y3-store__name">עזרה ראשונה - רפואי</span><span class="y3-store__meta"><span>משלוח לפי אזור</span><span>מינימום 200 ₪</span></span></span></a>
+          <a href="/catalog" class="y3-store y3-store--all"><span class="y3-store__name">כל הקטלוג</span><span class="y3-store__meta"><span>מעל 800 מוצרים לעסקים ומוסדות</span></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ ORDERING APP ═══ -->
+    <section class="hv-sec y3-app" aria-labelledby="hv-app">
+      <div class="hv-wrap y3-app__grid">
+        <div class="y3-app__copy">
+          <span class="y3-app__tag"><i class="fas fa-mobile-screen" aria-hidden="true"></i> אפליקציית ההזמנות של וואי מרקט</span>
+          <h2 class="hv-sec__title" id="hv-app">כל הרכש של העסק, באפליקציה אחת.</h2>
+          <p class="hv-sec__sub">לקוחות רשומים מזמינים מהאפליקציה בכמה שניות: המחירון שלכם, ההזמנות הקודמות, החשבוניות וה-CASH BACK, במקום אחד.</p>
+          <ul class="y3-app__list">
+            <li><span class="y3-app__ic"><i class="fas fa-tags" aria-hidden="true"></i></span><div><strong>המחירון האישי שלכם</strong>הקטלוג מוצג במחירים שנקבעו לעסק שלכם.</div></li>
+            <li><span class="y3-app__ic"><i class="fas fa-rotate" aria-hidden="true"></i></span><div><strong>הזמנה חוזרת בקליק</strong>ההזמנות הקודמות שמורות, ומזמינים אותן שוב בלחיצה.</div></li>
+            <li><span class="y3-app__ic"><i class="fas fa-truck-fast" aria-hidden="true"></i></span><div><strong>מעקב אחרי כל הזמנה</strong>רואים את הסטטוס ואת חלון האספקה של ההזמנה.</div></li>
+            <li><span class="y3-app__ic"><i class="fas fa-file-invoice-dollar" aria-hidden="true"></i></span><div><strong>חשבוניות ותשלום</strong>החשבוניות והיתרה פתוחות לפניכם, ומשלמים בתשלום מאובטח.</div></li>
+            <li><span class="y3-app__ic y3-app__ic--gold"><i class="fas fa-coins" aria-hidden="true"></i></span><div><strong>CASH BACK רק באפליקציה</strong>הכסף שחוזר נצבר על הזמנות שנעשות מהאפליקציה.</div></li>
+            <li><span class="y3-app__ic"><i class="fas fa-code-branch" aria-hidden="true"></i></span><div><strong>כל הסניפים מחשבון אחד</strong>מזמינים לכל סניף מאותו חשבון, 24/7.</div></li>
+          </ul>
+          <div class="y3-app__actions">
+            <a href="/register" class="hv-btn hv-btn--gold"><i class="fas fa-user-plus" aria-hidden="true"></i> פתיחת חשבון וכניסה לאפליקציה</a>
+            <a href="https://app.ymarket.co.il/portal" class="hv-btn hv-btn--line"><i class="fas fa-right-to-bracket" aria-hidden="true"></i> יש לי חשבון</a>
+          </div>
+          <div class="y3-qr"><svg class="y3-qr__svg" role="img" aria-label="קוד QR לפתיחת האפליקציה" width="31mm" height="31mm" version="1.1" viewBox="0 0 31 31" xmlns="http://www.w3.org/2000/svg"><path d="M1,1H2V2H1zM2,1H3V2H2zM3,1H4V2H3zM4,1H5V2H4zM5,1H6V2H5zM6,1H7V2H6zM7,1H8V2H7zM10,1H11V2H10zM13,1H14V2H13zM14,1H15V2H14zM17,1H18V2H17zM18,1H19V2H18zM19,1H20V2H19zM20,1H21V2H20zM21,1H22V2H21zM23,1H24V2H23zM24,1H25V2H24zM25,1H26V2H25zM26,1H27V2H26zM27,1H28V2H27zM28,1H29V2H28zM29,1H30V2H29zM1,2H2V3H1zM7,2H8V3H7zM9,2H10V3H9zM15,2H16V3H15zM16,2H17V3H16zM17,2H18V3H17zM19,2H20V3H19zM20,2H21V3H20zM21,2H22V3H21zM23,2H24V3H23zM29,2H30V3H29zM1,3H2V4H1zM3,3H4V4H3zM4,3H5V4H4zM5,3H6V4H5zM7,3H8V4H7zM11,3H12V4H11zM14,3H15V4H14zM15,3H16V4H15zM17,3H18V4H17zM19,3H20V4H19zM20,3H21V4H20zM23,3H24V4H23zM25,3H26V4H25zM26,3H27V4H26zM27,3H28V4H27zM29,3H30V4H29zM1,4H2V5H1zM3,4H4V5H3zM4,4H5V5H4zM5,4H6V5H5zM7,4H8V5H7zM10,4H11V5H10zM13,4H14V5H13zM14,4H15V5H14zM15,4H16V5H15zM16,4H17V5H16zM19,4H20V5H19zM23,4H24V5H23zM25,4H26V5H25zM26,4H27V5H26zM27,4H28V5H27zM29,4H30V5H29zM1,5H2V6H1zM3,5H4V6H3zM4,5H5V6H4zM5,5H6V6H5zM7,5H8V6H7zM9,5H10V6H9zM11,5H12V6H11zM13,5H14V6H13zM15,5H16V6H15zM18,5H19V6H18zM19,5H20V6H19zM20,5H21V6H20zM23,5H24V6H23zM25,5H26V6H25zM26,5H27V6H26zM27,5H28V6H27zM29,5H30V6H29zM1,6H2V7H1zM7,6H8V7H7zM10,6H11V7H10zM12,6H13V7H12zM14,6H15V7H14zM18,6H19V7H18zM20,6H21V7H20zM21,6H22V7H21zM23,6H24V7H23zM29,6H30V7H29zM1,7H2V8H1zM2,7H3V8H2zM3,7H4V8H3zM4,7H5V8H4zM5,7H6V8H5zM6,7H7V8H6zM7,7H8V8H7zM9,7H10V8H9zM11,7H12V8H11zM13,7H14V8H13zM15,7H16V8H15zM17,7H18V8H17zM19,7H20V8H19zM21,7H22V8H21zM23,7H24V8H23zM24,7H25V8H24zM25,7H26V8H25zM26,7H27V8H26zM27,7H28V8H27zM28,7H29V8H28zM29,7H30V8H29zM10,8H11V9H10zM11,8H12V9H11zM13,8H14V9H13zM14,8H15V9H14zM15,8H16V9H15zM17,8H18V9H17zM18,8H19V9H18zM19,8H20V9H19zM1,9H2V10H1zM3,9H4V10H3zM5,9H6V10H5zM7,9H8V10H7zM10,9H11V10H10zM12,9H13V10H12zM13,9H14V10H13zM15,9H16V10H15zM16,9H17V10H16zM18,9H19V10H18zM21,9H22V10H21zM25,9H26V10H25zM28,9H29V10H28zM1,10H2V11H1zM2,10H3V11H2zM5,10H6V11H5zM6,10H7V11H6zM8,10H9V11H8zM9,10H10V11H9zM10,10H11V11H10zM13,10H14V11H13zM15,10H16V11H15zM16,10H17V11H16zM21,10H22V11H21zM23,10H24V11H23zM26,10H27V11H26zM29,10H30V11H29zM3,11H4V12H3zM4,11H5V12H4zM5,11H6V12H5zM6,11H7V12H6zM7,11H8V12H7zM8,11H9V12H8zM9,11H10V12H9zM11,11H12V12H11zM12,11H13V12H12zM13,11H14V12H13zM14,11H15V12H14zM21,11H22V12H21zM27,11H28V12H27zM28,11H29V12H28zM29,11H30V12H29zM2,12H3V13H2zM4,12H5V13H4zM10,12H11V13H10zM12,12H13V13H12zM16,12H17V13H16zM18,12H19V13H18zM21,12H22V13H21zM25,12H26V13H25zM28,12H29V13H28zM1,13H2V14H1zM5,13H6V14H5zM6,13H7V14H6zM7,13H8V14H7zM8,13H9V14H8zM9,13H10V14H9zM17,13H18V14H17zM18,13H19V14H18zM19,13H20V14H19zM20,13H21V14H20zM21,13H22V14H21zM22,13H23V14H22zM23,13H24V14H23zM26,13H27V14H26zM28,13H29V14H28zM29,13H30V14H29zM1,14H2V15H1zM3,14H4V15H3zM4,14H5V15H4zM11,14H12V15H11zM14,14H15V15H14zM16,14H17V15H16zM17,14H18V15H17zM22,14H23V15H22zM23,14H24V15H23zM24,14H25V15H24zM26,14H27V15H26zM29,14H30V15H29zM3,15H4V16H3zM4,15H5V16H4zM6,15H7V16H6zM7,15H8V16H7zM10,15H11V16H10zM11,15H12V16H11zM12,15H13V16H12zM15,15H16V16H15zM16,15H17V16H16zM17,15H18V16H17zM18,15H19V16H18zM21,15H22V16H21zM22,15H23V16H22zM25,15H26V16H25zM26,15H27V16H26zM28,15H29V16H28zM29,15H30V16H29zM1,16H2V17H1zM2,16H3V17H2zM4,16H5V17H4zM5,16H6V17H5zM6,16H7V17H6zM10,16H11V17H10zM12,16H13V17H12zM13,16H14V17H13zM14,16H15V17H14zM15,16H16V17H15zM17,16H18V17H17zM18,16H19V17H18zM19,16H20V17H19zM20,16H21V17H20zM21,16H22V17H21zM24,16H25V17H24zM26,16H27V17H26zM28,16H29V17H28zM1,17H2V18H1zM2,17H3V18H2zM4,17H5V18H4zM5,17H6V18H5zM7,17H8V18H7zM10,17H11V18H10zM15,17H16V18H15zM16,17H17V18H16zM17,17H18V18H17zM18,17H19V18H18zM22,17H23V18H22zM23,17H24V18H23zM24,17H25V18H24zM26,17H27V18H26zM28,17H29V18H28zM29,17H30V18H29zM2,18H3V19H2zM3,18H4V19H3zM5,18H6V19H5zM6,18H7V19H6zM12,18H13V19H12zM13,18H14V19H13zM15,18H16V19H15zM16,18H17V19H16zM18,18H19V19H18zM19,18H20V19H19zM21,18H22V19H21zM22,18H23V19H22zM23,18H24V19H23zM26,18H27V19H26zM27,18H28V19H27zM29,18H30V19H29zM1,19H2V20H1zM3,19H4V20H3zM4,19H5V20H4zM5,19H6V20H5zM7,19H8V20H7zM8,19H9V20H8zM9,19H10V20H9zM10,19H11V20H10zM11,19H12V20H11zM12,19H13V20H12zM14,19H15V20H14zM17,19H18V20H17zM19,19H20V20H19zM23,19H24V20H23zM25,19H26V20H25zM28,19H29V20H28zM29,19H30V20H29zM2,20H3V21H2zM5,20H6V21H5zM16,20H17V21H16zM17,20H18V21H17zM18,20H19V21H18zM20,20H21V21H20zM21,20H22V21H21zM24,20H25V21H24zM26,20H27V21H26zM28,20H29V21H28zM1,21H2V22H1zM5,21H6V22H5zM6,21H7V22H6zM7,21H8V22H7zM8,21H9V22H8zM9,21H10V22H9zM10,21H11V22H10zM12,21H13V22H12zM16,21H17V22H16zM17,21H18V22H17zM18,21H19V22H18zM21,21H22V22H21zM22,21H23V22H22zM23,21H24V22H23zM24,21H25V22H24zM25,21H26V22H25zM9,22H10V23H9zM10,22H11V23H10zM11,22H12V23H11zM12,22H13V23H12zM13,22H14V23H13zM14,22H15V23H14zM17,22H18V23H17zM20,22H21V23H20zM21,22H22V23H21zM25,22H26V23H25zM27,22H28V23H27zM28,22H29V23H28zM29,22H30V23H29zM1,23H2V24H1zM2,23H3V24H2zM3,23H4V24H3zM4,23H5V24H4zM5,23H6V24H5zM6,23H7V24H6zM7,23H8V24H7zM12,23H13V24H12zM15,23H16V24H15zM18,23H19V24H18zM20,23H21V24H20zM21,23H22V24H21zM23,23H24V24H23zM25,23H26V24H25zM26,23H27V24H26zM28,23H29V24H28zM29,23H30V24H29zM1,24H2V25H1zM7,24H8V25H7zM10,24H11V25H10zM11,24H12V25H11zM14,24H15V25H14zM15,24H16V25H15zM16,24H17V25H16zM18,24H19V25H18zM19,24H20V25H19zM21,24H22V25H21zM25,24H26V25H25zM26,24H27V25H26zM28,24H29V25H28zM1,25H2V26H1zM3,25H4V26H3zM4,25H5V26H4zM5,25H6V26H5zM7,25H8V26H7zM9,25H10V26H9zM10,25H11V26H10zM11,25H12V26H11zM12,25H13V26H12zM15,25H16V26H15zM17,25H18V26H17zM18,25H19V26H18zM21,25H22V26H21zM22,25H23V26H22zM23,25H24V26H23zM24,25H25V26H24zM25,25H26V26H25zM29,25H30V26H29zM1,26H2V27H1zM3,26H4V27H3zM4,26H5V27H4zM5,26H6V27H5zM7,26H8V27H7zM10,26H11V27H10zM12,26H13V27H12zM13,26H14V27H13zM15,26H16V27H15zM17,26H18V27H17zM18,26H19V27H18zM19,26H20V27H19zM21,26H22V27H21zM25,26H26V27H25zM27,26H28V27H27zM28,26H29V27H28zM29,26H30V27H29zM1,27H2V28H1zM3,27H4V28H3zM4,27H5V28H4zM5,27H6V28H5zM7,27H8V28H7zM9,27H10V28H9zM13,27H14V28H13zM17,27H18V28H17zM18,27H19V28H18zM19,27H20V28H19zM22,27H23V28H22zM24,27H25V28H24zM25,27H26V28H25zM26,27H27V28H26zM29,27H30V28H29zM1,28H2V29H1zM7,28H8V29H7zM10,28H11V29H10zM13,28H14V29H13zM14,28H15V29H14zM15,28H16V29H15zM16,28H17V29H16zM17,28H18V29H17zM18,28H19V29H18zM20,28H21V29H20zM21,28H22V29H21zM22,28H23V29H22zM28,28H29V29H28zM1,29H2V30H1zM2,29H3V30H2zM3,29H4V30H3zM4,29H5V30H4zM5,29H6V30H5zM6,29H7V30H6zM7,29H8V30H7zM9,29H10V30H9zM10,29H11V30H10zM11,29H12V30H11zM13,29H14V30H13zM15,29H16V30H15zM18,29H19V30H18zM20,29H21V30H20zM21,29H22V30H21zM25,29H26V30H25zM28,29H29V30H28zM29,29H30V30H29z" id="qr-path" fill="#000000" fill-opacity="1" fill-rule="nonzero" stroke="none"/></svg><div><strong>סרקו ופתחו בטלפון</strong><span>האפליקציה נפתחת מיד, בלי הורדה מחנות.</span></div></div>
+          <p class="y3-app__install"><i class="fas fa-circle-info" aria-hidden="true"></i> בלי חנות אפליקציות: פותחים מהטלפון ובוחרים "הוספה למסך הבית".</p>
+        </div>
+        <div class="y3-phone" aria-hidden="true">
+          <div class="y3-phone__glow"></div>
+          <div class="y3-phone__body">
+            <div class="y3-phone__notch"></div>
+            <div class="y3-phone__screen y3-demo" id="y3Demo" data-scene="1">
+              <div class="y3-ph-top"><span class="y3-ph-y"></span><span>שלום, העסק שלכם</span><span class="y3-ph-cart"><i class="fas fa-cart-shopping"></i><b id="y3DemoBadge">0</b></span></div>
+              <div class="y3-sc y3-sc1">
+                <div class="y3-ph-cash"><span class="y3-ph-cash__lbl">CASH MARKET</span><span class="y3-ph-cash__txt">הכסף שחוזר לעסק</span><span class="y3-ph-cash__chip"></span></div>
+                <div class="y3-ph-row"><span class="y3-ph-act" data-t="reorder"><i class="fas fa-rotate"></i>הזמנה חוזרת</span><span class="y3-ph-act"><i class="fas fa-truck-fast"></i>מעקב</span><span class="y3-ph-act"><i class="fas fa-file-invoice"></i>חשבוניות</span></div>
+                <div class="y3-ph-title">מומלץ לעסק שלכם</div>
+                <div class="y3-ph-tiles"><span><img src="/items/107.jpg" alt=""></span><span><img src="/items/877.jpg" alt=""></span><span><img src="/items/650.jpg" alt=""></span></div>
+              </div>
+              <div class="y3-sc y3-sc2">
+                <div class="y3-ph-title">ההזמנה הקבועה שלכם</div>
+                <div class="y3-ph-item" style="--i:0"><img src="/items/107.jpg" alt=""><span>נייר סופג 2 שכבות</span><em>×<i class="y3-q" data-q="4">1</i></em></div>
+                <div class="y3-ph-item" style="--i:1"><img src="/items/159.jpg" alt=""><span>שקיות זבל 75×90</span><em>×<i class="y3-q" data-q="2">1</i></em></div>
+                <div class="y3-ph-item" style="--i:2"><img src="/items/34.jpg" alt=""><span>כפפות ניטריל</span><em>×<i class="y3-q" data-q="3">1</i></em></div>
+                <div class="y3-ph-item" style="--i:3"><img src="/items/121.jpg" alt=""><span>אקונומיקה 4 ליטר</span><em>×<i class="y3-q" data-q="2">1</i></em></div>
+                <div class="y3-ph-bar" data-t="cart"><span>4 פריטים</span><b>להזמנה ולתשלום</b></div>
+              </div>
+              <div class="y3-sc y3-sc3">
+                <div class="y3-ph-title">תשלום מאובטח</div>
+                <div class="y3-ph-paycard"><span class="y3-ph-y y3-ph-y--gold"></span><span dir="ltr">3497 •••• •••• ••••</span></div>
+                <div class="y3-ph-line"><span>משלוח</span><b>לפי אזור</b></div>
+                <div class="y3-ph-line"><span>CASH BACK</span><b class="y3-gold">נצבר בהזמנה</b></div>
+                <div class="y3-ph-pay" data-t="pay"><i class="fas fa-lock"></i> אישור ותשלום</div>
+                <div class="y3-ph-ok"><i class="fas fa-circle-check"></i><strong>ההזמנה התקבלה</strong><span>נארזת עכשיו בגת רימון</span></div>
+              </div>
+              <div class="y3-sc y3-sc4">
+                <div class="y3-coins"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="y3-ph-cash y3-ph-cash--big"><span class="y3-ph-cash__lbl">CASH BACK</span><span class="y3-ph-cash__txt">נצבר על ההזמנה, לקנייה הבאה</span><span class="y3-ph-cash__chip"></span></div>
+                <div class="y3-ph-note">נפתח לשימוש אחרי תשלום החשבונית</div>
+              </div>
+              <div class="y3-sc y3-sc5">
+                <div class="y3-ph-title">מעקב משלוח</div>
+                <div class="y3-track2"><div class="y3-track2__fill"></div><i class="fas fa-truck-fast y3-track2__truck"></i></div>
+                <ol class="y3-steps2"><li class="on">התקבלה</li><li class="on">נארזה</li><li class="y3-now">בדרך אליכם</li><li>נמסרה</li></ol>
+                <div class="y3-ph-status"><i class="fas fa-circle-check"></i> ההזמנה בדרך אליכם</div>
+              </div>
+              <span class="y3-finger" id="y3Finger"></span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ═══ SERVICE ═══ -->
-    <section class="hv-sec hv-sec--shelf" aria-labelledby="hv-service">
+    <section class="y3-svc" aria-labelledby="hv-service">
       <div class="hv-wrap">
-        <div class="hv-sec__head">
-          <div>
-            <h2 class="hv-sec__title" id="hv-service">שירות של אדם, לא של מוקד</h2>
-            <p class="hv-sec__sub">מדברים ישירות עם מי שמכיר את העסק שלכם ואת ההזמנות שלכם.</p>
+        <div class="y3-svc__panel">
+          <div class="y3-svc__main">
+            <span class="y3-svc__tag"><i class="fas fa-user-tie" aria-hidden="true"></i> שירות אישי · בעל העסק על הקו</span>
+            <h2 class="y3-svc__title" id="hv-service">שירות של אדם,<br><em>לא של מוקד.</em></h2>
+            <figure class="y3-svc__quote">
+              <blockquote>
+                <p>עסקים עושים עם אנשים. מי שקונה אצלי בקביעות צריך להרוויח מזה: במחיר, בשירות ובכסף שחוזר לעסק שלו.</p>
+              </blockquote>
+              <figcaption class="y3-svc__sign">
+                <span class="y3-svc__avatar" aria-hidden="true"><span>י.נ</span></span>
+                <span><strong>יובל נגלר</strong><small>מייסד ובעלים, וואי מרקט · מסחר ב-B2B מאז 2020</small></span>
+              </figcaption>
+            </figure>
+            <div class="y3-svc__status" id="y3SvcStatus"><i></i><span>א'–ה' 08:00–17:00</span></div>
+            <div class="y3-svc__actions">
+              <a href="https://wa.me/972549922492?text=שלום יובל, אשמח לעזרה" target="_blank" rel="noopener" class="hv-btn hv-btn--gold"><i class="fab fa-whatsapp" aria-hidden="true"></i> כתבו ליובל בוואטסאפ</a>
+              <a href="tel:037740400" class="hv-btn hv-btn--line-light"><i class="fas fa-phone" aria-hidden="true"></i> 03-7740400</a>
+            </div>
+            <p class="y3-svc__mail"><a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a></p>
           </div>
-        </div>
-        <div class="hv-service">
-          <div class="hv-person">
-            <div class="hv-person__mark" aria-hidden="true">י.נ</div>
-            <h3>יובל נגלר, בעל העסק</h3>
-            <p>זמין לייעוץ ולמענה מהיר. לא מוקד, אדם שמבין עסקים.</p>
-            <div class="hv-person__hours"><strong>א'–ה' 08:00–17:00</strong><br>03-7740400 · Pm@ymarket.co.il</div>
-            <a href="https://wa.me/972549922492?text=שלום יובל, אשמח לעזרה" target="_blank" rel="noopener" class="hv-btn hv-btn--gold"><i class="fab fa-whatsapp" aria-hidden="true"></i> כתבו ליובל בוואטסאפ</a>
-          </div>
-          <ul class="hv-promises">
-            <li class="hv-promise"><div class="hv-promise__k">שעות</div><h3>הצעת מחיר מותאמת</h3><p>שולחים רשימה בוואטסאפ או בטלפון, ומקבלים הצעה תוך שעות ספורות.</p></li>
-            <li class="hv-promise"><div class="hv-promise__k">מחירון</div><h3>מחירים משלכם</h3><p>לקוחות קבועים מקבלים מחירון אישי שנקבע לפי העסק שלהם.</p></li>
-            <li class="hv-promise"><div class="hv-promise__k" dir="ltr">+30 / +60</div><h3>תנאי תשלום</h3><p>ללקוחות קבועים: שוטף + 30 עד שוטף + 60, לפי היקף הפעילות.</p></li>
-            <li class="hv-promise"><div class="hv-promise__k">קליק</div><h3>הזמנה חוזרת</h3><p>בפורטל ההזמנות רואים היסטוריה ומזמינים שוב בלחיצה, 24/7.</p></li>
+          <ul class="y3-svc__grid">
+            <li class="y3-svc__card"><span class="y3-svc__k"><i class="fas fa-bolt" aria-hidden="true"></i> שעות</span><h3>הצעת מחיר מותאמת</h3><p>שולחים רשימה בוואטסאפ או בטלפון, ומקבלים הצעה תוך שעות ספורות.</p></li>
+            <li class="y3-svc__card"><span class="y3-svc__k"><i class="fas fa-tags" aria-hidden="true"></i> מחירון</span><h3>מחירים משלכם</h3><p>לקוחות קבועים מקבלים מחירון אישי שנקבע לפי העסק שלהם.</p></li>
+            <li class="y3-svc__card"><span class="y3-svc__k"><i class="fas fa-file-invoice" aria-hidden="true"></i> עד <b class="y3-num">+60</b></span><h3>תנאי תשלום</h3><p>ללקוחות קבועים: עד שוטף +60, לפי היקף הפעילות.</p></li>
+            <li class="y3-svc__card y3-svc__card--gold"><span class="y3-svc__k"><i class="fas fa-coins" aria-hidden="true"></i> CASH BACK</span><h3>הכסף שחוזר לעסק</h3><p>ב-CASH MARKET, על מוצרים מסומנים בהזמנות מהאפליקציה.</p></li>
           </ul>
         </div>
       </div>
     </section>
-
     <!-- ═══ SPEED: coverage map ═══ -->
     <section class="hv-map" aria-labelledby="hv-cover" id="deliveryMap">
       <div class="hv-wrap hv-map__grid">
@@ -1894,29 +2072,61 @@
       </div>
     </section>
 
-    <!-- ═══ BUSINESS PORTAL ═══ -->
-    <section class="hv-sec hv-portal" aria-labelledby="hv-portal">
-      <div class="hv-wrap">
-        <div class="hv-sec__head">
-          <div>
-            <h2 class="hv-sec__title" id="hv-portal">קונים קבוע? מגיע לכם מחירון משלכם.</h2>
-            <p class="hv-sec__sub">לקוחות עסקיים קבועים מזמינים דרך פורטל אישי, עם מחירים שנקבעו לעסק שלהם.</p>
-          </div>
-        </div>
-        <div class="hv-portal__grid">
+    <!-- ═══ BUSINESS ACCOUNT ═══ -->
+    <section class="y3-account" aria-labelledby="hv-portal">
+      <div class="hv-wrap y3-account__grid">
+        <div>
+          <span class="y3-club-tag">CASH MARKET · מועדון הלקוחות העסקי</span>
+          <h2 id="hv-portal">הכסף שחוזר לעסק שלכם.</h2>
+          <p>CASH MARKET הוא המועדון של הלקוחות הקבועים שלנו: מחירון אישי לעסק, הזמנה מהירה מהאפליקציה, ועל מוצרים מסומנים — כסף שחוזר אליכם לקנייה הבאה.</p>
           <ul>
-            <li><i class="fas fa-tags" aria-hidden="true"></i> מחירים מותאמים אישית לעסק שלכם</li>
-            <li><i class="fas fa-clock" aria-hidden="true"></i> הזמנה אונליין 24/7, בלי להמתין לנציג</li>
-            <li><i class="fas fa-rotate" aria-hidden="true"></i> היסטוריית הזמנות והזמנה חוזרת בקליק</li>
-            <li><i class="fas fa-truck" aria-hidden="true"></i> מעקב משלוחים ואספקה שוטפת</li>
+            <li><i class="fas fa-coins" aria-hidden="true"></i> <span><strong>CASH BACK</strong> על מוצרים מסומנים, בכל הזמנה מהאפליקציה</span></li>
+            <li><i class="fas fa-wallet" aria-hidden="true"></i> <span>הכסף שחוזר נפתח לשימוש אחרי תשלום החשבונית, ומוריד את המחיר בקנייה הבאה</span></li>
+            <li><i class="fas fa-tags" aria-hidden="true"></i> <span>מחירון אישי שנקבע לעסק שלכם</span></li>
+            <li><i class="fas fa-rotate" aria-hidden="true"></i> <span>הזמנה חוזרת בקליק והיסטוריית הזמנות</span></li>
+            <li><i class="fas fa-file-invoice" aria-hidden="true"></i> <span>תנאי תשלום עד שוטף <span class="y3-num">+60</span> ללקוחות קבועים</span></li>
           </ul>
-          <div>
-            <div class="hv-portal__actions">
-              <a href="/register" class="hv-btn hv-btn--gold"><i class="fas fa-user-plus" aria-hidden="true"></i> פתחו חשבון עסקי בחינם</a>
-              <a href="/login" class="hv-btn hv-btn--line-light">כניסה ללקוחות</a>
+          <form class="y3-join" id="y3Join" novalidate>
+            <div class="y3-join__row">
+              <label class="sr-only" for="y3jName">שם מלא</label><input id="y3jName" name="name" placeholder="שם מלא" autocomplete="name" required>
+              <label class="sr-only" for="y3jPhone">טלפון</label><input id="y3jPhone" name="phone" placeholder="טלפון נייד" inputmode="tel" autocomplete="tel" required>
+              <label class="sr-only" for="y3jBiz">שם העסק</label><input id="y3jBiz" name="business" placeholder="שם העסק" autocomplete="organization">
             </div>
-            <p class="hv-portal__note">צריכים גם אחסנה ולוגיסטיקה? <a href="/contact">דברו איתנו</a></p>
+            <button type="submit" class="hv-btn hv-btn--gold"><i class="fas fa-crown" aria-hidden="true"></i> הצטרפות מהירה ל-CASH MARKET</button>
+            <p class="y3-join__msg" id="y3jMsg" aria-live="polite"></p>
+            <p class="y3-join__alt">נחזור אליכם עם פרטי הכניסה לפורטל. <a href="/register">להרשמה מלאה עכשיו</a> · <a href="/login">כניסה ללקוחות</a></p>
+          </form>
+          <p class="y3-fine">הכסף שחוזר משמש לקניות בוואי מרקט בלבד ואינו ניתן להמרה למזומן. בתוקף 12 חודשים מיום הצבירה, בכפוף לתנאי המועדון.</p>
+        </div>
+        <div class="y3-club" id="y3Club" aria-hidden="true">
+          <canvas class="y3-space" id="y3Space"></canvas>
+          <div class="y3-nebula"></div>
+          <div class="y3-club__aura"></div>
+          <div class="y3-club__ground"></div>
+          <div class="y3-club__float">
+            <div class="y3-club__card">
+            <div class="y3-club__gloss"></div>
+            <div class="y3-club__glare"></div>
+            <div class="y3-club__row">
+              <span class="y3-club__y" role="img" aria-label="YMARKET"></span>
+              <span class="y3-club__nfc"><i></i><i></i><i></i></span>
+            </div>
+            <div class="y3-club__row y3-club__mid">
+              <span class="y3-chip y3-chip--glow"></span>
+              <span class="y3-club__word">CASH<b>MARKET</b></span>
+            </div>
+            <div class="y3-club__row y3-club__numrow"><span class="y3-club__pan" dir="ltr">3497 &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull;</span></div>
+            <div class="y3-club__row y3-club__foot">
+              <span class="y3-club__cb"><em>CASH BACK</em> הכסף שחוזר</span>
+              <span class="y3-club__exclusive">BUSINESS CLUB</span>
+            </div>
+            <div class="y3-club__shine"></div>
           </div>
+          </div>
+          <span class="y3-spark" style="--x:12%;--y:18%;--d:0s"></span>
+          <span class="y3-spark" style="--x:88%;--y:10%;--d:.8s"></span>
+          <span class="y3-spark" style="--x:94%;--y:78%;--d:1.6s"></span>
+          <span class="y3-spark" style="--x:6%;--y:86%;--d:2.3s"></span>
         </div>
       </div>
     </section>
@@ -1984,7 +2194,7 @@
         <div class="hv-faq">
           <details><summary>מה מינימום ההזמנה?</summary><p>מינימום הזמנה הוא 200 ₪ + מע"מ, בתוספת דמי משלוח לפי אזור (חינם מעל 2,000 ₪). ניתן לשלב מוצרים מכל הקטגוריות בהזמנה אחת.</p></details>
           <details><summary>מה זמני האספקה?</summary><p>אספקה תוך 24-72 שעות עסקיות לאזור גוש דן והמרכז. לאזורי הפריפריה עד 5 ימי עסקים.</p></details>
-          <details><summary>האם יש תנאי תשלום?</summary><p>כן. ללקוחות קבועים אנו מציעים תנאי תשלום שוטף + 30 עד שוטף + 60, בהתאם להיקף הפעילות.</p></details>
+          <details><summary>האם יש תנאי תשלום?</summary><p>כן. ללקוחות קבועים אנו מציעים תנאי תשלום עד שוטף +60, בהתאם להיקף הפעילות.</p></details>
           <details><summary>איך מצטרפים לפורטל ההזמנות?</summary><p>הרשמה בחינם דרך האתר. לאחר אישור תקבלו גישה למחירון מותאם, הזמנה אונליין 24/7 והיסטוריית הזמנות.</p></details>
           <details><summary>האם יש משלוח לכל הארץ?</summary><p>כן, אנו מספקים לכל רחבי הארץ. עיקר הפעילות בגוש דן והמרכז עם אספקה מהירה, ומשלוחים סדירים גם לחיפה, ירושלים, באר שבע, אשדוד ואילת.</p></details>
           <details><summary>האם אפשר לקבל הצעת מחיר?</summary><p>בוודאי. בנו רשימה בראש העמוד ושלחו אותה בוואטסאפ, או התקשרו, ונחזור עם הצעת מחיר מותאמת תוך שעות ספורות.</p></details>
@@ -2119,7 +2329,7 @@
         if (!loading) {
           loading = fetch('/data/products.json').then(function (r) { return r.json(); }).then(function (d) {
             catalog = (d.items || []).filter(function (p) { return p.productStatus !== 'inactive' && p.name; }).map(function (p) {
-              return { id: p.id, name: p.name.trim(), img: p.imageUrl || '', hay: norm(p.name + ' ' + (p.searchTags || '')), n: norm(p.name) };
+              return { id: p.id, name: p.name.trim(), img: p.imageUrl || '', price: +(p.saleNis || 0), unit: p.unit || '', slug: p.slug || '', hay: norm(p.name + ' ' + (p.searchTags || '')), n: norm(p.name) };
             });
             return catalog;
           }).catch(function () { loading = null; return []; });
@@ -2160,7 +2370,7 @@
 
       function add(p) {
         var hit = list.filter(function (l) { return l.id === p.id; })[0];
-        if (hit) hit.qty += 1; else list.push({ id: p.id, name: p.name, img: p.img, qty: 1 });
+        if (hit) hit.qty += 1; else list.push({ id: p.id, name: p.name, img: p.img, price: p.price, unit: p.unit, slug: p.slug, qty: 1 });
         save(); render(p.id);
         find.value = ''; closeSugg(); find.focus();
       }
@@ -2169,9 +2379,17 @@
         var n = list.length;
         linesEl.hidden = !n; emptyEl.hidden = !!n; clearBtn.hidden = !n; sendBtn.disabled = !n;
         countEl.textContent = n ? (n === 1 ? 'פריט אחד' : n + ' פריטים') : '';
+        var sumEl = document.getElementById('hvSum'), waBtn = document.getElementById('hvWa');
+        if (waBtn) waBtn.hidden = !n;
+        if (sumEl) {
+          var sub = list.reduce(function (s, l) { return s + (l.price || 0) * l.qty; }, 0);
+          var fmt = function (v) { return '₪' + v.toLocaleString('he-IL', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); };
+          sumEl.innerHTML = !n ? '' : 'סה״כ לפני מע״מ: <strong>' + fmt(sub) + '</strong>' +
+            (sub < 200 ? ' · עוד ' + fmt(200 - sub) + ' למינימום הזמנה' : ' · משלוח לפי אזור, חינם מעל ₪2,000');
+        }
         linesEl.innerHTML = list.map(function (l) {
           return '<li class="hv-line' + (l.id === newId ? ' is-new' : '') + '" data-id="' + l.id + '">' +
-            '<img src="' + esc(l.img) + '" alt="" width="44" height="44"><span class="hv-line__name">' + esc(l.name) + '</span>' +
+            '<img src="' + esc(l.img) + '" alt="" width="44" height="44"><span class="hv-line__name">' + esc(l.name) + (l.price ? '<small class="y3-price">₪' + (+l.price).toLocaleString('he-IL', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' ליח׳ לפני מע״מ</small>' : '') + '</span>' +
             '<span class="hv-qty"><button type="button" data-act="inc" aria-label="הוספת יחידה">+</button>' +
             '<input type="number" min="1" max="9999" value="' + l.qty + '" aria-label="כמות ' + esc(l.name) + '">' +
             '<button type="button" data-act="dec" aria-label="הפחתת יחידה">−</button></span>' +
@@ -2217,7 +2435,23 @@
       });
       clearBtn.addEventListener('click', function () { list = []; save(); render(); find.focus(); });
 
+      // Primary action: the list goes into the site cart and on to checkout.
       sendBtn.addEventListener('click', function () {
+        if (!list.length) return;
+        var cart = [];
+        try { cart = JSON.parse(localStorage.getItem('ym_cart') || '[]') || []; } catch (e) { cart = []; }
+        list.forEach(function (l) {
+          var c = cart.filter(function (x) { return x.id === l.id; })[0];
+          if (c) c.quantity = (c.quantity || 0) + l.qty;
+          else cart.push({ id: l.id, name: l.name, price: l.price || 0, unit: l.unit || '', imageUrl: l.img, slug: l.slug || '', quantity: l.qty });
+        });
+        try { localStorage.setItem('ym_cart', JSON.stringify(cart)); } catch (e) {}
+        list = []; save();
+        location.href = '/cart';
+      });
+      // Secondary: talk to us — the same list as a WhatsApp message.
+      var waBtn0 = document.getElementById('hvWa');
+      if (waBtn0) waBtn0.addEventListener('click', function () {
         if (!list.length) return;
         var text = 'שלום, אשמח להצעת מחיר על הרשימה הזו:\n' +
           list.map(function (l) { return '• ' + l.name + ' — כמות: ' + l.qty; }).join('\n');
@@ -2379,6 +2613,154 @@
         new IntersectionObserver(function (es) { es.forEach(function (e) { e.isIntersecting ? start() : stop(); }); }, { threshold: .25 }).observe(section);
       } else { start(); }
     })();
+
+    // Club card: follows the pointer (tilt + moving glare); a slow float when nobody's pointing.
+    (function () {
+      var club = document.getElementById('y3Club'); if (!club) return;
+      var card = club.querySelector('.y3-club__card');
+      club.addEventListener('pointermove', function (e) {
+        var r = club.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+        card.style.setProperty('--rx', ((0.5 - y) * 16).toFixed(2) + 'deg');
+        card.style.setProperty('--ry', ((x - 0.5) * 22).toFixed(2) + 'deg');
+        card.style.setProperty('--gx', (x * 100).toFixed(1) + '%');
+        card.style.setProperty('--gy', (y * 100).toFixed(1) + '%');
+        club.classList.add('is-live');
+      });
+      club.addEventListener('pointerleave', function () { club.classList.remove('is-live'); card.style.removeProperty('--rx'); card.style.removeProperty('--ry'); });
+    })();
+
+    // Space around the club card: a slow star field with depth, twinkles and the odd
+    // shooting star. Runs only while the card is on screen.
+    (function () {
+      var cv = document.getElementById('y3Space'); if (!cv || !cv.getContext) return;
+      var ctx = cv.getContext('2d'), stars = [], shoot = null, W = 0, H = 0, raf = 0, on = false, t0 = 0;
+      var reduce = false; // the star field always moves (see home-v3.css)
+      var seed = 7; function rnd() { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
+      function size() {
+        var r = cv.getBoundingClientRect(), d = Math.min(2, window.devicePixelRatio || 1);
+        W = r.width; H = r.height; cv.width = W * d; cv.height = H * d; ctx.setTransform(d, 0, 0, d, 0, 0);
+        stars = []; for (var i = 0; i < 170; i++) {
+          var z = rnd();
+          stars.push({ x: rnd() * W, y: rnd() * H, z: z, r: .4 + z * 1.6, tw: rnd() * 6.28, sp: .15 + z * .55,
+            c: rnd() < .18 ? '255,211,122' : (rnd() < .5 ? '190,220,255' : '255,255,255') });
+        }
+      }
+      function draw(now) {
+        if (!t0) t0 = now; var dt = Math.min(50, now - (draw.last || now)); draw.last = now;
+        ctx.clearRect(0, 0, W, H);
+        for (var i = 0; i < stars.length; i++) {
+          var s = stars[i];
+          if (!reduce) { s.x -= s.sp * dt * .012; s.y += s.sp * dt * .004; if (s.x < -2) s.x = W + 2; if (s.y > H + 2) s.y = -2; }
+          var a = .35 + .65 * (0.5 + 0.5 * Math.sin(s.tw + now * .0015 * (1 + s.z)));
+          ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, 6.2832); ctx.fillStyle = 'rgba(' + s.c + ',' + (a * (.45 + s.z * .55)).toFixed(3) + ')'; ctx.fill();
+          if (s.z > .85) { ctx.fillStyle = 'rgba(' + s.c + ',' + (a * .15).toFixed(3) + ')'; ctx.beginPath(); ctx.arc(s.x, s.y, s.r * 3.2, 0, 6.2832); ctx.fill(); }
+        }
+        if (!reduce) {
+          if (!shoot && rnd() < .004) shoot = { x: W * (.3 + rnd() * .7), y: H * rnd() * .4, life: 0 };
+          if (shoot) {
+            shoot.life += dt; var k = shoot.life / 900, x = shoot.x - k * W * .55, y = shoot.y + k * H * .35;
+            var g = ctx.createLinearGradient(x, y, x + 70, y - 44); g.addColorStop(0, 'rgba(255,230,170,.9)'); g.addColorStop(1, 'rgba(255,230,170,0)');
+            ctx.strokeStyle = g; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + 70, y - 44); ctx.stroke();
+            if (k >= 1) shoot = null;
+          }
+        }
+        if (on && !reduce) raf = requestAnimationFrame(draw);
+      }
+      size(); window.addEventListener('resize', size);
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (es) { es.forEach(function (e) {
+          on = e.isIntersecting; cancelAnimationFrame(raf); if (on) raf = requestAnimationFrame(draw);
+        }); }).observe(cv);
+      } else { on = true; raf = requestAnimationFrame(draw); }
+    })();
+
+    // Phone demo: a short looping "screen recording" of ordering in the app —
+    // reorder → cart → pay → CASH BACK → tracking. Plays regardless of reduced-motion.
+    (function () {
+      var demo = document.getElementById('y3Demo'); if (!demo) return;
+      var finger = document.getElementById('y3Finger'), badge = document.getElementById('y3DemoBadge');
+      var qs = demo.querySelectorAll('.y3-q'), timers = [], running = false;
+      function at(ms, fn) { timers.push(setTimeout(fn, ms)); }
+      function tap(sel) {
+        var el = demo.querySelector(sel); if (!el) return;
+        var d = demo.getBoundingClientRect(), r = el.getBoundingClientRect();
+        finger.style.transform = 'translate(' + (r.left - d.left + r.width / 2 - 18) + 'px,' + (r.top - d.top + r.height / 2 - 18) + 'px)';
+        finger.classList.add('is-on'); setTimeout(function () { finger.classList.add('is-tap'); el.classList.add('is-press'); }, 380);
+        setTimeout(function () { finger.classList.remove('is-tap'); el.classList.remove('is-press'); }, 700);
+      }
+      function scene(n) { demo.setAttribute('data-scene', String(n)); }
+      function loop() {
+        timers.forEach(clearTimeout); timers = [];
+        scene(1); badge.textContent = '0'; finger.classList.remove('is-on'); demo.classList.remove('is-paid');
+        qs.forEach(function (q) { q.textContent = '1'; });
+        at(900, function () { tap('[data-t="reorder"]'); });
+        at(1700, function () { scene(2); });
+        at(2600, function () { badge.textContent = '4'; });
+        qs.forEach(function (q, i) { at(3000 + i * 260, function () { q.textContent = q.getAttribute('data-q'); q.parentNode.classList.add('is-bump'); setTimeout(function () { q.parentNode.classList.remove('is-bump'); }, 300); }); });
+        at(4400, function () { tap('[data-t="cart"]'); });
+        at(5200, function () { scene(3); finger.classList.remove('is-on'); });
+        at(6200, function () { tap('[data-t="pay"]'); });
+        at(6900, function () { demo.classList.add('is-paid'); badge.textContent = '0'; });
+        at(8200, function () { scene(4); finger.classList.remove('is-on'); });
+        at(10600, function () { scene(5); });
+        at(14200, loop);
+      }
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (es) { es.forEach(function (e) {
+          if (e.isIntersecting && !running) { running = true; loop(); }
+          else if (!e.isIntersecting && running) { running = false; timers.forEach(clearTimeout); }
+        }); }, { threshold: .3 }).observe(demo);
+      } else { loop(); }
+    })();
+
+    // Best sellers: add to the site cart (same item shape as the catalog), rail arrows.
+    (function () {
+      var rail = document.getElementById('y3Rail'); if (!rail) return;
+      var toast = document.getElementById('y3Toast'), tmr = 0;
+      function cartGet() { try { return JSON.parse(localStorage.getItem('ym_cart') || '[]') || []; } catch (e) { return []; } }
+      function cartSet(c) { try { localStorage.setItem('ym_cart', JSON.stringify(c)); } catch (e) {} }
+      function badge() {
+        var n = cartGet().reduce(function (s, i) { return s + (i.quantity || 0); }, 0), b = document.getElementById('cartBadge');
+        if (b) { b.textContent = n; b.style.display = n ? '' : 'none'; }
+      }
+      function mark(btn, q) { btn.classList.toggle('is-in', q > 0); btn.querySelector('span').textContent = q > 0 ? 'בסל · ' + q : 'לסל'; }
+      rail.querySelectorAll('.y3-prod__add').forEach(function (btn) {
+        var p = JSON.parse(btn.getAttribute('data-p'));
+        var have = cartGet().filter(function (i) { return i.id === p.id; })[0]; mark(btn, have ? have.quantity : 0);
+        btn.addEventListener('click', function () {
+          var c = cartGet(), it = c.filter(function (i) { return i.id === p.id; })[0];
+          if (it) it.quantity += 1; else { it = { id: p.id, name: p.name, price: p.price, unit: p.unit, imageUrl: p.imageUrl, slug: p.slug, quantity: 1 }; c.push(it); }
+          cartSet(c); mark(btn, it.quantity); badge();
+          btn.classList.remove('is-pop'); void btn.offsetWidth; btn.classList.add('is-pop');
+          toast.innerHTML = '<i class="fas fa-circle-check"></i> ' + p.name.replace(/[<>&]/g, '') + ' נוסף לסל · <a href="/cart">לסל ולתשלום</a>';
+          toast.classList.add('is-on'); clearTimeout(tmr); tmr = setTimeout(function () { toast.classList.remove('is-on'); }, 3200);
+        });
+      });
+      document.querySelectorAll('.y3-best .y3-nav').forEach(function (b) {
+        b.addEventListener('click', function () { rail.scrollBy({ left: (+b.getAttribute('data-dir')) * rail.clientWidth * .8, behavior: 'smooth' }); });
+      });
+    })();
+
+    // Quick join: a lead straight into the CRM (same endpoint as the contact form).
+    (function () {
+      var f = document.getElementById('y3Join'); if (!f) return;
+      var msg = document.getElementById('y3jMsg');
+      f.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var nEl = document.getElementById('y3jName'), pEl = document.getElementById('y3jPhone');
+        var name = nEl.value.trim(), phone = pEl.value.replace(/[-\s]/g, ''), business = document.getElementById('y3jBiz').value.trim();
+        if (!name) { msg.textContent = 'נא להזין שם.'; nEl.focus(); return; }
+        if (!/^0[0-9]{8,9}$/.test(phone)) { msg.textContent = 'נא להזין מספר טלפון תקין.'; pEl.focus(); return; }
+        var btn = f.querySelector('button'); btn.disabled = true; msg.textContent = 'שולח…';
+        fetch('https://app.ymarket.co.il/api/public/leads', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: name, phone: phone, business: business, message: 'הצטרפות מהירה ל-CASH MARKET מעמוד הבית' })
+        }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+          .then(function () { f.innerHTML = '<div class="y3-join__ok"><i class="fas fa-circle-check"></i><strong>קיבלנו, תודה!</strong><span>נחזור אליכם עם פרטי הכניסה לפורטל ול-CASH MARKET.</span></div>'; })
+          .catch(function () { btn.disabled = false; msg.innerHTML = 'לא הצלחנו לשלוח. אפשר <a href="https://wa.me/972549922492?text=' + encodeURIComponent('שלום, אשמח להצטרף ל-CASH MARKET. ' + name + ' ' + phone) + '" target="_blank" rel="noopener">לכתוב לנו בוואטסאפ</a>.'; });
+      });
+    })();
   </script>
   <script>
     // Cart badge sync
@@ -2446,6 +2828,21 @@
   <!-- Analytics -->
   <script src="/js/analytics.min.js" defer></script>
 
-<script src="/js/search.js?v=2" defer></script>
+<script src="/js/search.js?v=2" defer>
+</script>
+<script>
+    // service: live "available now" state (Israel time, Sun–Thu 08:00–17:00)
+    (function () {
+      var el = document.getElementById('y3SvcStatus'); if (!el) return;
+      try {
+        var parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Jerusalem', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date());
+        var get = function (k) { return (parts.find(function (x) { return x.type === k; }) || {}).value; };
+        var day = get('weekday'), mins = (+get('hour')) * 60 + (+get('minute'));
+        var workday = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu'].indexOf(day) > -1;
+        if (workday && mins >= 480 && mins < 1020) { el.classList.add('is-open'); el.querySelector('span').textContent = 'זמינים עכשיו · א\'–ה\' 08:00–17:00'; }
+        else { el.querySelector('span').textContent = 'השאירו הודעה, נחזור אליכם ביום העבודה הבא · א\'–ה\' 08:00–17:00'; }
+      } catch (e) {}
+    })();
+</script>
 </body>
 </html>
