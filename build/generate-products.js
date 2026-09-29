@@ -657,7 +657,7 @@ function generateProductPage(product, categories, allProducts, group) {
 
           <div class="product-highlights">
             <div class="product-highlights__item"><i class="fas fa-check-circle"></i> <span>במלאי - מוכן למשלוח</span></div>
-            <div class="product-highlights__item"><i class="fas fa-shipping-fast"></i> <span>${product.leadTimeDays ? product.leadTimeDays + ' ימי עסקים' : '1-2 ימי עסקים'}</span></div>
+            <div class="product-highlights__item"><i class="fas fa-shipping-fast"></i> <span>${product.leadTimeDays ? product.leadTimeDays + ' ימי עסקים' : '24–72 שעות בגוש דן ובמרכז'}</span></div>
             <div class="product-highlights__item"><i class="fas fa-shield-alt"></i> <span>הזמנה מינימלית: 200₪ + מע״מ · משלוח לפי אזור</span></div>
             ${product.barcode ? `<div class="product-highlights__item"><i class="fas fa-barcode"></i> <span>ברקוד: ${product.barcode}</span></div>` : ''}
             ${product.maxOrderQty ? `<div class="product-highlights__item"><i class="fas fa-cubes"></i> <span>מקס' להזמנה: ${product.maxOrderQty} יח'</span></div>` : ''}
