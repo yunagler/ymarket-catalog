@@ -1646,6 +1646,7 @@
   <link rel="stylesheet" href="/css/pages/home-v2.css?v=2">
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/pages/home-v3.css?v=2">
+<link rel="stylesheet" href="/css/pages/home-v4.css?v=1">
 </head>
 <body>
 
@@ -1721,6 +1722,13 @@
 
     <!-- ═══ HERO: speed + a working order list ═══ -->
     <section class="hv-hero y3-hero" id="hvHero" aria-labelledby="hv-title">
+      
+      <div class="v4-floats" aria-hidden="true">
+        <span class="v4-float" data-z="0.9" style="--x:.6%;--y:14%;--r:-8deg"><img src="/items/95.jpg" alt="" width="96" height="96"></span>
+        <span class="v4-float" data-z="0.5" style="--x:1.4%;--y:58%;--r:6deg"><img src="/items/34.jpg" alt="" width="96" height="96"></span>
+        <span class="v4-float" data-z="1.2" style="--x:94%;--y:8%;--r:7deg"><img src="/items/664.jpg" alt="" width="96" height="96"></span>
+        <span class="v4-float" data-z="0.7" style="--x:93.5%;--y:74%;--r:-5deg"><img src="/items/857.jpg" alt="" width="96" height="96"></span>
+      </div>
       <div class="hv-wrap hv-hero__grid">
         <div>
           <span class="y3-eyebrow"><i class="fas fa-warehouse" aria-hidden="true"></i> מחסן בגת רימון · משלוח לכל הארץ</span>
@@ -1781,7 +1789,7 @@
     <nav class="y3-quick" aria-label="פעולות מהירות">
       <div class="hv-wrap">
         <ul>
-          <li><a href="/catalog"><span class="y3-ic"><i class="fas fa-cart-shopping" aria-hidden="true"></i></span>קנייה באתר<small>מעל 800 מוצרים</small></a></li>
+          <li><a href="/catalog"><span class="y3-ic"><i class="fas fa-cart-shopping" aria-hidden="true"></i></span>קנייה באתר<small>מאות מוצרים</small></a></li>
           <li><a href="/register"><span class="y3-ic y3-ic--gold"><i class="fas fa-crown" aria-hidden="true"></i></span>CASH MARKET<small>הרשמה לפורטל</small></a></li>
           <li><a href="/login"><span class="y3-ic"><i class="fas fa-rotate" aria-hidden="true"></i></span>הזמנה חוזרת<small>ללקוחות רשומים</small></a></li>
           <li><a href="#deliveryMap"><span class="y3-ic"><i class="fas fa-location-dot" aria-hidden="true"></i></span>אזור משלוח<small>בדיקה לפי יישוב</small></a></li>
@@ -1879,32 +1887,149 @@
       </div>
     </section>
 
-    <!-- ═══ STORES (categories) ═══ -->
-    <section class="hv-sec" aria-labelledby="hv-cats">
+    <!-- ═══ STORES (v4, Wolt-style) ═══ -->
+    <section class="v4-sec v4-shops-sec" aria-labelledby="hv-cats">
       <div class="hv-wrap">
-        <div class="hv-sec__head">
-          <div>
-            <h2 class="hv-sec__title" id="hv-cats">כל החנויות של העסק במקום אחד</h2>
-            <p class="hv-sec__sub">כל קטגוריה היא חנות: נכנסים, בוחרים ומזמינים.</p>
+        <div class="v4-head v4-head--row"><div><span class="v4-eyebrow"><i class="fas fa-store" aria-hidden="true"></i> 14 חנויות, מחסן אחד</span><h2 class="v4-h2" id="hv-cats">כל החנויות של העסק</h2><p class="v4-sub">נכנסים לחנות, ממלאים סל, ומשלמים פעם אחת. הכל יוצא מגת רימון במשלוח אחד.</p></div><a class="v4-more" href="/catalog">לכל הקטלוג <i class="fas fa-arrow-left"></i></a></div>
+        <div class="v4-shops"><a href="/category/bulk-paper-towel-office-supplies/" class="v4-shop v4-shop--sky"><span class="v4-shop__cover"><i class="fas fa-toilet-paper v4-d v4-d0" aria-hidden="true"></i><i class="fas fa-scroll v4-d v4-d1" aria-hidden="true"></i><i class="fas fa-hand-sparkles v4-d v4-d2" aria-hidden="true"></i><i class="fas fa-droplet v4-d v4-d3" aria-hidden="true"></i><i class="fas fa-note-sticky v4-d v4-d4" aria-hidden="true"></i><span class="v4-stk v4-stk0"><img src="/items/664.jpg" alt="" loading="lazy"></span><span class="v4-stk v4-stk1"><img src="/items/798.jpg" alt="" loading="lazy"></span><span class="v4-stk v4-stk2"><img src="/items/954.jpg" alt="" loading="lazy"></span><span class="v4-shop__pill"><i class="fas fa-truck-fast"></i> חינם בגוש דן</span><span class="v4-shop__badge"><i class="fas fa-toilet-paper"></i></span></span><span class="v4-shop__body"><span class="v4-shop__eta"><b dir="ltr">24–72</b><small>שעות</small></span><span class="v4-shop__txt"><span class="v4-shop__name">הנייריה <em>| גת רימון</em></span><span class="v4-shop__tag">גלילים, מגבות ידיים ומפיות</span></span></span><span class="v4-shop__foot"><span>40 מוצרים</span><span>·</span><span>מינימום 200 ₪</span><span>·</span><span>מחירון אישי ללקוחות</span></span></a><a href="/category/industrial-cleaning-supplies-wholesale/" class="v4-shop v4-shop--leumi"><span class="v4-shop__cover"><i class="fas fa-spray-can-sparkles v4-d v4-d0" aria-hidden="true"></i><i class="fas fa-flask v4-d v4-d1" aria-hidden="true"></i><i class="fas fa-bottle-droplet v4-d v4-d2" aria-hidden="true"></i><i class="fas fa-star v4-d v4-d3" aria-hidden="true"></i><i class="fas fa-soap v4-d v4-d4" aria-hidden="true"></i><span class="v4-stk v4-stk0"><img src="/items/121.jpg" alt="" loading="lazy"></span><span class="v4-stk v4-stk1"><img src="/items/877.jpg" alt="" loading="lazy"></span><span class="v4-stk v4-stk2"><img src="/items/879.jpg" alt="" loading="lazy"></span><span class="v4-shop__pill"><i class="fas fa-truck-fast"></i> חינם בגוש דן</span><span class="v4-shop__badge"><i class="fas fa-spray-can-sparkles"></i></span></span><span class="v4-shop__body"><span class="v4-shop__eta"><b dir="ltr">24–72</b><small>שעות</small></span><span class="v4-shop__txt"><span class="v4-shop__name">הכימאי <em>| גת רימון</em></span><span class="v4-shop__tag">רצפות, אקונומיקה ומסירי שומן</span></span></span><span class="v4-shop__foot"><span>65 מוצרים</span><span>·</span><span>מינימום 200 ₪</span><span>·</span><span>מחירון אישי ללקוחות</span></span></a><a href="/category/disposable-catering-food-service/" class="v4-shop v4-shop--cream"><span class="v4-shop__cover"><i class="fas fa-utensils v4-d v4-d0" aria-hidden="true"></i><i class="fas fa-champagne-glasses v4-d v4-d1" aria-hidden="true"></i><i class="fas fa-cake-candles v4-d v4-d2" aria-hidden="true"></i><i class="fas fa-plate-wheat v4-d v4-d3" aria-hidden="true"></i><i class="fas fa-star v4-d v4-d4" aria-hidden="true"></i><span class="v4-stk v4-stk0"><img src="/items/650.jpg" alt="" loading="lazy"></span><span class="v4-stk v4-stk1"><img src="/items/70.jpg" alt="" loading="lazy"></span><span class="v4-stk v4-stk2"><img src="/items/931.jpg" alt="" loading="lazy"></span><span class="v4-shop__pill"><i class="fas fa-truck-fast"></i> חינם בגוש דן</span><span class="v4-shop__badge"><i class="fas fa-utensils"></i></span></span><span class="v4-shop__body"><span class="v4-shop__eta"><b dir="ltr">24–72</b><small>שעות</small></span><span class="v4-shop__txt"><span class="v4-shop__name">האירוח <em>| גת רימון</em></span><span class="v4-shop__tag">צלחות, סכו״ם, מפות ונרות</span></span></span><span class="v4-shop__foot"><span>55 מוצרים</span><span>·</span><span>מינימום 200 ₪</span><span>·</span><span>מחירון אישי ללקוחות</span></span></a><a href="/category/food-packaging-delivery-solutions/" class="v4-shop v4-shop--gold"><span class="v4-shop__cover"><i class="fas fa-bag-shopping v4-d v4-d0" aria-hidden="true"></i><i class="fas fa-mug-hot v4-d v4-d1" aria-hidden="true"></i><i class="fas fa-box-open v4-d v4-d2" aria-hidden="true"></i><i class="fas fa-burger v4-d v4-d3" aria-hidden="true"></i><i class="fas fa-motorcycle v4-d v4-d4" aria-hidden="true"></i><span class="v4-stk v4-stk0"><img src="/items/95.jpg" alt="" loading="lazy"></span><span class="v4-stk v4-stk1"><img src="/items/724.jpg" alt="" loading="lazy"></span><span class="v4-stk v4-stk2"><img src="/items/83.jpg" alt="" loading="lazy"></span><span class="v4-shop__pill"><i class="fas fa-truck-fast"></i> חינם בגוש דן</span><span class="v4-shop__badge"><i class="fas fa-bag-shopping"></i></span></span><span class="v4-shop__body"><span class="v4-shop__eta"><b dir="ltr">24–72</b><small>שעות</small></span><span class="v4-shop__txt"><span class="v4-shop__name">הטייק אווי <em>| גת רימון</em></span><span class="v4-shop__tag">קופסאות, כוסות, מגשים ושקיות</span></span></span><span class="v4-shop__foot"><span>173 מוצרים</span><span>·</span><span>מינימום 200 ₪</span><span>·</span><span>מחירון אישי ללקוחות</span></span></a><a href="/category/safety-ppe-equipment-for-business/" class="v4-shop v4-shop--navy"><span class="v4-shop__cover"><i class="fas fa-mask-face v4-d v4-d0" aria-hidden="true"></i><i class="fas fa-helmet-safety v4-d v4-d1" aria-hidden="true"></i><i class="fas fa-hand v4-d v4-d2" aria-hidden="true"></i><i class="fas fa-shield-halved v4-d v4-d3" aria-hidden="true"></i><i class="fas fa-vest v4-d v4-d4" aria-hidden="true"></i><span class="v4-stk v4-stk0"><img src="/items/34.jpg" alt="" loading="lazy"></span><span class="v4-stk v4-stk1"><img src="/items/503.jpg" alt="" loading="lazy"></span><span class="v4-stk v4-stk2"><img src="/items/50.jpg" alt="" loading="lazy"></span><span class="v4-shop__pill"><i class="fas fa-truck-fast"></i> חינם בגוש דן</span><span class="v4-shop__badge"><i class="fas fa-mask-face"></i></span></span><span class="v4-shop__body"><span class="v4-shop__eta"><b dir="ltr">24–72</b><small>שעות</small></span><span class="v4-shop__txt"><span class="v4-shop__name">המיגון <em>| גת רימון</em></span><span class="v4-shop__tag">כפפות, מסכות וביגוד מגן</span></span></span><span class="v4-shop__foot"><span>65 מוצרים</span><span>·</span><span>מינימום 200 ₪</span><span>·</span><span>מחירון אישי ללקוחות</span></span></a><a href="/category/heavy-duty-garbage-bags-wholesale/" class="v4-shop v4-shop--blue"><span class="v4-shop__cover"><i class="fas fa-trash-can v4-d v4-d0" aria-hidden="true"></i><i class="fas fa-recycle v4-d v4-d1" aria-hidden="true"></i><i class="fas fa-dumpster v4-d v4-d2" aria-hidden="true"></i><i class="fas fa-bag-shopping v4-d v4-d3" aria-hidden="true"></i><i class="fas fa-broom v4-d v4-d4" aria-hidden="true"></i><span class="v4-stk v4-stk0"><img src="/items/934.jpg" alt="" loading="lazy"></span><span class="v4-stk v4-stk1"><img src="/items/189.jpg" alt="" loading="lazy"></span><span class="v4-stk v4-stk2"><img src="/items/362.jpg" alt="" loading="lazy"></span><span class="v4-shop__pill"><i class="fas fa-truck-fast"></i> חינם בגוש דן</span><span class="v4-shop__badge"><i class="fas fa-trash-can"></i></span></span><span class="v4-shop__body"><span class="v4-shop__eta"><b dir="ltr">24–72</b><small>שעות</small></span><span class="v4-shop__txt"><span class="v4-shop__name">חדר האשפה <em>| גת רימון</em></span><span class="v4-shop__tag">שקיות לכל פח, בכל עובי</span></span></span><span class="v4-shop__foot"><span>41 מוצרים</span><span>·</span><span>מינימום 200 ₪</span><span>·</span><span>מחירון אישי ללקוחות</span></span></a><a href="/category/professional-cleaning-cloths-microfiber/" class="v4-shop v4-shop--sky"><span class="v4-shop__cover"><i class="fas fa-hand-sparkles v4-d v4-d0" aria-hidden="true"></i><i class="fas fa-droplet v4-d v4-d1" aria-hidden="true"></i><i class="fas fa-star v4-d v4-d2" aria-hidden="true"></i><i class="fas fa-bucket v4-d v4-d3" aria-hidden="true"></i><i class="fas fa-soap v4-d v4-d4" aria-hidden="true"></i><span class="v4-stk v4-stk0"><img src="/items/97.jpg" alt="" loading="lazy"></span><span class="v4-stk v4-stk1"><img src="/items/155.jpg" alt="" loading="lazy"></span><span class="v4-stk v4-stk2"><img src="/items/220.jpg" alt="" loading="lazy"></span><span class="v4-shop__pill"><i class="fas fa-truck-fast"></i> חינם בגוש דן</span><span class="v4-shop__badge"><i class="fas fa-hand-sparkles"></i></span></span><span class="v4-shop__body"><span class="v4-shop__eta"><b dir="ltr">24–72</b><small>שעות</small></span><span class="v4-shop__txt"><span class="v4-shop__name">המטלית <em>| גת רימון</em></span><span class="v4-shop__tag">מיקרופייבר, ספוגים ומגבונים</span></span></span><span class="v4-shop__foot"><span>28 מוצרים</span><span>·</span><span>מינימום 200 ₪</span><span>·</span><span>מחירון אישי ללקוחות</span></span></a><a href="/category/office-coffee-breakroom-supplies/" class="v4-shop v4-shop--cream"><span class="v4-shop__cover"><i class="fas fa-mug-hot v4-d v4-d0" aria-hidden="true"></i><i class="fas fa-mug-saucer v4-d v4-d1" aria-hidden="true"></i><i class="fas fa-cookie v4-d v4-d2" aria-hidden="true"></i><i class="fas fa-glass-water v4-d v4-d3" aria-hidden="true"></i><i class="fas fa-cubes-stacked v4-d v4-d4" aria-hidden="true"></i><span class="v4-stk v4-stk0"><img src="/items/228.jpg" alt="" loading="lazy"></span><span class="v4-stk v4-stk1"><img src="/items/809.jpg" alt="" loading="lazy"></span><span class="v4-stk v4-stk2"><img src="/items/502.jpg" alt="" loading="lazy"></span><span class="v4-shop__pill"><i class="fas fa-truck-fast"></i> חינם בגוש דן</span><span class="v4-shop__badge"><i class="fas fa-mug-hot"></i></span></span><span class="v4-shop__body"><span class="v4-shop__eta"><b dir="ltr">24–72</b><small>שעות</small></span><span class="v4-shop__txt"><span class="v4-shop__name">המטבחון <em>| גת רימון</em></span><span class="v4-shop__tag">קפה, שתייה וכיבוד למשרד</span></span></span><span class="v4-shop__foot"><span>11 מוצרים</span><span>·</span><span>מינימום 200 ₪</span><span>·</span><span>מחירון אישי ללקוחות</span></span></a><a href="/category/personal-hygiene-products-wholesale/" class="v4-shop v4-shop--leumi"><span class="v4-shop__cover"><i class="fas fa-pump-soap v4-d v4-d0" aria-hidden="true"></i><i class="fas fa-soap v4-d v4-d1" aria-hidden="true"></i><i class="fas fa-tooth v4-d v4-d2" aria-hidden="true"></i><i class="fas fa-hand-sparkles v4-d v4-d3" aria-hidden="true"></i><i class="fas fa-droplet v4-d v4-d4" aria-hidden="true"></i><span class="v4-stk v4-stk0"><img src="/items/97.jpg" alt="" loading="lazy"></span><span class="v4-stk v4-stk1"><img src="/items/102.jpg" alt="" loading="lazy"></span><span class="v4-stk v4-stk2"><img src="/items/796.jpg" alt="" loading="lazy"></span><span class="v4-shop__pill"><i class="fas fa-truck-fast"></i> חינם בגוש דן</span><span class="v4-shop__badge"><i class="fas fa-pump-soap"></i></span></span><span class="v4-shop__body"><span class="v4-shop__eta"><b dir="ltr">24–72</b><small>שעות</small></span><span class="v4-shop__txt"><span class="v4-shop__name">הטואלטיקה <em>| גת רימון</em></span><span class="v4-shop__tag">סבונים, מגבונים וטיפוח</span></span></span><span class="v4-shop__foot"><span>18 מוצרים</span><span>·</span><span>מינימום 200 ₪</span><span>·</span><span>מחירון אישי ללקוחות</span></span></a><a href="/category/institutional-cleaning-tools-equipment/" class="v4-shop v4-shop--navy"><span class="v4-shop__cover"><i class="fas fa-broom v4-d v4-d0" aria-hidden="true"></i><i class="fas fa-bucket v4-d v4-d1" aria-hidden="true"></i><i class="fas fa-trash-can v4-d v4-d2" aria-hidden="true"></i><i class="fas fa-spray-can v4-d v4-d3" aria-hidden="true"></i><i class="fas fa-toolbox v4-d v4-d4" aria-hidden="true"></i><span class="v4-stk v4-stk0"><img src="/items/266.jpg" alt="" loading="lazy"></span><span class="v4-stk v4-stk1"><img src="/items/646.jpg" alt="" loading="lazy"></span><span class="v4-stk v4-stk2"><img src="/items/279.jpg" alt="" loading="lazy"></span><span class="v4-shop__pill"><i class="fas fa-truck-fast"></i> חינם בגוש דן</span><span class="v4-shop__badge"><i class="fas fa-broom"></i></span></span><span class="v4-shop__body"><span class="v4-shop__eta"><b dir="ltr">24–72</b><small>שעות</small></span><span class="v4-shop__txt"><span class="v4-shop__name">הארגז של המנקה <em>| גת רימון</em></span><span class="v4-shop__tag">מטאטאים, מגבים, פחים ודליים</span></span></span><span class="v4-shop__foot"><span>30 מוצרים</span><span>·</span><span>מינימום 200 ₪</span><span>·</span><span>מחירון אישי ללקוחות</span></span></a><a href="/category/office-supplies-wholesale-business/" class="v4-shop v4-shop--blue"><span class="v4-shop__cover"><i class="fas fa-paperclip v4-d v4-d0" aria-hidden="true"></i><i class="fas fa-pen v4-d v4-d1" aria-hidden="true"></i><i class="fas fa-print v4-d v4-d2" aria-hidden="true"></i><i class="fas fa-folder-open v4-d v4-d3" aria-hidden="true"></i><i class="fas fa-receipt v4-d v4-d4" aria-hidden="true"></i><span class="v4-stk v4-stk0"><img src="/items/320.jpg" alt="" loading="lazy"></span><span class="v4-stk v4-stk1"><img src="/items/265.jpg" alt="" loading="lazy"></span><span class="v4-stk v4-stk2"><img src="/items/927.jpg" alt="" loading="lazy"></span><span class="v4-shop__pill"><i class="fas fa-truck-fast"></i> חינם בגוש דן</span><span class="v4-shop__badge"><i class="fas fa-paperclip"></i></span></span><span class="v4-shop__body"><span class="v4-shop__eta"><b dir="ltr">24–72</b><small>שעות</small></span><span class="v4-shop__txt"><span class="v4-shop__name">המשרד <em>| גת רימון</em></span><span class="v4-shop__tag">נייר, ציוד קופה, כתיבה ותיוק</span></span></span><span class="v4-shop__foot"><span>87 מוצרים</span><span>·</span><span>מינימום 200 ₪</span><span>·</span><span>מחירון אישי ללקוחות</span></span></a><a href="/category/warehouse-packaging-supplies-wholesale/" class="v4-shop v4-shop--gold"><span class="v4-shop__cover"><i class="fas fa-box v4-d v4-d0" aria-hidden="true"></i><i class="fas fa-dolly v4-d v4-d1" aria-hidden="true"></i><i class="fas fa-tape v4-d v4-d2" aria-hidden="true"></i><i class="fas fa-pallet v4-d v4-d3" aria-hidden="true"></i><i class="fas fa-boxes-stacked v4-d v4-d4" aria-hidden="true"></i><span class="v4-stk v4-stk0"><img src="/items/823.jpg" alt="" loading="lazy"></span><span class="v4-stk v4-stk1"><img src="/items/564.jpg" alt="" loading="lazy"></span><span class="v4-stk v4-stk2"><img src="/items/766.jpg" alt="" loading="lazy"></span><span class="v4-shop__pill"><i class="fas fa-truck-fast"></i> חינם בגוש דן</span><span class="v4-shop__badge"><i class="fas fa-box"></i></span></span><span class="v4-shop__body"><span class="v4-shop__eta"><b dir="ltr">24–72</b><small>שעות</small></span><span class="v4-shop__txt"><span class="v4-shop__name">המחסן <em>| גת רימון</em></span><span class="v4-shop__tag">ניילון, שקיות ארגזים וכיסויים</span></span></span><span class="v4-shop__foot"><span>16 מוצרים</span><span>·</span><span>מינימום 200 ₪</span><span>·</span><span>מחירון אישי ללקוחות</span></span></a><a href="/category/maintenance-technical-equipment-wholesale/" class="v4-shop v4-shop--navy"><span class="v4-shop__cover"><i class="fas fa-screwdriver-wrench v4-d v4-d0" aria-hidden="true"></i><i class="fas fa-paint-roller v4-d v4-d1" aria-hidden="true"></i><i class="fas fa-hammer v4-d v4-d2" aria-hidden="true"></i><i class="fas fa-seedling v4-d v4-d3" aria-hidden="true"></i><i class="fas fa-bug v4-d v4-d4" aria-hidden="true"></i><span class="v4-stk v4-stk0"><img src="/items/359.jpg" alt="" loading="lazy"></span><span class="v4-stk v4-stk1"><img src="/items/647.jpg" alt="" loading="lazy"></span><span class="v4-stk v4-stk2"><img src="/items/769.jpg" alt="" loading="lazy"></span><span class="v4-shop__pill"><i class="fas fa-truck-fast"></i> חינם בגוש דן</span><span class="v4-shop__badge"><i class="fas fa-screwdriver-wrench"></i></span></span><span class="v4-shop__body"><span class="v4-shop__eta"><b dir="ltr">24–72</b><small>שעות</small></span><span class="v4-shop__txt"><span class="v4-shop__name">האחזקה <em>| גת רימון</em></span><span class="v4-shop__tag">כלי עבודה, צבע, הדברה וגינון</span></span></span><span class="v4-shop__foot"><span>32 מוצרים</span><span>·</span><span>מינימום 200 ₪</span><span>·</span><span>מחירון אישי ללקוחות</span></span></a><a href="/category/first-aid-medical-equipment-business/" class="v4-shop v4-shop--sky"><span class="v4-shop__cover"><i class="fas fa-kit-medical v4-d v4-d0" aria-hidden="true"></i><i class="fas fa-heart-pulse v4-d v4-d1" aria-hidden="true"></i><i class="fas fa-bandage v4-d v4-d2" aria-hidden="true"></i><i class="fas fa-stethoscope v4-d v4-d3" aria-hidden="true"></i><i class="fas fa-briefcase-medical v4-d v4-d4" aria-hidden="true"></i><span class="v4-stk v4-stk0"><img src="/items/163.jpg" alt="" loading="lazy"></span><span class="v4-stk v4-stk1"><img src="/items/14.jpg" alt="" loading="lazy"></span><span class="v4-stk v4-stk2"><img src="/items/85.jpg" alt="" loading="lazy"></span><span class="v4-shop__pill"><i class="fas fa-truck-fast"></i> חינם בגוש דן</span><span class="v4-shop__badge"><i class="fas fa-kit-medical"></i></span></span><span class="v4-shop__body"><span class="v4-shop__eta"><b dir="ltr">24–72</b><small>שעות</small></span><span class="v4-shop__txt"><span class="v4-shop__name">עזרה ראשונה <em>| גת רימון</em></span><span class="v4-shop__tag">ערכות, חבישה, מסכות ו-AED</span></span></span><span class="v4-shop__foot"><span>34 מוצרים</span><span>·</span><span>מינימום 200 ₪</span><span>·</span><span>מחירון אישי ללקוחות</span></span></a></div>
+      </div>
+    </section>
+
+    <!-- ═══ V4: A DAY IN THE LIFE OF AN ORDER (sticky, scroll-driven) ═══ -->
+    <section class="v4-story" id="v4Story" aria-labelledby="v4-story-t">
+      <div class="hv-wrap v4-story__grid">
+        <div class="v4-story__steps">
+          <div class="v4-story__head">
+            <span class="v4-eyebrow"><i class="fas fa-route" aria-hidden="true"></i> יום בחיי הזמנה</span>
+            <h2 class="v4-h2" id="v4-story-t">מהקליק שלכם<br>עד הדלת של העסק.</h2>
+            <p class="v4-sub">כך עוברת הזמנה אצלנו. בלי מתווכים, מהמחסן שלנו בגת רימון.</p>
           </div>
-          <a class="hv-more" href="/catalog">לכל הקטגוריות</a>
+          <article class="v4-step is-on" data-step="1">
+            <span class="v4-chip">שלב 1 · הזמנה</span>
+            <h3>בוחרים ומשלמים, באתר או באפליקציה</h3>
+            <p>מוצרים מהקטלוג, או הזמנה חוזרת בקליק מההיסטוריה. לקוחות רשומים רואים את המחירון האישי שלהם.</p>
+          </article>
+          <article class="v4-step" data-step="2">
+            <span class="v4-chip">שלב 2 · ליקוט</span>
+            <h3>נארז במחסן בגת רימון</h3>
+            <p>ההזמנה נכנסת ישר למערכת שלנו, מלוקטת מהמלאי ונארזת בארגז אחד עם תעודת משלוח.</p>
+          </article>
+          <article class="v4-step" data-step="3">
+            <span class="v4-chip">שלב 3 · בדרך</span>
+            <h3>יוצאת לחלוקה, ואתם רואים איפה היא</h3>
+            <p>מעקב משלוח מהאתר או מהאפליקציה. בגוש דן המשלוח חינם, ובשאר הארץ לפי אזור.</p>
+          </article>
+          <article class="v4-step" data-step="4">
+            <span class="v4-chip v4-chip--gold">שלב 4 · אצלכם</span>
+            <h3>בעסק תוך 24–72 שעות</h3>
+            <p>בגוש דן ובמרכז 24–72 שעות, ובשאר הארץ עד 5 ימי עסקים. חשבונית אחת, מסודרת, ובמסלול CASH MARKET גם כסף שחוזר.</p>
+          </article>
         </div>
-        <div class="y3-stores">
-          <a href="/category/bulk-paper-towel-office-supplies/" class="y3-store"><span class="y3-store__cover"><img src="/items/107.jpg" alt="מוצרי נייר וניגוב" loading="lazy" width="220" height="160"><span class="y3-store__count">46 מוצרים</span></span><span class="y3-store__body"><span class="y3-store__name">מוצרי נייר וניגוב</span><span class="y3-store__meta"><span>משלוח לפי אזור</span><span>מינימום 200 ₪</span></span></span></a>
-          <a href="/category/industrial-cleaning-supplies-wholesale/" class="y3-store"><span class="y3-store__cover"><img src="/items/877.jpg" alt="חומרי ניקוי וכימיקלים" loading="lazy" width="220" height="160"><span class="y3-store__count">88 מוצרים</span></span><span class="y3-store__body"><span class="y3-store__name">חומרי ניקוי וכימיקלים</span><span class="y3-store__meta"><span>משלוח לפי אזור</span><span>מינימום 200 ₪</span></span></span></a>
-          <a href="/category/disposable-catering-food-service/" class="y3-store"><span class="y3-store__cover"><img src="/items/650.jpg" alt="חד פעמי ואירוח" loading="lazy" width="220" height="160"><span class="y3-store__count">60 מוצרים</span></span><span class="y3-store__body"><span class="y3-store__name">חד פעמי ואירוח</span><span class="y3-store__meta"><span>משלוח לפי אזור</span><span>מינימום 200 ₪</span></span></span></a>
-          <a href="/category/food-packaging-delivery-solutions/" class="y3-store"><span class="y3-store__cover"><img src="/items/319.jpg" alt="אריזות מזון ו-Take Away" loading="lazy" width="220" height="160"><span class="y3-store__count">199 מוצרים</span></span><span class="y3-store__body"><span class="y3-store__name">אריזות מזון ו-Take Away</span><span class="y3-store__meta"><span>משלוח לפי אזור</span><span>מינימום 200 ₪</span></span></span></a>
-          <a href="/category/safety-ppe-equipment-for-business/" class="y3-store"><span class="y3-store__cover"><img src="/items/50.jpg" alt="בטיחות ומיגון אישי" loading="lazy" width="220" height="160"><span class="y3-store__count">70 מוצרים</span></span><span class="y3-store__body"><span class="y3-store__name">בטיחות ומיגון אישי</span><span class="y3-store__meta"><span>משלוח לפי אזור</span><span>מינימום 200 ₪</span></span></span></a>
-          <a href="/category/heavy-duty-garbage-bags-wholesale/" class="y3-store"><span class="y3-store__cover"><img src="/items/159.jpg" alt="שקיות ופתרונות אשפה" loading="lazy" width="220" height="160"><span class="y3-store__count">43 מוצרים</span></span><span class="y3-store__body"><span class="y3-store__name">שקיות ופתרונות אשפה</span><span class="y3-store__meta"><span>משלוח לפי אזור</span><span>מינימום 200 ₪</span></span></span></a>
-          <a href="/category/professional-cleaning-cloths-microfiber/" class="y3-store"><span class="y3-store__cover"><img src="/items/182.jpg" alt="טקסטיל, מטליות וסחבות" loading="lazy" width="220" height="160"><span class="y3-store__count">35 מוצרים</span></span><span class="y3-store__body"><span class="y3-store__name">טקסטיל, מטליות וסחבות</span><span class="y3-store__meta"><span>משלוח לפי אזור</span><span>מינימום 200 ₪</span></span></span></a>
-          <a href="/category/office-coffee-breakroom-supplies/" class="y3-store"><span class="y3-store__cover"><img src="/items/271.jpg" alt="קפה, שתייה וכיבוד" loading="lazy" width="220" height="160"><span class="y3-store__count">20 מוצרים</span></span><span class="y3-store__body"><span class="y3-store__name">קפה, שתייה וכיבוד</span><span class="y3-store__meta"><span>משלוח לפי אזור</span><span>מינימום 200 ₪</span></span></span></a>
-          <a href="/category/personal-hygiene-products-wholesale/" class="y3-store"><span class="y3-store__cover"><img src="/items/97.jpg" alt="טואלטיקה וטיפוח" loading="lazy" width="220" height="160"><span class="y3-store__count">27 מוצרים</span></span><span class="y3-store__body"><span class="y3-store__name">טואלטיקה וטיפוח</span><span class="y3-store__meta"><span>משלוח לפי אזור</span><span>מינימום 200 ₪</span></span></span></a>
-          <a href="/category/institutional-cleaning-tools-equipment/" class="y3-store"><span class="y3-store__cover"><img src="/items/644.jpg" alt="כלי עבודה וציוד משקי" loading="lazy" width="220" height="160"><span class="y3-store__count">34 מוצרים</span></span><span class="y3-store__body"><span class="y3-store__name">כלי עבודה וציוד משקי</span><span class="y3-store__meta"><span>משלוח לפי אזור</span><span>מינימום 200 ₪</span></span></span></a>
-          <a href="/category/office-supplies-wholesale-business/" class="y3-store"><span class="y3-store__cover"><img src="/items/265.jpg" alt="ציוד משרדי וכללי" loading="lazy" width="220" height="160"><span class="y3-store__count">116 מוצרים</span></span><span class="y3-store__body"><span class="y3-store__name">ציוד משרדי וכללי</span><span class="y3-store__meta"><span>משלוח לפי אזור</span><span>מינימום 200 ₪</span></span></span></a>
-          <a href="/category/warehouse-packaging-supplies-wholesale/" class="y3-store"><span class="y3-store__cover"><img src="/items/168.jpg" alt="עטיפה, אריזה ולוגיסטיקה" loading="lazy" width="220" height="160"><span class="y3-store__count">17 מוצרים</span></span><span class="y3-store__body"><span class="y3-store__name">עטיפה, אריזה ולוגיסטיקה</span><span class="y3-store__meta"><span>משלוח לפי אזור</span><span>מינימום 200 ₪</span></span></span></a>
-          <a href="/category/maintenance-technical-equipment-wholesale/" class="y3-store"><span class="y3-store__cover"><img src="/items/374.jpg" alt="ציוד טכני ואחזקה" loading="lazy" width="220" height="160"><span class="y3-store__count">51 מוצרים</span></span><span class="y3-store__body"><span class="y3-store__name">ציוד טכני ואחזקה</span><span class="y3-store__meta"><span>משלוח לפי אזור</span><span>מינימום 200 ₪</span></span></span></a>
-          <a href="/category/first-aid-medical-equipment-business/" class="y3-store"><span class="y3-store__cover"><img src="/items/529.jpg" alt="עזרה ראשונה - רפואי" loading="lazy" width="220" height="160"><span class="y3-store__count">48 מוצרים</span></span><span class="y3-store__body"><span class="y3-store__name">עזרה ראשונה - רפואי</span><span class="y3-store__meta"><span>משלוח לפי אזור</span><span>מינימום 200 ₪</span></span></span></a>
-          <a href="/catalog" class="y3-store y3-store--all"><span class="y3-store__name">כל הקטלוג</span><span class="y3-store__meta"><span>מעל 800 מוצרים לעסקים ומוסדות</span></span></a>
+        <div class="v4-story__stage-wrap">
+          <div class="v4-stage" id="v4Stage" data-scene="1" aria-hidden="true">
+            <div class="v4-stage__light"></div>
+            <!-- 1: the order -->
+            <div class="v4-sc v4-sc--1">
+              <div class="v4-ticket">
+                <div class="v4-ticket__top"><span>הזמנה חדשה</span><b>#4821</b></div>
+                <div class="v4-ticket__row"><img src="/items/95.jpg" alt=""><span>כוסות חמות 8oz · קרטון</span><em>×2</em></div>
+                <div class="v4-ticket__row"><img src="/items/34.jpg" alt=""><span>כפפות ניטריל שחור M</span><em>×10</em></div>
+                <div class="v4-ticket__row"><img src="/items/664.jpg" alt=""><span>נייר תעשייתי Blinx</span><em>×4</em></div>
+                <div class="v4-ticket__pay"><i class="fas fa-circle-check"></i> שולם · נשלח למחסן</div>
+              </div>
+            </div>
+            <!-- 2: packed -->
+            <div class="v4-sc v4-sc--2">
+              <div class="v4-box">
+                <div class="v4-box__drop"><img src="/items/95.jpg" alt=""><img src="/items/34.jpg" alt=""><img src="/items/664.jpg" alt=""></div>
+                <div class="v4-box__cube"><span class="v4-box__f v4-box__front"><b>YMARKET</b><small>גת רימון</small></span><span class="v4-box__f v4-box__side"></span><span class="v4-box__f v4-box__top"></span></div>
+                <div class="v4-box__label"><i class="fas fa-warehouse"></i> ליקוט ואריזה · גת רימון</div>
+              </div>
+            </div>
+            <!-- 3: on the road -->
+            <div class="v4-sc v4-sc--3">
+              <div class="v4-road">
+                <div class="v4-road__sky"></div>
+                <div class="v4-road__lane"></div>
+                <div class="v4-van"><span class="v4-van__body"><i class="fas fa-truck-fast"></i><b>YMARKET</b></span></div>
+                <div class="v4-road__pin v4-road__pin--from"><i class="fas fa-warehouse"></i> גת רימון</div>
+                <div class="v4-road__pin v4-road__pin--to"><i class="fas fa-location-dot"></i> העסק שלכם</div>
+              </div>
+            </div>
+            <!-- 4: delivered -->
+            <div class="v4-sc v4-sc--4">
+              <div class="v4-done">
+                <div class="v4-done__check"><i class="fas fa-check"></i></div>
+                <strong>נמסר לעסק</strong>
+                <span>חשבונית אחת · במסלול CASH MARKET גם CASH BACK</span>
+                <div class="v4-done__coins"><i></i><i></i><i></i></div>
+              </div>
+            </div>
+            <div class="v4-stage__dots"><i></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SPEED: coverage map ═══ -->
+    <section class="hv-map v4-island" aria-labelledby="hv-cover" id="deliveryMap">
+      <div class="hv-wrap hv-map__grid">
+        <div class="hv-map__stage" id="hvMap" data-zone="all">
+          <svg class="hv-map__svg" id="hvMapSvg" viewBox="0 0 328.4 624" role="img" aria-label="מפת ישראל עם אזורי החלוקה של וואי מרקט, מהמחסן בגת רימון">
+  <defs>
+    <pattern id="hvDots" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r=".7" fill="rgba(232,197,71,.22)"/></pattern>
+    <clipPath id="hvLand"><path d="M96.0,332.5 L106.6,323.0 L109.2,318.2 L115.3,313.6 L117.9,308.9 L127.7,298.8 L132.4,292.1 L149.5,263.4 L160.4,238.7 L162.8,234.9 L166.9,221.4 L166.9,218.2 L168.7,217.2 L179.2,184.5 L192.9,116.5 L193.6,102.8 L194.6,99.7 L196.6,98.6 L200.9,100.7 L204.0,100.9 L208.7,96.0 L210.8,88.7 L210.6,86.9 L209.0,86.1 L210.7,74.5 L213.0,66.6 L212.5,63.9 L214.3,61.9 L213.5,60.9 L224.6,61.4 L227.5,59.8 L231.1,60.4 L237.5,58.8 L240.4,60.6 L243.8,65.5 L245.5,65.8 L259.1,61.2 L263.1,60.9 L267.4,51.7 L268.4,40.3 L272.2,31.3 L273.7,31.1 L276.9,35.7 L279.3,37.4 L281.2,35.1 L281.4,33.0 L285.6,31.9 L291.7,24.9 L297.6,23.6 L300.9,21.8 L307.7,12.0 L306.2,19.2 L300.4,23.0 L305.2,26.4 L300.9,32.5 L305.4,36.2 L305.9,43.4 L308.9,45.2 L309.3,49.6 L306.4,54.9 L306.4,57.1 L311.3,59.2 L310.9,61.2 L312.6,75.8 L316.4,82.7 L311.4,90.3 L309.9,94.8 L310.4,96.7 L309.4,100.7 L299.4,113.5 L289.9,118.5 L283.5,123.4 L280.4,123.1 L273.7,129.3 L274.1,131.6 L275.2,132.3 L274.3,134.4 L276.2,141.6 L275.5,142.6 L275.1,141.8 L274.3,143.8 L273.6,143.1 L274.3,147.0 L272.6,147.0 L272.5,147.9 L273.8,148.0 L276.2,152.2 L273.8,154.4 L273.5,155.4 L275.2,156.4 L275.2,157.5 L273.6,158.4 L274.3,159.5 L272.6,160.6 L273.5,161.7 L272.5,161.8 L273.5,164.1 L271.7,164.8 L274.3,171.1 L272.5,170.1 L273.1,177.2 L274.3,179.5 L273.7,184.2 L275.2,188.9 L273.5,191.0 L275.2,191.1 L273.0,200.7 L273.5,203.7 L271.9,204.9 L272.5,206.8 L270.4,210.5 L270.3,212.3 L271.6,214.2 L269.5,216.0 L268.7,218.6 L269.0,225.7 L271.7,236.0 L271.6,237.2 L269.4,238.6 L269.0,239.9 L272.2,252.1 L270.8,255.2 L273.5,263.4 L269.4,268.1 L263.2,282.5 L261.1,293.6 L259.6,319.3 L254.9,329.8 L255.8,330.9 L255.6,334.2 L252.1,341.2 L254.1,349.3 L257.4,356.2 L258.3,360.4 L257.7,364.8 L251.6,377.0 L250.8,386.3 L249.3,389.1 L244.2,394.0 L242.5,397.5 L241.8,407.8 L237.0,414.3 L234.9,423.6 L227.3,439.3 L218.7,467.9 L218.7,471.6 L221.6,478.5 L219.0,485.7 L216.8,496.4 L216.8,500.7 L219.4,510.1 L219.4,514.9 L217.3,520.1 L211.7,528.6 L207.5,545.6 L206.8,558.0 L200.8,574.7 L199.1,587.1 L196.1,593.9 L194.1,603.4 L188.8,612.0 L185.7,611.9 L181.5,603.4 L180.6,599.8 L180.9,589.2 L177.5,573.4 L166.7,543.0 L165.6,531.9 L148.1,481.1 L138.7,471.1 L138.6,466.6 L139.9,460.0 L136.5,455.2 L135.7,452.6 L135.4,446.3 L132.6,434.1 L112.9,381.5 L99.2,338.4 L96.0,332.5Z"/></clipPath>
+    <clipPath id="hvLens"><circle cx="66" cy="214" r="60"/></clipPath>
+    <radialGradient id="hvGlow"><stop offset="0" stop-color="#E8C547" stop-opacity=".55"/><stop offset="1" stop-color="#E8C547" stop-opacity="0"/></radialGradient>
+  </defs>
+  <path class="hv-land" d="M96.0,332.5 L106.6,323.0 L109.2,318.2 L115.3,313.6 L117.9,308.9 L127.7,298.8 L132.4,292.1 L149.5,263.4 L160.4,238.7 L162.8,234.9 L166.9,221.4 L166.9,218.2 L168.7,217.2 L179.2,184.5 L192.9,116.5 L193.6,102.8 L194.6,99.7 L196.6,98.6 L200.9,100.7 L204.0,100.9 L208.7,96.0 L210.8,88.7 L210.6,86.9 L209.0,86.1 L210.7,74.5 L213.0,66.6 L212.5,63.9 L214.3,61.9 L213.5,60.9 L224.6,61.4 L227.5,59.8 L231.1,60.4 L237.5,58.8 L240.4,60.6 L243.8,65.5 L245.5,65.8 L259.1,61.2 L263.1,60.9 L267.4,51.7 L268.4,40.3 L272.2,31.3 L273.7,31.1 L276.9,35.7 L279.3,37.4 L281.2,35.1 L281.4,33.0 L285.6,31.9 L291.7,24.9 L297.6,23.6 L300.9,21.8 L307.7,12.0 L306.2,19.2 L300.4,23.0 L305.2,26.4 L300.9,32.5 L305.4,36.2 L305.9,43.4 L308.9,45.2 L309.3,49.6 L306.4,54.9 L306.4,57.1 L311.3,59.2 L310.9,61.2 L312.6,75.8 L316.4,82.7 L311.4,90.3 L309.9,94.8 L310.4,96.7 L309.4,100.7 L299.4,113.5 L289.9,118.5 L283.5,123.4 L280.4,123.1 L273.7,129.3 L274.1,131.6 L275.2,132.3 L274.3,134.4 L276.2,141.6 L275.5,142.6 L275.1,141.8 L274.3,143.8 L273.6,143.1 L274.3,147.0 L272.6,147.0 L272.5,147.9 L273.8,148.0 L276.2,152.2 L273.8,154.4 L273.5,155.4 L275.2,156.4 L275.2,157.5 L273.6,158.4 L274.3,159.5 L272.6,160.6 L273.5,161.7 L272.5,161.8 L273.5,164.1 L271.7,164.8 L274.3,171.1 L272.5,170.1 L273.1,177.2 L274.3,179.5 L273.7,184.2 L275.2,188.9 L273.5,191.0 L275.2,191.1 L273.0,200.7 L273.5,203.7 L271.9,204.9 L272.5,206.8 L270.4,210.5 L270.3,212.3 L271.6,214.2 L269.5,216.0 L268.7,218.6 L269.0,225.7 L271.7,236.0 L271.6,237.2 L269.4,238.6 L269.0,239.9 L272.2,252.1 L270.8,255.2 L273.5,263.4 L269.4,268.1 L263.2,282.5 L261.1,293.6 L259.6,319.3 L254.9,329.8 L255.8,330.9 L255.6,334.2 L252.1,341.2 L254.1,349.3 L257.4,356.2 L258.3,360.4 L257.7,364.8 L251.6,377.0 L250.8,386.3 L249.3,389.1 L244.2,394.0 L242.5,397.5 L241.8,407.8 L237.0,414.3 L234.9,423.6 L227.3,439.3 L218.7,467.9 L218.7,471.6 L221.6,478.5 L219.0,485.7 L216.8,496.4 L216.8,500.7 L219.4,510.1 L219.4,514.9 L217.3,520.1 L211.7,528.6 L207.5,545.6 L206.8,558.0 L200.8,574.7 L199.1,587.1 L196.1,593.9 L194.1,603.4 L188.8,612.0 L185.7,611.9 L181.5,603.4 L180.6,599.8 L180.9,589.2 L177.5,573.4 L166.7,543.0 L165.6,531.9 L148.1,481.1 L138.7,471.1 L138.6,466.6 L139.9,460.0 L136.5,455.2 L135.7,452.6 L135.4,446.3 L132.6,434.1 L112.9,381.5 L99.2,338.4 L96.0,332.5Z"/>
+  <rect x="0" y="0" width="328.4" height="624" fill="url(#hvDots)" clip-path="url(#hvLand)"/>
+  <path class="hv-lake" d="M283.7,98.7 L284.2,101.7 L283.5,107.7 L284.2,109.2 L283.4,109.6 L283.3,112.3 L278.7,117.5 L275.8,117.2 L274.4,111.5 L272.2,109.6 L268.0,101.7 L268.8,97.0 L272.9,92.6 L277.7,89.9 L280.6,90.2 L283.7,93.4 L284.2,95.0 L283.7,98.7ZM277.0,265.3 L276.8,270.3 L274.7,272.7 L269.4,285.0 L267.6,294.7 L266.6,316.3 L265.7,321.9 L264.8,324.4 L258.2,331.3 L254.6,330.6 L253.5,327.8 L251.9,313.9 L252.8,308.3 L251.7,301.9 L254.6,293.9 L253.7,286.5 L262.7,268.8 L266.7,264.9 L273.5,263.4 L277.0,265.3ZM263.9,367.1 L260.4,367.3 L254.8,366.3 L252.8,365.2 L251.8,363.4 L251.2,358.9 L247.9,353.8 L247.3,348.4 L248.7,344.6 L252.8,345.4 L255.5,342.1 L260.3,346.7 L263.4,353.3 L264.7,358.9 L263.9,367.1Z"/>
+  <circle cx="178.9" cy="214.7" r="22" class="hv-lens-ring"/>
+  <line x1="156.9" y1="214.7" x2="126.0" y2="214.0" class="hv-lens-lead"/>
+  <circle cx="187.8" cy="216.3" r="8.28" class="hv-radius"/>
+  <g class="hv-routes"><path class="hv-route" data-zone="center" d="M187.8,216.3 Q191.4,196.1 181.3,178.2" style="--i:0"/><path class="hv-route" data-zone="north" d="M187.8,216.3 Q198.9,189.0 190.0,161.0" style="--i:1"/><path class="hv-route" data-zone="south" d="M187.8,216.3 Q163.4,231.0 153.9,257.9" style="--i:2"/><path class="hv-route" data-zone="center" d="M187.8,216.3 Q176.9,227.8 175.8,243.6" style="--i:3"/><path class="hv-route" data-zone="center" d="M187.8,216.3 Q189.9,232.3 201.7,243.3" style="--i:4"/><path class="hv-route" data-zone="jerusalem" d="M187.8,216.3 Q199.7,247.0 228.4,263.0" style="--i:5"/><path class="hv-route" data-zone="jerusalem" d="M187.8,216.3 Q184.5,243.1 199.0,265.8" style="--i:6"/><path class="hv-route" data-zone="north" d="M187.8,216.3 Q213.3,163.1 199.1,105.9" style="--i:7"/><path class="hv-route" data-zone="north" d="M187.8,216.3 Q226.0,149.3 212.7,73.4" style="--i:8"/><path class="hv-route" data-zone="north" d="M187.8,216.3 Q227.8,184.4 238.3,134.4" style="--i:9"/><path class="hv-route" data-zone="north" d="M187.8,216.3 Q248.6,176.0 269.8,106.1" style="--i:10"/><path class="hv-route" data-zone="north" d="M187.8,216.3 Q262.6,145.1 274.9,42.5" style="--i:11"/><path class="hv-route" data-zone="south" d="M187.8,216.3 Q155.2,239.5 144.9,278.2" style="--i:12"/><path class="hv-route" data-zone="south" d="M187.8,216.3 Q166.0,248.5 169.7,287.2" style="--i:13"/><path class="hv-route" data-zone="south" d="M187.8,216.3 Q157.9,276.6 173.2,342.1" style="--i:14"/><path class="hv-route" data-zone="south" d="M187.8,216.3 Q168.6,296.3 204.8,370.1" style="--i:15"/><path class="hv-route" data-zone="south" d="M187.8,216.3 Q121.6,410.1 194.2,601.6" style="--i:16"/></g>
+  <g class="hv-cities"><g class="hv-city" data-zone="center"><circle cx="181.3" cy="178.2" r="3.2"/><text x="175.3" y="181.7" text-anchor="end">נתניה</text></g><g class="hv-city" data-zone="north"><circle cx="190.0" cy="161.0" r="3.2"/><text x="184.0" y="164.5" text-anchor="end">חדרה</text></g><g class="hv-city" data-zone="south"><circle cx="153.9" cy="257.9" r="3.2"/><text x="147.9" y="261.4" text-anchor="end">אשדוד</text></g><g class="hv-city" data-zone="center"><circle cx="175.8" cy="243.6" r="3.2"/><text x="169.8" y="247.1" text-anchor="end">רחובות</text></g><g class="hv-city" data-zone="center"><circle cx="201.7" cy="243.3" r="3.2"/><text x="207.7" y="244.3" text-anchor="start">מודיעין</text></g><g class="hv-city" data-zone="jerusalem"><circle cx="228.4" cy="263.0" r="3.2"/><text x="234.4" y="266.5" text-anchor="start">ירושלים</text></g><g class="hv-city" data-zone="jerusalem"><circle cx="199.0" cy="265.8" r="3.2"/><text x="194.0" y="276.8" text-anchor="end">בית שמש</text></g><g class="hv-city" data-zone="north"><circle cx="199.1" cy="105.9" r="3.2"/><text x="193.1" y="109.4" text-anchor="end">חיפה</text></g><g class="hv-city" data-zone="north"><circle cx="212.7" cy="73.4" r="3.2"/><text x="206.7" y="76.9" text-anchor="end">נהריה</text></g><g class="hv-city" data-zone="north"><circle cx="238.3" cy="134.4" r="3.2"/><text x="244.3" y="137.9" text-anchor="start">עפולה</text></g><g class="hv-city" data-zone="north"><circle cx="269.8" cy="106.1" r="3.2"/><text x="275.8" y="109.6" text-anchor="start">טבריה</text></g><g class="hv-city" data-zone="north"><circle cx="274.9" cy="42.5" r="3.2"/><text x="280.9" y="46.0" text-anchor="start">קריית שמונה</text></g><g class="hv-city" data-zone="south"><circle cx="144.9" cy="278.2" r="3.2"/><text x="138.9" y="281.7" text-anchor="end">אשקלון</text></g><g class="hv-city" data-zone="south"><circle cx="169.7" cy="287.2" r="3.2"/><text x="175.7" y="292.2" text-anchor="start">קריית גת</text></g><g class="hv-city" data-zone="south"><circle cx="173.2" cy="342.1" r="3.2"/><text x="179.2" y="345.6" text-anchor="start">באר שבע</text></g><g class="hv-city" data-zone="south"><circle cx="204.8" cy="370.1" r="3.2"/><text x="210.8" y="373.6" text-anchor="start">דימונה</text></g><g class="hv-city" data-zone="south"><circle cx="194.2" cy="601.6" r="3.2"/><text x="200.2" y="605.1" text-anchor="start">אילת</text></g></g>
+  <circle cx="187.8" cy="216.3" r="26" fill="url(#hvGlow)" class="hv-hq-glow"/>
+  <circle cx="187.8" cy="216.3" r="4.5" class="hv-hq"/>
+  <g class="hv-lens">
+    <circle cx="66" cy="214" r="60" class="hv-lens-bg"/>
+    <g clip-path="url(#hvLens)">
+      <path class="hv-land hv-land--lens" d="M96.0,332.5 L106.6,323.0 L109.2,318.2 L115.3,313.6 L117.9,308.9 L127.7,298.8 L132.4,292.1 L149.5,263.4 L160.4,238.7 L162.8,234.9 L166.9,221.4 L166.9,218.2 L168.7,217.2 L179.2,184.5 L192.9,116.5 L193.6,102.8 L194.6,99.7 L196.6,98.6 L200.9,100.7 L204.0,100.9 L208.7,96.0 L210.8,88.7 L210.6,86.9 L209.0,86.1 L210.7,74.5 L213.0,66.6 L212.5,63.9 L214.3,61.9 L213.5,60.9 L224.6,61.4 L227.5,59.8 L231.1,60.4 L237.5,58.8 L240.4,60.6 L243.8,65.5 L245.5,65.8 L259.1,61.2 L263.1,60.9 L267.4,51.7 L268.4,40.3 L272.2,31.3 L273.7,31.1 L276.9,35.7 L279.3,37.4 L281.2,35.1 L281.4,33.0 L285.6,31.9 L291.7,24.9 L297.6,23.6 L300.9,21.8 L307.7,12.0 L306.2,19.2 L300.4,23.0 L305.2,26.4 L300.9,32.5 L305.4,36.2 L305.9,43.4 L308.9,45.2 L309.3,49.6 L306.4,54.9 L306.4,57.1 L311.3,59.2 L310.9,61.2 L312.6,75.8 L316.4,82.7 L311.4,90.3 L309.9,94.8 L310.4,96.7 L309.4,100.7 L299.4,113.5 L289.9,118.5 L283.5,123.4 L280.4,123.1 L273.7,129.3 L274.1,131.6 L275.2,132.3 L274.3,134.4 L276.2,141.6 L275.5,142.6 L275.1,141.8 L274.3,143.8 L273.6,143.1 L274.3,147.0 L272.6,147.0 L272.5,147.9 L273.8,148.0 L276.2,152.2 L273.8,154.4 L273.5,155.4 L275.2,156.4 L275.2,157.5 L273.6,158.4 L274.3,159.5 L272.6,160.6 L273.5,161.7 L272.5,161.8 L273.5,164.1 L271.7,164.8 L274.3,171.1 L272.5,170.1 L273.1,177.2 L274.3,179.5 L273.7,184.2 L275.2,188.9 L273.5,191.0 L275.2,191.1 L273.0,200.7 L273.5,203.7 L271.9,204.9 L272.5,206.8 L270.4,210.5 L270.3,212.3 L271.6,214.2 L269.5,216.0 L268.7,218.6 L269.0,225.7 L271.7,236.0 L271.6,237.2 L269.4,238.6 L269.0,239.9 L272.2,252.1 L270.8,255.2 L273.5,263.4 L269.4,268.1 L263.2,282.5 L261.1,293.6 L259.6,319.3 L254.9,329.8 L255.8,330.9 L255.6,334.2 L252.1,341.2 L254.1,349.3 L257.4,356.2 L258.3,360.4 L257.7,364.8 L251.6,377.0 L250.8,386.3 L249.3,389.1 L244.2,394.0 L242.5,397.5 L241.8,407.8 L237.0,414.3 L234.9,423.6 L227.3,439.3 L218.7,467.9 L218.7,471.6 L221.6,478.5 L219.0,485.7 L216.8,496.4 L216.8,500.7 L219.4,510.1 L219.4,514.9 L217.3,520.1 L211.7,528.6 L207.5,545.6 L206.8,558.0 L200.8,574.7 L199.1,587.1 L196.1,593.9 L194.1,603.4 L188.8,612.0 L185.7,611.9 L181.5,603.4 L180.6,599.8 L180.9,589.2 L177.5,573.4 L166.7,543.0 L165.6,531.9 L148.1,481.1 L138.7,471.1 L138.6,466.6 L139.9,460.0 L136.5,455.2 L135.7,452.6 L135.4,446.3 L132.6,434.1 L112.9,381.5 L99.2,338.4 L96.0,332.5Z" transform="translate(-488.62,-451.54) scale(3.1)"/>
+      <circle cx="93.6" cy="219.0" r="25.7" class="hv-radius hv-radius--lens"/>
+      <path class="hv-route hv-route--lens" data-zone="dan" d="M93.6,219.0 Q69.8,210.2 44.6,213.1" style="--i:0"/><path class="hv-route hv-route--lens" data-zone="dan" d="M93.6,219.0 Q91.1,215.6 87.4,213.7" style="--i:1"/><path class="hv-route hv-route--lens" data-zone="dan" d="M93.6,219.0 Q77.5,216.4 61.9,221.5" style="--i:2"/><path class="hv-route hv-route--lens" data-zone="dan" d="M93.6,219.0 Q66.9,227.0 46.8,246.3" style="--i:3"/><path class="hv-route hv-route--lens" data-zone="center" d="M93.6,219.0 Q65.4,237.3 48.6,266.4" style="--i:4"/><path class="hv-route hv-route--lens" data-zone="dan" d="M93.6,219.0 Q59.7,225.0 32.2,245.6" style="--i:5"/><path class="hv-route hv-route--lens" data-zone="dan" d="M93.6,219.0 Q79.9,213.7 65.4,215.3" style="--i:6"/><path class="hv-route hv-route--lens" data-zone="dan" d="M93.6,219.0 Q86.9,194.9 70.0,176.5" style="--i:7"/><path class="hv-route hv-route--lens" data-zone="center" d="M93.6,219.0 Q93.4,190.9 80.5,166.0" style="--i:8"/><path class="hv-route hv-route--lens" data-zone="center" d="M93.6,219.0 Q100.1,195.0 95.1,170.6" style="--i:9"/>
+      <g class="hv-city" data-zone="dan"><circle cx="44.6" cy="213.1" r="2.6"/><text x="40.1" y="216.1" text-anchor="end" class="hv-city__s">תל אביב</text></g><g class="hv-city" data-zone="dan"><circle cx="87.4" cy="213.7" r="2.6"/><text x="87.4" y="207.7" text-anchor="middle" class="hv-city__s">פתח תקווה</text></g><g class="hv-city" data-zone="dan"><circle cx="61.9" cy="221.5" r="2.6"/><text x="57.4" y="224.5" text-anchor="end" class="hv-city__s">רמת גן</text></g><g class="hv-city" data-zone="dan"><circle cx="46.8" cy="246.3" r="2.6"/><text x="42.3" y="245.3" text-anchor="end" class="hv-city__s">חולון</text></g><g class="hv-city" data-zone="center"><circle cx="48.6" cy="266.4" r="2.6"/><text x="53.1" y="264.4" text-anchor="start" class="hv-city__s">ראשון לציון</text></g><g class="hv-city" data-zone="dan"><circle cx="32.2" cy="245.6" r="2.6"/><text x="27.7" y="252.6" text-anchor="end" class="hv-city__s">בת ים</text></g><g class="hv-city" data-zone="dan"><circle cx="65.4" cy="215.3" r="2.6"/><text x="65.4" y="210.3" text-anchor="middle" class="hv-city__s">בני ברק</text></g><g class="hv-city" data-zone="dan"><circle cx="70.0" cy="176.5" r="2.6"/><text x="65.5" y="179.5" text-anchor="end" class="hv-city__s">הרצליה</text></g><g class="hv-city" data-zone="center"><circle cx="80.5" cy="166.0" r="2.6"/><text x="80.5" y="161.0" text-anchor="middle" class="hv-city__s">רעננה</text></g><g class="hv-city" data-zone="center"><circle cx="95.1" cy="170.6" r="2.6"/><text x="95.1" y="180.6" text-anchor="middle" class="hv-city__s">כפר סבא</text></g>
+      <circle cx="93.6" cy="219.0" r="4" class="hv-hq"/>
+      <text x="93.6" y="231.0" text-anchor="middle" class="hv-city__s hv-hq__lbl">גת רימון</text>
+    </g>
+    <circle cx="66" cy="214" r="60" class="hv-lens-frame"/>
+    <text x="66" y="287" text-anchor="middle" class="hv-lens-cap">גוש דן · מעגל 6 ק&quot;מ מהמחסן</text>
+  </g>
+  <g id="hvTravelers"></g>
+</svg>
+        </div>
+        <div class="hv-map__side">
+          <h2 class="hv-map__title" id="hv-cover">מגת רימון לכל רחבי הארץ</h2>
+          <p class="hv-map__sub">כל המשלוחים יוצאים מהמחסן המרכזי שלנו בגת רימון. האזורים לפי חלוקת המחוזות של המדינה (הלמ"ס), ובנוסף משלוח חינם לכל יישוב עד 6 ק"מ מהמחסן.</p>
+          <ul class="hv-zones2" id="hvZones">
+            <li><button type="button" data-zone="dan"><span class="hv-z__name">גוש דן</span><span class="hv-z__fee">משלוח חינם</span><span class="hv-z__time">מחוז תל אביב + עד 6 ק"מ מהמחסן · 24–72 שעות</span></button></li>
+            <li><button type="button" data-zone="center"><span class="hv-z__name">מרכז</span><span class="hv-z__fee">60 ₪</span><span class="hv-z__time">מחוז המרכז · 24–72 שעות</span></button></li>
+            <li><button type="button" data-zone="jerusalem"><span class="hv-z__name">ירושלים</span><span class="hv-z__fee">70 ₪</span><span class="hv-z__time">מחוז ירושלים · עד 5 ימי עסקים</span></button></li>
+            <li><button type="button" data-zone="north"><span class="hv-z__name">צפון</span><span class="hv-z__fee">90 ₪</span><span class="hv-z__time">מחוזות הצפון וחיפה · עד 5 ימי עסקים</span></button></li>
+            <li><button type="button" data-zone="south"><span class="hv-z__name">דרום</span><span class="hv-z__fee">120 ₪</span><span class="hv-z__time">מחוז הדרום ועד אילת · עד 5 ימי עסקים</span></button></li>
+          </ul>
+          <p class="hv-z__list" id="hvZoneCities" aria-live="polite"></p>
+          <form class="hv-citycheck" id="hvCityCheck" autocomplete="off">
+            <label for="hvCity">באיזה אזור העסק שלכם?</label>
+            <div class="hv-citycheck__row">
+              <input id="hvCity" name="city" list="hvCityList" placeholder="הקלידו עיר או יישוב">
+              <button type="submit" class="hv-btn hv-btn--line-light">בדיקה</button>
+            </div>
+            <datalist id="hvCityList"></datalist>
+            <p class="hv-citycheck__out" id="hvCityOut" aria-live="polite"></p>
+          </form>
+          <p class="hv-map__note">דמי משלוח לפני מע"מ, <strong>חינם בהזמנה מעל 2,000 ₪</strong>. מינימום הזמנה 200 ₪ + מע"מ. זמני אספקה בימי עסקים.</p>
+          <a href="#hvOrder" class="hv-btn hv-btn--gold">לבניית רשימת הזמנה</a>
         </div>
       </div>
     </section>
@@ -1977,103 +2102,8 @@
       </div>
     </section>
 
-    <!-- ═══ SERVICE ═══ -->
-    <section class="y3-svc" aria-labelledby="hv-service">
-      <div class="hv-wrap">
-        <div class="y3-svc__panel">
-          <div class="y3-svc__main">
-            <span class="y3-svc__tag"><i class="fas fa-user-tie" aria-hidden="true"></i> שירות אישי · בעל העסק על הקו</span>
-            <h2 class="y3-svc__title" id="hv-service">שירות של אדם,<br><em>לא של מוקד.</em></h2>
-            <figure class="y3-svc__quote">
-              <blockquote>
-                <p>עסקים עושים עם אנשים. מי שקונה אצלי בקביעות צריך להרוויח מזה: במחיר, בשירות ובכסף שחוזר לעסק שלו.</p>
-              </blockquote>
-              <figcaption class="y3-svc__sign">
-                <span class="y3-svc__avatar" aria-hidden="true"><span>י.נ</span></span>
-                <span><strong>יובל נגלר</strong><small>מייסד ובעלים, וואי מרקט · מסחר ב-B2B מאז 2020</small></span>
-              </figcaption>
-            </figure>
-            <div class="y3-svc__status" id="y3SvcStatus"><i></i><span>א'–ה' 08:00–17:00</span></div>
-            <div class="y3-svc__actions">
-              <a href="https://wa.me/972549922492?text=שלום יובל, אשמח לעזרה" target="_blank" rel="noopener" class="hv-btn hv-btn--gold"><i class="fab fa-whatsapp" aria-hidden="true"></i> כתבו ליובל בוואטסאפ</a>
-              <a href="tel:037740400" class="hv-btn hv-btn--line-light"><i class="fas fa-phone" aria-hidden="true"></i> 03-7740400</a>
-            </div>
-            <p class="y3-svc__mail"><a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a></p>
-          </div>
-          <ul class="y3-svc__grid">
-            <li class="y3-svc__card"><span class="y3-svc__k"><i class="fas fa-bolt" aria-hidden="true"></i> שעות</span><h3>הצעת מחיר מותאמת</h3><p>שולחים רשימה בוואטסאפ או בטלפון, ומקבלים הצעה תוך שעות ספורות.</p></li>
-            <li class="y3-svc__card"><span class="y3-svc__k"><i class="fas fa-tags" aria-hidden="true"></i> מחירון</span><h3>מחירים משלכם</h3><p>לקוחות קבועים מקבלים מחירון אישי שנקבע לפי העסק שלהם.</p></li>
-            <li class="y3-svc__card"><span class="y3-svc__k"><i class="fas fa-file-invoice" aria-hidden="true"></i> עד <b class="y3-num">+60</b></span><h3>תנאי תשלום</h3><p>ללקוחות קבועים: עד שוטף +60, לפי היקף הפעילות.</p></li>
-            <li class="y3-svc__card y3-svc__card--gold"><span class="y3-svc__k"><i class="fas fa-coins" aria-hidden="true"></i> CASH BACK</span><h3>הכסף שחוזר לעסק</h3><p>ב-CASH MARKET, על מוצרים מסומנים בהזמנות מהאפליקציה.</p></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <!-- ═══ SPEED: coverage map ═══ -->
-    <section class="hv-map" aria-labelledby="hv-cover" id="deliveryMap">
-      <div class="hv-wrap hv-map__grid">
-        <div class="hv-map__stage" id="hvMap" data-zone="all">
-          <svg class="hv-map__svg" id="hvMapSvg" viewBox="0 0 328.4 624" role="img" aria-label="מפת ישראל עם אזורי החלוקה של וואי מרקט, מהמחסן בגת רימון">
-  <defs>
-    <pattern id="hvDots" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r=".7" fill="rgba(232,197,71,.22)"/></pattern>
-    <clipPath id="hvLand"><path d="M96.0,332.5 L106.6,323.0 L109.2,318.2 L115.3,313.6 L117.9,308.9 L127.7,298.8 L132.4,292.1 L149.5,263.4 L160.4,238.7 L162.8,234.9 L166.9,221.4 L166.9,218.2 L168.7,217.2 L179.2,184.5 L192.9,116.5 L193.6,102.8 L194.6,99.7 L196.6,98.6 L200.9,100.7 L204.0,100.9 L208.7,96.0 L210.8,88.7 L210.6,86.9 L209.0,86.1 L210.7,74.5 L213.0,66.6 L212.5,63.9 L214.3,61.9 L213.5,60.9 L224.6,61.4 L227.5,59.8 L231.1,60.4 L237.5,58.8 L240.4,60.6 L243.8,65.5 L245.5,65.8 L259.1,61.2 L263.1,60.9 L267.4,51.7 L268.4,40.3 L272.2,31.3 L273.7,31.1 L276.9,35.7 L279.3,37.4 L281.2,35.1 L281.4,33.0 L285.6,31.9 L291.7,24.9 L297.6,23.6 L300.9,21.8 L307.7,12.0 L306.2,19.2 L300.4,23.0 L305.2,26.4 L300.9,32.5 L305.4,36.2 L305.9,43.4 L308.9,45.2 L309.3,49.6 L306.4,54.9 L306.4,57.1 L311.3,59.2 L310.9,61.2 L312.6,75.8 L316.4,82.7 L311.4,90.3 L309.9,94.8 L310.4,96.7 L309.4,100.7 L299.4,113.5 L289.9,118.5 L283.5,123.4 L280.4,123.1 L273.7,129.3 L274.1,131.6 L275.2,132.3 L274.3,134.4 L276.2,141.6 L275.5,142.6 L275.1,141.8 L274.3,143.8 L273.6,143.1 L274.3,147.0 L272.6,147.0 L272.5,147.9 L273.8,148.0 L276.2,152.2 L273.8,154.4 L273.5,155.4 L275.2,156.4 L275.2,157.5 L273.6,158.4 L274.3,159.5 L272.6,160.6 L273.5,161.7 L272.5,161.8 L273.5,164.1 L271.7,164.8 L274.3,171.1 L272.5,170.1 L273.1,177.2 L274.3,179.5 L273.7,184.2 L275.2,188.9 L273.5,191.0 L275.2,191.1 L273.0,200.7 L273.5,203.7 L271.9,204.9 L272.5,206.8 L270.4,210.5 L270.3,212.3 L271.6,214.2 L269.5,216.0 L268.7,218.6 L269.0,225.7 L271.7,236.0 L271.6,237.2 L269.4,238.6 L269.0,239.9 L272.2,252.1 L270.8,255.2 L273.5,263.4 L269.4,268.1 L263.2,282.5 L261.1,293.6 L259.6,319.3 L254.9,329.8 L255.8,330.9 L255.6,334.2 L252.1,341.2 L254.1,349.3 L257.4,356.2 L258.3,360.4 L257.7,364.8 L251.6,377.0 L250.8,386.3 L249.3,389.1 L244.2,394.0 L242.5,397.5 L241.8,407.8 L237.0,414.3 L234.9,423.6 L227.3,439.3 L218.7,467.9 L218.7,471.6 L221.6,478.5 L219.0,485.7 L216.8,496.4 L216.8,500.7 L219.4,510.1 L219.4,514.9 L217.3,520.1 L211.7,528.6 L207.5,545.6 L206.8,558.0 L200.8,574.7 L199.1,587.1 L196.1,593.9 L194.1,603.4 L188.8,612.0 L185.7,611.9 L181.5,603.4 L180.6,599.8 L180.9,589.2 L177.5,573.4 L166.7,543.0 L165.6,531.9 L148.1,481.1 L138.7,471.1 L138.6,466.6 L139.9,460.0 L136.5,455.2 L135.7,452.6 L135.4,446.3 L132.6,434.1 L112.9,381.5 L99.2,338.4 L96.0,332.5Z"/></clipPath>
-    <clipPath id="hvLens"><circle cx="66" cy="214" r="60"/></clipPath>
-    <radialGradient id="hvGlow"><stop offset="0" stop-color="#E8C547" stop-opacity=".55"/><stop offset="1" stop-color="#E8C547" stop-opacity="0"/></radialGradient>
-  </defs>
-  <path class="hv-land" d="M96.0,332.5 L106.6,323.0 L109.2,318.2 L115.3,313.6 L117.9,308.9 L127.7,298.8 L132.4,292.1 L149.5,263.4 L160.4,238.7 L162.8,234.9 L166.9,221.4 L166.9,218.2 L168.7,217.2 L179.2,184.5 L192.9,116.5 L193.6,102.8 L194.6,99.7 L196.6,98.6 L200.9,100.7 L204.0,100.9 L208.7,96.0 L210.8,88.7 L210.6,86.9 L209.0,86.1 L210.7,74.5 L213.0,66.6 L212.5,63.9 L214.3,61.9 L213.5,60.9 L224.6,61.4 L227.5,59.8 L231.1,60.4 L237.5,58.8 L240.4,60.6 L243.8,65.5 L245.5,65.8 L259.1,61.2 L263.1,60.9 L267.4,51.7 L268.4,40.3 L272.2,31.3 L273.7,31.1 L276.9,35.7 L279.3,37.4 L281.2,35.1 L281.4,33.0 L285.6,31.9 L291.7,24.9 L297.6,23.6 L300.9,21.8 L307.7,12.0 L306.2,19.2 L300.4,23.0 L305.2,26.4 L300.9,32.5 L305.4,36.2 L305.9,43.4 L308.9,45.2 L309.3,49.6 L306.4,54.9 L306.4,57.1 L311.3,59.2 L310.9,61.2 L312.6,75.8 L316.4,82.7 L311.4,90.3 L309.9,94.8 L310.4,96.7 L309.4,100.7 L299.4,113.5 L289.9,118.5 L283.5,123.4 L280.4,123.1 L273.7,129.3 L274.1,131.6 L275.2,132.3 L274.3,134.4 L276.2,141.6 L275.5,142.6 L275.1,141.8 L274.3,143.8 L273.6,143.1 L274.3,147.0 L272.6,147.0 L272.5,147.9 L273.8,148.0 L276.2,152.2 L273.8,154.4 L273.5,155.4 L275.2,156.4 L275.2,157.5 L273.6,158.4 L274.3,159.5 L272.6,160.6 L273.5,161.7 L272.5,161.8 L273.5,164.1 L271.7,164.8 L274.3,171.1 L272.5,170.1 L273.1,177.2 L274.3,179.5 L273.7,184.2 L275.2,188.9 L273.5,191.0 L275.2,191.1 L273.0,200.7 L273.5,203.7 L271.9,204.9 L272.5,206.8 L270.4,210.5 L270.3,212.3 L271.6,214.2 L269.5,216.0 L268.7,218.6 L269.0,225.7 L271.7,236.0 L271.6,237.2 L269.4,238.6 L269.0,239.9 L272.2,252.1 L270.8,255.2 L273.5,263.4 L269.4,268.1 L263.2,282.5 L261.1,293.6 L259.6,319.3 L254.9,329.8 L255.8,330.9 L255.6,334.2 L252.1,341.2 L254.1,349.3 L257.4,356.2 L258.3,360.4 L257.7,364.8 L251.6,377.0 L250.8,386.3 L249.3,389.1 L244.2,394.0 L242.5,397.5 L241.8,407.8 L237.0,414.3 L234.9,423.6 L227.3,439.3 L218.7,467.9 L218.7,471.6 L221.6,478.5 L219.0,485.7 L216.8,496.4 L216.8,500.7 L219.4,510.1 L219.4,514.9 L217.3,520.1 L211.7,528.6 L207.5,545.6 L206.8,558.0 L200.8,574.7 L199.1,587.1 L196.1,593.9 L194.1,603.4 L188.8,612.0 L185.7,611.9 L181.5,603.4 L180.6,599.8 L180.9,589.2 L177.5,573.4 L166.7,543.0 L165.6,531.9 L148.1,481.1 L138.7,471.1 L138.6,466.6 L139.9,460.0 L136.5,455.2 L135.7,452.6 L135.4,446.3 L132.6,434.1 L112.9,381.5 L99.2,338.4 L96.0,332.5Z"/>
-  <rect x="0" y="0" width="328.4" height="624" fill="url(#hvDots)" clip-path="url(#hvLand)"/>
-  <path class="hv-lake" d="M283.7,98.7 L284.2,101.7 L283.5,107.7 L284.2,109.2 L283.4,109.6 L283.3,112.3 L278.7,117.5 L275.8,117.2 L274.4,111.5 L272.2,109.6 L268.0,101.7 L268.8,97.0 L272.9,92.6 L277.7,89.9 L280.6,90.2 L283.7,93.4 L284.2,95.0 L283.7,98.7ZM277.0,265.3 L276.8,270.3 L274.7,272.7 L269.4,285.0 L267.6,294.7 L266.6,316.3 L265.7,321.9 L264.8,324.4 L258.2,331.3 L254.6,330.6 L253.5,327.8 L251.9,313.9 L252.8,308.3 L251.7,301.9 L254.6,293.9 L253.7,286.5 L262.7,268.8 L266.7,264.9 L273.5,263.4 L277.0,265.3ZM263.9,367.1 L260.4,367.3 L254.8,366.3 L252.8,365.2 L251.8,363.4 L251.2,358.9 L247.9,353.8 L247.3,348.4 L248.7,344.6 L252.8,345.4 L255.5,342.1 L260.3,346.7 L263.4,353.3 L264.7,358.9 L263.9,367.1Z"/>
-  <circle cx="178.9" cy="214.7" r="22" class="hv-lens-ring"/>
-  <line x1="156.9" y1="214.7" x2="126.0" y2="214.0" class="hv-lens-lead"/>
-  <circle cx="187.8" cy="216.3" r="8.28" class="hv-radius"/>
-  <g class="hv-routes"><path class="hv-route" data-zone="center" d="M187.8,216.3 Q191.4,196.1 181.3,178.2" style="--i:0"/><path class="hv-route" data-zone="north" d="M187.8,216.3 Q198.9,189.0 190.0,161.0" style="--i:1"/><path class="hv-route" data-zone="south" d="M187.8,216.3 Q163.4,231.0 153.9,257.9" style="--i:2"/><path class="hv-route" data-zone="center" d="M187.8,216.3 Q176.9,227.8 175.8,243.6" style="--i:3"/><path class="hv-route" data-zone="center" d="M187.8,216.3 Q189.9,232.3 201.7,243.3" style="--i:4"/><path class="hv-route" data-zone="jerusalem" d="M187.8,216.3 Q199.7,247.0 228.4,263.0" style="--i:5"/><path class="hv-route" data-zone="jerusalem" d="M187.8,216.3 Q184.5,243.1 199.0,265.8" style="--i:6"/><path class="hv-route" data-zone="north" d="M187.8,216.3 Q213.3,163.1 199.1,105.9" style="--i:7"/><path class="hv-route" data-zone="north" d="M187.8,216.3 Q226.0,149.3 212.7,73.4" style="--i:8"/><path class="hv-route" data-zone="north" d="M187.8,216.3 Q227.8,184.4 238.3,134.4" style="--i:9"/><path class="hv-route" data-zone="north" d="M187.8,216.3 Q248.6,176.0 269.8,106.1" style="--i:10"/><path class="hv-route" data-zone="north" d="M187.8,216.3 Q262.6,145.1 274.9,42.5" style="--i:11"/><path class="hv-route" data-zone="south" d="M187.8,216.3 Q155.2,239.5 144.9,278.2" style="--i:12"/><path class="hv-route" data-zone="south" d="M187.8,216.3 Q166.0,248.5 169.7,287.2" style="--i:13"/><path class="hv-route" data-zone="south" d="M187.8,216.3 Q157.9,276.6 173.2,342.1" style="--i:14"/><path class="hv-route" data-zone="south" d="M187.8,216.3 Q168.6,296.3 204.8,370.1" style="--i:15"/><path class="hv-route" data-zone="south" d="M187.8,216.3 Q121.6,410.1 194.2,601.6" style="--i:16"/></g>
-  <g class="hv-cities"><g class="hv-city" data-zone="center"><circle cx="181.3" cy="178.2" r="3.2"/><text x="175.3" y="181.7" text-anchor="end">נתניה</text></g><g class="hv-city" data-zone="north"><circle cx="190.0" cy="161.0" r="3.2"/><text x="184.0" y="164.5" text-anchor="end">חדרה</text></g><g class="hv-city" data-zone="south"><circle cx="153.9" cy="257.9" r="3.2"/><text x="147.9" y="261.4" text-anchor="end">אשדוד</text></g><g class="hv-city" data-zone="center"><circle cx="175.8" cy="243.6" r="3.2"/><text x="169.8" y="247.1" text-anchor="end">רחובות</text></g><g class="hv-city" data-zone="center"><circle cx="201.7" cy="243.3" r="3.2"/><text x="207.7" y="244.3" text-anchor="start">מודיעין</text></g><g class="hv-city" data-zone="jerusalem"><circle cx="228.4" cy="263.0" r="3.2"/><text x="234.4" y="266.5" text-anchor="start">ירושלים</text></g><g class="hv-city" data-zone="jerusalem"><circle cx="199.0" cy="265.8" r="3.2"/><text x="194.0" y="276.8" text-anchor="end">בית שמש</text></g><g class="hv-city" data-zone="north"><circle cx="199.1" cy="105.9" r="3.2"/><text x="193.1" y="109.4" text-anchor="end">חיפה</text></g><g class="hv-city" data-zone="north"><circle cx="212.7" cy="73.4" r="3.2"/><text x="206.7" y="76.9" text-anchor="end">נהריה</text></g><g class="hv-city" data-zone="north"><circle cx="238.3" cy="134.4" r="3.2"/><text x="244.3" y="137.9" text-anchor="start">עפולה</text></g><g class="hv-city" data-zone="north"><circle cx="269.8" cy="106.1" r="3.2"/><text x="275.8" y="109.6" text-anchor="start">טבריה</text></g><g class="hv-city" data-zone="north"><circle cx="274.9" cy="42.5" r="3.2"/><text x="280.9" y="46.0" text-anchor="start">קריית שמונה</text></g><g class="hv-city" data-zone="south"><circle cx="144.9" cy="278.2" r="3.2"/><text x="138.9" y="281.7" text-anchor="end">אשקלון</text></g><g class="hv-city" data-zone="south"><circle cx="169.7" cy="287.2" r="3.2"/><text x="175.7" y="292.2" text-anchor="start">קריית גת</text></g><g class="hv-city" data-zone="south"><circle cx="173.2" cy="342.1" r="3.2"/><text x="179.2" y="345.6" text-anchor="start">באר שבע</text></g><g class="hv-city" data-zone="south"><circle cx="204.8" cy="370.1" r="3.2"/><text x="210.8" y="373.6" text-anchor="start">דימונה</text></g><g class="hv-city" data-zone="south"><circle cx="194.2" cy="601.6" r="3.2"/><text x="200.2" y="605.1" text-anchor="start">אילת</text></g></g>
-  <circle cx="187.8" cy="216.3" r="26" fill="url(#hvGlow)" class="hv-hq-glow"/>
-  <circle cx="187.8" cy="216.3" r="4.5" class="hv-hq"/>
-  <g class="hv-lens">
-    <circle cx="66" cy="214" r="60" class="hv-lens-bg"/>
-    <g clip-path="url(#hvLens)">
-      <path class="hv-land hv-land--lens" d="M96.0,332.5 L106.6,323.0 L109.2,318.2 L115.3,313.6 L117.9,308.9 L127.7,298.8 L132.4,292.1 L149.5,263.4 L160.4,238.7 L162.8,234.9 L166.9,221.4 L166.9,218.2 L168.7,217.2 L179.2,184.5 L192.9,116.5 L193.6,102.8 L194.6,99.7 L196.6,98.6 L200.9,100.7 L204.0,100.9 L208.7,96.0 L210.8,88.7 L210.6,86.9 L209.0,86.1 L210.7,74.5 L213.0,66.6 L212.5,63.9 L214.3,61.9 L213.5,60.9 L224.6,61.4 L227.5,59.8 L231.1,60.4 L237.5,58.8 L240.4,60.6 L243.8,65.5 L245.5,65.8 L259.1,61.2 L263.1,60.9 L267.4,51.7 L268.4,40.3 L272.2,31.3 L273.7,31.1 L276.9,35.7 L279.3,37.4 L281.2,35.1 L281.4,33.0 L285.6,31.9 L291.7,24.9 L297.6,23.6 L300.9,21.8 L307.7,12.0 L306.2,19.2 L300.4,23.0 L305.2,26.4 L300.9,32.5 L305.4,36.2 L305.9,43.4 L308.9,45.2 L309.3,49.6 L306.4,54.9 L306.4,57.1 L311.3,59.2 L310.9,61.2 L312.6,75.8 L316.4,82.7 L311.4,90.3 L309.9,94.8 L310.4,96.7 L309.4,100.7 L299.4,113.5 L289.9,118.5 L283.5,123.4 L280.4,123.1 L273.7,129.3 L274.1,131.6 L275.2,132.3 L274.3,134.4 L276.2,141.6 L275.5,142.6 L275.1,141.8 L274.3,143.8 L273.6,143.1 L274.3,147.0 L272.6,147.0 L272.5,147.9 L273.8,148.0 L276.2,152.2 L273.8,154.4 L273.5,155.4 L275.2,156.4 L275.2,157.5 L273.6,158.4 L274.3,159.5 L272.6,160.6 L273.5,161.7 L272.5,161.8 L273.5,164.1 L271.7,164.8 L274.3,171.1 L272.5,170.1 L273.1,177.2 L274.3,179.5 L273.7,184.2 L275.2,188.9 L273.5,191.0 L275.2,191.1 L273.0,200.7 L273.5,203.7 L271.9,204.9 L272.5,206.8 L270.4,210.5 L270.3,212.3 L271.6,214.2 L269.5,216.0 L268.7,218.6 L269.0,225.7 L271.7,236.0 L271.6,237.2 L269.4,238.6 L269.0,239.9 L272.2,252.1 L270.8,255.2 L273.5,263.4 L269.4,268.1 L263.2,282.5 L261.1,293.6 L259.6,319.3 L254.9,329.8 L255.8,330.9 L255.6,334.2 L252.1,341.2 L254.1,349.3 L257.4,356.2 L258.3,360.4 L257.7,364.8 L251.6,377.0 L250.8,386.3 L249.3,389.1 L244.2,394.0 L242.5,397.5 L241.8,407.8 L237.0,414.3 L234.9,423.6 L227.3,439.3 L218.7,467.9 L218.7,471.6 L221.6,478.5 L219.0,485.7 L216.8,496.4 L216.8,500.7 L219.4,510.1 L219.4,514.9 L217.3,520.1 L211.7,528.6 L207.5,545.6 L206.8,558.0 L200.8,574.7 L199.1,587.1 L196.1,593.9 L194.1,603.4 L188.8,612.0 L185.7,611.9 L181.5,603.4 L180.6,599.8 L180.9,589.2 L177.5,573.4 L166.7,543.0 L165.6,531.9 L148.1,481.1 L138.7,471.1 L138.6,466.6 L139.9,460.0 L136.5,455.2 L135.7,452.6 L135.4,446.3 L132.6,434.1 L112.9,381.5 L99.2,338.4 L96.0,332.5Z" transform="translate(-488.62,-451.54) scale(3.1)"/>
-      <circle cx="93.6" cy="219.0" r="25.7" class="hv-radius hv-radius--lens"/>
-      <path class="hv-route hv-route--lens" data-zone="dan" d="M93.6,219.0 Q69.8,210.2 44.6,213.1" style="--i:0"/><path class="hv-route hv-route--lens" data-zone="dan" d="M93.6,219.0 Q91.1,215.6 87.4,213.7" style="--i:1"/><path class="hv-route hv-route--lens" data-zone="dan" d="M93.6,219.0 Q77.5,216.4 61.9,221.5" style="--i:2"/><path class="hv-route hv-route--lens" data-zone="dan" d="M93.6,219.0 Q66.9,227.0 46.8,246.3" style="--i:3"/><path class="hv-route hv-route--lens" data-zone="center" d="M93.6,219.0 Q65.4,237.3 48.6,266.4" style="--i:4"/><path class="hv-route hv-route--lens" data-zone="dan" d="M93.6,219.0 Q59.7,225.0 32.2,245.6" style="--i:5"/><path class="hv-route hv-route--lens" data-zone="dan" d="M93.6,219.0 Q79.9,213.7 65.4,215.3" style="--i:6"/><path class="hv-route hv-route--lens" data-zone="dan" d="M93.6,219.0 Q86.9,194.9 70.0,176.5" style="--i:7"/><path class="hv-route hv-route--lens" data-zone="center" d="M93.6,219.0 Q93.4,190.9 80.5,166.0" style="--i:8"/><path class="hv-route hv-route--lens" data-zone="center" d="M93.6,219.0 Q100.1,195.0 95.1,170.6" style="--i:9"/>
-      <g class="hv-city" data-zone="dan"><circle cx="44.6" cy="213.1" r="2.6"/><text x="40.1" y="216.1" text-anchor="end" class="hv-city__s">תל אביב</text></g><g class="hv-city" data-zone="dan"><circle cx="87.4" cy="213.7" r="2.6"/><text x="87.4" y="207.7" text-anchor="middle" class="hv-city__s">פתח תקווה</text></g><g class="hv-city" data-zone="dan"><circle cx="61.9" cy="221.5" r="2.6"/><text x="57.4" y="224.5" text-anchor="end" class="hv-city__s">רמת גן</text></g><g class="hv-city" data-zone="dan"><circle cx="46.8" cy="246.3" r="2.6"/><text x="42.3" y="245.3" text-anchor="end" class="hv-city__s">חולון</text></g><g class="hv-city" data-zone="center"><circle cx="48.6" cy="266.4" r="2.6"/><text x="53.1" y="264.4" text-anchor="start" class="hv-city__s">ראשון לציון</text></g><g class="hv-city" data-zone="dan"><circle cx="32.2" cy="245.6" r="2.6"/><text x="27.7" y="252.6" text-anchor="end" class="hv-city__s">בת ים</text></g><g class="hv-city" data-zone="dan"><circle cx="65.4" cy="215.3" r="2.6"/><text x="65.4" y="210.3" text-anchor="middle" class="hv-city__s">בני ברק</text></g><g class="hv-city" data-zone="dan"><circle cx="70.0" cy="176.5" r="2.6"/><text x="65.5" y="179.5" text-anchor="end" class="hv-city__s">הרצליה</text></g><g class="hv-city" data-zone="center"><circle cx="80.5" cy="166.0" r="2.6"/><text x="80.5" y="161.0" text-anchor="middle" class="hv-city__s">רעננה</text></g><g class="hv-city" data-zone="center"><circle cx="95.1" cy="170.6" r="2.6"/><text x="95.1" y="180.6" text-anchor="middle" class="hv-city__s">כפר סבא</text></g>
-      <circle cx="93.6" cy="219.0" r="4" class="hv-hq"/>
-      <text x="93.6" y="231.0" text-anchor="middle" class="hv-city__s hv-hq__lbl">גת רימון</text>
-    </g>
-    <circle cx="66" cy="214" r="60" class="hv-lens-frame"/>
-    <text x="66" y="287" text-anchor="middle" class="hv-lens-cap">גוש דן · מעגל 6 ק&quot;מ מהמחסן</text>
-  </g>
-  <g id="hvTravelers"></g>
-</svg>
-        </div>
-        <div class="hv-map__side">
-          <h2 class="hv-map__title" id="hv-cover">מגת רימון לכל רחבי הארץ</h2>
-          <p class="hv-map__sub">כל המשלוחים יוצאים מהמחסן המרכזי שלנו בגת רימון. האזורים לפי חלוקת המחוזות של המדינה (הלמ"ס), ובנוסף משלוח חינם לכל יישוב עד 6 ק"מ מהמחסן.</p>
-          <ul class="hv-zones2" id="hvZones">
-            <li><button type="button" data-zone="dan"><span class="hv-z__name">גוש דן</span><span class="hv-z__fee">משלוח חינם</span><span class="hv-z__time">מחוז תל אביב + עד 6 ק"מ מהמחסן · 24–72 שעות</span></button></li>
-            <li><button type="button" data-zone="center"><span class="hv-z__name">מרכז</span><span class="hv-z__fee">60 ₪</span><span class="hv-z__time">מחוז המרכז · 24–72 שעות</span></button></li>
-            <li><button type="button" data-zone="jerusalem"><span class="hv-z__name">ירושלים</span><span class="hv-z__fee">70 ₪</span><span class="hv-z__time">מחוז ירושלים · עד 5 ימי עסקים</span></button></li>
-            <li><button type="button" data-zone="north"><span class="hv-z__name">צפון</span><span class="hv-z__fee">90 ₪</span><span class="hv-z__time">מחוזות הצפון וחיפה · עד 5 ימי עסקים</span></button></li>
-            <li><button type="button" data-zone="south"><span class="hv-z__name">דרום</span><span class="hv-z__fee">120 ₪</span><span class="hv-z__time">מחוז הדרום ועד אילת · עד 5 ימי עסקים</span></button></li>
-          </ul>
-          <p class="hv-z__list" id="hvZoneCities" aria-live="polite"></p>
-          <form class="hv-citycheck" id="hvCityCheck" autocomplete="off">
-            <label for="hvCity">באיזה אזור העסק שלכם?</label>
-            <div class="hv-citycheck__row">
-              <input id="hvCity" name="city" list="hvCityList" placeholder="הקלידו עיר או יישוב">
-              <button type="submit" class="hv-btn hv-btn--line-light">בדיקה</button>
-            </div>
-            <datalist id="hvCityList"></datalist>
-            <p class="hv-citycheck__out" id="hvCityOut" aria-live="polite"></p>
-          </form>
-          <p class="hv-map__note">דמי משלוח לפני מע"מ, <strong>חינם בהזמנה מעל 2,000 ₪</strong>. מינימום הזמנה 200 ₪ + מע"מ. זמני אספקה בימי עסקים.</p>
-          <a href="#hvOrder" class="hv-btn hv-btn--gold">לבניית רשימת הזמנה</a>
-        </div>
-      </div>
-    </section>
-
     <!-- ═══ BUSINESS ACCOUNT ═══ -->
-    <section class="y3-account" aria-labelledby="hv-portal">
+    <section class="y3-account v4-island" aria-labelledby="hv-portal">
       <div class="hv-wrap y3-account__grid">
         <div>
           <span class="y3-club-tag">CASH MARKET · מועדון הלקוחות העסקי</span>
@@ -2131,85 +2161,89 @@
       </div>
     </section>
 
-    <!-- ═══ FEATURED PRODUCT ═══ -->
-    <section class="hv-sec hv-sec--shelf" aria-labelledby="hv-feat">
+    <!-- ═══ SERVICE ═══ -->
+    <section class="y3-svc v4-svc-light" aria-labelledby="hv-service">
       <div class="hv-wrap">
-        <div class="hv-sec__head"><div><h2 class="hv-sec__title">מוצר נבחר</h2></div></div>
-        <div class="hv-feature">
-          <a href="/products/nitrile-black-perfect/"><img src="/items/34.jpg" alt="כפפות ניטריל שחור ללא אבקה Perfect 100 יחידות לעסקים" loading="lazy" width="260" height="260"></a>
-          <div>
-            <div class="hv-feature__tag">לרפואה, מטבחים, מוסכים וניקיון</div>
-            <h3 id="hv-feat">כפפות ניטריל שחור ללא אבקה (Perfect), 100 יח'</h3>
-            <ul>
-              <li>אישור אמ"ר ומתאימות למגע עם מזון (AQL 1.5)</li>
-              <li>ללא אבקה, נטולות לטקס, עמידות לכימיקלים</li>
-              <li>מידות S-XL, מחירי סיטונאות, אספקה מהירה</li>
-            </ul>
-            <div class="hv-feature__actions">
-              <a href="/products/nitrile-black-perfect/" class="hv-btn hv-btn--navy">לצפייה ולהזמנה</a>
-              <a href="/blog/black-nitrile-gloves-guide" class="hv-btn hv-btn--line">המדריך השלם</a>
+        <div class="y3-svc__panel">
+          <div class="y3-svc__main">
+            <span class="y3-svc__tag"><i class="fas fa-user-tie" aria-hidden="true"></i> שירות אישי · בעל העסק על הקו</span>
+            <h2 class="y3-svc__title" id="hv-service">שירות של אדם,<br><em>לא של מוקד.</em></h2>
+            <figure class="y3-svc__quote">
+              <blockquote>
+                <p>עסקים עושים עם אנשים. מי שקונה אצלי בקביעות צריך להרוויח מזה: באיכות, בשירות ובכסף שהוא מרוויח לעסק שלו. מצוינות בכל הזמנה.</p>
+              </blockquote>
+              <figcaption class="y3-svc__sign">
+                <span class="y3-svc__avatar" aria-hidden="true"><span>י.נ</span></span>
+                <span><strong>יובל נגלר</strong><small>מייסד ובעלים, וואי מרקט · מסחר ב-B2B מאז 2020</small></span>
+              </figcaption>
+            </figure>
+            <div class="y3-svc__status" id="y3SvcStatus"><i></i><span>א'–ה' 08:00–17:00</span></div>
+            <div class="y3-svc__actions">
+              <a href="https://wa.me/972549922492?text=שלום יובל, אשמח לעזרה" target="_blank" rel="noopener" class="hv-btn hv-btn--gold"><i class="fab fa-whatsapp" aria-hidden="true"></i> כתבו ליובל בוואטסאפ</a>
+              <a href="tel:037740400" class="hv-btn hv-btn--line-light"><i class="fas fa-phone" aria-hidden="true"></i> 03-7740400</a>
             </div>
+            <p class="y3-svc__mail"><a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a></p>
           </div>
+          <ul class="y3-svc__grid">
+            <li class="y3-svc__card"><span class="y3-svc__k"><i class="fas fa-bolt" aria-hidden="true"></i> שעות</span><h3>הצעת מחיר מותאמת</h3><p>שולחים רשימה בוואטסאפ או בטלפון, ומקבלים הצעה באותו יום עבודה.</p></li>
+            <li class="y3-svc__card"><span class="y3-svc__k"><i class="fas fa-tags" aria-hidden="true"></i> מחירון</span><h3>מחירים משלכם</h3><p>לקוחות קבועים מקבלים מחירון אישי שנקבע לפי העסק שלהם.</p></li>
+            <li class="y3-svc__card"><span class="y3-svc__k"><i class="fas fa-file-invoice" aria-hidden="true"></i> עד <b class="y3-num">+60</b></span><h3>תנאי תשלום</h3><p>ללקוחות קבועים: עד שוטף +60, לפי היקף הפעילות.</p></li>
+            <li class="y3-svc__card y3-svc__card--gold"><span class="y3-svc__k"><i class="fas fa-coins" aria-hidden="true"></i> CASH BACK</span><h3>הכסף שחוזר לעסק</h3><p>ב-CASH MARKET, על מוצרים מסומנים בהזמנות מהאפליקציה.</p></li>
+          </ul>
         </div>
       </div>
     </section>
-
-    <!-- ═══ SEGMENTS ═══ -->
-    <section class="hv-sec" aria-labelledby="hv-seg">
+    <!-- ═══ SEGMENTS (v4) ═══ -->
+    <section class="v4-sec" aria-labelledby="hv-seg">
       <div class="hv-wrap">
-        <div class="hv-sec__head"><div><h2 class="hv-sec__title" id="hv-seg">למי אנחנו מספקים?</h2><p class="hv-sec__sub">עסקים ומוסדות בכל הגדלים</p></div></div>
-        <div class="hv-seg">
-          <div><h3><i class="fas fa-broom" aria-hidden="true"></i> חברות ניקיון ואחזקה</h3><p>חומרי ניקוי, מטליות, שקיות אשפה וציוד מקצועי. אספקה שוטפת לעשרות אתרים.</p></div>
-          <div><h3><i class="fas fa-utensils" aria-hidden="true"></i> מסעדות ושירותי הסעדה</h3><p>כלים חד פעמיים, אריזות Take Away, מוצרי נייר וציוד למטבחים מוסדיים.</p></div>
-          <div><h3><i class="fas fa-store" aria-hidden="true"></i> סופרמרקטים ומינימרקטים</h3><p>מוצרי צריכה שוטפת במחירי סיטונאות, שקיות, אריזות ומוצרי ניקיון.</p></div>
-          <div><h3><i class="fas fa-building" aria-hidden="true"></i> משרדים וחללי עבודה</h3><p>ציוד משרדי, נייר, מוצרי ניקיון וטואלטיקה. חבילות אספקה חודשיות.</p></div>
-          <div><h3><i class="fas fa-dumbbell" aria-hidden="true"></i> מרכזי ספורט ופנאי</h3><p>מוצרי ניקיון, טואלטיקה, מגבות נייר וציוד תחזוקה לחדרי כושר ובריכות.</p></div>
-          <div><h3><i class="fas fa-hand-holding-medical" aria-hidden="true"></i> רפואה ובריאות</h3><p>כפפות, מסכות, חומרי חיטוי וציוד מיגון למרפאות ומוסדות בריאות.</p></div>
-          <div><h3><i class="fas fa-drumstick-bite" aria-hidden="true"></i> אטליזים וחנויות מזון</h3><p>שקיות ואקום, אריזות מזון, כפפות, מגשי הגשה ומוצרי אריזה.</p></div>
-          <div><h3><i class="fas fa-industry" aria-hidden="true"></i> מפעלי ייצור ותעשייה</h3><p>ציוד בטיחות, מוצרי ניקיון תעשייתי, שקיות כבדות ומוצרי אריזה.</p></div>
-          <div><h3><i class="fas fa-users-cog" aria-hidden="true"></i> חברות כוח אדם ושירותים</h3><p>ציוד ניקיון, מוצרי נייר, טואלטיקה וחומרי חיטוי לאתרים מרובים.</p></div>
+        <div class="v4-head"><span class="v4-eyebrow"><i class="fas fa-building" aria-hidden="true"></i> לקוחות</span><h2 class="v4-h2" id="hv-seg">למי אנחנו מספקים</h2><p class="v4-sub">עסקים ומוסדות בכל גודל, בכל הארץ.</p></div>
+        <div class="v4-seg">
+          <div class="v4-card"><span class="v4-ic"><i class="fas fa-broom"></i></span><h3>חברות ניקיון ואחזקה</h3><p>חומרי ניקוי, מטליות, שקיות וציוד, באספקה שוטפת לכל האתרים.</p></div>
+          <div class="v4-card"><span class="v4-ic"><i class="fas fa-utensils"></i></span><h3>מסעדות והסעדה</h3><p>חד פעמי, אריזות Take Away, נייר וציוד למטבח.</p></div>
+          <div class="v4-card"><span class="v4-ic"><i class="fas fa-store"></i></span><h3>סופרמרקטים ומינימרקטים</h3><p>מוצרי צריכה שוטפת, שקיות ואריזות במחירי סיטונאות.</p></div>
+          <div class="v4-card"><span class="v4-ic"><i class="fas fa-building"></i></span><h3>משרדים</h3><p>נייר, ציוד משרדי, קפה וכיבוד, ניקיון וטואלטיקה.</p></div>
+          <div class="v4-card"><span class="v4-ic"><i class="fas fa-dumbbell"></i></span><h3>ספורט ופנאי</h3><p>ניקיון, טואלטיקה ונייר לחדרי כושר, בריכות ומרכזים.</p></div>
+          <div class="v4-card"><span class="v4-ic"><i class="fas fa-hand-holding-medical"></i></span><h3>מרפאות</h3><p>כפפות, מסכות, ציוד מיגון וחומרי ניקוי.</p></div>
+          <div class="v4-card"><span class="v4-ic"><i class="fas fa-drumstick-bite"></i></span><h3>אטליזים וחנויות מזון</h3><p>מגשים, שקיות ואקום, ניילון נצמד וכפפות.</p></div>
+          <div class="v4-card"><span class="v4-ic"><i class="fas fa-industry"></i></span><h3>תעשייה ולוגיסטיקה</h3><p>ציוד בטיחות, ניקיון תעשייתי ומוצרי אריזה.</p></div>
         </div>
       </div>
     </section>
 
-    <!-- ═══ GUIDES ═══ -->
-    <section class="hv-sec hv-sec--shelf" aria-labelledby="hv-guides">
+    <!-- ═══ GUIDES (v4) ═══ -->
+    <section class="v4-sec v4-sec--mist" aria-labelledby="hv-guides">
       <div class="hv-wrap">
-        <div class="hv-sec__head">
-          <div><h2 class="hv-sec__title" id="hv-guides">מדריכים וטיפים מקצועיים</h2><p class="hv-sec__sub">ידע שיעזור לכם לחסוך ולבחור נכון</p></div>
-          <a class="hv-more" href="/blog">לכל המדריכים</a>
-        </div>
-        <div class="hv-guides">
-          <a href="/blog/paper-products-guide" class="hv-guide"><h3>מוצרי נייר למוסדות: המדריך המקיף</h3><p>נייר טואלט, מגבות נייר ומפיות. איך לבחור, כמויות מומלצות וחיסכון בעלויות.</p></a>
-          <a href="/blog/cleaning-products-hub" class="hv-guide"><h3>מרכז הידע לחומרי ניקיון מקצועיים</h3><p>סוגי חומרי ניקוי, ריכוזים, התאמה לסוג משטח ובחירת ספק אמין.</p></a>
-          <a href="/blog/wholesale-cleaning-products" class="hv-guide"><h3>חומרי ניקיון בסיטונאות: המדריך המלא</h3><p>איך לבחור חומרי ניקיון מקצועיים, מה ההבדל בין המותגים ואיך לחסוך עד 40%.</p></a>
+        <div class="v4-head v4-head--row"><div><span class="v4-eyebrow"><i class="fas fa-book-open" aria-hidden="true"></i> ידע</span><h2 class="v4-h2" id="hv-guides">מדריכים לקנייה נכונה</h2></div><a class="v4-more" href="/blog">לכל המדריכים <i class="fas fa-arrow-left"></i></a></div>
+        <div class="v4-guides">
+          <a href="/blog/paper-products-guide" class="v4-card v4-guide"><span class="v4-ic"><i class="fas fa-toilet-paper"></i></span><h3>מוצרי נייר למוסדות</h3><p>נייר טואלט, מגבות ומפיות: איך בוחרים ואיך מחשבים כמויות.</p><span class="v4-guide__go">לקריאה <i class="fas fa-arrow-left"></i></span></a>
+          <a href="/blog/cleaning-products-hub" class="v4-card v4-guide"><span class="v4-ic"><i class="fas fa-spray-can-sparkles"></i></span><h3>חומרי ניקיון מקצועיים</h3><p>סוגים, ריכוזים והתאמה לכל משטח, לפי הוראות היצרן.</p><span class="v4-guide__go">לקריאה <i class="fas fa-arrow-left"></i></span></a>
+          <a href="/blog/wholesale-cleaning-products" class="v4-card v4-guide"><span class="v4-ic"><i class="fas fa-boxes-stacked"></i></span><h3>קנייה בסיטונאות</h3><p>איך בונים הזמנה חודשית קבועה ומה כדאי לקנות בקרטון.</p><span class="v4-guide__go">לקריאה <i class="fas fa-arrow-left"></i></span></a>
         </div>
       </div>
     </section>
 
-    <!-- ═══ FAQ ═══ -->
-    <section class="hv-sec" aria-labelledby="hv-faq" id="faq">
-      <div class="hv-wrap">
-        <div class="hv-sec__head"><div><h2 class="hv-sec__title" id="hv-faq">שאלות ותשובות</h2><p class="hv-sec__sub">כל מה שצריך לדעת לפני שמתחילים</p></div></div>
-        <div class="hv-faq">
-          <details><summary>מה מינימום ההזמנה?</summary><p>מינימום הזמנה הוא 200 ₪ + מע"מ, בתוספת דמי משלוח לפי אזור (חינם מעל 2,000 ₪). ניתן לשלב מוצרים מכל הקטגוריות בהזמנה אחת.</p></details>
-          <details><summary>מה זמני האספקה?</summary><p>אספקה תוך 24-72 שעות עסקיות לאזור גוש דן והמרכז. לאזורי הפריפריה עד 5 ימי עסקים.</p></details>
-          <details><summary>האם יש תנאי תשלום?</summary><p>כן. ללקוחות קבועים אנו מציעים תנאי תשלום עד שוטף +60, בהתאם להיקף הפעילות.</p></details>
-          <details><summary>איך מצטרפים לפורטל ההזמנות?</summary><p>הרשמה בחינם דרך האתר. לאחר אישור תקבלו גישה למחירון מותאם, הזמנה אונליין 24/7 והיסטוריית הזמנות.</p></details>
-          <details><summary>האם יש משלוח לכל הארץ?</summary><p>כן, אנו מספקים לכל רחבי הארץ. עיקר הפעילות בגוש דן והמרכז עם אספקה מהירה, ומשלוחים סדירים גם לחיפה, ירושלים, באר שבע, אשדוד ואילת.</p></details>
-          <details><summary>האם אפשר לקבל הצעת מחיר?</summary><p>בוודאי. בנו רשימה בראש העמוד ושלחו אותה בוואטסאפ, או התקשרו, ונחזור עם הצעת מחיר מותאמת תוך שעות ספורות.</p></details>
+    <!-- ═══ FAQ (v4) ═══ -->
+    <section class="v4-sec" aria-labelledby="hv-faq" id="faq">
+      <div class="hv-wrap v4-faq-grid">
+        <div class="v4-head"><span class="v4-eyebrow"><i class="fas fa-circle-question" aria-hidden="true"></i> שאלות</span><h2 class="v4-h2" id="hv-faq">לפני שמתחילים</h2><p class="v4-sub">עוד תשובות ב<a href="/faq">עמוד השאלות</a>.</p></div>
+        <div class="v4-faq">
+          <details><summary>מה מינימום ההזמנה?</summary><p>200 ₪ + מע״מ, ומשלוח לפי אזור. בגוש דן המשלוח חינם, ובכל הארץ חינם מעל 2,000 ₪ לפני מע״מ.</p></details>
+          <details><summary>תוך כמה זמן זה מגיע?</summary><p>24–72 שעות בגוש דן ובמרכז, ועד 5 ימי עסקים בשאר הארץ.</p></details>
+          <details><summary>יש תנאי תשלום?</summary><p>ללקוחות קבועים עד שוטף +60, לפי היקף הפעילות.</p></details>
+          <details><summary>מה זה CASH MARKET?</summary><p>מועדון הלקוחות העסקי: מחירון אישי, ו-CASH BACK על מוצרים מסומנים בהזמנות מהאפליקציה, לשימוש בקנייה הבאה.</p></details>
+          <details><summary>אפשר לקבל הצעת מחיר?</summary><p>כן. שלחו רשימה בוואטסאפ או התקשרו, ונחזור אליכם באותו יום עבודה.</p></details>
         </div>
       </div>
     </section>
 
-    <!-- ═══ END ═══ -->
-    <section class="hv-end" aria-labelledby="hv-end">
-      <div class="hv-wrap hv-end__grid">
-        <div><h2 id="hv-end">מוכנים להזמין?</h2><p>שלחו רשימה וקבלו הצעת מחיר מותאמת לעסק.</p></div>
-        <div class="hv-end__actions">
-          <a href="#hvOrder" class="hv-btn hv-btn--navy">לבניית רשימת הזמנה</a>
-          <a href="/register" class="hv-btn hv-btn--line">הרשמה בחינם</a>
-          <a href="tel:037740400" class="hv-btn hv-btn--line"><i class="fas fa-phone" aria-hidden="true"></i> 03-7740400</a>
+    <!-- ═══ END (v4) ═══ -->
+    <section class="v4-end v4-island" aria-labelledby="hv-end">
+      <div class="hv-wrap v4-end__grid">
+        <div><h2 id="hv-end">מוכנים להזמין?</h2><p>קונים באתר עכשיו, או פותחים חשבון עסקי ומקבלים מחירון אישי.</p></div>
+        <div class="v4-end__actions">
+          <a href="/catalog" class="hv-btn hv-btn--gold"><i class="fas fa-cart-shopping" aria-hidden="true"></i> קנייה באתר</a>
+          <a href="/register" class="hv-btn hv-btn--line-light"><i class="fas fa-crown" aria-hidden="true"></i> פתיחת חשבון עסקי</a>
+          <a href="https://wa.me/972549922492?text=שלום, אשמח להזמין" target="_blank" rel="noopener" class="v4-end__wa"><i class="fab fa-whatsapp" aria-hidden="true"></i> או בוואטסאפ</a>
         </div>
       </div>
     </section>
@@ -2217,6 +2251,7 @@
 
   <!-- ═══ FOOTER ═══ -->
                                                                                                                                                                                                                                                                                                                                                                                       <footer class="footer">
+    <style>.footer .footer__col h4{color:#2F80E6;font-size:1.05rem;font-weight:800;letter-spacing:.01em;margin:0 0 18px;padding-bottom:10px;position:relative}.footer .footer__col h4::after{content:"";position:absolute;right:0;bottom:0;width:28px;height:2px;border-radius:2px;background:#FFB020}</style>
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand" style="display:flex;flex-direction:column;align-items:flex-start;gap:14px;">
@@ -2887,5 +2922,6 @@
       } catch (e) {}
     })();
 </script>
+<script src="/js/home-v4.js?v=1" defer></script>
 </body>
 </html>

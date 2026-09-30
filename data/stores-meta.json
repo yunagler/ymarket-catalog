@@ -1,0 +1,332 @@
+{
+ "top": [
+  79,
+  18,
+  648,
+  250,
+  840,
+  934,
+  708,
+  304,
+  781,
+  487,
+  67,
+  936,
+  590,
+  843,
+  249,
+  81,
+  866,
+  139,
+  212,
+  173
+ ],
+ "stores": {
+  "bulk-paper-towel-office-supplies": {
+   "name": "הנייריה",
+   "tagline": "גלילים, מגבות ידיים ומפיות",
+   "icon": "fa-toilet-paper",
+   "doodles": [
+    "fa-toilet-paper",
+    "fa-scroll",
+    "fa-hand-sparkles",
+    "fa-droplet",
+    "fa-note-sticky"
+   ],
+   "tone": "sky",
+   "coverImages": [
+    "/items/664.jpg",
+    "/items/798.jpg",
+    "/items/954.jpg"
+   ]
+  },
+  "industrial-cleaning-supplies-wholesale": {
+   "name": "הכימאי",
+   "tagline": "רצפות, אקונומיקה ומסירי שומן",
+   "icon": "fa-spray-can-sparkles",
+   "doodles": [
+    "fa-spray-can-sparkles",
+    "fa-flask",
+    "fa-bottle-droplet",
+    "fa-star",
+    "fa-soap"
+   ],
+   "tone": "leumi",
+   "coverImages": [
+    "/items/121.jpg",
+    "/items/877.jpg",
+    "/items/879.jpg"
+   ]
+  },
+  "disposable-catering-food-service": {
+   "name": "האירוח",
+   "tagline": "צלחות, סכו״ם, מפות ונרות",
+   "icon": "fa-utensils",
+   "doodles": [
+    "fa-utensils",
+    "fa-champagne-glasses",
+    "fa-cake-candles",
+    "fa-plate-wheat",
+    "fa-star"
+   ],
+   "tone": "cream",
+   "coverImages": [
+    "/items/650.jpg",
+    "/items/70.jpg",
+    "/items/931.jpg"
+   ]
+  },
+  "food-packaging-delivery-solutions": {
+   "name": "הטייק אווי",
+   "tagline": "קופסאות, כוסות, מגשים ושקיות",
+   "icon": "fa-bag-shopping",
+   "doodles": [
+    "fa-bag-shopping",
+    "fa-mug-hot",
+    "fa-box-open",
+    "fa-burger",
+    "fa-motorcycle"
+   ],
+   "tone": "gold",
+   "coverImages": [
+    "/items/95.jpg",
+    "/items/724.jpg",
+    "/items/83.jpg"
+   ]
+  },
+  "safety-ppe-equipment-for-business": {
+   "name": "המיגון",
+   "tagline": "כפפות, מסכות וביגוד מגן",
+   "icon": "fa-mask-face",
+   "doodles": [
+    "fa-mask-face",
+    "fa-helmet-safety",
+    "fa-hand",
+    "fa-shield-halved",
+    "fa-vest"
+   ],
+   "tone": "navy",
+   "coverImages": [
+    "/items/34.jpg",
+    "/items/503.jpg",
+    "/items/50.jpg"
+   ]
+  },
+  "heavy-duty-garbage-bags-wholesale": {
+   "name": "חדר האשפה",
+   "tagline": "שקיות לכל פח, בכל עובי",
+   "icon": "fa-trash-can",
+   "doodles": [
+    "fa-trash-can",
+    "fa-recycle",
+    "fa-dumpster",
+    "fa-bag-shopping",
+    "fa-broom"
+   ],
+   "tone": "blue",
+   "coverImages": [
+    "/items/934.jpg",
+    "/items/189.jpg",
+    "/items/362.jpg"
+   ]
+  },
+  "professional-cleaning-cloths-microfiber": {
+   "name": "המטלית",
+   "tagline": "מיקרופייבר, ספוגים ומגבונים",
+   "icon": "fa-hand-sparkles",
+   "doodles": [
+    "fa-hand-sparkles",
+    "fa-droplet",
+    "fa-star",
+    "fa-bucket",
+    "fa-soap"
+   ],
+   "tone": "sky",
+   "coverImages": [
+    "/items/97.jpg",
+    "/items/155.jpg",
+    "/items/220.jpg"
+   ]
+  },
+  "office-coffee-breakroom-supplies": {
+   "name": "המטבחון",
+   "tagline": "קפה, שתייה וכיבוד למשרד",
+   "icon": "fa-mug-hot",
+   "doodles": [
+    "fa-mug-hot",
+    "fa-mug-saucer",
+    "fa-cookie",
+    "fa-glass-water",
+    "fa-cubes-stacked"
+   ],
+   "tone": "cream",
+   "coverImages": [
+    "/items/228.jpg",
+    "/items/809.jpg",
+    "/items/502.jpg"
+   ]
+  },
+  "personal-hygiene-products-wholesale": {
+   "name": "הטואלטיקה",
+   "tagline": "סבונים, מגבונים וטיפוח",
+   "icon": "fa-pump-soap",
+   "doodles": [
+    "fa-pump-soap",
+    "fa-soap",
+    "fa-tooth",
+    "fa-hand-sparkles",
+    "fa-droplet"
+   ],
+   "tone": "leumi",
+   "coverImages": [
+    "/items/97.jpg",
+    "/items/102.jpg",
+    "/items/796.jpg"
+   ]
+  },
+  "institutional-cleaning-tools-equipment": {
+   "name": "הארגז של המנקה",
+   "tagline": "מטאטאים, מגבים, פחים ודליים",
+   "icon": "fa-broom",
+   "doodles": [
+    "fa-broom",
+    "fa-bucket",
+    "fa-trash-can",
+    "fa-spray-can",
+    "fa-toolbox"
+   ],
+   "tone": "navy",
+   "coverImages": [
+    "/items/266.jpg",
+    "/items/646.jpg",
+    "/items/279.jpg"
+   ]
+  },
+  "office-supplies-wholesale-business": {
+   "name": "המשרד",
+   "tagline": "נייר, ציוד קופה, כתיבה ותיוק",
+   "icon": "fa-paperclip",
+   "doodles": [
+    "fa-paperclip",
+    "fa-pen",
+    "fa-print",
+    "fa-folder-open",
+    "fa-receipt"
+   ],
+   "tone": "blue",
+   "coverImages": [
+    "/items/320.jpg",
+    "/items/265.jpg",
+    "/items/927.jpg"
+   ]
+  },
+  "warehouse-packaging-supplies-wholesale": {
+   "name": "המחסן",
+   "tagline": "ניילון, שקיות ארגזים וכיסויים",
+   "icon": "fa-box",
+   "doodles": [
+    "fa-box",
+    "fa-dolly",
+    "fa-tape",
+    "fa-pallet",
+    "fa-boxes-stacked"
+   ],
+   "tone": "gold",
+   "coverImages": [
+    "/items/823.jpg",
+    "/items/564.jpg",
+    "/items/766.jpg"
+   ]
+  },
+  "maintenance-technical-equipment-wholesale": {
+   "name": "האחזקה",
+   "tagline": "כלי עבודה, צבע, הדברה וגינון",
+   "icon": "fa-screwdriver-wrench",
+   "doodles": [
+    "fa-screwdriver-wrench",
+    "fa-paint-roller",
+    "fa-hammer",
+    "fa-seedling",
+    "fa-bug"
+   ],
+   "tone": "navy",
+   "coverImages": [
+    "/items/359.jpg",
+    "/items/647.jpg",
+    "/items/769.jpg"
+   ]
+  },
+  "first-aid-medical-equipment-business": {
+   "name": "עזרה ראשונה",
+   "tagline": "ערכות, חבישה, מסכות ו-AED",
+   "icon": "fa-kit-medical",
+   "doodles": [
+    "fa-kit-medical",
+    "fa-heart-pulse",
+    "fa-bandage",
+    "fa-stethoscope",
+    "fa-briefcase-medical"
+   ],
+   "tone": "sky",
+   "coverImages": [
+    "/items/163.jpg",
+    "/items/14.jpg",
+    "/items/85.jpg"
+   ]
+  },
+  "home-delivery-stock-deals": {
+   "name": "הסטוק",
+   "tagline": "מבצעי סטוק וכמויות",
+   "icon": "fa-boxes-stacked",
+   "doodles": [
+    "fa-boxes-stacked",
+    "fa-tags",
+    "fa-percent",
+    "fa-truck-fast",
+    "fa-star"
+   ],
+   "tone": "gold",
+   "coverImages": [
+    "/items/903.jpg",
+    "/items/464.jpg",
+    "/items/447.jpg"
+   ]
+  },
+  "institutional-textiles-bedding-wholesale": {
+   "name": "הטקסטיל",
+   "tagline": "מצעים, מגבות, ביגוד ותיקים",
+   "icon": "fa-shirt",
+   "doodles": [
+    "fa-shirt",
+    "fa-bed",
+    "fa-bag-shopping",
+    "fa-couch",
+    "fa-star"
+   ],
+   "tone": "leumi",
+   "coverImages": [
+    "/items/528.jpg",
+    "/items/591.jpg",
+    "/items/798.jpg"
+   ]
+  },
+  "reusable-serving-tools": {
+   "name": "כלי ההגשה",
+   "tagline": "כלים רב פעמיים למטבח ולאירוח",
+   "icon": "fa-kitchen-set",
+   "doodles": [
+    "fa-kitchen-set",
+    "fa-utensils",
+    "fa-mug-saucer",
+    "fa-bowl-food",
+    "fa-star"
+   ],
+   "tone": "cream",
+   "coverImages": [
+    "/items/684.jpg",
+    "/items/1170.jpg",
+    "/items/682.jpg"
+   ]
+  }
+ }
+}

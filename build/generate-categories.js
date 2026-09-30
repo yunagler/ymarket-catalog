@@ -6,6 +6,7 @@
  */
 
 const fs = require('fs');
+const { renderStoreMain, STORE_JS } = require('./store-template');
 const path = require('path');
 
 const ROOT_DIR = path.join(__dirname, '..');
@@ -621,6 +622,7 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
   <link rel="stylesheet" href="/css/style.min.css">
   <link rel="stylesheet" href="/css/site-header.css">
   <link rel="stylesheet" href="/css/pages/catalog.min.css">
+  <link rel="stylesheet" href="/css/pages/store-v4.css?v=1">
   <style>
     .category-seo{margin-top:2.5rem;padding:2rem;background:#fff;border-top:2px solid #e5e7eb;line-height:1.8}
     .category-seo h2{font-size:1.25rem;margin-bottom:1rem;color:var(--color-text,#1f2937)}
@@ -711,93 +713,14 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
   <div class="search-overlay"><div class="search-overlay__inner"><form action="/catalog" method="get"><input type="search" name="search" class="search-overlay__input" placeholder="חפשו מוצר..." aria-label="חיפוש מוצר" autocomplete="off"></form></div></div>
   <div class="mobile-overlay"></div>
 
-  <div class="container">
-    <nav class="breadcrumb" aria-label="ניווט פירורי לחם">
-      ${breadcrumbHtml}
-    </nav>
-  </div>
-
-  <section class="section">
-    <div class="container">
-      <div class="catalog-layout">
-        <aside class="catalog-sidebar">
-          <div class="sidebar-section">
-            <h3>קטגוריות</h3>
-            <div class="category-list">
-              ${sidebarHtml}
-              <a href="/catalog" class="category-list__item" style="margin-top:8px;border-top:1px solid #e5e7eb;padding-top:8px;"><span>כל המוצרים</span></a>
-            </div>
-          </div>
-        </aside>
-        <div class="catalog-main">
-          <div class="catalog-header">
-            ${categoryImage ? `
-            <div class="hero-wrapper">
-              <img src="${categoryImage}" alt="${categoryImageAlt} - מבחר מוצרים בסיטונאות | וואי מרקט" width="1200" height="400" fetchpriority="high" />
-              <div class="hero-overlay">
-                <h1>${h1Text}</h1>
-                <p>${categoryProducts.length} מוצרים במחירי סיטונאות | אספקה 24–72 שעות בגוש דן ובמרכז</p>
-              </div>
-            </div>` : `<h1>${h1Text}</h1>`}
-            ${!categoryImage ? `<p>${categoryProducts.length} מוצרים</p>` : ''}
-            <p style="font-size:0.8rem;color:#9ca3af;margin-top:4px;">עודכן לאחרונה: ${hebrewDate}</p>
-          </div>
-          <div class="trust-badges">
-            <div class="trust-badges__item">
-              <div class="trust-badges__icon" style="background:#f0fdf4;color:#16a34a"><i class="fas fa-truck"></i></div>
-              <div class="trust-badges__text"><strong>אספקה מהירה</strong><span>24–72 שעות בגוש דן ובמרכז</span></div>
-            </div>
-            <div class="trust-badges__item">
-              <div class="trust-badges__icon" style="background:#eff6ff;color:#2563eb"><i class="fas fa-tags"></i></div>
-              <div class="trust-badges__text"><strong>מחירי סיטונאות</strong><span>ישירות מהמחסן</span></div>
-            </div>
-            <div class="trust-badges__item">
-              <div class="trust-badges__icon" style="background:#fef3c7;color:#d97706"><i class="fas fa-headset"></i></div>
-              <div class="trust-badges__text"><strong>ייעוץ אישי</strong><span>צוות מקצועי לשירותכם</span></div>
-            </div>
-            <div class="trust-badges__item">
-              <div class="trust-badges__icon" style="background:#fdf2f8;color:#db2777"><i class="fas fa-file-invoice"></i></div>
-              <div class="trust-badges__text"><strong>חשבונית מס</strong><span>מע"מ + תנאי תשלום</span></div>
-            </div>
-          </div>
-          ${subcategoriesHtml}
-          <div class="products-grid">
-            ${productsHtml}
-          </div>
-          <div class="consult-cta">
-            <i class="fas fa-user-tie consult-cta__icon"></i>
-            <div class="consult-cta__text">
-              <h3>לא בטוחים מה מתאים? נשמח לייעץ</h3>
-              <p>הצוות שלנו מכיר את המוצרים לעומק ויתאים עבורכם את הפתרון המדויק</p>
-            </div>
-            <a href="https://wa.me/972549922492?text=${encodeURIComponent('היי, אשמח לייעוץ בנושא ' + category.name)}" target="_blank" rel="noopener" class="consult-cta__btn"><i class="fab fa-whatsapp"></i> ייעוץ חינם</a>
-          </div>
-          <div class="why-ym">
-            <div class="why-ym__title"><i class="fas fa-award" style="color:#d97706"></i> למה עסקים בוחרים בוואי מרקט</div>
-            <div class="why-ym__grid">
-              <div class="why-ym__card">
-                <i class="fas fa-box-open"></i>
-                <div><strong>ספק אחד לכל המוצרים</strong><span>חומרי ניקוי, נייר, חד פעמי, ציוד משרדי — הכל בהזמנה אחת, חשבונית אחת</span></div>
-              </div>
-              <div class="why-ym__card">
-                <i class="fas fa-hand-holding-usd"></i>
-                <div><strong>מחירים ישירים ללא תיווך</strong><span>אנחנו מפיצים ישירים — מחירי סיטונאות ומחירון אישי ללקוחות קבועים</span></div>
-              </div>
-              <div class="why-ym__card">
-                <i class="fas fa-shipping-fast"></i>
-                <div><strong>אספקה עד הדלת</strong><span>24–72 שעות בגוש דן ובמרכז, ועד 5 ימי עסקים לשאר הארץ</span></div>
-              </div>
-              <div class="why-ym__card">
-                <i class="fas fa-redo-alt"></i>
-                <div><strong>הזמנה חוזרת בקליק</strong><span>לקוחות קבועים נהנים ממחירון אישי, אשראי ושירות מועדף</span></div>
-              </div>
-            </div>
-          </div>
-          ${seoContentBlock ? `<div class="category-seo">${seoContentBlock}</div>` : ''}
+  ${renderStoreMain({
+    category, root: parentChain.length ? parentChain[0] : category, isRoot: !parentChain.length, catMap,
+    categoryProducts, h1Text, breadcrumbHtml, getCategoryUrlPath, getDescendantSlugs, productImage,
+    seoHtml: `
+${seoContentBlock ? `<div class="category-seo">${seoContentBlock}</div>` : ''}
           ${geoContentBlock ? `<div class="category-geo" style="margin-top:1.5rem;padding:24px;background:linear-gradient(135deg,#f8fafc 0%,#f0f4f8 100%);border:1px solid #e2e8f0;border-radius:14px;">
             <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
-              <div style="width:28px;height:28px;border-radius:8px;background:#1B3A5C;color:#fff;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">E</div>
-              <span style="font-size:0.85rem;font-weight:600;color:#1B3A5C;">מידע מקצועי</span>
+                            <span style="font-size:0.85rem;font-weight:600;color:#1B3A5C;">מידע מקצועי</span>
             </div>
             <div style="font-size:0.9rem;line-height:1.8;color:#374151;">${geoContentBlock}</div>
           </div>` : ''}
@@ -813,100 +736,14 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
               </details>
             `).join('')}
           </div>` : ''}
-          ${relatedHtml}
-          <div class="category-cta" style="background:linear-gradient(135deg,#1B3A5C 0%,#2a5080 100%);border-radius:16px;padding:2.5rem;margin-top:2rem;text-align:center;color:#fff;position:relative;overflow:hidden;">
-            <div style="position:absolute;top:-20px;left:-20px;width:120px;height:120px;background:rgba(255,255,255,0.05);border-radius:50%"></div>
-            <div style="position:absolute;bottom:-30px;right:-30px;width:160px;height:160px;background:rgba(255,255,255,0.03);border-radius:50%"></div>
-            <div style="position:relative;z-index:1">
-              <div style="font-size:2rem;margin-bottom:12px;"><i class="fas fa-calculator"></i></div>
-              <h3 style="margin-bottom:0.5rem;font-size:1.2rem;font-weight:800;">קבלו הצעת מחיר מותאמת</h3>
-              <p style="opacity:0.85;margin-bottom:1.2rem;max-width:500px;margin-left:auto;margin-right:auto;">שלחו רשימת מוצרים בוואטסאפ ונחזור עם הצעה מותאמת כולל מחיר משלוח — מענה באותו יום עבודה, א'–ה' 08:00–17:00</p>
-              <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
-                <a href="https://wa.me/972549922492?text=${encodeURIComponent('היי, אשמח לקבל הצעת מחיר ל' + category.name)}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:#25d366;color:#fff;border-radius:12px;font-weight:700;font-size:1rem;text-decoration:none;transition:transform 0.2s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"><i class="fab fa-whatsapp" style="font-size:1.2rem"></i> שלחו הודעה בוואטסאפ</a>
-                <a href="tel:037740400" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.3);border-radius:12px;font-weight:600;font-size:1rem;text-decoration:none;transition:background 0.2s" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'"><i class="fas fa-phone-alt"></i> 03-7740400</a>
-              </div>
-              <p style="margin-top:12px;font-size:0.78rem;opacity:0.65;">מינימום הזמנה 200 ₪ + מע"מ | משלוח לפי אזור, חינם מעל 2,000 ₪ | ניתן לשלב מוצרים מכל הקטגוריות</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+          ${relatedHtml}`
+  })}
 
 ${SITE_FOOTER}
 
-  <div class="mobile-cta-bar">
-    <a href="https://wa.me/972549922492?text=היי, אשמח לקבל הצעת מחיר ל${encodeURIComponent(category.name)}" class="cta-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> וואטסאפ</a>
-    <a href="tel:037740400" class="cta-phone"><i class="fas fa-phone-alt"></i> 03-7740400</a>
-  </div>
   <a href="https://wa.me/972549922492" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   <script src="/js/main.min.js?v=20260310b"></script>
-  <script>
-    // Toggle subcategory visibility in sidebar
-    document.querySelectorAll('.category-list__item').forEach(function(item) {
-      item.addEventListener('click', function(e) {
-        var children = this.nextElementSibling;
-        if (children && children.classList.contains('category-children')) {
-          var icon = this.querySelector('.fa-chevron-down');
-          if (icon) {
-            if (children.style.display === 'none') {
-              children.style.display = '';
-              icon.style.transform = '';
-            } else if (!this.classList.contains('active')) {
-              e.preventDefault();
-              children.style.display = 'none';
-              icon.style.transform = 'rotate(90deg)';
-            }
-          }
-        }
-      });
-    });
-
-    // ---- Ecommerce: Add to Cart ----
-    function ymAddToCart(btn) {
-      var id = parseInt(btn.dataset.id);
-      var cart = JSON.parse(localStorage.getItem('ym_cart') || '[]');
-      var existing = cart.find(function(item) { return item.id === id; });
-      if (existing) {
-        existing.quantity += 1;
-      } else {
-        cart.push({
-          id: id,
-          name: btn.dataset.name,
-          price: parseFloat(btn.dataset.price),
-          unit: btn.dataset.unit,
-          imageUrl: btn.dataset.img,
-          slug: btn.dataset.slug,
-          quantity: 1
-        });
-      }
-      localStorage.setItem('ym_cart', JSON.stringify(cart));
-      if (window.YMarket) {
-        window.YMarket.updateCartBadge();
-        window.YMarket.showToast(btn.dataset.name + ' נוסף לעגלה');
-        window.YMarket.showCartQtyControls(btn);
-      }
-      // Analytics
-      if (window.YMarketAnalytics && window.YMarketAnalytics.fbAddToCart) {
-        window.YMarketAnalytics.fbAddToCart({ id: id, name: btn.dataset.name, price: parseFloat(btn.dataset.price), quantity: 1 });
-      }
-      if (window.YMarketAnalytics && window.YMarketAnalytics.trackAddToCart) {
-        window.YMarketAnalytics.trackAddToCart({ id: id, name: btn.dataset.name, price: parseFloat(btn.dataset.price), quantity: 1 });
-      }
-    }
-
-    // Add to cart buttons
-    document.querySelectorAll('.product-card__add-btn[data-id]').forEach(function(btn) {
-      btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        ymAddToCart(btn);
-      });
-      // Show qty controls for items already in cart
-      if (window.YMarket && window.YMarket.getCartQty(parseInt(btn.dataset.id)) > 0) {
-        window.YMarket.showCartQtyControls(btn);
-      }
-    });
-  </script>
+  ${STORE_JS}
 </body>
 </html>`;
 }
