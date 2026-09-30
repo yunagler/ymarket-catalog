@@ -30,6 +30,129 @@ const HEADER_CSS_HREF = (() => {
 // times, no blanket certifications) — see build/catalog-copy-policy.js.
 const { sanitizeCatalog } = require('./catalog-copy-policy');
 
+// ---------------------------------------------------------------------------
+// Title / meta-description rules for every product page (and variant-group page).
+// ---------------------------------------------------------------------------
+const BRAND = 'וואי מרקט';
+const TITLE_SUFFIX = ` | ${BRAND}`;
+const TITLE_MAX = 65;
+const META_MIN = 70;
+const META_MAX = 160;
+// A curated seo.metaDesc this long beats the product-copy.json override.
+const META_CURATED_KEEP = 110;
+// Delivery wording for meta fallbacks — the only zone we promise 24–72h (see
+// legal/shipping.html and DELIVERY_SHORT in catalog-copy-policy.js).
+const DELIVERY_META = '24–72 שעות בגוש דן ובמרכז';
+
+// Attribute-safe text. Hebrew abbreviations (מ"ל, ס"מ, ק"ג) carry a literal quote, and
+// writing them raw into content="..." ended the attribute early: 106 pages were serving
+// meta descriptions cut off at the first מ"ל. Existing entities are left alone.
+function escAttr(s) {
+  return String(s == null ? '' : s)
+    .replace(/&(?!(?:[a-zA-Z]+|#\d+|#x[0-9a-fA-F]+);)/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+// Cut `s` to at most `max` chars on a word boundary, then drop whatever dangles at the
+// end (separators, an unclosed parenthesis). Never cuts mid-word, never adds "...".
+function trimWords(s, max) {
+  s = String(s || '').replace(/\s+/g, ' ').trim();
+  if (s.length <= max) return s;
+  let cut = s.slice(0, max + 1);
+  const sp = cut.lastIndexOf(' ');
+  cut = sp > 0 ? cut.slice(0, sp) : s.slice(0, max);
+  for (let guard = 0; guard < 5; guard++) {
+    const before = cut;
+    const opens = (cut.match(/\(/g) || []).length, closes = (cut.match(/\)/g) || []).length;
+    if (opens > closes) cut = cut.slice(0, cut.lastIndexOf('('));
+    cut = cut.replace(/[\s|\-–—,:;·/+*]+$/u, '').trim();
+    if (cut === before) break;
+  }
+  return cut;
+}
+
+// Remove any brand tail the CRM put on a title ("| YMARKET", "- וואי מרקט", bare "YMARKET").
+function stripBrand(t) {
+  let s = String(t || '').trim();
+  for (let i = 0; i < 3; i++) {
+    const next = s
+      .replace(/\s*[|\-–—·]\s*(?:YMARKET|Y-?MARKET|וואי\s*מרקט)\s*$/i, '')
+      // a whole trailing segment that only points at us: "| מחיר סיטונאי בוואי מרקט"
+      .replace(/\s+[|—–]\s+[^|—–]*\sב-?(?:YMARKET|וואי\s*מרקט)\s*$/i, '')
+      .replace(/(?:^|\s+)(?:YMARKET|וואי\s*מרקט)\s*$/i, '')
+      .trim();
+    if (next === s) break;
+    s = next;
+  }
+  return s.replace(/[\s|\-–—,]+$/u, '').trim();
+}
+
+// "<product part> | וואי מרקט", ≤ 65 chars. When the product part is too long, first drop
+// trailing " | …" / " — …" descriptor segments (e.g. "| ציוד משרדי בסיטונאות"), and only
+// then cut on a word boundary — the product name is the part worth keeping.
+function brandTitle(raw, fallbackName) {
+  const budget = TITLE_MAX - TITLE_SUFFIX.length;
+  const clean = t => stripBrand(String(t || '').replace(/\s+/g, ' '));
+  let base = clean(raw) || clean(fallbackName) || BRAND;
+  while (base.length > budget) {
+    const m = base.match(/^(.*\S)\s+[|—–]\s+[^|—–]+$/u);
+    if (!m || m[1].length < 8) break;
+    base = m[1].trim();
+  }
+  if (base.length > budget) base = trimWords(base, budget);
+  return base + TITLE_SUFFIX;
+}
+
+function fallbackMeta(name, categoryName) {
+  const cat = (categoryName || '').trim();
+  const mid = cat ? `${cat} לעסקים במחירי סיטונאות` : 'לעסקים במחירי סיטונאות';
+  return `${String(name || '').trim()}. ${mid}, משלוח ${DELIVERY_META}. ${BRAND}`;
+}
+
+// Final meta description: product-copy.json metaDesc (vetted, wins) → curated seo.metaDesc (70+)
+// → factual fallback. Anything under 70 chars is discarded. (Many older CRM seo.metaDesc carry
+// claims we removed on 30/09 — the vetted copy must win over them.)
+function pickMetaDesc({ curated, copyMeta, name, categoryName }) {
+  const c = (curated || '').trim();
+  const cp = (copyMeta || '').trim();
+  let out;
+  if (cp.length >= META_MIN) out = cp;
+  else if (c.length >= META_MIN) out = c;
+  else out = fallbackMeta(name, categoryName);
+  out = out.replace(/\s+/g, ' ');
+  if (out.length > META_MAX) {
+    // Prefer ending on a full sentence (keeps "וואי מרקט" whole); else cut on a word.
+    const end = out.slice(0, META_MAX).lastIndexOf('.');
+    out = end >= 100 ? out.slice(0, end + 1) : trimWords(out, META_MAX);
+  }
+  if (out.length < META_MIN) out = trimWords(fallbackMeta(name, categoryName), META_MAX);
+  return out;
+}
+
+// Curated copy overrides written by the copy pipeline: { "<product id>": { short, metaDesc } }.
+// Missing or unreadable file (e.g. mid-write by another process) = no overrides.
+const PRODUCT_COPY_PATH = path.join(ROOT_DIR, 'data', 'product-copy.json');
+const PRODUCT_COPY = (() => {
+  if (!fs.existsSync(PRODUCT_COPY_PATH)) return {};
+  try {
+    const j = JSON.parse(fs.readFileSync(PRODUCT_COPY_PATH, 'utf-8').replace(/^﻿/, ''));
+    return (j && typeof j === 'object' && !Array.isArray(j)) ? j : {};
+  } catch (e) {
+    console.warn(`Warning: could not parse ${PRODUCT_COPY_PATH} (${e.message}) — copy overrides skipped.`);
+    return {};
+  }
+})();
+
+// A CRM description counts as missing when it is empty, short, or just the
+// "<name> - <category>" template.
+function isGenericDescription(desc, name, categoryName) {
+  const d = String(desc || '').replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+  if (d.length < 60) return true;
+  return d === `${name} - ${categoryName}`.trim();
+}
+
 // Render the legacy `technicalDesc` field. It is stored as a JSON string like
 // [{"label":"...","value":"..."}]. Older code printed it raw, leaking JSON onto
 // the page. Parse it into a real spec table; fall back to plain text if not JSON.
@@ -205,15 +328,18 @@ function generateProductPage(product, categories, allProducts, group) {
   // NOT on the representative variant — otherwise every group inherits the rep variant's
   // size/color in its title (e.g. "...מידה S..."), which is wrong for a multi-size page.
   // Ungroomed groups fall back to the clean size-agnostic group.name auto-text.
-  const pageTitle = isGroup ? (group.seoTitle || `${group.name} | וואי מרקט`) : (seo.title || `${product.name} | וואי מרקט`);
+  // Every title ends in " | וואי מרקט" and stays ≤ 65 chars (see brandTitle()).
+  const pageTitle = isGroup ? brandTitle(group.seoTitle || group.name, group.name) : brandTitle(seo.title || product.name, product.name);
   // H1 stays the clean group/product name (a heading, not the SEO title tag).
   const h1Text = isGroup ? group.name : (seo.h1 || product.name);
+  // Curated copy (data/product-copy.json) is keyed by product id; group pages have no
+  // product of their own, so they use the group's curated fields only.
+  const copy = (!isGroup && PRODUCT_COPY[String(product.id)]) || {};
+  // One description for <meta name="description">, og:description and twitter:description.
   const metaDesc = isGroup
-    ? (group.seoMetaDesc || `${group.name} - ${categoryName}. מחירי סיטונאות, משלוח ארצי. וואי מרקט - אספקה לעסקים ומוסדות.`)
-    : (seo.metaDesc || `${product.name} - ${categoryName}. מחירי סיטונאות, משלוח ארצי. וואי מרקט - אספקה לעסקים ומוסדות.`);
-  const ogDesc = isGroup
-    ? (group.seoMetaDesc || `${group.name} - ${categoryName}. מחירי סיטונאות, משלוח ארצי.`)
-    : (seo.metaDesc || `${product.name} - ${categoryName}. מחירי סיטונאות, משלוח ארצי.`);
+    ? pickMetaDesc({ curated: group.seoMetaDesc, name: group.name, categoryName })
+    : pickMetaDesc({ curated: seo.metaDesc, copyMeta: copy.metaDesc, name: product.name, categoryName });
+  const ogDesc = metaDesc;
   const mainImgAlt = isGroup ? (group.seoImageAlt || h1Text) : (seo.imageAlt || h1Text);
   const specsHtml = (seo.specs && seo.specs.length > 0)
     ? `<div class="product-specs" style="margin: 1.5rem 0;">
@@ -231,7 +357,6 @@ function generateProductPage(product, categories, allProducts, group) {
   const geoContentHtml = seo.geoContent
     ? `<div class="product-geo-content" style="margin-top:1.5rem;padding:24px;background:linear-gradient(135deg,#f8fafc 0%,#f0f4f8 100%);border:1px solid #e2e8f0;border-radius:14px;">
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
-          <div style="width:28px;height:28px;border-radius:8px;background:#1B3A5C;color:#fff;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">E</div>
           <span style="font-size:0.85rem;font-weight:600;color:#1B3A5C;">מידע מקצועי</span>
         </div>
         <div style="font-size:0.9rem;line-height:1.8;color:#374151;">${seo.geoContent}</div>
@@ -421,7 +546,13 @@ function generateProductPage(product, categories, allProducts, group) {
     </div>`;
   }).join('');
 
-  const productDescription = product.description || `${product.name} - ${categoryName}`;
+  // Vetted short copy (data/product-copy.json) wins over the CRM description (page + schema):
+  // older CRM descriptions still carry claims removed on 30/09 (approvals, food contact…).
+  const copyShort = (copy.short || '').trim();
+  const bodyDescription = copyShort
+    ? copyShort
+    : (product.description || '');
+  const productDescription = bodyDescription || `${product.name} - ${categoryName}`;
   const schemaDescription = seo.isB2BBulk ? `סיטונאות / Wholesale - ${productDescription}` : productDescription;
   // priceValidUntil - end of current year (Google requires this)
   const priceValidUntil = new Date().getFullYear() + '-12-31';
@@ -536,16 +667,16 @@ function generateProductPage(product, categories, allProducts, group) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${pageTitle}</title>
-  <meta name="description" content="${metaDesc}">
+  <title>${escAttr(pageTitle)}</title>
+  <meta name="description" content="${escAttr(metaDesc)}">
   <link rel="canonical" href="${productUrl}">
   <link rel="alternate" hreflang="he" href="${productUrl}">
   <link rel="alternate" hreflang="x-default" href="${productUrl}">
   <link rel="icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta name="theme-color" content="#1B3A5C">
-  <meta property="og:title" content="${pageTitle}">
-  <meta property="og:description" content="${ogDesc}">
+  <meta property="og:title" content="${escAttr(pageTitle)}">
+  <meta property="og:description" content="${escAttr(ogDesc)}">
   <meta property="og:type" content="product">
   <meta property="og:image" content="${SITE_URL}${ogImage}">
   <meta property="og:url" content="${productUrl}">
@@ -565,8 +696,8 @@ function generateProductPage(product, categories, allProducts, group) {
   <meta property="product:retailer_item_id" content="${product.partNumber || product.id}">
   <meta property="product:brand" content="וואי מרקט">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="${pageTitle}">
-  <meta name="twitter:description" content="${ogDesc}">
+  <meta name="twitter:title" content="${escAttr(pageTitle)}">
+  <meta name="twitter:description" content="${escAttr(ogDesc)}">
   <meta name="twitter:image" content="${SITE_URL}${ogImage}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -628,7 +759,7 @@ function generateProductPage(product, categories, allProducts, group) {
           <div class="product-gallery__main">
             <picture>
               <source srcset="${imgSrc}" type="image/webp" id="mainProductSource">
-              <img src="${imgSrcJpg}" alt="${mainImgAlt}" id="mainProductImg"
+              <img src="${imgSrcJpg}" alt="${escAttr(mainImgAlt)}" id="mainProductImg"
                    onerror="this.onerror=null;var s=this.parentElement.querySelector('source');if(s)s.remove();this.src='https://placehold.co/500x500/f0f2f5/5a6577?text=${encodeURIComponent((h1Text || '').substring(0,15))}'">
             </picture>
           </div>
@@ -645,7 +776,7 @@ function generateProductPage(product, categories, allProducts, group) {
           </div>
 
           <div class="product-trust-badges">
-            <div class="product-trust-badges__item"><i class="fas fa-truck"></i><span>משלוח ארצי</span></div>
+            <div class="product-trust-badges__item"><i class="fas fa-truck"></i><span>24–72 שעות בגוש דן ובמרכז</span></div>
             <div class="product-trust-badges__item"><i class="fas fa-tags"></i><span>מחירי סיטונאות</span></div>
             <div class="product-trust-badges__item"><i class="fas fa-headset"></i><span>שירות אישי</span></div>
             <div class="product-trust-badges__item"><i class="fas fa-file-invoice"></i><span>חשבונית מס</span></div>
@@ -659,7 +790,7 @@ function generateProductPage(product, categories, allProducts, group) {
             ${product.maxOrderQty ? `<div class="product-highlights__item"><i class="fas fa-cubes"></i> <span>מקס' להזמנה: ${product.maxOrderQty} יח'</span></div>` : ''}
           </div>
 
-          ${product.description ? `<div class="product-description"><h3>תיאור</h3><p>${product.description}</p></div>` : ''}
+          ${bodyDescription ? `<div class="product-description"><h3>תיאור</h3><p>${bodyDescription}</p></div>` : ''}
           ${(!(seo.specs && seo.specs.length) && product.technicalDesc) ? renderTechSpecs(product.technicalDesc) : ''}
           ${product.videoUrl ? `<div style="margin-top:1rem;"><a href="${product.videoUrl}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#dc2626;color:#fff;padding:10px 20px;border-radius:8px;font-weight:600;text-decoration:none;font-size:0.95rem;"><i class="fas fa-play-circle"></i> צפו בסרטון מוצר</a></div>` : ''}
           ${specsHtml}

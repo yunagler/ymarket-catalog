@@ -77,7 +77,29 @@ const TEXT_RULES = [
   [/<li><strong>מעבדת מינון<\/strong> — אנחנו בודקים את סוג המשטחים שלכם וממליצים על ריכוז מדויק<\/li>/g, '<li><strong>ייעוץ מינון</strong> — נמליץ על ריכוז לפי סוג המשטחים שלכם</li>'],
   [/חלופות גנריות באותה איכות ב-40% פחות/g, 'חלופות גנריות במחיר נמוך יותר'],
   [/ \(כולל מרכז ספורט קריית אונו\)/g, ''],
+  // --- standards / approvals / food-contact claims (Yuval 30/09: remove all) ---
+  // spec rows inside technicalDesc JSON strings: [{"label":"בטיחות מזון","value":"מאושר למגע מזון"}, …]
+  [/,\{"label":"[^"]*","value":"[^"]*(?:מאושר\S* למגע|למגע (?:ישיר )?(?:עם )?מזון|עומד\S* ב?תקנ|תקני (?:ה)?בטיחות)[^"]*"\}/g, ''],
+  [/\{"label":"[^"]*","value":"[^"]*(?:מאושר\S* למגע|למגע (?:ישיר )?(?:עם )?מזון|עומד\S* ב?תקנ|תקני (?:ה)?בטיחות)[^"]*"\},?/g, ''],
+  [/\s*[—–-]\s*עומד בתקני בטיחות(?=["<]|$)/g, ''],
+  [/אישור אמ["״]ר,?\s*/g, ''],
+  [/בחירה, מידות, אמ["״]ר ומחיר סיטונאי/g, 'בחירה, מידות ומחיר סיטונאי'],
+  [/מתאי(?:ם|מה|מות|מים) למגע (?:ישיר )?(?:עם )?מזון,?\s*/g, ''],
+  [/נושא(?:ות|ים|ת)? <strong><\/strong> לשימוש רפואי,\s*/g, ''],
+  [/,\s*מתאימות <strong>למגע עם מזון<\/strong> ו(עומדות)/g, ', $1'],
+  [/\. הוא מתאים <strong>למגע עם מזון<\/strong> ונושא <strong>כשרות[^<]*<\/strong> — /g, '. '],
+  [/<li>(?:(?!<\/li>).)*?(?:עומד(?:ת|ים|ות)? ב?תקנ|מכון התקנים|\bCE\b|\bISO\b|משרד הבריאות)(?:(?!<\/li>).)*?<\/li>\s*/g, ''],
+  [/,\s*עומד(?:ת|ים|ות)? בתקני בטיחות ישראליים/g, ''],
+  // any remaining sentence (inside a text node) that makes such a claim goes entirely
+  [/[^.<>"]*(?:עומד(?:ת|ים|ות)? ב?תקנ|תקני (?:ה)?בטיחות (?:ה)?(?:מזון|המחייבים|ישראליים)|מאושר(?:ת|ים|ות)? למגע|משרד הבריאות|\bCE\b|\bISO\b|מכון התקנים)[^.<>"]*\.\s?/g, ''],
 ];
+
+// FAQ entries and spec rows that exist only to make such a claim are dropped whole.
+const CLAIM_RE = /עומד(?:ת|ים|ות)? ב?תקנ|תקני (?:ה)?בטיחות|מאושר(?:ת|ים|ות)? למגע|למגע (?:ישיר )?(?:עם )?מזון|משרד הבריאות|\bCE\b|\bISO\b|מכון התקנים|אמ["״]ר/;
+function dropClaimEntries(list) {
+  if (!Array.isArray(list)) return list;
+  return list.filter(e => !(e && typeof e === 'object' && Object.values(e).some(v => typeof v === 'string' && CLAIM_RE.test(v))));
+}
 
 // Meta descriptions are length-limited: they get the short zone wording only.
 const META_KEYS = new Set(['metaDescription', 'metaDesc', 'seoMetaDesc']);
@@ -179,6 +201,11 @@ function sanitizeCatalog(data) {
     if (typeof cat.seoContent === 'string' && cat.seoContent.includes(GENERIC_SEO_MARK)) cat.seoContent = rebuildGenericSeo(cat);
     if (typeof cat.geoContent === 'string' && cat.geoContent.includes(GENERIC_GEO_MARK)) cat.geoContent = rebuildGenericGeo(cat);
     if (isTruncatedTitle(cat.metaTitle)) cat.metaTitle = buildTitle(cat, byId);
+  }
+  for (const cat of cats) if (cat.faqs) cat.faqs = dropClaimEntries(cat.faqs);
+  for (const it of data.items || []) {
+    if (it.seo && it.seo.faqs) it.seo.faqs = dropClaimEntries(it.seo.faqs);
+    if (it.seo && it.seo.specs) it.seo.specs = dropClaimEntries(it.seo.specs);
   }
   walkStrings(cats, applyTextRules);
   walkStrings(data.items || [], applyTextRules);
