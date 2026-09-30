@@ -2725,18 +2725,59 @@
         if (b) { b.textContent = n; b.style.display = n ? '' : 'none'; }
       }
       function mark(btn, q) { btn.classList.toggle('is-in', q > 0); btn.querySelector('span').textContent = q > 0 ? 'בסל · ' + q : 'לסל'; }
-      rail.querySelectorAll('.y3-prod__add').forEach(function (btn) {
-        var p = JSON.parse(btn.getAttribute('data-p'));
-        var have = cartGet().filter(function (i) { return i.id === p.id; })[0]; mark(btn, have ? have.quantity : 0);
-        btn.addEventListener('click', function () {
-          var c = cartGet(), it = c.filter(function (i) { return i.id === p.id; })[0];
-          if (it) it.quantity += 1; else { it = { id: p.id, name: p.name, price: p.price, unit: p.unit, imageUrl: p.imageUrl, slug: p.slug, quantity: 1 }; c.push(it); }
-          cartSet(c); mark(btn, it.quantity); badge();
-          btn.classList.remove('is-pop'); void btn.offsetWidth; btn.classList.add('is-pop');
-          toast.innerHTML = '<i class="fas fa-circle-check"></i> ' + p.name.replace(/[<>&]/g, '') + ' נוסף לסל · <a href="/cart">לסל ולתשלום</a>';
-          toast.classList.add('is-on'); clearTimeout(tmr); tmr = setTimeout(function () { toast.classList.remove('is-on'); }, 3200);
+      function markAll() {
+        var c = cartGet();
+        rail.querySelectorAll('.y3-prod__add').forEach(function (btn) {
+          var p = JSON.parse(btn.getAttribute('data-p')), have = c.filter(function (i) { return i.id === p.id; })[0];
+          mark(btn, have ? have.quantity : 0);
         });
+      }
+      markAll();
+      rail.addEventListener('click', function (e) {
+        var btn = e.target.closest('.y3-prod__add'); if (!btn) return;
+        var p = JSON.parse(btn.getAttribute('data-p'));
+        var c = cartGet(), it = c.filter(function (i) { return i.id === p.id; })[0];
+        if (it) it.quantity += 1; else { it = { id: p.id, name: p.name, price: p.price, unit: p.unit, imageUrl: p.imageUrl, slug: p.slug, quantity: 1 }; c.push(it); }
+        cartSet(c); mark(btn, it.quantity); badge();
+        btn.classList.remove('is-pop'); void btn.offsetWidth; btn.classList.add('is-pop');
+        toast.innerHTML = '<i class="fas fa-circle-check"></i> ' + p.name.replace(/[<>&]/g, '') + ' נוסף לסל · <a href="/cart">לסל ולתשלום</a>';
+        toast.classList.add('is-on'); clearTimeout(tmr); tmr = setTimeout(function () { toast.classList.remove('is-on'); }, 3200);
       });
+
+      // Live list from the CRM (real orders, last 90 days). The static cards above stay
+      // as the fallback; an item is shown only if its product page is already published.
+      function esc(s) { return String(s).replace(/[&<>"']/g, function (ch) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]; }); }
+      function card(p) {
+        var href = '/products/' + encodeURIComponent(p.seoSlug) + '/';
+        var data = { id: p.id, name: p.name, price: p.price, unit: p.unit, imageUrl: p.imageUrl, slug: p.slug };
+        return '<article class="y3-prod">' +
+          '<a class="y3-prod__img" href="' + href + '"><img src="' + esc(p.imageUrl) + '" alt="' + esc(p.name) + '" loading="lazy" width="160" height="160"></a>' +
+          '<a class="y3-prod__name" href="' + href + '">' + esc(p.name) + '</a>' +
+          '<div class="y3-prod__foot"><span class="y3-prod__price">₪' + (+p.price).toLocaleString('he-IL', { maximumFractionDigits: 2 }) + '<small>לפני מע״מ</small></span>' +
+          '<button type="button" class="y3-prod__add" data-p="' + esc(JSON.stringify(data)) + '" aria-label="הוספה לסל: ' + esc(p.name) + '"><i class="fas fa-plus" aria-hidden="true"></i><span>לסל</span></button></div>' +
+          '</article>';
+      }
+      if (window.fetch && window.Promise) {
+        fetch('https://app.ymarket.co.il/api/public/best-sellers')
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (d) {
+            var list = d && d.items ? d.items : [];
+            if (list.length < 6) return;
+            return Promise.all(list.map(function (p) {
+              return fetch('/products/' + encodeURIComponent(p.seoSlug) + '/', { method: 'HEAD' })
+                .then(function (r) { return r.ok ? p : null; }, function () { return null; });
+            })).then(function (ok) {
+              ok = ok.filter(Boolean).slice(0, 12);
+              if (ok.length < 6) return;
+              rail.innerHTML = ok.map(card).join('');
+              rail.querySelectorAll('img').forEach(function (img) {
+                img.addEventListener('error', function () { var a = img.closest('.y3-prod'); if (a) a.remove(); });
+              });
+              markAll();
+            });
+          })
+          .catch(function () {});
+      }
       document.querySelectorAll('.y3-best .y3-nav').forEach(function (b) {
         b.addEventListener('click', function () { rail.scrollBy({ left: (+b.getAttribute('data-dir')) * rail.clientWidth * .8, behavior: 'smooth' }); });
       });
