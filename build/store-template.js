@@ -33,10 +33,13 @@ function itemCard(p, idx, productImage) {
   const href = `/products/${p.slug}/`;
   const loading = idx < 6 ? 'fetchpriority="high"' : 'loading="lazy"';
   const promo = p.productStatus === 'on_sale' && p.originalPrice;
+  const axis = ({ 'צבע': 'צבע', 'מידה': 'מידה', 'נפח': 'נפח', 'גודל': 'גודל', 'סוג': 'סוג' })[p._variantAxis] || 'סוג';
+  const item = { id: p.id, name, price: p.saleNis || 0, unit: p.unit || '', imageUrl: img, slug: p.slug, href,
+    orig: promo ? p.originalPrice : null, axis: p._isVariantGroup ? axis : null,
+    members: p._isVariantGroup ? (p._members || []).filter(m => m.price > 0).map(m => ({ id: m.id, label: m.label, name: m.name, price: m.price, imageUrl: m.imageUrl || img, slug: m.slug, unit: m.unit })) : null };
   let ctl;
-  if (p._isVariantGroup) {
-    const axis = ({ 'צבע': 'צבע', 'מידה': 'מידה', 'נפח': 'נפח', 'גודל': 'גודל', 'סוג': 'סוג' })[p._variantAxis] || 'סוג';
-    ctl = `<a class="v4-item__pick" href="${href}">בחירת ${axis} · ${p._variantCount}</a>`;
+  if (p._isVariantGroup && item.members && item.members.length) {
+    ctl = `<button type="button" class="v4-item__pick" data-open>בחירת ${axis} · ${item.members.length}</button>`;
   } else if (p.saleNis) {
     const data = esc(JSON.stringify({ id: p.id, name, price: p.saleNis, unit: p.unit || '', imageUrl: img, slug: p.slug }));
     ctl = `<div class="v4-item__ctl" data-p="${data}"><button type="button" class="v4-q v4-q--minus" aria-label="הפחתה">−</button><span class="v4-q__n">0</span><button type="button" class="v4-q v4-q--plus" aria-label="הוספה לסל: ${esc(name)}">+</button></div>`;
@@ -46,7 +49,8 @@ function itemCard(p, idx, productImage) {
   const price = p.saleNis
     ? `<span class="v4-item__price">${promo ? `<s>${money(p.originalPrice)}</s> ` : ''}${p._isVariantGroup ? 'מ-' : ''}${money(p.saleNis)} <small>לפני מע״מ</small></span>`
     : `<span class="v4-item__price v4-item__price--ask">מחיר לפי הצעה</span>`;
-  return `<article class="v4-item${promo ? ' is-promo' : ''}"><a class="v4-item__img" href="${href}"><img src="${esc(img)}" alt="${esc(name)}" width="200" height="200" ${loading}></a>${ctl}${price}<a class="v4-item__name" href="${href}">${esc(name)}</a></article>`;
+  const openable = p.saleNis ? ` data-item="${esc(JSON.stringify(item))}"` : '';
+  return `<article class="v4-item${promo ? ' is-promo' : ''}"${openable}><a class="v4-item__img" href="${href}" data-open><img src="${esc(img)}" alt="${esc(name)}" width="200" height="200" ${loading}></a>${ctl}${price}<a class="v4-item__name" href="${href}" data-open>${esc(name)}</a></article>`;
 }
 
 /**
@@ -113,6 +117,23 @@ function renderStoreMain(ctx) {
       <label class="v4-tabs__search"><i class="fas fa-magnifying-glass"></i><input id="v4StoreFind" type="search" placeholder="חיפוש ב${esc(storeName)}" aria-label="חיפוש בחנות"></label></div></div>
     <div class="v4-wrap v4-aisles">${sections}<p class="v4-empty" id="v4Empty" hidden>לא מצאנו בחנות הזו. <a href="/catalog">חיפוש בכל החנויות</a></p></div>
     <div class="v4-wrap v4-about">${seoHtml}</div>
+    <div class="v4-modal" id="v4Modal" hidden>
+      <div class="v4-modal__bg" data-close></div>
+      <div class="v4-modal__card" role="dialog" aria-modal="true" aria-labelledby="v4MName">
+        <button type="button" class="v4-modal__x" data-close aria-label="סגירה">×</button>
+        <div class="v4-modal__img"><img id="v4MImg" alt=""></div>
+        <div class="v4-modal__body">
+          <h3 id="v4MName"></h3>
+          <div class="v4-modal__price"><s id="v4MOrig" hidden></s> <b id="v4MPrice"></b> <small>לפני מע״מ</small></div>
+          <div class="v4-modal__opts" id="v4MOpts" hidden><strong id="v4MAxis"></strong><div class="v4-modal__chips" id="v4MChips" role="radiogroup"></div></div>
+          <a class="v4-modal__more" id="v4MMore" href="#">כל הפרטים בדף המוצר <i class="fas fa-chevron-left"></i></a>
+        </div>
+        <div class="v4-modal__foot">
+          <div class="v4-modal__qty"><button type="button" data-q="1" aria-label="עוד אחד">+</button><span id="v4MQty">1</span><button type="button" data-q="-1" aria-label="אחד פחות">−</button></div>
+          <button type="button" class="v4-modal__add" id="v4MAdd">להוסיף להזמנה</button>
+        </div>
+      </div>
+    </div>
     <div class="v4-cartbar" id="v4Cartbar" hidden>
       <div class="v4-cartbar__in">
         <div class="v4-cartbar__txt"><strong id="v4CbCount">0 פריטים</strong><span id="v4CbMsg"></span>
@@ -159,6 +180,51 @@ const STORE_JS = `<script>
       var A = window.YMarketAnalytics, ev = { id: p.id, name: p.name, price: p.price, quantity: 1 };
       if (A && A.fbAddToCart) A.fbAddToCart(ev); if (A && A.trackAddToCart) A.trackAddToCart(ev);
     }
+  });
+  // item window (Wolt-style): photo, options, quantity, "add to order"
+  var M = document.getElementById('v4Modal'), cur = null, sel = null, qty = 1, lastFocus = null;
+  function mset() {
+    var it = sel || cur, total = (it.price || 0) * qty;
+    document.getElementById('v4MImg').src = it.imageUrl; document.getElementById('v4MImg').alt = it.name;
+    document.getElementById('v4MName').textContent = sel ? cur.name + ' · ' + sel.label : cur.name;
+    document.getElementById('v4MPrice').textContent = fmt(it.price);
+    var o = document.getElementById('v4MOrig'); o.hidden = !(cur.orig && !sel); if (cur.orig) o.textContent = fmt(cur.orig);
+    document.getElementById('v4MQty').textContent = qty;
+    document.getElementById('v4MAdd').textContent = 'להוסיף להזמנה · ' + fmt(total);
+    document.getElementById('v4MMore').href = '/products/' + (it.slug || cur.slug) + '/';
+  }
+  function open(item) {
+    cur = item; qty = 1; sel = null; lastFocus = document.activeElement;
+    var chips = document.getElementById('v4MChips'), opts = document.getElementById('v4MOpts'); chips.innerHTML = '';
+    if (item.members && item.members.length) {
+      opts.hidden = false; document.getElementById('v4MAxis').textContent = 'בחרו ' + (item.axis || 'סוג');
+      item.members.forEach(function (m, i) {
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'v4-chip' + (i ? '' : ' is-on'); b.setAttribute('role', 'radio'); b.setAttribute('aria-checked', i ? 'false' : 'true');
+        b.innerHTML = '<span></span><small></small>'; b.firstChild.textContent = m.label; b.lastChild.textContent = fmt(m.price);
+        b.addEventListener('click', function () { sel = m; [].forEach.call(chips.children, function (c) { c.classList.toggle('is-on', c === b); c.setAttribute('aria-checked', c === b); }); mset(); });
+        chips.appendChild(b);
+      });
+      sel = item.members[0];
+    } else opts.hidden = true;
+    mset(); M.hidden = false; document.documentElement.classList.add('v4-lock');
+    requestAnimationFrame(function () { M.classList.add('is-on'); document.getElementById('v4MAdd').focus(); });
+  }
+  function close() { M.classList.remove('is-on'); document.documentElement.classList.remove('v4-lock'); setTimeout(function () { M.hidden = true; }, 220); if (lastFocus) lastFocus.focus(); }
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest('[data-open]');
+    if (t && !e.metaKey && !e.ctrlKey && !e.shiftKey) {
+      var art = t.closest('.v4-item'); if (art && art.getAttribute('data-item')) { e.preventDefault(); open(JSON.parse(art.getAttribute('data-item'))); return; }
+    }
+    if (e.target.closest('[data-close]')) { close(); return; }
+    var q = e.target.closest('.v4-modal__qty [data-q]'); if (q) { qty = Math.max(1, qty + (+q.getAttribute('data-q'))); mset(); }
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !M.hidden) close(); });
+  document.getElementById('v4MAdd').addEventListener('click', function () {
+    var it = sel || cur, c = get(), x = c.filter(function (y) { return y.id === it.id; })[0];
+    if (x) x.quantity += qty; else c.push({ id: it.id, name: sel ? cur.name + ' · ' + sel.label : it.name, price: it.price, unit: it.unit || '', imageUrl: it.imageUrl, slug: it.slug, quantity: qty });
+    set(c); paint(); close();
+    var A = window.YMarketAnalytics, ev = { id: it.id, name: it.name, price: it.price, quantity: qty };
+    if (A && A.fbAddToCart) A.fbAddToCart(ev); if (A && A.trackAddToCart) A.trackAddToCart(ev);
   });
   var tabs = [].slice.call(document.querySelectorAll('.v4-tabs__list a[href^="#"]'));
   var secs = tabs.map(function (a) { return document.querySelector(a.getAttribute('href')); });

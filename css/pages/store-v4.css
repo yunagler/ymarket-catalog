@@ -152,3 +152,40 @@ body.v4-has-cart .whatsapp-float { bottom: 110px !important; transition: bottom 
 .v4-about .category-geo { background: #fff !important; border-color: var(--v4-line) !important; box-shadow: var(--v4-e1); }
 .v4-about .category-faq details { box-shadow: var(--v4-e1); }
 @media (max-width: 700px) { .v4-wrap { padding: 0 14px; } .v4-sh__name { font-size: 1.9rem; } .v4-about .category-seo { padding: 18px; } }
+/* ══ Item window (Wolt-style): photo, options, quantity, add to order ══ */
+html.v4-lock { overflow: hidden; }
+.v4-item__img, .v4-item__name { cursor: pointer; }
+button.v4-item__pick { border: 0; cursor: pointer; font: inherit; font-weight: 800; font-size: .8rem; }
+.v4-modal { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: 16px; }
+.v4-modal__bg { position: absolute; inset: 0; background: rgba(7,26,49,.55); backdrop-filter: blur(3px); opacity: 0; transition: opacity .22s; }
+.v4-modal__card { position: relative; width: min(520px, 100%); max-height: calc(100vh - 32px); overflow: auto; background: #fff; border-radius: 26px;
+  box-shadow: var(--v4-e4); transform: translateY(24px) scale(.97); opacity: 0; transition: transform .32s var(--v4-spring), opacity .22s; display: flex; flex-direction: column; }
+.v4-modal.is-on .v4-modal__bg { opacity: 1; } .v4-modal.is-on .v4-modal__card { transform: none; opacity: 1; }
+.v4-modal__x { position: absolute; top: 14px; right: 14px; z-index: 2; width: 42px; height: 42px; border-radius: 50%; border: 0; background: #fff; box-shadow: var(--v4-e1); font-size: 1.6rem; line-height: 1; cursor: pointer; color: var(--v4-navy); }
+.v4-modal__img { display: grid; place-items: center; background: var(--v4-mist); height: 300px; }
+.v4-modal__img img { max-width: 76%; max-height: 86%; object-fit: contain; border-radius: 12px; }
+.v4-modal__body { padding: 20px 22px 8px; }
+.v4-modal__body h3 { margin: 0 0 8px; font-size: 1.45rem; font-weight: 800; line-height: 1.25; color: var(--v4-navy); }
+.v4-modal__price b { font-size: 1.25rem; color: var(--v4-navy); } .v4-modal__price small { color: var(--v4-muted); } .v4-modal__price s { color: #9aa6b5; }
+.v4-modal__opts { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--v4-line); }
+.v4-modal__opts strong { display: block; margin-bottom: 10px; color: var(--v4-navy); }
+.v4-modal__chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.v4-chip { display: grid; gap: 2px; min-width: 72px; padding: 9px 14px; border-radius: 14px; border: 1.5px solid var(--v4-line); background: #fff; cursor: pointer; font: inherit; text-align: center; transition: border-color .2s, background .2s; }
+.v4-chip span { font-weight: 800; color: var(--v4-navy); } .v4-chip small { color: var(--v4-muted); font-size: .78rem; }
+.v4-chip.is-on { border-color: var(--v4-blue); background: var(--v4-ice); box-shadow: inset 0 0 0 1px var(--v4-blue); }
+.v4-modal__more { display: inline-flex; align-items: center; gap: 6px; margin-top: 16px; color: var(--v4-leumi); font-weight: 700; text-decoration: none; font-size: .95rem; }
+.v4-modal__foot { position: sticky; bottom: 0; display: flex; gap: 12px; padding: 14px 18px 18px; background: #fff; border-top: 1px solid var(--v4-line); }
+.v4-modal__qty { display: flex; align-items: center; gap: 4px; padding: 4px; border-radius: 999px; background: var(--v4-ice); }
+.v4-modal__qty button { width: 42px; height: 42px; border-radius: 50%; border: 0; background: #fff; color: var(--v4-blue); font-size: 1.4rem; cursor: pointer; box-shadow: var(--v4-e1); }
+.v4-modal__qty span { min-width: 30px; text-align: center; font-weight: 800; color: var(--v4-navy); }
+.v4-modal__add { flex: 1; border: 0; border-radius: 999px; background: var(--v4-gold); color: var(--v4-ink); font: inherit; font-weight: 800; font-size: 1.02rem; cursor: pointer;
+  box-shadow: -4px 10px 22px -10px rgba(255,176,32,.9), inset 0 1px 0 rgba(255,255,255,.55); }
+@media (max-width: 560px) {
+  .v4-modal { padding: 0; align-items: end; }
+  .v4-modal__card { width: 100%; max-height: 92vh; border-radius: 26px 26px 0 0; transform: translateY(40px); }
+  .v4-modal__img { height: 240px; }
+}
+
+.v4-modal__img img { max-height: 260px !important; width: auto; height: auto; }
+html.v4-lock .whatsapp-float { display: none !important; }
+@media (max-width: 560px) { .v4-modal__img img { max-height: 200px !important; } }

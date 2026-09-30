@@ -321,6 +321,8 @@ function collapseVariants(items, variantGroups) {
         _isVariantGroup: true,
         _variantCount: members.length,
         _variantAxis: g.axis || 'מידה',
+        // members for the in-store picker (Wolt-style options inside the item window)
+        _members: members.map(m => ({ id: m.id, label: (m.variantLabel || m.name || '').trim(), name: (m.name || '').trim(), price: m.saleNis || 0, imageUrl: m.imageUrl || '', slug: m.seoSlug || m.slug, unit: m.unit || '' })),
       }));
     } else {
       out.push(it);
@@ -622,7 +624,7 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
   <link rel="stylesheet" href="/css/style.min.css">
   <link rel="stylesheet" href="/css/site-header.css">
   <link rel="stylesheet" href="/css/pages/catalog.min.css">
-  <link rel="stylesheet" href="/css/pages/store-v4.css?v=1">
+  <link rel="stylesheet" href="/css/pages/store-v4.css?v=3">
   <style>
     .category-seo{margin-top:2.5rem;padding:2rem;background:#fff;border-top:2px solid #e5e7eb;line-height:1.8}
     .category-seo h2{font-size:1.25rem;margin-bottom:1rem;color:var(--color-text,#1f2937)}
