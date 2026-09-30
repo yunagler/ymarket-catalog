@@ -15,18 +15,24 @@ const SITE_URL = 'https://ymarket.co.il';
 
 // Load header from single source of truth
 const SITE_HEADER = fs.readFileSync(path.join(ROOT_DIR, 'includes', 'site-header.html'), 'utf-8').trim();
+// Footer from its single source of truth too (the same text build_footer.py stamps into
+// every page) — the inline copy this generator used to emit drifted from the live footer.
+const SITE_FOOTER = fs.readFileSync(path.join(ROOT_DIR, 'includes', 'site-footer.html'), 'utf-8').trimEnd();
+// CRM texts pass through the site's copy policy (no invented numbers, correct delivery
+// times, no customer names) — see build/catalog-copy-policy.js.
+const { sanitizeCatalog } = require('./catalog-copy-policy');
 
 // SEO data per category
 const CATEGORY_SEO = {
   'חומרי-ניקוי-וכימיקלים': {
     title: 'חומרי ניקוי בסיטונאות למוסדות ועסקים | וואי מרקט',
     h1: 'חומרי ניקוי בסיטונאות למוסדות ועסקים',
-    metaDesc: 'מחפשים ספק חומרי ניקוי אמין? ב-YMARKET תמצאו כימיקלים, סבונים וחומרי חיטוי תעשייתיים במחירי סיטונאות ישירות מהיצרן. אספקה מהירה עד 72 שעות.',
+    metaDesc: 'מחפשים ספק חומרי ניקוי אמין? ב-YMARKET תמצאו כימיקלים, סבונים וחומרי חיטוי תעשייתיים במחירי סיטונאות ישירות מהמפיץ. אספקה מהירה עד 72 שעות.',
     seoText: `<div class="category-seo">
       <h2>חומרי ניקוי מוסדיים בסיטונאות – אספקה מהירה לכל הארץ</h2>
       <p>אנחנו ב-YMARKET מבינים שניהול מלאי חומרי הניקוי במוסד הוא קריטי. לכן אנו מספקים מגוון רחב של כימיקלים, סבונים וחומרי חיטוי בריכוז גבוה המותאמים לשימוש תעשייתי ומוסדי. הקטלוג שלנו כולל אקונומיקה תעשייתית, חומצת מלח, מסירי שומן, נוזלי רצפה ומוצרי ניקוי מקצועיים מבית BLINX ומותגים מובילים נוספים.</p>
-      <p>בין אם אתם חברת ניקיון, בית מלון, מסעדה, בית ספר או משרד – אנו מציעים פתרונות ניקוי מותאמים עם מחירי סיטונאות ואספקה תוך 24-72 שעות לכל רחבי ישראל. מינימום הזמנה 200 ₪ + מע"מ, בתוספת דמי משלוח לפי אזור (חינם מעל 2,000 ₪).</p>
-      <p><strong>צריכים הצעת מחיר מותאמת?</strong> <a href="/contact">צרו קשר</a> או שלחו הודעה ב<a href="https://wa.me/972549922492?text=היי, מעוניין בהצעת מחיר לחומרי ניקוי למוסד" target="_blank" rel="noopener">וואטסאפ</a> ונחזור אליכם תוך שעות.</p>
+      <p>בין אם אתם חברת ניקיון, בית מלון, מסעדה, בית ספר או משרד – אנו מציעים פתרונות ניקוי מותאמים עם מחירי סיטונאות ואספקה תוך 24–72 שעות בגוש דן ובמרכז, ועד 5 ימי עסקים לשאר הארץ. מינימום הזמנה 200 ₪ + מע"מ, בתוספת דמי משלוח לפי אזור (חינם מעל 2,000 ₪).</p>
+      <p><strong>צריכים הצעת מחיר מותאמת?</strong> <a href="/contact">צרו קשר</a> או שלחו הודעה ב<a href="https://wa.me/972549922492?text=היי, מעוניין בהצעת מחיר לחומרי ניקוי למוסד" target="_blank" rel="noopener">וואטסאפ</a> — מענה באותו יום עבודה, א'–ה' 08:00–17:00.</p>
     </div>`,
     faqs: [
       { q: 'יש מינימום הזמנה לחומרי ניקוי?', a: 'כן, מינימום הזמנה 200 ₪ + מע"מ, בתוספת דמי משלוח לפי אזור (חינם מעל 2,000 ₪). ניתן לשלב מוצרים מכל הקטגוריות בהזמנה אחת.' },
@@ -42,7 +48,7 @@ const CATEGORY_SEO = {
     seoText: `<div class="category-seo">
       <h2>מוצרי נייר תעשייתיים לעסקים ומוסדות</h2>
       <p>מוצרי נייר הם מוצר יסוד בכל עסק ומוסד. ב-YMARKET תמצאו מגוון מלא של נייר טואלט מוסדי, מגבות נייר תעשייתיות, מפיות, גלילי ניגוב ומוצרי נייר נוספים – הכל במחירי סיטונאות עם אספקה מהירה.</p>
-      <p>אנו עובדים עם מותגים מובילים כמו טורקיש ומציעים פתרונות המותאמים לשירותי ציבור, מטבחים מוסדיים, משרדים ומפעלים. חסכו בעלויות עם רכישה מרוכזת ישירות מהמפיץ.</p>
+      <p>אנו עובדים עם מותגים מובילים כמו טורקיש ומציעים פתרונות המותאמים לשירותי ציבור, מטבחים מוסדיים, משרדים ומפעלים. חסכו בעלויות עם רכישה מרוכזת ישירות מהמחסן.</p>
       <p><strong>צריכים כמות גדולה?</strong> <a href="/contact">לחצו כאן להצעת מחיר מותאמת אישית</a>.</p>
     </div>`,
     faqs: [
@@ -730,7 +736,7 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
               <img src="${categoryImage}" alt="${categoryImageAlt} - מבחר מוצרים בסיטונאות | וואי מרקט" width="1200" height="400" fetchpriority="high" />
               <div class="hero-overlay">
                 <h1>${h1Text}</h1>
-                <p>${categoryProducts.length} מוצרים במחירי סיטונאות | אספקה תוך 24-72 שעות</p>
+                <p>${categoryProducts.length} מוצרים במחירי סיטונאות | אספקה 24–72 שעות בגוש דן ובמרכז</p>
               </div>
             </div>` : `<h1>${h1Text}</h1>`}
             ${!categoryImage ? `<p>${categoryProducts.length} מוצרים</p>` : ''}
@@ -739,11 +745,11 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
           <div class="trust-badges">
             <div class="trust-badges__item">
               <div class="trust-badges__icon" style="background:#f0fdf4;color:#16a34a"><i class="fas fa-truck"></i></div>
-              <div class="trust-badges__text"><strong>אספקה מהירה</strong><span>24-72 שעות לכל הארץ</span></div>
+              <div class="trust-badges__text"><strong>אספקה מהירה</strong><span>24–72 שעות בגוש דן ובמרכז</span></div>
             </div>
             <div class="trust-badges__item">
               <div class="trust-badges__icon" style="background:#eff6ff;color:#2563eb"><i class="fas fa-tags"></i></div>
-              <div class="trust-badges__text"><strong>מחירי סיטונאות</strong><span>ישירות מהמפיץ</span></div>
+              <div class="trust-badges__text"><strong>מחירי סיטונאות</strong><span>ישירות מהמחסן</span></div>
             </div>
             <div class="trust-badges__item">
               <div class="trust-badges__icon" style="background:#fef3c7;color:#d97706"><i class="fas fa-headset"></i></div>
@@ -775,11 +781,11 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
               </div>
               <div class="why-ym__card">
                 <i class="fas fa-hand-holding-usd"></i>
-                <div><strong>מחירים ישירים ללא תיווך</strong><span>חסכו 15-30% בעלויות הרכש השוטפות — אנחנו מפיצים ישירים</span></div>
+                <div><strong>מחירים ישירים ללא תיווך</strong><span>אנחנו מפיצים ישירים — מחירי סיטונאות ומחירון אישי ללקוחות קבועים</span></div>
               </div>
               <div class="why-ym__card">
                 <i class="fas fa-shipping-fast"></i>
-                <div><strong>אספקה עד הדלת תוך 24-72 שעות</strong><span>פריסה ארצית — גוש דן, חיפה, ירושלים, ב"ש ועד אילת</span></div>
+                <div><strong>אספקה עד הדלת</strong><span>24–72 שעות בגוש דן ובמרכז, ועד 5 ימי עסקים לשאר הארץ</span></div>
               </div>
               <div class="why-ym__card">
                 <i class="fas fa-redo-alt"></i>
@@ -813,8 +819,8 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
             <div style="position:absolute;bottom:-30px;right:-30px;width:160px;height:160px;background:rgba(255,255,255,0.03);border-radius:50%"></div>
             <div style="position:relative;z-index:1">
               <div style="font-size:2rem;margin-bottom:12px;"><i class="fas fa-calculator"></i></div>
-              <h3 style="margin-bottom:0.5rem;font-size:1.2rem;font-weight:800;">קבלו הצעת מחיר תוך דקות</h3>
-              <p style="opacity:0.85;margin-bottom:1.2rem;max-width:500px;margin-left:auto;margin-right:auto;">שלחו רשימת מוצרים בוואטסאפ ונחזור עם הצעה מותאמת כולל מחיר משלוח — בדרך כלל תוך שעה</p>
+              <h3 style="margin-bottom:0.5rem;font-size:1.2rem;font-weight:800;">קבלו הצעת מחיר מותאמת</h3>
+              <p style="opacity:0.85;margin-bottom:1.2rem;max-width:500px;margin-left:auto;margin-right:auto;">שלחו רשימת מוצרים בוואטסאפ ונחזור עם הצעה מותאמת כולל מחיר משלוח — מענה באותו יום עבודה, א'–ה' 08:00–17:00</p>
               <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
                 <a href="https://wa.me/972549922492?text=${encodeURIComponent('היי, אשמח לקבל הצעת מחיר ל' + category.name)}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:#25d366;color:#fff;border-radius:12px;font-weight:700;font-size:1rem;text-decoration:none;transition:transform 0.2s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"><i class="fab fa-whatsapp" style="font-size:1.2rem"></i> שלחו הודעה בוואטסאפ</a>
                 <a href="tel:037740400" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.3);border-radius:12px;font-weight:600;font-size:1rem;text-decoration:none;transition:background 0.2s" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'"><i class="fas fa-phone-alt"></i> 03-7740400</a>
@@ -827,61 +833,7 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <img src="/images/logo/logo-white.png" alt="וואי מרקט" width="112" height="60">
-          <p>נגלר סחר והפצה — סחר, שיווק והפצה של מוצרי צריכה שוטפת לעסקים ומוסדות בכל רחבי הארץ.</p>
-          <div class="footer__social">
-            <a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=100083110428101" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/ymarket.ai" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-        <div class="footer__col">
-          <h4>קטגוריות</h4>
-          <div class="footer__links">
-            <a href="/category/bulk-paper-towel-office-supplies/">מוצרי נייר וניגוב</a>
-            <a href="/category/industrial-cleaning-supplies-wholesale/">חומרי ניקוי</a>
-            <a href="/category/disposable-catering-food-service/">חד פעמי ואירוח</a>
-            <a href="/category/food-packaging-delivery-solutions/">אריזות Take Away</a>
-            <a href="/category/office-coffee-breakroom-supplies/">קפה, שתייה וכיבוד</a>
-            <a href="/category/safety-ppe-equipment-for-business/">בטיחות ומיגון</a>
-          </div>
-        </div>
-        <div class="footer__col">
-          <h4>קישורים מהירים</h4>
-          <div class="footer__links">
-            <a href="/catalog">קטלוג מוצרים</a>
-            <a href="/about">אודות</a>
-            <a href="/blog">בלוג</a>
-            <a href="/faq">שאלות ותשובות</a>
-            <a href="/contact">צרו קשר</a>
-            <a href="/tracking">מעקב משלוחים</a>
-          </div>
-        </div>
-        <div class="footer__col">
-          <h4>צרו קשר</h4>
-          <div class="footer__contact-item"><i class="fas fa-phone-alt"></i><a href="tel:037740400">03-7740400</a></div>
-          <div class="footer__contact-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/972549922492" target="_blank" rel="noopener">WhatsApp</a></div>
-          <div class="footer__contact-item"><i class="fas fa-envelope"></i><a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a></div>
-          <div class="footer__contact-item"><i class="fas fa-clock"></i><span>א'-ה' 08:00-17:00</span></div>
-        </div>
-      </div>
-      <div class="footer__bottom">
-        <span class="footer__copyright">&copy; 2026 וואי מרקט — נגלר סחר והפצה. כל הזכויות שמורות.</span>
-        <div class="footer__legal">
-          <a href="/legal/terms">תקנון האתר</a>
-          <a href="/legal/privacy">מדיניות פרטיות</a>
-          <a href="/legal/shipping">מדיניות משלוחים</a>
-          <a href="/legal/returns">החזרות וביטולים</a>
-          <a href="/legal/accessibility">נגישות</a>
-          <a href="/legal/cookies">עוגיות</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+${SITE_FOOTER}
 
   <div class="mobile-cta-bar">
     <a href="https://wa.me/972549922492?text=היי, אשמח לקבל הצעת מחיר ל${encodeURIComponent(category.name)}" class="cta-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> וואטסאפ</a>
@@ -978,7 +930,7 @@ function main() {
     process.exit(1);
   }
 
-  const data = JSON.parse(fs.readFileSync(DATA_PATH, 'utf-8'));
+  const data = sanitizeCatalog(JSON.parse(fs.readFileSync(DATA_PATH, 'utf-8')));
   const products = collapseVariants(data.items || [], data.variantGroups || []);
   const categories = data.categories || [];
 

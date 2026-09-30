@@ -224,13 +224,7 @@
           "value": 2
         },
         "isicV4": "4649",
-        "naics": "424120",
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.8",
-          "reviewCount": "127",
-          "bestRating": "5"
-        }
+        "naics": "424120"
       },
       {
         "@type": "WebSite",

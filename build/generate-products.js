@@ -15,6 +15,20 @@ const SITE_URL = 'https://ymarket.co.il';
 
 // Load header from single source of truth
 const SITE_HEADER = fs.readFileSync(path.join(ROOT_DIR, 'includes', 'site-header.html'), 'utf-8').trim();
+// Footer from its single source of truth too (the same text build_footer.py stamps into
+// every page) — the inline copy this generator used to emit drifted from the live footer.
+const SITE_FOOTER = fs.readFileSync(path.join(ROOT_DIR, 'includes', 'site-footer.html'), 'utf-8').trimEnd();
+// Header CSS link: reuse the cache-busting version build_header_css.py last stamped on
+// index.html, so a regeneration does not strip it from every product page.
+const HEADER_CSS_HREF = (() => {
+  try {
+    const m = fs.readFileSync(path.join(ROOT_DIR, 'index.html'), 'utf-8').match(/\/css\/site-header\.css\?v=[\w.-]+/);
+    return m ? m[0] : '/css/site-header.css';
+  } catch (e) { return '/css/site-header.css'; }
+})();
+// CRM texts pass through the site's copy policy (no invented numbers, correct delivery
+// times, no blanket certifications) — see build/catalog-copy-policy.js.
+const { sanitizeCatalog } = require('./catalog-copy-policy');
 
 // Render the legacy `technicalDesc` field. It is stored as a JSON string like
 // [{"label":"...","value":"..."}]. Older code printed it raw, leaking JSON onto
@@ -64,24 +78,6 @@ function webpVariant(jpgUrl, suffix = '.webp') {
 function vatLine(net) {
   if (!net) return '';
   return `<div class="product-pricing__vat" style="color:var(--color-text-secondary,#6b7280);font-size:var(--fs-sm)">${formatPrice(withVat(net))} כולל מע״מ</div>`;
-}
-
-// Footer category IDs and display names (top-level categories to show in footer)
-const FOOTER_CATEGORIES = [
-  { id: 9, label: 'מוצרי נייר וניגוב' },
-  { id: 4, label: 'חומרי ניקוי' },
-  { id: 7, label: 'חד פעמי ואירוח' },
-  { id: 5, label: 'אריזות Take Away' },
-  { id: 10, label: 'קפה, שתייה וכיבוד' },
-  { id: 1, label: 'בטיחות ומיגון' },
-];
-
-function buildFooterCategoryLinks(categories) {
-  return FOOTER_CATEGORIES.map(fc => {
-    const cat = categories.find(c => c.id === fc.id);
-    const slug = cat ? (cat.seoSlug || cat.slug) : `cat-${fc.id}`;
-    return `<a href="/category/${slug}/">${fc.label}</a>`;
-  }).join('');
 }
 
 // Resolve the correct category URL path using seoSlug when available
@@ -577,7 +573,7 @@ function generateProductPage(product, categories, allProducts, group) {
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="/css/style.min.css">
-  <link rel="stylesheet" href="/css/site-header.css">
+  <link rel="stylesheet" href="${HEADER_CSS_HREF}">
   <link rel="stylesheet" href="/css/pages/product-detail.min.css?v=20260614a">
   <script type="application/ld+json">${jsonLd}</script>
   <script type="application/ld+json">${JSON.stringify({
@@ -683,77 +679,7 @@ function generateProductPage(product, categories, allProducts, group) {
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <img src="/images/logo/logo-white.png" alt="וואי מרקט" width="112" height="60">
-          <p>נגלר סחר והפצה — סחר, שיווק והפצה של מוצרי צריכה שוטפת לעסקים ומוסדות בכל רחבי הארץ.</p>
-          <div class="footer__social">
-            <a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=100083110428101" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/ymarket.ai" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-
-        <div class="footer__col">
-          <h4>קטגוריות</h4>
-          <div class="footer__links">
-            <a href="/category/bulk-paper-towel-office-supplies/">מוצרי נייר וניגוב</a>
-            <a href="/category/industrial-cleaning-supplies-wholesale/">חומרי ניקוי</a>
-            <a href="/category/disposable-catering-food-service/">חד פעמי ואירוח</a>
-            <a href="/category/food-packaging-delivery-solutions/">אריזות Take Away</a>
-            <a href="/category/office-coffee-breakroom-supplies/">קפה, שתייה וכיבוד</a>
-            <a href="/category/safety-ppe-equipment-for-business/">בטיחות ומיגון</a>
-          </div>
-        </div>
-
-        <div class="footer__col">
-          <h4>קישורים מהירים</h4>
-          <div class="footer__links">
-            <a href="/catalog">קטלוג מוצרים</a>
-            <a href="/about">אודות</a>
-            <a href="/blog">בלוג</a>
-            <a href="/faq">שאלות ותשובות</a>
-            <a href="/contact">צרו קשר</a>
-            <a href="/tracking">מעקב משלוחים</a>
-          </div>
-        </div>
-
-        <div class="footer__col">
-          <h4>צרו קשר</h4>
-          <div class="footer__contact-item">
-            <i class="fas fa-phone-alt"></i>
-            <a href="tel:037740400">03-7740400</a>
-          </div>
-          <div class="footer__contact-item">
-            <i class="fab fa-whatsapp"></i>
-            <a href="https://wa.me/972549922492" target="_blank" rel="noopener">WhatsApp</a>
-          </div>
-          <div class="footer__contact-item">
-            <i class="fas fa-envelope"></i>
-            <a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a>
-          </div>
-          <div class="footer__contact-item">
-            <i class="fas fa-clock"></i>
-            <span>א'-ה' 08:00-17:00</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer__bottom">
-        <span class="footer__copyright">&copy; 2026 וואי מרקט — נגלר סחר והפצה. כל הזכויות שמורות.</span>
-        <div class="footer__legal">
-          <a href="/legal/terms">תקנון האתר</a>
-          <a href="/legal/privacy">מדיניות פרטיות</a>
-          <a href="/legal/shipping">מדיניות משלוחים</a>
-          <a href="/legal/returns">החזרות וביטולים</a>
-          <a href="/legal/accessibility">נגישות</a>
-          <a href="/legal/cookies">עוגיות</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+${SITE_FOOTER}
 
   <a href="https://wa.me/972549922492?text=שלום, אשמח לקבל הצעת מחיר" class="whatsapp-float" target="_blank" rel="noopener" aria-label="שלחו הודעה בוואטסאפ"><i class="fab fa-whatsapp"></i><span class="whatsapp-float__tooltip">צריכים עזרה? דברו איתנו</span></a>
   <script src="/js/main.min.js?v=20260613"></script>
@@ -1007,7 +933,7 @@ function main() {
     process.exit(1);
   }
 
-  const data = JSON.parse(fs.readFileSync(DATA_PATH, 'utf-8'));
+  const data = sanitizeCatalog(JSON.parse(fs.readFileSync(DATA_PATH, 'utf-8')));
   let products = data.items || [];
   const categories = data.categories || [];
   const variantGroupDefs = data.variantGroups || []; // [{id,name,axis,seoSlug}]
