@@ -348,3 +348,33 @@ html.v4-js [data-v4].is-in { opacity: 1; transform: none; }
 body.v4-has-cart .whatsapp-float { bottom: 110px !important; transition: bottom .4s var(--v4-ease); }
 .v4-cb-vat { font-size: .7rem; font-weight: 600; margin-inline-start: 4px; opacity: .75; }
 @media (max-width: 700px) { .v4-cartbar__txt span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: .8rem; } .v4-cb-vat { display: none; } }
+
+/* ══ Mobile: the same page in about two thirds of the scroll (Galaxy review 30/09) ══ */
+@media (max-width: 700px) {
+  .v4-sec { padding: 48px 0; }
+  .v4-head { margin-bottom: 18px; }
+  /* stores + guides: swipe rows instead of long stacks */
+  .v4-shops, .v4-guides { display: grid; grid-auto-flow: column; grid-template-columns: none; grid-auto-columns: 74%; gap: 12px;
+    overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 16px 14px; margin: 0 -16px; scrollbar-width: none; }
+  .v4-shops::-webkit-scrollbar, .v4-guides::-webkit-scrollbar { display: none; }
+  .v4-shop, .v4-guide { scroll-snap-align: start; }
+  .v4-shop__foot { display: none; }
+  /* who we serve: compact two-up tiles */
+  .v4-seg { grid-template-columns: 1fr 1fr !important; gap: 10px; }
+  .v4-seg .v4-card { padding: 14px; } .v4-seg .v4-card p { display: none; } .v4-seg .v4-card h3 { font-size: .95rem; margin: 10px 0 0; }
+  /* story: shorter steps, smaller stage */
+  .v4-story { padding: 48px 0 20px; }
+  .v4-story__stage-wrap { height: 36vh; top: 70px; }
+  .v4-step { min-height: 38vh; } .v4-step:last-child { min-height: 30vh; }
+  .v4-story__head { padding-bottom: 2vh; }
+  /* app benefits and service promises: two per row */
+  .y3-app__list { display: grid !important; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .y3-app__list li { padding: 12px !important; font-size: .88rem; }
+  .y3-app__list li p, .y3-app__list li span:not(:first-child) { display: none; }
+  .y3-svc { padding: 40px 0; }
+  .y3-svc__grid { grid-template-columns: 1fr 1fr !important; gap: 10px; }
+  .y3-svc__card { padding: 14px 12px; } .y3-svc__card p { display: none; } .y3-svc__card h3 { font-size: 1rem; margin: 8px 0 0; }
+  /* map: keep it, but it no longer needs a full screen and a half */
+  .hv-map__svg { max-height: 58vh; }
+}
+@media (max-width: 700px) { .y3-app__list li { flex-direction: column; align-items: flex-start; gap: 8px; } .y3-app__list li div { font-size: 0; } .y3-app__list li div strong { font-size: .9rem; display: block; line-height: 1.3; } .y3-phone { width: 190px !important; } .y3-phone__screen { min-height: 360px !important; } .y3-qr { display: none !important; } }
