@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>אודות | וואי מרקט - נגלר סחר והפצה</title>
-  <meta name="description" content="וואי מרקט - נגלר סחר והפצה. אספקת מוצרי צריכה שוטפת לעסקים ומוסדות בכל הארץ. מחירי סיטונאות, שירות אישי, משלוח מהיר.">
+  <title>אודות וואי מרקט | מפיץ מתכלים לעסקים ומוסדות מאז 2020</title>
+  <meta name="description" content="וואי מרקט התחילה ב-2020 עם מסכות לעסקים, והיום מספקת מאות מוצרי ניקיון, נייר, חד פעמי ואריזות לעסקים ומוסדות, ישירות מהמפיץ בגת רימון. מהירות, קווים נקיים, שירותיות.">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="https://ymarket.co.il/about">
   <link rel="icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta name="theme-color" content="#1B3A5C">
-  <meta property="og:title" content="אודות | וואי מרקט">
-  <meta property="og:description" content="נגלר סחר והפצה - אספקת מוצרי צריכה שוטפת לעסקים ומוסדות. מחירי סיטונאות, משלוח ארצי.">
+  <meta property="og:title" content="אודות וואי מרקט">
+  <meta property="og:description" content="הסיפור של וואי מרקט: מפיץ מתכלים לעסקים ומוסדות מאז 2020. מחסן בגת רימון, אספקה תוך 24–72 שעות בגוש דן ובמרכז, ובעל העסק על הקו.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://ymarket.co.il/images/og-image.jpg">
   <meta property="og:locale" content="he_IL">
@@ -20,8 +20,8 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="אודות | וואי מרקט - נגלר סחר והפצה">
-  <meta name="twitter:description" content="וואי מרקט - מספקים מוצרי צריכה שוטפת למוסדות ועסקים. שירות אישי, מחירי סיטונאות, משלוחים ארציים.">
+  <meta name="twitter:title" content="אודות וואי מרקט">
+  <meta name="twitter:description" content="הסיפור של וואי מרקט: מפיץ מתכלים לעסקים ומוסדות מאז 2020. מחסן בגת רימון, אספקה תוך 24–72 שעות בגוש דן ובמרכז, ובעל העסק על הקו.">
   <link rel="alternate" hreflang="he" href="https://ymarket.co.il/about">
   <link rel="alternate" hreflang="x-default" href="https://ymarket.co.il/about">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,24 +32,36 @@
   <link rel="stylesheet" href="css/style.min.css?v=20260401">
   <link rel="stylesheet" href="/css/new-header.css?v=202604112025">
 
-  <!-- Schema.org - BreadcrumbList -->
+  <!-- Schema.org - Organization -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "וואי מרקט",
-    "alternateName": "Y Market",
+    "alternateName": [
+      "YMARKET",
+      "Y Market"
+    ],
+    "legalName": "נגלר סחר והפצה",
     "url": "https://ymarket.co.il",
     "telephone": "+972-3-7740400",
     "email": "Pm@ymarket.co.il",
     "description": "סחר, שיווק והפצה של מוצרי צריכה שוטפת לעסקים ומוסדות",
+    "founder": {
+      "@type": "Person",
+      "name": "יובל נגלר"
+    },
+    "foundingDate": "2020",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "IL",
       "addressLocality": "גת רימון"
     },
-    "foundingDate": "2020",
-    "sameAs": ["https://www.facebook.com/profile.php?id=100083110428101", "https://www.instagram.com/ymarket.ai"]
+    "areaServed": "IL",
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=100083110428101",
+      "https://www.instagram.com/ymarket.ai"
+    ]
   }
   </script>
 
@@ -512,6 +524,40 @@
       .about-hero { padding: 2.5rem 0 2rem; }
       .value-card, .client-type, .area-card { padding: 1.25rem; border-radius: 16px; }
     }
+    /* ── About v3 additions (30/09/2026) ── */
+    .values-grid--3 { grid-template-columns: repeat(3, 1fr); }
+    .clients-grid--5 { grid-template-columns: repeat(5, 1fr); }
+    .client-type span { overflow-wrap: anywhere; }
+    .areas-grid--5 { grid-template-columns: repeat(5, 1fr); max-width: 1100px; }
+    .about-quote__by { display: block; margin-top: 0.6rem; font-size: 0.9rem; color: #64748B; font-weight: 500; }
+    .about-order { background: #F6F8FB; }
+    .about-order .value-card { display: flex; flex-direction: column; }
+    .about-order .value-card p { flex: 1; }
+    .about-order__link { display: inline-flex; align-items: center; gap: 6px; margin-top: 1rem; font-weight: 700; color: #0A6BFF; text-decoration: none; }
+    .about-order__link:hover { text-decoration: underline; }
+    .about-club { padding: 5rem 0; background: #fff; }
+    .about-club__box { max-width: 820px; margin: 0 auto; padding: 2.5rem; border-radius: 24px; background: linear-gradient(155deg, #0A1628, #112A45 60%, #1B3A5C); color: #fff; }
+    .about-club__label { display: inline-block; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.02em; color: #E8A735; margin-bottom: 0.75rem; }
+    .about-club__box h2 { font-size: clamp(1.5rem, 2.5vw, 2.1rem); font-weight: 900; margin-bottom: 0.75rem; color: #fff; }
+    .about-club__box p { color: rgba(255,255,255,0.85); line-height: 1.8; }
+    .about-club__list { list-style: none; padding: 0; margin: 1.25rem 0 1.75rem; display: grid; gap: 0.6rem; }
+    .about-club__list li { display: flex; gap: 10px; align-items: flex-start; line-height: 1.6; }
+    .about-club__list i { color: #E8A735; margin-top: 0.3rem; }
+    .about-club__btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; border-radius: 14px; font-weight: 700; text-decoration: none; }
+    .about-club__note { margin-top: 1.25rem; font-size: 0.85rem; color: rgba(255,255,255,0.65) !important; }
+    .about-areas__note { text-align: center; margin-top: 1.75rem; font-size: 0.95rem; color: #475569; }
+    .about-areas__note a { color: #0A6BFF; font-weight: 600; }
+    .about-legal { margin-top: 2rem !important; margin-bottom: 0 !important; font-size: 0.85rem !important; color: rgba(255,255,255,0.55) !important; }
+    @media (max-width: 1024px) {
+      .values-grid--3 { grid-template-columns: repeat(2, 1fr); }
+      .clients-grid--5 { grid-template-columns: repeat(3, 1fr); }
+      .areas-grid--5 { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .values-grid--3, .areas-grid--5 { grid-template-columns: 1fr; }
+      .clients-grid--5 { grid-template-columns: repeat(2, 1fr); }
+      .about-club__box { padding: 1.75rem 1.25rem; border-radius: 18px; }
+    }
   </style>
   <link rel="stylesheet" href="/css/site-header.css?v=202608152032">
 </head>
@@ -716,7 +762,7 @@
   <div class="announcement">
     <a href="/register">
       <i class="fas fa-crown"></i>
-      רוכשים בכמויות מסחריות? הצטרפו למועדון הלקוחות וקבלו מחירון סיטונאי ייעודי
+      <strong>CASH MARKET</strong> · מועדון הלקוחות העסקי: מחירון אישי והכסף שחוזר לעסק. הצטרפו
       <i class="fas fa-chevron-left" style="font-size:0.75em;"></i>
     </a>
   </div>
@@ -725,7 +771,7 @@
   <div class="info-bar">
     <div class="container">
       <div class="info-bar__group">
-        <div class="info-bar__item"><i class="fas fa-phone-alt"></i> <a href="tel:037740400">03-7740400</a></div>
+        <div class="info-bar__item"><i class="fas fa-phone-alt"></i> <a href="tel:037740400">03-7740400</a> · <a href="tel:*3497" dir="ltr">*3497</a></div>
         <div class="info-bar__item"><i class="fas fa-envelope"></i> <a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a></div>
         <div class="info-bar__item"><i class="fas fa-clock"></i> <span>א'-ה' 08:00-17:00</span></div>
       </div>
@@ -796,20 +842,20 @@
   <!-- Hero -->
   <section class="about-hero">
     <div class="container">
-      <div class="about-hero__badge"><i class="fas fa-building"></i> מאז 2020</div>
-      <h1>נגלר סחר והפצה</h1>
-      <p class="about-hero__subtitle">אספקה חכמה ומדויקת של מוצרי צריכה שוטפת לעסקים ומוסדות בכל הארץ</p>
+      <div class="about-hero__badge"><i class="fas fa-warehouse"></i> מחסן בגת רימון · מאז 2020</div>
+      <h1>וואי מרקט. כל המתכלים לעסק, ממפיץ אחד.</h1>
+      <p class="about-hero__subtitle">ניקיון, נייר, חד פעמי ואריזות מזון, מזון יבש ומוצרים למשרד. לעסקים ומוסדות בכל גודל, ישירות מהמפיץ.</p>
     </div>
   </section>
 
-  <!-- Stats -->
+  <!-- Key facts -->
   <section class="about-stats-section">
     <div class="container">
       <div class="about-stats-grid">
         <div class="about-stat">
-          <div class="about-stat__icon"><i class="fas fa-users"></i></div>
-          <div class="about-stat__number" data-count="200" data-suffix="+">200+</div>
-          <div class="about-stat__label">לקוחות פעילים</div>
+          <div class="about-stat__icon"><i class="fas fa-flag"></i></div>
+          <div class="about-stat__number">2020</div>
+          <div class="about-stat__label">שנת ההקמה</div>
         </div>
         <div class="about-stat">
           <div class="about-stat__icon"><i class="fas fa-boxes-stacked"></i></div>
@@ -817,14 +863,14 @@
           <div class="about-stat__label">מוצרים בקטלוג</div>
         </div>
         <div class="about-stat">
-          <div class="about-stat__icon"><i class="fas fa-layer-group"></i></div>
-          <div class="about-stat__number" data-count="14">14</div>
-          <div class="about-stat__label">קטגוריות מוצרים</div>
+          <div class="about-stat__icon"><i class="fas fa-truck-fast"></i></div>
+          <div class="about-stat__number">24–72</div>
+          <div class="about-stat__label">שעות לאספקה בגוש דן ובמרכז</div>
         </div>
         <div class="about-stat">
-          <div class="about-stat__icon"><i class="fas fa-truck-fast"></i></div>
-          <div class="about-stat__number">24-72</div>
-          <div class="about-stat__label">שעות עד המשלוח</div>
+          <div class="about-stat__icon"><i class="fas fa-cart-shopping"></i></div>
+          <div class="about-stat__number">200 ₪</div>
+          <div class="about-stat__label">מינימום הזמנה + מע״מ</div>
         </div>
       </div>
     </div>
@@ -835,18 +881,19 @@
     <div class="container">
       <div class="about-story__content">
         <div class="about-story__label"><i class="fas fa-bookmark"></i> הסיפור שלנו</div>
-        <h2>מה שהתחיל כרעיון פשוט, הפך למערכת הפצה ארצית</h2>
+        <h2>התחלנו ממסכות. נשארנו בגלל האנשים.</h2>
         <p>
-          וואי מרקט הוקמה בשנת 2020 על ידי יובל נגלר מתוך הבנה שעסקים ומוסדות בישראל זקוקים לספק אמין, זמין ומקצועי למוצרי צריכה שוטפת. הרעיון היה פשוט: לספק שירות אישי ומחירי סיטונאות לכל עסק, בכל גודל.
+          וואי מרקט נולדה ב-2020, בימי הקורונה. עסקים חיפשו מסכות, ויובל נגלר התחיל לספק אותן ישירות לעסקים.
         </p>
         <p>
-          אנחנו מתמחים באספקת חומרי ניקוי מוסדיים, מוצרי נייר, כלים חד פעמיים, אריזות מזון ו-Take Away, כפפות ומיגון אישי, שקיות אשפה תעשייתיות, ציוד ניקיון, מוצרי קפה ושתייה למשרד, וציוד משרדי — כל מה שעסק צורך על בסיס שוטף, במקום אחד.
+          הלקוחות חזרו וביקשו עוד. קודם כפפות, אחר כך חומרי ניקוי, אחריהם כלי ניקיון ומוצרי נייר. צעד אחרי צעד נבנה מגוון מלא של מתכלים לעסקים ומוסדות: ניקיון, נייר, חד פעמי ואריזות מזון, מזון יבש, ומוצרים למשרד ולפינת הקפה.
         </p>
         <div class="about-story__highlight">
-          <p>שירות אישי ישירות מול הבעלים, לא מוקד טלפוני. כל לקוח מקבל מענה אישי, הצעת מחיר מותאמת ותנאים שמתאימים בדיוק לעסק שלו.</p>
+          <p>„עסקים עושים עם אנשים. מי שקונה אצלי בקביעות צריך להרוויח מזה: במחיר, בשירות ובכסף שחוזר לעסק שלו.”</p>
+          <span class="about-quote__by">יובל נגלר, מייסד ובעלים</span>
         </div>
         <p>
-          מחירי סיטונאות תחרותיים בזכות עבודה ישירה מול יצרנים ויבואנים, תנאי תשלום גמישים — ללקוחות קבועים עד שוטף +60, מינימום הזמנה 200 ₪, הזמנה פשוטה דרך וואטסאפ, ומשלוח תוך 24–72 שעות בגוש דן ובמרכז (עד 5 ימי עסקים בשאר הארץ).
+          זה העיקרון שמנחה אותנו גם היום. אנחנו מפיץ עם מחסן בגת רימון ומאות מוצרים במלאי, ועדיין, כשאתם פונים אלינו, עונה לכם אדם.
         </p>
       </div>
     </div>
@@ -856,39 +903,24 @@
   <section class="about-values-section">
     <div class="container">
       <div class="section-header">
-        <h2>למה בוחרים בנו</h2>
-        <p>ההתחייבות שלנו לכל לקוח</p>
+        <h2>שלושה דברים שאנחנו עומדים מאחוריהם</h2>
+        <p>מהירות, קווים נקיים, שירותיות. כך זה נראה בפועל.</p>
       </div>
-      <div class="values-grid">
+      <div class="values-grid values-grid--3">
+        <div class="value-card">
+          <div class="value-card__icon"><i class="fas fa-bolt"></i></div>
+          <h3>מהירות</h3>
+          <p>הזמנה יוצאת מהמחסן בגת רימון ומגיעה תוך 24–72 שעות בגוש דן ובמרכז, ועד 5 ימי עסקים בשאר הארץ. לקוחות רשומים מזמינים שוב את ההזמנה הקודמת בקליק אחד מהאפליקציה.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon"><i class="fas fa-grip-lines"></i></div>
+          <h3>קווים נקיים</h3>
+          <p>מחירון אחד שנקבע לעסק שלכם. חשבונית ברורה לכל הזמנה. מינימום, דמי משלוח ותנאי תשלום כתובים מראש, ואין הפתעות בחשבונית.</p>
+        </div>
         <div class="value-card">
           <div class="value-card__icon"><i class="fas fa-handshake"></i></div>
-          <h3>שירות אישי</h3>
-          <p>מענה אישי ישירות מול הבעלים. הצעת מחיר מותאמת ותנאים שמתאימים בדיוק לעסק שלכם.</p>
-        </div>
-        <div class="value-card">
-          <div class="value-card__icon"><i class="fas fa-truck-fast"></i></div>
-          <h3>משלוח ארצי מהיר</h3>
-          <p>רשת הפצה שמכסה את כל הארץ — מהצפון ועד הדרום. הזמנה היום — אצלכם תוך 24–72 שעות בגוש דן ובמרכז, עד 5 ימי עסקים בשאר הארץ.</p>
-        </div>
-        <div class="value-card">
-          <div class="value-card__icon"><i class="fas fa-tags"></i></div>
-          <h3>מחירי סיטונאות</h3>
-          <p>עבודה ישירה מול יצרנים ויבואנים. מחירים תחרותיים שחוסכים לעסק שלכם אלפי שקלים בשנה.</p>
-        </div>
-        <div class="value-card">
-          <div class="value-card__icon"><i class="fas fa-boxes-stacked"></i></div>
-          <h3>מגוון רחב</h3>
-          <p>מעל 825 מוצרים ב-14 קטגוריות — מחומרי ניקוי ומוצרי נייר, דרך כלים חד פעמיים, ועד ציוד משרדי.</p>
-        </div>
-        <div class="value-card">
-          <div class="value-card__icon"><i class="fab fa-whatsapp"></i></div>
-          <h3>הזמנה בוואטסאפ</h3>
-          <p>שולחים הודעה, מקבלים הצעת מחיר, מאשרים — וההזמנה בדרך. פשוט ומהיר.</p>
-        </div>
-        <div class="value-card">
-          <div class="value-card__icon"><i class="fas fa-file-invoice-dollar"></i></div>
-          <h3>תנאי תשלום גמישים</h3>
-          <p>עד שוטף +60 ללקוחות קבועים, העברה בנקאית, צ'קים או אשראי. מתאימים את תנאי התשלום לעסק שלכם.</p>
+          <h3>שירותיות</h3>
+          <p>בעל העסק עונה בעצמו, בוואטסאפ ובטלפון. פנייה בימי עבודה מקבלת מענה באותו יום. אתם מדברים עם מי שמחליט, לא עם מוקד.</p>
         </div>
       </div>
     </div>
@@ -898,90 +930,150 @@
   <section class="about-clients">
     <div class="container">
       <div class="section-header">
-        <h2>הלקוחות שלנו</h2>
-        <p>משרתים מגוון רחב של עסקים ומוסדות בכל הארץ</p>
+        <h2>למי אנחנו מספקים</h2>
+        <p>עסקים ומוסדות בכל גודל, בכל הארץ</p>
       </div>
-      <div class="clients-grid">
+      <div class="clients-grid clients-grid--5">
         <div class="client-type">
           <div class="client-type__icon"><i class="fas fa-broom"></i></div>
           <span>חברות ניקיון ואחזקה</span>
+        </div>
+        <div class="client-type">
+          <div class="client-type__icon"><i class="fas fa-utensils"></i></div>
+          <span>מסעדות ושירותי מזון</span>
+        </div>
+        <div class="client-type">
+          <div class="client-type__icon"><i class="fas fa-drumstick-bite"></i></div>
+          <span>אטליזים</span>
         </div>
         <div class="client-type">
           <div class="client-type__icon"><i class="fas fa-store"></i></div>
           <span>סופרמרקטים ומינימרקטים</span>
         </div>
         <div class="client-type">
-          <div class="client-type__icon"><i class="fas fa-truck-loading"></i></div>
-          <span>מפיצים וסיטונאים</span>
-        </div>
-        <div class="client-type">
-          <div class="client-type__icon"><i class="fas fa-utensils"></i></div>
-          <span>מסעדות ובתי קפה</span>
+          <div class="client-type__icon"><i class="fas fa-briefcase"></i></div>
+          <span>משרדים</span>
         </div>
         <div class="client-type">
           <div class="client-type__icon"><i class="fas fa-dumbbell"></i></div>
-          <span>מרכזי ספורט ופנאי</span>
+          <span>מרכזי ספורט וקהילה</span>
         </div>
         <div class="client-type">
-          <div class="client-type__icon"><i class="fas fa-hospital"></i></div>
-          <span>מוסדות רפואיים</span>
+          <div class="client-type__icon"><i class="fas fa-stethoscope"></i></div>
+          <span>מרפאות</span>
         </div>
         <div class="client-type">
           <div class="client-type__icon"><i class="fas fa-industry"></i></div>
-          <span>מפעלי תעשייה</span>
+          <span>תעשייה ולוגיסטיקה</span>
         </div>
         <div class="client-type">
           <div class="client-type__icon"><i class="fas fa-landmark"></i></div>
-          <span>גופים ציבוריים ומוסדות</span>
+          <span>גופים ציבוריים</span>
         </div>
         <div class="client-type">
-          <div class="client-type__icon"><i class="fas fa-drumstick-bite"></i></div>
-          <span>אטליזים וחנויות מזון</span>
+          <div class="client-type__icon"><i class="fas fa-truck-loading"></i></div>
+          <span>סיטונאים ומפיצים</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Service Areas -->
+  <!-- How to order -->
+  <section class="about-values-section about-order">
+    <div class="container">
+      <div class="section-header">
+        <h2>שלוש דרכים להזמין</h2>
+        <p>בוחרים את הדרך שנוחה לכם. המחירים והתנאים זהים.</p>
+      </div>
+      <div class="values-grid values-grid--3">
+        <div class="value-card">
+          <div class="value-card__icon"><i class="fas fa-cart-shopping"></i></div>
+          <h3>באתר</h3>
+          <p>בוחרים מהקטלוג, מוסיפים לסל ומשלמים בכרטיס בתשלום מאובטח (PayMe). המחירים באתר לפני מע״מ.</p>
+          <a href="/catalog" class="about-order__link">לקטלוג <i class="fas fa-arrow-left"></i></a>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon"><i class="fas fa-mobile-screen"></i></div>
+          <h3>באפליקציה</h3>
+          <p>ללקוחות רשומים: המחירון האישי, הזמנה חוזרת בקליק, מעקב, חשבוניות ותשלום, וכל הסניפים בחשבון אחד. בלי חנות אפליקציות: פותחים בטלפון ומוסיפים למסך הבית.</p>
+          <a href="https://app.ymarket.co.il/portal" class="about-order__link" target="_blank" rel="noopener">כניסה לאפליקציה <i class="fas fa-arrow-left"></i></a>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon"><i class="fab fa-whatsapp"></i></div>
+          <h3>בוואטסאפ</h3>
+          <p>שולחים רשימת מוצרים וכמויות ואת עיר האספקה, ומקבלים הצעת מחיר מותאמת. מאשרים, וההזמנה יוצאת לדרך.</p>
+          <a href="https://wa.me/972549922492?text=היי, אשמח להצעת מחיר לעסק שלי" class="about-order__link" target="_blank" rel="noopener">054-9922492 <i class="fas fa-arrow-left"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASH MARKET -->
+  <section class="about-club">
+    <div class="container">
+      <div class="about-club__box">
+        <div class="about-club__label">CASH MARKET · מועדון הלקוחות העסקי</div>
+        <h2>הכסף שחוזר לעסק שלכם.</h2>
+        <p>מי שקונה אצלנו בקביעות צריך להרוויח מזה. בשביל זה יש CASH MARKET:</p>
+        <ul class="about-club__list">
+          <li><i class="fas fa-check"></i> מחירון אישי שנקבע לעסק שלכם</li>
+          <li><i class="fas fa-check"></i> CASH BACK על מוצרים מסומנים בהזמנות מהאפליקציה</li>
+          <li><i class="fas fa-check"></i> ה-CASH BACK נפתח לשימוש אחרי תשלום החשבונית, ומוריד את המחיר בקנייה הבאה</li>
+          <li><i class="fas fa-check"></i> ללקוחות קבועים: תנאי תשלום עד שוטף +60, לפי היקף הפעילות ובכפוף לאישור אשראי</li>
+        </ul>
+        <a href="/register" class="btn btn--wa about-club__btn"><i class="fas fa-user-plus"></i> הצטרפות ל-CASH MARKET</a>
+        <p class="about-club__note">ה-CASH BACK משמש לקניות בוואי מרקט בלבד, בתוקף 12 חודשים מיום הצבירה, ואינו ניתן להמרה למזומן.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Delivery zones -->
   <section class="about-areas">
     <div class="container">
       <div class="section-header">
-        <h2>אזורי שירות</h2>
+        <h2>מגת רימון לכל הארץ</h2>
       </div>
-      <div class="areas-grid">
+      <div class="areas-grid areas-grid--5">
         <div class="area-card">
           <div class="area-card__icon"><i class="fas fa-city"></i></div>
           <h3>גוש דן</h3>
-          <p>תל אביב, רמת גן, פתח תקווה, ראשון לציון, חולון, בני ברק</p>
+          <p><strong>משלוח חינם</strong><br>מחוז תל אביב ועד 6 ק״מ מהמחסן · 24–72 שעות</p>
         </div>
         <div class="area-card">
-          <div class="area-card__icon"><i class="fas fa-sun"></i></div>
-          <h3>השרון והשפלה</h3>
-          <p>נתניה, הרצליה, כפר סבא, רחובות, אשדוד</p>
+          <div class="area-card__icon"><i class="fas fa-map-pin"></i></div>
+          <h3>מרכז</h3>
+          <p><strong>60 ₪</strong><br>מחוז המרכז · 24–72 שעות</p>
         </div>
         <div class="area-card">
           <div class="area-card__icon"><i class="fas fa-mountain"></i></div>
-          <h3>ירושלים והסביבה</h3>
-          <p>ירושלים, בית שמש, מודיעין</p>
+          <h3>ירושלים</h3>
+          <p><strong>70 ₪</strong><br>מחוז ירושלים · עד 5 ימי עסקים</p>
         </div>
         <div class="area-card">
-          <div class="area-card__icon"><i class="fas fa-map-marked-alt"></i></div>
-          <h3>צפון ודרום</h3>
-          <p>חיפה, באר שבע, אילת — משלוחים ארציים</p>
+          <div class="area-card__icon"><i class="fas fa-tree"></i></div>
+          <h3>צפון וחיפה</h3>
+          <p><strong>90 ₪</strong><br>מחוזות הצפון וחיפה · עד 5 ימי עסקים</p>
+        </div>
+        <div class="area-card">
+          <div class="area-card__icon"><i class="fas fa-sun"></i></div>
+          <h3>דרום</h3>
+          <p><strong>120 ₪</strong><br>מחוז הדרום · עד 5 ימי עסקים</p>
         </div>
       </div>
+      <p class="about-areas__note">דמי המשלוח לפני מע״מ. משלוח חינם בהזמנה מעל 2,000 ₪ לפני מע״מ. מינימום הזמנה 200 ₪ + מע״מ. <a href="/legal/shipping">מדיניות המשלוחים המלאה</a></p>
     </div>
   </section>
 
   <!-- CTA -->
   <section class="about-cta">
     <div class="container">
-      <h2>רוצים להתחיל?</h2>
-      <p>פנו אלינו היום ונתאים לכם הצעת מחיר מותאמת לעסק שלכם</p>
+      <h2>בואו נתחיל</h2>
+      <p>פותחים חשבון עסקי בכמה דקות, או שולחים לנו רשימה בוואטסאפ.</p>
       <div class="about-cta__buttons">
-        <a href="https://wa.me/972549922492?text=היי, אשמח לשמוע על מוצרים ומחירים לעסק שלי" class="btn btn--wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> שלחו הודעה בוואטסאפ</a>
-        <a href="/contact" class="btn btn--light"><i class="fas fa-envelope"></i> צרו קשר</a>
+        <a href="/register" class="btn btn--light"><i class="fas fa-user-plus"></i> פתיחת חשבון עסקי</a>
+        <a href="https://wa.me/972549922492?text=היי, אשמח לשמוע על מוצרים ומחירים לעסק שלי" class="btn btn--wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> כתבו לנו בוואטסאפ</a>
       </div>
+      <p class="about-legal">וואי מרקט — נגלר סחר והפצה</p>
     </div>
   </section>
 
@@ -992,9 +1084,9 @@
                                                                                                                                                                                                                                                                                                                                                                                       <footer class="footer">
     <div class="container">
       <div class="footer__grid">
-        <div class="footer__brand">
+        <div class="footer__brand" style="display:flex;flex-direction:column;align-items:flex-start;gap:14px;">
           <img src="/images/logo/logo-white.png" alt="וואי מרקט" width="112" height="60">
-          <p>נגלר סחר והפצה — סחר, שיווק והפצה של מוצרי צריכה שוטפת לעסקים ומוסדות בכל רחבי הארץ.</p>
+          <p style="margin:0;max-width:300px;">כל המתכלים לעסק, ישירות מהמפיץ: ניקיון, נייר, חד פעמי, אריזות ומזון יבש. מחסן בגת רימון, משלוח לכל הארץ.</p>
           <div class="footer__social">
             <a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
             <a href="https://www.facebook.com/profile.php?id=100083110428101" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -1027,6 +1119,8 @@
             <a href="/faq">שאלות ותשובות</a>
             <a href="/contact">צרו קשר</a>
             <a href="/tracking">מעקב משלוחים</a>
+            <a href="/register">CASH MARKET · הרשמה</a>
+            <a href="https://app.ymarket.co.il/portal">כניסה ללקוחות</a>
           </div>
         </div>
 
@@ -1034,11 +1128,11 @@
           <h4>צרו קשר</h4>
           <div class="footer__contact-item">
             <i class="fas fa-phone-alt"></i>
-            <a href="tel:037740400">03-7740400</a>
+            <a href="tel:037740400">03-7740400</a> · <a href="tel:*3497" dir="ltr">*3497</a>
           </div>
           <div class="footer__contact-item">
             <i class="fab fa-whatsapp"></i>
-            <a href="https://wa.me/972549922492" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="https://wa.me/972549922492" target="_blank" rel="noopener">054-9922492</a>
           </div>
           <div class="footer__contact-item">
             <i class="fas fa-envelope"></i>

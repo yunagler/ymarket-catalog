@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>צרו קשר | וואי מרקט - אספקה למוסדות ועסקים</title>
-  <meta name="description" content="צרו קשר עם וואי מרקט - טלפון 03-7740400, WhatsApp, מייל. אספקת מוצרי צריכה שוטפת לעסקים ומוסדות.">
+  <title>צרו קשר | וואי מרקט — וואטסאפ, טלפון ומייל</title>
+  <meta name="description" content="צרו קשר עם וואי מרקט: וואטסאפ 054-9922492, טלפון 03-7740400, חיוג מקוצר *3497, מייל Pm@ymarket.co.il. א׳–ה׳ 08:00–17:00. מחסן בגת רימון, משלוח לכל הארץ.">
   <link rel="canonical" href="https://ymarket.co.il/contact">
   <link rel="icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta name="theme-color" content="#1B3A5C">
   <meta property="og:title" content="צרו קשר | וואי מרקט">
-  <meta property="og:description" content="פנו אלינו לקבלת הצעת מחיר - טלפון, WhatsApp או מייל.">
+  <meta property="og:description" content="וואטסאפ, טלפון, *3497 או מייל. בימי עבודה עונים באותו יום. מחסן בגת רימון, משלוח לכל הארץ.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://ymarket.co.il/images/og-image.jpg">
   <meta property="og:locale" content="he_IL">
@@ -20,7 +20,7 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="צרו קשר | וואי מרקט">
-  <meta name="twitter:description" content="צרו קשר עם וואי מרקט - טלפון, וואטסאפ, אימייל. אספקה חכמה למוסדות ועסקים.">
+  <meta name="twitter:description" content="וואטסאפ, טלפון, *3497 או מייל. בימי עבודה עונים באותו יום. מחסן בגת רימון, משלוח לכל הארץ.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -32,16 +32,74 @@
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "וואי מרקט - נגלר סחר והפצה",
+    "name": "וואי מרקט",
+    "legalName": "נגלר סחר והפצה",
+    "url": "https://ymarket.co.il",
     "telephone": "+972-3-7740400",
     "email": "Pm@ymarket.co.il",
-    "url": "https://ymarket.co.il",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IL",
+      "addressLocality": "גת רימון"
+    },
     "openingHours": "Su-Th 08:00-17:00",
-    "areaServed": "IL"
+    "areaServed": "IL",
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+972-3-7740400",
+        "availableLanguage": "he"
+      },
+      {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "telephone": "+972-54-992-2492",
+        "availableLanguage": "he"
+      }
+    ]
   }
   </script>
   <link rel="stylesheet" href="/css/new-header.css?v=202604112025">
   <link rel="stylesheet" href="/css/site-header.css?v=202608152032">
+  <style>
+    /* ── Contact page v3 (30/09/2026) ── */
+    .cx-title { font-size: var(--fs-2xl); margin-bottom: var(--space-sm); text-align: center; }
+    .cx-lead { text-align: center; color: var(--color-text-secondary); margin: 0 auto var(--space-2xl); max-width: 640px; line-height: 1.7; }
+    .cx-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg); }
+    .cx-card { display: flex; flex-direction: column; gap: 4px; padding: var(--space-lg); background: var(--color-white, #fff); border: 1px solid var(--color-border-light, #e5e9f0); border-radius: var(--radius-lg, 16px); box-shadow: var(--shadow-sm); color: var(--color-text); text-decoration: none; transition: transform .2s, box-shadow .2s, border-color .2s; }
+    .cx-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--color-accent); color: var(--color-text); }
+    .cx-card__icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: var(--color-bg-alt, #f1f5f9); color: var(--color-primary); font-size: 1.15rem; margin-bottom: var(--space-xs); }
+    .cx-card__title { font-weight: var(--fw-bold); font-size: var(--fs-md); }
+    .cx-card__value { font-weight: var(--fw-semibold); color: var(--color-primary-dark); text-align: right; }
+    .cx-card__text { font-size: var(--fs-sm); color: var(--color-text-secondary); line-height: 1.6; flex: 1; }
+    .cx-card__cta { margin-top: var(--space-sm); font-weight: var(--fw-semibold); color: var(--color-accent); font-size: var(--fs-sm); }
+    .cx-card--wa { grid-column: span 1; border-color: var(--color-whatsapp); background: linear-gradient(160deg, rgba(37,211,102,.08), transparent 70%); }
+    .cx-card--wa .cx-card__icon { background: var(--color-whatsapp); color: #fff; }
+    .cx-card--wa .cx-card__cta { color: #1a7f37; }
+    .cx-info { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); margin-top: var(--space-xl); }
+    .cx-info__item { display: flex; gap: var(--space-md); align-items: flex-start; padding: var(--space-lg); background: var(--color-bg); border-radius: var(--radius-lg, 16px); }
+    .cx-info__item > i { color: var(--color-primary); font-size: 1.3rem; margin-top: 4px; }
+    .cx-info__item h2 { font-size: var(--fs-md); margin: 0 0 4px; }
+    .cx-info__item p { margin: 0; color: var(--color-text-secondary); }
+    .cx-quote h2 { font-size: var(--fs-lg); margin-bottom: var(--space-sm); }
+    .cx-quote > p { color: var(--color-text-secondary); margin-bottom: var(--space-sm); }
+    .cx-quote__list { padding-right: var(--space-lg); margin-bottom: var(--space-lg); line-height: 1.8; }
+    .cx-quote__list li { margin-bottom: 4px; }
+    .cx-zones__title { font-size: var(--fs-md); margin: var(--space-xl) 0 var(--space-sm); }
+    .cx-zones { list-style: none; padding: 0; margin: 0; border: 1px solid var(--color-border-light, #e5e9f0); border-radius: var(--radius-md, 12px); overflow: hidden; }
+    .cx-zones li { display: flex; justify-content: space-between; gap: var(--space-md); padding: 10px 14px; font-size: var(--fs-sm); }
+    .cx-zones li + li { border-top: 1px solid var(--color-border-light, #e5e9f0); }
+    .cx-zones li span:first-child { font-weight: var(--fw-semibold); }
+    .cx-zones__note { font-size: var(--fs-sm); color: var(--color-text-secondary); margin-top: var(--space-sm); }
+    .cx-zones__note a { color: var(--color-accent); font-weight: var(--fw-semibold); }
+    .cx-form-note { color: var(--color-text-secondary); font-size: var(--fs-sm); margin-bottom: var(--space-lg); }
+    @media (max-width: 900px) { .cx-cards { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) {
+      .cx-cards, .cx-info { grid-template-columns: 1fr; }
+      .cx-zones li { flex-direction: column; gap: 2px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -244,7 +302,7 @@
   <div class="announcement">
     <a href="/register">
       <i class="fas fa-crown"></i>
-      רוכשים בכמויות מסחריות? הצטרפו למועדון הלקוחות וקבלו מחירון סיטונאי ייעודי
+      <strong>CASH MARKET</strong> · מועדון הלקוחות העסקי: מחירון אישי והכסף שחוזר לעסק. הצטרפו
       <i class="fas fa-chevron-left" style="font-size:0.75em;"></i>
     </a>
   </div>
@@ -253,7 +311,7 @@
   <div class="info-bar">
     <div class="container">
       <div class="info-bar__group">
-        <div class="info-bar__item"><i class="fas fa-phone-alt"></i> <a href="tel:037740400">03-7740400</a></div>
+        <div class="info-bar__item"><i class="fas fa-phone-alt"></i> <a href="tel:037740400">03-7740400</a> · <a href="tel:*3497" dir="ltr">*3497</a></div>
         <div class="info-bar__item"><i class="fas fa-envelope"></i> <a href="mailto:Pm@ymarket.co.il">Pm@ymarket.co.il</a></div>
         <div class="info-bar__item"><i class="fas fa-clock"></i> <span>א'-ה' 08:00-17:00</span></div>
       </div>
@@ -321,54 +379,102 @@
   <main id="main-content">
   <section class="section">
     <div class="container">
-      <h1 style="font-size: var(--fs-2xl); margin-bottom: var(--space-sm); text-align: center;">צרו קשר</h1>
-      <p style="text-align: center; color: var(--color-text-secondary); margin-bottom: var(--space-2xl); max-width: 600px; margin-left: auto; margin-right: auto;">
-        נשמח לעזור לכם! פנו אלינו בכל דרך שנוחה לכם — טלפון, וואטסאפ, מייל או טופס.
-      </p>
+      <h1 class="cx-title">צרו קשר</h1>
+      <p class="cx-lead">הדרך המהירה אלינו היא וואטסאפ. אפשר גם לחייג, לכתוב במייל או להיכנס ישר לאפליקציה. בימי עבודה עונים באותו יום.</p>
+
+      <!-- Contact cards -->
+      <div class="cx-cards">
+        <a class="cx-card cx-card--wa" href="https://wa.me/972549922492?text=היי, אשמח לשמוע על מוצרים ומחירים" target="_blank" rel="noopener">
+          <span class="cx-card__icon"><i class="fab fa-whatsapp"></i></span>
+          <span class="cx-card__title">וואטסאפ</span>
+          <span class="cx-card__value" dir="ltr">054-9922492</span>
+          <span class="cx-card__text">שלחו רשימת מוצרים, תמונה של מוצר או שאלה. כאן גם מקבלים הצעת מחיר.</span>
+          <span class="cx-card__cta">שלחו הודעה <i class="fas fa-arrow-left"></i></span>
+        </a>
+        <a class="cx-card" href="tel:037740400">
+          <span class="cx-card__icon"><i class="fas fa-phone-alt"></i></span>
+          <span class="cx-card__title">טלפון</span>
+          <span class="cx-card__value" dir="ltr">03-7740400</span>
+          <span class="cx-card__text">א׳–ה׳ 08:00–17:00. בעל העסק על הקו.</span>
+          <span class="cx-card__cta">חייגו <i class="fas fa-arrow-left"></i></span>
+        </a>
+        <a class="cx-card" href="tel:*3497">
+          <span class="cx-card__icon"><i class="fas fa-hashtag"></i></span>
+          <span class="cx-card__title">חיוג מקוצר</span>
+          <span class="cx-card__value" dir="ltr">*3497</span>
+          <span class="cx-card__text">מספר קצר שקל לזכור. אותו מענה, אותן שעות.</span>
+          <span class="cx-card__cta">חייגו <i class="fas fa-arrow-left"></i></span>
+        </a>
+        <a class="cx-card" href="mailto:Pm@ymarket.co.il">
+          <span class="cx-card__icon"><i class="fas fa-envelope"></i></span>
+          <span class="cx-card__title">מייל</span>
+          <span class="cx-card__value" dir="ltr">Pm@ymarket.co.il</span>
+          <span class="cx-card__text">לבקשות רכש מסודרות, מסמכים ורשימות ארוכות.</span>
+          <span class="cx-card__cta">כתבו לנו <i class="fas fa-arrow-left"></i></span>
+        </a>
+        <a class="cx-card" href="https://app.ymarket.co.il/portal" target="_blank" rel="noopener">
+          <span class="cx-card__icon"><i class="fas fa-mobile-screen"></i></span>
+          <span class="cx-card__title">כניסה ללקוחות</span>
+          <span class="cx-card__value">אפליקציית ההזמנות</span>
+          <span class="cx-card__text">המחירון האישי, הזמנה חוזרת בקליק, מעקב, חשבוניות ותשלום.</span>
+          <span class="cx-card__cta">לאפליקציה <i class="fas fa-arrow-left"></i></span>
+        </a>
+        <a class="cx-card" href="/register">
+          <span class="cx-card__icon"><i class="fas fa-user-plus"></i></span>
+          <span class="cx-card__title">פתיחת חשבון עסקי</span>
+          <span class="cx-card__value">CASH MARKET</span>
+          <span class="cx-card__text">נרשמים, מקבלים מחירון אישי ו-CASH BACK על מוצרים מסומנים בהזמנות מהאפליקציה.</span>
+          <span class="cx-card__cta">להרשמה <i class="fas fa-arrow-left"></i></span>
+        </a>
+      </div>
+
+      <!-- Hours + warehouse -->
+      <div class="cx-info">
+        <div class="cx-info__item">
+          <i class="fas fa-clock"></i>
+          <div>
+            <h2>שעות פעילות</h2>
+            <p>א׳–ה׳ 08:00–17:00. שישי, שבת וחג: סגור.</p>
+          </div>
+        </div>
+        <div class="cx-info__item">
+          <i class="fas fa-warehouse"></i>
+          <div>
+            <h2>המחסן בגת רימון</h2>
+            <p>כל ההזמנות נארזות במחסן שלנו בגת רימון ויוצאות משם ישירות אליכם.</p>
+          </div>
+        </div>
+      </div>
 
       <div class="contact-grid">
-        <!-- Contact Info -->
-        <div class="contact-info">
-          <div class="contact-info__item">
-            <div class="contact-info__icon"><i class="fab fa-whatsapp"></i></div>
-            <div>
-              <h3>וואטסאפ</h3>
-              <p>הדרך המהירה ביותר לקבל מענה</p>
-              <a href="https://wa.me/972549922492?text=היי, אשמח לשמוע על מוצרים ומחירים" class="btn btn--whatsapp btn--sm" target="_blank" rel="noopener" style="margin-top: var(--space-sm);"><i class="fab fa-whatsapp"></i> שלחו הודעה</a>
-            </div>
-          </div>
+        <!-- Quick quote checklist -->
+        <div class="cx-quote">
+          <h2>מה לשלוח לנו להצעת מחיר מהירה</h2>
+          <p>ככל שהרשימה מלאה יותר, ההצעה מדויקת יותר:</p>
+          <ol class="cx-quote__list">
+            <li><strong>שם העסק ועיר האספקה</strong> — כדי לחשב את אזור המשלוח.</li>
+            <li><strong>מוצרים וכמויות</strong> — אפשר גם צילום של הזמנה קודמת או תמונה של המוצר.</li>
+            <li><strong>כל כמה זמן אתם מזמינים</strong> — פעם אחת, כל שבוע או כל חודש.</li>
+            <li><strong>כמה סניפים או אתרים</strong> — אם יש יותר מאחד.</li>
+            <li><strong>איש קשר וטלפון</strong> — למי לחזור עם ההצעה.</li>
+          </ol>
+          <a href="https://wa.me/972549922492?text=היי, אשמח להצעת מחיר לעסק שלי" class="btn btn--whatsapp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> שלחו רשימה בוואטסאפ</a>
 
-          <div class="contact-info__item">
-            <div class="contact-info__icon"><i class="fas fa-phone-alt"></i></div>
-            <div>
-              <h3>טלפון</h3>
-              <p><a href="tel:037740400" style="color: var(--color-text); font-weight: var(--fw-semibold);">03-7740400</a></p>
-              <p style="font-size: var(--fs-sm); color: var(--color-text-light);">א'-ה' 08:00-17:00</p>
-            </div>
-          </div>
-
-          <div class="contact-info__item">
-            <div class="contact-info__icon"><i class="fas fa-envelope"></i></div>
-            <div>
-              <h3>מייל</h3>
-              <p><a href="mailto:Pm@ymarket.co.il" style="color: var(--color-text);">Pm@ymarket.co.il</a></p>
-              <p style="font-size: var(--fs-sm); color: var(--color-text-light);">מענה תוך יום עסקים</p>
-            </div>
-          </div>
-
-          <div class="contact-info__item">
-            <div class="contact-info__icon"><i class="fas fa-clock"></i></div>
-            <div>
-              <h3>שעות פעילות</h3>
-              <p>ימים א'-ה': 08:00-17:00</p>
-              <p style="font-size: var(--fs-sm); color: var(--color-text-light);">שישי, שבת וחג — סגור</p>
-            </div>
-          </div>
+          <h3 class="cx-zones__title">משלוח מגת רימון</h3>
+          <ul class="cx-zones">
+            <li><span>גוש דן</span><span>חינם · 24–72 שעות</span></li>
+            <li><span>מרכז</span><span>60 ₪ · 24–72 שעות</span></li>
+            <li><span>ירושלים</span><span>70 ₪ · עד 5 ימי עסקים</span></li>
+            <li><span>צפון וחיפה</span><span>90 ₪ · עד 5 ימי עסקים</span></li>
+            <li><span>דרום</span><span>120 ₪ · עד 5 ימי עסקים</span></li>
+          </ul>
+          <p class="cx-zones__note">דמי משלוח לפני מע״מ. חינם בהזמנה מעל 2,000 ₪ לפני מע״מ. מינימום הזמנה 200 ₪ + מע״מ. <a href="/legal/shipping">פירוט האזורים</a></p>
         </div>
 
         <!-- Contact Form -->
         <div class="contact-form">
-          <h2 style="font-size: var(--fs-lg); margin-bottom: var(--space-lg);">השאירו פרטים</h2>
+          <h2 style="font-size: var(--fs-lg); margin-bottom: var(--space-sm);">השאירו פרטים ונחזור אליכם</h2>
+          <p class="cx-form-note">בימי עבודה חוזרים באותו יום.</p>
           <form>
             <div class="form-group">
               <label class="form-label" for="contact-name">שם מלא *</label>
@@ -376,11 +482,11 @@
             </div>
             <div class="form-group">
               <label class="form-label" for="contact-phone">טלפון *</label>
-              <input type="tel" class="form-input" id="contact-phone" name="phone" placeholder="03-7740400" required>
+              <input type="tel" class="form-input" id="contact-phone" name="phone" placeholder="050-0000000" required>
             </div>
             <div class="form-group">
               <label class="form-label" for="contact-email">מייל</label>
-              <input type="email" class="form-input" id="contact-email" name="email" placeholder="Pm@ymarket.co.il">
+              <input type="email" class="form-input" id="contact-email" name="email" placeholder="name@company.co.il">
             </div>
             <div class="form-group">
               <label class="form-label" for="contact-business">שם העסק</label>
@@ -404,9 +510,9 @@
                                                                                                                                                                                                                                                                                                                                                                                       <footer class="footer">
     <div class="container">
       <div class="footer__grid">
-        <div class="footer__brand">
+        <div class="footer__brand" style="display:flex;flex-direction:column;align-items:flex-start;gap:14px;">
           <img src="/images/logo/logo-white.png" alt="וואי מרקט" width="112" height="60">
-          <p>נגלר סחר והפצה — סחר, שיווק והפצה של מוצרי צריכה שוטפת לעסקים ומוסדות בכל רחבי הארץ.</p>
+          <p style="margin:0;max-width:300px;">כל המתכלים לעסק, ישירות מהמפיץ: ניקיון, נייר, חד פעמי, אריזות ומזון יבש. מחסן בגת רימון, משלוח לכל הארץ.</p>
           <div class="footer__social">
             <a href="https://wa.me/972549922492" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
             <a href="https://www.facebook.com/profile.php?id=100083110428101" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -439,6 +545,8 @@
             <a href="/faq">שאלות ותשובות</a>
             <a href="/contact">צרו קשר</a>
             <a href="/tracking">מעקב משלוחים</a>
+            <a href="/register">CASH MARKET · הרשמה</a>
+            <a href="https://app.ymarket.co.il/portal">כניסה ללקוחות</a>
           </div>
         </div>
 
@@ -446,11 +554,11 @@
           <h4>צרו קשר</h4>
           <div class="footer__contact-item">
             <i class="fas fa-phone-alt"></i>
-            <a href="tel:037740400">03-7740400</a>
+            <a href="tel:037740400">03-7740400</a> · <a href="tel:*3497" dir="ltr">*3497</a>
           </div>
           <div class="footer__contact-item">
             <i class="fab fa-whatsapp"></i>
-            <a href="https://wa.me/972549922492" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="https://wa.me/972549922492" target="_blank" rel="noopener">054-9922492</a>
           </div>
           <div class="footer__contact-item">
             <i class="fas fa-envelope"></i>
