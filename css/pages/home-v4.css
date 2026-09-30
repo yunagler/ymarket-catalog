@@ -378,3 +378,9 @@ body.v4-has-cart .whatsapp-float { bottom: 110px !important; transition: bottom 
   .hv-map__svg { max-height: 58vh; }
 }
 @media (max-width: 700px) { .y3-app__list li { flex-direction: column; align-items: flex-start; gap: 8px; } .y3-app__list li div { font-size: 0; } .y3-app__list li div strong { font-size: .9rem; display: block; line-height: 1.3; } .y3-phone { width: 190px !important; } .y3-phone__screen { min-height: 360px !important; } .y3-qr { display: none !important; } }
+
+/* hero: the three reasons to switch, right under the promise */
+.v4-usp { list-style: none; margin: 14px 0 20px; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.v4-usp li { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,211,122,.45); color: #fff; font-weight: 700; font-size: .95rem; }
+.v4-usp i { color: #FFD37A; }
+@media (max-width: 700px) { .v4-usp { gap: 6px; margin: 10px 0 16px; } .v4-usp li { font-size: .82rem; padding: 6px 11px; } }

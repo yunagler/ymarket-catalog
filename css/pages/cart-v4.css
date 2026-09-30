@@ -1,0 +1,43 @@
+/* Cart + checkout in the v4 language (same light, radii and gold CTA as the stores).
+   Loaded after the legacy styles on cart.html and checkout.html. */
+:root { --c4-navy: #0C2340; --c4-leumi: #0B3D91; --c4-blue: #1B6FD1; --c4-ice: #E6F1FB; --c4-mist: #F3F6FA; --c4-gold: #FFB020;
+  --c4-line: rgba(12,35,64,.08); --c4-muted: #5E6E82;
+  --c4-e1: -1px 2px 4px rgba(7,26,49,.05), -2px 6px 14px -8px rgba(7,26,49,.12);
+  --c4-e2: -3px 10px 24px -12px rgba(7,26,49,.20), -1px 2px 4px rgba(7,26,49,.04); }
+body { background: var(--c4-mist); }
+.cart-page h1, .checkout-grid h1, main h1 { color: var(--c4-navy); font-weight: 800; letter-spacing: -.01em; }
+
+/* cart lines */
+.cart-item { background: #fff !important; border: 1px solid var(--c4-line) !important; border-radius: 20px !important; box-shadow: var(--c4-e1), inset 0 1px 0 #fff !important; padding: 14px !important; margin-bottom: 12px !important; }
+.cart-item__image, .cart-item__image img { border-radius: 14px !important; background: var(--c4-mist); }
+.cart-item__name { color: var(--c4-navy) !important; font-weight: 700 !important; }
+.cart-item__price, .cart-item__unit { color: var(--c4-muted) !important; }
+.cart-item__total { color: var(--c4-navy) !important; font-weight: 800 !important; font-size: 1.05rem !important; }
+.cart-item__quantity { display: inline-flex !important; width: auto !important; justify-self: start; align-self: flex-start; align-items: center; gap: 4px; padding: 4px !important; border-radius: 999px !important; background: var(--c4-ice) !important; border: 0 !important; }
+.cart-item__qty-btn { width: 38px !important; height: 38px !important; border-radius: 50% !important; border: 0 !important; background: #fff !important; color: var(--c4-blue) !important; font-size: 1.15rem !important; box-shadow: var(--c4-e1); cursor: pointer; }
+.cart-item__qty-value { min-width: 28px; text-align: center; font-weight: 800; color: var(--c4-navy); border: 0 !important; background: transparent !important; }
+.cart-item__remove { color: #9aa6b5 !important; }
+.cart-item__remove:hover { color: #C0392B !important; }
+
+/* summaries */
+.cart-summary, .checkout-summary { background: #fff !important; border: 1px solid var(--c4-line) !important; border-radius: 24px !important; box-shadow: var(--c4-e2), inset 0 1px 0 #fff !important; box-sizing: border-box; max-width: 100%; }
+.cart-summary__total, .checkout-summary__total { color: var(--c4-navy) !important; font-weight: 800 !important; }
+.checkout-form { background: #fff !important; border: 1px solid var(--c4-line) !important; border-radius: 24px !important; box-shadow: var(--c4-e2) !important; box-sizing: border-box; max-width: 100%; }
+
+/* inputs */
+.form-input, .form-textarea, .checkout-form select { border-radius: 14px !important; border: 1.5px solid var(--c4-line) !important; background: #fff !important; min-height: 48px; font-size: 1rem !important; }
+.form-input:focus, .form-textarea:focus { border-color: var(--c4-blue) !important; box-shadow: 0 0 0 4px rgba(27,111,209,.12) !important; outline: none; }
+.form-label { color: var(--c4-navy) !important; font-weight: 700 !important; }
+.paymethod__opt { border-radius: 18px !important; border: 1.5px solid var(--c4-line) !important; background: #fff !important; }
+.paymethod__opt:has(input:checked) { border-color: var(--c4-blue) !important; background: var(--c4-ice) !important; }
+
+/* the one primary action is gold, like everywhere else */
+.cart-actions .btn--primary, .checkout-form .btn--primary, .cart-empty .btn--primary {
+  background: var(--c4-gold) !important; color: #071A31 !important; border: 0 !important; border-radius: 999px !important; font-weight: 800 !important; min-height: 52px;
+  box-shadow: -4px 10px 22px -10px rgba(255,176,32,.9), inset 0 1px 0 rgba(255,255,255,.55) !important; }
+.cart-actions .btn--secondary { border-radius: 999px !important; }
+.cart-actions .btn--whatsapp { border-radius: 999px !important; }
+
+.checkout-grid, .checkout-grid > * { min-width: 0; }
+.checkout-summary__row { gap: 8px; } .checkout-summary * { overflow-wrap: anywhere; }
+.cart-item__qty-btn { font-size: 1.3rem !important; line-height: 1 !important; }

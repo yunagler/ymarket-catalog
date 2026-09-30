@@ -12,6 +12,28 @@ const path = require('path');
 const META_PATH = path.join(__dirname, '..', 'data', 'stores-meta.json');
 const META = fs.existsSync(META_PATH) ? JSON.parse(fs.readFileSync(META_PATH, 'utf-8')) : { top: [], stores: {} };
 
+// Products still showing the "photo coming soon" image (the same file copied under many
+// names): found by content hash, so the list shrinks by itself as real photos arrive.
+// Rails ("most ordered") skip them; data/no-photo.json lets the homepage do the same.
+const NO_PHOTO = (() => {
+  const crypto = require('crypto');
+  const root = path.join(__dirname, '..');
+  const dataPath = path.join(root, 'data', 'products.json');
+  if (!fs.existsSync(dataPath)) return new Set();
+  const items = JSON.parse(fs.readFileSync(dataPath, 'utf-8')).items || [];
+  const byHash = new Map(), hashOf = new Map();
+  for (const it of items) {
+    const rel = String(it.imageUrl || '').split('?')[0].replace(/^\//, '');
+    const f = rel && path.join(root, rel);
+    if (!f || !fs.existsSync(f)) { hashOf.set(it.id, null); continue; }
+    const h = crypto.createHash('md5').update(fs.readFileSync(f)).digest('hex');
+    hashOf.set(it.id, h); byHash.set(h, (byHash.get(h) || 0) + 1);
+  }
+  const ids = [...hashOf].filter(([, h]) => !h || byHash.get(h) > 2).map(([id]) => id);
+  try { fs.writeFileSync(path.join(root, 'data', 'no-photo.json'), JSON.stringify({ ids })); } catch (e) {}
+  return new Set(ids);
+})();
+
 const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const money = v => '₪' + Number(v).toLocaleString('he-IL', { maximumFractionDigits: 2 });
 
@@ -68,8 +90,9 @@ function renderStoreMain(ctx) {
 
   // aisle tabs: on the store page they jump inside the page; on an aisle page they link to the siblings
   let tabs, sections = '';
-  const top = META.top.map(id => categoryProducts.find(p => p.id === id)).filter(Boolean).slice(0, 10);
-  const topList = top.length >= 3 ? top : categoryProducts.filter(p => p.isFeatured || p.productStatus === 'recommended').slice(0, 10);
+  const withPhoto = p => !NO_PHOTO.has(p.id);
+  const top = META.top.map(id => categoryProducts.find(p => p.id === id)).filter(Boolean).filter(withPhoto).slice(0, 10);
+  const topList = top.length >= 3 ? top : categoryProducts.filter(p => (p.isFeatured || p.productStatus === 'recommended') && withPhoto(p)).slice(0, 10);
   let n = 0;
   if (isRoot) {
     tabs = (topList.length ? `<a href="#aisle-top" class="is-on">הכי מוזמנים</a>` : '') +
@@ -129,7 +152,7 @@ function renderStoreMain(ctx) {
           <a class="v4-modal__more" id="v4MMore" href="#">כל הפרטים בדף המוצר <i class="fas fa-chevron-left"></i></a>
         </div>
         <div class="v4-modal__foot">
-          <div class="v4-modal__qty"><button type="button" data-q="1" aria-label="עוד אחד">+</button><span id="v4MQty">1</span><button type="button" data-q="-1" aria-label="אחד פחות">−</button></div>
+          <div class="v4-modal__qty"><button type="button" data-q="-1" aria-label="אחד פחות">−</button><span id="v4MQty">1</span><button type="button" data-q="1" aria-label="עוד אחד">+</button></div>
           <button type="button" class="v4-modal__add" id="v4MAdd">להוסיף להזמנה</button>
         </div>
       </div>
