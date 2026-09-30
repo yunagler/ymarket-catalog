@@ -501,7 +501,7 @@
       { "@type": "ListItem", "position": 4, "name": "ציוד ניקיון למוסדות - המדריך המקצועי", "url": "https://ymarket.co.il/blog/institutional-cleaning-equipment-guide" },
       { "@type": "ListItem", "position": 5, "name": "נייר טואלט מוסדי - סוגים ומחירים", "url": "https://ymarket.co.il/blog/institutional-toilet-paper-guide" },
       { "@type": "ListItem", "position": 6, "name": "אספקה למסעדות - המדריך המלא", "url": "https://ymarket.co.il/blog/supplies-for-restaurants" },
-      { "@type": "ListItem", "position": 7, "name": "אספקה לחברות ניקיון", "url": "https://ymarket.co.il/blog/supplies-for-cleaning-companies" },
+      { "@type": "ListItem", "position": 7, "name": "אספקה לחברות ניקיון", "url": "https://ymarket.co.il/blog/cleaning-products-for-cleaning-companies" },
       { "@type": "ListItem", "position": 8, "name": "מוצרי צריכה למשרדים", "url": "https://ymarket.co.il/blog/supplies-for-offices" },
       { "@type": "ListItem", "position": 9, "name": "המדריך המלא לאספקה מוסדית 2026", "url": "https://ymarket.co.il/blog/complete-guide-institutional-supplies" },
       { "@type": "ListItem", "position": 10, "name": "חומרי ניקיון לחברות ניקיון - רכש חכם", "url": "https://ymarket.co.il/blog/cleaning-products-for-cleaning-companies" },
