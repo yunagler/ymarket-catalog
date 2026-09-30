@@ -66,8 +66,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-  <style>
+    <style>
     :root {
       --navy-900:#0A1628;--navy-800:#112A45;--navy-700:#1B3A5C;--navy-600:#2A5080;--navy-500:#3668A0;
       --navy-400:#4A82BF;--navy-300:#7AAAD6;--navy-200:#A8CCE8;--navy-100:#D4E6F4;--navy-50:#EBF2FA;
@@ -303,6 +302,31 @@
       .p-card__wa-btn{padding:6px;font-size:10px}
     }
       @media(max-width:700px){.p-card__add-btn{min-height:44px!important;font-size:.9rem!important}.p-card__wa-btn{min-height:40px!important}.cat-swiper-btn{width:42px!important;height:42px!important}.cat-section__link{display:inline-block;padding:11px 0!important}}
+
+    /* ══ v4 catalog: store rails (30/09) ══ */
+    .c4-sec{padding:28px 0!important;background:transparent!important;border-bottom:0!important}
+    .c4-head{display:flex;align-items:center;gap:12px;text-decoration:none;margin-bottom:14px}
+    .c4-badge{width:48px;height:48px;flex:0 0 48px;border-radius:50%;display:grid;place-items:center;font-size:1.2rem;color:#fff;background:#0C2340;box-shadow:-3px 6px 12px -6px rgba(7,26,49,.45)}
+    .c4-tone--leumi{background:#0B3D91}.c4-tone--blue{background:#1B6FD1}.c4-tone--sky{background:#E6F1FB;color:#0B3D91}.c4-tone--cream{background:#FBF4E4;color:#8A5A00}.c4-tone--gold{background:#FFB020;color:#071A31}
+    .c4-title{flex:1;min-width:0;display:grid}.c4-title b{font-size:1.35rem;font-weight:800;color:#0C2340;line-height:1.15}.c4-title small{color:#5E6E82;font-size:.85rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .c4-go{color:#0B3D91;font-weight:800;font-size:.92rem;white-space:nowrap}
+    .c4-rail{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(170px,190px);gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 12px;scrollbar-width:thin}
+    .c4-rail .p-card{scroll-snap-align:start;background:#fff;border:1px solid rgba(12,35,64,.08);border-radius:18px;box-shadow:-1px 2px 4px rgba(7,26,49,.05),-2px 6px 14px -8px rgba(7,26,49,.12);padding:10px;display:flex;flex-direction:column;gap:6px;height:100%}
+    .c4-media{position:relative}
+    .c4-rail .p-card__img{display:grid;place-items:center;aspect-ratio:1;border-radius:14px;background:#F3F6FA;overflow:hidden}
+    .c4-rail .p-card__img img{max-width:84%;max-height:84%;object-fit:contain}
+    .c4-media .p-card__cart-area{position:absolute;top:8px;left:8px;margin:0!important}
+    .c4-add{width:40px!important;height:40px!important;min-height:0!important;padding:0!important;border-radius:50%!important;border:0!important;background:#FFB020!important;color:#071A31!important;font:700 1.4rem/1 Rubik,sans-serif!important;box-shadow:-3px 6px 14px -6px rgba(7,26,49,.5)!important;cursor:pointer}
+    .c4-step{display:flex!important;align-items:center;height:40px;border-radius:999px;background:#fff;box-shadow:-3px 6px 14px -6px rgba(7,26,49,.5);overflow:hidden;border:0!important}
+    .c4-step .p-card__qty-btn{width:36px!important;height:40px!important;border:0!important;background:transparent!important;color:#1B6FD1!important;font-size:1.3rem!important}
+    .c4-step .p-card__qty-btn.plus{background:#FFB020!important;color:#071A31!important;border-radius:50%!important;width:40px!important}
+    .c4-step .p-card__qty-input{width:28px!important;border:0!important;text-align:center;font-weight:800;color:#0C2340;background:transparent!important;-moz-appearance:textfield}
+    .c4-step .p-card__qty-input::-webkit-inner-spin-button{display:none}
+    .c4-rail .p-card__body{padding:0!important;display:flex;flex-direction:column;gap:4px}
+    .c4-rail .p-card__name{order:2;font-size:.9rem;font-weight:600;color:#14233A;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.7em}
+    .c4-rail .p-card__price{order:1;font-size:1.1rem;font-weight:800;color:#0C2340}.c4-rail .p-card__price .vat{font-size:.72rem;font-weight:500;color:#5E6E82;margin-inline-start:4px}
+    .cat-pills{position:sticky;top:64px;z-index:15}
+    @media(max-width:700px){.c4-rail{grid-auto-columns:46%;margin:0 -16px;padding:4px 16px 12px}.c4-title b{font-size:1.15rem}}
 </style>
   <link rel="stylesheet" href="/css/site-header.css?v=202608152032">
 </head>
@@ -493,8 +517,7 @@
   <a href="https://wa.me/972549922492" class="whatsapp-float" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
   <div class="toast" id="toast"><i class="fas fa-check-circle"></i><span id="toastText"></span></div>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
+    <script>
   (function(){
     'use strict';
 
@@ -547,33 +570,13 @@
     // ── Render card controls (add btn OR qty controls) ──
     function renderCartArea(container, prod){
       var qty = getQty(prod.id);
-      if(qty <= 0){
-        container.innerHTML = '<button class="p-card__add-btn" data-pid="'+prod.id+'"><i class="fas fa-cart-plus"></i> הוסף לעגלה</button>';
-      } else {
-        // Qty controls + subtotal in one row
-        var price = prod.saleNis || 0;
-        var subtotal = price * qty;
-        var subtotalHtml = price > 0
-          ? '<div class="p-card__subtotal">'+fmtPrice(subtotal)+'</div>'
-          : '';
-        container.innerHTML =
-          '<div class="p-card__qty-row">'+
-            '<div class="p-card__qty-wrap" data-pid="'+prod.id+'">'+
-              '<button class="p-card__qty-btn plus" data-action="up">+</button>'+
-              '<span class="p-card__qty-check"><i class="fas fa-check"></i></span>'+
-              '<input type="number" class="p-card__qty-input" value="'+qty+'" min="0">'+
-              '<button class="p-card__qty-btn '+(qty===1?'remove':'')+'" data-action="down">'+(qty===1?'<i class="fas fa-trash-alt"></i>':'−')+'</button>'+
-            '</div>'+
-            subtotalHtml+
+      container.innerHTML = qty <= 0
+        ? '<button class="p-card__add-btn c4-add" data-pid="'+prod.id+'" aria-label="הוספה לסל: '+esc(prod.name)+'">+</button>'
+        : '<div class="p-card__qty-wrap c4-step" data-pid="'+prod.id+'">'+
+            '<button class="p-card__qty-btn" data-action="down" aria-label="אחד פחות">−</button>'+
+            '<input type="number" class="p-card__qty-input" value="'+qty+'" min="0" aria-label="כמות">'+
+            '<button class="p-card__qty-btn plus" data-action="up" aria-label="עוד אחד">+</button>'+
           '</div>';
-      }
-      // WhatsApp row
-      if(!container.querySelector('.p-card__wa-row')){
-        var waRow = document.createElement('div');
-        waRow.className = 'p-card__wa-row';
-        waRow.innerHTML = '<a href="https://wa.me/972549922492?text=אשמח להזמין: '+encodeURIComponent(prod.name)+'" target="_blank" rel="noopener" class="p-card__wa-btn"><i class="fab fa-whatsapp"></i> הזמנה בוואטסאפ</a>';
-        container.appendChild(waRow);
-      }
     }
 
     // ── Format price ──
@@ -583,9 +586,9 @@
     // ── Build product card HTML ──
     function buildCard(prod){
       var imgSrc = (prod.imageUrl||'/items/'+prod.id+'.jpg').replace(/\.jpg$/i,'-thumb.webp');
-      var fallback = 'https://placehold.co/300x300/f0f2f5/94a3b8?text='+encodeURIComponent((prod.name||'').substring(0,12));
+      var fallback = '/images/products/placeholder.jpg';
       var priceHtml = prod.saleNis
-        ? '<div class="p-card__price">'+fmtPrice(prod.saleNis)+'<span class="vat">+ מע"מ</span></div>'
+        ? '<div class="p-card__price">'+fmtPrice(prod.saleNis)+'<span class="vat">לפני מע״מ</span></div>'
         : '<div class="p-card__price-locked"><i class="fas fa-lock"></i> הירשמו לצפייה במחיר</div>';
       var prodUrl = 'https://ymarket.co.il/products/'+encodeURIComponent(prod.slug||'')+'/';
       var prodImg = 'https://ymarket.co.il/items/'+prod.id+'.jpg';
@@ -603,13 +606,12 @@
       var schemaTag = '<script type="application/ld+json">'+JSON.stringify(schema)+'<\/script>';
       return '<div class="p-card" data-product-id="'+prod.id+'">'+
         schemaTag+
-        '<a href="/products/'+encodeURIComponent(prod.slug||'')+'" class="p-card__img">'+
+        '<div class="c4-media"><a href="/products/'+encodeURIComponent(prod.slug||'')+'" class="p-card__img">'+
           '<img src="'+imgSrc+'" alt="'+esc(prod.name)+'" loading="lazy" width="200" height="200" onerror="this.onerror=null;this.src=\''+fallback+'\'">'+
-        '</a>'+
+        '</a><div class="p-card__cart-area" data-pid="'+prod.id+'"></div></div>'+
         '<div class="p-card__body">'+
           '<a href="/products/'+encodeURIComponent(prod.slug||'')+'" class="p-card__name">'+esc(prod.name)+'</a>'+
           priceHtml+
-          '<div class="p-card__cart-area" data-pid="'+prod.id+'"></div>'+
         '</div></div>';
     }
 
@@ -620,6 +622,9 @@
       try { res = await fetch('/data/products.json'); data = await res.json(); } catch(e){ container.innerHTML='<p style="text-align:center;padding:3rem;color:#94a3b8;">שגיאה בטעינה</p>'; return; }
 
       var allProducts = data.items||[];
+      var STORES = {}, NOPHOTO = {};
+      try { STORES = ((await (await fetch('/data/stores-meta.json')).json()).stores)||{}; } catch(e){}
+      try { ((await (await fetch('/data/no-photo.json')).json()).ids||[]).forEach(function(id){ NOPHOTO[id]=1; }); } catch(e){}
       var categories = data.categories||[];
 
       // Load sales ranking
@@ -648,7 +653,7 @@
 
       // Sort products by sales, sort categories by revenue
       Object.values(parentCats).forEach(function(e){
-        e.products.sort(function(a,b){return (salesRank[b.id]||0)-(salesRank[a.id]||0);});
+        e.products.sort(function(a,b){return ((NOPHOTO[a.id]?1:0)-(NOPHOTO[b.id]?1:0)) || ((salesRank[b.id]||0)-(salesRank[a.id]||0));});
         e.products.forEach(function(p){e.score+=(salesRank[p.id]||0);});
       });
       var sorted = Object.values(parentCats).filter(function(e){return e.products.length>=1;}).sort(function(a,b){return b.score-a.score;});
@@ -661,7 +666,8 @@
       var pillsHtml = '<button class="cat-pill active"><i class="fas fa-th-large"></i> הכל</button>';
       sorted.forEach(function(e,idx){
         var icon = ICONS[e.cat.seoSlug]||ICONS[e.cat.slug]||'fa-box';
-        pillsHtml += '<button class="cat-pill" data-target="catSec'+idx+'"><i class="fas '+icon+'"></i> '+esc(e.cat.name)+'</button>';
+        var st = STORES[e.cat.seoSlug||e.cat.slug];
+        pillsHtml += '<button class="cat-pill" data-target="catSec'+idx+'"><i class="fas '+(st?st.icon:icon)+'"></i> '+esc(st?st.name:e.cat.name)+'</button>';
       });
       document.getElementById('catPills').innerHTML = pillsHtml;
 
@@ -670,37 +676,21 @@
       var swiperInits = [];
       sorted.forEach(function(entry,idx){
         var icon = ICONS[entry.cat.seoSlug]||ICONS[entry.cat.slug]||'fa-box';
+        var st = STORES[entry.cat.seoSlug||entry.cat.slug];
         var catUrl = '/category/'+(entry.cat.seoSlug||entry.cat.slug)+'/';
-        var prods = entry.products.slice(0,20);
-        var slides = '';
-        prods.forEach(function(p){ slides += '<div class="swiper-slide">'+buildCard(p)+'</div>'; });
-
-        html += '<section class="cat-section" id="catSec'+idx+'"><div class="container">'+
-          '<div class="cat-section__head">'+
-            '<div class="cat-section__title"><div class="cat-section__icon"><i class="fas '+icon+'"></i></div>'+esc(entry.cat.name)+'<span class="cat-section__count">'+entry.products.length+' מוצרים</span></div>'+
-            '<a href="'+catUrl+'" class="cat-section__link">לכל הקטגוריה <i class="fas fa-arrow-left"></i></a>'+
-          '</div>'+
-          '<div class="cat-swiper-wrap">'+
-            '<button class="cat-swiper-btn prev" id="prev'+idx+'" aria-label="הקודם"><i class="fas fa-chevron-right"></i></button>'+
-            '<button class="cat-swiper-btn next" id="next'+idx+'" aria-label="הבא"><i class="fas fa-chevron-left"></i></button>'+
-            '<div class="swiper" id="swiper'+idx+'"><div class="swiper-wrapper">'+slides+'</div><div class="swiper-pagination" id="pag'+idx+'"></div></div>'+
-          '</div>'+
+        var cards = '';
+        entry.products.slice(0,16).forEach(function(p){ cards += buildCard(p); });
+        html += '<section class="cat-section c4-sec" id="catSec'+idx+'"><div class="container">'+
+          '<a class="c4-head" href="'+catUrl+'">'+
+            '<span class="c4-badge c4-tone--'+(st?st.tone:'navy')+'"><i class="fas '+(st?st.icon:icon)+'"></i></span>'+
+            '<span class="c4-title"><b>'+esc(st?st.name:entry.cat.name)+'</b><small>'+esc(entry.cat.name)+' · '+entry.products.length+' מוצרים</small></span>'+
+            '<span class="c4-go">לחנות <i class="fas fa-arrow-left"></i></span>'+
+          '</a>'+
+          '<div class="c4-rail">'+cards+'</div>'+
         '</div></section>';
-        swiperInits.push({id:'swiper'+idx,idx:idx});
       });
 
       container.innerHTML = html;
-
-      // Init Swipers
-      swiperInits.forEach(function(si){
-        new Swiper('#'+si.id,{
-          slidesPerView:2, spaceBetween:12, loop:false,
-          preventClicks:false, preventClicksPropagation:false, touchStartPreventDefault:false,
-          pagination:{el:'#pag'+si.idx,clickable:true},
-          navigation:{prevEl:'#prev'+si.idx,nextEl:'#next'+si.idx},
-          breakpoints:{480:{slidesPerView:2,spaceBetween:12},640:{slidesPerView:3,spaceBetween:14},768:{slidesPerView:4,spaceBetween:16},1024:{slidesPerView:5,spaceBetween:18},1280:{slidesPerView:6,spaceBetween:20}}
-        });
-      });
 
       // Render cart areas for all cards
       document.querySelectorAll('.p-card__cart-area').forEach(function(area){
