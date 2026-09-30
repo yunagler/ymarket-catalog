@@ -133,6 +133,11 @@ function pickMetaDesc({ curated, copyMeta, name, categoryName }) {
 
 // Curated copy overrides written by the copy pipeline: { "<product id>": { short, metaDesc } }.
 // Missing or unreadable file (e.g. mid-write by another process) = no overrides.
+// Hand-tuned SEO titles keyed by product/group seoSlug (data/seo-overrides.json → "products").
+// They win over the CRM title (seo.title / group.seoTitle).
+const SEO_OVERRIDES_PATH = path.join(ROOT_DIR, 'data', 'seo-overrides.json');
+const PRODUCT_SEO_OVERRIDES = (fs.existsSync(SEO_OVERRIDES_PATH) && JSON.parse(fs.readFileSync(SEO_OVERRIDES_PATH, 'utf-8')).products) || {};
+
 const PRODUCT_COPY_PATH = path.join(ROOT_DIR, 'data', 'product-copy.json');
 const PRODUCT_COPY = (() => {
   if (!fs.existsSync(PRODUCT_COPY_PATH)) return {};
@@ -329,7 +334,8 @@ function generateProductPage(product, categories, allProducts, group) {
   // size/color in its title (e.g. "...מידה S..."), which is wrong for a multi-size page.
   // Ungroomed groups fall back to the clean size-agnostic group.name auto-text.
   // Every title ends in " | וואי מרקט" and stays ≤ 65 chars (see brandTitle()).
-  const pageTitle = isGroup ? brandTitle(group.seoTitle || group.name, group.name) : brandTitle(seo.title || product.name, product.name);
+  const titleOv = (PRODUCT_SEO_OVERRIDES[isGroup ? group.seoSlug : (product.seoSlug || product.slug)] || {}).title;
+  const pageTitle = isGroup ? brandTitle(titleOv || group.seoTitle || group.name, group.name) : brandTitle(titleOv || seo.title || product.name, product.name);
   // H1 stays the clean group/product name (a heading, not the SEO title tag).
   const h1Text = isGroup ? group.name : (seo.h1 || product.name);
   // Curated copy (data/product-copy.json) is keyed by product id; group pages have no

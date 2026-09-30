@@ -23,6 +23,12 @@ const SITE_FOOTER = fs.readFileSync(path.join(ROOT_DIR, 'includes', 'site-footer
 // times, no customer names) — see build/catalog-copy-policy.js.
 const { sanitizeCatalog } = require('./catalog-copy-policy');
 
+// Hand-tuned on-page SEO (title / H1 / lead / extra FAQ) keyed by category seoSlug.
+// Wins over the CRM fields in products.json — see data/seo-overrides.json.
+const SEO_OVERRIDES_PATH = path.join(ROOT_DIR, 'data', 'seo-overrides.json');
+const SEO_OVERRIDES = fs.existsSync(SEO_OVERRIDES_PATH) ? JSON.parse(fs.readFileSync(SEO_OVERRIDES_PATH, 'utf-8')) : {};
+const escAttr = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
 // SEO data per category
 const CATEGORY_SEO = {
   'חומרי-ניקוי-וכימיקלים': {
@@ -348,14 +354,16 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
   const categoryUrl = `${SITE_URL}${categoryPath}`;
 
   const catSeo = CATEGORY_SEO[category.slug] || {};
+  const seoOv = (category.seoSlug && SEO_OVERRIDES[category.seoSlug]) || {};
   // DB SEO fields (from products.json) take priority over hardcoded CATEGORY_SEO, with final fallback to defaults
   const seoDesc = category.metaDescription || catSeo.metaDesc || `${category.name} - ${categoryProducts.length} מוצרים במחירי סיטונאות. וואי מרקט - אספקה חכמה לעסקים ומוסדות. משלוח ארצי.`;
-  const h1Text = category.h1Override || catSeo.h1 || category.name;
-  const pageTitle = category.metaTitle || catSeo.title || `${category.name} | וואי מרקט - אספקה למוסדות ועסקים`;
+  const h1Text = seoOv.h1 || category.h1Override || catSeo.h1 || category.name;
+  const pageTitle = seoOv.title || category.metaTitle || catSeo.title || `${category.name} | וואי מרקט - אספקה למוסדות ועסקים`;
+  const socialTitle = escAttr(seoOv.title || `${category.name} | וואי מרקט`);
   const seoContentBlock = category.seoContent || catSeo.seoText || '';
   const categoryImageAlt = category.imageAlt || category.name;
   // FAQ: prefer DB faqs (from category.faqs), fallback to hardcoded CATEGORY_SEO faqs
-  const categoryFaqs = (category.faqs && category.faqs.length > 0) ? category.faqs : (catSeo.faqs || []);
+  const categoryFaqs = ((category.faqs && category.faqs.length > 0) ? category.faqs : (catSeo.faqs || [])).concat(seoOv.faqs || []);
   // GEO content from DB
   const geoContentBlock = category.geoContent || '';
 
@@ -606,7 +614,7 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
   <link rel="icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta name="theme-color" content="#1B3A5C">
-  <meta property="og:title" content="${category.name} | וואי מרקט">
+  <meta property="og:title" content="${socialTitle}">
   <meta property="og:description" content="${seoDesc}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="${categoryUrl}">
@@ -614,7 +622,7 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
   <meta property="og:site_name" content="וואי מרקט">
   <meta property="og:image" content="${ogImage}">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="${category.name} | וואי מרקט">
+  <meta name="twitter:title" content="${socialTitle}">
   <meta name="twitter:image" content="${ogImage}">
   ${firstProductImg ? `<link rel="preload" as="image" href="${firstProductImg}">` : ''}
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -717,7 +725,7 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
 
   ${renderStoreMain({
     category, root: parentChain.length ? parentChain[0] : category, isRoot: !parentChain.length, catMap,
-    categoryProducts, h1Text, breadcrumbHtml, getCategoryUrlPath, getDescendantSlugs, productImage,
+    categoryProducts, h1Text, leadText: seoOv.lead || '', breadcrumbHtml, getCategoryUrlPath, getDescendantSlugs, productImage,
     seoHtml: `
 ${seoContentBlock ? `<div class="category-seo">${seoContentBlock}</div>` : ''}
           ${geoContentBlock ? `<div class="category-geo" style="margin-top:1.5rem;padding:24px;background:linear-gradient(135deg,#f8fafc 0%,#f0f4f8 100%);border:1px solid #e2e8f0;border-radius:14px;">

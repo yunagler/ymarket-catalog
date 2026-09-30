@@ -384,3 +384,13 @@ body.v4-has-cart .whatsapp-float { bottom: 110px !important; transition: bottom 
 .v4-usp li { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,211,122,.45); color: #fff; font-weight: 700; font-size: .95rem; }
 .v4-usp i { color: #FFD37A; }
 @media (max-width: 700px) { .v4-usp { gap: 6px; margin: 10px 0 16px; } .v4-usp li { font-size: .82rem; padding: 6px 11px; } }
+
+/* "מה עסקים מחפשים אצלנו": search phrases as pills (same look as .v4-eyebrow), wrapping, 44px tap height */
+.v4-sec--tight { padding: clamp(40px, 5vw, 64px) 0; }
+.v4-sec--tight .v4-head { margin-bottom: 20px; }
+.v4-chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.v4-chips a { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 18px; border-radius: 999px; background: var(--v4-ice);
+  color: var(--v4-leumi); font-weight: 700; font-size: .95rem; text-decoration: none; border: 1px solid transparent; box-shadow: inset 0 1px 0 #fff;
+  transition: background .2s var(--v4-ease), border-color .2s var(--v4-ease), color .2s var(--v4-ease); }
+.v4-chips a:hover, .v4-chips a:focus-visible { background: #fff; border-color: var(--v4-leumi); color: var(--v4-navy); }
+@media (max-width: 700px) { .v4-chips { gap: 8px; } .v4-chips a { font-size: .88rem; padding: 8px 14px; } }

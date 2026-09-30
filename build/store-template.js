@@ -52,11 +52,13 @@ function cover(store) {
 function itemCard(p, idx, productImage) {
   const img = productImage(p);
   const name = (p.name || '').trim();
-  const href = `/products/${p.slug}/`;
+  // link straight to the live page (seoSlug); the Hebrew slug only exists as a redirect stub
+  const live = [p.seoSlug, p.slug].find(s => s && fs.existsSync(path.join(__dirname, '..', 'products', s, 'index.html')) && !/location\.replace/.test(fs.readFileSync(path.join(__dirname, '..', 'products', s, 'index.html'), 'utf-8').slice(0, 800))) || p.seoSlug || p.slug;
+  const href = `/products/${live}/`;
   const loading = idx < 6 ? 'fetchpriority="high"' : 'loading="lazy"';
   const promo = p.productStatus === 'on_sale' && p.originalPrice;
   const axis = ({ 'צבע': 'צבע', 'מידה': 'מידה', 'נפח': 'נפח', 'גודל': 'גודל', 'סוג': 'סוג' })[p._variantAxis] || 'סוג';
-  const item = { id: p.id, name, price: p.saleNis || 0, unit: p.unit || '', imageUrl: img, slug: p.slug, href,
+  const item = { id: p.id, name, price: p.saleNis || 0, unit: p.unit || '', imageUrl: img, slug: live, href,
     orig: promo ? p.originalPrice : null, axis: p._isVariantGroup ? axis : null,
     members: p._isVariantGroup ? (p._members || []).filter(m => m.price > 0).map(m => ({ id: m.id, label: m.label, name: m.name, price: m.price, imageUrl: m.imageUrl || img, slug: m.slug, unit: m.unit })) : null };
   let ctl;
@@ -76,11 +78,11 @@ function itemCard(p, idx, productImage) {
 }
 
 /**
- * ctx: { category, root, isRoot, catMap, categoryProducts, h1Text, breadcrumbHtml, seoHtml,
+ * ctx: { category, root, isRoot, catMap, categoryProducts, h1Text, leadText, breadcrumbHtml, seoHtml,
  *        getCategoryUrlPath, getDescendantSlugs, productImage, categoryName }
  */
 function renderStoreMain(ctx) {
-  const { category, root, isRoot, catMap, categoryProducts, h1Text, breadcrumbHtml, seoHtml,
+  const { category, root, isRoot, catMap, categoryProducts, h1Text, leadText, breadcrumbHtml, seoHtml,
     getCategoryUrlPath, getDescendantSlugs, productImage } = ctx;
   const store = storeOf(root) || { name: root.name, tagline: '', icon: root.icon || 'fa-store', doodles: [], tone: 'navy', coverImages: [] };
   const storeName = store.name;
@@ -126,7 +128,8 @@ function renderStoreMain(ctx) {
           <nav class="v4-crumbs breadcrumb" aria-label="ניווט פירורי לחם">${breadcrumbHtml}</nav>
           <div class="v4-sh__name">${esc(storeName)} <em>| גת רימון</em>${isRoot ? '' : ` <span class="v4-sh__aisle">· ${esc(category.name.trim())}</span>`}</div>
           <h1 class="v4-sh__h1">${h1Text}</h1>
-          <p>${esc(store.tagline)}${store.tagline ? '. ' : ''}${count} מוצרים, יוצאים מהמחסן שלנו.</p>
+${leadText ? `          <p class="v4-sh__lead" style="margin:2px 0 6px;color:var(--v4-text)">${esc(leadText)}</p>
+` : ''}          <p>${esc(store.tagline)}${store.tagline ? '. ' : ''}${count} מוצרים, יוצאים מהמחסן שלנו.</p>
         </div>
         <ul class="v4-sh__info">
           <li><i class="fas fa-clock"></i><b dir="ltr">24–72</b> שעות בגוש דן ובמרכז</li>
