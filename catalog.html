@@ -150,11 +150,11 @@
     .catalog-hero__title{font-size:var(--fs-3xl);font-weight:900;color:white;text-align:center;margin-bottom:var(--sp-sm)}
     .catalog-hero__sub{font-size:var(--fs-md);color:var(--text-on-dark-muted);text-align:center;margin-bottom:var(--sp-xl)}
     .search-box{max-width:680px;margin:0 auto var(--sp-xl);position:relative}
-    .search-box input{width:100%;padding:18px 56px 18px 24px;background:rgba(255,255,255,0.12);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.2);border-radius:var(--r-xl);color:white;font-size:var(--fs-md);font-weight:500;outline:none;transition:all 0.3s}
+    .search-box input{width:100%;padding:18px 56px 18px 110px;background:rgba(255,255,255,0.12);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.2);border-radius:var(--r-xl);color:white;font-size:var(--fs-md);font-weight:500;outline:none;transition:all 0.3s}
     .search-box input::placeholder{color:rgba(255,255,255,0.5)}
     .search-box input:focus{background:rgba(255,255,255,0.18);border-color:rgba(255,255,255,0.4);box-shadow:0 0 0 4px rgba(10,107,255,0.2)}
     .search-box__icon{position:absolute;right:20px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,0.5);font-size:1.1rem;pointer-events:none}
-    .search-box__count{position:absolute;left:20px;top:50%;transform:translateY(-50%);font-size:var(--fs-xs);color:rgba(255,255,255,0.4);font-weight:600}
+    .search-box__count{position:absolute;left:20px;pointer-events:none;max-width:84px;overflow:hidden;white-space:nowrap;top:50%;transform:translateY(-50%);font-size:var(--fs-xs);color:rgba(255,255,255,0.4);font-weight:600}
     .search-dropdown{position:absolute;top:calc(100% + 8px);left:0;right:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--shadow-xl);max-height:360px;overflow-y:auto;z-index:9500;display:none}
     .search-dropdown.active{display:block}
     .search-dropdown a{display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border);transition:background 0.15s;color:var(--text-primary)}
@@ -311,7 +311,7 @@
   <div class="announcement">
     <a href="/register">
       <i class="fas fa-crown"></i>
-      <strong>CASH MARKET</strong> · מועדון הלקוחות העסקי: מחירון אישי והכסף שחוזר לעסק. הצטרפו
+      <strong>CASH MARKET</strong><span class="ann-long"> · מועדון הלקוחות העסקי:</span> מחירון אישי והכסף שחוזר לעסק<span class="ann-long">. הצטרפו</span>
       <i class="fas fa-chevron-left" style="font-size:0.75em;"></i>
     </a>
   </div>
@@ -382,7 +382,7 @@
     <section class="catalog-hero">
       <div class="container">
         <h1 class="catalog-hero__title">קטלוג מוצרים</h1>
-        <p class="catalog-hero__sub"><span id="totalCount">0</span> מוצרים במחירי סיטונאות — משלוח 24–72 שעות בגוש דן ובמרכז</p>
+        <p class="catalog-hero__sub"><span id="totalCount">0</span> מוצרים במחירי סיטונאות — משלוח <span style="white-space:nowrap">24–72 שעות</span> בגוש דן ובמרכז</p>
         <div class="search-box">
           <i class="fas fa-search search-box__icon"></i>
           <input type="text" id="searchInput" placeholder="חפשו מוצר, קטגוריה או ברקוד..." autocomplete="off">
@@ -410,7 +410,7 @@
   <!-- Footer -->
   <!-- ═══ FOOTER ═══ -->
                                                                                                                                                                                                                                                                                                                                                                                       <footer class="footer">
-    <style>.footer .footer__col h4{color:#2F80E6;font-size:1.05rem;font-weight:800;letter-spacing:.01em;margin:0 0 18px;padding-bottom:10px;position:relative}.footer .footer__col h4::after{content:"";position:absolute;right:0;bottom:0;width:28px;height:2px;border-radius:2px;background:#FFB020}</style>
+    <style>.footer .footer__col h4{color:#2F80E6;font-size:1.05rem;font-weight:800;letter-spacing:.01em;margin:0 0 18px;padding-bottom:10px;position:relative}.footer .footer__col h4::after{content:"";position:absolute;right:0;bottom:0;width:28px;height:2px;border-radius:2px;background:#FFB020}@media(max-width:768px){.whatsapp-float{left:14px!important;right:auto!important;bottom:16px!important;width:52px!important;height:52px!important;font-size:1.55rem!important}body.v4-has-cart .whatsapp-float{bottom:112px!important}nav.breadcrumb:not(.v4-crumbs){display:flex!important;flex-wrap:nowrap!important;align-items:center;gap:4px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}nav.breadcrumb:not(.v4-crumbs)::-webkit-scrollbar{display:none}.announcement .ann-long{display:none}.announcement a{font-size:.82rem}}</style>
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand" style="display:flex;flex-direction:column;align-items:flex-start;gap:14px;">

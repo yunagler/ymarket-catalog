@@ -189,3 +189,6 @@ button.v4-item__pick { border: 0; cursor: pointer; font: inherit; font-weight: 8
 .v4-modal__img img { max-height: 260px !important; width: auto; height: auto; }
 html.v4-lock .whatsapp-float { display: none !important; }
 @media (max-width: 560px) { .v4-modal__img img { max-height: 200px !important; } }
+
+/* mobile: the four store facts become one swipeable row instead of four stacked rows */
+@media (max-width: 700px) { .v4-sh__info { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 14px -14px 0; padding: 2px 14px 6px; } .v4-sh__info::-webkit-scrollbar { display: none; } .v4-sh__info li { flex: 0 0 auto; font-size: .82rem; padding: 7px 12px; } .v4-sh__badge { width: 72px; height: 72px; font-size: 1.7rem; } .v4-sh__cover .v4-shop__cover { height: 150px; } }
