@@ -58,8 +58,10 @@ jobs:
           SITE_ROOT: ${{ github.workspace }}
         run: node site-buttons.mjs 2>&1 | tee smoke.log
 
+      # not on a cancelled run: a newer deploy cancels the older run (concurrency), and a
+      # cancelled run has no report — it must not reach the CRM as "the check failed" (01/10/2026)
       - name: Report to the CRM (failures alert; suggestions go to a weekly task)
-        if: always()
+        if: ${{ !cancelled() }}
         working-directory: /tmp/smoke
         env:
           SITE_SMOKE_TOKEN: ${{ secrets.SITE_SMOKE_TOKEN }}
