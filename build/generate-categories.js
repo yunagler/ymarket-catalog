@@ -381,7 +381,12 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
   const firstProductImgJpg = categoryProducts.length > 0
     ? (categoryProducts[0].imageUrl || `/items/${categoryProducts[0].id}.jpg`)
     : null;
-  const firstProductImg = firstProductImgJpg ? firstProductImgJpg.replace(/\.jpg$/i, '-thumb.webp') : null;
+  // The cards show the 258/512px WebP (store-template pic()); preload exactly what they will pick.
+  // The old /\.jpg$/ missed every URL with ?v=… and preloaded the full 1024px JPG instead.
+  const pre = firstProductImgJpg ? /^(.*?)\.jpg((?:[?#].*)?)$/i.exec(firstProductImgJpg) : null;
+  const firstProductPreload = pre
+    ? `<link rel="preload" as="image" type="image/webp" imagesrcset="${pre[1]}-thumb.webp${pre[2]} 258w, ${pre[1]}.webp${pre[2]} 512w" imagesizes="170px">`
+    : '';
 
   // Build breadcrumb with parent chain
   const parentChain = getParentChain(category, catMap);
@@ -624,7 +629,7 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${socialTitle}">
   <meta name="twitter:image" content="${ogImage}">
-  ${firstProductImg ? `<link rel="preload" as="image" href="${firstProductImg}">` : ''}
+  ${firstProductPreload}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
