@@ -92,6 +92,9 @@
 .v4-item:hover { transform: translateY(-4px); box-shadow: var(--v4-e2), var(--v4-rim); }
 .v4-item__img { display: grid; place-items: center; aspect-ratio: 1; border-radius: 14px; background: var(--v4-mist); }
 .v4-item__img img { max-width: 84%; max-height: 84%; object-fit: contain; border-radius: 8px; }
+/* the WebP <picture> around a card/sticker photo must not add a box — the img keeps its grid placement */
+.v4-item__img picture, .v4-stk picture { display: contents; }
+.v4-item__img source, .v4-stk source { display: none; } /* else the empty <source> becomes a grid row and shrinks the photo */
 .v4-item__price { font: 800 1.12rem Rubik, sans-serif; color: var(--v4-navy); } .v4-item__price small { font: 500 .72rem var(--hv-body, Assistant, sans-serif); color: var(--v4-muted); }
 .v4-item__name { color: var(--v4-text); text-decoration: none; font-weight: 600; font-size: .92rem; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 /* Wolt-style +: a round button on the photo that grows into a − n + stepper */

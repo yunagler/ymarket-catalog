@@ -24,6 +24,18 @@
     return m ? m[1].trim() : '';
   }
 
+  // the 258px WebP made beside every /items photo (build/optimize-images.js) — a cart line is
+  // ~80px, the JPG it carried is 1024px and up to 2MB. The original stays as the fallback.
+  function thumbOf(url) {
+    var m = /^(\/?items\/[^?#]+?)(-thumb)?\.(jpg|webp)(\?[^#]*)?$/i.exec(url || '');
+    return m ? m[1] + '-thumb.webp' + (m[4] || '') : url;
+  }
+  function photo(url, alt, attrs) {
+    var full = url || 'images/products/placeholder.jpg', small = thumbOf(full);
+    return '<img src="' + escapeHtml(small) + '"' + (small !== full ? ' data-full="' + escapeHtml(full) + '" onerror="this.onerror=null;this.src=this.dataset.full"' : '') +
+      ' alt="' + alt + '" ' + attrs + '>';
+  }
+
   function getCart() {
     try {
       return JSON.parse(localStorage.getItem('ym_cart') || '[]');
@@ -70,7 +82,7 @@
 
       row.innerHTML =
         '<div class="cart-item__image">' +
-          '<img src="' + escapeHtml(item.imageUrl || 'images/products/placeholder.jpg') + '" alt="' + safeName + '" loading="lazy">' +
+          photo(item.imageUrl, safeName, 'loading="lazy"') +
         '</div>' +
         '<div class="cart-item__details">' +
           '<h3 class="cart-item__name">' + (item.slug ? '<a href="products/' + encodeURIComponent(item.slug) + '/' + (sizeOf(item) ? '#size=' + encodeURIComponent(sizeOf(item)) : '') + '">' + safeName + '</a>' : safeName) + '</h3>' +
@@ -214,7 +226,7 @@
     box.innerHTML = '<h3 style="margin:0 0 var(--space-sm);font-size:var(--fs-md);color:#1B3A5C">עסקים כמוך מוסיפים גם</h3>' +
       recs.map(function(r) {
         return '<div style="display:flex;align-items:center;gap:12px;padding:8px 0;border-top:1px solid var(--color-border)">' +
-          '<img src="' + escapeHtml(r.imageUrl) + '" alt="' + escapeHtml(r.name) + '" width="56" height="56" loading="lazy" style="object-fit:contain;border-radius:8px;background:#fff">' +
+          photo(r.imageUrl, escapeHtml(r.name), 'width="56" height="56" loading="lazy" style="object-fit:contain;border-radius:8px;background:#fff"') +
           '<div style="flex:1;min-width:0"><div style="font-weight:600">' + escapeHtml(r.name) + '</div>' +
           '<div style="color:var(--color-text-secondary);font-size:var(--fs-sm)">' + formatPrice(r.price) + (r.unit ? ' · ' + escapeHtml(r.unit) : '') + ' לפני מע"מ</div></div>' +
           '<button type="button" class="btn btn--outline btn--sm" data-upsell="' + r.id + '">הוספה</button></div>';

@@ -37,6 +37,23 @@ const NO_PHOTO = (() => {
 const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const money = v => '₪' + Number(v).toLocaleString('he-IL', { maximumFractionDigits: 2 });
 
+// A product photo the size a card needs. build/optimize-images.js already made a 258px and a
+// 512px WebP next to every /items/*.jpg; the cards showed the 1024px JPG (0.4–2.2MB) in a
+// ~170px box — the robot measured 56MB for one store (01/10/2026). The JPG stays as the
+// fallback for a browser without WebP. <picture> is display:contents in store-v4.css, so the
+// card layout is unchanged.
+function pic(src, alt, attrs, sizes = '170px') {
+  const m = /^(\/items\/[^?#]+)\.jpg(\?[^#]*)?$/i.exec(src || '');
+  if (!m) return `<img src="${esc(src)}" alt="${esc(alt)}" ${attrs}>`;
+  // a WebP that fails to load must not leave a broken photo: drop the <source>, the JPG loads
+  const img = `<img src="${esc(src)}" alt="${esc(alt)}" ${attrs} onerror="this.onerror=null;var s=this.parentNode.querySelector('source');if(s){s.remove();this.src=this.getAttribute('src')}">`;
+  let file = m[1];
+  try { file = decodeURIComponent(m[1]); } catch (e) { /* keep raw */ }
+  if (!fs.existsSync(path.join(__dirname, '..', file + '-thumb.webp'))) return img;
+  const q = m[2] || '';
+  return `<picture><source type="image/webp" srcset="${esc(m[1] + '-thumb.webp' + q)} 258w, ${esc(m[1] + '.webp' + q)} 512w" sizes="${sizes}">${img}</picture>`;
+}
+
 function storeOf(rootCategory) {
   const key = rootCategory.seoSlug || rootCategory.slug;
   return META.stores[key] || null;
@@ -45,7 +62,7 @@ function storeOf(rootCategory) {
 function cover(store) {
   const doodles = (store.doodles || []).map((ic, n) => `<i class="fas ${ic} v4-d v4-d${n}" aria-hidden="true"></i>`).join('');
   const imgs = (store.coverImages || []).concat(store.coverImages || []).slice(0, 3);
-  const stickers = imgs.map((u, n) => `<span class="v4-stk v4-stk${n}"><img src="${esc(u)}" alt="" loading="eager" width="160" height="160"></span>`).join('');
+  const stickers = imgs.map((u, n) => `<span class="v4-stk v4-stk${n}">${pic(u, '', 'loading="eager" width="160" height="160"', '160px')}</span>`).join('');
   return `<div class="v4-sh__cover v4-shop--${store.tone}"><span class="v4-shop__cover">${doodles}${stickers}</span></div>`;
 }
 
@@ -74,7 +91,7 @@ function itemCard(p, idx, productImage) {
     ? `<span class="v4-item__price">${promo ? `<s>${money(p.originalPrice)}</s> ` : ''}${p._isVariantGroup ? 'מ-' : ''}${money(p.saleNis)} <small>לפני מע״מ</small></span>`
     : `<span class="v4-item__price v4-item__price--ask">מחיר לפי הצעה</span>`;
   const openable = p.saleNis ? ` data-item="${esc(JSON.stringify(item))}"` : '';
-  return `<article class="v4-item${promo ? ' is-promo' : ''}"${openable}><a class="v4-item__img" href="${href}" data-open><img src="${esc(img)}" alt="${esc(name)}" width="200" height="200" ${loading}></a>${ctl}${price}<a class="v4-item__name" href="${href}" data-open>${esc(name)}</a></article>`;
+  return `<article class="v4-item${promo ? ' is-promo' : ''}"${openable}><a class="v4-item__img" href="${href}" data-open>${pic(img, name, `width="200" height="200" ${loading}`)}</a>${ctl}${price}<a class="v4-item__name" href="${href}" data-open>${esc(name)}</a></article>`;
 }
 
 /**
@@ -219,7 +236,10 @@ const STORE_JS = `<script>
   function inCart(id) { var x = get().filter(function (y) { return y.id === id; })[0]; return x ? x.quantity : 0; }
   function mset() {
     var it = sel || cur, total = (it.price || 0) * qty;
-    document.getElementById('v4MImg').src = it.imageUrl; document.getElementById('v4MImg').alt = it.name;
+    // the 512px WebP next to the JPG (build/optimize-images.js) — the 1024px JPG only if it is missing
+    var mi = document.getElementById('v4MImg'), u = it.imageUrl || '', w = /^\\/items\\/[^?#]+\\.jpg(\\?|#|$)/i.test(u) ? u.replace(/\\.jpg(?=\\?|#|$)/i, '.webp') : u;
+    mi.onerror = function () { if (mi.src.indexOf('.webp') > -1 && w !== u) { mi.onerror = null; mi.src = u; } };
+    mi.src = w; mi.alt = it.name;
     document.getElementById('v4MName').textContent = sel ? cur.name + ' · ' + sel.label : cur.name;
     document.getElementById('v4MPrice').textContent = fmt(it.price);
     var o = document.getElementById('v4MOrig'); o.hidden = !(cur.orig && !sel); if (cur.orig) o.textContent = fmt(cur.orig);
@@ -288,4 +308,4 @@ const STORE_JS = `<script>
 })();
 </script>`;
 
-module.exports = { renderStoreMain, STORE_JS, storeOf };
+module.exports = { renderStoreMain, STORE_JS, storeOf, pic };
