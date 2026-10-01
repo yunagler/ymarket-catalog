@@ -398,6 +398,27 @@
   A.getAttribution = function () { var a = attr ? attr() : {}; var c = ctx(); a.visitorId = c.visitorId; a.sessionId = c.sessionId; a.clarity = c.clarity; return a; };
   A.context = ctx;
 
+  // ---- a personal link we sent (?ymc=…, CRM lib/web-link.ts): known from the first page ----
+  (function () {
+    var m = /[?&]ymc=([^&#]+)/.exec(location.search);
+    if (!m) return;
+    var t = m[1];
+    try { t = decodeURIComponent(t); } catch (e) {}
+    // out of the address bar at once (before the ad/analytics tags read the URL):
+    // a link copied from the page must not carry someone's token
+    try {
+      var u = new URL(location.href); u.searchParams.delete('ymc');
+      history.replaceState(history.state, '', u.pathname + u.search + u.hash);
+    } catch (e) {}
+    if (!/^[cl]\d{1,9}\.[A-Za-z0-9_-]{12}$/.test(t) || !window.fetch) return;
+    // text/plain: no CORS preflight; the server checks the signature
+    fetch('https://app.ymarket.co.il/api/analytics/link', { method: 'POST', mode: 'cors', keepalive: true,
+      headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify({ t: t, web: ctx() }) })
+      .then(function (r) { return r.status === 200 ? r.json() : null; })
+      .then(function (d) { if (d && d.webRef) A.identify(d.webRef, 'crm_link'); })
+      .catch(function () {});
+  })();
+
   // ---- identity: label the Clarity recording while this browser is known ----
   function who() { try { return JSON.parse(get(ls, 'ym_who') || 'null'); } catch (e) { return null; } }
   function tag(w) {
