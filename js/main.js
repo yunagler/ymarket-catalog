@@ -314,13 +314,14 @@ function initContactForm() {
     fetch('https://app.ymarket.co.il/api/public/leads', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, phone, email, business, message }),
+      body: JSON.stringify({ name, phone, email, business, message, web: window.YMarketAnalyst && YMarketAnalyst.context ? YMarketAnalyst.context() : null }),
     })
       .then(res => {
         if (!res.ok) throw new Error('API error');
         return res.json();
       })
-      .then(() => {
+      .then((d) => {
+        try { if (d && d.webRef && window.YMarketAnalyst && YMarketAnalyst.identify) YMarketAnalyst.identify(d.webRef, 'lead_form'); } catch (x) {}
         // Show success message
         form.innerHTML = `
           <div style="text-align:center; padding: var(--space-2xl) 0;">

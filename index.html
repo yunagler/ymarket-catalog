@@ -2845,9 +2845,9 @@
         var btn = f.querySelector('button'); btn.disabled = true; msg.textContent = 'שולח…';
         fetch('https://app.ymarket.co.il/api/public/leads', {
           method: 'POST', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name: name, phone: phone, business: business, message: 'הצטרפות מהירה ל-CASH MARKET מעמוד הבית' })
+          body: JSON.stringify({ name: name, phone: phone, business: business, message: 'הצטרפות מהירה ל-CASH MARKET מעמוד הבית', web: window.YMarketAnalyst && YMarketAnalyst.context ? YMarketAnalyst.context() : null })
         }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-          .then(function () { f.innerHTML = '<div class="y3-join__ok"><i class="fas fa-circle-check"></i><strong>קיבלנו, תודה!</strong><span>נחזור אליכם עם פרטי הכניסה לפורטל ול-CASH MARKET.</span></div>'; })
+          .then(function (d) { try { if (d && d.webRef && window.YMarketAnalyst && YMarketAnalyst.identify) YMarketAnalyst.identify(d.webRef, 'lead_form'); } catch (x) {} f.innerHTML = '<div class="y3-join__ok"><i class="fas fa-circle-check"></i><strong>קיבלנו, תודה!</strong><span>נחזור אליכם עם פרטי הכניסה לפורטל ול-CASH MARKET.</span></div>'; })
           .catch(function () { btn.disabled = false; msg.innerHTML = 'לא הצלחנו לשלוח. אפשר <a href="https://wa.me/972549922492?text=' + encodeURIComponent('שלום, אשמח להצטרף ל-CASH MARKET. ' + name + ' ' + phone) + '" target="_blank" rel="noopener">לכתוב לנו בוואטסאפ</a>.'; });
       });
     })();
@@ -2916,7 +2916,7 @@
   </script>
 
   <!-- Analytics -->
-  <script src="/js/analytics.min.js" defer></script>
+  <script src="/js/analytics.min.js?v=20261001" defer></script>
 
 <script src="/js/search.js?v=2" defer>
 </script>

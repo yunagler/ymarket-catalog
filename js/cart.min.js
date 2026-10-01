@@ -17,6 +17,13 @@
     return div.innerHTML;
   }
 
+  // a sized/colored line links to its product page opened on that option (the page reads #size=)
+  function sizeOf(item) {
+    if (item.label) return String(item.label);
+    var n = item.name || '', m = n.match(/ · ([^·]{1,12})$/) || n.match(/מידה\s+([A-Za-z0-9]{1,4})(?![A-Za-z0-9])/);
+    return m ? m[1].trim() : '';
+  }
+
   function getCart() {
     try {
       return JSON.parse(localStorage.getItem('ym_cart') || '[]');
@@ -66,7 +73,7 @@
           '<img src="' + escapeHtml(item.imageUrl || 'images/products/placeholder.jpg') + '" alt="' + safeName + '" loading="lazy">' +
         '</div>' +
         '<div class="cart-item__details">' +
-          '<h3 class="cart-item__name">' + (item.slug ? '<a href="products/' + encodeURIComponent(item.slug) + '">' + safeName + '</a>' : safeName) + '</h3>' +
+          '<h3 class="cart-item__name">' + (item.slug ? '<a href="products/' + encodeURIComponent(item.slug) + '/' + (sizeOf(item) ? '#size=' + encodeURIComponent(sizeOf(item)) : '') + '">' + safeName + '</a>' : safeName) + '</h3>' +
           '<div class="cart-item__unit">' + safeUnit + '</div>' +
           '<div class="cart-item__price">' + (item.price ? formatPrice(item.price) : 'צרו קשר') + '</div>' +
         '</div>' +

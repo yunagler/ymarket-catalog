@@ -247,11 +247,12 @@
         const response = await fetch(`${apiBase}/api/public/leads`, {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify(data),
+          body: JSON.stringify({ ...data, web: window.YMarketAnalyst && YMarketAnalyst.context ? YMarketAnalyst.context() : null }),
         });
         const result = await response.json();
         if (!response.ok || !result.id) throw new Error(result.error || 'save_failed');
         if (typeof fbq === 'function') fbq('track', 'Lead', {content_name:'Thermal 80x80 bakery chain lead'});
+        { const d = result; try { if (d && d.webRef && window.YMarketAnalyst && YMarketAnalyst.identify) YMarketAnalyst.identify(d.webRef, 'lead_form'); } catch (x) {} }
         form.reset();
         message.className = 'message success';
         message.textContent = 'הפרטים התקבלו. נחזור אליך לבדיקת התאמה.';

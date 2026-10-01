@@ -280,6 +280,7 @@
         // First-party attribution: tie this order back to its session/source
         if (window.YMarketAnalyst) {
           try { window.YMarketAnalyst.orderPlaced(result.data.orderId, result.data.totalAmount); } catch (e) {}
+          { var d = result.data; try { if (d && d.webRef && window.YMarketAnalyst && YMarketAnalyst.identify) YMarketAnalyst.identify(d.webRef, 'b2c_order'); } catch (x) {} }
         }
 
         // Step 2/2 — the secure payment page. The card is entered there, never here.

@@ -1,0 +1,74 @@
+name: Site buttons smoke
+
+# Every button on the live store pages does its job — after each deploy and every morning.
+# 30/09/2026: a "hidden" item window covered all 86 store pages for 20 hours and nobody knew.
+# The robot clicks like a person (real hit-testing), so an invisible layer, a dead button or a
+# broken size picker fails here. A failure opens a Task + WhatsApp in the CRM
+# (/api/analytics/site-smoke, secret SITE_SMOKE_TOKEN) and GitHub's own failure e-mail.
+
+on:
+  workflow_run:
+    workflows: ['Deploy site to GitHub Pages']
+    types: [completed]
+  schedule:
+    - cron: '30 5 * * 0-4'   # 08:30 Israel (summer) / 07:30 (winter), Sunday–Thursday
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-smoke
+  cancel-in-progress: true
+
+jobs:
+  smoke:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            .github
+            category
+          sparse-checkout-cone-mode: true
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Playwright (outside the site repo)
+        run: |
+          mkdir -p /tmp/smoke && cd /tmp/smoke
+          npm init -y >/dev/null
+          npm i playwright@1.48.2 >/dev/null
+          npx playwright install --with-deps chromium >/dev/null
+          cp "$GITHUB_WORKSPACE/.github/smoke/site-buttons.mjs" .
+
+      - name: Let the CDN pick up the deploy
+        if: github.event_name == 'workflow_run'
+        run: sleep 90
+
+      - name: Click through the live site
+        id: run
+        working-directory: /tmp/smoke
+        env:
+          BASE_URL: https://ymarket.co.il
+          SITE_ROOT: ${{ github.workspace }}
+        run: node site-buttons.mjs 2>&1 | tee smoke.log
+
+      - name: Alert the CRM
+        if: failure()
+        working-directory: /tmp/smoke
+        env:
+          SITE_SMOKE_TOKEN: ${{ secrets.SITE_SMOKE_TOKEN }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          if [ -z "$SITE_SMOKE_TOKEN" ]; then echo "SITE_SMOKE_TOKEN not set — GitHub e-mail only"; exit 0; fi
+          FAILS=$(awk '/^FAILURES$/{f=1;next} f&&NF' smoke.log | head -15)
+          [ -z "$FAILS" ] && FAILS="הבדיקה נעצרה לפני שסיימה — ראו את הפירוט"
+          node -e 'const f=process.argv[1].split("\n").filter(Boolean);process.stdout.write(JSON.stringify({failures:f,runUrl:process.env.RUN_URL}))' "$FAILS" > body.json
+          curl -sS -m 30 -X POST https://app.ymarket.co.il/api/analytics/site-smoke \
+            -H "Content-Type: application/json" -H "x-site-smoke-token: $SITE_SMOKE_TOKEN" \
+            --data @body.json

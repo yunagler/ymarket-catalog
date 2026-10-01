@@ -1261,7 +1261,7 @@
   <script>(function(){if(!matchMedia("(max-width:768px)").matches)return;document.querySelectorAll(".footer__col h4").forEach(function(h){h.setAttribute("role","button");h.setAttribute("tabindex","0");h.addEventListener("click",function(){h.parentElement.classList.toggle("is-open")});});})();</script>
 
   <script src="js/main.min.js?v=20260313"></script>
-  <script src="js/analytics.min.js"></script>
+  <script src="js/analytics.min.js?v=20261001"></script>
   <script src="js/schema-markup.js" defer></script>
   <script>
   (function() {
@@ -1329,10 +1329,12 @@
             unloadingAddress: unloadingAddress || undefined,
             businessType: businessType || undefined,
             password,
+            web: window.YMarketAnalyst && YMarketAnalyst.context ? YMarketAnalyst.context() : null,
           }),
         });
 
         const result = await res.json();
+        if (res.ok) { const d = result; try { if (d && d.webRef && window.YMarketAnalyst && YMarketAnalyst.identify) YMarketAnalyst.identify(d.webRef, 'register'); } catch (x) {} }
 
         if (!res.ok) {
           errorEl.textContent = result.error || 'שגיאה בשליחת הטופס';
