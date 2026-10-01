@@ -6,7 +6,7 @@
 //
 // Default: every store page gets the light check; the safety store gets the full flow.
 import { chromium } from 'playwright';
-import { readdirSync, existsSync, readFileSync } from 'node:fs';
+import { readdirSync, existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const BASE = (process.env.BASE_URL || 'https://ymarket.co.il').replace(/\/$/, '');
@@ -14,6 +14,7 @@ const ROOT = process.env.SITE_ROOT || new URL('../../', import.meta.url).pathnam
 const bust = () => 'smoke=' + Date.now().toString(36);
 const fails = [];
 const ok = [];
+const metrics = []; // per store page: what a visitor waits for — feeds the improvement suggestions
 const fail = (where, what) => { fails.push(`${where} — ${what}`); console.log('✗', where, '—', what); };
 
 // store pages = category pages that carry the item window
@@ -37,6 +38,14 @@ async function newPage(browser) {
   // the robot is not a visitor: keep it out of our analytics, Clarity, and the ad pixels
   await ctx.route(/app\.ymarket\.co\.il\/api\/analytics\//, r => r.fulfill({ status: 204, body: '' }));
   await ctx.route(/clarity\.ms|facebook\.(net|com)|google-analytics|googletagmanager|doubleclick|googleadservices/, r => r.abort());
+  // largest paint + layout shift, observed from the first byte
+  await ctx.addInitScript(() => {
+    window.__lcp = 0; window.__cls = 0;
+    try {
+      new PerformanceObserver(l => { for (const e of l.getEntries()) window.__lcp = e.renderTime || e.loadTime || e.startTime; }).observe({ type: 'largest-contentful-paint', buffered: true });
+      new PerformanceObserver(l => { for (const e of l.getEntries()) if (!e.hadRecentInput) window.__cls += e.value; }).observe({ type: 'layout-shift', buffered: true });
+    } catch (e) {}
+  });
   const page = await ctx.newPage();
   const errors = [];
   page.on('pageerror', e => errors.push(String(e.message || e).slice(0, 160)));
@@ -49,14 +58,29 @@ async function lightCheck(browser, path) {
   try {
     await page.goto(`${BASE}${path}?${bust()}`, { waitUntil: 'domcontentloaded', timeout: 45000 });
     await page.waitForSelector('.v4-item', { timeout: 20000 });
+    await page.waitForLoadState('load', { timeout: 30000 }).catch(() => {});
+    await page.waitForTimeout(400);
+    const m = await page.evaluate(() => {
+      const nav = performance.getEntriesByType('navigation')[0] || {};
+      const res = performance.getEntriesByType('resource');
+      const bytes = res.reduce((a, r) => a + (r.transferSize || 0), nav.transferSize || 0);
+      const broken = [...document.images].filter(i => i.complete && i.naturalWidth === 0 && i.getAttribute('src')).map(i => i.getAttribute('src'));
+      return { dcl: Math.round(nav.domContentLoadedEventEnd || 0), load: Math.round(nav.loadEventEnd || 0), lcp: Math.round(window.__lcp || 0),
+        cls: Math.round((window.__cls || 0) * 1000) / 1000, kb: Math.round(bytes / 1024), requests: res.length + 1, items: document.querySelectorAll('.v4-item').length,
+        broken: broken.length, brokenSrc: broken.slice(0, 3) };
+    });
+    const metric = { path, ...m, modalMs: null };
+    metrics.push(metric);
     const hiddenOk = await page.evaluate(() => { const m = document.getElementById('v4Modal'); return !m || (m.hidden && getComputedStyle(m).display === 'none'); });
     if (!hiddenOk) return fail(path, 'חלון המוצר הסגור עדיין פרוס על הדף');
     const card = page.locator('article.v4-item[data-item] .v4-item__img').first();
     if (await card.count()) {
       await card.scrollIntoViewIfNeeded();
+      const t0 = Date.now();
       await card.click({ timeout: 8000 }).catch(e => { throw new Error('לחיצה על מוצר נחסמה: ' + String(e.message).split('\n')[0].slice(0, 140)); });
-      await page.waitForFunction(() => { const m = document.getElementById('v4Modal'); return m && !m.hidden && m.classList.contains('is-on'); }, null, { timeout: 4000 })
+      await page.waitForFunction(() => { const m = document.getElementById('v4Modal'); return m && !m.hidden && m.classList.contains('is-on'); }, null, { timeout: 4000, polling: 20 })
         .catch(() => { throw new Error('לחיצה על מוצר לא פתחה את חלון המוצר'); });
+      metric.modalMs = Date.now() - t0;
       await page.keyboard.press('Escape');
       await page.waitForFunction(() => { const m = document.getElementById('v4Modal'); return m.hidden && getComputedStyle(m).display === 'none'; }, null, { timeout: 3000 })
         .catch(() => { throw new Error('Esc לא סגר את חלון המוצר'); });
@@ -177,6 +201,33 @@ try {
   const workers = Array.from({ length: 4 }, async () => { while (queue.length) await lightCheck(browser, queue.shift()); });
   await Promise.all(workers);
 } finally { await browser.close(); }
+
+// ---- what the robot learned: suggestions to make the stores better ----
+// The runner sits abroad, so absolute times are pessimistic for Israel — the ranking (which
+// stores are slowest/heaviest) is the useful part; thresholds are set with that in mind.
+const sec = ms => (ms / 1000).toFixed(1) + 'ש׳';
+const name = p => { let d = p; try { d = decodeURIComponent(p); } catch {} return d.replace(/^\/category\//, '').replace(/\/$/, ''); };
+const median = a => { const v = a.filter(x => x > 0).sort((x, y) => x - y); return v.length ? v[Math.floor(v.length / 2)] : 0; };
+const ideas = [];
+const slow = metrics.filter(x => x.lcp > 3000).sort((a, b) => b.lcp - a.lcp);
+if (slow.length) ideas.push(`${slow.length} חנויות מציגות את התוכן הראשי אחרי יותר מ-3 שניות. האיטיות: ${slow.slice(0, 3).map(x => `${name(x.path)} ${sec(x.lcp)}`).join(', ')}. כדאי לבדוק את גודל התמונות הראשונות בעמוד.`);
+const heavy = metrics.filter(x => x.kb > 2500).sort((a, b) => b.kb - a.kb);
+if (heavy.length) ideas.push(`${heavy.length} חנויות שוקלות יותר מ-2.5MB בטעינה הראשונה. הכבדות: ${heavy.slice(0, 3).map(x => `${name(x.path)} ${(x.kb / 1024).toFixed(1)}MB`).join(', ')}. כדאי לבדוק תמונות שלא עברו דחיסה.`);
+const shifty = metrics.filter(x => x.cls > 0.1).sort((a, b) => b.cls - a.cls);
+if (shifty.length) ideas.push(`${shifty.length} חנויות זזות בזמן הטעינה (CLS מעל 0.1): ${shifty.slice(0, 3).map(x => `${name(x.path)} ${x.cls}`).join(', ')}. כדאי לבדוק מידות קבועות לתמונות ולבאנרים, כדי שלא יקפצו מתחת לאצבע.`);
+const broken = metrics.filter(x => x.broken > 0);
+if (broken.length) ideas.push(`תמונות שבורות ב-${broken.length} חנויות: ${broken.slice(0, 3).map(x => `${name(x.path)} (${x.brokenSrc.join(', ')})`).join('; ')}.`);
+const slowModal = metrics.filter(x => x.modalMs > 600).sort((a, b) => b.modalMs - a.modalMs);
+if (slowModal.length) ideas.push(`חלון המוצר נפתח לאט (מעל 0.6 שניות) ב-${slowModal.length} חנויות: ${slowModal.slice(0, 3).map(x => `${name(x.path)} ${sec(x.modalMs)}`).join(', ')}.`);
+const stats = {
+  pages: metrics.length, ok: ok.length, failed: fails.length,
+  medianLcp: median(metrics.map(x => x.lcp)), medianKb: median(metrics.map(x => x.kb)),
+  medianModalMs: median(metrics.map(x => x.modalMs || 0)),
+  slowest: [...metrics].sort((a, b) => b.lcp - a.lcp).slice(0, 5).map(x => ({ path: x.path, lcp: x.lcp, kb: x.kb })),
+};
+writeFileSync('robot-report.json', JSON.stringify({ failures: fails, suggestions: ideas, stats }, null, 1));
+if (ideas.length) console.log('\nSUGGESTIONS\n' + ideas.map(i => '• ' + i).join('\n'));
+console.log(`\nחציון: תוכן ראשי ${sec(stats.medianLcp)} · ${stats.medianKb}KB · חלון מוצר ${stats.medianModalMs}ms`);
 
 console.log(`\n${ok.length} תקין · ${fails.length} נכשל`);
 if (fails.length) {

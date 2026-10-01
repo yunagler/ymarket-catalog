@@ -58,17 +58,20 @@ jobs:
           SITE_ROOT: ${{ github.workspace }}
         run: node site-buttons.mjs 2>&1 | tee smoke.log
 
-      - name: Alert the CRM
-        if: failure()
+      - name: Report to the CRM (failures alert; suggestions go to a weekly task)
+        if: always()
         working-directory: /tmp/smoke
         env:
           SITE_SMOKE_TOKEN: ${{ secrets.SITE_SMOKE_TOKEN }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           if [ -z "$SITE_SMOKE_TOKEN" ]; then echo "SITE_SMOKE_TOKEN not set — GitHub e-mail only"; exit 0; fi
-          FAILS=$(awk '/^FAILURES$/{f=1;next} f&&NF' smoke.log | head -15)
-          [ -z "$FAILS" ] && FAILS="הבדיקה נעצרה לפני שסיימה — ראו את הפירוט"
-          node -e 'const f=process.argv[1].split("\n").filter(Boolean);process.stdout.write(JSON.stringify({failures:f,runUrl:process.env.RUN_URL}))' "$FAILS" > body.json
+          node -e '
+            const fs = require("fs");
+            let r = { failures: ["הבדיקה נעצרה לפני שסיימה — ראו את הפירוט"], suggestions: [], stats: null };
+            try { r = JSON.parse(fs.readFileSync("robot-report.json", "utf8")); } catch {}
+            r.runUrl = process.env.RUN_URL;
+            fs.writeFileSync("body.json", JSON.stringify(r));'
           curl -sS -m 30 -X POST https://app.ymarket.co.il/api/analytics/site-smoke \
             -H "Content-Type: application/json" -H "x-site-smoke-token: $SITE_SMOKE_TOKEN" \
             --data @body.json
