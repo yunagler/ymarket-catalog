@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="/css/style.min.css">
   <link rel="stylesheet" href="/css/site-header.css">
   <link rel="stylesheet" href="/css/pages/catalog.min.css">
-  <link rel="stylesheet" href="/css/pages/store-v4.css?v=5">
+  <link rel="stylesheet" href="/css/pages/store-v4.css?v=6">
   <style>
     .category-seo{margin-top:2.5rem;padding:2rem;background:#fff;border-top:2px solid #e5e7eb;line-height:1.8}
     .category-seo h2{font-size:1.25rem;margin-bottom:1rem;color:var(--color-text,#1f2937)}
@@ -910,6 +910,13 @@
       var p = JSON.parse(ctl.getAttribute('data-p')), it = c.filter(function (x) { return x.id === p.id; })[0], q = it ? it.quantity : 0;
       ctl.querySelector('.v4-q__n').textContent = q; ctl.classList.toggle('has', q > 0);
     });
+    // sized/colored items have no counter, so the pick button shows how many of all their options are in the cart
+    document.querySelectorAll('.v4-item[data-item] button.v4-item__pick').forEach(function (pk) {
+      var d = JSON.parse(pk.closest('.v4-item').getAttribute('data-item')), ms = d.members || [], q = 0;
+      ms.forEach(function (m) { c.forEach(function (x) { if (x.id === m.id) q += x.quantity || 0; }); });
+      pk.textContent = q > 0 ? '✓ ' + q + ' בסל' : 'בחירת ' + (d.axis || 'סוג') + ' · ' + ms.length;
+      pk.classList.toggle('has', q > 0);
+    });
     if (window.YMarket && window.YMarket.updateCartBadge) window.YMarket.updateCartBadge();
     else { var b = document.getElementById('cartBadge'); if (b) { b.textContent = n; b.style.display = n ? '' : 'none'; } }
     var bar = document.getElementById('v4Cartbar'); if (!bar) return; bar.hidden = !n;
@@ -934,7 +941,8 @@
     }
   });
   // item window (Wolt-style): photo, options, quantity, "add to order"
-  var M = document.getElementById('v4Modal'), cur = null, sel = null, qty = 1, lastFocus = null;
+  var M = document.getElementById('v4Modal'), cur = null, curArt = null, sel = null, qty = 1, lastFocus = null;
+  function inCart(id) { var x = get().filter(function (y) { return y.id === id; })[0]; return x ? x.quantity : 0; }
   function mset() {
     var it = sel || cur, total = (it.price || 0) * qty;
     document.getElementById('v4MImg').src = it.imageUrl; document.getElementById('v4MImg').alt = it.name;
@@ -943,7 +951,8 @@
     var o = document.getElementById('v4MOrig'); o.hidden = !(cur.orig && !sel); if (cur.orig) o.textContent = fmt(cur.orig);
     document.getElementById('v4MQty').textContent = qty;
     document.getElementById('v4MAdd').textContent = 'להוסיף להזמנה · ' + fmt(total);
-    document.getElementById('v4MMore').href = '/products/' + (it.slug || cur.slug) + '/';
+    // an option's own page only redirects to the group page, so link the group page and name the option for it to open on
+    document.getElementById('v4MMore').href = sel && cur.href ? cur.href + '#size=' + encodeURIComponent(sel.label) : '/products/' + (it.slug || cur.slug) + '/';
   }
   function open(item) {
     cur = item; qty = 1; sel = null; lastFocus = document.activeElement;
@@ -952,7 +961,8 @@
       opts.hidden = false; document.getElementById('v4MAxis').textContent = 'בחרו ' + (item.axis || 'סוג');
       item.members.forEach(function (m, i) {
         var b = document.createElement('button'); b.type = 'button'; b.className = 'v4-chip' + (i ? '' : ' is-on'); b.setAttribute('role', 'radio'); b.setAttribute('aria-checked', i ? 'false' : 'true');
-        b.innerHTML = '<span></span><small></small>'; b.firstChild.textContent = m.label; b.lastChild.textContent = fmt(m.price);
+        b.innerHTML = '<span></span><small></small>'; b.children[0].textContent = m.label; b.children[1].textContent = fmt(m.price);
+        var inq = inCart(m.id); if (inq) { var em = document.createElement('em'); em.className = 'v4-chip__in'; em.textContent = inq + ' בסל'; b.appendChild(em); }
         b.addEventListener('click', function () { sel = m; [].forEach.call(chips.children, function (c) { c.classList.toggle('is-on', c === b); c.setAttribute('aria-checked', c === b); }); mset(); });
         chips.appendChild(b);
       });
@@ -965,7 +975,7 @@
   document.addEventListener('click', function (e) {
     var t = e.target.closest('[data-open]');
     if (t && !e.metaKey && !e.ctrlKey && !e.shiftKey) {
-      var art = t.closest('.v4-item'); if (art && art.getAttribute('data-item')) { e.preventDefault(); open(JSON.parse(art.getAttribute('data-item'))); return; }
+      var art = t.closest('.v4-item'); if (art && art.getAttribute('data-item')) { e.preventDefault(); curArt = art; open(JSON.parse(art.getAttribute('data-item'))); return; }
     }
     if (e.target.closest('[data-close]')) { close(); return; }
     var q = e.target.closest('.v4-modal__qty [data-q]'); if (q) { qty = Math.max(1, qty + (+q.getAttribute('data-q'))); mset(); }
@@ -975,6 +985,9 @@
     var it = sel || cur, c = get(), x = c.filter(function (y) { return y.id === it.id; })[0];
     if (x) x.quantity += qty; else c.push({ id: it.id, name: sel ? cur.name + ' · ' + sel.label : it.name, price: it.price, unit: it.unit || '', imageUrl: it.imageUrl, slug: it.slug, quantity: qty });
     set(c); paint(); close();
+    var fx = curArt && (curArt.querySelector('button.v4-item__pick') || curArt.querySelector('.v4-item__ctl'));
+    if (fx) { fx.classList.remove('pop'); void fx.offsetWidth; fx.classList.add('pop'); }
+    if (window.YMarket && window.YMarket.showToast) window.YMarket.showToast('נוסף לסל · ' + (sel ? (cur.axis || 'סוג') + ' ' + sel.label + ' · ' : '') + qty + ' יח׳');
     var A = window.YMarketAnalytics, ev = { id: it.id, name: it.name, price: it.price, quantity: qty };
     if (A && A.fbAddToCart) A.fbAddToCart(ev); if (A && A.trackAddToCart) A.trackAddToCart(ev);
   });

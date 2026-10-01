@@ -512,3 +512,21 @@ window.YMarket = {
   setCartQty,
   showCartQtyControls
 };
+
+/* ---- Variant group page: open on the option named in #size= (the store item window links here) ---- */
+(function () {
+  function pickFromHash() {
+    try {
+      var m = location.hash.match(/(?:^#|&)size=([^&]+)/);
+      if (!m) return;
+      var want = decodeURIComponent(m[1]);
+      var rows = document.querySelectorAll('.vrow');
+      for (var i = 0; i < rows.length; i++) {
+        var label = rows[i].querySelector('.vrow__label'), pick = rows[i].querySelector('button.vrow__pick');
+        if (label && pick && label.textContent.trim() === want) { pick.click(); return; }
+      }
+    } catch (e) {}
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', pickFromHash);
+  else pickFromHash();
+})();

@@ -156,6 +156,9 @@ body.v4-has-cart .whatsapp-float { bottom: 110px !important; transition: bottom 
 html.v4-lock { overflow: hidden; }
 .v4-item__img, .v4-item__name { cursor: pointer; }
 button.v4-item__pick { border: 0; cursor: pointer; font: inherit; font-weight: 800; font-size: .8rem; }
+button.v4-item__pick.has { background: var(--v4-blue); color: #fff; }
+.v4-item__pick.pop { animation: v4-bump .45s var(--v4-spring); }
+.v4-chip__in { font-style: normal; font-size: .72rem; font-weight: 800; color: var(--v4-blue); }
 .v4-modal { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: 16px; }
 /* the display rules above beat the browser's [hidden]; without this the closed window covers the page and the store search hides nothing */
 .v4-modal[hidden], .v4-item[hidden], .v4-aisle[hidden], .v4-cartbar[hidden], .v4-empty[hidden], .v4-modal__opts[hidden] { display: none !important; }
