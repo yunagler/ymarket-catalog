@@ -103,7 +103,16 @@ const TEXT_RULES = [
   [/,\s*עומד(?:ת|ים|ות)? בתקני בטיחות ישראליים/g, ''],
   // any remaining sentence (inside a text node) that makes such a claim goes entirely
   [/[^.<>"]*(?:עומד(?:ת|ים|ות)? ב?תקנ|תקני (?:ה)?בטיחות (?:ה)?(?:מזון|המחייבים|ישראליים)|מאושר(?:ת|ים|ות)? למגע|משרד הבריאות|\bCE\b|\bISO\b|מכון התקנים)[^.<>"]*\.\s?/g, ''],
+  // --- "כירוגית" (surgical) is a medical-device claim we hold no document for (03/10, same
+  //     ruling as the mask group name in 71984e48). Only the website text changes, not the
+  //     Rivhit item name; slug / seoSlug / searchTags are skipped (TEXT_SKIP_KEYS) so the legacy
+  //     Hebrew URLs keep redirecting and site search still finds the word.
+  [/(?<![֐-׿])כירור?גי(?:ת|ות)(?![֐-׿])/g, 'חד פעמית'],
+  [/חד פעמית חד פעמית/g, 'חד פעמית'],
 ];
+
+// Identifier and search-keyword fields, never visible copy.
+const TEXT_SKIP_KEYS = new Set(['slug', 'seoSlug', 'searchTags']);
 
 // FAQ entries and spec rows that exist only to make such a claim are dropped whole.
 const CLAIM_RE = /עומד(?:ת|ים|ות)? ב?תקנ|תקני (?:ה)?בטיחות|מאושר(?:ת|ים|ות)? למגע|למגע (?:ישיר )?(?:עם )?מזון|משרד הבריאות|\bCE\b|\bISO\b|מכון התקנים|אמ["״]ר/;
@@ -116,6 +125,7 @@ function dropClaimEntries(list) {
 const META_KEYS = new Set(['metaDescription', 'metaDesc', 'seoMetaDesc']);
 
 function applyTextRules(s, key) {
+  if (TEXT_SKIP_KEYS.has(key)) return s;
   let out = s;
   if (META_KEYS.has(key)) out = out.replace(/(אספקה(?: מהירה)? (?:תוך )?)24-72 שעות(?![^<.]*(?:גוש דן|במרכז))/g, '$124–72 שעות בגוש דן ובמרכז');
   for (const [re, rep] of TEXT_RULES) out = out.replace(re, rep);
