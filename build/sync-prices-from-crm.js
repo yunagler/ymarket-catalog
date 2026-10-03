@@ -8,14 +8,16 @@
  * New CRM items and items the CRM no longer exports are reported, not added or removed.
  *
  * Then regenerates only what the new prices touch: the changed product pages
- * (`generate-products.js --slug=`), the store pages, the homepage best-sellers rail,
+ * (`generate-products.js --slug=`), the price on store-page cards (patched in place),
+ * the homepage best-sellers rail,
  * and the agent price list (pricing.md, pricing/*.md, prices.csv).
  * Never runs generate-sitemap.js (it would stamp lastmod on unchanged pages).
  *
  *   node build/sync-prices-from-crm.js              apply + regenerate (CI commits the result)
  *   node build/sync-prices-from-crm.js --dry-run    report only, write nothing
- *   FORCE_REGEN=1 node build/sync-prices-from-crm.js  rebuild every product and store page
+ *   FORCE_REGEN=1 node build/sync-prices-from-crm.js  rebuild every product page
  *                                                     (determinism check, never committed)
+ *   SIMULATE=79:101,284:111 …   fake CRM prices to exercise the patching (never committed)
  *
  * Exit: 0 ok · 1 a safety gate stopped the run · 2 the CRM catalog could not be read.
  * In GitHub Actions it writes a step summary and the outputs `changed` and `summary`.
@@ -114,6 +116,86 @@ function patchHomeRail(priceById) {
   return patched;
 }
 
+// Store pages carry content their generator no longer reproduces (link-preview images,
+// a "most ordered" aisle), so they are patched in place, card by card, never rebuilt.
+// Same escaping and money format as build/store-template.js.
+const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const unesc = s => s.replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+const shekel = v => '₪' + Number(v).toLocaleString('he-IL', { maximumFractionDigits: 2 });
+const reEsc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+function listStorePages(dir = path.join(ROOT, 'category'), out = []) {
+  if (!fs.existsSync(dir)) return out;
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, e.name);
+    if (e.isDirectory()) listStorePages(full, out);
+    else if (e.name === 'index.html') out.push(full);
+  }
+  return out;
+}
+
+function patchStorePages(changedIds, siteById) {
+  const stats = { files: 0, cards: 0, skipped: 0, ldPrices: 0 };
+  for (const file of listStorePages()) {
+    let html = fs.readFileSync(file, 'utf-8');
+    if (!html.includes('class="v4-item"')) continue;
+    const before = html;
+    html = html.replace(/<article class="v4-item" data-item="([^"]*)">[\s\S]*?<\/article>/g, (card, attr) => {
+      let obj;
+      try { obj = JSON.parse(unesc(attr)); } catch { stats.skipped++; return card; }
+      if (esc(JSON.stringify(obj)) !== attr) { stats.skipped++; return card; } // unknown encoding: leave it
+      const isGroup = Array.isArray(obj.members) && obj.members.length > 0;
+      let touched = false;
+      if (isGroup) {
+        for (const m of obj.members) {
+          const it = siteById.get(m.id);
+          if (changedIds.has(m.id) && it && Number(it.saleNis) > 0 && m.price !== Number(it.saleNis)) { m.price = Number(it.saleNis); touched = true; }
+        }
+        if (touched) obj.price = Math.min(...obj.members.map(m => m.price).filter(v => v > 0));
+      } else if (changedIds.has(obj.id)) {
+        const it = siteById.get(obj.id);
+        if (it && Number(it.saleNis) > 0) {
+          const orig = it.productStatus === 'on_sale' && it.originalPrice ? it.originalPrice : null;
+          if (obj.price !== Number(it.saleNis) || obj.orig !== orig) { obj.price = Number(it.saleNis); obj.orig = orig; touched = true; }
+        }
+      }
+      if (!touched) return card;
+      stats.cards++;
+      let next = card.replace(`data-item="${attr}"`, `data-item="${esc(JSON.stringify(obj))}"`);
+      if (!isGroup) {
+        next = next.replace(/data-p="([^"]*)"/, (whole, dp) => {
+          try {
+            const d = JSON.parse(unesc(dp));
+            if (esc(JSON.stringify(d)) !== dp) return whole;
+            d.price = obj.price;
+            return `data-p="${esc(JSON.stringify(d))}"`;
+          } catch { return whole; }
+        });
+        next = next.replace(/<span class="v4-item__price">[\s\S]*?<\/span>/,
+          `<span class="v4-item__price">${obj.orig ? `<s>${shekel(obj.orig)}</s> ` : ''}${shekel(obj.price)} <small>לפני מע״מ</small></span>`);
+      } else {
+        next = next.replace(/(<span class="v4-item__price">(?:<s>[^<]*<\/s> )?מ-)₪[\d.,]+( <small>)/, `$1${shekel(obj.price)}$2`);
+      }
+      return next;
+    });
+    // JSON-LD ItemList offers on the same page
+    for (const id of changedIds) {
+      const it = siteById.get(id);
+      if (!it || !(Number(it.saleNis) > 0)) continue;
+      for (const slug of new Set([it.slug, it.seoSlug].filter(Boolean))) {
+        const rx = new RegExp(`("url": "https://ymarket\\.co\\.il/products/${reEsc(slug)}/",[\\s\\S]{0,500}?"price": )([\\d.]+)`, 'g');
+        html = html.replace(rx, (w, head, old) => {
+          if (Number(old) === Number(it.saleNis)) return w;
+          stats.ldPrices++;
+          return head + money(Number(it.saleNis));
+        });
+      }
+    }
+    if (html !== before) { fs.writeFileSync(file, html, 'utf-8'); stats.files++; }
+  }
+  return stats;
+}
+
 async function main() {
   say(`## Nightly price sync · ${new Date().toISOString().slice(0, 16).replace('T', ' ')} UTC`);
   if (DRY) say('Mode: **dry run** (nothing written)');
@@ -131,6 +213,11 @@ async function main() {
     return finish(2, false);
   }
   const crmItems = Array.isArray(crm.items) ? crm.items : [];
+  const SIM = (process.env.SIMULATE || '').split(',').filter(Boolean).map(x => x.split(':').map(Number));
+  for (const [id, price] of SIM) {
+    const c = crmItems.find(i => i.id === id);
+    if (c) { c.saleNis = price; say(`Simulated CRM price: item ${id} → ${price}`); }
+  }
   if (crmItems.length < MIN_ITEMS) {
     say(`❌ CRM returned ${crmItems.length} items (expected ≥ ${MIN_ITEMS}) — nothing changed.`);
     return finish(1, false);
@@ -225,7 +312,8 @@ async function main() {
       try { node('generate-products.js', [`--slug=${slug}`]); } catch (e) { say(`⚠️ page ${slug}: ${String(e.stderr || e.message).slice(0, 200)}`); }
     }
   }
-  node('generate-categories.js');
+  const siteById = new Map(site.map(i => [i.id, i]));
+  const storeStats = patchStorePages(new Set(changes.map(c => c.item.id)), siteById);
   const priceById = new Map(site.map(i => [i.id, Number(i.saleNis)]));
   const railPatched = patchHomeRail(priceById);
   require('./generate-pricing').generatePricing();
@@ -234,33 +322,21 @@ async function main() {
   const files = changedFiles();
   const outside = files.filter(f => !ALLOWED.some(rx => rx.test(f)));
   const expectedPages = new Set([...pageSlugs].map(s => `products/${s}/index.html`));
-  // store pages that list a changed item, plus their parent stores
-  const cats = data.categories || [];
-  const catBySlug = new Map();
-  for (const c of cats) { if (c.seoSlug) catBySlug.set(c.seoSlug, c); if (c.slug) catBySlug.set(c.slug, c); }
-  const catById = new Map(cats.map(c => [c.id, c]));
-  const expectedCats = new Set();
-  for (const { item } of changes) {
-    for (const s of [item.categorySlug, ...(item.categorySlugs || [])]) {
-      let c = catBySlug.get(s);
-      for (let i = 0; c && i < 10; i++) { if (c.seoSlug) expectedCats.add(`category/${c.seoSlug}/index.html`); c = catById.get(c.parentId); }
-    }
-  }
+  // Store pages are patched card by card (only cards of changed items), so every store
+  // page in the diff is explained by a price change; product pages must still match.
   const unexpectedPages = files.filter(f => f.startsWith('products/') && !expectedPages.has(f));
-  const unexpectedCats = files.filter(f => f.startsWith('category/') && !expectedCats.has(f));
 
   say('');
-  say(`Regenerated: ${pageSlugs.size} product pages · store pages · homepage rail cards patched: ${railPatched} · price list`);
+  say(`Regenerated: ${pageSlugs.size} product pages · store pages patched: ${storeStats.files} files / ${storeStats.cards} cards / ${storeStats.ldPrices} schema prices${storeStats.skipped ? ` (${storeStats.skipped} cards skipped: unknown encoding)` : ''} · homepage rail cards: ${railPatched} · price list`);
   say(`Files changed: ${files.length} (product pages ${files.filter(f => f.startsWith('products/')).length}, store pages ${files.filter(f => f.startsWith('category/')).length})`);
   if (outside.length) say(`Outside the allowed set: ${outside.slice(0, 20).join(', ')}`);
   if (unexpectedPages.length) say(`Product pages changed without a price change (${unexpectedPages.length}): ${unexpectedPages.slice(0, 15).join(', ')}`);
-  if (unexpectedCats.length) say(`Store pages changed without a price change (${unexpectedCats.length}): ${unexpectedCats.slice(0, 15).join(', ')}`);
 
-  if (FORCE) {
-    say('\nForce regeneration is a measurement only — never committed.');
+  if (FORCE || SIM.length) {
+    say('\nForce regeneration / simulation is a measurement only — never committed.');
     return finish(0, false, 'force regeneration (not committed)');
   }
-  if (outside.length || unexpectedPages.length > MAX_UNEXPECTED_PAGES || unexpectedCats.length > MAX_UNEXPECTED_PAGES) {
+  if (outside.length || unexpectedPages.length > MAX_UNEXPECTED_PAGES) {
     say('\n❌ Regeneration touched more than the new prices explain. Stopped — nothing published.');
     return finish(1, false);
   }

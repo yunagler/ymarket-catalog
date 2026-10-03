@@ -1,7 +1,7 @@
 name: Nightly price sync (CRM → site)
 
 # Copies prices and offers from the CRM public catalog into data/products.json and
-# rebuilds only what they touch (changed product pages, store pages, homepage rail,
+# rebuilds only what they touch (changed product pages, prices on store-page cards, homepage rail,
 # pricing.md / pricing/*.md / prices.csv). Names, slugs and SEO copy are never synced.
 # See build/sync-prices-from-crm.js. No secrets: the catalog endpoint is public.
 
@@ -15,9 +15,13 @@ on:
         type: boolean
         default: true
       force_regen:
-        description: 'Rebuild every product and store page and report what changes (never committed)'
+        description: 'Rebuild every product page and report what changes (never committed)'
         type: boolean
         default: false
+      simulate:
+        description: 'Test only: fake CRM prices, e.g. 648:70,79:101 (never committed)'
+        type: string
+        default: ''
 
 permissions:
   contents: write
@@ -44,6 +48,7 @@ jobs:
         id: sync
         env:
           FORCE_REGEN: ${{ inputs.force_regen && '1' || '' }}
+          SIMULATE: ${{ inputs.simulate }}
         run: node build/sync-prices-from-crm.js
 
       - name: Commit and push
