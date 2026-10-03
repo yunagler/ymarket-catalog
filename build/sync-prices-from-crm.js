@@ -116,8 +116,8 @@ function patchHomeRail(priceById) {
   return patched;
 }
 
-// Store pages carry content their generator no longer reproduces (link-preview images,
-// a "most ordered" aisle), so they are patched in place, card by card, never rebuilt.
+// Store pages are patched in place, card by card, never rebuilt: generate-categories.js
+// stamps today's dateModified on every store page, and unchanged pages must keep their date.
 // Same escaping and money format as build/store-template.js.
 const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const unesc = s => s.replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
