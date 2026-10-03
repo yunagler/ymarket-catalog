@@ -58,7 +58,8 @@ function isRealPage(dir) {
 function generatePricing() {
   const data = JSON.parse(fs.readFileSync(DATA_PATH, 'utf-8'));
   const config = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf-8'));
-  const updated = (data.exportedAt || new Date().toISOString()).slice(0, 10);
+  // Last time a price actually changed (nightly CRM sync), else the full export date
+  const updated = (data.pricesSyncedAt || data.exportedAt || new Date().toISOString()).slice(0, 10);
 
   const cats = data.categories || [];
   const byId = new Map(cats.map(c => [c.id, c]));
@@ -139,7 +140,7 @@ function generatePricing() {
       '',
       `# מחירון ${deptName}`,
       '',
-      `מחירי האתר לעסקים, עודכנו מה-CRM ב-${updated}. המחירים לפני מע״מ (${Math.round(VAT_RATE * 100)}%), ובעמודה הבאה כולל מע״מ. לקוחות רשומים רואים מחירון אישי ב[אפליקציית ההזמנות](https://app.ymarket.co.il/portal).`,
+      `מחירי האתר לעסקים, מסונכרנים מה-CRM בכל לילה (שינוי מחיר אחרון: ${updated}). המחירים לפני מע״מ (${Math.round(VAT_RATE * 100)}%), ובעמודה הבאה כולל מע״מ. לקוחות רשומים רואים מחירון אישי ב[אפליקציית ההזמנות](https://app.ymarket.co.il/portal).`,
       '',
       `[עמוד המחלקה](${SITE}/category/${dept.seoSlug}/) · [תנאים, משלוח ו-CASH BACK](${SITE}/pricing.md) · [כל המחירון ב-CSV](${SITE}/prices.csv)`,
       '',
@@ -185,7 +186,7 @@ function generatePricing() {
     '# מחירים, משלוח ותנאים',
     '',
     'וואי מרקט מוכרת מוצרי צריכה שוטפת לעסקים ולמוסדות במחירי סיטונאות, ישירות מהמפיץ, מהמחסן בגת רימון.',
-    `המחירון בעמוד הזה נוצר אוטומטית מה-CRM בכל עדכון של האתר. עדכון אחרון: ${updated}. ${listed} מוצרים.`,
+    `המחירון מסונכרן אוטומטית מה-CRM בכל לילה. שינוי מחיר אחרון: ${updated}. ${listed} מוצרים.`,
     '',
     '## איך מוצגים המחירים',
     '',

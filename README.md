@@ -60,6 +60,25 @@ git push origin master
 כל push ל-`master` = פרסום מיידי לאתר החי. אין environment staging.
 לפני push: וודא שהאתר המקומי תקין (פתח `products/*/index.html` בדפדפן).
 
+### 3. סנכרון מחירים לילי מה-CRM (מ-03/10/2026)
+
+ה-workflow ‏`.github/workflows/nightly-price-sync.yml` רץ כל לילה ב-02:30 (שעון קיץ). הוא קורא את `https://app.ymarket.co.il/api/public/catalog` ומריץ את `build/sync-prices-from-crm.js`.
+- **מה הוא משנה:** רק את השדות `saleNis`, `originalPrice`, `discountPercent`, `promotionLabel` ו-`productStatus` ב-`data/products.json`, לפי id. **שמות, slug, תוכן SEO ווריאנטים לא מסונכרנים לעולם**, כי ייצוא מלא מה-CRM דורס את עבודת ה-SEO.
+- **מה הוא בונה מחדש:**
+  - עמודי המוצרים שמחירם השתנה (`generate-products.js --slug=`);
+  - עמודי החנויות (`generate-categories.js`);
+  - המחירים ב"מה העסקים מזמינים הכי הרבה" ב-`index.html`;
+  - המחירון לסוכנים: `pricing.md`, `pricing/*.md`, `prices.csv` (מ-`build/generate-pricing.js`).
+- **מה הוא לא עושה:** לא מריץ `generate-sitemap.js`, לא מוסיף מוצרים חדשים ולא מוחק מוצרים. מוצרים כאלה מופיעים רק בדוח הריצה.
+- **מתי הוא נעצר בלי לפרסם:**
+  - הקטלוג מה-CRM מכיל פחות מ-800 מוצרים;
+  - יותר מ-20% מהמחירים משתנים בלילה אחד;
+  - הבנייה נוגעת בקבצים מחוץ לרשימה המותרת;
+  - יותר מ-10 עמודים השתנו בלי שהמחיר שלהם השתנה.
+- **מתי יש קומיט:** רק כשמחיר השתנה. המחבר הוא `ymarket-nightly-sync`, והפריסה מופעלת אחרי הקומיט.
+- **⚠️ לכל מי שעובד על האתר:** לפני כל push להריץ `git pull --rebase`, כי ייתכן שה-master זז בלילה. מי שמשנה את `data/products.json` מקומית צריך לקמט לפני ה-pull.
+- **הרצה ידנית:** Actions ← "Nightly price sync" ← Run workflow. ברירת המחדל היא `dry_run` (דוח בלבד). `force_regen` בודק אם בנייה מחדש של כל העמודים משנה משהו, ולא מקמט אף פעם.
+
 ---
 
 ## מבנה הפרויקט
