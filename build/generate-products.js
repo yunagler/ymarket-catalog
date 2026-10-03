@@ -1209,6 +1209,14 @@ function main() {
 
   console.log(`Generated ${count} product pages + ${groupCount} variant-group pages in ${PRODUCTS_DIR}`);
   if (legacyCount) console.log(`Restored ${legacyCount} legacy redirects from legacy-redirects.json`);
+
+  // Agent price list (pricing.md, pricing/*.md, prices.csv) from this same snapshot,
+  // so the prices agents read always match the pages just built.
+  try {
+    require('./generate-pricing').generatePricing();
+  } catch (e) {
+    console.error('Pricing files skipped: ' + e.message);
+  }
 }
 
 main();
