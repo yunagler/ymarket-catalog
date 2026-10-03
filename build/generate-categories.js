@@ -356,11 +356,12 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
   const catSeo = CATEGORY_SEO[category.slug] || {};
   const seoOv = (category.seoSlug && SEO_OVERRIDES[category.seoSlug]) || {};
   // DB SEO fields (from products.json) take priority over hardcoded CATEGORY_SEO, with final fallback to defaults
-  const seoDesc = category.metaDescription || catSeo.metaDesc || `${category.name} - ${categoryProducts.length} מוצרים במחירי סיטונאות. וואי מרקט - אספקה חכמה לעסקים ומוסדות. משלוח ארצי.`;
+  const seoDesc = seoOv.metaDescription || category.metaDescription || catSeo.metaDesc || `${category.name} - ${categoryProducts.length} מוצרים במחירי סיטונאות. וואי מרקט - אספקה חכמה לעסקים ומוסדות. משלוח ארצי.`;
   const h1Text = seoOv.h1 || category.h1Override || catSeo.h1 || category.name;
   const pageTitle = seoOv.title || category.metaTitle || catSeo.title || `${category.name} | וואי מרקט - אספקה למוסדות ועסקים`;
   const socialTitle = escAttr(seoOv.title || `${category.name} | וואי מרקט`);
-  const seoContentBlock = category.seoContent || catSeo.seoText || '';
+  // seo-overrides guide (written from facts, 10/2026) replaces the category-seo block
+  const seoContentBlock = seoOv.guide || category.seoContent || catSeo.seoText || '';
   const categoryImageAlt = category.imageAlt || category.name;
   // FAQ: prefer DB faqs (from category.faqs), fallback to hardcoded CATEGORY_SEO faqs
   const categoryFaqs = ((category.faqs && category.faqs.length > 0) ? category.faqs : (catSeo.faqs || [])).concat(seoOv.faqs || []);
