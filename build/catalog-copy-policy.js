@@ -108,6 +108,10 @@ const TEXT_RULES = [
   //     Rivhit item name; slug / seoSlug / searchTags are skipped (TEXT_SKIP_KEYS) so the legacy
   //     Hebrew URLs keep redirecting and site search still finds the word.
   [/(?<![֐-׿])כירור?גי(?:ת|ות)(?![֐-׿])/g, 'חד פעמית'],
+  // "מסכה רפואית" (item 69): its box reads "DISPOSABLE CIVILIAN MASK — NON-MEDICAL" (03/10).
+  [/(?<![֐-׿])(ב?)מסכה רפואית(?![֐-׿])/g, '$1מסכה חד פעמית'],
+  [/(?<![֐-׿])(ב?)מסכות רפואיות(?![֐-׿])/g, '$1מסכות חד פעמיות'],
+  [/לשימוש רפואי, מטבחי ותעשייתי/g, 'לשימוש מטבחי ותעשייתי'],
   [/חד פעמית חד פעמית/g, 'חד פעמית'],
 ];
 
