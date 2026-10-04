@@ -118,6 +118,17 @@ const TEXT_RULES = [
 // Identifier and search-keyword fields, never visible copy.
 const TEXT_SKIP_KEYS = new Set(['slug', 'seoSlug', 'searchTags']);
 
+// Template category FAQs whose answers are claims nobody can back (04/10): "we work directly with
+// manufacturers + extra discounts" (we are a distributor — Yuval 30/09), "green/eco products" with no
+// such product, "MSDS for every chemical" (open with Yuval), and a "household vs institutional paper"
+// saving claim. The template's minimum / delivery / quote FAQs stay — they match this policy.
+const DROP_CATEGORY_FAQ = [
+  /^האם המחירים שלכם ל.* באמת מחירי סיטונאות\?$/,
+  /^יש מוצרים ירוקים\/אקולוגיים בקטגוריית /,
+  /^האם אתם מספקים גיליונות בטיחות \(MSDS\)\?$/,
+  /^מהו ההבדל בין מוצרי נייר ביתיים למוסדיים\?$/,
+];
+
 // FAQ entries and spec rows that exist only to make such a claim are dropped whole.
 const CLAIM_RE = /עומד(?:ת|ים|ות)? ב?תקנ|תקני (?:ה)?בטיחות|מאושר(?:ת|ים|ות)? למגע|למגע (?:ישיר )?(?:עם )?מזון|משרד הבריאות|\bCE\b|\bISO\b|מכון התקנים|אמ["״]ר/;
 function dropClaimEntries(list) {
@@ -227,7 +238,8 @@ function sanitizeCatalog(data) {
     if (typeof cat.geoContent === 'string' && cat.geoContent.includes(GENERIC_GEO_MARK)) cat.geoContent = rebuildGenericGeo(cat);
     if (isTruncatedTitle(cat.metaTitle)) cat.metaTitle = buildTitle(cat, byId);
   }
-  for (const cat of cats) if (cat.faqs) cat.faqs = dropClaimEntries(cat.faqs);
+  for (const cat of cats) if (cat.faqs) cat.faqs = dropClaimEntries(cat.faqs)
+    .filter(f => !(f && DROP_CATEGORY_FAQ.some(re => re.test(String(f.question || f.q || '').trim()))));
   for (const it of data.items || []) {
     if (it.seo && it.seo.faqs) it.seo.faqs = dropClaimEntries(it.seo.faqs);
     if (it.seo && it.seo.specs) it.seo.specs = dropClaimEntries(it.seo.specs);
