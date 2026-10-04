@@ -129,6 +129,17 @@ const DROP_CATEGORY_FAQ = [
   /^מהו ההבדל בין מוצרי נייר ביתיים למוסדיים\?$/,
 ];
 
+// Product FAQ templates stamped on dozens of items whose "answer" is a non-answer or a blanket claim
+// ("most of our packaging is leakproof", "in stock for immediate delivery", "price drops with
+// quantity", "check the label / contact us"). Matched on the exact answer text (04/10).
+const DROP_ITEM_FAQ_ANSWER = [
+  /^מרבית אריזות המזון שלנו מיועדות לאטימות\. בדקו את פרטי המוצר לאישור התאמה לנוזלים חמים\.$/,
+  /^חלק מהאריזות מתאימות להקפאה\. עיינו בפרטי המוצר או צרו קשר לייעוץ\.$/,
+  /^מרבית מוצרי הציוד המשרדי זמינים במלאי לאספקה מיידית\. ניתן להוסיף לעגלה ולהזמין אונליין\.$/,
+  /^כן! ככל שמזמינים יותר, המחיר ליחידה יורד\. צרו קשר לקבלת הצעת מחיר מותאמת לכמויות גדולות\.$/,
+  /^יחס הדילול תלוי בשימוש ובסוג המשטח\. עיינו בהוראות השימוש על גבי האריזה או צרו קשר לייעוץ מינון מקצועי\.$/,
+];
+
 // FAQ entries and spec rows that exist only to make such a claim are dropped whole.
 const CLAIM_RE = /עומד(?:ת|ים|ות)? ב?תקנ|תקני (?:ה)?בטיחות|מאושר(?:ת|ים|ות)? למגע|למגע (?:ישיר )?(?:עם )?מזון|משרד הבריאות|\bCE\b|\bISO\b|מכון התקנים|אמ["״]ר/;
 function dropClaimEntries(list) {
@@ -241,7 +252,8 @@ function sanitizeCatalog(data) {
   for (const cat of cats) if (cat.faqs) cat.faqs = dropClaimEntries(cat.faqs)
     .filter(f => !(f && DROP_CATEGORY_FAQ.some(re => re.test(String(f.question || f.q || '').trim()))));
   for (const it of data.items || []) {
-    if (it.seo && it.seo.faqs) it.seo.faqs = dropClaimEntries(it.seo.faqs);
+    if (it.seo && it.seo.faqs) it.seo.faqs = dropClaimEntries(it.seo.faqs)
+      .filter(f => !(f && DROP_ITEM_FAQ_ANSWER.some(re => re.test(String(f.answer || f.a || '').trim()))));
     if (it.seo && it.seo.specs) it.seo.specs = dropClaimEntries(it.seo.specs);
   }
   walkStrings(cats, applyTextRules);
