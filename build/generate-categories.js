@@ -363,10 +363,13 @@ function generateCategoryPage(category, products, allCategories, catMap, treeRoo
   // seo-overrides guide (written from facts, 10/2026) replaces the category-seo block
   const seoContentBlock = seoOv.guide || category.seoContent || catSeo.seoText || '';
   const categoryImageAlt = category.imageAlt || category.name;
-  // FAQ: prefer DB faqs (from category.faqs), fallback to hardcoded CATEGORY_SEO faqs
-  const categoryFaqs = ((category.faqs && category.faqs.length > 0) ? category.faqs : (catSeo.faqs || [])).concat(seoOv.faqs || []);
-  // GEO content from DB
-  const geoContentBlock = category.geoContent || '';
+  // FAQ: prefer DB faqs (from category.faqs), fallback to hardcoded CATEGORY_SEO faqs.
+  // seo-overrides dbFaqs (10/2026) = the reviewed replacement for the DB list (kept / fixed; invented ones dropped).
+  const baseFaqs = Array.isArray(seoOv.dbFaqs) ? seoOv.dbFaqs
+    : ((category.faqs && category.faqs.length > 0) ? category.faqs : (catSeo.faqs || []));
+  const categoryFaqs = baseFaqs.concat(seoOv.faqs || []);
+  // GEO content from DB; seo-overrides "geo" replaces it ("" = hide — the fact-based guide covers it, 10/2026)
+  const geoContentBlock = typeof seoOv.geo === 'string' ? seoOv.geo : (category.geoContent || '');
 
   // Hero image: DB image, auto-generated hero, or null
   const effectiveSlug = getEffectiveSlug(category);
