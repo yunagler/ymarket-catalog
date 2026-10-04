@@ -1,6 +1,6 @@
 ---
 title: מחירון מיגון ובטיחות בעבודה (PPE) | וואי מרקט
-description: 63 מוצרים במחלקת מיגון ובטיחות בעבודה (PPE), עם מחיר לפני מע״מ וכולל מע״מ.
+description: 62 מוצרים במחלקת מיגון ובטיחות בעבודה (PPE), עם מחיר לפני מע״מ וכולל מע״מ.
 url: https://ymarket.co.il/pricing/safety-ppe-equipment-for-business.md
 updated: 2026-08-10
 lang: he
@@ -19,7 +19,6 @@ lang: he
 | [ווניל שקוף/לבן (IT-TAI) - מידה M - (100 יח) - ללא אבקה](https://ymarket.co.il/products/vinyl-it-tai/) | 18.00 ₪ | 21.24 ₪ |  |
 | [ווניל שקוף/לבן (IT-TAI) - מידה S - (100 יח) - ללא אבקה](https://ymarket.co.il/products/vinyl-it-tai/) | 18.00 ₪ | 21.24 ₪ |  |
 | [ווניל שקוף/לבן (IT-TAI) - מידה XL - (100 יח) - ללא אבקה](https://ymarket.co.il/products/vinyl-it-tai/) | 18.00 ₪ | 21.24 ₪ |  |
-| [ויטריל שחור (Perfect) מידה S - (100 יח) - ללא אבקה](https://ymarket.co.il/products/vitrile-black-perfect-size-s-100-without-powder/) | 14.00 ₪ | 16.52 ₪ |  |
 | [חליפת גשם נילון פוליאסטר ירוק זית](https://ymarket.co.il/products/green/) | 85.00 ₪ | 100.30 ₪ |  |
 | [כובע אקורדיון אלבד לבן 2000 יח GRADE A](https://ymarket.co.il/products/white-2000-grade-a/) | 190.00 ₪ | 224.20 ₪ |  |
 | [כיסוי נעל ניילון כחול - 2000 יח'](https://ymarket.co.il/products/nylon-blue-2000/) | 240.00 ₪ | 283.20 ₪ |  |

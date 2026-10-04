@@ -9,7 +9,7 @@ lang: he
 # מחירים, משלוח ותנאים
 
 וואי מרקט מוכרת מוצרי צריכה שוטפת לעסקים ולמוסדות במחירי סיטונאות, ישירות מהמפיץ, מהמחסן בגת רימון.
-המחירון מסונכרן אוטומטית מה-CRM בכל לילה. שינוי מחיר אחרון: 2026-08-10. 704 מוצרים.
+המחירון מסונכרן אוטומטית מה-CRM בכל לילה. שינוי מחיר אחרון: 2026-08-10. 703 מוצרים.
 
 ## איך מוצגים המחירים
 
@@ -22,7 +22,7 @@ lang: he
 | מחלקה | מוצרים | טווח מחירים (לפני מע״מ) | מחירון |
 |---|---|---|---|
 | [סטוק עד הבית](https://ymarket.co.il/category/home-delivery-stock-deals/) | 1 | 20.00 ₪ – 20.00 ₪ | [home-delivery-stock-deals.md](https://ymarket.co.il/pricing/home-delivery-stock-deals.md) |
-| [מיגון ובטיחות בעבודה (PPE)](https://ymarket.co.il/category/safety-ppe-equipment-for-business/) | 63 | 3.00 ₪ – 410.55 ₪ | [safety-ppe-equipment-for-business.md](https://ymarket.co.il/pricing/safety-ppe-equipment-for-business.md) |
+| [מיגון ובטיחות בעבודה (PPE)](https://ymarket.co.il/category/safety-ppe-equipment-for-business/) | 62 | 3.00 ₪ – 410.55 ₪ | [safety-ppe-equipment-for-business.md](https://ymarket.co.il/pricing/safety-ppe-equipment-for-business.md) |
 | [כלי עבודה וציוד משקי](https://ymarket.co.il/category/institutional-cleaning-tools-equipment/) | 30 | 5.00 ₪ – 160.00 ₪ | [institutional-cleaning-tools-equipment.md](https://ymarket.co.il/pricing/institutional-cleaning-tools-equipment.md) |
 | [שקיות ופתרונות אשפה](https://ymarket.co.il/category/heavy-duty-garbage-bags-wholesale/) | 36 | 4.00 ₪ – 395.00 ₪ | [heavy-duty-garbage-bags-wholesale.md](https://ymarket.co.il/pricing/heavy-duty-garbage-bags-wholesale.md) |
 | [חומרי ניקוי וכימיקלים](https://ymarket.co.il/category/industrial-cleaning-supplies-wholesale/) | 62 | 5.40 ₪ – 1,400.00 ₪ | [industrial-cleaning-supplies-wholesale.md](https://ymarket.co.il/pricing/industrial-cleaning-supplies-wholesale.md) |

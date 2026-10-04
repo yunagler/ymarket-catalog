@@ -103,11 +103,19 @@ const TEXT_RULES = [
   [/,\s*עומד(?:ת|ים|ות)? בתקני בטיחות ישראליים/g, ''],
   // any remaining sentence (inside a text node) that makes such a claim goes entirely
   [/[^.<>"]*(?:עומד(?:ת|ים|ות)? ב?תקנ|תקני (?:ה)?בטיחות (?:ה)?(?:מזון|המחייבים|ישראליים)|מאושר(?:ת|ים|ות)? למגע|משרד הבריאות|\bCE\b|\bISO\b|מכון התקנים)[^.<>"]*\.\s?/g, ''],
-  // --- "כירוגית" (surgical) is a medical-device claim we hold no document for (03/10, same
-  //     ruling as the mask group name in 71984e48). Only the website text changes, not the
-  //     Rivhit item name; slug / seoSlug / searchTags are skipped (TEXT_SKIP_KEYS) so the legacy
-  //     Hebrew URLs keep redirecting and site search still finds the word.
-  [/(?<![֐-׿])כירור?גי(?:ת|ות)(?![֐-׿])/g, 'חד פעמית'],
+  // --- 3-layer masks: Yuval 04/10 — "אפשר לרשום כירורגית חד פעמית". The CRM/Rivhit names say
+  //     "מסכה כירוגית (3 שכבות)" (misspelt); the site says "מסכה כירורגית חד פעמית (3 שכבות)".
+  //     Only the misspelling matches, so the rule is idempotent. The Rivhit item name is not touched;
+  //     slug / seoSlug / searchTags are skipped (TEXT_SKIP_KEYS) so the legacy Hebrew URLs keep
+  //     redirecting. Group 13's name/title (CRM: "מסכה חד פעמית (3 שכבות)") get the same wording;
+  //     quotes of the box text ('מסכה חד פעמית') inside the content are left as printed.
+  [/(?<![֐-׿])כירוגי(ת|ות)(?![֐-׿])/g, (m, s) => (s === 'ת' ? 'כירורגית חד פעמית' : 'כירורגיות חד פעמיות')],
+  [/^מסכה חד פעמית \(3 שכבות\)/, 'מסכה כירורגית חד פעמית (3 שכבות)'],
+  [/^מסכה חד פעמית 3 שכבות, 50 יח' בחבילה, 5 צבעים \| וואי מרקט$/, "מסכה כירורגית חד פעמית 3 שכבות, 50 יח', 5 צבעים | וואי מרקט"],
+  [/כירורגית חד פעמית חד פעמית/g, 'כירורגית חד פעמית'],
+  // Item 34 (ויטריל) is no longer stocked (Yuval 04/10). The product pages' links to it were
+  // written as "כפפות ניטריל שחורות Perfect" — which is exactly the black nitrile group: link there.
+  [/\/products\/vitrile-black-perfect-size-s-100-without-powder\//g, '/products/nitrile-black-perfect/'],
   // "מסכה רפואית" (item 69): its box reads "DISPOSABLE CIVILIAN MASK — NON-MEDICAL" (03/10).
   [/(?<![֐-׿])(ב?)מסכה רפואית(?![֐-׿])/g, '$1מסכה חד פעמית'],
   [/(?<![֐-׿])(ב?)מסכות רפואיות(?![֐-׿])/g, '$1מסכות חד פעמיות'],
