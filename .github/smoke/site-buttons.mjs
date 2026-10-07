@@ -150,6 +150,8 @@ async function fullFlow(browser, path) {
     await page.waitForTimeout(500);
     const shown = (await page.locator('#variantLabel').textContent().catch(() => '')).trim();
     if (shown !== label) fail(where, `דף המוצר נפתח על "${shown}" במקום "${label}"`);
+    // "מחירי סיטונאות" opens the wholesale-buying page (07/10/2026)
+    if (!(await page.locator('a.product-trust-badges__item[href="/wholesale-buying/"]').count())) fail(where, 'התגית "מחירי סיטונאות" בדף המוצר לא מקשרת לעמוד הקנייה בסיטונאות');
     const row = page.locator('.vrow', { has: page.locator('.vrow__label', { hasText: new RegExp('^\\s*' + label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\s*$') }) }).first();
     const qty0 = Number(await row.locator('.vqty').inputValue());
     if (qty0 !== 2) fail(where, `דף המוצר לא מראה את 2 היח' שבסל (מופיע ${qty0})`);

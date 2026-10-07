@@ -664,6 +664,10 @@
   color: var(--primary, #1B3A5C);
 }
 
+/* "מחירי סיטונאות" links to /wholesale-buying/ — people tapped it like a button (07/10/2026); a dashed line says it opens */
+a.product-trust-badges__item { text-decoration: none; }
+a.product-trust-badges__item span { border-bottom: 1px dashed currentColor; }
+
 @media (max-width: 480px) {
   .product-trust-badges {
     grid-template-columns: repeat(2, 1fr);

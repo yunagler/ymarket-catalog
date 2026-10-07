@@ -783,7 +783,7 @@ function generateProductPage(product, categories, allProducts, group) {
 
           <div class="product-trust-badges">
             <div class="product-trust-badges__item"><i class="fas fa-truck"></i><span>24–72 שעות בגוש דן ובמרכז</span></div>
-            <div class="product-trust-badges__item"><i class="fas fa-tags"></i><span>מחירי סיטונאות</span></div>
+            <a class="product-trust-badges__item" href="/wholesale-buying/"><i class="fas fa-tags"></i><span>מחירי סיטונאות</span></a>
             <div class="product-trust-badges__item"><i class="fas fa-headset"></i><span>שירות אישי</span></div>
             <div class="product-trust-badges__item"><i class="fas fa-file-invoice"></i><span>חשבונית מס</span></div>
           </div>

@@ -541,3 +541,23 @@ window.YMarket = {
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', pickFromHash);
   else pickFromHash();
 })();
+
+/* ---- "מחירי סיטונאות" → the wholesale-buying page ---- */
+// Product pages built before 07/10/2026 have the badge as a plain <div>; real visitors tapped
+// it again and again (the tripwire saw it). The generator now writes a link; this upgrades
+// the pages already out there.
+(function () {
+  function upgrade() {
+    document.querySelectorAll('div.product-trust-badges__item').forEach(function (el) {
+      if (!/מחירי סיטונאות/.test(el.textContent)) return;
+      var a = document.createElement('a');
+      a.href = '/wholesale-buying/';
+      a.className = el.className;
+      a.innerHTML = el.innerHTML;
+      a.style.textDecoration = 'none';
+      el.replaceWith(a);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', upgrade);
+  else upgrade();
+})();
