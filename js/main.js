@@ -45,11 +45,21 @@ function initActiveNav() {
 }
 
 /* ---- Mobile Navigation ---- */
+// The shared header (includes/site-header.html) is .nav / .nav__item; older pages were
+// .main-nav. Looking only for .main-nav left the ☰ button dead on phones on every store,
+// product, login, register and about page — real visitors tapped it again and again and
+// the tripwire reported it (07/10/2026). The overlay is created when a page has none.
 function initMobileNav() {
   const btn = document.querySelector('.mobile-menu-btn');
-  const nav = document.querySelector('.main-nav');
-  const overlay = document.querySelector('.mobile-overlay');
-  if (!btn || !nav) return;
+  const nav = document.querySelector('.main-nav') || document.querySelector('.nav');
+  if (!btn || !nav || btn.dataset.navWired) return;
+  btn.dataset.navWired = '1';
+  let overlay = document.querySelector('.mobile-overlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.className = 'mobile-overlay';
+    document.body.appendChild(overlay);
+  }
 
   btn.addEventListener('click', () => {
     const isOpen = nav.classList.toggle('open');
@@ -67,8 +77,8 @@ function initMobileNav() {
   }
 
   // Mobile mega-menu toggle + keyboard support
-  document.querySelectorAll('.main-nav__item').forEach(item => {
-    const link = item.querySelector('.main-nav__link');
+  nav.querySelectorAll('.main-nav__item, .nav__item').forEach(item => {
+    const link = item.querySelector('.main-nav__link, .nav__link');
     const mega = item.querySelector('.mega-menu');
     if (!mega || !link) return;
 

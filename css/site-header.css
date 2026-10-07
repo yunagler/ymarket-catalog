@@ -973,6 +973,9 @@
       .nav__link, .nav .nav__item > .nav__link { padding: 14px 16px; font-size: 1rem; border-bottom: 1px solid var(--border); border-radius: 0; min-height: 48px; width: 100%; }
       .nav .mega-menu { position: static; min-width: auto; box-shadow: none; border: none; padding: 0 16px; opacity: 1; visibility: visible; transform: none; display: none; }
       .nav .nav__item.open .mega-menu { display: block; }
+      /* a tap is also a :hover on a phone, and the desktop hover rule's translateX(50%) slid the list off the drawer (07/10/2026) */
+      .nav .nav__item:hover .mega-menu, .nav .nav__item.open .mega-menu { transform: none; }
+      .nav .mega-menu__grid { grid-template-columns: 1fr; }
       .mobile-menu-btn { display: flex; }
       .header .container { height: 60px; }
       .info-bar { display: none; }

@@ -541,7 +541,7 @@ function generateProductPage(product, categories, allProducts, group) {
           <picture>
             <source srcset="${rThumb}" type="image/webp">
             <img src="${rJpg}" alt="${p.name}" loading="lazy" width="258" height="258"
-                 onerror="this.onerror=null;var s=this.parentElement.querySelector('source');if(s)s.remove();this.src='https://placehold.co/300x300/f0f2f5/5a6577?text=${encodeURIComponent((p.name || '').substring(0,15))}'">
+                 onerror="this.onerror=null;var s=this.parentElement.querySelector('source');if(s)s.remove();this.src='https://placehold.co/300x300/f0f2f5/5a6577?text=${encodeURIComponent((p.name || '').substring(0,15)).replace(/'/g, '%27')}'">
           </picture>
         </a>
       </div>
@@ -766,7 +766,7 @@ function generateProductPage(product, categories, allProducts, group) {
             <picture>
               <source srcset="${imgSrc}" type="image/webp" id="mainProductSource">
               <img src="${imgSrcJpg}" alt="${escAttr(mainImgAlt)}" id="mainProductImg"
-                   onerror="this.onerror=null;var s=this.parentElement.querySelector('source');if(s)s.remove();this.src='https://placehold.co/500x500/f0f2f5/5a6577?text=${encodeURIComponent((h1Text || '').substring(0,15))}'">
+                   onerror="this.onerror=null;var s=this.parentElement.querySelector('source');if(s)s.remove();this.src='https://placehold.co/500x500/f0f2f5/5a6577?text=${encodeURIComponent((h1Text || '').substring(0,15)).replace(/'/g, '%27')}'">
             </picture>
           </div>
         </div>

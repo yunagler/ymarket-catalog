@@ -128,6 +128,9 @@
   var coverTries = 0, coverDone = false, coverTimer = null;
   function coverCheck() {
     if (coverDone || coverTries >= 6) return;
+    // the item window / the phone menu cover the page on purpose (07/10: a customer had the
+    // item window open on a 320px phone and the check reported the page as blocked)
+    if (document.documentElement.classList.contains('v4-lock') || document.querySelector('.nav.open, .main-nav.open, .v4-modal.is-on')) return;
     coverTries++;
     var sel = '.v4-item__img, .v4-q--plus, button.v4-item__pick, .vqty-inc, .vrow__pick, #addAllBtn, .add-to-cart';
     var els = [].slice.call(document.querySelectorAll(sel)), vh = window.innerHeight, tried = 0, covered = 0, by = null;
@@ -157,13 +160,17 @@
   else window.addEventListener('load', coverArm);
 
   // (b) clicks with no response: no DOM change, no navigation, no scroll, no focus move within 900ms
-  var lastMut = 0, lastScroll = 0, recent = [];
+  var lastMut = 0, lastScroll = 0, recent = [], leaving = false;
+  window.addEventListener('beforeunload', function () { leaving = true; });
+  window.addEventListener('pagehide', function () { leaving = true; });
   try { new MutationObserver(function () { lastMut = Date.now(); }).observe(document.documentElement, { subtree: true, childList: true, attributes: true, characterData: true }); } catch (e) {}
   window.addEventListener('scroll', function () { lastScroll = Date.now(); }, { passive: true, capture: true });
   var INTERACTIVE = 'a[href], button, [role="button"], [data-open], [data-close], label, summary, select, input[type="submit"], input[type="button"], input[type="checkbox"], input[type="radio"], [onclick]';
   document.addEventListener('click', function (e) {
     if (!e.isTrusted) return;
     var t = e.target, at = Date.now(), focus0 = document.activeElement, url0 = location.href;
+    // a select/input/textarea opens a picker or a caret — no DOM change, not a dead control
+    if (t && t.closest && t.closest('select, input, textarea, option')) return;
     var ctl = t && t.closest ? t.closest(INTERACTIVE) : null;
     if (ctl && ctl.tagName === 'A') {
       var h = ctl.getAttribute('href') || '';
@@ -171,7 +178,7 @@
       if (ctl.target === '_blank' || /^(tel:|mailto:|https?:\/\/(?!(www\.)?ymarket\.co\.il))/.test(h)) return;
     }
     setTimeout(function () {
-      if (document.visibilityState === 'hidden' || location.href !== url0) return;
+      if (leaving || document.visibilityState === 'hidden' || location.href !== url0) return;
       if (lastMut >= at || lastScroll >= at || document.activeElement !== focus0) return;
       var hit = { t: at, x: e.clientX, y: e.clientY, el: desc(ctl || t) };
       recent = recent.filter(function (r) { return at - r.t < 2500; });
@@ -179,7 +186,7 @@
       var near = recent.filter(function (r) { return Math.abs(r.x - hit.x) < 40 && Math.abs(r.y - hit.y) < 40; });
       if (near.length >= 3) report('ui_rage_click', hit.el + '@' + Math.round(hit.x / 40) + ',' + Math.round(hit.y / 40), { el: hit.el, n: near.length, text: ((ctl || t).innerText || '').trim().slice(0, 40) });
       else if (ctl) report('ui_dead_click', hit.el, { el: hit.el, text: (ctl.innerText || '').trim().slice(0, 40) });
-    }, 900);
+    }, 1200); // a slow phone network: give a link or a form a little longer to answer
   }, true);
 
   // (c) our own script errors (third-party "Script error." carries nothing useful)
