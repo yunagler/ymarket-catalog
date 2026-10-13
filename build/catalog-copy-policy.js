@@ -162,6 +162,10 @@ function applyTextRules(s, key) {
   if (TEXT_SKIP_KEYS.has(key)) return s;
   let out = s;
   if (META_KEYS.has(key)) out = out.replace(/(אספקה(?: מהירה)? (?:תוך )?)24-72 שעות(?![^<.]*(?:גוש דן|במרכז))/g, '$124–72 שעות בגוש דן ובמרכז');
+  // "החל מ-₪N" was stamped into ~350 meta descriptions at export time; the nightly price sync updates
+  // the page price but never this text, so Google showed stale prices (e.g. ₪250 for a ₪330 cart, 13/10).
+  // The live price stays on the page and in the Product schema; only the frozen text goes.
+  if (META_KEYS.has(key)) out = out.replace(/\s*החל מ-?₪\s?\d[\d.,]*/g, '');
   for (const [re, rep] of TEXT_RULES) out = out.replace(re, rep);
   return out;
 }
