@@ -560,8 +560,11 @@ function generateProductPage(product, categories, allProducts, group) {
     : (product.description || '');
   const productDescription = bodyDescription || `${product.name} - ${categoryName}`;
   const schemaDescription = seo.isB2BBulk ? `סיטונאות / Wholesale - ${productDescription}` : productDescription;
-  // priceValidUntil - end of current year (Google requires this)
-  const priceValidUntil = new Date().getFullYear() + '-12-31';
+  // priceValidUntil - end of NEXT year. Pages are rebuilt rarely and the nightly price sync edits
+  // prices in place without touching this date, so "end of current year" left every page with an
+  // expired date on 1 January; Google stops showing a merchant listing whose priceValidUntil has
+  // passed (fixed 12/11/2026).
+  const priceValidUntil = (new Date().getFullYear() + 1) + '-12-31';
   // Shared Offer sub-objects — reused by the single-product schema AND every variant
   // offer in a ProductGroup, so Merchant listings stay valid across both shapes.
   const SHIPPING_DETAILS = {
@@ -579,7 +582,7 @@ function generateProductPage(product, categories, allProducts, group) {
     "applicableCountry": "IL",
     "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
     "merchantReturnDays": 14,
-    "returnMethod": "https://schema.org/ReturnByMail",
+    "returnMethod": "https://schema.org/ReturnInStore",
     "returnFees": "https://schema.org/FreeReturn"
   };
   const SELLER = { "@type": "Organization", "name": "וואי מרקט - נגלר סחר והפצה" };
