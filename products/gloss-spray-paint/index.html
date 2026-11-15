@@ -121,7 +121,55 @@
       "description": "ציוד טכני מקצועי — איכות מקצועית",
       "image": "https://ymarket.co.il/items/745.jpg?v=1772960011405",
       "url": "https://ymarket.co.il/products/gloss-spray-paint/",
-      "sku": "729"
+      "sku": "729",
+      "offers": {
+        "@type": "Offer",
+        "price": 14.16,
+        "priceCurrency": "ILS",
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition",
+        "priceValidUntil": "2027-12-31",
+        "url": "https://ymarket.co.il/products/gloss-spray-paint/",
+        "seller": {
+          "@type": "Organization",
+          "name": "וואי מרקט - נגלר סחר והפצה"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "ILS"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "IL"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 3,
+              "unitCode": "DAY"
+            }
+          }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "IL",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 14,
+          "returnMethod": "https://schema.org/ReturnInStore",
+          "returnFees": "https://schema.org/FreeReturn"
+        }
+      }
     }
   ]
 }</script>
@@ -268,7 +316,7 @@
           </button>
           <div class="vrow__meta">
             <span class="vrow__label">כסף</span>
-            <span class="vrow__price">‏0 ‏₪ ליח׳</span>
+            <span class="vrow__price">‏12 ‏₪ ליח׳</span>
           </div>
           <div class="vrow__stepper">
             <button type="button" class="vqty-dec" data-idx="1" aria-label="הפחת">−</button>
@@ -288,7 +336,7 @@
 
           <div class="product-trust-badges">
             <div class="product-trust-badges__item"><i class="fas fa-truck"></i><span>24–72 שעות בגוש דן ובמרכז</span></div>
-            <div class="product-trust-badges__item"><i class="fas fa-tags"></i><span>מחירי סיטונאות</span></div>
+            <a class="product-trust-badges__item" href="/wholesale-buying/"><i class="fas fa-tags"></i><span>מחירי סיטונאות</span></a>
             <div class="product-trust-badges__item"><i class="fas fa-headset"></i><span>שירות אישי</span></div>
             <div class="product-trust-badges__item"><i class="fas fa-file-invoice"></i><span>חשבונית מס</span></div>
           </div>
@@ -559,7 +607,7 @@
   <script>
   (function() {
     // ===== Variant group — LIVE cart: each size's +/- adds/removes it directly =====
-    var VARIANTS = [{"id":353,"label":"שחור","name":"ספריי שחור מבריק","price":12,"unit":"","img":"/items/369.webp?v=1772950899916","imgJpg":"/items/369.jpg?v=1772950899916","slug":"ספריי-שחור-מבריק","gtin":null,"mpn":null,"sku":"353","desc":"ספריי צבע בגימור מבריק, בשני צבעים: שחור וכסף. לצוותי אחזקה, למחסנים, למוסדות ולחברות ניהול נכסים שמחזיקים ספריי צבע במלאי."},{"id":729,"label":"כסף","name":"ספריי כסף מבריק","price":0,"unit":"","img":"/items/745.webp?v=1772960011405","imgJpg":"/items/745.jpg?v=1772960011405","slug":"ספריי-כסף-מבריק","gtin":null,"mpn":null,"sku":"729","desc":"ציוד טכני מקצועי — איכות מקצועית"}];
+    var VARIANTS = [{"id":353,"label":"שחור","name":"ספריי שחור מבריק","price":12,"unit":"","img":"/items/369.webp?v=1772950899916","imgJpg":"/items/369.jpg?v=1772950899916","slug":"ספריי-שחור-מבריק","gtin":null,"mpn":null,"sku":"353","desc":"ספריי צבע בגימור מבריק, בשני צבעים: שחור וכסף. לצוותי אחזקה, למחסנים, למוסדות ולחברות ניהול נכסים שמחזיקים ספריי צבע במלאי."},{"id":729,"label":"כסף","name":"ספריי כסף מבריק","price":12,"unit":"","img":"/items/745.webp?v=1772960011405","imgJpg":"/items/745.jpg?v=1772960011405","slug":"ספריי-כסף-מבריק","gtin":null,"mpn":null,"sku":"729","desc":"ציוד טכני מקצועי — איכות מקצועית"}];
     function fmt(n){ return '‏' + Math.round(n*100)/100 + ' ‏₪'; }
     var mainImg = document.getElementById('mainProductImg');
     var mainSrc = document.getElementById('mainProductSource');

@@ -2,13 +2,13 @@
 title: מחירון כלי עבודה וציוד משקי | וואי מרקט
 description: 30 מוצרים במחלקת כלי עבודה וציוד משקי, עם מחיר לפני מע״מ וכולל מע״מ.
 url: https://ymarket.co.il/pricing/institutional-cleaning-tools-equipment.md
-updated: 2026-08-10
+updated: 2026-11-15
 lang: he
 ---
 
 # מחירון כלי עבודה וציוד משקי
 
-מחירי האתר לעסקים, מסונכרנים מה-CRM בכל לילה (שינוי מחיר אחרון: 2026-08-10). המחירים לפני מע״מ (18%), ובעמודה הבאה כולל מע״מ. לקוחות רשומים רואים מחירון אישי ב[אפליקציית ההזמנות](https://app.ymarket.co.il/portal).
+מחירי האתר לעסקים, מסונכרנים מה-CRM בכל לילה (שינוי מחיר אחרון: 2026-11-15). המחירים לפני מע״מ (18%), ובעמודה הבאה כולל מע״מ. לקוחות רשומים רואים מחירון אישי ב[אפליקציית ההזמנות](https://app.ymarket.co.il/portal).
 
 [עמוד המחלקה](https://ymarket.co.il/category/institutional-cleaning-tools-equipment/) · [תנאים, משלוח ו-CASH BACK](https://ymarket.co.il/pricing.md) · [כל המחירון ב-CSV](https://ymarket.co.il/prices.csv)
 

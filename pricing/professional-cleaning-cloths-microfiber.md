@@ -2,13 +2,13 @@
 title: מחירון טקסטיל, מטליות וסחבות | וואי מרקט
 description: 25 מוצרים במחלקת טקסטיל, מטליות וסחבות, עם מחיר לפני מע״מ וכולל מע״מ.
 url: https://ymarket.co.il/pricing/professional-cleaning-cloths-microfiber.md
-updated: 2026-08-10
+updated: 2026-11-15
 lang: he
 ---
 
 # מחירון טקסטיל, מטליות וסחבות
 
-מחירי האתר לעסקים, מסונכרנים מה-CRM בכל לילה (שינוי מחיר אחרון: 2026-08-10). המחירים לפני מע״מ (18%), ובעמודה הבאה כולל מע״מ. לקוחות רשומים רואים מחירון אישי ב[אפליקציית ההזמנות](https://app.ymarket.co.il/portal).
+מחירי האתר לעסקים, מסונכרנים מה-CRM בכל לילה (שינוי מחיר אחרון: 2026-11-15). המחירים לפני מע״מ (18%), ובעמודה הבאה כולל מע״מ. לקוחות רשומים רואים מחירון אישי ב[אפליקציית ההזמנות](https://app.ymarket.co.il/portal).
 
 [עמוד המחלקה](https://ymarket.co.il/category/professional-cleaning-cloths-microfiber/) · [תנאים, משלוח ו-CASH BACK](https://ymarket.co.il/pricing.md) · [כל המחירון ב-CSV](https://ymarket.co.il/prices.csv)
 

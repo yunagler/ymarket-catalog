@@ -2,13 +2,13 @@
 title: מחירון מוצרי נייר וניגוב | וואי מרקט
 description: 37 מוצרים במחלקת מוצרי נייר וניגוב, עם מחיר לפני מע״מ וכולל מע״מ.
 url: https://ymarket.co.il/pricing/bulk-paper-towel-office-supplies.md
-updated: 2026-08-10
+updated: 2026-11-15
 lang: he
 ---
 
 # מחירון מוצרי נייר וניגוב
 
-מחירי האתר לעסקים, מסונכרנים מה-CRM בכל לילה (שינוי מחיר אחרון: 2026-08-10). המחירים לפני מע״מ (18%), ובעמודה הבאה כולל מע״מ. לקוחות רשומים רואים מחירון אישי ב[אפליקציית ההזמנות](https://app.ymarket.co.il/portal).
+מחירי האתר לעסקים, מסונכרנים מה-CRM בכל לילה (שינוי מחיר אחרון: 2026-11-15). המחירים לפני מע״מ (18%), ובעמודה הבאה כולל מע״מ. לקוחות רשומים רואים מחירון אישי ב[אפליקציית ההזמנות](https://app.ymarket.co.il/portal).
 
 [עמוד המחלקה](https://ymarket.co.il/category/bulk-paper-towel-office-supplies/) · [תנאים, משלוח ו-CASH BACK](https://ymarket.co.il/pricing.md) · [כל המחירון ב-CSV](https://ymarket.co.il/prices.csv)
 

@@ -2,13 +2,13 @@
 title: מחירון עזרה ראשונה וציוד רפואי לעסקים | וואי מרקט
 description: 33 מוצרים במחלקת עזרה ראשונה וציוד רפואי לעסקים, עם מחיר לפני מע״מ וכולל מע״מ.
 url: https://ymarket.co.il/pricing/first-aid-medical-equipment-business.md
-updated: 2026-08-10
+updated: 2026-11-15
 lang: he
 ---
 
 # מחירון עזרה ראשונה וציוד רפואי לעסקים
 
-מחירי האתר לעסקים, מסונכרנים מה-CRM בכל לילה (שינוי מחיר אחרון: 2026-08-10). המחירים לפני מע״מ (18%), ובעמודה הבאה כולל מע״מ. לקוחות רשומים רואים מחירון אישי ב[אפליקציית ההזמנות](https://app.ymarket.co.il/portal).
+מחירי האתר לעסקים, מסונכרנים מה-CRM בכל לילה (שינוי מחיר אחרון: 2026-11-15). המחירים לפני מע״מ (18%), ובעמודה הבאה כולל מע״מ. לקוחות רשומים רואים מחירון אישי ב[אפליקציית ההזמנות](https://app.ymarket.co.il/portal).
 
 [עמוד המחלקה](https://ymarket.co.il/category/first-aid-medical-equipment-business/) · [תנאים, משלוח ו-CASH BACK](https://ymarket.co.il/pricing.md) · [כל המחירון ב-CSV](https://ymarket.co.il/prices.csv)
 

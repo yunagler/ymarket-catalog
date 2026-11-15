@@ -4213,7 +4213,7 @@
       "id": 239,
       "name": "משחת כלים בניחוח לימון 20 ק\"ג (סו קלין)",
       "slug": "משחת-כלים-בניחוח-לימון-20-ק-ג-סו-קלין",
-      "saleNis": 65,
+      "saleNis": 85,
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
@@ -47035,7 +47035,7 @@
       "id": 729,
       "name": "ספריי כסף מבריק",
       "slug": "ספריי-כסף-מבריק",
-      "saleNis": 0,
+      "saleNis": 12,
       "originalPrice": null,
       "discountPercent": null,
       "promotionLabel": null,
@@ -62467,5 +62467,6 @@
     }
   ],
   "exportedAt": "2026-08-10T14:54:42.135Z",
-  "totalItems": 872
+  "totalItems": 872,
+  "pricesSyncedAt": "2026-11-15T02:59:21.673Z"
 }

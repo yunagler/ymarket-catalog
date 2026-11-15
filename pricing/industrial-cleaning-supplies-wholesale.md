@@ -2,13 +2,13 @@
 title: מחירון חומרי ניקוי וכימיקלים | וואי מרקט
 description: 62 מוצרים במחלקת חומרי ניקוי וכימיקלים, עם מחיר לפני מע״מ וכולל מע״מ.
 url: https://ymarket.co.il/pricing/industrial-cleaning-supplies-wholesale.md
-updated: 2026-08-10
+updated: 2026-11-15
 lang: he
 ---
 
 # מחירון חומרי ניקוי וכימיקלים
 
-מחירי האתר לעסקים, מסונכרנים מה-CRM בכל לילה (שינוי מחיר אחרון: 2026-08-10). המחירים לפני מע״מ (18%), ובעמודה הבאה כולל מע״מ. לקוחות רשומים רואים מחירון אישי ב[אפליקציית ההזמנות](https://app.ymarket.co.il/portal).
+מחירי האתר לעסקים, מסונכרנים מה-CRM בכל לילה (שינוי מחיר אחרון: 2026-11-15). המחירים לפני מע״מ (18%), ובעמודה הבאה כולל מע״מ. לקוחות רשומים רואים מחירון אישי ב[אפליקציית ההזמנות](https://app.ymarket.co.il/portal).
 
 [עמוד המחלקה](https://ymarket.co.il/category/industrial-cleaning-supplies-wholesale/) · [תנאים, משלוח ו-CASH BACK](https://ymarket.co.il/pricing.md) · [כל המחירון ב-CSV](https://ymarket.co.il/prices.csv)
 
@@ -46,7 +46,7 @@ lang: he
 | [מרכך כביסה 1 ליטר אקסטרא בישום - בניחוח קריבים](https://ymarket.co.il/products/laundry-1/) | 6.55 ₪ | 7.73 ₪ |  |
 | [מרכך כביסה ורוד](https://ymarket.co.il/products/fabric-softener-blue-pink/) | 10.00 ₪ | 11.80 ₪ | מבצע (במקום 14.00 ₪) |
 | [מרכך כביסה כחול](https://ymarket.co.il/products/fabric-softener-blue-pink/) | 10.00 ₪ | 11.80 ₪ | מבצע (במקום 14.00 ₪) |
-| [משחת כלים בניחוח לימון 20 ק"ג (סו קלין)](https://ymarket.co.il/products/dishes-20/) | 65.00 ₪ | 76.70 ₪ |  |
+| [משחת כלים בניחוח לימון 20 ק"ג (סו קלין)](https://ymarket.co.il/products/dishes-20/) | 85.00 ₪ | 100.30 ₪ |  |
 | [מתקן מבושם אוטומטי PRESS](https://ymarket.co.il/products/fragranced-press/) | 60.00 ₪ | 70.80 ₪ |  |
 | [נוזל הברקה (טארגט) למדיח כלים תעשייתי 18 ק"ג](https://ymarket.co.il/products/dishwasher-dishes-industrial-18/) | 185.00 ₪ | 218.30 ₪ |  |
 | [נוזל חלונות - 1 ליטר BLINX](https://ymarket.co.il/products/1-blinx-855/) | 8.00 ₪ | 9.44 ₪ |  |

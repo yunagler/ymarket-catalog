@@ -2,14 +2,14 @@
 title: מחירים, משלוח ותנאים | וואי מרקט
 description: מחירון האתר לפי מחלקה, מינימום הזמנה, דמי משלוח לפי אזור, זמני אספקה, תנאי תשלום, החזרות ו-CASH BACK במועדון CASH MARKET.
 url: https://ymarket.co.il/pricing.md
-updated: 2026-08-10
+updated: 2026-11-15
 lang: he
 ---
 
 # מחירים, משלוח ותנאים
 
 וואי מרקט מוכרת מוצרי צריכה שוטפת לעסקים ולמוסדות במחירי סיטונאות, ישירות מהמפיץ, מהמחסן בגת רימון.
-המחירון מסונכרן אוטומטית מה-CRM בכל לילה. שינוי מחיר אחרון: 2026-08-10. 703 מוצרים.
+המחירון מסונכרן אוטומטית מה-CRM בכל לילה. שינוי מחיר אחרון: 2026-11-15. 704 מוצרים.
 
 ## איך מוצגים המחירים
 
@@ -33,7 +33,7 @@ lang: he
 | [מוצרי נייר וניגוב](https://ymarket.co.il/category/bulk-paper-towel-office-supplies/) | 37 | 5.00 ₪ – 420.00 ₪ | [bulk-paper-towel-office-supplies.md](https://ymarket.co.il/pricing/bulk-paper-towel-office-supplies.md) |
 | [קפה, שתייה וכיבוד](https://ymarket.co.il/category/office-coffee-breakroom-supplies/) | 13 | 5.00 ₪ – 72.00 ₪ | [office-coffee-breakroom-supplies.md](https://ymarket.co.il/pricing/office-coffee-breakroom-supplies.md) |
 | [ציוד משרדי וכללי](https://ymarket.co.il/category/office-supplies-wholesale-business/) | 87 | 0.48 ₪ – 400.00 ₪ | [office-supplies-wholesale-business.md](https://ymarket.co.il/pricing/office-supplies-wholesale-business.md) |
-| [ציוד טכני ואחזקה](https://ymarket.co.il/category/maintenance-technical-equipment-wholesale/) | 33 | 10.00 ₪ – 2,500.00 ₪ | [maintenance-technical-equipment-wholesale.md](https://ymarket.co.il/pricing/maintenance-technical-equipment-wholesale.md) |
+| [ציוד טכני ואחזקה](https://ymarket.co.il/category/maintenance-technical-equipment-wholesale/) | 34 | 10.00 ₪ – 2,500.00 ₪ | [maintenance-technical-equipment-wholesale.md](https://ymarket.co.il/pricing/maintenance-technical-equipment-wholesale.md) |
 | [עזרה ראשונה וציוד רפואי לעסקים](https://ymarket.co.il/category/first-aid-medical-equipment-business/) | 33 | 6.00 ₪ – 4,850.00 ₪ | [first-aid-medical-equipment-business.md](https://ymarket.co.il/pricing/first-aid-medical-equipment-business.md) |
 | [טקסטיל, ביגוד ומוצרי מגורים](https://ymarket.co.il/category/institutional-textiles-bedding-wholesale/) | 7 | 8.00 ₪ – 100.00 ₪ | [institutional-textiles-bedding-wholesale.md](https://ymarket.co.il/pricing/institutional-textiles-bedding-wholesale.md) |
 | [היגיינה אישית ומוצרי טיפוח](https://ymarket.co.il/category/personal-hygiene-products-wholesale/) | 17 | 2.00 ₪ – 12.00 ₪ | [personal-hygiene-products-wholesale.md](https://ymarket.co.il/pricing/personal-hygiene-products-wholesale.md) |
