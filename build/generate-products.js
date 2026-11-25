@@ -846,7 +846,10 @@ ${SITE_FOOTER}
       window.YMarketAnalytics.trackViewItem(PRODUCT);
     }
 
-    // Click-to-zoom lightbox for the main product image (all product pages)
+    // Click-to-zoom lightbox for the main product image (all product pages).
+    // The lightbox markup sits AFTER this script, so wire it once the page is parsed —
+    // looked up here directly it was still null and tapping the image did nothing (25/11/2026).
+    var wireLb = function() {
     var lbMain = document.getElementById('mainProductImg');
     var lb = document.getElementById('imgLightbox');
     if (lbMain && lb) {
@@ -869,6 +872,8 @@ ${SITE_FOOTER}
       lb.addEventListener('click', function(e) { if (e.target === lb) closeLb(); });
       document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && lb.classList.contains('is-open')) closeLb(); });
     }
+    };
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', wireLb); else wireLb();
   })();
   </script>
   ${isGroup ? `<script>

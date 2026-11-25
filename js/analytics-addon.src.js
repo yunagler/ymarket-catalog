@@ -189,10 +189,19 @@
     }, 1200); // a slow phone network: give a link or a form a little longer to answer
   }, true);
 
-  // (c) our own script errors (third-party "Script error." carries nothing useful)
+  // (c) our own script errors (third-party "Script error." carries nothing useful).
+  // The call stack goes along: a message alone ("Maximum call stack size exceeded", 25/11/2026)
+  // does not say which script or which line, and the alert could not be traced to a cause.
+  // Cloudflare's own scripts (/cdn-cgi/ — bot check, email protection) are served from our
+  // domain but are not ours to fix, so they are left out.
   window.addEventListener('error', function (e) {
     var f = (e && e.filename) || '';
     if (!f || f.indexOf(location.host) === -1 || !e.message || e.message === 'Script error.') return;
-    report('js_error', e.message.slice(0, 60), { msg: e.message.slice(0, 160), file: f.replace(/^https?:\/\/[^/]+/, '').slice(0, 80), line: e.lineno || null });
+    var stack = '';
+    try { stack = String((e.error && e.error.stack) || ''); } catch (x) {}
+    if (f.indexOf('/cdn-cgi/') !== -1 || stack.indexOf('/cdn-cgi/') !== -1) return;
+    var host = /https?:\/\/[^/\s)]+/g;
+    stack = stack.replace(host, '').split('\n').slice(0, 5).join(' | ').replace(/\s+/g, ' ').slice(0, 400);
+    report('js_error', e.message.slice(0, 60), { msg: e.message.slice(0, 160), file: f.replace(/^https?:\/\/[^/]+/, '').slice(0, 80), line: e.lineno || null, col: e.colno || null, stack: stack || null });
   });
 })();
